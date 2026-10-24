@@ -1,5 +1,6 @@
 {
   "name": "offline-knowledge-content",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "Build-time content pipeline: sources -> validated, versioned knowledge pack.",
@@ -9,7 +10,8 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --test test/*.test.ts",
-    "import:foodkeeper": "node scripts/import-foodkeeper.ts"
+    "import:foodkeeper": "node scripts/import-foodkeeper.ts",
+    "build:pack": "node scripts/build-pack.ts"
   },
   "devDependencies": {
     "@types/node": "24.19.2",

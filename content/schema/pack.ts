@@ -1,0 +1,21 @@
+// Knowledge pack format (docs/ARCHITECTURE.md §2–3, D-007).
+// The app depends on this format only, not on how the pack was produced.
+
+import type { Lang } from './storage.ts';
+
+// Bump when the SQLite schema changes in a way the app must know about.
+export const PACK_SCHEMA_VERSION = 1;
+
+export interface PackManifest {
+  packId: string;                 // e.g. 'core'
+  version: string;
+  schemaVersion: number;
+  createdAt: string;              // ISO 8601
+  file: string;                   // database file name next to the manifest
+  sizeBytes: number;
+  sha256: string;
+  dependencies: { packId: string; minVersion: string }[];
+  languages: Lang[];
+  counts: { guides: number; storageItems: number; sources: number };
+  sources: { id: string; license: string; dataVersion?: string }[];
+}

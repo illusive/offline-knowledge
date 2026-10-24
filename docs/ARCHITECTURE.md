@@ -127,9 +127,22 @@ app/
 
 ## 5. Search
 
-- SQLite FTS5 over title, summary, tags and block text, per language.
-- Tokenizer `unicode61`. Treatment of æ/ø/å and diacritics must be tested with real Danish queries; Danish stemming is an open question.
-- Search runs fully on-device.
+- Search runs fully on-device against the prebuilt FTS5 index in the pack.
+- **Storage names (implemented, D-018):** table `storage_search`, one row per item per language (name, subtitle, English keywords), tokenizer `trigram remove_diacritics 1`. Verified: 'kål' finds Grønkål/Blomkål/Rosenkål/Kålrabi, 'kal' finds 'kål', 'potato' finds Kartofler. 'ø' and 'æ' are separate letters and are not folded.
+- Queries under 3 characters return nothing from a trigram index; the app falls back to a prefix match on names.
+- Ranking: plain `bm25` ranks 'Grønkål' above 'Kål' for 'kål'. The app should rank exact and prefix name matches first.
+- **Guides (not built yet):** title, summary, tags and block text. Choose between trigram and `unicode61` when guide text exists; test with real Danish queries.
+
+## 5a. Pack schema (version 1)
+
+Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
+
+- `meta` (packId, version, schemaVersion, createdAt)
+- `sources`: id, title, publisher, url, lang, license, licence URL, attribution, retrieval date, data version. Only sources the pack uses.
+- `storage_items`, `storage_periods`, `storage_notes`: one row per item / period / note, with source field names kept for traceability.
+- `storage_search`: FTS5 index (see §5).
+
+Build: `cd content && npm run build:pack`. Output goes to `content/dist/core/` (not committed). Pack version = `content/package.json` version.
 
 ## 6. Offline guarantees
 

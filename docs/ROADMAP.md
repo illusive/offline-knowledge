@@ -15,7 +15,8 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] Food storage import (D-014, D-017): the 101 fresh fruits and vegetables from FoodKeeper (version 128, 2018-09-06) are imported into `content/storage/foodkeeper-produce.json`; tested and cross-checked against the source.
 - [x] Danish names checked: all 101 approved by the project owner (2026-10-24).
 - [ ] Decide the guide file format (Markdown + front matter or JSON) together with the pipeline's dependencies.
-- `validate` and `build-pack` scripts producing `pack.sqlite` + `manifest.json`.
+- [x] Pack build (D-018): `npm run build:pack` validates, then writes `pack.sqlite` + `manifest.json` (currently 101 storage items, about 150 KB).
+- [ ] Guides in the pack (after the guide format is decided).
 - Minimal Expo app: category list, guide reader (steps, warnings, checklists, sources), local search.
 - Verify the production build on an iPhone in airplane mode from a fresh install.
 

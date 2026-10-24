@@ -111,6 +111,14 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Decision:** The import keeps every storage time and every tip from the source. Times counted "from date of purchase" (`DOP_*` columns) and times without a stated starting point are kept apart (`basis: 'fromPurchase' | 'unspecified'`). Tips are stored as notes on a location, because the source attaches them to pantry/fridge/freezer in general and sometimes gives a note with no time (e.g. herbs: "Freeze damage will appear."). Unknown units or inconsistent values stop the import.
 - **Rationale:** Faithful to the source (D-006 applies to data too), and a later data update cannot silently change meaning.
 
+## D-018 — Pack build with node:sqlite; trigram search for storage names
+
+- **Date:** 2026-10-24
+- **Decision:** `npm run build:pack` builds `content/dist/core/pack.sqlite` and `manifest.json` with Node's built-in `node:sqlite` (SQLite 3.53.1 in Node 24.18), so the pipeline still has no runtime dependencies. The full-text index for storage names uses FTS5 `trigram remove_diacritics 1`. The build validates first and writes nothing if any source is not cleared, a Danish name is unchecked, a snapshot does not match the registry, or an item has no data. It ends with `PRAGMA integrity_check`, and the manifest records size and SHA-256.
+- **Rationale:** Trigram matching handles Danish compound words ('kål' finds Grønkål, Blomkål, Rosenkål), and diacritic folding lets 'kal' find 'kål'. A prebuilt index means the app only reads.
+- **Alternatives:** `unicode61` word tokenizer (misses compound words: 'kål' does not find 'Hvidkål'); a third-party SQLite library (adds a dependency).
+- **Constraints:** Trigram queries need at least 3 characters, so the app needs a prefix fallback for 1–2 characters. The device's SQLite must support FTS5 trigram with `remove_diacritics` (SQLite ≥ 3.45). Verify this in the Expo app before relying on it.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

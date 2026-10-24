@@ -7,7 +7,14 @@ import { join } from 'node:path';
 export interface RegistrySource {
   id: string;
   status: 'cleared' | 'needs-review' | 'request-needed' | 'requested' | 'excluded';
+  title: string;
+  publisher: string;
+  url: string;
+  lang: 'da' | 'en';
   license: string;
+  licenseUrl?: string;
+  attribution: string;
+  retrievedAt: string | null;
   snapshot: string | null;
   snapshotSha256: string | null;
   dataVersion?: string;
@@ -15,9 +22,13 @@ export interface RegistrySource {
 
 export const SOURCES_DIR = new URL('../sources/', import.meta.url).pathname;
 
-export async function loadSource(id: string): Promise<RegistrySource> {
+export async function loadRegistry(): Promise<RegistrySource[]> {
   const registry = JSON.parse(await readFile(join(SOURCES_DIR, 'registry.json'), 'utf8')) as { sources: RegistrySource[] };
-  const source = registry.sources.find((s) => s.id === id);
+  return registry.sources;
+}
+
+export async function loadSource(id: string): Promise<RegistrySource> {
+  const source = (await loadRegistry()).find((s) => s.id === id);
   if (!source) throw new Error(`Source not in registry: ${id}`);
   return source;
 }
