@@ -1,0 +1,533 @@
+{
+  "$comment": "Danish names for FoodKeeper produce items, keyed by FoodKeeper Product ID (D-015). 'en' is the source name for reference; the import fails if it does not match. Drafted 2026-10-24 by an AI assistant: every entry stays checked=false until a person has confirmed the Danish name means the same food. Translate the meaning; do not add or drop foods. Review: all 101 names approved by the project owner on 2026-10-24 (confirmed: 'Cabbage' = 'Kål'; 'Hvidkål' would be white cabbage).",
+  "names": {
+    "248": {
+      "en": "Apples",
+      "name": "Æbler",
+      "checked": true
+    },
+    "249": {
+      "en": "Apricots",
+      "name": "Abrikoser",
+      "checked": true
+    },
+    "250": {
+      "en": "Avocados",
+      "name": "Avocadoer",
+      "checked": true
+    },
+    "251": {
+      "en": "Bananas",
+      "name": "Bananer",
+      "checked": true
+    },
+    "252": {
+      "en": "Berries (cherries, goose berries, lychee)",
+      "name": "Bær",
+      "subtitle": "kirsebær, stikkelsbær, litchi",
+      "checked": true
+    },
+    "253": {
+      "en": "Berries (blackberries, boysenberries, currant)",
+      "name": "Bær",
+      "subtitle": "brombær, boysenbær, ribs",
+      "checked": true
+    },
+    "254": {
+      "en": "Blueberries",
+      "name": "Blåbær",
+      "checked": true
+    },
+    "255": {
+      "en": "Cherimoya",
+      "name": "Cherimoya",
+      "checked": true
+    },
+    "256": {
+      "en": "Citrus fruit (lemon, lime, orange, grapefruit, tangerines, clementines)",
+      "name": "Citrusfrugter",
+      "subtitle": "citron, lime, appelsin, grapefrugt, mandariner, klementiner",
+      "checked": true
+    },
+    "257": {
+      "en": "Coconut (shredded)",
+      "name": "Kokos",
+      "subtitle": "revet",
+      "checked": true
+    },
+    "258": {
+      "en": "Coconuts (fresh)",
+      "name": "Kokosnødder",
+      "subtitle": "friske",
+      "checked": true
+    },
+    "259": {
+      "en": "Cranberries",
+      "name": "Tranebær",
+      "checked": true
+    },
+    "260": {
+      "en": "Dates",
+      "name": "Dadler",
+      "checked": true
+    },
+    "261": {
+      "en": "Grapes",
+      "name": "Vindruer",
+      "checked": true
+    },
+    "262": {
+      "en": "Guava",
+      "name": "Guava",
+      "checked": true
+    },
+    "263": {
+      "en": "Kiwi fruit",
+      "name": "Kiwi",
+      "checked": true
+    },
+    "264": {
+      "en": "Melons",
+      "name": "Meloner",
+      "checked": true
+    },
+    "265": {
+      "en": "Papaya, mango, feijoa, passionfruit, casaha melon",
+      "name": "Papaya, mango, feijoa, passionsfrugt, casabamelon",
+      "checked": true
+    },
+    "266": {
+      "en": "Peaches, nectarines, plums, pears, sapote",
+      "name": "Ferskner, nektariner, blommer, pærer, sapote",
+      "checked": true
+    },
+    "267": {
+      "en": "Pineapple",
+      "name": "Ananas",
+      "checked": true
+    },
+    "268": {
+      "en": "Plantains",
+      "name": "Madbananer (plantains)",
+      "checked": true
+    },
+    "269": {
+      "en": "Pomegranate",
+      "name": "Granatæble",
+      "checked": true
+    },
+    "270": {
+      "en": "Artichokes, whole",
+      "name": "Artiskokker, hele",
+      "checked": true
+    },
+    "271": {
+      "en": "Asparagus",
+      "name": "Asparges",
+      "checked": true
+    },
+    "272": {
+      "en": "Bamboo shoots",
+      "name": "Bambusskud",
+      "checked": true
+    },
+    "273": {
+      "en": "Beans and peas (green, fava, lima, soybean, wax, snow, sugar snap)",
+      "name": "Bønner og ærter",
+      "subtitle": "grønne bønner, hestebønner, limabønner, sojabønner, voksbønner, sukkerærter, sugarsnaps",
+      "checked": true
+    },
+    "274": {
+      "en": "Beets",
+      "name": "Rødbeder",
+      "checked": true
+    },
+    "275": {
+      "en": "Bok choy",
+      "name": "Pak choi",
+      "checked": true
+    },
+    "276": {
+      "en": "Broccoli and broccoli raab (rapini)",
+      "name": "Broccoli og broccoli rabe (rapini)",
+      "checked": true
+    },
+    "277": {
+      "en": "Brussels sprouts",
+      "name": "Rosenkål",
+      "checked": true
+    },
+    "278": {
+      "en": "Cabbage",
+      "name": "Kål",
+      "checked": true
+    },
+    "279": {
+      "en": "Carrots, parsnips",
+      "name": "Gulerødder, pastinakker",
+      "checked": true
+    },
+    "280": {
+      "en": "Cauliflower",
+      "name": "Blomkål",
+      "checked": true
+    },
+    "281": {
+      "en": "Celery",
+      "name": "Bladselleri",
+      "checked": true
+    },
+    "282": {
+      "en": "Corn on the cob",
+      "name": "Majskolber",
+      "checked": true
+    },
+    "283": {
+      "en": "Cucumbers",
+      "name": "Agurker",
+      "checked": true
+    },
+    "284": {
+      "en": "Eggplant",
+      "name": "Aubergine",
+      "checked": true
+    },
+    "285": {
+      "en": "Garlic",
+      "name": "Hvidløg",
+      "checked": true
+    },
+    "286": {
+      "en": "Ginger root",
+      "name": "Ingefær",
+      "checked": true
+    },
+    "287": {
+      "en": "Greens",
+      "name": "Bladgrønt",
+      "checked": true
+    },
+    "288": {
+      "en": "Herbs",
+      "name": "Krydderurter",
+      "checked": true
+    },
+    "289": {
+      "en": "Leeks",
+      "name": "Porrer",
+      "checked": true
+    },
+    "290": {
+      "en": "Lettuce (iceberg, romaine)",
+      "name": "Salat",
+      "subtitle": "icebergsalat, romainesalat",
+      "checked": true
+    },
+    "291": {
+      "en": "Lettuce (leaf, spinach)",
+      "name": "Salat",
+      "subtitle": "bladsalat, spinat",
+      "checked": true
+    },
+    "292": {
+      "en": "Mushrooms",
+      "name": "Svampe",
+      "checked": true
+    },
+    "293": {
+      "en": "Okra",
+      "name": "Okra",
+      "checked": true
+    },
+    "294": {
+      "en": "Onions (yellow, white, red, etc.)",
+      "name": "Løg",
+      "subtitle": "gule, hvide, røde m.fl.",
+      "checked": true
+    },
+    "295": {
+      "en": "Onions (spring or green)",
+      "name": "Løg",
+      "subtitle": "forårsløg",
+      "checked": true
+    },
+    "296": {
+      "en": "Peppers",
+      "name": "Peberfrugter",
+      "checked": true
+    },
+    "297": {
+      "en": "Potatoes",
+      "name": "Kartofler",
+      "checked": true
+    },
+    "298": {
+      "en": "Pumpkins",
+      "name": "Græskar",
+      "checked": true
+    },
+    "299": {
+      "en": "Radishes",
+      "name": "Radiser",
+      "checked": true
+    },
+    "300": {
+      "en": "Rhubarb",
+      "name": "Rabarber",
+      "checked": true
+    },
+    "301": {
+      "en": "Rutabagas",
+      "name": "Kålroer",
+      "checked": true
+    },
+    "302": {
+      "en": "Squash (summer and zucchini)",
+      "name": "Squash",
+      "subtitle": "sommersquash og courgette",
+      "checked": true
+    },
+    "303": {
+      "en": "Squash (winter)",
+      "name": "Squash",
+      "subtitle": "vintersquash",
+      "checked": true
+    },
+    "304": {
+      "en": "Tamarind",
+      "name": "Tamarind",
+      "checked": true
+    },
+    "305": {
+      "en": "Taro",
+      "name": "Taro",
+      "checked": true
+    },
+    "306": {
+      "en": "Tomatoes",
+      "name": "Tomater",
+      "checked": true
+    },
+    "307": {
+      "en": "Turnips",
+      "name": "Majroer",
+      "checked": true
+    },
+    "308": {
+      "en": "Yuca/cassava",
+      "name": "Maniok (yuca/cassava)",
+      "checked": true
+    },
+    "414": {
+      "en": "Kumquats",
+      "name": "Kumquats",
+      "checked": true
+    },
+    "415": {
+      "en": "Bagged greens (leaf, spinach, lettuce, etc.)",
+      "name": "Salat i pose",
+      "subtitle": "bladsalat, spinat, salat m.m.",
+      "checked": true
+    },
+    "422": {
+      "en": "Yams/sweet potatoes",
+      "name": "Søde kartofler / yams",
+      "checked": true
+    },
+    "423": {
+      "en": "Kale",
+      "name": "Grønkål",
+      "checked": true
+    },
+    "478": {
+      "en": "Star fruit",
+      "name": "Stjernefrugt",
+      "checked": true
+    },
+    "479": {
+      "en": "Prickly pear",
+      "name": "Kaktusfigen",
+      "checked": true
+    },
+    "480": {
+      "en": "Pitaya/dragon fruit",
+      "name": "Pitaya / dragefrugt",
+      "checked": true
+    },
+    "481": {
+      "en": "Strawberries",
+      "name": "Jordbær",
+      "checked": true
+    },
+    "482": {
+      "en": "Raspberries",
+      "name": "Hindbær",
+      "checked": true
+    },
+    "483": {
+      "en": "Cherries",
+      "name": "Kirsebær",
+      "checked": true
+    },
+    "491": {
+      "en": "Baby carrots",
+      "name": "Babygulerødder",
+      "checked": true
+    },
+    "492": {
+      "en": "Jicama (fresh)",
+      "name": "Jicama",
+      "subtitle": "frisk",
+      "checked": true
+    },
+    "493": {
+      "en": "Kimchi",
+      "name": "Kimchi",
+      "checked": true
+    },
+    "494": {
+      "en": "Kohlrabi",
+      "name": "Kålrabi",
+      "checked": true
+    },
+    "495": {
+      "en": "Watermelon",
+      "name": "Vandmelon",
+      "checked": true
+    },
+    "496": {
+      "en": "Cantaloupe",
+      "name": "Cantaloupemelon",
+      "checked": true
+    },
+    "497": {
+      "en": "Honeydew",
+      "name": "Honningmelon",
+      "checked": true
+    },
+    "505": {
+      "en": "Lemongrass",
+      "name": "Citrongræs",
+      "checked": true
+    },
+    "506": {
+      "en": "Cilantro",
+      "name": "Koriander",
+      "checked": true
+    },
+    "507": {
+      "en": "Mint",
+      "name": "Mynte",
+      "checked": true
+    },
+    "508": {
+      "en": "Basil (dried)",
+      "name": "Basilikum",
+      "subtitle": "tørret",
+      "checked": true
+    },
+    "509": {
+      "en": "Basil (fresh)",
+      "name": "Basilikum",
+      "subtitle": "frisk",
+      "checked": true
+    },
+    "510": {
+      "en": "Oregano",
+      "name": "Oregano",
+      "checked": true
+    },
+    "511": {
+      "en": "Rosemary",
+      "name": "Rosmarin",
+      "checked": true
+    },
+    "512": {
+      "en": "Chives",
+      "name": "Purløg",
+      "checked": true
+    },
+    "513": {
+      "en": "Thyme",
+      "name": "Timian",
+      "checked": true
+    },
+    "547": {
+      "en": "Zucchini (fresh, whole)",
+      "name": "Courgette",
+      "subtitle": "frisk, hel",
+      "checked": true
+    },
+    "548": {
+      "en": "Hot peppers",
+      "name": "Chilipeber",
+      "checked": true
+    },
+    "549": {
+      "en": "Bean sprouts",
+      "name": "Bønnespirer",
+      "checked": true
+    },
+    "550": {
+      "en": "Swiss chard",
+      "name": "Bladbede",
+      "checked": true
+    },
+    "562": {
+      "en": "Applesauce (homemade)",
+      "name": "Æblemos",
+      "subtitle": "hjemmelavet",
+      "checked": true
+    },
+    "570": {
+      "en": "Marinated vegetables (in oil)",
+      "name": "Marinerede grøntsager",
+      "subtitle": "i olie",
+      "checked": true
+    },
+    "596": {
+      "en": "Spaghetti squash (whole)",
+      "name": "Spaghettisquash",
+      "subtitle": "hel",
+      "checked": true
+    },
+    "597": {
+      "en": "Spaghetti squash (cut)",
+      "name": "Spaghettisquash",
+      "subtitle": "skåret",
+      "checked": true
+    },
+    "600": {
+      "en": "Cherry tomatoes",
+      "name": "Cherrytomater",
+      "checked": true
+    },
+    "611": {
+      "en": "Parsley (fresh)",
+      "name": "Persille",
+      "subtitle": "frisk",
+      "checked": true
+    },
+    "640": {
+      "en": "Edamame (fresh)",
+      "name": "Edamamebønner",
+      "subtitle": "friske",
+      "checked": true
+    },
+    "661": {
+      "en": "Celery root",
+      "name": "Knoldselleri",
+      "checked": true
+    },
+    "674": {
+      "en": "Radicchio",
+      "name": "Radicchio",
+      "checked": true
+    },
+    "678": {
+      "en": "Arugula",
+      "name": "Rucola",
+      "checked": true
+    }
+  }
+}

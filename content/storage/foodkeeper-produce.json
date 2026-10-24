@@ -1,0 +1,5396 @@
+{
+  "sourceId": "us-fsis-foodkeeper",
+  "sourceDataVersion": "128 (09-06-2018)",
+  "generatedFrom": {
+    "snapshot": "snapshots/us-fsis-foodkeeper-en.json",
+    "sha256": "037df0d301126acd8a48824506f04d49d8be1a1144b81fa69e4170228dc2e91a"
+  },
+  "items": [
+    {
+      "id": "foodkeeper-248",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Apples"
+        },
+        "da": {
+          "name": "Æbler",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Apples",
+        "apple"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 6,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 8,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freezing guidance applies to cooked product.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "248"
+      }
+    },
+    {
+      "id": "foodkeeper-249",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Apricots"
+        },
+        "da": {
+          "name": "Abrikoser",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Apricots",
+        "Apricot"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "249"
+      }
+    },
+    {
+      "id": "foodkeeper-250",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Avocados"
+        },
+        "da": {
+          "name": "Avocadoer",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Avocados",
+        "Avocado"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "250"
+      }
+    },
+    {
+      "id": "foodkeeper-251",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Bananas"
+        },
+        "da": {
+          "name": "Bananer",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Bananas",
+        "banana"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 3,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit; skin will blacken.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "251"
+      }
+    },
+    {
+      "id": "foodkeeper-252",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Berries",
+          "subtitle": "cherries, goose berries, lychee"
+        },
+        "da": {
+          "name": "Bær",
+          "subtitle": "kirsebær, stikkelsbær, litchi",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Berries",
+        "berry",
+        "cherries",
+        "cherry",
+        "goose berries",
+        "goose berry",
+        "lychee",
+        "gooseberries"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 7,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 12,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "252"
+      }
+    },
+    {
+      "id": "foodkeeper-253",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Berries",
+          "subtitle": "blackberries, boysenberries, currant"
+        },
+        "da": {
+          "name": "Bær",
+          "subtitle": "brombær, boysenbær, ribs",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Berries",
+        "berry",
+        "blackberries",
+        "blackberry",
+        "boysenberries",
+        "boysenberry",
+        "currant"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 6,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 12,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "253"
+      }
+    },
+    {
+      "id": "foodkeeper-254",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Blueberries"
+        },
+        "da": {
+          "name": "Blåbær",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Blueberries",
+        "blueberry",
+        "berries",
+        "berry"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "254"
+      }
+    },
+    {
+      "id": "foodkeeper-255",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Cherimoya"
+        },
+        "da": {
+          "name": "Cherimoya",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Cherimoya"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "255"
+      }
+    },
+    {
+      "id": "foodkeeper-256",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Citrus fruit",
+          "subtitle": "lemon, lime, orange, grapefruit, tangerines, clementines"
+        },
+        "da": {
+          "name": "Citrusfrugter",
+          "subtitle": "citron, lime, appelsin, grapefrugt, mandariner, klementiner",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Citrus fruit",
+        "fruit",
+        "citrus",
+        "lemon",
+        "lime",
+        "orange",
+        "grape",
+        "grapefruit",
+        "tangerines",
+        "tangerine",
+        "clementines",
+        "clementine"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 10,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 21,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "256"
+      }
+    },
+    {
+      "id": "foodkeeper-257",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Coconut",
+          "subtitle": "shredded"
+        },
+        "da": {
+          "name": "Kokos",
+          "subtitle": "revet",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Coconut",
+        "shredded"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "years"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "afterOpening",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 8,
+            "unit": "months"
+          },
+          "sourceField": "Refrigerate_After_Opening"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "years"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Applies to unopened coconut.",
+          "sourceField": "Pantry_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "257"
+      }
+    },
+    {
+      "id": "foodkeeper-258",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Coconuts",
+          "subtitle": "fresh"
+        },
+        "da": {
+          "name": "Kokosnødder",
+          "subtitle": "friske",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Coconuts",
+        "Coconut",
+        "fresh"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "258"
+      }
+    },
+    {
+      "id": "foodkeeper-259",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Cranberries"
+        },
+        "da": {
+          "name": "Tranebær",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Cranberries",
+        "cranberry"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 12,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "259"
+      }
+    },
+    {
+      "id": "foodkeeper-260",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Dates"
+        },
+        "da": {
+          "name": "Dadler",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Dates"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 12,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "years"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "260"
+      }
+    },
+    {
+      "id": "foodkeeper-261",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Grapes"
+        },
+        "da": {
+          "name": "Vindruer",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Grapes",
+        "grape"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freezing guidance applies to whole grapes.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "261"
+      }
+    },
+    {
+      "id": "foodkeeper-262",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Guava"
+        },
+        "da": {
+          "name": "Guava",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Guava"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Ripe is when this item is tender, fully developed and ready to eat. Note, these spoil quickly.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "262"
+      }
+    },
+    {
+      "id": "foodkeeper-263",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Kiwi fruit"
+        },
+        "da": {
+          "name": "Kiwi",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Kiwi fruit",
+        "kiwi",
+        "fruit"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 6,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "263"
+      }
+    },
+    {
+      "id": "foodkeeper-264",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Melons"
+        },
+        "da": {
+          "name": "Meloner",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Melons",
+        "melon"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "fridge",
+          "basis": "afterOpening",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate_After_Opening"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freezing guidance applies to balled melon.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "264"
+      }
+    },
+    {
+      "id": "foodkeeper-265",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Papaya, mango, feijoa, passionfruit, casaha melon"
+        },
+        "da": {
+          "name": "Papaya, mango, feijoa, passionsfrugt, casabamelon",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Papaya",
+        "mango",
+        "feijoa",
+        "passionfruit",
+        "casaha melon",
+        "melon",
+        "fruit",
+        "passion"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 6,
+            "max": 8,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "265"
+      }
+    },
+    {
+      "id": "foodkeeper-266",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Peaches, nectarines, plums, pears, sapote"
+        },
+        "da": {
+          "name": "Ferskner, nektariner, blommer, pærer, sapote",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Peaches",
+        "nectarines",
+        "plums",
+        "pears",
+        "sapote",
+        "peach",
+        "nectarine",
+        "plum",
+        "pear"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Until Ripe, then 1-2 days. Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit.",
+          "sourceField": "Refrigerate_tips"
+        },
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freezing guidance applies to product when sliced, with lemon juice and sugar.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "266"
+      }
+    },
+    {
+      "id": "foodkeeper-267",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Pineapple"
+        },
+        "da": {
+          "name": "Ananas",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Pineapple"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 5,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Until Ripe, then 1-2 days. Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "267"
+      }
+    },
+    {
+      "id": "foodkeeper-268",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Plantains"
+        },
+        "da": {
+          "name": "Madbananer (plantains)",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Plantains",
+        "plantain"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Until Ripe, then 1-2 days. Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "268"
+      }
+    },
+    {
+      "id": "foodkeeper-269",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Pomegranate"
+        },
+        "da": {
+          "name": "Granatæble",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Pomegranate"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 3,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "269"
+      }
+    },
+    {
+      "id": "foodkeeper-270",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Artichokes, whole"
+        },
+        "da": {
+          "name": "Artiskokker, hele",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Artichokes",
+        "artichoke",
+        "whole"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "270"
+      }
+    },
+    {
+      "id": "foodkeeper-271",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Asparagus"
+        },
+        "da": {
+          "name": "Asparges",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Asparagus"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 5,
+            "max": 5,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "271"
+      }
+    },
+    {
+      "id": "foodkeeper-272",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Bamboo shoots"
+        },
+        "da": {
+          "name": "Bambusskud",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Bamboo shoots",
+        "bamboo",
+        "shoots",
+        "shoot"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "fridge",
+          "basis": "afterOpening",
+          "duration": {
+            "kind": "range",
+            "min": 5,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate_After_Opening"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "272"
+      }
+    },
+    {
+      "id": "foodkeeper-273",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Beans and peas",
+          "subtitle": "green, fava, lima, soybean, wax, snow, sugar snap"
+        },
+        "da": {
+          "name": "Bønner og ærter",
+          "subtitle": "grønne bønner, hestebønner, limabønner, sojabønner, voksbønner, sukkerærter, sugarsnaps",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Beans",
+        "peas",
+        "green",
+        "fava",
+        "lima",
+        "soybean",
+        "wax",
+        "snow",
+        "sugar snap",
+        "sugar",
+        "pea",
+        "soya"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 8,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "273"
+      }
+    },
+    {
+      "id": "foodkeeper-274",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Beets"
+        },
+        "da": {
+          "name": "Rødbeder",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Beets"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 6,
+            "max": 8,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "274"
+      }
+    },
+    {
+      "id": "foodkeeper-275",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Bok choy"
+        },
+        "da": {
+          "name": "Pak choi",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Bok choy"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "275"
+      }
+    },
+    {
+      "id": "foodkeeper-276",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Broccoli and broccoli raab (rapini)"
+        },
+        "da": {
+          "name": "Broccoli og broccoli rabe (rapini)",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Broccoli",
+        "broccoli raab",
+        "rapini",
+        "raab"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "276"
+      }
+    },
+    {
+      "id": "foodkeeper-277",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Brussels sprouts"
+        },
+        "da": {
+          "name": "Rosenkål",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Brussels sprouts",
+        "brussels",
+        "sprouts",
+        "sprout",
+        "brussel"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "277"
+      }
+    },
+    {
+      "id": "foodkeeper-278",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Cabbage"
+        },
+        "da": {
+          "name": "Kål",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Cabbage"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "278"
+      }
+    },
+    {
+      "id": "foodkeeper-279",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Carrots, parsnips"
+        },
+        "da": {
+          "name": "Gulerødder, pastinakker",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Carrots",
+        "parsnips",
+        "carrot",
+        "parsnip"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "279"
+      }
+    },
+    {
+      "id": "foodkeeper-280",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Cauliflower"
+        },
+        "da": {
+          "name": "Blomkål",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Cauliflower"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "280"
+      }
+    },
+    {
+      "id": "foodkeeper-281",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Celery"
+        },
+        "da": {
+          "name": "Bladselleri",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Celery"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "281"
+      }
+    },
+    {
+      "id": "foodkeeper-282",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Corn on the cob"
+        },
+        "da": {
+          "name": "Majskolber",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Corn",
+        "cob"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 8,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "282"
+      }
+    },
+    {
+      "id": "foodkeeper-283",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Cucumbers"
+        },
+        "da": {
+          "name": "Agurker",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Cucumbers",
+        "cucumber"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 6,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "283"
+      }
+    },
+    {
+      "id": "foodkeeper-284",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Eggplant"
+        },
+        "da": {
+          "name": "Aubergine",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Eggplant",
+        "egg"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 6,
+            "max": 8,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "284"
+      }
+    },
+    {
+      "id": "foodkeeper-285",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Garlic"
+        },
+        "da": {
+          "name": "Hvidløg",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Garlic"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 14,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Store unbroken bulbs in pantry.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Store individual cloves in refrigerator.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "285"
+      }
+    },
+    {
+      "id": "foodkeeper-286",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Ginger root"
+        },
+        "da": {
+          "name": "Ingefær",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Ginger root",
+        "ginger",
+        "root"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 6,
+            "max": 6,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "286"
+      }
+    },
+    {
+      "id": "foodkeeper-287",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Greens"
+        },
+        "da": {
+          "name": "Bladgrønt",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Greens",
+        "green"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "287"
+      }
+    },
+    {
+      "id": "foodkeeper-288",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Herbs"
+        },
+        "da": {
+          "name": "Krydderurter",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Herbs",
+        "herb"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 7,
+            "max": 10,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "288"
+      }
+    },
+    {
+      "id": "foodkeeper-289",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Leeks"
+        },
+        "da": {
+          "name": "Porrer",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Leeks",
+        "leek"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "289"
+      }
+    },
+    {
+      "id": "foodkeeper-290",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Lettuce",
+          "subtitle": "iceberg, romaine"
+        },
+        "da": {
+          "name": "Salat",
+          "subtitle": "icebergsalat, romainesalat",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Lettuce",
+        "iceberg",
+        "romaine"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "290"
+      }
+    },
+    {
+      "id": "foodkeeper-291",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Lettuce",
+          "subtitle": "leaf, spinach"
+        },
+        "da": {
+          "name": "Salat",
+          "subtitle": "bladsalat, spinat",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Lettuce",
+        "leaf",
+        "spinach"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "291"
+      }
+    },
+    {
+      "id": "foodkeeper-292",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Mushrooms"
+        },
+        "da": {
+          "name": "Svampe",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Mushroom",
+        "mushrooms"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "292"
+      }
+    },
+    {
+      "id": "foodkeeper-293",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Okra"
+        },
+        "da": {
+          "name": "Okra",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Okra"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Highly perishable when stored in the pantry.",
+          "sourceField": "Pantry_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "293"
+      }
+    },
+    {
+      "id": "foodkeeper-294",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Onions",
+          "subtitle": "yellow, white, red, etc."
+        },
+        "da": {
+          "name": "Løg",
+          "subtitle": "gule, hvide, røde m.fl.",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Onions",
+        "yellow",
+        "white",
+        "red",
+        "onion"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "294"
+      }
+    },
+    {
+      "id": "foodkeeper-295",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Onions",
+          "subtitle": "spring or green"
+        },
+        "da": {
+          "name": "Løg",
+          "subtitle": "forårsløg",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Onions",
+        "spring",
+        "green",
+        "onion"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "295"
+      }
+    },
+    {
+      "id": "foodkeeper-296",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Peppers"
+        },
+        "da": {
+          "name": "Peberfrugter",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Peppers",
+        "pepper"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 14,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 6,
+            "max": 8,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "296"
+      }
+    },
+    {
+      "id": "foodkeeper-297",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Potatoes"
+        },
+        "da": {
+          "name": "Kartofler",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Potatoes",
+        "potato"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "This is the recommended storage method for whole potatoes.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "The United States Potato Board notes refrigeration can cause potatoes to darken during cooking and to develop an unpleasantly sweet taste.",
+          "sourceField": "Refrigerate_tips"
+        },
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freezer timeline applies to cooked and mashed potatoes.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "297"
+      }
+    },
+    {
+      "id": "foodkeeper-298",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Pumpkins"
+        },
+        "da": {
+          "name": "Græskar",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Pumpkins",
+        "pumpkin"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "298"
+      }
+    },
+    {
+      "id": "foodkeeper-299",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Radishes"
+        },
+        "da": {
+          "name": "Radiser",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Radishes",
+        "radish"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 14,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "299"
+      }
+    },
+    {
+      "id": "foodkeeper-300",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Rhubarb"
+        },
+        "da": {
+          "name": "Rabarber",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Rhubarb"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "300"
+      }
+    },
+    {
+      "id": "foodkeeper-301",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Rutabagas"
+        },
+        "da": {
+          "name": "Kålroer",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Rutabagas"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 10,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "301"
+      }
+    },
+    {
+      "id": "foodkeeper-302",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Squash",
+          "subtitle": "summer and zucchini"
+        },
+        "da": {
+          "name": "Squash",
+          "subtitle": "sommersquash og courgette",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Squash",
+        "summer",
+        "zucchini"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "302"
+      }
+    },
+    {
+      "id": "foodkeeper-303",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Squash",
+          "subtitle": "winter"
+        },
+        "da": {
+          "name": "Squash",
+          "subtitle": "vintersquash",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Squash",
+        "winter"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 6,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 3,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "303"
+      }
+    },
+    {
+      "id": "foodkeeper-304",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Tamarind"
+        },
+        "da": {
+          "name": "Tamarind",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Tamarind"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 6,
+            "max": 6,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "years"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Refrigeration guidelines apply to just the pulp.",
+          "sourceField": "Refrigerate_tips"
+        },
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freezing guidelines apply to just the pulp.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "304"
+      }
+    },
+    {
+      "id": "foodkeeper-305",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Taro"
+        },
+        "da": {
+          "name": "Taro",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Taro"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 7,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Refrigeration not recommended.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "305"
+      }
+    },
+    {
+      "id": "foodkeeper-306",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Tomatoes"
+        },
+        "da": {
+          "name": "Tomater",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Tomatoes",
+        "tomato"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat. Refrigeration may affect flavor; USDA recommends pantry storage.",
+          "sourceField": "Pantry_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "306"
+      }
+    },
+    {
+      "id": "foodkeeper-307",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Turnips"
+        },
+        "da": {
+          "name": "Majroer",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Turnips",
+        "turnip"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 10,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "307"
+      }
+    },
+    {
+      "id": "foodkeeper-308",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Yuca/cassava"
+        },
+        "da": {
+          "name": "Maniok (yuca/cassava)",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Yuca",
+        "cassava"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 7,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 3,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "308"
+      }
+    },
+    {
+      "id": "foodkeeper-414",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Kumquats"
+        },
+        "da": {
+          "name": "Kumquats",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Kumquats"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "untilRipe"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Timeline for refrigerator applies to ripe fruit.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "414"
+      }
+    },
+    {
+      "id": "foodkeeper-415",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Bagged greens",
+          "subtitle": "leaf, spinach, lettuce, etc."
+        },
+        "da": {
+          "name": "Salat i pose",
+          "subtitle": "bladsalat, spinat, salat m.m.",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Bagged greens",
+        "leaf",
+        "spinach",
+        "lettuce",
+        "bagged",
+        "greens",
+        "green"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "fridge",
+          "basis": "afterOpening",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate_After_Opening"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "notRecommended"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Unopened product will last 3 - 5 days after date on bag; after opening it will last 2 days.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "415"
+      }
+    },
+    {
+      "id": "foodkeeper-422",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Yams/sweet potatoes"
+        },
+        "da": {
+          "name": "Søde kartofler / yams",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Yams",
+        "sweet potatoes",
+        "potatoes",
+        "potato",
+        "yam"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Pantry"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "422"
+      }
+    },
+    {
+      "id": "foodkeeper-423",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Kale"
+        },
+        "da": {
+          "name": "Grønkål",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Kale"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "423"
+      }
+    },
+    {
+      "id": "foodkeeper-478",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Star fruit"
+        },
+        "da": {
+          "name": "Stjernefrugt",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Star fruit",
+        "fruit",
+        "fruits"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Or until ripe. Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "478"
+      }
+    },
+    {
+      "id": "foodkeeper-479",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Prickly pear"
+        },
+        "da": {
+          "name": "Kaktusfigen",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Prickly pear",
+        "pear",
+        "pickle"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Or until ripe. Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "479"
+      }
+    },
+    {
+      "id": "foodkeeper-480",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Pitaya/dragon fruit"
+        },
+        "da": {
+          "name": "Pitaya / dragefrugt",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Pitaya",
+        "dragon fruit",
+        "fruit",
+        "fruits"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Or until ripe. Ripe is when this item is tender, fully developed and ready to eat.",
+          "sourceField": "Pantry_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "480"
+      }
+    },
+    {
+      "id": "foodkeeper-481",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Strawberries"
+        },
+        "da": {
+          "name": "Jordbær",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Strawberries",
+        "strawberry"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "481"
+      }
+    },
+    {
+      "id": "foodkeeper-482",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Raspberries"
+        },
+        "da": {
+          "name": "Hindbær",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Raspberries",
+        "raspberry"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "482"
+      }
+    },
+    {
+      "id": "foodkeeper-483",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Cherries"
+        },
+        "da": {
+          "name": "Kirsebær",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Cherries",
+        "cherry"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "483"
+      }
+    },
+    {
+      "id": "foodkeeper-491",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Baby carrots"
+        },
+        "da": {
+          "name": "Babygulerødder",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Baby carrots",
+        "carrot",
+        "baby carrot"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 4,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 3,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "below 75 °F",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Blanch before freezing.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "491"
+      }
+    },
+    {
+      "id": "foodkeeper-492",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Jicama",
+          "subtitle": "fresh"
+        },
+        "da": {
+          "name": "Jicama",
+          "subtitle": "frisk",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Jicama",
+        "fresh"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 4,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "1-2 weeks if inappropriately handled.",
+          "sourceField": "DOP_Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Free from moisture; chilling injury causes decay, discoloration or loss of texture may occur.",
+          "sourceField": "DOP_Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "492"
+      }
+    },
+    {
+      "id": "foodkeeper-493",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Kimchi"
+        },
+        "da": {
+          "name": "Kimchi",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Kimchi"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 6,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "493"
+      }
+    },
+    {
+      "id": "foodkeeper-494",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Kohlrabi"
+        },
+        "da": {
+          "name": "Kålrabi",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Kohlrabi"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "494"
+      }
+    },
+    {
+      "id": "foodkeeper-495",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Watermelon"
+        },
+        "da": {
+          "name": "Vandmelon",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Watermelon"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 12,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Or until ripe.",
+          "sourceField": "DOP_Pantry_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "495"
+      }
+    },
+    {
+      "id": "foodkeeper-496",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Cantaloupe"
+        },
+        "da": {
+          "name": "Cantaloupemelon",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Cantaloupe"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 5,
+            "max": 15,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 12,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Or until ripe.",
+          "sourceField": "DOP_Pantry_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "496"
+      }
+    },
+    {
+      "id": "foodkeeper-497",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Honeydew"
+        },
+        "da": {
+          "name": "Honningmelon",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Honeydew"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 12,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "497"
+      }
+    },
+    {
+      "id": "foodkeeper-505",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Lemongrass"
+        },
+        "da": {
+          "name": "Citrongræs",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Lemongrass"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 7,
+            "max": 9,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 6,
+            "max": 6,
+            "unit": "months"
+          },
+          "sourceField": "DOP_Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "505"
+      }
+    },
+    {
+      "id": "foodkeeper-506",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Cilantro"
+        },
+        "da": {
+          "name": "Koriander",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Cilantro"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freeze damage will appear.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "506"
+      }
+    },
+    {
+      "id": "foodkeeper-507",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Mint"
+        },
+        "da": {
+          "name": "Mynte",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Mint"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freeze damage will appear.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "507"
+      }
+    },
+    {
+      "id": "foodkeeper-508",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Basil",
+          "subtitle": "dried"
+        },
+        "da": {
+          "name": "Basilikum",
+          "subtitle": "tørret",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Basil",
+        "dried"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 12,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Pantry"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "508"
+      }
+    },
+    {
+      "id": "foodkeeper-509",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Basil",
+          "subtitle": "fresh"
+        },
+        "da": {
+          "name": "Basilikum",
+          "subtitle": "frisk",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Basil",
+        "fresh"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 5,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 10,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "pantry",
+          "lang": "en",
+          "text": "Keep stems in water.",
+          "sourceField": "Pantry_tips"
+        },
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Will start to discolor.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "509"
+      }
+    },
+    {
+      "id": "foodkeeper-510",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Oregano"
+        },
+        "da": {
+          "name": "Oregano",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Oregano"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freeze damage will appear.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "510"
+      }
+    },
+    {
+      "id": "foodkeeper-511",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Rosemary"
+        },
+        "da": {
+          "name": "Rosmarin",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Rosemary"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freeze damage will appear.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "511"
+      }
+    },
+    {
+      "id": "foodkeeper-512",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Chives"
+        },
+        "da": {
+          "name": "Purløg",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Chives"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Freeze damage will appear.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "512"
+      }
+    },
+    {
+      "id": "foodkeeper-513",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Thyme"
+        },
+        "da": {
+          "name": "Timian",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Thyme"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "513"
+      }
+    },
+    {
+      "id": "foodkeeper-547",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Zucchini",
+          "subtitle": "fresh, whole"
+        },
+        "da": {
+          "name": "Courgette",
+          "subtitle": "frisk, hel",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Zucchini",
+        "fresh",
+        "whole"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 10,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "547"
+      }
+    },
+    {
+      "id": "foodkeeper-548",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Hot peppers"
+        },
+        "da": {
+          "name": "Chilipeber",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Hot peppers",
+        "pepper"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 9,
+            "max": 9,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Fresh whole peppers will last longer if kept dry.",
+          "sourceField": "DOP_Refrigerate_tips"
+        },
+        {
+          "location": "freezer",
+          "lang": "en",
+          "text": "Peppers lose their crispness when frozen and thawed.",
+          "sourceField": "Freeze_Tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "548"
+      }
+    },
+    {
+      "id": "foodkeeper-549",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Bean sprouts"
+        },
+        "da": {
+          "name": "Bønnespirer",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Bean sprouts",
+        "bean",
+        "sprouts"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 5,
+            "max": 10,
+            "unit": "days"
+          },
+          "sourceField": "DOP_Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "549"
+      }
+    },
+    {
+      "id": "foodkeeper-550",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Swiss chard"
+        },
+        "da": {
+          "name": "Bladbede",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Swiss chard",
+        "chard"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "fromPurchase",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "DOP_Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Keep them in a plastic bag to retain moisture.",
+          "sourceField": "DOP_Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "550"
+      }
+    },
+    {
+      "id": "foodkeeper-562",
+      "category": "fresh-fruits",
+      "names": {
+        "en": {
+          "name": "Applesauce",
+          "subtitle": "homemade"
+        },
+        "da": {
+          "name": "Æblemos",
+          "subtitle": "hjemmelavet",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Applesauce",
+        "homemade"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 8,
+            "max": 12,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "562"
+      }
+    },
+    {
+      "id": "foodkeeper-570",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Marinated vegetables",
+          "subtitle": "in oil"
+        },
+        "da": {
+          "name": "Marinerede grøntsager",
+          "subtitle": "i olie",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Marinated vegetables",
+        "vegetables",
+        "oil",
+        "vegetable"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 4,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "570"
+      }
+    },
+    {
+      "id": "foodkeeper-596",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Spaghetti squash",
+          "subtitle": "whole"
+        },
+        "da": {
+          "name": "Spaghettisquash",
+          "subtitle": "hel",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Spaghetti squash",
+        "squash",
+        "whole"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 2,
+            "unit": "months"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 2,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [
+        {
+          "location": "fridge",
+          "lang": "en",
+          "text": "Storage temperatures below 50 degrees (as in a refrigerator) will cause the squash to spoil more rapidly.",
+          "sourceField": "Refrigerate_tips"
+        }
+      ],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "596"
+      }
+    },
+    {
+      "id": "foodkeeper-597",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Spaghetti squash",
+          "subtitle": "cut"
+        },
+        "da": {
+          "name": "Spaghettisquash",
+          "subtitle": "skåret",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Spaghetti squash",
+        "squash",
+        "cut"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "597"
+      }
+    },
+    {
+      "id": "foodkeeper-600",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Cherry tomatoes"
+        },
+        "da": {
+          "name": "Cherrytomater",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "Cherry",
+        "tomatoes",
+        "tomato"
+      ],
+      "periods": [
+        {
+          "location": "pantry",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 10,
+            "max": 10,
+            "unit": "days"
+          },
+          "sourceField": "Pantry"
+        },
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 5,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "600"
+      }
+    },
+    {
+      "id": "foodkeeper-611",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Parsley",
+          "subtitle": "fresh"
+        },
+        "da": {
+          "name": "Persille",
+          "subtitle": "frisk",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "parsley"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        },
+        {
+          "location": "freezer",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 4,
+            "unit": "months"
+          },
+          "sourceField": "Freeze"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "611"
+      }
+    },
+    {
+      "id": "foodkeeper-640",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Edamame",
+          "subtitle": "fresh"
+        },
+        "da": {
+          "name": "Edamamebønner",
+          "subtitle": "friske",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "edamame",
+        "fresh",
+        "fresh edamame",
+        "soybeans",
+        "soybean"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 4,
+            "max": 5,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "640"
+      }
+    },
+    {
+      "id": "foodkeeper-661",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Celery root"
+        },
+        "da": {
+          "name": "Knoldselleri",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "celeriac",
+        "celery root",
+        "celery"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 1,
+            "max": 1,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "661"
+      }
+    },
+    {
+      "id": "foodkeeper-674",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Radicchio"
+        },
+        "da": {
+          "name": "Radicchio",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "radicchio"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 2,
+            "max": 3,
+            "unit": "weeks"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "674"
+      }
+    },
+    {
+      "id": "foodkeeper-678",
+      "category": "fresh-vegetables",
+      "names": {
+        "en": {
+          "name": "Arugula"
+        },
+        "da": {
+          "name": "Rucola",
+          "checked": true
+        }
+      },
+      "keywords": [
+        "arugula",
+        "greens",
+        "salad greens",
+        "salad"
+      ],
+      "periods": [
+        {
+          "location": "fridge",
+          "basis": "unspecified",
+          "duration": {
+            "kind": "range",
+            "min": 3,
+            "max": 7,
+            "unit": "days"
+          },
+          "sourceField": "Refrigerate"
+        }
+      ],
+      "notes": [],
+      "sourceRef": {
+        "sourceId": "us-fsis-foodkeeper",
+        "recordId": "678"
+      }
+    }
+  ]
+}
