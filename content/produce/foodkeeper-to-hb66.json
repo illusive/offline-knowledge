@@ -1,0 +1,320 @@
+{
+ "$comment": "FoodKeeper produce record ID -> entries in hb66-compatibility.json. Empty list: no matching entry in Handbook 66 Table 1 (processed foods, or produce the table does not list).",
+ "map": {
+  "248": [
+   "Apple"
+  ],
+  "249": [
+   "Apricot"
+  ],
+  "250": [
+   "Avocado, ripe",
+   "Avocado, unripe"
+  ],
+  "251": [
+   "Banana"
+  ],
+  "252": [
+   "Cherry",
+   "Gooseberry",
+   "Lychee"
+  ],
+  "253": [
+   "Blackberry",
+   "Boysenberry",
+   "Currant"
+  ],
+  "254": [
+   "Blueberry"
+  ],
+  "255": [
+   "Cherimoya"
+  ],
+  "256": [
+   "Lemon",
+   "Lime",
+   "Orange",
+   "Grapefruit",
+   "Tangerine",
+   "Mandarin"
+  ],
+  "257": [],
+  "258": [
+   "Coconut"
+  ],
+  "259": [
+   "Cranberry"
+  ],
+  "260": [
+   "Date"
+  ],
+  "261": [
+   "Grape"
+  ],
+  "262": [
+   "Guava"
+  ],
+  "263": [
+   "Kiwifruit"
+  ],
+  "264": [
+   "Cantaloup",
+   "Honeydew melon",
+   "Casaba melon",
+   "Crenshaw melon",
+   "Persian melon"
+  ],
+  "265": [
+   "Papaya",
+   "Mango, ripe",
+   "Feijoa",
+   "Passion fruit",
+   "Casaba melon"
+  ],
+  "266": [
+   "Peach",
+   "Nectarine",
+   "Plum, ripe",
+   "Pear (Asian & European)",
+   "Sapote"
+  ],
+  "267": [
+   "Pineapple"
+  ],
+  "268": [
+   "Plantain"
+  ],
+  "269": [
+   "Pomegranate"
+  ],
+  "270": [
+   "Artichoke"
+  ],
+  "271": [
+   "Asparagus"
+  ],
+  "272": [],
+  "273": [
+   "Beans, snap, green, wax",
+   "Beans, fava, lima",
+   "Snow pea",
+   "Sweet pea"
+  ],
+  "274": [
+   "Beet"
+  ],
+  "275": [
+   "Bok choy"
+  ],
+  "276": [
+   "Broccoli"
+  ],
+  "277": [
+   "Brussels sprouts"
+  ],
+  "278": [
+   "Cabbage"
+  ],
+  "279": [
+   "Carrot",
+   "Parsnip"
+  ],
+  "280": [
+   "Cauliflower"
+  ],
+  "281": [
+   "Celery"
+  ],
+  "282": [],
+  "283": [
+   "Cucumber"
+  ],
+  "284": [
+   "Eggplant"
+  ],
+  "285": [
+   "Garlic"
+  ],
+  "286": [
+   "Ginger"
+  ],
+  "287": [
+   "Collard",
+   "Mustard greens",
+   "Turnip greens"
+  ],
+  "288": [
+   "Herbs (not basil)"
+  ],
+  "289": [
+   "Leek"
+  ],
+  "290": [
+   "Lettuce"
+  ],
+  "291": [
+   "Lettuce",
+   "Spinach"
+  ],
+  "292": [
+   "Mushroom"
+  ],
+  "293": [
+   "Okra"
+  ],
+  "294": [
+   "Dry onion"
+  ],
+  "295": [
+   "Green onion"
+  ],
+  "296": [
+   "Pepper, bell, chili"
+  ],
+  "297": [
+   "Potato"
+  ],
+  "298": [
+   "Pumpkin"
+  ],
+  "299": [
+   "Radish"
+  ],
+  "300": [
+   "Rhubarb"
+  ],
+  "301": [
+   "Rutabaga"
+  ],
+  "302": [
+   "Squash, summer (soft rind)"
+  ],
+  "303": [
+   "Squash, winter (hard rind)"
+  ],
+  "304": [
+   "Tamarind"
+  ],
+  "305": [
+   "Taro (dasheen)"
+  ],
+  "306": [
+   "Tomato, ripe, partially ripe, & mature green"
+  ],
+  "307": [
+   "Turnip"
+  ],
+  "308": [
+   "Cassava"
+  ],
+  "414": [
+   "Kumquat"
+  ],
+  "415": [
+   "Lettuce",
+   "Spinach"
+  ],
+  "422": [
+   "Sweet potato",
+   "Yam"
+  ],
+  "423": [
+   "Kale"
+  ],
+  "478": [
+   "Carambola"
+  ],
+  "479": [
+   "Cactus pear, tuna"
+  ],
+  "480": [],
+  "481": [
+   "Strawberry"
+  ],
+  "482": [
+   "Raspberry"
+  ],
+  "483": [
+   "Cherry"
+  ],
+  "491": [
+   "Carrot",
+   "Cut vegetables"
+  ],
+  "492": [
+   "Jicama"
+  ],
+  "493": [],
+  "494": [
+   "Kohlrabi"
+  ],
+  "495": [
+   "Watermelon"
+  ],
+  "496": [
+   "Cantaloup"
+  ],
+  "497": [
+   "Honeydew melon"
+  ],
+  "505": [],
+  "506": [
+   "Herbs (not basil)"
+  ],
+  "507": [
+   "Mint"
+  ],
+  "508": [],
+  "509": [
+   "Basil"
+  ],
+  "510": [
+   "Herbs (not basil)"
+  ],
+  "511": [
+   "Herbs (not basil)"
+  ],
+  "512": [
+   "Herbs (not basil)"
+  ],
+  "513": [
+   "Herbs (not basil)"
+  ],
+  "547": [
+   "Squash, summer (soft rind)"
+  ],
+  "548": [
+   "Pepper, bell, chili"
+  ],
+  "549": [
+   "Bean sprouts"
+  ],
+  "550": [
+   "Swiss chard"
+  ],
+  "562": [],
+  "570": [],
+  "596": [
+   "Squash, winter (hard rind)"
+  ],
+  "597": [
+   "Cut vegetables"
+  ],
+  "600": [
+   "Tomato, ripe, partially ripe, & mature green"
+  ],
+  "611": [
+   "Parsley"
+  ],
+  "640": [],
+  "661": [
+   "Celeriac"
+  ],
+  "674": [
+   "Radicchio"
+  ],
+  "678": [
+   "Arugula"
+  ]
+ }
+}

@@ -1,0 +1,1240 @@
+{
+ "$comment": "Transcribed from USDA Agriculture Handbook 66 (rev. 2016), Table 1 'Compatible fresh fruits and vegetables during 7-day storage', pages 55-56 (table source: Thompson et al. 1996). Ethylene should be kept below 1 µL/L in the storage area. 'raw' keeps the printed name with its marks.",
+ "source": {
+  "sourceId": "us-ars-ah66-2016",
+  "locator": "Table 1, pp. 55-56"
+ },
+ "groups": {
+  "1A": "0-2 °C, 90-98% RH",
+  "1B": "0-2 °C, 85-95% RH",
+  "2": "7-10 °C, 85-95% RH",
+  "3": "13-18 °C, 85-95% RH"
+ },
+ "entries": [
+  {
+   "name": "Alfalfa sprouts",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Alfalfa sprouts"
+  },
+  {
+   "name": "Amaranth",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Amaranth†"
+  },
+  {
+   "name": "Anise",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Anise†"
+  },
+  {
+   "name": "Artichoke",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Artichoke"
+  },
+  {
+   "name": "Arugula",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Arugula†"
+  },
+  {
+   "name": "Asparagus",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Asparagus†"
+  },
+  {
+   "name": "Beans, fava, lima",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Beans, fava, lima"
+  },
+  {
+   "name": "Bean sprouts",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Bean sprouts"
+  },
+  {
+   "name": "Beet",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Beet"
+  },
+  {
+   "name": "Belgian endive",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Belgian endive†"
+  },
+  {
+   "name": "Bok choy",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Bok choy†"
+  },
+  {
+   "name": "Broccoli",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Broccoli†"
+  },
+  {
+   "name": "Broccoflower",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Broccoflower†"
+  },
+  {
+   "name": "Brussels sprouts",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Brussels sprouts†"
+  },
+  {
+   "name": "Cabbage",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Cabbage†"
+  },
+  {
+   "name": "Carrot",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Carrot†"
+  },
+  {
+   "name": "Cauliflower",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Cauliflower†"
+  },
+  {
+   "name": "Celeriac",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Celeriac"
+  },
+  {
+   "name": "Celery",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Celery†"
+  },
+  {
+   "name": "Chard",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Chard†"
+  },
+  {
+   "name": "Chinese cabbage",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Chinese cabbage†"
+  },
+  {
+   "name": "Chinese turnip",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Chinese turnip"
+  },
+  {
+   "name": "Collard",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Collard†"
+  },
+  {
+   "name": "Corn, sweet, baby",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Corn, sweet, baby"
+  },
+  {
+   "name": "Cut vegetables",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Cut vegetables"
+  },
+  {
+   "name": "Daikon",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Daikon†"
+  },
+  {
+   "name": "Endive-chicory",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Endive†-chicory"
+  },
+  {
+   "name": "Escarole",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Escarole†"
+  },
+  {
+   "name": "Fennel",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Fennel†"
+  },
+  {
+   "name": "Garlic",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Garlic"
+  },
+  {
+   "name": "Green onion",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Green onion†"
+  },
+  {
+   "name": "Herbs (not basil)",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Herbs† (not basil)"
+  },
+  {
+   "name": "Horseradish",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Horseradish"
+  },
+  {
+   "name": "Jerusalem artichoke",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Jerusalem artichoke"
+  },
+  {
+   "name": "Kailon",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Kailon†"
+  },
+  {
+   "name": "Kale",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Kale†"
+  },
+  {
+   "name": "Kohlrabi",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Kohlrabi"
+  },
+  {
+   "name": "Leek",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Leek†"
+  },
+  {
+   "name": "Lettuce",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Lettuce†"
+  },
+  {
+   "name": "Mint",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Mint†"
+  },
+  {
+   "name": "Mushroom",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Mushroom"
+  },
+  {
+   "name": "Mustard greens",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Mustard greens†"
+  },
+  {
+   "name": "Parsley",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Parsley†"
+  },
+  {
+   "name": "Parsnip",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Parsnip"
+  },
+  {
+   "name": "Radicchio",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Radicchio"
+  },
+  {
+   "name": "Radish",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Radish"
+  },
+  {
+   "name": "Rutabaga",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Rutabaga"
+  },
+  {
+   "name": "Rhubarb",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Rhubarb"
+  },
+  {
+   "name": "Salsify",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Salsify"
+  },
+  {
+   "name": "Scorzonera",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Scorzonera"
+  },
+  {
+   "name": "Shallot",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Shallot†"
+  },
+  {
+   "name": "Snow pea",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Snow pea†"
+  },
+  {
+   "name": "Spinach",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Spinach†"
+  },
+  {
+   "name": "Sweet pea",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Sweet pea†"
+  },
+  {
+   "name": "Swiss chard",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Swiss chard†"
+  },
+  {
+   "name": "Turnip",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Turnip"
+  },
+  {
+   "name": "Turnip greens",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Turnip greens†"
+  },
+  {
+   "name": "Water chestnut",
+   "group": "1A",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Water chestnut"
+  },
+  {
+   "name": "Watercress",
+   "group": "1A",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Watercress†"
+  },
+  {
+   "name": "Apple",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Apple‡"
+  },
+  {
+   "name": "Apricot",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Apricot‡"
+  },
+  {
+   "name": "Avocado, ripe",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Avocado, ripe‡"
+  },
+  {
+   "name": "Barbados cherry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Barbados cherry"
+  },
+  {
+   "name": "Blackberry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Blackberry"
+  },
+  {
+   "name": "Blueberry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Blueberry"
+  },
+  {
+   "name": "Boysenberry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Boysenberry"
+  },
+  {
+   "name": "Caimito",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Caimito"
+  },
+  {
+   "name": "Cantaloup",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Cantaloup‡"
+  },
+  {
+   "name": "Cashew apple",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Cashew apple"
+  },
+  {
+   "name": "Cherry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Cherry"
+  },
+  {
+   "name": "Coconut",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Coconut"
+  },
+  {
+   "name": "Currant",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Currant"
+  },
+  {
+   "name": "Fresh-cut fruits",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Fresh-cut fruits‡"
+  },
+  {
+   "name": "Date",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Date"
+  },
+  {
+   "name": "Dewberry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Dewberry"
+  },
+  {
+   "name": "Elderberry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Elderberry"
+  },
+  {
+   "name": "Fig",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Fig"
+  },
+  {
+   "name": "Gooseberry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Gooseberry"
+  },
+  {
+   "name": "Grape",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Grape"
+  },
+  {
+   "name": "Kiwifruit",
+   "group": "1B",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": true,
+   "raw": "Kiwifruit†‡"
+  },
+  {
+   "name": "Loganberry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Loganberry"
+  },
+  {
+   "name": "Longan",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Longan"
+  },
+  {
+   "name": "Loquat",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Loquat"
+  },
+  {
+   "name": "Lychee",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Lychee"
+  },
+  {
+   "name": "Nectarine",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Nectarine"
+  },
+  {
+   "name": "Peach",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Peach"
+  },
+  {
+   "name": "Pear (Asian & European)",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Pear (Asian & European)"
+  },
+  {
+   "name": "Persimmon",
+   "group": "1B",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Persimmon†"
+  },
+  {
+   "name": "Plum, ripe",
+   "group": "1B",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Plum, ripe†"
+  },
+  {
+   "name": "Plumcot, ripe",
+   "group": "1B",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Plumcot, ripe†"
+  },
+  {
+   "name": "Pomegranate",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Pomegranate"
+  },
+  {
+   "name": "Prune",
+   "group": "1B",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Prune†"
+  },
+  {
+   "name": "Quince",
+   "group": "1B",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Quince†"
+  },
+  {
+   "name": "Raspberry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Raspberry"
+  },
+  {
+   "name": "Strawberry",
+   "group": "1B",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Strawberry"
+  },
+  {
+   "name": "Basil",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Basil†"
+  },
+  {
+   "name": "Beans, snap, green, wax",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Beans, snap, green, wax"
+  },
+  {
+   "name": "Cactus leaves (nopales)",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Cactus leaves (nopales)†"
+  },
+  {
+   "name": "Calabaza",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Calabaza"
+  },
+  {
+   "name": "Chayote",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Chayote†"
+  },
+  {
+   "name": "Cowpea (Southern pea)",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Cowpea (Southern pea)"
+  },
+  {
+   "name": "Cucumber",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Cucumber†"
+  },
+  {
+   "name": "Eggplant",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Eggplant†"
+  },
+  {
+   "name": "Kiwano (horned melon)",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Kiwano (horned melon)"
+  },
+  {
+   "name": "Long bean",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Long bean"
+  },
+  {
+   "name": "Malanga",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Malanga†"
+  },
+  {
+   "name": "Okra",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Okra†"
+  },
+  {
+   "name": "Pepper, bell, chili",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Pepper, bell, chili"
+  },
+  {
+   "name": "Squash, summer (soft rind)",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Squash, summer (soft rind)†"
+  },
+  {
+   "name": "Tomatillo",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Tomatillo"
+  },
+  {
+   "name": "Winged bean",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Winged bean"
+  },
+  {
+   "name": "Avocado, unripe",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Avocado, unripe‡"
+  },
+  {
+   "name": "Babaco",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Babaco"
+  },
+  {
+   "name": "Cactus pear, tuna",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Cactus pear, tuna"
+  },
+  {
+   "name": "Calamondin",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Calamondin"
+  },
+  {
+   "name": "Carambola",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Carambola"
+  },
+  {
+   "name": "Cranberry",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Cranberry"
+  },
+  {
+   "name": "Custard apple",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Custard apple‡"
+  },
+  {
+   "name": "Durian, ripe",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Durian, ripe‡"
+  },
+  {
+   "name": "Feijoa",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Feijoa"
+  },
+  {
+   "name": "Granadilla",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Granadilla‡"
+  },
+  {
+   "name": "Grapefruit",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Grapefruit†"
+  },
+  {
+   "name": "Guava",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Guava‡"
+  },
+  {
+   "name": "Juan canary melon",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Juan canary melon‡"
+  },
+  {
+   "name": "Kumquat",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Kumquat"
+  },
+  {
+   "name": "Lemon",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Lemon†"
+  },
+  {
+   "name": "Lime",
+   "group": "2",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Lime†"
+  },
+  {
+   "name": "Limequat",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Limequat"
+  },
+  {
+   "name": "Mandarin",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Mandarin"
+  },
+  {
+   "name": "Mango, ripe",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Mango, ripe‡"
+  },
+  {
+   "name": "Olive",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Olive"
+  },
+  {
+   "name": "Orange",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Orange"
+  },
+  {
+   "name": "Passion fruit",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Passion fruit"
+  },
+  {
+   "name": "Pepino",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Pepino"
+  },
+  {
+   "name": "Pineapple",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Pineapple"
+  },
+  {
+   "name": "Pummelo",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Pummelo"
+  },
+  {
+   "name": "Sugar apple",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Sugar apple"
+  },
+  {
+   "name": "Tamarillo",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Tamarillo"
+  },
+  {
+   "name": "Tamarind",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Tamarind"
+  },
+  {
+   "name": "Tangelo",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Tangelo"
+  },
+  {
+   "name": "Tangerine",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Tangerine"
+  },
+  {
+   "name": "Ugli fruit",
+   "group": "2",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Ugli fruit"
+  },
+  {
+   "name": "Bitter melon",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Bitter melon"
+  },
+  {
+   "name": "Boniato",
+   "group": "3",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Boniato†"
+  },
+  {
+   "name": "Cassava",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Cassava"
+  },
+  {
+   "name": "Dry onion",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Dry onion"
+  },
+  {
+   "name": "Ginger",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Ginger"
+  },
+  {
+   "name": "Jicama",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Jicama"
+  },
+  {
+   "name": "Potato",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Potato"
+  },
+  {
+   "name": "Pumpkin",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Pumpkin"
+  },
+  {
+   "name": "Squash, winter (hard rind)",
+   "group": "3",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Squash, winter (hard rind)†"
+  },
+  {
+   "name": "Sweet potato",
+   "group": "3",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Sweet potato†"
+  },
+  {
+   "name": "Taro (dasheen)",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Taro (dasheen)"
+  },
+  {
+   "name": "Tomato, ripe, partially ripe, & mature green",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Tomato, ripe, partially ripe, & mature green"
+  },
+  {
+   "name": "Yam",
+   "group": "3",
+   "ethyleneSensitive": true,
+   "ethyleneProducer": false,
+   "raw": "Yam†"
+  },
+  {
+   "name": "Atemoya",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Atemoya‡"
+  },
+  {
+   "name": "Banana",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Banana‡"
+  },
+  {
+   "name": "Breadfruit",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Breadfruit‡"
+  },
+  {
+   "name": "Canistel",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Canistel‡"
+  },
+  {
+   "name": "Casaba melon",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Casaba melon"
+  },
+  {
+   "name": "Cherimoya",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Cherimoya‡"
+  },
+  {
+   "name": "Crenshaw melon",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Crenshaw melon‡"
+  },
+  {
+   "name": "Honeydew melon",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Honeydew melon‡"
+  },
+  {
+   "name": "Jaboticaba",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Jaboticaba"
+  },
+  {
+   "name": "Jackfruit",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Jackfruit‡"
+  },
+  {
+   "name": "Mamey",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Mamey‡"
+  },
+  {
+   "name": "Mangosteen",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Mangosteen‡"
+  },
+  {
+   "name": "Papaya",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Papaya‡"
+  },
+  {
+   "name": "Persian melon",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Persian melon‡"
+  },
+  {
+   "name": "Plantain",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Plantain‡"
+  },
+  {
+   "name": "Rambutan",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Rambutan"
+  },
+  {
+   "name": "Sapodilla",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Sapodilla‡"
+  },
+  {
+   "name": "Sapote",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Sapote‡"
+  },
+  {
+   "name": "Soursop",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": true,
+   "raw": "Soursop‡"
+  },
+  {
+   "name": "Watermelon",
+   "group": "3",
+   "ethyleneSensitive": false,
+   "ethyleneProducer": false,
+   "raw": "Watermelon"
+  }
+ ]
+}
