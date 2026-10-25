@@ -1,10 +1,10 @@
-# Offline Knowledge — Project
+# stead (Offline Knowledge) — Project
 
 ## Vision
 
 Trusted, freely available practical knowledge, packaged so it is easy to read, easy to find and fully available on an iPhone when there is no network, no power grid or no time to search.
 
-The project does not write its own guidance. It collects material from authorities and other trusted sources, restructures it into clear steps, warnings and checklists while keeping the original wording, and makes every statement traceable to its source. See `docs/CONTENT_POLICY.md`.
+The project does not write its own guidance. It collects material from authorities and other trusted sources, restructures it into clear steps, warnings and checklists while keeping the original wording (high-risk content such as first aid is reproduced verbatim, D-027), and makes every statement traceable to its source. See `docs/CONTENT_POLICY.md`.
 
 ## Users and situations
 
@@ -45,12 +45,18 @@ High-risk areas (first aid, water treatment, food safety, electricity) follow a 
 - Read a guide: summary, steps, warnings, checklists, source attribution and license.
 - Full-text local search across all guides.
 - Food storage lookup: search a food and see how long it keeps in the pantry, fridge and freezer, in Danish and English, with its source (D-014, D-015).
+- Emergency card that calls 112, reachable from Home and every high-risk guide.
+- Tools: supply checklist (from the cleared UK Be Ready checklist, progress kept on the device) and compass (D-025).
+- Bookmarks ("Saved") for guides and foods, kept on the device only (D-026).
+- Settings: offline library (pack size, version, date), language, appearance, text size, about and sources.
 - Works entirely in airplane mode.
 - Light and dark appearance, Dynamic Type, VoiceOver.
 
 ### Non-goals for v1
 
-- Offline maps (later milestone, D-008).
+- Offline maps and the Map tab (later milestone, D-008).
+- Flashlight, SOS signal, emergency contacts, Wi-Fi-only and low-power settings (D-025).
+- High-risk guides (e.g. first aid) until a source that allows verbatim reuse is cleared (D-027).
 - Downloadable or updatable content packs inside the app (format designed now, delivery later).
 - Android.
 - Translation of guides.
@@ -67,6 +73,7 @@ High-risk areas (first aid, water treatment, food safety, electricity) follow a 
 - No emojis, decorative effects or novelty interactions.
 - Light and dark appearance through centralized theme tokens.
 - Source and license are always one tap away from any guide.
+- Visual direction: the design brief in `docs/design/2026-10-25-design-brief.webp` (D-025), with larger and higher-contrast small text than drawn, and a dark mode derived from the same tokens.
 
 ## Related documents
 

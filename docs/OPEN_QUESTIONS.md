@@ -20,7 +20,7 @@ Unresolved questions and working assumptions. When one is resolved, move the out
    - Danish, reuse act route: Forsvarets Sanitetskommando (ABC Førstehjælp), Region Syddanmark. Private, permission needed: ØKO-Portalen / L&F (including its vegetable storage section). Excluded: Falck Førstehjælpsbogen.
 2. **"WikiHealth".** Which source was meant: a specific medical wiki, Wikipedia's medical articles, or something else? Its license and editorial process determine its tier.
 3. **International sources.** Verify per document; for example, many WHO publications carry non-commercial licenses, which would trigger the `nonCommercial` flag.
-4. **Expert review for high-risk guides.** `AGENTS.md` §6 says content that needs expert review stays unpublished until reviewed. Does a close-to-verbatim restructuring of Tier 1–2 authority guidance, checked by the project owner against two sources, meet that bar? Or does first aid / water / food safety need a qualified reviewer? Until this is decided, no `high` guide is published. Must be resolved before M3.
+4. **Expert review for high-risk guides.** Resolved by D-027 (verbatim only; owner check of exact reproduction).
 5. **Re-check interval.** How often should published guides be re-checked against their sources?
 6. **Images.** Which illustration sources have suitable licenses, and what is the size budget for images in the core pack?
 
@@ -33,10 +33,16 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 
 ## Product
 
-7. **App name.** "Offline Knowledge" is the working name.
+7. **App name.** Resolved: "stead" (D-024). Trademark and domain not checked.
 8. **UI language.** Does the interface follow the device language, or is it a setting? Working assumption: follow the device, with a manual override.
 9. **Mixed-language browsing.** Are all guides shown regardless of language, or filtered by language with an option to show all? Working assumption: show all, labeled by language.
-10. **Bookmarks / personal notes.** Are they in scope for v1? Working assumption: not in v1.
+10. **Bookmarks.** Resolved: in v1, on the device only (D-026). Personal notes remain out of scope.
+
+## Design (D-025)
+
+24. **Typeface.** The brief's font is not identified. Use the system font, or bundle a specific open-licence font with the app (never loaded at runtime)?
+25. **Tab bar at large text sizes.** Four labelled tabs overflow at accessibility text sizes; choose a fallback (e.g. icons with labels underneath, or labels hidden with accessible names kept).
+26. **Brand mark.** The brief shows "stead" with an asterisk mark; the placeholder app icon (open book) should be replaced to match.
 
 ## Technical
 

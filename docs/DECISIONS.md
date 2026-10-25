@@ -162,6 +162,32 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Rationale:** Free static hosting, already proven by the iPhone storage test. Free Pages requires a public repository.
 - **Open:** whether the built app is published from a separate public repository (keeping this source repository private) or from this repository; decide at the first deployment.
 
+## D-024 — The app is called "stead"
+
+- **Date:** 2026-10-25
+- **Decision:** The user-facing name is **stead** (Home Screen name, manifest, app title). Repository and folder names stay `offline-knowledge`.
+- **Note:** No trademark or domain check has been done.
+
+## D-025 — Design brief adopted; v1 scope cut from it
+
+- **Date:** 2026-10-25
+- **Decision:** The design brief (`docs/design/2026-10-25-design-brief.webp`) sets the visual direction: off-white background, lime accent, near-black cards, line icons, large calm headings, floating bottom tab bar, "Offline ready" status. v1 contains: Home (search and categories, only categories that have content), category pages and the guide reader, the food storage lookup ("Storing food"), an emergency card that calls **112** (not 999 as in the brief), Tools with the **supply checklist** and the **compass**, Settings (offline library card with real pack size/version/date, language, appearance, text size, about and sources), and bookmarks (D-026).
+- **Not in v1:** the Map tab and shelter map (M5, D-008); flashlight/torch and screen light; SOS signal; emergency contacts; "Update on Wi-Fi only" and "Low power mode" toggles. A web app on iOS cannot see the connection type or Low Power Mode, so those toggles would not work.
+- **Adjustments to the brief:** small and pale text (status labels, guide metadata, tab labels) is enlarged and darkened to meet contrast requirements; the tab bar needs a large-text layout; dark mode is derived from the same tokens; any custom font is bundled with the app, never loaded at runtime, and its licence checked.
+
+## D-026 — Bookmarks in v1, stored on the device only
+
+- **Date:** 2026-10-25
+- **Decision:** Users can save guides and foods ("Saved"). Bookmarks are the first user data the app keeps: stored locally only (no sync, D-010), kept separate from the knowledge pack so pack updates never touch them, and keyed by stable content IDs so they survive pack updates. A bookmark whose item no longer exists in a new pack is shown as unavailable, not silently dropped.
+
+## D-027 — High-risk content is published verbatim only
+
+- **Date:** 2026-10-25
+- **Decision:** Guides classified `high` (first aid, water treatment, food safety, electricity, gas, carbon monoxide) reproduce the authority's published text **and its own structure** (headings, numbered steps, lists) unchanged. Whole sections may be selected; nothing is split, merged, reordered, reworded or translated. Under that rule the project owner's check against the source is the required review. All other `high` requirements remain: a current Tier 1–2 primary source, agreement from a second independent authority, the emergency card with 112, and the source and its date shown on the guide.
+- **Rationale:** The authority's own editorial and medical review stands behind every word, and the owner's check verifies faithful reproduction rather than medical correctness. Resolves OPEN_QUESTIONS #4 for AGENTS.md §6 ("content requiring expert review").
+- **Alternatives:** owner check with restructuring allowed; a qualified medical reviewer for every high-risk guide.
+- **Consequences:** sources under "no derivatives" licences become usable for high-risk guides if the licence allows verbatim redistribution. First aid stays out of v1 until such a source is cleared (all candidates so far are excluded or need a reuse request); the First aid category appears only once it has published guides.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

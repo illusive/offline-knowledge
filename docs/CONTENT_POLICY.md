@@ -37,7 +37,8 @@ Every source is recorded before any of its content is used. Required fields:
 - **Attribution** is shown on every guide, for every source used, as the license requires.
 - **CC BY / CC BY-SA:** usable. Restructured content is an adaptation; content derived from a CC BY-SA source is published under CC BY-SA, and the guide states this.
 - **Non-commercial (NC):** usable while distribution is personal / small group (D-009). Each such guide is flagged `nonCommercial: true` so that a future App Store or commercial decision can find them.
-- **No derivatives (ND) or all rights reserved:** may not be restructured. Use only with explicit written permission from the rights holder, recorded in the registry.
+- **No derivatives (ND):** may not be restructured. Usable only for verbatim `high` guides (D-027) if the licence allows verbatim redistribution; otherwise only with explicit written permission, recorded in the registry.
+- **All rights reserved:** only with explicit written permission from the rights holder, recorded in the registry.
 - **Public-sector information:** reuse terms differ per authority and per document. Verify the actual terms; do not assume public material is free to redistribute.
   - **UK Open Government Licence v3.0:** usable, including adaptation, with the OGL attribution statement. Covers only what the publisher may license: photos and other third-party material on OGL sites are excluded unless stated otherwise.
   - **US federal government works:** public domain in the US. Check each page for third-party material (e.g. content co-published with the Red Cross).
@@ -53,6 +54,7 @@ Licensing judgements are recorded per source. When in doubt, leave it out and ad
 
 Per D-006:
 
+- Applies to `low` and `elevated` guides. `high` guides are verbatim (§6, D-027).
 - Allowed: splitting text into steps, warnings, checklists and notes; adding headings; reordering for task flow; removing material that is not relevant; minimal grammatical joins needed after splitting.
 - Not allowed: adding facts, quantities, times, temperatures, doses or advice not present in the source; changing meaning; merging claims from different sources into one block.
 - Each block (`step`, `warning`, `checklist` item, `note`, `image`) carries a `sourceRef`: source id, section or anchor, and the quoted original passage.
@@ -69,7 +71,7 @@ AI may help restructure source text at build time. It may not introduce new clai
 |-------|--------|-------------------|
 | `low` | Supplies lists, storage, growing, general preparedness | Source check (§7) |
 | `elevated` | Preservation methods, heating, basic repairs, tool use | Source check; prefer Tier 1–2 source |
-| `high` | First aid, water treatment, food safety, electricity, gas, carbon monoxide | Source check, **plus** cross-check against a second independent source. Primary source must be Tier 1 or 2. A Tier 3 source alone is never sufficient |
+| `high` | First aid, water treatment, food safety, electricity, gas, carbon monoxide | **Verbatim only (D-027):** the source's text and structure unchanged; whole sections may be selected, nothing split, merged, reordered, reworded or translated. Owner check of exact reproduction, **plus** agreement from a second independent authority. Primary source must be current and Tier 1 or 2; a Tier 3 source alone is never sufficient. The guide shows the emergency card (112) and the source date |
 
 When sources disagree on a high-risk point, the guide is not published until the disagreement is resolved or the point is removed. Record it in `OPEN_QUESTIONS.md`.
 
