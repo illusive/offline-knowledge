@@ -10,6 +10,8 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 
 ## Content and licensing
 
+> Licensing and reuse permissions are deferred while the project is private (D-028). The items below stay recorded for when it is revisited.
+
 1. **Danish authority reuse terms.** None of the Danish candidates checked so far publish reuse terms (samsik.dk, foedevarestyrelsen.dk, 2026-10-24). Route: reuse requests under D-012.
    - Styrelsen for Samfundssikkerhed, "Forberedt på kriser": request drafted (`content/sources/requests/samsik-videreanvendelse.md`), **not yet sent**.
    - Fødevarestyrelsen, Sundhedsstyrelsen, Dansk Førstehjælpsråd: not yet requested.

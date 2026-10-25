@@ -186,7 +186,16 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Decision:** Guides classified `high` (first aid, water treatment, food safety, electricity, gas, carbon monoxide) reproduce the authority's published text **and its own structure** (headings, numbered steps, lists) unchanged. Whole sections may be selected; nothing is split, merged, reordered, reworded or translated. Under that rule the project owner's check against the source is the required review. All other `high` requirements remain: a current Tier 1–2 primary source, agreement from a second independent authority, the emergency card with 112, and the source and its date shown on the guide.
 - **Rationale:** The authority's own editorial and medical review stands behind every word, and the owner's check verifies faithful reproduction rather than medical correctness. Resolves OPEN_QUESTIONS #4 for AGENTS.md §6 ("content requiring expert review").
 - **Alternatives:** owner check with restructuring allowed; a qualified medical reviewer for every high-risk guide.
-- **Consequences:** sources under "no derivatives" licences become usable for high-risk guides if the licence allows verbatim redistribution. First aid stays out of v1 until such a source is cleared (all candidates so far are excluded or need a reuse request); the First aid category appears only once it has published guides.
+- **Consequences:** sources under "no derivatives" licences become usable for high-risk guides if the licence allows verbatim redistribution. The First aid category appears only once it has published guides. With D-028, licence clearance no longer blocks first-aid sources during the private phase; the verbatim and second-authority rules still apply.
+
+## D-028 — Licensing and reuse permissions deferred while the project is private
+
+- **Date:** 2026-10-25
+- **Decision:** While stead is a private project, licences and reuse permissions are not a blocker. Sources may be used without cleared rights, and the reuse requests (D-012) are paused. The app stays on public GitHub Pages (D-023) with all content; the project owner accepts the licensing risk of that public, unlisted site.
+- **What stays:** every source is still registered (publisher, address, licence and its status, retrieval date, saved copy with checksum); every piece of content stays traceable to its source; attribution is shown in the app. The pack manifest lists each source's licence status. Safety rules are unchanged: high-risk content is verbatim only (D-027), and AI output is never the only basis for an instruction.
+- **Deviation:** AGENTS.md §6 asks for copyright to be verified before redistributing; public hosting is redistribution. This is a deliberate owner decision for the private phase.
+- **Must be revisited before:** sharing the link with anyone else (D-009), any App Store or wider release, or making the source repository public.
+- **Alternatives:** two builds (public with cleared sources only, private with everything); private hosting behind a login.
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

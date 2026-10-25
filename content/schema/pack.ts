@@ -17,5 +17,6 @@ export interface PackManifest {
   dependencies: { packId: string; minVersion: string }[];
   languages: Lang[];
   counts: { guides: number; storageItems: number; sources: number };
-  sources: { id: string; license: string; dataVersion?: string }[];
+  // licenseStatus: registry status (e.g. 'cleared', 'request-needed'); not enforced while private (D-028).
+  sources: { id: string; license: string; licenseStatus: string; dataVersion?: string }[];
 }

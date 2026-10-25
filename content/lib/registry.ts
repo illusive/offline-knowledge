@@ -33,9 +33,9 @@ export async function loadSource(id: string): Promise<RegistrySource> {
   return source;
 }
 
-// Returns the snapshot bytes after checking that the source is cleared and the checksum matches.
-export async function readClearedSnapshot(source: RegistrySource): Promise<Buffer> {
-  if (source.status !== 'cleared') throw new Error(`Source ${source.id} is not cleared (status: ${source.status})`);
+// Returns the snapshot bytes after checking that the checksum matches the registry.
+// Licence status is not checked while the project is private (D-028).
+export async function readSnapshot(source: RegistrySource): Promise<Buffer> {
   if (!source.snapshot || !source.snapshotSha256) throw new Error(`Source ${source.id} has no snapshot`);
   const bytes = await readFile(join(SOURCES_DIR, source.snapshot));
   const sha256 = createHash('sha256').update(bytes).digest('hex');

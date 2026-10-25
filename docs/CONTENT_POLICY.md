@@ -33,7 +33,8 @@ Every source is recorded before any of its content is used. Required fields:
 
 ## 4. Licensing rules
 
-- **Unknown license = not published.** No exceptions.
+- **Private phase (D-028):** licence status is recorded for every source but does not block use while the project is private. The rules below describe what must be true before any wider distribution.
+- **Unknown license = not published** (applies again when D-028 is revisited).
 - **Attribution** is shown on every guide, for every source used, as the license requires.
 - **CC BY / CC BY-SA:** usable. Restructured content is an adaptation; content derived from a CC BY-SA source is published under CC BY-SA, and the guide states this.
 - **Non-commercial (NC):** usable while distribution is personal / small group (D-009). Each such guide is flagged `nonCommercial: true` so that a future App Store or commercial decision can find them.

@@ -3,7 +3,7 @@
 
 import { readFile } from 'node:fs/promises';
 import { buildPack } from '../lib/pack.ts';
-import { loadRegistry, readClearedSnapshot } from '../lib/registry.ts';
+import { loadRegistry, readSnapshot } from '../lib/registry.ts';
 import type { StorageDataset } from '../schema/storage.ts';
 
 const root = new URL('../', import.meta.url);
@@ -14,7 +14,7 @@ const storage = [JSON.parse(await readFile(new URL('storage/foodkeeper-produce.j
 // Re-verify each used source's snapshot checksum at build time.
 for (const dataset of storage) {
   const source = sources.find((s) => s.id === dataset.sourceId);
-  if (source) await readClearedSnapshot(source);
+  if (source) await readSnapshot(source);
 }
 
 const outDir = new URL('dist/core/', root).pathname;

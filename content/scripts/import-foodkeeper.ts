@@ -5,12 +5,12 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import type { StorageDataset } from '../schema/storage.ts';
 import { dataVersion, FOODKEEPER_SOURCE_ID, mapProduce, type DanishName, type FoodKeeperExport } from '../lib/foodkeeper.ts';
-import { loadSource, readClearedSnapshot } from '../lib/registry.ts';
+import { loadSource, readSnapshot } from '../lib/registry.ts';
 
 const STORAGE_DIR = new URL('../storage/', import.meta.url);
 
 const source = await loadSource(FOODKEEPER_SOURCE_ID);
-const data = JSON.parse((await readClearedSnapshot(source)).toString('utf8')) as FoodKeeperExport;
+const data = JSON.parse((await readSnapshot(source)).toString('utf8')) as FoodKeeperExport;
 const danish = JSON.parse(await readFile(new URL('names-da.json', STORAGE_DIR), 'utf8')) as { names: Record<string, DanishName> };
 
 const items = mapProduce(data, danish.names);

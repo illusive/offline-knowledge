@@ -181,6 +181,8 @@ Do not use AI-generated information as the sole basis for medical, electrical, f
 
 Content requiring expert review must remain unpublished until it has been reviewed.
 
+> Private phase (D-028): licence and reuse-permission checks are deferred by the project owner while stead is private. Source registration, traceability and the safety rules above still apply in full. High-risk content is published verbatim only (D-027).
+
 ## 7. Data management and storage
 
 Use SQLite for structured content and local search.

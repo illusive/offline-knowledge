@@ -40,11 +40,14 @@ test('validation accepts cleared sources with checked Danish names', () => {
   assert.deepEqual(validatePackInput(input([item('a', 'Cabbage', 'Kål')])), []);
 });
 
-test('validation refuses unchecked Danish names, uncleared sources and mismatched snapshots', () => {
+test('validation refuses unchecked Danish names, duplicate ids and mismatched snapshots', () => {
   assert.match(validatePackInput(input([item('a', 'Cabbage', 'Kål', false)])).join(), /Danish name not checked/);
-  assert.match(validatePackInput(input([item('a', 'Cabbage', 'Kål')], [{ ...source, status: 'needs-review' }])).join(), /not 'cleared'/);
   assert.match(validatePackInput(input([item('a', 'Cabbage', 'Kål')], [{ ...source, snapshotSha256: 'other' }])).join(), /different snapshot/);
   assert.match(validatePackInput(input([item('a', 'Cabbage', 'Kål'), item('a', 'Kale', 'Grønkål')])).join(), /duplicate id/);
+});
+
+test('validation accepts sources whose licence is not cleared yet (D-028)', () => {
+  assert.deepEqual(validatePackInput(input([item('a', 'Cabbage', 'Kål')], [{ ...source, status: 'request-needed', license: 'unknown', attribution: '' }])), []);
 });
 
 test('buildPack refuses invalid input and writes nothing', async () => {

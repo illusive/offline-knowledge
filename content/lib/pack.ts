@@ -91,9 +91,9 @@ export function validatePackInput(input: PackInput): string[] {
     const source = sources.get(dataset.sourceId);
     if (!source) problems.push(`${dataset.sourceId}: source not in registry`);
     else {
-      if (source.status !== 'cleared') problems.push(`${source.id}: source status is '${source.status}', not 'cleared'`);
+      // Licence status is recorded but not enforced while the project is private (D-028).
       if (source.snapshotSha256 !== dataset.generatedFrom.sha256) problems.push(`${source.id}: dataset was generated from a different snapshot than the registry lists`);
-      if (!source.attribution) problems.push(`${source.id}: no attribution text`);
+      if (!source.publisher || !source.title) problems.push(`${source.id}: no publisher or title`);
       if (!source.retrievedAt) problems.push(`${source.id}: no retrieval date`);
     }
     for (const item of dataset.items) {
@@ -136,7 +136,7 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
       'INSERT INTO sources (id, title, publisher, url, lang, license, license_url, attribution, retrieved_at, data_version) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
     );
     for (const s of usedSources) {
-      insertSource.run(s.id, s.title, s.publisher, s.url, s.lang, s.license, s.licenseUrl ?? null, s.attribution, s.retrievedAt, dataVersions.get(s.id) ?? null);
+      insertSource.run(s.id, s.title, s.publisher, s.url, s.lang, s.license, s.licenseUrl ?? null, s.attribution || `${s.publisher}: ${s.title}`, s.retrievedAt, dataVersions.get(s.id) ?? null);
     }
 
     const insertItem = db.prepare(
@@ -190,7 +190,8 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     },
     sources: usedSources.map((s) => {
       const dataVersion = dataVersions.get(s.id);
-      return dataVersion ? { id: s.id, license: s.license, dataVersion } : { id: s.id, license: s.license };
+      const entry = { id: s.id, license: s.license, licenseStatus: s.status };
+      return dataVersion ? { ...entry, dataVersion } : entry;
     }),
   };
   await writeFile(join(outDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
