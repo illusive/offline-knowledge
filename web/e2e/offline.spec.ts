@@ -51,7 +51,7 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await expect(page.getByRole('heading', { level: 1, name: 'Kartofler' })).toBeVisible();
   // Notes are shown in Danish translation; the original is one tap away (D-031).
   await expect(page.getByText('Tiden i fryseren gælder kogte kartofler og kartoffelmos.')).toBeVisible();
-  await expect(page.getByText('Oversat fra engelsk').first()).toBeVisible();
+  await expect(page.getByText('Noterne er oversat fra kilden på engelsk.')).toBeVisible();
   await page.getByRole('button', { name: 'Vis original' }).click();
   await expect(page.getByText('Freezer timeline applies to cooked and mashed potatoes.')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Vis på dansk' })).toHaveAttribute('aria-pressed', 'true');

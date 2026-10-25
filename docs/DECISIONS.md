@@ -225,6 +225,17 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Rationale:** The wording deliberately does not suggest tasting or that the senses can detect all spoilage (e.g. listeria is not visible or smellable); it follows USDA's "When in doubt, throw it out".
 - **Alternatives:** fixed on screen above the tab bar; a shorter text without advice.
 
+## D-033 — A storage and preservation guide for every food
+
+- **Date:** 2026-10-25
+- **Decision:** Every food in the storage lookup (all 101) gets a guide with these sections: about the food (what it prefers and what it doesn't), storage times (kitchen: FoodKeeper; cool storage: Handbook 66), what to store it with and apart from (ethylene and compatibility), drying (including without power), pickling, and canning. Drying, pickling and canning each get one shared method guide; the food guide states only what applies to that food (e.g. "pressure canner only").
+- **Sources:** USDA Agriculture Handbook 66 (2016), USDA Complete Guide to Home Canning, NCHFP / University of Georgia drying guides, Landbrug & Fødevarer / HortiAdvice storage guidance, Fødevarestyrelsen ("Opbevar maden korrekt"), Bolius, Madens Verden, Retnemt, Highonlife; more to be added as found. Licensing is deferred (D-028).
+- **Conflicts between sources:** authorities (USDA, Fødevarestyrelsen, L&F/HortiAdvice, universities) take precedence. A commercial claim that an authority contradicts is left out (example: Retnemt says cucumbers give off ethylene and should be stored apart; Handbook 66 says cucumbers produce little ethylene and are very sensitive to it). Commercial sites (Retnemt, Highonlife) only fill gaps the authorities do not cover, and are never the basis for canning or food-safety statements.
+- **Language:** written in Danish from the sources, every statement linked to its source passage, with the original one tap away; translations are unchecked by owner decision (as D-031).
+- **Canning and pickling:** the method guides are translated as well, with the original one tap away. This relaxes D-027 (verbatim only) for canning and pickling by owner decision; the canning content must still follow the USDA tested methods exactly in substance (process type, times, headspace, acidification), and low-acid foods are only ever given a pressure-canning method.
+- **Order of work:** the guide format is agreed on two example foods first, then all 101 are filled in.
+- **Must be revisited before:** sharing the app beyond the owner (as D-028, D-031).
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

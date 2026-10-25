@@ -43,9 +43,8 @@ export interface Strings {
   toolsTitle: string;
   settingsTitle: string;
   comingLater: string;
-  translatedFrom: (lang: Lang) => string;
-  originalIn: (lang: Lang) => string;
   notesTranslated: string;
+  notesOriginal: string;
   showOriginal: string;
   showTranslation: string;
   sensesTitle: string;
@@ -110,9 +109,8 @@ export const strings: Record<Lang, Strings> = {
     toolsTitle: 'Værktøjer',
     settingsTitle: 'Indstillinger',
     comingLater: 'Kommer i et senere trin.',
-    translatedFrom: (l) => `Oversat fra ${l === 'en' ? 'engelsk' : 'dansk'}`,
-    originalIn: (l) => `Original på ${l === 'en' ? 'engelsk' : 'dansk'}`,
     notesTranslated: 'Noterne er oversat fra kilden på engelsk.',
+    notesOriginal: 'Noterne vises i originalsproget (engelsk).',
     showOriginal: 'Vis original',
     showTranslation: 'Vis på dansk',
     sensesTitle: 'Brug dine sanser',
@@ -175,9 +173,8 @@ export const strings: Record<Lang, Strings> = {
     toolsTitle: 'Tools',
     settingsTitle: 'Settings',
     comingLater: 'Coming in a later step.',
-    translatedFrom: (l) => `Translated from ${l === 'en' ? 'English' : 'Danish'}`,
-    originalIn: (l) => `Original in ${l === 'en' ? 'English' : 'Danish'}`,
     notesTranslated: 'The notes are translated from the English source.',
+    notesOriginal: 'The notes are shown in the original language (English).',
     showOriginal: 'Show original',
     showTranslation: 'Show translation',
     sensesTitle: 'Use your senses',

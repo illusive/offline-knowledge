@@ -24,6 +24,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [ ] Test the live app on the iPhone from the Home Screen (install, airplane mode, VoiceOver last).
 - [x] App shell to the design brief (D-024, D-025): name "stead", Inter, tokens (lime/ink/paper, light and dark), tab bar (Home, Tools, Settings), Home with search, the "Storing food" category and the 112 emergency card. Tools and Settings are placeholders until their steps.
 - [x] Feedback round (2026-10-25): search placeholder "Søg", green "Klar offline" status, first-launch download progress, Danish translation of storage notes with a switch to the original (D-031), "Brug dine sanser" pill (D-032).
+- [ ] Food guides for all 101 foods (D-033): sources registered, guide format agreed on two examples, then all foods; shared method guides for drying, pickling and canning.
 - [ ] Bookmarks (D-026): local store separate from the pack; "Saved" on Home.
 - [ ] Settings: offline library card from the pack manifest, language, appearance, text size, about and sources.
 - [ ] Tools: supply checklist (UK Be Ready, progress on the device) and compass (permission, no-sensor and inaccuracy states; test on a real iPhone).

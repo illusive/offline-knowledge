@@ -62,7 +62,7 @@ export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang
 
         {translatable ? (
           <div className="flex flex-wrap items-center justify-between gap-x-[12px] gap-y-1 px-1">
-            <p className="text-sm text-muted">{s.notesTranslated}</p>
+            <p className="text-sm text-muted">{showOriginal ? s.notesOriginal : s.notesTranslated}</p>
             <button
               type="button"
               aria-pressed={showOriginal}
@@ -93,11 +93,12 @@ export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang
                   </p>
                 );
               })}
+              {/* One line above the cards says whether notes are translated; no label per note. */}
               {hereNotes.map((n, i) =>
                 translatable && n.text_da && !showOriginal ? (
-                  <SourceNote key={i} text={n.text_da} lang="da" label={s.translatedFrom(n.lang)} />
+                  <SourceNote key={i} text={n.text_da} lang="da" label={null} />
                 ) : (
-                  <SourceNote key={i} text={n.text} lang={n.lang} label={n.lang !== lang ? s.originalIn(n.lang) : null} />
+                  <SourceNote key={i} text={n.text} lang={n.lang} label={null} />
                 ),
               )}
             </Card>
