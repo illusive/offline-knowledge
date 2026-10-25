@@ -21,7 +21,7 @@ function item(id: string, en: string, da: string, checked = true): StorageItem {
     names: { en: { name: en }, da: { name: da, checked } },
     keywords: [en.toLowerCase()],
     periods: [{ location: 'fridge', basis: 'fromPurchase', duration: { kind: 'range', min: 1, max: 2, unit: 'weeks' }, sourceField: 'DOP_Refrigerate' }],
-    notes: [{ location: 'freezer', lang: 'en', text: 'Blanch before freezing.', sourceField: 'Freeze_Tips' }],
+    notes: [{ location: 'freezer', lang: 'en', text: 'Blanch before freezing.', sourceField: 'Freeze_Tips', translation: { lang: 'da', text: 'Blancher før indfrysning.', checked: false } }],
     sourceRef: { sourceId: 'test-source', recordId: id },
   };
 }
@@ -48,6 +48,12 @@ test('validation refuses unchecked Danish names, duplicate ids and mismatched sn
 
 test('validation accepts sources whose licence is not cleared yet (D-028)', () => {
   assert.deepEqual(validatePackInput(input([item('a', 'Cabbage', 'Kål')], [{ ...source, status: 'request-needed', license: 'unknown', attribution: '' }])), []);
+});
+
+test('validation refuses notes without a Danish translation', () => {
+  const untranslated = item('a', 'Cabbage', 'Kål');
+  untranslated.notes = [{ location: 'freezer', lang: 'en', text: 'Blanch before freezing.', sourceField: 'Freeze_Tips' }];
+  assert.match(validatePackInput(input([untranslated])).join(), /note without Danish translation/);
 });
 
 test('buildPack refuses invalid input and writes nothing', async () => {
@@ -80,7 +86,12 @@ test('buildPack writes a pack whose manifest matches the file and whose search h
     assert.deepEqual(db.prepare('SELECT location, kind, min_value, max_value, unit FROM storage_periods WHERE item_id = ?').all('a').map((r) => ({ ...r })),
       [{ location: 'fridge', kind: 'range', min_value: 1, max_value: 2, unit: 'weeks' }]);
     assert.equal((db.prepare('SELECT attribution FROM sources WHERE id = ?').get('test-source') as { attribution: string }).attribution, 'Source: test (CC0).');
-    assert.equal((db.prepare("SELECT value FROM meta WHERE key = 'schemaVersion'").get() as { value: string }).value, '1');
+    assert.equal((db.prepare("SELECT value FROM meta WHERE key = 'schemaVersion'").get() as { value: string }).value, '2');
+    assert.deepEqual({ ...(db.prepare('SELECT text, text_da, text_da_checked FROM storage_notes WHERE item_id = ?').get('a') as object) }, {
+      text: 'Blanch before freezing.',
+      text_da: 'Blancher før indfrysning.',
+      text_da_checked: 0,
+    });
   } finally {
     db.close();
   }

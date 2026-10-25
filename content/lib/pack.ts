@@ -58,6 +58,8 @@ CREATE TABLE storage_notes (
   location TEXT NOT NULL CHECK (location IN ('pantry', 'fridge', 'freezer')),
   lang TEXT NOT NULL,
   text TEXT NOT NULL,
+  text_da TEXT,
+  text_da_checked INTEGER NOT NULL DEFAULT 0,
   source_field TEXT NOT NULL,
   PRIMARY KEY (item_id, ord)
 );
@@ -103,6 +105,9 @@ export function validatePackInput(input: PackInput): string[] {
       if (!item.names.da) problems.push(`${item.id}: no Danish name`);
       else if (!item.names.da.checked) problems.push(`${item.id}: Danish name not checked`);
       if (item.periods.length === 0 && item.notes.length === 0) problems.push(`${item.id}: no storage times or notes`);
+      for (const note of item.notes) {
+        if (note.lang !== 'da' && !note.translation) problems.push(`${item.id}: note without Danish translation: "${note.text}"`);
+      }
     }
   }
   return problems;
@@ -145,7 +150,9 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     const insertPeriod = db.prepare(
       'INSERT INTO storage_periods (item_id, ord, location, basis, kind, min_value, max_value, unit, source_field) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
     );
-    const insertNote = db.prepare('INSERT INTO storage_notes (item_id, ord, location, lang, text, source_field) VALUES (?, ?, ?, ?, ?, ?)');
+    const insertNote = db.prepare(
+      'INSERT INTO storage_notes (item_id, ord, location, lang, text, text_da, text_da_checked, source_field) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+    );
     const insertSearch = db.prepare('INSERT INTO storage_search (item_id, lang, name, subtitle, keywords) VALUES (?, ?, ?, ?, ?)');
 
     for (const dataset of input.storage) {
@@ -157,7 +164,9 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
           const d = p.duration;
           insertPeriod.run(item.id, ord, p.location, p.basis, d.kind, d.kind === 'range' ? d.min : null, d.kind === 'range' ? d.max : null, d.kind === 'range' ? d.unit : null, p.sourceField);
         });
-        item.notes.forEach((n, ord) => insertNote.run(item.id, ord, n.location, n.lang, n.text, n.sourceField));
+        item.notes.forEach((n, ord) =>
+          insertNote.run(item.id, ord, n.location, n.lang, n.text, n.translation?.text ?? null, n.translation?.checked ? 1 : 0, n.sourceField),
+        );
         insertSearch.run(item.id, 'en', en.name, en.subtitle ?? '', item.keywords.join(' '));
         insertSearch.run(item.id, 'da', da.name, da.subtitle ?? '', '');
       }

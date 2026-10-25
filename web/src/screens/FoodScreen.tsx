@@ -1,6 +1,7 @@
 // Storage details for one food: times per location, source notes and attribution.
 
 import { useEffect, useRef, useState } from 'react';
+import { SensesPill } from '../components/SensesPill';
 import { BackButton, Card, MessageState, Page, SourceNote } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { ItemDetail } from '../db/queries';
@@ -10,6 +11,7 @@ import { formatBasis, formatDuration, LOCATION_ORDER } from '../storage/format';
 
 export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang: Lang; s: Strings }) {
   const [detail, setDetail] = useState<{ id: string; value: ItemDetail | null } | null>(null);
+  const [showOriginal, setShowOriginal] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -41,6 +43,8 @@ export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang
   const { item, periods, notes, source } = loaded;
   const subtitle = lang === 'da' ? item.subtitle_da : item.subtitle_en;
   const otherLang: Lang = lang === 'da' ? 'en' : 'da';
+  // In the Danish interface, notes are shown in Danish translation, with the source text one tap away (D-031).
+  const translatable = lang === 'da' && notes.some((n) => n.lang !== 'da' && n.text_da);
 
   return (
     <Page>
@@ -55,6 +59,20 @@ export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang
             {otherLang === 'en' ? item.name_en : item.name_da}
           </p>
         </header>
+
+        {translatable ? (
+          <div className="flex flex-wrap items-center justify-between gap-x-[12px] gap-y-1 px-1">
+            <p className="text-sm text-muted">{s.notesTranslated}</p>
+            <button
+              type="button"
+              aria-pressed={showOriginal}
+              onClick={() => setShowOriginal((v) => !v)}
+              className="min-h-11 rounded-full bg-surface px-[16px] text-sm font-medium"
+            >
+              {showOriginal ? s.showTranslation : s.showOriginal}
+            </button>
+          </div>
+        ) : null}
 
         {LOCATION_ORDER.map((location) => {
           const here = periods.filter((p) => p.location === location);
@@ -75,14 +93,20 @@ export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang
                   </p>
                 );
               })}
-              {hereNotes.map((n, i) => (
-                <SourceNote key={i} text={n.text} lang={n.lang} label={n.lang !== lang ? s.sourceLanguageNote : null} />
-              ))}
+              {hereNotes.map((n, i) =>
+                translatable && n.text_da && !showOriginal ? (
+                  <SourceNote key={i} text={n.text_da} lang="da" label={s.translatedFrom(n.lang)} />
+                ) : (
+                  <SourceNote key={i} text={n.text} lang={n.lang} label={n.lang !== lang ? s.originalIn(n.lang) : null} />
+                ),
+              )}
             </Card>
           );
         })}
 
-        <p className="px-1 text-sm text-muted">{s.disclaimer}</p>
+        <div className="mt-2">
+          <SensesPill s={s} />
+        </div>
 
         <section className="mt-2 flex flex-col gap-1 border-t border-border px-1 pt-4" aria-labelledby="source-heading">
           <h2 id="source-heading" className="text-lg font-semibold">

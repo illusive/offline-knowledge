@@ -159,6 +159,28 @@ export function mapProduce(data: FoodKeeperExport, danish: Record<string, Danish
   return items;
 }
 
+export interface NoteTranslation {
+  da: string;
+  checked: boolean;
+}
+
+// Attaches Danish translations to notes by exact English text. Returns notes without a
+// translation and translations that match no note, so the import can refuse incomplete data.
+export function applyNoteTranslations(items: StorageItem[], translations: Record<string, NoteTranslation>): { missing: string[]; unused: string[] } {
+  const used = new Set<string>();
+  const missing = new Set<string>();
+  for (const item of items) {
+    for (const note of item.notes) {
+      const t = translations[note.text];
+      if (t) {
+        note.translation = { lang: 'da', text: t.da, checked: t.checked };
+        used.add(note.text);
+      } else missing.add(note.text);
+    }
+  }
+  return { missing: [...missing], unused: Object.keys(translations).filter((k) => !used.has(k)) };
+}
+
 export function dataVersion(data: FoodKeeperExport): string {
   const current = sheetRows(data, 'Version').find((v) => v['Current_Version'] === 'Yes');
   if (!current) throw new Error('FoodKeeper: no row marked Current_Version = Yes');

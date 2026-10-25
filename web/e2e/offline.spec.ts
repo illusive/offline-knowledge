@@ -49,7 +49,13 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await page.getByRole('searchbox', { name: 'Søg i indholdet' }).fill('kartof');
   await page.getByRole('link', { name: 'Kartofler Potatoes', exact: true }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Kartofler' })).toBeVisible();
-  await expect(page.getByText('Kildetekst på engelsk').first()).toBeVisible();
+  // Notes are shown in Danish translation; the original is one tap away (D-031).
+  await expect(page.getByText('Tiden i fryseren gælder kogte kartofler og kartoffelmos.')).toBeVisible();
+  await expect(page.getByText('Oversat fra engelsk').first()).toBeVisible();
+  await page.getByRole('button', { name: 'Vis original' }).click();
+  await expect(page.getByText('Freezer timeline applies to cooked and mashed potatoes.')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Vis på dansk' })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByText('Brug dine sanser')).toBeVisible();
 });
 
 test('opened directly on a food, back goes to the food list, then Home', async ({ app: { page } }) => {

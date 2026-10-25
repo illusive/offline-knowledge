@@ -209,6 +209,22 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Decision:** This repository is public on GitHub (`illusive/offline-knowledge`), and a GitHub Actions workflow (`.github/workflows/pages.yml`) runs the content pipeline and web tests, builds the pack and the app, and publishes `web/dist` to GitHub Pages on every push to `main`. Resolves the open part of D-023.
 - **Consequences:** source code, docs, source snapshots and the design brief are public, as is the commit author email. Licensing risk is accepted under D-028.
 
+## D-031 — Storage notes shown in Danish translation, unchecked
+
+- **Date:** 2026-10-25
+- **Decision:** The 57 English FoodKeeper notes (35 distinct texts) are translated into Danish (`content/storage/notes-da.json`) and shown in the Danish interface, labelled "Oversat fra engelsk". A page-wide switch ("Vis original") shows the English source text instead. The translations were drafted by an AI assistant and, by owner decision, are **not checked** (`checked: false`); the import refuses notes without a translation. Fahrenheit temperatures keep °F and get the Celsius equivalent in brackets, so they are not read as Celsius.
+- **Deviation:** this departs from D-003/D-015 (source text stays in its language), from D-027 (food safety is high-risk, verbatim only) and from AGENTS.md §6 (AI output must not be the only basis for food-safety instructions). Mitigations: the original is always one tap away, translations are labelled, and the unchanged source text is stored next to each translation.
+- **Must be revisited before:** sharing the app beyond the owner (as D-028): check every translation and set `checked: true`.
+- **Alternatives:** translations checked by the owner before showing (recommended, not chosen); keep the notes in English.
+- **Pack:** schema version 2 (`storage_notes.text_da`, `text_da_checked`); pack version 0.2.0.
+
+## D-032 — "Brug dine sanser" element on food pages
+
+- **Date:** 2026-10-25
+- **Decision:** A reusable notice pill (dark pill, lime circle with an icon, title and short text; `web/src/components/SensesPill.tsx`) at the end of every food page, above the source. Text: "Brug dine sanser — Tiderne er vejledende. Ser eller lugter maden forkert, så kassér den – og er du i tvivl, så smid den ud." / "Use your senses — The times are guidelines. If food looks or smells wrong, throw it out – and when in doubt, throw it out." It replaces the earlier disclaimer line.
+- **Rationale:** The wording deliberately does not suggest tasting or that the senses can detect all spoilage (e.g. listeria is not visible or smellable); it follows USDA's "When in doubt, throw it out".
+- **Alternatives:** fixed on screen above the tab bar; a shorter text without advice.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

@@ -62,7 +62,12 @@
           "location": "freezer",
           "lang": "en",
           "text": "Freezing guidance applies to cooked product.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Vejledningen for fryseren gælder det tilberedte produkt.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -120,13 +125,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -184,13 +199,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -251,13 +276,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit; skin will blacken.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt; skrællen bliver sort.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -472,13 +507,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -610,7 +655,12 @@
           "location": "pantry",
           "lang": "en",
           "text": "Applies to unopened coconut.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Gælder uåbnet kokosnød.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -833,7 +883,12 @@
           "location": "freezer",
           "lang": "en",
           "text": "Freezing guidance applies to whole grapes.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Vejledningen for fryseren gælder hele vindruer.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -890,13 +945,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Ripe is when this item is tender, fully developed and ready to eat. Note, these spoil quickly.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise. Bemærk: de bliver hurtigt dårlige.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -955,13 +1020,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -1033,13 +1108,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Indtil moden, derefter 7 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "freezer",
           "lang": "en",
           "text": "Freezing guidance applies to balled melon.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Vejledningen for fryseren gælder melon skåret i kugler.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -1170,19 +1255,34 @@
           "location": "pantry",
           "lang": "en",
           "text": "Until Ripe, then 1-2 days. Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Indtil moden, derefter 1–2 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt.",
+            "checked": false
+          }
         },
         {
           "location": "freezer",
           "lang": "en",
           "text": "Freezing guidance applies to product when sliced, with lemon juice and sugar.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Vejledningen for fryseren gælder produktet i skiver med citronsaft og sukker.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -1242,13 +1342,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Until Ripe, then 1-2 days. Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Indtil moden, derefter 1–2 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -1309,13 +1419,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Until Ripe, then 1-2 days. Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Indtil moden, derefter 1–2 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -2167,13 +2287,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Store unbroken bulbs in pantry.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Opbevar hele hvidløgshoveder i spisekammeret.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Store individual cloves in refrigerator.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Opbevar enkelte fed i køleskabet.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -2570,7 +2700,12 @@
           "location": "pantry",
           "lang": "en",
           "text": "Highly perishable when stored in the pantry.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Meget letfordærvelig i spisekammeret.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -2803,19 +2938,34 @@
           "location": "pantry",
           "lang": "en",
           "text": "This is the recommended storage method for whole potatoes.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Dette er den anbefalede opbevaring af hele kartofler.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "The United States Potato Board notes refrigeration can cause potatoes to darken during cooking and to develop an unpleasantly sweet taste.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Ifølge United States Potato Board kan opbevaring i køleskab få kartofler til at blive mørke under tilberedning og give dem en ubehageligt sød smag.",
+            "checked": false
+          }
         },
         {
           "location": "freezer",
           "lang": "en",
           "text": "Freezer timeline applies to cooked and mashed potatoes.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i fryseren gælder kogte kartofler og kartoffelmos.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -3176,13 +3326,23 @@
           "location": "fridge",
           "lang": "en",
           "text": "Refrigeration guidelines apply to just the pulp.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Vejledningen for køleskabet gælder kun frugtkødet.",
+            "checked": false
+          }
         },
         {
           "location": "freezer",
           "lang": "en",
           "text": "Freezing guidelines apply to just the pulp.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Vejledningen for fryseren gælder kun frugtkødet.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -3234,7 +3394,12 @@
           "location": "fridge",
           "lang": "en",
           "text": "Refrigeration not recommended.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Køleskab anbefales ikke.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -3284,7 +3449,12 @@
           "location": "pantry",
           "lang": "en",
           "text": "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat. Refrigeration may affect flavor; USDA recommends pantry storage.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Indtil moden, derefter 7 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise. Køleskab kan påvirke smagen; USDA anbefaler opbevaring i spisekammeret.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -3444,13 +3614,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Timeline for refrigerator applies to ripe fruit.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Tiden i køleskabet gælder moden frugt.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -3518,7 +3698,12 @@
           "location": "fridge",
           "lang": "en",
           "text": "Unopened product will last 3 - 5 days after date on bag; after opening it will last 2 days.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Uåbnet holder produktet 3–5 dage efter datoen på posen; efter åbning holder det 2 dage.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -3666,7 +3851,12 @@
           "location": "pantry",
           "lang": "en",
           "text": "Or until ripe. Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Eller indtil moden. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -3731,7 +3921,12 @@
           "location": "pantry",
           "lang": "en",
           "text": "Or until ripe. Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Eller indtil moden. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -3797,7 +3992,12 @@
           "location": "pantry",
           "lang": "en",
           "text": "Or until ripe. Ripe is when this item is tender, fully developed and ready to eat.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Eller indtil moden. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4000,13 +4200,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "below 75 °F",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "under 75 °F (ca. 24 °C)",
+            "checked": false
+          }
         },
         {
           "location": "freezer",
           "lang": "en",
           "text": "Blanch before freezing.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Blancher før indfrysning.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4061,13 +4271,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "1-2 weeks if inappropriately handled.",
-          "sourceField": "DOP_Pantry_tips"
+          "sourceField": "DOP_Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "1–2 uger ved forkert håndtering.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Free from moisture; chilling injury causes decay, discoloration or loss of texture may occur.",
-          "sourceField": "DOP_Refrigerate_tips"
+          "sourceField": "DOP_Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Holdes fri for fugt; kuldeskader giver forrådnelse, og misfarvning eller tab af konsistens kan forekomme.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4209,7 +4429,12 @@
           "location": "pantry",
           "lang": "en",
           "text": "Or until ripe.",
-          "sourceField": "DOP_Pantry_tips"
+          "sourceField": "DOP_Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Eller indtil moden.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4272,7 +4497,12 @@
           "location": "pantry",
           "lang": "en",
           "text": "Or until ripe.",
-          "sourceField": "DOP_Pantry_tips"
+          "sourceField": "DOP_Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Eller indtil moden.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4425,7 +4655,12 @@
           "location": "freezer",
           "lang": "en",
           "text": "Freeze damage will appear.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Der opstår frostskader.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4477,7 +4712,12 @@
           "location": "freezer",
           "lang": "en",
           "text": "Freeze damage will appear.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Der opstår frostskader.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4569,13 +4809,23 @@
           "location": "pantry",
           "lang": "en",
           "text": "Keep stems in water.",
-          "sourceField": "Pantry_tips"
+          "sourceField": "Pantry_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Sæt stilkene i vand.",
+            "checked": false
+          }
         },
         {
           "location": "fridge",
           "lang": "en",
           "text": "Will start to discolor.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Begynder at blive misfarvet.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4627,7 +4877,12 @@
           "location": "freezer",
           "lang": "en",
           "text": "Freeze damage will appear.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Der opstår frostskader.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4679,7 +4934,12 @@
           "location": "freezer",
           "lang": "en",
           "text": "Freeze damage will appear.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Der opstår frostskader.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4731,7 +4991,12 @@
           "location": "freezer",
           "lang": "en",
           "text": "Freeze damage will appear.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Der opstår frostskader.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4878,13 +5143,23 @@
           "location": "fridge",
           "lang": "en",
           "text": "Fresh whole peppers will last longer if kept dry.",
-          "sourceField": "DOP_Refrigerate_tips"
+          "sourceField": "DOP_Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Friske, hele peberfrugter holder længere, hvis de holdes tørre.",
+            "checked": false
+          }
         },
         {
           "location": "freezer",
           "lang": "en",
           "text": "Peppers lose their crispness when frozen and thawed.",
-          "sourceField": "Freeze_Tips"
+          "sourceField": "Freeze_Tips",
+          "translation": {
+            "lang": "da",
+            "text": "Peberfrugter mister deres sprødhed, når de fryses og tøs op.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -4962,7 +5237,12 @@
           "location": "fridge",
           "lang": "en",
           "text": "Keep them in a plastic bag to retain moisture.",
-          "sourceField": "DOP_Refrigerate_tips"
+          "sourceField": "DOP_Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Opbevar dem i en plastpose, så de bevarer fugten.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {
@@ -5105,7 +5385,12 @@
           "location": "fridge",
           "lang": "en",
           "text": "Storage temperatures below 50 degrees (as in a refrigerator) will cause the squash to spoil more rapidly.",
-          "sourceField": "Refrigerate_tips"
+          "sourceField": "Refrigerate_tips",
+          "translation": {
+            "lang": "da",
+            "text": "Opbevaring under 50 °F (ca. 10 °C), som i et køleskab, får squashen til at blive dårlig hurtigere.",
+            "checked": false
+          }
         }
       ],
       "sourceRef": {

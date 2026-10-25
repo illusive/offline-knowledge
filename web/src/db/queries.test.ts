@@ -44,6 +44,11 @@ test('detail returns periods, notes and source in source order', () => {
     ['freezer', 'unspecified', 10, 12, 'months'],
   ]);
   expect(detail?.notes.map((n) => n.location)).toEqual(['pantry', 'fridge', 'freezer']);
+  expect(detail?.notes[2]).toMatchObject({
+    lang: 'en',
+    text: 'Freezer timeline applies to cooked and mashed potatoes.',
+    text_da: 'Tiden i fryseren gælder kogte kartofler og kartoffelmos.',
+  });
   expect(detail?.source.license).toBe('CC0-1.0');
   expect(getItemDetail(db, 'does-not-exist')).toBeNull();
 });

@@ -3,12 +3,14 @@
 
 import { Asterisk, ArrowUpRight, Package } from 'lucide-react';
 import { EmergencyCard } from '../components/EmergencyCard';
+import { DownloadCard, OfflineStatus } from '../components/OfflineStatus';
 import { FoodList } from '../components/FoodList';
 import { Page, SearchField } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { ItemRow } from '../db/queries';
 import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
+import type { PrecacheProgress } from '../pwa/usePrecacheProgress';
 import { useFoodSearch } from '../storage/useFoodSearch';
 
 export function HomeScreen(props: {
@@ -17,10 +19,11 @@ export function HomeScreen(props: {
   lang: Lang;
   s: Strings;
   offlineReady: boolean;
+  precache: PrecacheProgress | null;
   query: string;
   onQueryChange: (q: string) => void;
 }) {
-  const { db, foods, lang, s, offlineReady, query, onQueryChange } = props;
+  const { db, foods, lang, s, offlineReady, precache, query, onQueryChange } = props;
   const results = useFoodSearch(db, foods, query, lang);
   const searching = query.trim() !== '';
 
@@ -31,11 +34,10 @@ export function HomeScreen(props: {
           {s.appTitle}
           <Asterisk aria-hidden="true" className="size-6" />
         </p>
-        <p className="flex items-center gap-2 text-sm text-muted">
-          <span aria-hidden="true" className={`size-2 rounded-full ${offlineReady ? 'bg-text' : 'border border-muted'}`} />
-          {offlineReady ? s.offlineReadyStatus : s.preparingOffline}
-        </p>
+        <OfflineStatus ready={offlineReady} s={s} />
       </header>
+
+      {offlineReady ? null : <DownloadCard progress={precache} s={s} />}
 
       <section className="mt-4 rounded-hero bg-accent px-[20px] py-5 text-on-accent">
         <h1 className="mb-6 text-[min(2.5rem,11vw)] leading-[1.05] font-normal tracking-tight">{s.homeTitle}</h1>

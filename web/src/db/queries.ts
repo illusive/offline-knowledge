@@ -4,7 +4,7 @@
 import type { Location, PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
-export const SUPPORTED_PACK_SCHEMA_VERSION = 1;
+export const SUPPORTED_PACK_SCHEMA_VERSION = 2;
 
 type Bind = (string | number | null)[];
 
@@ -25,7 +25,9 @@ export interface ItemRow {
 export interface NoteRow {
   location: Location;
   lang: 'da' | 'en';
-  text: string;
+  text: string;                    // source text
+  text_da: string | null;          // Danish translation (D-031)
+  text_da_checked: 0 | 1;
 }
 
 export interface SourceRow {
@@ -79,7 +81,7 @@ export function getItemDetail(db: SqlDb, id: string): ItemDetail | null {
   const [item] = rows<ItemRow>(db, `SELECT ${ITEM_COLUMNS} FROM storage_items i WHERE i.id = ?`, [id]);
   if (!item) return null;
   const periods = rows<PeriodRow>(db, 'SELECT location, basis, kind, min_value, max_value, unit FROM storage_periods WHERE item_id = ? ORDER BY ord', [id]);
-  const notes = rows<NoteRow>(db, 'SELECT location, lang, text FROM storage_notes WHERE item_id = ? ORDER BY ord', [id]);
+  const notes = rows<NoteRow>(db, 'SELECT location, lang, text, text_da, text_da_checked FROM storage_notes WHERE item_id = ? ORDER BY ord', [id]);
   const [source] = rows<SourceRow>(
     db,
     'SELECT id, title, publisher, url, license, attribution, retrieved_at, data_version FROM sources WHERE id = ?',

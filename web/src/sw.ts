@@ -26,8 +26,37 @@ const CACHE = PREFIX + hash(JSON.stringify(manifest));
 const urls = [...new Set(manifest.map((entry) => new URL(entry.url, self.registration.scope).href))];
 const indexUrl = new URL('index.html', self.registration.scope).href;
 
+// Downloads every file into the new cache, a few at a time, and reports progress to open pages
+// (the first install shows it). Files are fetched past the HTTP cache: index.html and the pack keep
+// their address between versions, and a stale copy must never be stored next to new code.
+// If any file fails, the new cache is deleted and the install fails; the current version stays.
+async function precache(): Promise<void> {
+  const cache = await caches.open(CACHE);
+  let done = 0;
+  const report = async () => {
+    const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const client of clients) client.postMessage({ type: 'PRECACHE_PROGRESS', done, total: urls.length });
+  };
+  try {
+    const queue = [...urls];
+    const worker = async () => {
+      for (let url = queue.shift(); url; url = queue.shift()) {
+        const response = await fetch(new Request(url, { cache: 'reload' }));
+        if (!response.ok) throw new Error(`Precache failed (${response.status}): ${url}`);
+        await cache.put(url, response);
+        done++;
+        await report();
+      }
+    };
+    await Promise.all([worker(), worker(), worker(), worker()]);
+  } catch (error) {
+    await caches.delete(CACHE);
+    throw error;
+  }
+}
+
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(urls)));
+  event.waitUntil(precache());
 });
 
 self.addEventListener('activate', (event) => {

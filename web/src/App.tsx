@@ -1,10 +1,13 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { TabBar } from './components/TabBar';
+import { Spinner } from './components/OfflineStatus';
 import { MessageState, Page } from './components/ui';
+import type { Strings } from './i18n/strings';
 import { createDbClient, openPack } from './db/client';
 import { useStrings } from './i18n/lang';
 import { UpdateBanner } from './pwa/UpdateBanner';
 import { useOfflineReady } from './pwa/useOfflineReady';
+import { usePrecacheProgress } from './pwa/usePrecacheProgress';
 import { tabOf, useRoute } from './router';
 import { FoodScreen } from './screens/FoodScreen';
 import { HomeScreen } from './screens/HomeScreen';
@@ -22,6 +25,7 @@ export function App() {
   const [homeQuery, setHomeQuery] = useState('');
   const [storageQuery, setStorageQuery] = useState('');
   const offlineReady = useOfflineReady(status === 'ready');
+  const precache = usePrecacheProgress();
 
   useEffect(() => {
     packReady.then(
@@ -56,12 +60,12 @@ export function App() {
 
   let content;
   if (status === 'error') content = <Page><MessageState title={s.packErrorTitle} body={s.packErrorBody} /></Page>;
-  else if (status === 'loading') content = <Page><MessageState title={s.loading} /></Page>;
+  else if (status === 'loading') content = <Page><LoadingState s={s} /></Page>;
   else if (route.name === 'food') content = <FoodScreen db={db} id={route.id} lang={lang} s={s} />;
   else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;
   else if (route.name === 'tools') content = <PlaceholderScreen title={s.toolsTitle} s={s} />;
   else if (route.name === 'settings') content = <PlaceholderScreen title={s.settingsTitle} s={s} />;
-  else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} query={homeQuery} onQueryChange={setHomeQuery} />;
+  else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} query={homeQuery} onQueryChange={setHomeQuery} />;
 
   return (
     <>
@@ -69,5 +73,18 @@ export function App() {
       <UpdateBanner s={s} />
       <TabBar active={tabOf(route)} s={s} />
     </>
+  );
+}
+
+// First launch: the pack is being fetched and imported; later launches open it in a moment.
+function LoadingState({ s }: { s: Strings }) {
+  return (
+    <div className="flex flex-col items-center gap-3 px-6 py-16 text-center" role="status">
+      <span className="scale-150">
+        <Spinner />
+      </span>
+      <p className="font-semibold">{s.openingPack}</p>
+      <p className="text-sm text-muted">{s.firstLaunchNote}</p>
+    </div>
   );
 }

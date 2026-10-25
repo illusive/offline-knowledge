@@ -32,9 +32,11 @@ export interface StoragePeriod {
 // where the source gives no time at all (e.g. herbs: 'Freeze damage will appear.').
 export interface StorageNote {
   location: StorageLocation;
-  lang: Lang;                           // source language only (D-015)
-  text: string;
+  lang: Lang;                           // language of the source text
+  text: string;                         // source text, unchanged
   sourceField: string;                  // e.g. 'Freeze_Tips'
+  // Danish translation (D-031): shown labelled as translated, with the original one tap away.
+  translation?: { lang: 'da'; text: string; checked: boolean };
 }
 
 export interface LocalizedName {

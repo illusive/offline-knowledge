@@ -14,10 +14,8 @@ export interface Strings {
   units: Record<'hours' | 'days' | 'weeks' | 'months' | 'years', [singular: string, plural: string]>;
   durations: Record<'notRecommended' | 'indefinitely' | 'untilRipe' | 'packageUseByDate', string>;
   noTimeGiven: string;
-  sourceLanguageNote: string;
   sourceHeading: string;
   dataDate: (version: string) => string;
-  disclaimer: string;
   packErrorTitle: string;
   packErrorBody: string;
   notFound: string;
@@ -45,6 +43,18 @@ export interface Strings {
   toolsTitle: string;
   settingsTitle: string;
   comingLater: string;
+  translatedFrom: (lang: Lang) => string;
+  originalIn: (lang: Lang) => string;
+  notesTranslated: string;
+  showOriginal: string;
+  showTranslation: string;
+  sensesTitle: string;
+  sensesBody: string;
+  downloadingTitle: string;
+  downloadingBody: string;
+  downloadProgress: (done: number, total: number) => string;
+  openingPack: string;
+  firstLaunchNote: string;
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -71,10 +81,8 @@ export const strings: Record<Lang, Strings> = {
       packageUseByDate: 'Se datoen på pakken',
     },
     noTimeGiven: 'Ingen tid angivet',
-    sourceLanguageNote: 'Kildetekst på engelsk',
     sourceHeading: 'Kilde',
     dataDate: (v) => `Dataversion ${v}`,
-    disclaimer: 'Vejledende tider fra kilden. Brug din egen vurdering: lugt, udseende og opbevaring betyder noget.',
     packErrorTitle: 'Indholdet kunne ikke åbnes',
     packErrorBody: 'Appens indbyggede vidensbase kunne ikke indlæses. Prøv at genstarte appen.',
     notFound: 'Fødevaren blev ikke fundet.',
@@ -86,7 +94,7 @@ export const strings: Record<Lang, Strings> = {
     dismiss: 'Luk',
     languageName: { da: 'dansk', en: 'engelsk' },
     homeTitle: 'Hvad har du brug for?',
-    homeSearchPlaceholder: 'Søg i offline-indhold',
+    homeSearchPlaceholder: 'Søg',
     homeSearchLabel: 'Søg i indholdet',
     startHere: 'Start her',
     storingFood: 'Opbevaring af mad',
@@ -102,6 +110,18 @@ export const strings: Record<Lang, Strings> = {
     toolsTitle: 'Værktøjer',
     settingsTitle: 'Indstillinger',
     comingLater: 'Kommer i et senere trin.',
+    translatedFrom: (l) => `Oversat fra ${l === 'en' ? 'engelsk' : 'dansk'}`,
+    originalIn: (l) => `Original på ${l === 'en' ? 'engelsk' : 'dansk'}`,
+    notesTranslated: 'Noterne er oversat fra kilden på engelsk.',
+    showOriginal: 'Vis original',
+    showTranslation: 'Vis på dansk',
+    sensesTitle: 'Brug dine sanser',
+    sensesBody: 'Tiderne er vejledende. Ser eller lugter maden forkert, så kassér den – og er du i tvivl, så smid den ud.',
+    downloadingTitle: 'Henter appen til offline brug',
+    downloadingBody: 'Det kan tage lidt tid. Du kan bruge appen imens.',
+    downloadProgress: (done, total) => `${done} af ${total} filer`,
+    openingPack: 'Henter indholdet …',
+    firstLaunchNote: 'Første gang kan det tage lidt tid.',
   },
   en: {
     appTitle: 'stead',
@@ -126,10 +146,8 @@ export const strings: Record<Lang, Strings> = {
       packageUseByDate: 'See the date on the package',
     },
     noTimeGiven: 'No time given',
-    sourceLanguageNote: 'Source text',
     sourceHeading: 'Source',
     dataDate: (v) => `Data version ${v}`,
-    disclaimer: 'Guideline times from the source. Use your own judgement: smell, appearance and storage conditions matter.',
     packErrorTitle: 'Content could not be opened',
     packErrorBody: "The app's built-in knowledge base could not be loaded. Try restarting the app.",
     notFound: 'Food not found.',
@@ -141,7 +159,7 @@ export const strings: Record<Lang, Strings> = {
     dismiss: 'Dismiss',
     languageName: { da: 'Danish', en: 'English' },
     homeTitle: 'What do you need?',
-    homeSearchPlaceholder: 'Search offline content',
+    homeSearchPlaceholder: 'Search',
     homeSearchLabel: 'Search the content',
     startHere: 'Start here',
     storingFood: 'Storing food',
@@ -157,5 +175,17 @@ export const strings: Record<Lang, Strings> = {
     toolsTitle: 'Tools',
     settingsTitle: 'Settings',
     comingLater: 'Coming in a later step.',
+    translatedFrom: (l) => `Translated from ${l === 'en' ? 'English' : 'Danish'}`,
+    originalIn: (l) => `Original in ${l === 'en' ? 'English' : 'Danish'}`,
+    notesTranslated: 'The notes are translated from the English source.',
+    showOriginal: 'Show original',
+    showTranslation: 'Show translation',
+    sensesTitle: 'Use your senses',
+    sensesBody: 'The times are guidelines. If food looks or smells wrong, throw it out – and when in doubt, throw it out.',
+    downloadingTitle: 'Downloading the app for offline use',
+    downloadingBody: 'This can take a little while. You can use the app meanwhile.',
+    downloadProgress: (done, total) => `${done} of ${total} files`,
+    openingPack: 'Loading the content …',
+    firstLaunchNote: 'The first time can take a little while.',
   },
 };

@@ -1,0 +1,145 @@
+{
+  "$comment": "Danish translations of the English FoodKeeper notes, keyed by the exact English text (D-031). Drafted 2026-10-25 by an AI assistant and NOT checked, by owner decision; shown labelled as translated, with the English original one tap away. Fahrenheit temperatures keep °F and get the Celsius equivalent in brackets, so they are not misread as Celsius. Revisit (check every entry) before the app is shared beyond the owner.",
+  "translations": {
+    "1-2 weeks if inappropriately handled.": {
+      "da": "1–2 uger ved forkert håndtering.",
+      "checked": false
+    },
+    "Applies to unopened coconut.": {
+      "da": "Gælder uåbnet kokosnød.",
+      "checked": false
+    },
+    "Blanch before freezing.": {
+      "da": "Blancher før indfrysning.",
+      "checked": false
+    },
+    "Free from moisture; chilling injury causes decay, discoloration or loss of texture may occur.": {
+      "da": "Holdes fri for fugt; kuldeskader giver forrådnelse, og misfarvning eller tab af konsistens kan forekomme.",
+      "checked": false
+    },
+    "Freeze damage will appear.": {
+      "da": "Der opstår frostskader.",
+      "checked": false
+    },
+    "Freezer timeline applies to cooked and mashed potatoes.": {
+      "da": "Tiden i fryseren gælder kogte kartofler og kartoffelmos.",
+      "checked": false
+    },
+    "Freezing guidance applies to balled melon.": {
+      "da": "Vejledningen for fryseren gælder melon skåret i kugler.",
+      "checked": false
+    },
+    "Freezing guidance applies to cooked product.": {
+      "da": "Vejledningen for fryseren gælder det tilberedte produkt.",
+      "checked": false
+    },
+    "Freezing guidance applies to product when sliced, with lemon juice and sugar.": {
+      "da": "Vejledningen for fryseren gælder produktet i skiver med citronsaft og sukker.",
+      "checked": false
+    },
+    "Freezing guidance applies to whole grapes.": {
+      "da": "Vejledningen for fryseren gælder hele vindruer.",
+      "checked": false
+    },
+    "Freezing guidelines apply to just the pulp.": {
+      "da": "Vejledningen for fryseren gælder kun frugtkødet.",
+      "checked": false
+    },
+    "Fresh whole peppers will last longer if kept dry.": {
+      "da": "Friske, hele peberfrugter holder længere, hvis de holdes tørre.",
+      "checked": false
+    },
+    "Highly perishable when stored in the pantry.": {
+      "da": "Meget letfordærvelig i spisekammeret.",
+      "checked": false
+    },
+    "Keep stems in water.": {
+      "da": "Sæt stilkene i vand.",
+      "checked": false
+    },
+    "Keep them in a plastic bag to retain moisture.": {
+      "da": "Opbevar dem i en plastpose, så de bevarer fugten.",
+      "checked": false
+    },
+    "Or until ripe.": {
+      "da": "Eller indtil moden.",
+      "checked": false
+    },
+    "Or until ripe. Ripe is when this item is tender, fully developed and ready to eat.": {
+      "da": "Eller indtil moden. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+      "checked": false
+    },
+    "Peppers lose their crispness when frozen and thawed.": {
+      "da": "Peberfrugter mister deres sprødhed, når de fryses og tøs op.",
+      "checked": false
+    },
+    "Refrigeration guidelines apply to just the pulp.": {
+      "da": "Vejledningen for køleskabet gælder kun frugtkødet.",
+      "checked": false
+    },
+    "Refrigeration not recommended.": {
+      "da": "Køleskab anbefales ikke.",
+      "checked": false
+    },
+    "Ripe is when this item is tender, fully developed and ready to eat.": {
+      "da": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+      "checked": false
+    },
+    "Ripe is when this item is tender, fully developed and ready to eat. Note, these spoil quickly.": {
+      "da": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise. Bemærk: de bliver hurtigt dårlige.",
+      "checked": false
+    },
+    "Storage temperatures below 50 degrees (as in a refrigerator) will cause the squash to spoil more rapidly.": {
+      "da": "Opbevaring under 50 °F (ca. 10 °C), som i et køleskab, får squashen til at blive dårlig hurtigere.",
+      "checked": false
+    },
+    "Store individual cloves in refrigerator.": {
+      "da": "Opbevar enkelte fed i køleskabet.",
+      "checked": false
+    },
+    "Store unbroken bulbs in pantry.": {
+      "da": "Opbevar hele hvidløgshoveder i spisekammeret.",
+      "checked": false
+    },
+    "The United States Potato Board notes refrigeration can cause potatoes to darken during cooking and to develop an unpleasantly sweet taste.": {
+      "da": "Ifølge United States Potato Board kan opbevaring i køleskab få kartofler til at blive mørke under tilberedning og give dem en ubehageligt sød smag.",
+      "checked": false
+    },
+    "This is the recommended storage method for whole potatoes.": {
+      "da": "Dette er den anbefalede opbevaring af hele kartofler.",
+      "checked": false
+    },
+    "Timeline for refrigerator applies to ripe fruit.": {
+      "da": "Tiden i køleskabet gælder moden frugt.",
+      "checked": false
+    },
+    "Timeline for refrigerator applies to ripe fruit; skin will blacken.": {
+      "da": "Tiden i køleskabet gælder moden frugt; skrællen bliver sort.",
+      "checked": false
+    },
+    "Unopened product will last 3 - 5 days after date on bag; after opening it will last 2 days.": {
+      "da": "Uåbnet holder produktet 3–5 dage efter datoen på posen; efter åbning holder det 2 dage.",
+      "checked": false
+    },
+    "Until Ripe, then 1-2 days. Ripe is when this item is tender, fully developed and ready to eat.": {
+      "da": "Indtil moden, derefter 1–2 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+      "checked": false
+    },
+    "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat.": {
+      "da": "Indtil moden, derefter 7 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+      "checked": false
+    },
+    "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat. Refrigeration may affect flavor; USDA recommends pantry storage.": {
+      "da": "Indtil moden, derefter 7 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise. Køleskab kan påvirke smagen; USDA anbefaler opbevaring i spisekammeret.",
+      "checked": false
+    },
+    "Will start to discolor.": {
+      "da": "Begynder at blive misfarvet.",
+      "checked": false
+    },
+    "below 75 °F": {
+      "da": "under 75 °F (ca. 24 °C)",
+      "checked": false
+    }
+  }
+}

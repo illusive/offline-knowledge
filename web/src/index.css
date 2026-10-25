@@ -17,6 +17,7 @@
   --c-on-accent: #141414;
   --c-note-bg: #fbf0da;
   --c-note-text: #6b3f00;
+  --c-ok: #1f7a3d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +34,7 @@
     --c-on-accent: #141414;
     --c-note-bg: #3a2c12;
     --c-note-text: #f4cc94;
+    --c-ok: #5ccf86;
   }
 }
 
@@ -49,6 +51,7 @@
   --color-on-accent: var(--c-on-accent);
   --color-note-bg: var(--c-note-bg);
   --color-note-text: var(--c-note-text);
+  --color-ok: var(--c-ok);
   --radius-card: 20px;
   --radius-hero: 28px;
 }

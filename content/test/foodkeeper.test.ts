@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { isoDate, mapNotes, mapPeriods, mapProduce, parseDuration, type FoodKeeperExport } from '../lib/foodkeeper.ts';
+import { applyNoteTranslations, isoDate, mapNotes, mapPeriods, mapProduce, parseDuration, type FoodKeeperExport } from '../lib/foodkeeper.ts';
+import type { StorageItem } from '../schema/storage.ts';
 
 test('parseDuration maps numeric ranges and normalises units', () => {
   assert.deepEqual(parseDuration(3, 5, 'Days', 'x'), { kind: 'range', min: 3, max: 5, unit: 'days' });
@@ -82,4 +83,23 @@ test('isoDate converts FoodKeeper US dates', () => {
   assert.equal(isoDate('09-06-2018'), '2018-09-06');
   assert.equal(isoDate(undefined), undefined);
   assert.throws(() => isoDate('2018-09-06'), /Unexpected FoodKeeper date format/);
+});
+
+test('applyNoteTranslations attaches Danish text and reports gaps both ways', () => {
+  const items: StorageItem[] = [
+    {
+      id: 'x', category: 'fresh-fruits', names: { en: { name: 'X' } }, keywords: [], periods: [],
+      notes: [
+        { location: 'fridge', lang: 'en', text: 'Keep stems in water.', sourceField: 'Refrigerate_tips' },
+        { location: 'freezer', lang: 'en', text: 'Freeze damage will appear.', sourceField: 'Freeze_Tips' },
+      ],
+      sourceRef: { sourceId: 's', recordId: '1' },
+    },
+  ];
+  const result = applyNoteTranslations(items, {
+    'Keep stems in water.': { da: 'Sæt stilkene i vand.', checked: false },
+    'No longer in the data.': { da: 'Findes ikke længere.', checked: false },
+  });
+  assert.deepEqual(items[0]!.notes[0]!.translation, { lang: 'da', text: 'Sæt stilkene i vand.', checked: false });
+  assert.deepEqual(result, { missing: ['Freeze damage will appear.'], unused: ['No longer in the data.'] });
 });
