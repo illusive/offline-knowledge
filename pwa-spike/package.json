@@ -1,0 +1,13 @@
+{
+  "name": "offline-knowledge-pwa-spike",
+  "private": true,
+  "type": "module",
+  "description": "Throwaway test: can a home-screen web app on iOS store and search the knowledge pack offline, and how much can it store?",
+  "scripts": {
+    "prepare-files": "node scripts/prepare.js",
+    "serve": "node scripts/serve.js"
+  },
+  "dependencies": {
+    "@sqlite.org/sqlite-wasm": "3.53.4-build2"
+  }
+}

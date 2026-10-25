@@ -106,20 +106,22 @@ The model is designed so that a later translation is another `Guide` record with
 
 ## 4. App (`app/`)
 
-Candidate stack (per `AGENTS.md` §5, to verify at M1): Expo, Expo Router, expo-sqlite, TypeScript strict. Styling and icon libraries are decided at M1/M2.
-
-Proposed structure:
+Stack (D-019, D-020): Expo SDK 58, Expo Router, expo-sqlite, expo-localization, NativeWind 4, TypeScript strict.
 
 ```
 app/
+  global.css, tailwind.config.js   Design tokens (light/dark) and Tailwind mapping
+  scripts/sync-pack.ts             Copies and verifies the pack from ../content/dist
+  assets/pack/                     Synced pack (generated, not committed)
   src/
-    app/          Routes / screens (presentation)
-    components/   Reusable UI primitives and content renderers
-    theme/        Design tokens: spacing, typography, color (light/dark), radii
-    domain/       Content types, guide/search use cases
-    data/         SQLite access, pack loading, schema migrations
-    i18n/         UI strings (da, en)
+    app/          Routes: _layout.tsx (opens and verifies the pack), index.tsx (storage search), storage/[id].tsx
+    components/   UI primitives (text, card, search field, source note, message states)
+    i18n/         UI strings (da, en) and device-language selection
+    pack/         Pack asset, database name, launch-time verification
+    storage/      Queries, formatting and search ranking (pure parts unit tested with node:test)
 ```
+
+Commands (in `app/`): `npm run sync:pack`, `npm run ios` (sync + build + run in the Simulator), `npm run typecheck`, `npm test`.
 
 - On first launch, the bundled pack is copied to app storage (if needed) and opened read-only.
 - User data (e.g. bookmarks, if decided later) lives in a separate database, so replacing a pack never touches user data.

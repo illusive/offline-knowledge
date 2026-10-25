@@ -119,6 +119,21 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Alternatives:** `unicode61` word tokenizer (misses compound words: 'kål' does not find 'Hvidkål'); a third-party SQLite library (adds a dependency).
 - **Constraints:** Trigram queries need at least 3 characters, so the app needs a prefix fallback for 1–2 characters. The device's SQLite must support FTS5 trigram with `remove_diacritics` (SQLite ≥ 3.45). Verify this in the Expo app before relying on it.
 
+## D-019 — First app slice: storage lookup; local Xcode builds
+
+- **Date:** 2026-10-24
+- **Decision:** The first app screens are the food storage lookup (search list + detail). The app is built locally with Xcode (`npx expo run:ios`); no EAS or Expo account. Stack: Expo SDK 58 (React Native 0.88, React 19.3), Expo Router (routes in `app/src/app/`), expo-sqlite (FTS enabled), expo-localization, TypeScript 6.0.
+- **Rationale:** Uses the pack that already exists, so the whole chain (pack → app → on-device search) is tested early. Local builds keep code and builds on this Mac; release builds embed the JavaScript bundle and can be tested in airplane mode. Expo Go was rejected because it loads code over the network.
+- **Pack in the app:** `npm run sync:pack` copies `content/dist/core` into `app/assets/pack/` after checking size and SHA-256 against the manifest. The device database file name includes pack version and checksum, so an app update with a new pack imports a fresh copy. On launch the app checks the pack schema version and that FTS5 trigram search works before showing any screen; otherwise it shows an error state.
+
+## D-020 — Styling with NativeWind 4
+
+- **Date:** 2026-10-24
+- **Decision:** NativeWind 4.2.7 with Tailwind CSS 3.4.19 (NativeWind 4 requires Tailwind 3). Design tokens are CSS variables in `app/global.css` with light and dark values (`prefers-color-scheme`), mapped to Tailwind colour names in `app/tailwind.config.js`. Components use only token colour names.
+- **Rationale:** Your choice. Version 4.2.7 is the current stable release (5.0 is a release candidate), and its Babel setup supports Reanimated 4, which SDK 58 uses.
+- **Alternatives:** React Native StyleSheet with a token file (no dependency; recommended but not chosen).
+- **Risk:** NativeWind must keep pace with Expo and React Native releases; check compatibility before each SDK upgrade.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { mapNotes, mapPeriods, mapProduce, parseDuration, type FoodKeeperExport } from '../lib/foodkeeper.ts';
+import { isoDate, mapNotes, mapPeriods, mapProduce, parseDuration, type FoodKeeperExport } from '../lib/foodkeeper.ts';
 
 test('parseDuration maps numeric ranges and normalises units', () => {
   assert.deepEqual(parseDuration(3, 5, 'Days', 'x'), { kind: 'range', min: 3, max: 5, unit: 'days' });
@@ -76,4 +76,10 @@ test('mapProduce selects only fresh produce and attaches Danish names', () => {
     sourceRef: { sourceId: 'us-fsis-foodkeeper', recordId: '248' },
   });
   assert.throws(() => mapProduce(data, { '248': { en: 'Apricots', name: 'Abrikoser', checked: false } }), /source says "Apples"/);
+});
+
+test('isoDate converts FoodKeeper US dates', () => {
+  assert.equal(isoDate('09-06-2018'), '2018-09-06');
+  assert.equal(isoDate(undefined), undefined);
+  assert.throws(() => isoDate('2018-09-06'), /Unexpected FoodKeeper date format/);
 });

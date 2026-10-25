@@ -162,5 +162,13 @@ export function mapProduce(data: FoodKeeperExport, danish: Record<string, Danish
 export function dataVersion(data: FoodKeeperExport): string {
   const current = sheetRows(data, 'Version').find((v) => v['Current_Version'] === 'Yes');
   if (!current) throw new Error('FoodKeeper: no row marked Current_Version = Yes');
-  return `${num(current['Data_Version_Number'])} (${text(current['Modified_Date']) ?? 'no date'})`;
+  return `${num(current['Data_Version_Number'])} (${isoDate(text(current['Modified_Date'])) ?? 'no date'})`;
+}
+
+// FoodKeeper dates are US-style MM-DD-YYYY; '09-06-2018' is 6 September 2018.
+export function isoDate(usDate: string | undefined): string | undefined {
+  if (!usDate) return undefined;
+  const m = /^(\d{2})-(\d{2})-(\d{4})$/.exec(usDate);
+  if (!m) throw new Error(`Unexpected FoodKeeper date format: ${usDate}`);
+  return `${m[3]}-${m[1]}-${m[2]}`;
 }
