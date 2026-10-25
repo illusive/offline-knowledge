@@ -3,7 +3,7 @@
 
 import { Asterisk, ArrowUpRight, Package } from 'lucide-react';
 import { EmergencyCard } from '../components/EmergencyCard';
-import { DownloadCard, OfflineStatus } from '../components/OfflineStatus';
+import { DownloadCard, OFFLINE_DISABLED, OfflineStatus } from '../components/OfflineStatus';
 import { FoodList } from '../components/FoodList';
 import { Page, SearchField } from '../components/ui';
 import type { DbClient } from '../db/client';
@@ -37,7 +37,7 @@ export function HomeScreen(props: {
         <OfflineStatus ready={offlineReady} s={s} />
       </header>
 
-      {offlineReady ? null : <DownloadCard progress={precache} s={s} />}
+      {offlineReady || OFFLINE_DISABLED ? null : <DownloadCard progress={precache} s={s} />}
 
       <section className="mt-4 rounded-hero bg-accent px-[20px] py-5 text-on-accent">
         <h1 className="mb-6 text-[min(2.5rem,11vw)] leading-[1.05] font-normal tracking-tight">{s.homeTitle}</h1>
