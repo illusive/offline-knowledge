@@ -18,7 +18,7 @@ export default defineConfig({
       injectRegister: false,
       injectManifest: {
         // Everything the app needs offline, including the SQLite WebAssembly build and the pack.
-        globPatterns: ['**/*.{html,js,css,wasm,sqlite,json,png,webmanifest}'],
+        globPatterns: ['**/*.{html,js,css,wasm,sqlite,json,png,webmanifest,woff2,txt}'],
         maximumFileSizeToCacheInBytes: 20 * 1024 * 1024,
       },
       manifest: {

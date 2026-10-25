@@ -197,6 +197,18 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Must be revisited before:** sharing the link with anyone else (D-009), any App Store or wider release, or making the source repository public.
 - **Alternatives:** two builds (public with cleared sources only, private with everything); private hosting behind a login.
 
+## D-029 — Typeface: Inter, bundled with the app
+
+- **Date:** 2026-10-25
+- **Decision:** The app uses Inter (variable font, SIL Open Font License 1.1) from `@fontsource-variable/inter` 5.3.0. Only the Latin and Latin Extended subsets are bundled (about 133 KB); they are cached by the service worker and never fetched from a font service at runtime. The licence text ships with the app (`web/public/licenses/`). On iOS the text size still follows Dynamic Type.
+- **Alternatives:** the system font (no download; recommended but not chosen).
+
+## D-030 — The whole repository is public; GitHub Actions publishes the app
+
+- **Date:** 2026-10-25
+- **Decision:** This repository is public on GitHub (`illusive/offline-knowledge`), and a GitHub Actions workflow (`.github/workflows/pages.yml`) runs the content pipeline and web tests, builds the pack and the app, and publishes `web/dist` to GitHub Pages on every push to `main`. Resolves the open part of D-023.
+- **Consequences:** source code, docs, source snapshots and the design brief are public, as is the commit author email. Licensing risk is accepted under D-028.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

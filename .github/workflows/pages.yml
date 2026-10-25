@@ -1,0 +1,62 @@
+# Builds the knowledge pack and the PWA, runs the tests, and publishes web/dist to GitHub Pages (D-023, D-030).
+name: Publish to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: |
+            content/package-lock.json
+            web/package-lock.json
+
+      - name: Content pipeline (typecheck, tests, pack)
+        working-directory: content
+        run: |
+          npm ci
+          npm run typecheck
+          npm test
+          npm run build:pack
+
+      - name: Web app (unit tests, build)
+        working-directory: web
+        run: |
+          npm ci
+          npm run sync:pack
+          npm test
+          npm run build
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -5,7 +5,7 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 ## Platform (PWA, D-021)
 
 0. **Long-term persistence on iOS.** Accepted on the basis of WebKit's documented policy (persistent mode exempts storage from eviction) and the granted persistent storage on your iPhone. Kept as an informal check, not a blocker: if "First seen" on the test page ever resets, revisit D-021.
-0b. **Production hosting.** GitHub Pages for now (D-023). Still to decide: publish from a separate public repository or from this one, and whether to move to another host later.
+0b. **Production hosting.** GitHub Pages from this public repository via GitHub Actions (D-023, D-030). Whether to move to another host later is open.
 0c. **Update flow.** How a new app or pack version is installed safely, and how the user is told, without breaking the working offline copy (AGENTS.md §7).
 
 ## Content and licensing
@@ -42,7 +42,7 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 
 ## Design (D-025)
 
-24. **Typeface.** The brief's font is not identified. Use the system font, or bundle a specific open-licence font with the app (never loaded at runtime)?
+24. **Typeface.** Resolved: Inter, bundled (D-029).
 25. **Tab bar at large text sizes.** Four labelled tabs overflow at accessibility text sizes; choose a fallback (e.g. icons with labels underneath, or labels hidden with accessible names kept).
 26. **Brand mark.** The brief shows "stead" with an asterisk mark; the placeholder app icon (open book) should be replaced to match.
 

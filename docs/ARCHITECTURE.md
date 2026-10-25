@@ -132,6 +132,8 @@ web/
 - **Text size:** the root font follows iOS Dynamic Type (`font: -apple-system-body`); all sizes are rem-based.
 - **Tests:** `npm test` (Vitest: formatting, ranking, and all queries against the real pack); `npm run test:e2e` (Playwright, WebKit at iPhone 15 size: search, detail, offline reload, English UI). Playwright's default WebKit contexts are in-memory and refuse OPFS, so each test uses a temporary persistent profile (`e2e/fixtures.ts`).
 - **Commands (in `web/`):** `npm run dev`, `npm run build` (sync pack + typecheck + build to `dist/`), `npm run preview`.
+- **Typeface:** Inter, Latin subsets bundled from `@fontsource-variable/inter` (`src/fonts.css`, D-029).
+- **Publishing:** `.github/workflows/pages.yml` builds the pack and the app and deploys `web/dist` to GitHub Pages on every push to `main` (D-030).
 
 ## 5. Search
 
