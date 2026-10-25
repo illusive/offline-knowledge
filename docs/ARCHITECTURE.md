@@ -113,7 +113,9 @@ The previous Expo app is in Git history (commit `f301841`). The PWA design is no
 - **Persistence:** request `navigator.storage.persist()`; it was granted when opened from the Home Screen.
 - **Search:** the same FTS5 trigram queries as the pipeline tests run in the worker.
 
-Still to decide (see `OPEN_QUESTIONS.md`): UI framework and build tooling, production hosting, update flow for new versions, and how a corrupt or missing pack is recovered.
+Stack (D-022): React + Vite + TypeScript strict, vite-plugin-pwa 1.x (inject manifest), Tailwind v4, Vitest, Playwright (WebKit).
+
+Still to decide (see `OPEN_QUESTIONS.md`): production hosting, update flow for new versions, and how a corrupt or missing pack is recovered.
 
 ## 5. Search
 

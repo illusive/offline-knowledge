@@ -5,7 +5,6 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 ## Platform (PWA, D-021)
 
 0. **Long-term persistence on iOS.** Accepted on the basis of WebKit's documented policy (persistent mode exempts storage from eviction) and the granted persistent storage on your iPhone. Kept as an informal check, not a blocker: if "First seen" on the test page ever resets, revisit D-021.
-0a. **UI framework and build tooling for the PWA.** To decide before building the app.
 0b. **Production hosting.** GitHub Pages hosts the test page; decide where the real app lives (and whether its repository may be public).
 0c. **Update flow.** How a new app or pack version is installed safely, and how the user is told, without breaking the working offline copy (AGENTS.md §7).
 

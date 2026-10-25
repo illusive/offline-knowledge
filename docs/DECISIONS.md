@@ -147,6 +147,14 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Alternatives:** Native Expo app via TestFlight (90-day expiry); native app via the App Store (developer account and review needed).
 - **Superseded:** the Expo/native parts of D-002, D-019 and D-020.
 
+## D-022 — PWA stack: React + Vite, vite-plugin-pwa (inject manifest), Tailwind v4
+
+- **Date:** 2026-10-25
+- **Decision:** The PWA uses React with Vite and TypeScript strict. Offline caching uses vite-plugin-pwa on the stable 1.x line in "inject manifest" mode: the plugin generates the list of files to cache and the web app manifest; the service worker logic (offline behaviour, updates) is our own code. Styling uses Tailwind CSS v4 with design tokens as CSS variables (light/dark). Tests: Vitest for logic, Playwright (WebKit) for automated offline tests. Exact versions are chosen and verified when the app is set up.
+- **Rationale:** React gives the largest ecosystem, including accessible component libraries (e.g. React Aria) and mature map wrappers for M5, and matches the component model of the earlier Expo app. Inject-manifest mode avoids hand-maintaining the cache list while keeping update behaviour explicit. Tailwind is build-time only and close to the earlier NativeWind choice.
+- **Alternatives:** Preact 10 (recommended for its smaller download and fewer dependencies; not chosen); Svelte 5/SvelteKit; plain TypeScript; a hand-written service worker; plain CSS.
+- **Costs to watch:** a larger first download than Preact; add accessibility and map libraries only when a screen needs them, and keep an eye on bundle size.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24
