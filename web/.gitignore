@@ -1,0 +1,7 @@
+node_modules/
+dist/
+dev-dist/
+# knowledge pack copied from ../content/dist by scripts/sync-pack.ts
+public/pack/
+test-results/
+playwright-report/

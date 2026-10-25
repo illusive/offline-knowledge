@@ -19,7 +19,8 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [ ] Guides in the pack (after the guide format is decided).
 - [x] ~~Minimal Expo app (D-019)~~: built and tested in the Simulator, then replaced by the PWA (D-021). Code in Git history (`f301841`).
 - [x] iOS PWA storage test (`pwa-spike/`): persistent storage, 4 GB, airplane mode verified on a real iPhone. Running: reboot and multi-day check.
-- [ ] PWA app (D-021): food storage lookup (search + detail, Danish/English, light/dark), installable, offline. Design and framework to be decided first.
+- [x] PWA app (D-021–D-023, `web/`): food storage lookup (search + detail, Danish/English, light/dark), installable, offline. Unit tests and WebKit offline tests pass.
+- [ ] Publish the PWA on GitHub Pages and test it on the iPhone from the Home Screen.
 - [ ] Guide reader once the first guide exists.
 - [ ] Verify on an iPhone: fresh install from the Home Screen, then airplane mode.
 

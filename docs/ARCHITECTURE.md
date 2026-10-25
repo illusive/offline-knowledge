@@ -104,18 +104,34 @@ Storage reference data (D-014, D-015, D-017) is implemented in `content/schema/s
 
 The model is designed so that a later translation is another `Guide` record with the same `id` and a different `lang`, and so that downloadable packs (M4) reuse `PackManifest` unchanged.
 
-## 4. App: Progressive Web App (D-021)
+## 4. App: Progressive Web App (D-021, D-022, D-023)
 
-The previous Expo app is in Git history (commit `f301841`). The PWA design is not decided yet; these building blocks are proven by `pwa-spike/` on a real iPhone:
+```
+web/
+  index.html, vite.config.ts      Vite + React; PWA plugin in "inject manifest" mode; base './'
+  scripts/sync-pack.ts            Copies and verifies the pack from ../content/dist into public/pack/
+  scripts/make-icons.ts           Generates the placeholder icons
+  src/
+    main.tsx, App.tsx             Opens the pack, routes, keeps search state and scroll position
+    router.ts                     Hash routes: #/ (search), #/food/<id>
+    sw.ts                         Service worker: caches every built file; updates wait for "Update"
+    db/db.worker.ts               SQLite WebAssembly in a worker; pack in OPFS ("opfs-sahpool")
+    db/queries.ts                 All SQL; runs in the worker and in tests against the real pack
+    db/client.ts, protocol.ts     Typed messages between app and worker
+    screens/                      SearchScreen, FoodScreen
+    components/ui.tsx             Card, SourceNote, SearchField, MessageState
+    i18n/                         Strings (da, en) and browser-language selection
+    storage/                      Formatting and search ranking (pure, unit tested)
+    pwa/UpdateBanner.tsx          "Works offline now" and "New version ready" messages
+  e2e/                            Playwright tests in WebKit
+```
 
-- **Pack storage:** the pack file is imported into OPFS with SQLite WebAssembly's `opfs-sahpool` VFS, in a dedicated worker. The database name includes pack version and checksum, so a new pack is imported as a new file.
-- **Offline:** a service worker caches the app shell, the WebAssembly files and the pack (cache-first).
-- **Persistence:** request `navigator.storage.persist()`; it was granted when opened from the Home Screen.
-- **Search:** the same FTS5 trigram queries as the pipeline tests run in the worker.
-
-Stack (D-022): React + Vite + TypeScript strict, vite-plugin-pwa 1.x (inject manifest), Tailwind v4, Vitest, Playwright (WebKit).
-
-Still to decide (see `OPEN_QUESTIONS.md`): production hosting, update flow for new versions, and how a corrupt or missing pack is recovered.
+- **Pack lifecycle:** the worker reads `pack/manifest.json`, imports `core.sqlite` into OPFS only after checking its SHA-256 against the manifest, opens it, runs the launch check (schema version, trigram search), and only then deletes older pack copies. The database file name includes version and checksum.
+- **Offline and updates:** the service worker downloads every file into a new cache during install; if any download fails, the install fails and the current version keeps working. A new version waits until the user taps "Update". Navigations are answered with the cached `index.html`; everything else is cache-first.
+- **Persistence:** the app calls `navigator.storage.persist()` on start.
+- **Text size:** the root font follows iOS Dynamic Type (`font: -apple-system-body`); all sizes are rem-based.
+- **Tests:** `npm test` (Vitest: formatting, ranking, and all queries against the real pack); `npm run test:e2e` (Playwright, WebKit at iPhone 15 size: search, detail, offline reload, English UI). Playwright's default WebKit contexts are in-memory and refuse OPFS, so each test uses a temporary persistent profile (`e2e/fixtures.ts`).
+- **Commands (in `web/`):** `npm run dev`, `npm run build` (sync pack + typecheck + build to `dist/`), `npm run preview`.
 
 ## 5. Search
 

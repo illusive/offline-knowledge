@@ -18,5 +18,5 @@ if (createHash('sha256').update(bytes).digest('hex') !== manifest.sha256) throw 
 await copyFile(new URL(manifest.file, packDir), new URL('pack/core.sqlite', pub));
 await copyFile(new URL('manifest.json', packDir), new URL('pack/manifest.json', pub));
 
-await copyFile(new URL('../app/assets/icon.png', root), new URL('icon.png', pub));
+await copyFile(new URL('../web/public/icon-512.png', root), new URL('icon.png', pub));
 console.log(`Prepared public/ with pack ${manifest.version} (${manifest.sizeBytes} bytes)`);

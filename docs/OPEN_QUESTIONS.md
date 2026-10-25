@@ -41,7 +41,9 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 ## Technical
 
 19. **Old pack copies.** Each new pack version is imported as a new database file in OPFS; old files stay until a cleanup step is added (needed before M4 at the latest).
-21. **Linting.** No linter yet; decide together with the PWA tooling.
+21. **Linting.** No linter yet in `web/`; add ESLint (React and TypeScript rules) or decide against it.
+22. **App icon.** `web/public/icon-*.png` are generated placeholders (open book on the accent colour). Needs a designed icon.
+23. **Unused SQLite worker files.** The build also emits SQLite's own worker helpers (`sqlite3-worker1`, `sqlite3-opfs-async-proxy`), about 40 KB, which the app does not use but caches. Harmless; remove if a clean way appears.
 
 11. **Danish search quality.** Storage names use a trigram index (D-018), which handles compound words. Still open: guide text search (trigram or `unicode61`), and inflection (e.g. 'gulerod' does not match 'gulerødder').
 12. **Pack size budget.** Target maximum size for the bundled core pack.
