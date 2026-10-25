@@ -8,7 +8,7 @@ The project does not write its own guidance. It collects material from authoriti
 
 ## Users and situations
 
-Initial audience: the project owner and a small group of people they know, distributed through TestFlight (D-009).
+Initial audience: the project owner and a small group of people they know, who install the web app from a shared link to their Home Screen (D-009, D-021).
 
 Typical situations:
 

@@ -2,14 +2,12 @@
 
 Unresolved questions and working assumptions. When one is resolved, move the outcome to `DECISIONS.md` and remove it here.
 
-## Platform (being tested)
+## Platform (PWA, D-021)
 
-0. **PWA instead of a native app?** Raised 2026-10-25. Reasons to consider it: TestFlight builds expire after 90 days, which is risky for an emergency app (D-009); no Apple developer account or review; Android for free. Risks: storage deletion and quota on iOS, EU policy history (home-screen web apps were briefly removed in the EU in 2024), large offline maps later.
-   - WebKit's policy (webkit.org/blog/14403): an origin may use up to 60 % of total disk; Home Screen web apps get the same quota as Safari; persistent mode exempts storage from eviction and is granted "based on heuristics like whether the website is opened as a Home Screen Web App".
-   - Test page: `pwa-spike/` (SQLite WebAssembly 3.53.4 + OPFS "opfs-sahpool"). In the iOS 26 Simulator (Safari): pack imported into OPFS, trigram search works ('kal' → 6 results in 6 ms), a 1 GB OPFS write completed. Not yet tested on a real iPhone: quota, persistent mode, airplane mode, survival over days and reboots.
-   - **Real iPhone, 2026-10-25** (test page on GitHub Pages, https://illusive.github.io/prep-storage-test/, added to the Home Screen and opened from there): persistent storage **granted**; 256 MB, 1 GB and 4 GB OPFS writes all **completed**; search ('kål') works online and in **airplane mode**. Quota number not yet recorded.
-   - Still to check: data survives a reboot and several days without use ("First seen" keeps its date).
-   - The native app (`app/`, D-019/D-020) is kept until this is decided.
+0. **Long-term persistence on iOS.** Does the Home Screen app keep its data after a reboot and after several days without use? Check "First seen" on the test page (https://illusive.github.io/prep-storage-test/). If data is lost, D-021 must be revisited.
+0a. **UI framework and build tooling for the PWA.** To decide before building the app.
+0b. **Production hosting.** GitHub Pages hosts the test page; decide where the real app lives (and whether its repository may be public).
+0c. **Update flow.** How a new app or pack version is installed safely, and how the user is told, without breaking the working offline copy (AGENTS.md §7).
 
 ## Content and licensing
 
@@ -43,10 +41,8 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 
 ## Technical
 
-18. **Bundle identifier.** `app/app.json` uses the placeholder `com.example.offlineknowledge`. Choose a real identifier before the first device or TestFlight build.
-19. **Old pack copies.** Each new pack version is imported as a new database file (D-019); old files stay on the device until a cleanup step is added (needed before M4 at the latest).
-20. **Text size changes while running.** In the Simulator, app text picked up a new Dynamic Type size only after the app was restarted (the native header updated at once). Check on a device; React Native should normally re-render on font scale changes.
-21. **Linting.** No linter yet. `npx expo lint` would add ESLint with Expo's config; decide when setting up the app's checks.
+19. **Old pack copies.** Each new pack version is imported as a new database file in OPFS; old files stay until a cleanup step is added (needed before M4 at the latest).
+21. **Linting.** No linter yet; decide together with the PWA tooling.
 
 11. **Danish search quality.** Storage names use a trigram index (D-018), which handles compound words. Still open: guide text search (trigram or `unicode61`), and inflection (e.g. 'gulerod' does not match 'gulerødder').
 12. **Pack size budget.** Target maximum size for the bundled core pack.

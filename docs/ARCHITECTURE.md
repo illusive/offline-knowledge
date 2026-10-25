@@ -8,7 +8,7 @@ Two separate parts, matching `AGENTS.md` §6 (separate ingestion from runtime co
 
 ```
 content/   Build-time pipeline: sources → guides → validated, versioned pack
-app/       Expo iOS app: reads the bundled pack, never fetches or transforms content
+web/       PWA (planned, D-021): stores the pack in OPFS, never transforms content
 ```
 
 The app depends only on the pack format, not on how the pack was produced.
@@ -104,28 +104,16 @@ Storage reference data (D-014, D-015, D-017) is implemented in `content/schema/s
 
 The model is designed so that a later translation is another `Guide` record with the same `id` and a different `lang`, and so that downloadable packs (M4) reuse `PackManifest` unchanged.
 
-## 4. App (`app/`)
+## 4. App: Progressive Web App (D-021)
 
-Stack (D-019, D-020): Expo SDK 58, Expo Router, expo-sqlite, expo-localization, NativeWind 4, TypeScript strict.
+The previous Expo app is in Git history (commit `f301841`). The PWA design is not decided yet; these building blocks are proven by `pwa-spike/` on a real iPhone:
 
-```
-app/
-  global.css, tailwind.config.js   Design tokens (light/dark) and Tailwind mapping
-  scripts/sync-pack.ts             Copies and verifies the pack from ../content/dist
-  assets/pack/                     Synced pack (generated, not committed)
-  src/
-    app/          Routes: _layout.tsx (opens and verifies the pack), index.tsx (storage search), storage/[id].tsx
-    components/   UI primitives (text, card, search field, source note, message states)
-    i18n/         UI strings (da, en) and device-language selection
-    pack/         Pack asset, database name, launch-time verification
-    storage/      Queries, formatting and search ranking (pure parts unit tested with node:test)
-```
+- **Pack storage:** the pack file is imported into OPFS with SQLite WebAssembly's `opfs-sahpool` VFS, in a dedicated worker. The database name includes pack version and checksum, so a new pack is imported as a new file.
+- **Offline:** a service worker caches the app shell, the WebAssembly files and the pack (cache-first).
+- **Persistence:** request `navigator.storage.persist()`; it was granted when opened from the Home Screen.
+- **Search:** the same FTS5 trigram queries as the pipeline tests run in the worker.
 
-Commands (in `app/`): `npm run sync:pack`, `npm run ios` (sync + build + run in the Simulator), `npm run typecheck`, `npm test`.
-
-- On first launch, the bundled pack is copied to app storage (if needed) and opened read-only.
-- User data (e.g. bookmarks, if decided later) lives in a separate database, so replacing a pack never touches user data.
-- The app does no network requests in v1. Fonts, icons and images are all bundled.
+Still to decide (see `OPEN_QUESTIONS.md`): UI framework and build tooling, production hosting, update flow for new versions, and how a corrupt or missing pack is recovered.
 
 ## 5. Search
 

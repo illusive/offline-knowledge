@@ -67,7 +67,7 @@ Do not create additional documents unless they solve a clear organizational prob
 
 When decisions change, update the relevant documentation and remove contradictory instructions.
 
-> **Current state (2026-10-24):** M0 done; M1 in progress: source registry and the `content/` pipeline (FoodKeeper import) exist; the Expo app does not exist yet. Start with `docs/ROADMAP.md` to see the next step.
+> **Current state (2026-10-24):** M0 done; M1 in progress: source registry and the `content/` pipeline (FoodKeeper import, pack build) exist. The app is a PWA (`docs/DECISIONS.md` D-021); its framework is not chosen yet, and `pwa-spike/` holds the iOS storage test. Start with `docs/ROADMAP.md` to see the next step.
 
 ## 4. Engineering principles
 
@@ -129,6 +129,8 @@ Potential candidates include:
 - MapLibre React Native for offline maps.
 - NativeWind for styling, using a stable, compatible version.
 - Lucide React Native for iconography.
+
+> Update (D-021): the app is a PWA, so the Expo and React Native candidates above no longer apply. Their web counterparts (e.g. `@sqlite.org/sqlite-wasm` instead of Expo SQLite, MapLibre GL JS instead of MapLibre React Native) take their place. Check compatibility with the browsers we support instead of Expo versions.
 - Proven bottom-sheet, gesture and animation libraries.
 
 Before introducing a dependency, verify:

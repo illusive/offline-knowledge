@@ -10,13 +10,14 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Decision:** The project lives in `~/projects/offline-knowledge` as a git repository on `main`.
 - **Rationale:** Consistent with the owner's other projects.
 
-## D-002 — iOS first, Expo + strict TypeScript
+## D-002 — iOS first, Expo + strict TypeScript (Expo part superseded by D-021)
 
 - **Date:** 2026-10-24
 - **Decision:** Target iOS (iPhone) first, using Expo and TypeScript in strict mode. Android is deferred.
 - **Rationale:** Device testing (offline behavior, persistence, later GPS/maps) is planned on real iPhones. Supporting two platforms from the start doubles the testing load.
 - **Alternatives:** iOS + Android from v1. Rejected for now; Expo keeps the option open.
 - **Note:** Specific Expo SDK and library versions are chosen and verified at scaffolding time (M1), not in this decision.
+- **Update 2026-10-25:** The iPhone remains the primary test device and TypeScript strict stays, but the app is a PWA, not an Expo app (D-021).
 
 ## D-003 — Danish + English interface, guides in source language
 
@@ -55,13 +56,14 @@ Each entry records the decision, its rationale and the alternatives considered. 
 ## D-008 — Offline maps deferred
 
 - **Date:** 2026-10-24
-- **Decision:** Offline maps are not part of v1. They start as a separate proof of concept (MapLibre React Native is the candidate) rendering fully offline on an iPhone, after the core app is stable.
+- **Decision:** Offline maps are not part of v1. They start as a separate proof of concept (MapLibre React Native was the candidate; with D-021 it is MapLibre GL JS) rendering fully offline on an iPhone, after the core app is stable.
 - **Rationale:** Maps are a separate subsystem with their own licensing (tile source), storage and testing concerns.
 
 ## D-009 — Initial audience: personal / small group
 
 - **Date:** 2026-10-24
 - **Decision:** The first audience is the owner and a small group, distributed via TestFlight. Correctness, attribution and licensing rules apply in full regardless.
+- **Update 2026-10-25:** Distribution is now a shared link to the PWA, added to the Home Screen (D-021). TestFlight is no longer used.
 - **Consequence:** Content under non-commercial (NC) licenses may be used for now but must be flagged, because a later App Store or commercial release would require a new decision.
 
 ## D-011 — Pilot sources: UK first, US as backup
@@ -119,20 +121,31 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Alternatives:** `unicode61` word tokenizer (misses compound words: 'kål' does not find 'Hvidkål'); a third-party SQLite library (adds a dependency).
 - **Constraints:** Trigram queries need at least 3 characters, so the app needs a prefix fallback for 1–2 characters. The device's SQLite must support FTS5 trigram with `remove_diacritics` (SQLite ≥ 3.45). Verify this in the Expo app before relying on it.
 
-## D-019 — First app slice: storage lookup; local Xcode builds
+## D-019 — First app slice: storage lookup; local Xcode builds (build approach superseded by D-021)
 
 - **Date:** 2026-10-24
 - **Decision:** The first app screens are the food storage lookup (search list + detail). The app is built locally with Xcode (`npx expo run:ios`); no EAS or Expo account. Stack: Expo SDK 58 (React Native 0.88, React 19.3), Expo Router (routes in `app/src/app/`), expo-sqlite (FTS enabled), expo-localization, TypeScript 6.0.
 - **Rationale:** Uses the pack that already exists, so the whole chain (pack → app → on-device search) is tested early. Local builds keep code and builds on this Mac; release builds embed the JavaScript bundle and can be tested in airplane mode. Expo Go was rejected because it loads code over the network.
 - **Pack in the app:** `npm run sync:pack` copies `content/dist/core` into `app/assets/pack/` after checking size and SHA-256 against the manifest. The device database file name includes pack version and checksum, so an app update with a new pack imports a fresh copy. On launch the app checks the pack schema version and that FTS5 trigram search works before showing any screen; otherwise it shows an error state.
 
-## D-020 — Styling with NativeWind 4
+## D-020 — Styling with NativeWind 4 (superseded by D-021)
 
 - **Date:** 2026-10-24
 - **Decision:** NativeWind 4.2.7 with Tailwind CSS 3.4.19 (NativeWind 4 requires Tailwind 3). Design tokens are CSS variables in `app/global.css` with light and dark values (`prefers-color-scheme`), mapped to Tailwind colour names in `app/tailwind.config.js`. Components use only token colour names.
 - **Rationale:** Your choice. Version 4.2.7 is the current stable release (5.0 is a release candidate), and its Babel setup supports Reanimated 4, which SDK 58 uses.
 - **Alternatives:** React Native StyleSheet with a token file (no dependency; recommended but not chosen).
 - **Risk:** NativeWind must keep pace with Expo and React Native releases; check compatibility before each SDK upgrade.
+
+## D-021 — The app is a Progressive Web App
+
+- **Date:** 2026-10-25
+- **Decision:** The app is a PWA, installed from Safari to the Home Screen and shared as a link. The knowledge pack is stored in the Origin Private File System (OPFS) and queried with the official SQLite WebAssembly build (`@sqlite.org/sqlite-wasm`, `opfs-sahpool` VFS, so no special server headers). A service worker caches the app and the pack. The Expo app is removed; its code is kept in Git history (commit `f301841`).
+- **Rationale:** TestFlight builds expire after 90 days, which is unacceptable for an emergency app that must work when it is finally needed. A PWA needs no Apple developer account or App Store review, and also runs on Android and desktop.
+- **Evidence:** Tested on your iPhone on 2026-10-25 with the test page (`pwa-spike/`, https://illusive.github.io/prep-storage-test/), opened from the Home Screen: persistent storage granted; 4 GB written to OPFS without errors; search works in airplane mode. WebKit's policy allows up to 60 % of disk per origin and lists Home Screen web apps as a reason to grant persistent storage. In the iOS 26 Simulator the same pack and trigram search ran in Safari (6 ms for 'kal').
+- **Unchanged:** the content pipeline, source registry and pack format (D-016, D-017, D-018). The trigram requirement in D-018 is met by the bundled SQLite 3.53.4 build instead of the device's SQLite.
+- **Risks:** Apple could change Home Screen web app behaviour (it briefly removed them in the EU in 2024). Long idle periods are still being tested (data must survive a reboot and days without use). Offline maps (M5) must be proven within the quota. The first visit needs a network connection, as any install does. No background location.
+- **Alternatives:** Native Expo app via TestFlight (90-day expiry); native app via the App Store (developer account and review needed).
+- **Superseded:** the Expo/native parts of D-002, D-019 and D-020.
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

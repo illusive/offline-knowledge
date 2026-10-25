@@ -17,9 +17,11 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [ ] Decide the guide file format (Markdown + front matter or JSON) together with the pipeline's dependencies.
 - [x] Pack build (D-018): `npm run build:pack` validates, then writes `pack.sqlite` + `manifest.json` (currently 101 storage items, about 150 KB).
 - [ ] Guides in the pack (after the guide format is decided).
-- [x] Minimal Expo app (D-019): storage lookup (search list + detail, Danish/English, light/dark) runs in the iOS Simulator (debug build). Verified: pack opens and passes its launch check, trigram search on device ('kal' finds all six kål items, exact match first), source notes and attribution, dark mode, largest accessibility text size.
+- [x] ~~Minimal Expo app (D-019)~~: built and tested in the Simulator, then replaced by the PWA (D-021). Code in Git history (`f301841`).
+- [x] iOS PWA storage test (`pwa-spike/`): persistent storage, 4 GB, airplane mode verified on a real iPhone. Running: reboot and multi-day check.
+- [ ] PWA app (D-021): food storage lookup (search + detail, Danish/English, light/dark), installable, offline. Design and framework to be decided first.
 - [ ] Guide reader once the first guide exists.
-- Verify the production build on an iPhone in airplane mode from a fresh install.
+- [ ] Verify on an iPhone: fresh install from the Home Screen, then airplane mode.
 
 Acceptance: a fresh install with no network shows the pilot guides, search finds them (in both languages if a Danish guide is cleared), and each guide shows its sources and licenses.
 
