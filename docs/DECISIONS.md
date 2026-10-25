@@ -155,6 +155,13 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Alternatives:** Preact 10 (recommended for its smaller download and fewer dependencies; not chosen); Svelte 5/SvelteKit; plain TypeScript; a hand-written service worker; plain CSS.
 - **Costs to watch:** a larger first download than Preact; add accessibility and map libraries only when a screen needs them, and keep an eye on bundle size.
 
+## D-023 — Hosting on GitHub Pages for now
+
+- **Date:** 2026-10-25
+- **Decision:** The PWA is hosted on GitHub Pages (account `illusive`) until a different host is chosen. The app uses hash-based navigation and relative paths so it works from a sub-path and can move to another static host without code changes.
+- **Rationale:** Free static hosting, already proven by the iPhone storage test. Free Pages requires a public repository.
+- **Open:** whether the built app is published from a separate public repository (keeping this source repository private) or from this repository; decide at the first deployment.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24
