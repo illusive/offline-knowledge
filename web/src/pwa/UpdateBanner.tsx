@@ -24,12 +24,12 @@ export function UpdateBanner({ s }: { s: Strings }) {
   return (
     <>
       {/* Spacer so the end of the page can scroll clear of the fixed banner. */}
-      <div aria-hidden="true" className="h-28" />
-      <div className="fixed inset-x-0 bottom-0 z-10 px-4 pb-[max(1rem,env(safe-area-inset-bottom))]" role="status">
-        <div className="mx-auto flex max-w-2xl items-center gap-3 rounded-card border border-border bg-surface p-3 shadow-lg">
+      <div aria-hidden="true" className="h-24" />
+      <div className="fixed inset-x-0 bottom-[calc(4.75rem+max(0.75rem,env(safe-area-inset-bottom)))] z-10 px-4" role="status">
+        <div className="mx-auto flex max-w-md items-center gap-3 rounded-card bg-surface p-3 shadow-lg">
           <p className="flex-1">{needRefresh ? s.updateReady : s.offlineReady}</p>
           {needRefresh ? (
-            <button type="button" onClick={() => void updateServiceWorker(true)} className="min-h-11 rounded-card bg-accent px-4 font-semibold text-on-accent">
+            <button type="button" onClick={() => void updateServiceWorker(true)} className="min-h-11 rounded-full bg-accent px-4 font-semibold text-on-accent">
               {s.updateAction}
             </button>
           ) : null}
@@ -39,7 +39,7 @@ export function UpdateBanner({ s }: { s: Strings }) {
               setOfflineReady(false);
               setNeedRefresh(false);
             }}
-            className="min-h-11 px-2 text-accent"
+            className="min-h-11 px-2 font-medium"
           >
             {s.dismiss}
           </button>

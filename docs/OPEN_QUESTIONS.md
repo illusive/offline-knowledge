@@ -43,7 +43,7 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 ## Design (D-025)
 
 24. **Typeface.** Resolved: Inter, bundled (D-029).
-25. **Tab bar at large text sizes.** Four labelled tabs overflow at accessibility text sizes; choose a fallback (e.g. icons with labels underneath, or labels hidden with accessible names kept).
+25. **Tab bar at large text sizes.** Resolved: fixed pixel size and capped labels, as iOS does (`web/src/components/TabBar.tsx`). Check on a real iPhone with VoiceOver.
 26. **Brand mark.** The brief shows "stead" with an asterisk mark; the placeholder app icon (open book) should be replaced to match.
 
 ## Technical

@@ -1,30 +1,37 @@
 @import "tailwindcss";
 @import "./fonts.css";
 
-/* Design tokens (AGENTS.md §4, §9): one place for colours, light and dark. */
+/* Design tokens (AGENTS.md §4, §9; design brief D-025). Contrast checked against WCAG AA.
+   Lime is only a fill behind dark text: on the light background it has 1.15:1 contrast. */
 :root {
   color-scheme: light dark;
-  --c-background: #f8f8f5;
+  --c-background: #f3f3ef;
   --c-surface: #ffffff;
-  --c-text: #1c1c1e;
-  --c-muted: #5c5c62;
-  --c-border: #deded8;
-  --c-accent: #1e5c48;
-  --c-on-accent: #ffffff;
-  --c-note-bg: #fdf3e2;
-  --c-note-text: #6e3c00;
+  --c-ink: #1b1b1a;
+  --c-on-ink: #f3f3ef;
+  --c-ink-muted: #b3b3ab;
+  --c-text: #161616;
+  --c-muted: #5d5d57;
+  --c-border: #deded7;
+  --c-accent: #d4f04a;
+  --c-on-accent: #141414;
+  --c-note-bg: #fbf0da;
+  --c-note-text: #6b3f00;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-background: #101011;
-    --c-surface: #1e1e20;
-    --c-text: #ececea;
-    --c-muted: #a6a6aa;
-    --c-border: #3a3a3e;
-    --c-accent: #7ec8a8;
-    --c-on-accent: #101011;
-    --c-note-bg: #382a14;
+    --c-background: #0f0f0e;
+    --c-surface: #1c1c1a;
+    --c-ink: #262624;
+    --c-on-ink: #f1f1ec;
+    --c-ink-muted: #a8a8a0;
+    --c-text: #f1f1ec;
+    --c-muted: #a8a8a0;
+    --c-border: #34342f;
+    --c-accent: #d4f04a;
+    --c-on-accent: #141414;
+    --c-note-bg: #3a2c12;
     --c-note-text: #f4cc94;
   }
 }
@@ -32,6 +39,9 @@
 @theme inline {
   --color-background: var(--c-background);
   --color-surface: var(--c-surface);
+  --color-ink: var(--c-ink);
+  --color-on-ink: var(--c-on-ink);
+  --color-ink-muted: var(--c-ink-muted);
   --color-text: var(--c-text);
   --color-muted: var(--c-muted);
   --color-border: var(--c-border);
@@ -39,7 +49,8 @@
   --color-on-accent: var(--c-on-accent);
   --color-note-bg: var(--c-note-bg);
   --color-note-text: var(--c-note-text);
-  --radius-card: 12px;
+  --radius-card: 20px;
+  --radius-hero: 28px;
 }
 
 html {
@@ -54,4 +65,13 @@ html {
 body {
   margin: 0;
   min-height: 100dvh;
+}
+
+/* Visible keyboard focus everywhere, in the text colour (lime would be invisible on light).
+   In the base layer so that utilities (e.g. on programmatically focused headings) can override it. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--c-text);
+    outline-offset: 2px;
+  }
 }

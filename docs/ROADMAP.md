@@ -21,7 +21,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] iOS PWA storage test (`pwa-spike/`): persistent storage, 4 GB, airplane mode verified on a real iPhone. Running: reboot and multi-day check.
 - [x] PWA app (D-021–D-023, `web/`): food storage lookup (search + detail, Danish/English, light/dark), installable, offline. Unit tests and WebKit offline tests pass.
 - [ ] Publish the PWA on GitHub Pages and test it on the iPhone from the Home Screen.
-- [ ] App shell to the design brief (D-024, D-025): name "stead", tokens (lime/ink/paper, light and dark), tab bar (Home, Tools, Settings), Home with search, the "Storing food" category and the 112 emergency card.
+- [x] App shell to the design brief (D-024, D-025): name "stead", Inter, tokens (lime/ink/paper, light and dark), tab bar (Home, Tools, Settings), Home with search, the "Storing food" category and the 112 emergency card. Tools and Settings are placeholders until their steps.
 - [ ] Bookmarks (D-026): local store separate from the pack; "Saved" on Home.
 - [ ] Settings: offline library card from the pack manifest, language, appearance, text size, about and sources.
 - [ ] Tools: supply checklist (UK Be Ready, progress on the device) and compass (permission, no-sensor and inaccuracy states; test on a real iPhone).

@@ -112,24 +112,29 @@ web/
   scripts/sync-pack.ts            Copies and verifies the pack from ../content/dist into public/pack/
   scripts/make-icons.ts           Generates the placeholder icons
   src/
-    main.tsx, App.tsx             Opens the pack, routes, keeps search state and scroll position
-    router.ts                     Hash routes: #/ (search), #/food/<id>
+    main.tsx, App.tsx             Opens the pack, routes, tab bar, search state, per-page scroll positions
+    router.ts                     Hash routes: #/ (Home), #/storage, #/food/<id>, #/tools, #/settings;
+                                  "back" falls back to the parent page after a direct launch
     sw.ts                         Service worker: caches every built file; updates wait for "Update"
     db/db.worker.ts               SQLite WebAssembly in a worker; pack in OPFS ("opfs-sahpool")
     db/queries.ts                 All SQL; runs in the worker and in tests against the real pack
     db/client.ts, protocol.ts     Typed messages between app and worker
-    screens/                      SearchScreen, FoodScreen
-    components/ui.tsx             Card, SourceNote, SearchField, MessageState
+    screens/                      Home, Storage ("Storing food"), Food, Placeholder (Tools, Settings)
+    components/                   ui.tsx (Card, SourceNote, SearchField, BackButton, MessageState, Page),
+                                  TabBar, EmergencyCard (112), FoodList
+    storage/useFoodSearch.ts      Food search shared by Home and Storing food
     i18n/                         Strings (da, en) and browser-language selection
     storage/                      Formatting and search ranking (pure, unit tested)
     pwa/UpdateBanner.tsx          "Works offline now" and "New version ready" messages
+    pwa/useOfflineReady.ts        "Offline ready" = pack open and a service worker in control
   e2e/                            Playwright tests in WebKit
 ```
 
 - **Pack lifecycle:** the worker reads `pack/manifest.json`, imports `core.sqlite` into OPFS only after checking its SHA-256 against the manifest, opens it, runs the launch check (schema version, trigram search), and only then deletes older pack copies. The database file name includes version and checksum.
 - **Offline and updates:** the service worker downloads every file into a new cache during install; if any download fails, the install fails and the current version keeps working. A new version waits until the user taps "Update". Navigations are answered with the cached `index.html`; everything else is cache-first.
 - **Persistence:** the app calls `navigator.storage.persist()` on start.
-- **Text size:** the root font follows iOS Dynamic Type (`font: -apple-system-body`); all sizes are rem-based.
+- **Text size:** the root font follows iOS Dynamic Type (`font: -apple-system-body`). Text and vertical spacing are rem-based; horizontal padding is in px so large text does not squeeze the column; the largest headings are capped relative to screen width; the tab bar has a fixed pixel size and capped labels, as iOS does. Checked by screenshots at 17, 28 and 40 px base size.
+- **Design tokens:** colours in `src/index.css` (light and dark), checked against WCAG AA; lime is only used as a fill behind dark text (1.15:1 on the light background).
 - **Tests:** `npm test` (Vitest: formatting, ranking, and all queries against the real pack); `npm run test:e2e` (Playwright, WebKit at iPhone 15 size: search, detail, offline reload, English UI). Playwright's default WebKit contexts are in-memory and refuse OPFS, so each test uses a temporary persistent profile (`e2e/fixtures.ts`).
 - **Commands (in `web/`):** `npm run dev`, `npm run build` (sync pack + typecheck + build to `dist/`), `npm run preview`.
 - **Typeface:** Inter, Latin subsets bundled from `@fontsource-variable/inter` (`src/fonts.css`, D-029).

@@ -4,7 +4,6 @@ export type Lang = 'da' | 'en';
 
 export interface Strings {
   appTitle: string;
-  storageTitle: string;
   searchPlaceholder: string;
   searchLabel: string;
   clearSearch: string;
@@ -29,12 +28,28 @@ export interface Strings {
   updateAction: string;
   dismiss: string;
   languageName: Record<Lang, string>;
+  homeTitle: string;
+  homeSearchPlaceholder: string;
+  homeSearchLabel: string;
+  startHere: string;
+  storingFood: string;
+  storingFoodSubtitle: (n: number) => string;
+  storageIntro: string;
+  emergencyTitle: string;
+  emergencySubtitle: string;
+  emergencyCallLabel: string;
+  offlineReadyStatus: string;
+  preparingOffline: string;
+  navLabel: string;
+  tabs: Record<'home' | 'tools' | 'settings', string>;
+  toolsTitle: string;
+  settingsTitle: string;
+  comingLater: string;
 }
 
 export const strings: Record<Lang, Strings> = {
   da: {
-    appTitle: 'Offline Knowledge',
-    storageTitle: 'Holdbarhed',
+    appTitle: 'stead',
     searchPlaceholder: 'Søg efter en fødevare',
     searchLabel: 'Søg efter fødevare',
     clearSearch: 'Ryd søgning',
@@ -70,10 +85,26 @@ export const strings: Record<Lang, Strings> = {
     updateAction: 'Opdater',
     dismiss: 'Luk',
     languageName: { da: 'dansk', en: 'engelsk' },
+    homeTitle: 'Hvad har du brug for?',
+    homeSearchPlaceholder: 'Søg i offline-indhold',
+    homeSearchLabel: 'Søg i indholdet',
+    startHere: 'Start her',
+    storingFood: 'Opbevaring af mad',
+    storingFoodSubtitle: (n) => `${n} fødevarer · holdbarhed`,
+    storageIntro: 'Hvor længe holder maden i spisekammer, køleskab og fryser?',
+    emergencyTitle: 'Livstruende nødsituation?',
+    emergencySubtitle: 'Ring til alarmcentralen',
+    emergencyCallLabel: 'Ring 112, alarmcentralen',
+    offlineReadyStatus: 'Klar offline',
+    preparingOffline: 'Gør klar til offline…',
+    navLabel: 'Hovedmenu',
+    tabs: { home: 'Hjem', tools: 'Værktøjer', settings: 'Indstillinger' },
+    toolsTitle: 'Værktøjer',
+    settingsTitle: 'Indstillinger',
+    comingLater: 'Kommer i et senere trin.',
   },
   en: {
-    appTitle: 'Offline Knowledge',
-    storageTitle: 'Food storage',
+    appTitle: 'stead',
     searchPlaceholder: 'Search for a food',
     searchLabel: 'Search for a food',
     clearSearch: 'Clear search',
@@ -109,5 +140,22 @@ export const strings: Record<Lang, Strings> = {
     updateAction: 'Update',
     dismiss: 'Dismiss',
     languageName: { da: 'Danish', en: 'English' },
+    homeTitle: 'What do you need?',
+    homeSearchPlaceholder: 'Search offline content',
+    homeSearchLabel: 'Search the content',
+    startHere: 'Start here',
+    storingFood: 'Storing food',
+    storingFoodSubtitle: (n) => `${n} foods · storage times`,
+    storageIntro: 'How long does food keep in the pantry, fridge and freezer?',
+    emergencyTitle: 'Life-threatening emergency?',
+    emergencySubtitle: 'Call the emergency number (Denmark)',
+    emergencyCallLabel: 'Call 112, emergency services',
+    offlineReadyStatus: 'Offline ready',
+    preparingOffline: 'Preparing offline use…',
+    navLabel: 'Main menu',
+    tabs: { home: 'Home', tools: 'Tools', settings: 'Settings' },
+    toolsTitle: 'Tools',
+    settingsTitle: 'Settings',
+    comingLater: 'Coming in a later step.',
   },
 };

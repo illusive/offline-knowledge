@@ -1,10 +1,11 @@
 // Storage details for one food: times per location, source notes and attribution.
 
 import { useEffect, useRef, useState } from 'react';
-import { Card, MessageState, SourceNote } from '../components/ui';
+import { BackButton, Card, MessageState, Page, SourceNote } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { ItemDetail } from '../db/queries';
 import type { Lang, Strings } from '../i18n/strings';
+import { goBack, hrefs } from '../router';
 import { formatBasis, formatDuration, LOCATION_ORDER } from '../storage/format';
 
 export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang: Lang; s: Strings }) {
@@ -27,32 +28,26 @@ export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang
   // Move focus to the new page's heading so screen readers announce it.
   useEffect(() => {
     if (name) {
-      document.title = `${name} – ${s.storageTitle}`;
+      document.title = `${name} – ${s.appTitle}`;
       heading.current?.focus();
     }
-  }, [name, s.storageTitle]);
+  }, [name, s.appTitle]);
 
-  const back = (
-    <nav className="px-4 pt-[max(1rem,env(safe-area-inset-top))]">
-      <a href="#/" className="inline-flex min-h-11 items-center text-accent">
-        ‹ {s.back}
-      </a>
-    </nav>
-  );
+  const back = <BackButton label={s.back} onClick={() => goBack(hrefs.storage)} />;
 
-  if (loaded === undefined) return <main className="mx-auto max-w-2xl">{back}<MessageState title={s.loading} /></main>;
-  if (loaded === null) return <main className="mx-auto max-w-2xl">{back}<MessageState title={s.notFound} /></main>;
+  if (loaded === undefined) return <Page>{back}<MessageState title={s.loading} /></Page>;
+  if (loaded === null) return <Page>{back}<MessageState title={s.notFound} /></Page>;
 
   const { item, periods, notes, source } = loaded;
   const subtitle = lang === 'da' ? item.subtitle_da : item.subtitle_en;
   const otherLang: Lang = lang === 'da' ? 'en' : 'da';
 
   return (
-    <main className="mx-auto max-w-2xl pb-[max(3rem,env(safe-area-inset-bottom))]">
+    <Page>
       {back}
-      <div className="flex flex-col gap-4 px-4 pt-2">
-        <header>
-          <h1 ref={heading} tabIndex={-1} className="text-3xl font-bold focus:outline-none">
+      <div className="mt-4 flex flex-col gap-3">
+        <header className="mb-2 px-1">
+          <h1 ref={heading} tabIndex={-1} className="text-3xl font-normal tracking-tight outline-none">
             {name}
           </h1>
           {subtitle ? <p className="text-muted">{subtitle}</p> : null}
@@ -87,9 +82,9 @@ export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang
           );
         })}
 
-        <p className="text-sm text-muted">{s.disclaimer}</p>
+        <p className="px-1 text-sm text-muted">{s.disclaimer}</p>
 
-        <section className="flex flex-col gap-1 border-t border-border pt-4" aria-labelledby="source-heading">
+        <section className="mt-2 flex flex-col gap-1 border-t border-border px-1 pt-4" aria-labelledby="source-heading">
           <h2 id="source-heading" className="text-lg font-semibold">
             {s.sourceHeading}
           </h2>
@@ -104,6 +99,6 @@ export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang
           <p className="break-all text-sm text-muted">{source.url}</p>
         </section>
       </div>
-    </main>
+    </Page>
   );
 }
