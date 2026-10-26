@@ -136,7 +136,7 @@ export const strings: Record<Lang, Strings> = {
       prefers: 'Det trives den med',
       avoid: 'Undgå',
       together: 'Sammen med andre',
-      coolStorage: 'Lang tids opbevaring',
+      coolStorage: 'Langtidsopbevaring',
       drying: 'Tørring',
       pickling: 'Syltning',
       canning: 'Henkogning',
