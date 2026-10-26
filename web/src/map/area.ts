@@ -119,14 +119,15 @@ export function coverTiles(shape: Shape, minZoom: number, maxZoom: number): Tile
   return out;
 }
 
-// Byte ranges to download: tiles sorted by archive offset, neighbours merged when the gap is small,
+// Byte ranges to download (at most 1 MB each: little to redo after an interruption, little memory):
+// tiles sorted by archive offset, neighbours merged when the gap is small,
 // identical tiles (same offset, e.g. open sea) fetched once.
 export interface ByteRange {
   offset: number;
   length: number;
 }
 
-export function mergeRanges(tiles: { offset: number; length: number }[], maxGap = 64 * 1024, maxLength = 4 * 1024 * 1024): ByteRange[] {
+export function mergeRanges(tiles: { offset: number; length: number }[], maxGap = 64 * 1024, maxLength = 1024 * 1024): ByteRange[] {
   const unique = [...new Map(tiles.map((t) => [t.offset, t.length])).entries()].sort((a, b) => a[0] - b[0]);
   const ranges: ByteRange[] = [];
   for (const [offset, length] of unique) {

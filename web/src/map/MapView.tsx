@@ -30,7 +30,14 @@ function addProtocol() {
   });
 }
 
-export default function MapView({ lang, dark, label, onError }: { lang: 'da' | 'en'; dark: boolean; label: string; onError: () => void }) {
+export default function MapView(props: {
+  lang: 'da' | 'en';
+  dark: boolean;
+  label: string;
+  onError: () => void;
+  onReady: (map: MapLibreMap | null) => void;
+}) {
+  const { lang, dark, label, onError, onReady } = props;
   const container = useRef<HTMLDivElement>(null);
   const map = useRef<MapLibreMap | null>(null);
 
@@ -59,13 +66,18 @@ export default function MapView({ lang, dark, label, onError }: { lang: 'da' | '
     instance.getCanvas().setAttribute('aria-label', label);
     // When everything in view is drawn, record it on the element (offline tests read this).
     instance.on('idle', () => {
+      const features = instance.queryRenderedFeatures();
       element.dataset.ready = 'true';
-      element.dataset.features = String(instance.queryRenderedFeatures().length);
+      element.dataset.features = String(features.length);
+      element.dataset.detailFeatures = String(instance.getZoom() > 9 ? features.filter((f) => f.source === 'detail').length : 0);
+      element.dataset.zoom = instance.getZoom().toFixed(1);
     });
     map.current = instance;
+    onReady(instance);
     // Development only: lets the browser console and tests inspect the map.
     if (import.meta.env.DEV) (window as unknown as { steadMap?: MapLibreMap }).steadMap = instance;
     return () => {
+      onReady(null);
       instance.remove();
       map.current = null;
     };

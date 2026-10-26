@@ -45,6 +45,36 @@ export interface Strings {
   mapLoading: string;
   mapErrorTitle: string;
   mapErrorBody: string;
+  mapArea: {
+    open: string;
+    close: string;
+    title: string;
+    yourAreas: string;
+    getArea: string;
+    choices: Record<'home' | 'region' | 'country', string>;
+    noHome: string;
+    pickOnMap: string;
+    pickHint: string;
+    useMyPosition: string;
+    positionDenied: string;
+    homeSet: string;
+    changeHome: string;
+    radius: (km: number) => string;
+    aroundHome: (km: number) => string;
+    calculating: string;
+    freeSpace: (size: string) => string;
+    notEnoughSpace: string;
+    download: (size: string) => string;
+    needsNetwork: string;
+    states: Record<'ready' | 'downloading' | 'paused', string>;
+    progress: (percent: number) => string;
+    pause: string;
+    resume: string;
+    remove: string;
+    confirmRemove: string;
+    noAreasYet: string;
+    downloadFailed: string;
+  };
   toolsTitle: string;
   settingsTitle: string;
   comingLater: string;
@@ -137,6 +167,36 @@ export const strings: Record<Lang, Strings> = {
     mapLoading: 'Åbner kortet …',
     mapErrorTitle: 'Kortet kunne ikke vises',
     mapErrorBody: 'Enheden kan ikke tegne kortet (WebGL mangler). Resten af appen virker som normalt.',
+    mapArea: {
+      open: 'Hent kort',
+      close: 'Luk',
+      title: 'Kort uden net',
+      yourAreas: 'Dine områder',
+      getArea: 'Hent et område',
+      choices: { home: 'Omkring mit hjem', region: 'Region', country: 'Hele landet' },
+      noHome: 'Vælg først, hvor du bor.',
+      pickOnMap: 'Tryk på kortet',
+      pickHint: 'Tryk på kortet der, hvor du bor.',
+      useMyPosition: 'Brug min position',
+      positionDenied: 'Din position kunne ikke bruges. Tryk på kortet i stedet.',
+      homeSet: 'Dit hjem er valgt.',
+      changeHome: 'Skift',
+      radius: (km) => `${km} km`,
+      aroundHome: (km) => `${km} km omkring hjemmet`,
+      calculating: 'Beregner størrelse …',
+      freeSpace: (size) => `Ledig plads på enheden: ${size}`,
+      notEnoughSpace: 'Der er ikke plads nok på enheden.',
+      download: (size) => `Hent ${size}`,
+      needsNetwork: 'Du skal være på nettet for at hente kort. Det, du allerede har hentet, virker uden net.',
+      states: { ready: 'Klar uden net', downloading: 'Henter', paused: 'Sat på pause' },
+      progress: (percent) => `${percent} %`,
+      pause: 'Pause',
+      resume: 'Fortsæt',
+      remove: 'Slet',
+      confirmRemove: 'Tryk igen for at slette',
+      noAreasYet: 'Du har ikke hentet nogen områder endnu. Uden et område viser kortet kun et overblik.',
+      downloadFailed: 'Kortet kunne ikke hentes:',
+    },
     toolsTitle: 'Værktøjer',
     settingsTitle: 'Indstillinger',
     comingLater: 'Kommer i et senere trin.',
@@ -250,6 +310,36 @@ export const strings: Record<Lang, Strings> = {
     mapLoading: 'Opening the map …',
     mapErrorTitle: 'The map could not be shown',
     mapErrorBody: 'This device cannot draw the map (WebGL is missing). The rest of the app works as usual.',
+    mapArea: {
+      open: 'Get maps',
+      close: 'Close',
+      title: 'Maps without a connection',
+      yourAreas: 'Your areas',
+      getArea: 'Get an area',
+      choices: { home: 'Around my home', region: 'Region', country: 'Whole country' },
+      noHome: 'First choose where you live.',
+      pickOnMap: 'Tap the map',
+      pickHint: 'Tap the map where you live.',
+      useMyPosition: 'Use my position',
+      positionDenied: 'Your position could not be used. Tap the map instead.',
+      homeSet: 'Your home is set.',
+      changeHome: 'Change',
+      radius: (km) => `${km} km`,
+      aroundHome: (km) => `${km} km around home`,
+      calculating: 'Working out the size …',
+      freeSpace: (size) => `Free space on this device: ${size}`,
+      notEnoughSpace: 'There is not enough space on this device.',
+      download: (size) => `Download ${size}`,
+      needsNetwork: 'You need a connection to download maps. What you already have works offline.',
+      states: { ready: 'Ready offline', downloading: 'Downloading', paused: 'Paused' },
+      progress: (percent) => `${percent} %`,
+      pause: 'Pause',
+      resume: 'Resume',
+      remove: 'Delete',
+      confirmRemove: 'Tap again to delete',
+      noAreasYet: 'You have not downloaded any areas yet. Without one, the map only shows an overview.',
+      downloadFailed: 'The map could not be downloaded:',
+    },
     toolsTitle: 'Tools',
     settingsTitle: 'Settings',
     comingLater: 'Coming in a later step.',

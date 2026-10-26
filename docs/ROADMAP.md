@@ -59,8 +59,8 @@ Acceptance: a fresh install with no network shows the pilot guides, search finds
 
 - [x] Slice 1 — measured: Denmark z15 591 MB, regions 78–174 MB, 25 km radius 25–45 MB; GitHub Pages answers range requests; our PMTiles reader and writer checked against the reference library.
 - [x] Slice 2 — Kort tab with the bundled overview (z0–8), offline style, fonts and icons; offline WebKit test (renders, no request leaves the app's host); light and dark checked.
-- [ ] Publish the Denmark archive: create the public repo `illusive/stead-maps` with Pages from GitHub Actions; its workflow runs `web/scripts/map/build-map.ts` (pinned build date) and deploys `dk/`.
-- [ ] Slice 3 — area download: country / region / radius, size shown first, download in a worker into OPFS with resume, verify, then switch; interruption and low-storage tests.
+- [x] Denmark archive published from `illusive/stead-maps` (GitHub Actions runs `web/scripts/map/build-map.ts` for the build date in `map-version.txt`): https://illusive.github.io/stead-maps/dk/ — 575 MB in 9 parts; the build is reproducible (same size as the local build).
+- [x] Slice 3 — area download: "Hent kort" panel on Kort with radius around home (10/25/50 km; home by tapping the map or the position once), region and whole country; exact size and free space shown first; downloads in `map.worker.ts` into OPFS (one SQLite file per area), 1 MB ranges, resume after interruption, check that every planned tile is stored. Offline tests: download → detail drawn offline → delete; interrupted download pauses, keeps its tiles and resumes. Low-storage: the download button is disabled when the size exceeds the free space (not yet tested on a full device).
 - [ ] Slice 4 — position toggle (permission, refusal, accuracy circle).
 - [ ] Slice 5 — manage areas; update to a newer map version.
 - [ ] Slice 6 — iPhone: install, download a 25 km radius, airplane mode, reboot, still renders; position on and off.

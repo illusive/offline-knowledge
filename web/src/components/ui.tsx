@@ -111,7 +111,7 @@ export function SubNav<T extends string>(props: {
                   if (!active) onSelect(item.href);
                 }}
                 className={`flex min-h-11 w-full items-center justify-center rounded-full px-[10px] text-sm font-medium whitespace-nowrap ${
-                  active ? 'bg-ink text-on-ink' : 'text-muted'
+                  active ? 'bg-accent text-on-accent' : 'text-muted'
                 }`}
               >
                 {item.label}
