@@ -22,6 +22,10 @@ test('Kort renders the bundled overview offline, using only local files', async 
   await page.getByRole('navigation', { name: 'Hovedmenu' }).getByRole('link', { name: 'Kort' }).click();
   await expect(page).toHaveURL(/#\/map$/);
 
+  // First visit without a downloaded area: the explanation comes first; skip it to see the map.
+  await expect(page.getByRole('heading', { name: 'Hent kortet, mens du har net' })).toBeVisible({ timeout: 30_000 });
+  await page.getByRole('button', { name: 'Se kortet uden at hente' }).click();
+
   const map = page.getByTestId('map');
   await expect(map).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
   const features = Number(await map.getAttribute('data-features'));

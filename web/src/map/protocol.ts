@@ -42,6 +42,7 @@ export type MapRequest =
   | { type: 'pause'; id: string }
   | { type: 'delete'; id: string }
   | { type: 'tile'; z: number; x: number; y: number }
+  | { type: 'covered'; lon: number; lat: number }
   | { type: 'setHome'; home: Home | null };
 
 export interface MapResponses {
@@ -52,7 +53,8 @@ export interface MapResponses {
   resume: AreaInfo;
   pause: null;
   delete: null;
-  tile: Uint8Array | null;
+  tile: { data: Uint8Array | null; stored: boolean }; // stored: from a downloaded area
+  covered: boolean;
   setHome: null;
 }
 

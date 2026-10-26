@@ -6,7 +6,9 @@ import type { Map as MapLibreMap, RequestParameters } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import { useEffect, useRef } from 'react';
-import { mapStyle } from './style';
+import { mapStyle, OVERVIEW_MAX_ZOOM } from './style';
+
+const NO_DETAIL = 'stead: no detail tile';
 import { getTile, type TileSource } from './tiles';
 
 const ATTRIBUTION = '© OpenStreetMap contributors';
@@ -25,7 +27,9 @@ function addProtocol() {
     if (!match) throw new Error(`Unknown map address ${params.url}`);
     const [, source, z, x, y] = match;
     const tile = await getTile(BASE, source as TileSource, Number(z), Number(x), Number(y));
-    // No tile: an empty vector tile, so the layers underneath show through.
+    // No detail here (offline, not downloaded): fail the tile, so MapLibre keeps drawing the
+    // nearest lower-zoom tile it has (the overview's roads and names, scaled up) instead of a blank.
+    if (!tile && source === 'detail' && Number(z) > OVERVIEW_MAX_ZOOM) throw new Error(NO_DETAIL);
     return { data: tile ? (tile.buffer.slice(tile.byteOffset, tile.byteOffset + tile.byteLength) as ArrayBuffer) : new ArrayBuffer(0) };
   });
 }
@@ -61,10 +65,17 @@ export default function MapView(props: {
       return;
     }
     instance.touchZoomRotate.disableRotation();
+    // Missing detail tiles are expected outside downloaded areas; other errors still reach the console.
+    instance.on('error', (e) => {
+      if (!String(e.error?.message ?? '').includes(NO_DETAIL)) console.error(e.error);
+    });
     instance.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     instance.addControl(new maplibregl.AttributionControl({ compact: false }), 'bottom-left');
     instance.getCanvas().setAttribute('aria-label', label);
     // When everything in view is drawn, record it on the element (offline tests read this).
+    instance.on('moveend', () => {
+      element.dataset.zoom = instance.getZoom().toFixed(1);
+    });
     instance.on('idle', () => {
       const features = instance.queryRenderedFeatures();
       element.dataset.ready = 'true';

@@ -1,9 +1,10 @@
 // Where map tiles come from (D-036): the overview archive bundled with the app (z0–8) and, for
-// the 'detail' source beyond z8, the areas downloaded by the map worker. Tiles are stored
+// the 'detail' source beyond z8, the downloaded areas or, while online, the hosted map (both via
+// the map worker). Tiles are stored
 // gzip-compressed and handed to MapLibre uncompressed.
 
 import { mapClient } from './client.ts';
-import { Archive, decompress } from './pmtiles';
+import { Archive, COMPRESSION_GZIP, decompress } from './pmtiles';
 
 export type TileSource = 'overview' | 'detail';
 
@@ -30,8 +31,8 @@ export async function getTile(base: string, source: TileSource, z: number, x: nu
   if (source === 'detail' && z > OVERVIEW_MAX_ZOOM) {
     const client = mapClient();
     await client.ready;
-    const stored = await client.call({ type: 'tile', z, x, y });
-    return stored ? decompress(stored, 2) : null;
+    const { data } = await client.call({ type: 'tile', z, x, y });
+    return data ? decompress(data, COMPRESSION_GZIP) : null;
   }
   const archive = await openOverview(base);
   if (z > archive.header.maxZoom) return null;

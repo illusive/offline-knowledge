@@ -272,7 +272,7 @@ async function remove(id: string) {
 }
 
 // Detail tiles: the first area that has the tile (areas still downloading count too).
-function tile(z: number, x: number, y: number): Uint8Array | null {
+function storedTile(z: number, x: number, y: number): Uint8Array | null {
   if (z < DETAIL_MIN_ZOOM) return null;
   for (const area of listAreas()) {
     const { lookup } = areaDb(area.id);
@@ -282,6 +282,50 @@ function tile(z: number, x: number, y: number): Uint8Array | null {
     if (found) return found;
   }
   return null;
+}
+
+// While online, tiles outside the downloaded areas come straight from the hosted map, so the map
+// shows detail everywhere. They are kept in memory only (never stored): offline, only downloaded
+// areas have detail, and the map says so.
+const ONLINE_CACHE = 400;
+const onlineTiles = new Map<string, Uint8Array | null>();
+
+async function onlineTile(z: number, x: number, y: number): Promise<Uint8Array | null> {
+  if (z < DETAIL_MIN_ZOOM || !navigator.onLine) return null;
+  const key = `${z}/${x}/${y}`;
+  if (onlineTiles.has(key)) return onlineTiles.get(key) ?? null;
+  try {
+    const { archive } = await openRemote();
+    const bytes = await archive.getTile(z, x, y);
+    onlineTiles.set(key, bytes);
+    if (onlineTiles.size > ONLINE_CACHE) onlineTiles.delete(onlineTiles.keys().next().value as string);
+    return bytes;
+  } catch {
+    return null; // offline or the host is unreachable
+  }
+}
+
+async function tile(z: number, x: number, y: number): Promise<{ data: Uint8Array | null; stored: boolean }> {
+  const stored = storedTile(z, x, y);
+  if (stored) return { data: stored, stored: true };
+  return { data: await onlineTile(z, x, y), stored: false };
+}
+
+// Is this point inside a downloaded (ready) area? Checked on the zoom-14 tile under it.
+function covered(lon: number, lat: number): boolean {
+  const z = 14;
+  const n = 2 ** z;
+  const x = Math.floor(((lon + 180) / 360) * n);
+  const r = (lat * Math.PI) / 180;
+  const y = Math.floor(((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2) * n);
+  return listAreas().some((area) => {
+    if (area.state !== 'ready') return false;
+    const { lookup } = areaDb(area.id);
+    lookup.bind([z, x, y]);
+    const found = lookup.step();
+    lookup.reset();
+    return found;
+  });
 }
 
 // Requests are handled concurrently, so everything else waits until init has set up the pool.
@@ -312,6 +356,8 @@ async function handle(request: MapRequest): Promise<unknown> {
       return null;
     case 'tile':
       return tile(request.z, request.x, request.y);
+    case 'covered':
+      return covered(request.lon, request.lat);
     case 'setHome':
       if (request.home) meta.exec('INSERT OR REPLACE INTO home (id, lon, lat) VALUES (1, ?, ?)', { bind: [request.home.lon, request.home.lat] });
       else meta.exec('DELETE FROM home');

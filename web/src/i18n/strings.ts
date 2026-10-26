@@ -74,6 +74,31 @@ export interface Strings {
     confirmRemove: string;
     noAreasYet: string;
     downloadFailed: string;
+    back: string;
+    introTitle: string;
+    introBody: string;
+    introWarning: string;
+    chooseArea: string;
+    skipForNow: string;
+    offlineNow: string;
+    kindTitle: string;
+    kindHelp: Record<'home' | 'region' | 'country', string>;
+    radiusTitle: string;
+    regionTitle: string;
+    confirmTitle: string;
+    confirmSize: (size: string) => string;
+    confirmKeepOpen: string;
+    startDownload: string;
+    progressTitle: (label: string) => string;
+    keepUsing: string;
+    doneTitle: string;
+    doneBody: (label: string) => string;
+    showOnMap: string;
+    tryAgain: string;
+    addArea: string;
+    notCovered: string;
+    notCoveredOffline: string;
+    getThisArea: string;
   };
   toolsTitle: string;
   settingsTitle: string;
@@ -196,6 +221,35 @@ export const strings: Record<Lang, Strings> = {
       confirmRemove: 'Tryk igen for at slette',
       noAreasYet: 'Du har ikke hentet nogen områder endnu. Uden et område viser kortet kun et overblik.',
       downloadFailed: 'Kortet kunne ikke hentes:',
+      back: 'Tilbage',
+      introTitle: 'Hent kortet, mens du har net',
+      introBody: 'Kortet virker kun uden internet i de områder, du har hentet til telefonen. Andre steder kræver det forbindelse.',
+      introWarning: 'Falder nettet eller mobildata ud, kan du kun se et groft overblik over de steder, du ikke har hentet.',
+      chooseArea: 'Vælg område',
+      skipForNow: 'Se kortet uden at hente',
+      offlineNow: 'Du er ikke på nettet lige nu. Hent kortet, så snart du har forbindelse.',
+      kindTitle: 'Hvad vil du hente?',
+      kindHelp: {
+        home: 'Et område omkring der, hvor du bor – 10, 25 eller 50 km.',
+        region: 'En af Danmarks fem regioner.',
+        country: 'Alle regioner. Fylder mest.',
+      },
+      radiusTitle: 'Hvor stort et område?',
+      regionTitle: 'Vælg region',
+      confirmTitle: 'Klar til at hente',
+      confirmSize: (size) => `Det fylder ${size} på telefonen.`,
+      confirmKeepOpen: 'Brug gerne wifi. Hentningen fortsætter, så længe appen er åben – du kan bruge resten af appen imens.',
+      startDownload: 'Hent nu',
+      progressTitle: (label) => `Henter ${label}`,
+      keepUsing: 'Du kan lukke dette og bruge kortet imens.',
+      doneTitle: 'Færdig',
+      doneBody: (label) => `Kortet virker nu uden net i ${label}.`,
+      showOnMap: 'Vis på kortet',
+      tryAgain: 'Prøv igen',
+      addArea: 'Hent et område til',
+      notCovered: 'Ikke hentet – virker ikke uden net',
+      notCoveredOffline: 'Ikke hentet – derfor ingen detaljer her',
+      getThisArea: 'Hent',
     },
     toolsTitle: 'Værktøjer',
     settingsTitle: 'Indstillinger',
@@ -339,6 +393,35 @@ export const strings: Record<Lang, Strings> = {
       confirmRemove: 'Tap again to delete',
       noAreasYet: 'You have not downloaded any areas yet. Without one, the map only shows an overview.',
       downloadFailed: 'The map could not be downloaded:',
+      back: 'Back',
+      introTitle: 'Get the map while you have a connection',
+      introBody: 'The map only works without the internet in areas you have downloaded to your phone. Elsewhere it needs a connection.',
+      introWarning: 'If the internet or mobile data goes down, places you have not downloaded only show a rough overview.',
+      chooseArea: 'Choose an area',
+      skipForNow: 'See the map without downloading',
+      offlineNow: 'You are offline right now. Get the map as soon as you have a connection.',
+      kindTitle: 'What do you want to get?',
+      kindHelp: {
+        home: 'An area around where you live – 10, 25 or 50 km.',
+        region: 'One of the five regions of Denmark.',
+        country: 'Every region. Takes the most space.',
+      },
+      radiusTitle: 'How large an area?',
+      regionTitle: 'Choose a region',
+      confirmTitle: 'Ready to download',
+      confirmSize: (size) => `It takes ${size} on your phone.`,
+      confirmKeepOpen: 'Wi-Fi is a good idea. The download continues while the app is open – you can use the rest of the app meanwhile.',
+      startDownload: 'Download now',
+      progressTitle: (label) => `Downloading ${label}`,
+      keepUsing: 'You can close this and use the map meanwhile.',
+      doneTitle: 'Done',
+      doneBody: (label) => `The map now works offline in ${label}.`,
+      showOnMap: 'Show on the map',
+      tryAgain: 'Try again',
+      addArea: 'Get another area',
+      notCovered: 'Not downloaded – does not work offline',
+      notCoveredOffline: 'Not downloaded – so no detail here',
+      getThisArea: 'Get',
     },
     toolsTitle: 'Tools',
     settingsTitle: 'Settings',
