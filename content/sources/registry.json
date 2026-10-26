@@ -16,7 +16,8 @@
       "attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
       "retrievedAt": "2026-10-24",
       "snapshot": "snapshots/uk-be-ready-for-emergencies.html",
-      "snapshotSha256": "ada0d431b1a66b52a4344acdaa7c31c74c532e5ae7bdeb4ac2250ce08aee59fd"
+      "snapshotSha256": "ada0d431b1a66b52a4344acdaa7c31c74c532e5ae7bdeb4ac2250ce08aee59fd",
+      "shortName": "UK Be Ready"
     },
     {
       "id": "uk-be-ready-checklist",
@@ -33,7 +34,8 @@
       "attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
       "retrievedAt": "2026-10-24",
       "snapshot": "snapshots/uk-be-ready-checklist-en.pdf",
-      "snapshotSha256": "1bafbb11dd987957f310727a9c27ac4b9e95ebae1b5bd1b7a3239c27b4ac7410"
+      "snapshotSha256": "1bafbb11dd987957f310727a9c27ac4b9e95ebae1b5bd1b7a3239c27b4ac7410",
+      "shortName": "UK Be Ready"
     },
     {
       "id": "us-fsis-foodkeeper",
@@ -53,7 +55,8 @@
       "snapshot": "snapshots/us-fsis-foodkeeper-en.json",
       "snapshotSha256": "037df0d301126acd8a48824506f04d49d8be1a1144b81fa69e4170228dc2e91a",
       "dataVersion": "128 (Modified_Date 2018-09-06, per the file's Version sheet)",
-      "retrievalNote": "FSIS blocks scripted downloads (HTTP 403). Saved via a browser on 2026-10-24; checksum matched the one computed in the browser."
+      "retrievalNote": "FSIS blocks scripted downloads (HTTP 403). Saved via a browser on 2026-10-24; checksum matched the one computed in the browser.",
+      "shortName": "USDA FoodKeeper"
     },
     {
       "id": "uk-fsa-chill-freeze-defrost",
@@ -70,7 +73,8 @@
       "attribution": "Contains public sector information licensed under the Open Government Licence v3.0.",
       "retrievedAt": null,
       "snapshot": null,
-      "snapshotSha256": null
+      "snapshotSha256": null,
+      "shortName": "UK Food Standards Agency"
     },
     {
       "id": "us-ars-ah66-2016",
@@ -82,10 +86,11 @@
       "region": "US",
       "license": "unknown",
       "licenseNote": "792 pages; per-crop storage temperature, humidity and storage life for 138 commodities. No copyright notice in the publication. Works by US federal employees are public domain, but the commodity summaries were written by 'nearly a hundred experts', many at universities, and some figures are 'reprinted with permission' (e.g. Copyright 1999 Elsevier). Needs a per-chapter authorship check, or confirmation from USDA ARS, before use. Commercial storage conditions, not home storage.",
-      "attribution": "",
+      "attribution": "USDA Agricultural Research Service, Agriculture Handbook 66: The Commercial Storage of Fruits, Vegetables, and Florist and Nursery Stocks (rev. 2016), eds. K.C. Gross, C.Y. Wang, M. Saltveit.",
       "retrievedAt": "2026-10-24",
-      "snapshot": null,
-      "snapshotSha256": "98fe86ba0a133c7dfdd0edc17ebad2f2c035a833a3be37bc5e378022dcd94ab7"
+      "snapshot": "snapshots/us-ars-ah66-2016.pdf",
+      "snapshotSha256": "98fe86ba0a133c7dfdd0edc17ebad2f2c035a833a3be37bc5e378022dcd94ab7",
+      "shortName": "USDA Handbook 66"
     },
     {
       "id": "dk-samsik-forberedt-paa-kriser",
@@ -100,7 +105,8 @@
       "attribution": "",
       "retrievedAt": null,
       "snapshot": null,
-      "snapshotSha256": null
+      "snapshotSha256": null,
+      "shortName": "Styrelsen for Samfundssikkerhed"
     },
     {
       "id": "dk-fsk-abc-foerstehjaelp",
@@ -115,7 +121,8 @@
       "attribution": "",
       "retrievedAt": "2026-10-24",
       "snapshot": null,
-      "snapshotSha256": "432a7e77456e60b8fe496c398b103b612c6a0bfbb7a0db96615b271b1b262d01"
+      "snapshotSha256": "432a7e77456e60b8fe496c398b103b612c6a0bfbb7a0db96615b271b1b262d01",
+      "shortName": "Forsvarets Sanitetskommando"
     },
     {
       "id": "dk-rsyd-guide-foerstehjaelp",
@@ -130,7 +137,8 @@
       "attribution": "",
       "retrievedAt": null,
       "snapshot": null,
-      "snapshotSha256": null
+      "snapshotSha256": null,
+      "shortName": "Region Syddanmark"
     },
     {
       "id": "dk-lf-okoportalen-groentsager",
@@ -145,7 +153,8 @@
       "attribution": "",
       "retrievedAt": null,
       "snapshot": null,
-      "snapshotSha256": null
+      "snapshotSha256": null,
+      "shortName": "ØKO-Portalen"
     },
     {
       "id": "hesperian-where-there-is-no-doctor",
@@ -160,7 +169,8 @@
       "attribution": "",
       "retrievedAt": null,
       "snapshot": null,
-      "snapshotSha256": null
+      "snapshotSha256": null,
+      "shortName": "Hesperian"
     },
     {
       "id": "dk-falck-foerstehjaelpsbogen-16",
@@ -175,7 +185,216 @@
       "attribution": "",
       "retrievedAt": "2026-10-24",
       "snapshot": null,
-      "snapshotSha256": "938b069afdd973b2bcf48de1fa83f04ad2e974b3a6f5decdc595fa4050149388"
+      "snapshotSha256": "938b069afdd973b2bcf48de1fa83f04ad2e974b3a6f5decdc595fa4050149388",
+      "shortName": "Falck"
+    },
+    {
+      "id": "usda-canning-2015-intro",
+      "status": "request-needed",
+      "title": "USDA Complete Guide to Home Canning (2015 revision), Introduction",
+      "publisher": "U.S. Department of Agriculture, National Institute of Food and Agriculture (via NCHFP)",
+      "url": "https://nchfp.uga.edu/papers/guide/INTRO_HomeCanrev0715.pdf",
+      "lang": "en",
+      "license": "unknown",
+      "licenseNote": "USDA publication hosted by the National Center for Home Food Preservation (UGA); the NCHFP site footer says \"All rights reserved\", and no separate reuse terms are stated. Licensing deferred (D-028).",
+      "attribution": "USDA Complete Guide to Home Canning, 2015 revision, Introduction.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/usda-canning-INTRO_HomeCanrev0715.pdf",
+      "snapshotSha256": "c1683833cb4546858445c787f02bb4027710760bbff08c7e1b54889bf5521568",
+      "region": "US",
+      "shortName": "USDA Home Canning Guide"
+    },
+    {
+      "id": "usda-canning-2015-guide01",
+      "status": "request-needed",
+      "title": "USDA Complete Guide to Home Canning (2015 revision), Guide 1: Principles of Home Canning",
+      "publisher": "U.S. Department of Agriculture, National Institute of Food and Agriculture (via NCHFP)",
+      "url": "https://nchfp.uga.edu/papers/guide/GUIDE01_HomeCan_rev0715.pdf",
+      "lang": "en",
+      "license": "unknown",
+      "licenseNote": "USDA publication hosted by the National Center for Home Food Preservation (UGA); the NCHFP site footer says \"All rights reserved\", and no separate reuse terms are stated. Licensing deferred (D-028).",
+      "attribution": "USDA Complete Guide to Home Canning, 2015 revision, Guide 1: Principles of Home Canning.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/usda-canning-GUIDE01_HomeCan_rev0715.pdf",
+      "snapshotSha256": "60d1e1a74a9fe61c19e6f5312a76d291905a8ca51b28d0def04c677294416d86",
+      "region": "US",
+      "shortName": "USDA Home Canning Guide"
+    },
+    {
+      "id": "usda-canning-2015-guide02",
+      "status": "request-needed",
+      "title": "USDA Complete Guide to Home Canning (2015 revision), Guide 2: Fruit and Fruit Products",
+      "publisher": "U.S. Department of Agriculture, National Institute of Food and Agriculture (via NCHFP)",
+      "url": "https://nchfp.uga.edu/papers/guide/GUIDE02_HomeCan_rev0715.pdf",
+      "lang": "en",
+      "license": "unknown",
+      "licenseNote": "USDA publication hosted by the National Center for Home Food Preservation (UGA); the NCHFP site footer says \"All rights reserved\", and no separate reuse terms are stated. Licensing deferred (D-028).",
+      "attribution": "USDA Complete Guide to Home Canning, 2015 revision, Guide 2: Fruit and Fruit Products.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/usda-canning-GUIDE02_HomeCan_rev0715.pdf",
+      "snapshotSha256": "5f6918678e1410b72f9f87d652ebab2f5f5d39f3806db676399e5c785be0b58e",
+      "region": "US",
+      "shortName": "USDA Home Canning Guide"
+    },
+    {
+      "id": "usda-canning-2015-guide03",
+      "status": "request-needed",
+      "title": "USDA Complete Guide to Home Canning (2015 revision), Guide 3: Tomatoes and Tomato Products",
+      "publisher": "U.S. Department of Agriculture, National Institute of Food and Agriculture (via NCHFP)",
+      "url": "https://nchfp.uga.edu/papers/guide/GUIDE03_HomeCan_rev0715.pdf",
+      "lang": "en",
+      "license": "unknown",
+      "licenseNote": "USDA publication hosted by the National Center for Home Food Preservation (UGA); the NCHFP site footer says \"All rights reserved\", and no separate reuse terms are stated. Licensing deferred (D-028).",
+      "attribution": "USDA Complete Guide to Home Canning, 2015 revision, Guide 3: Tomatoes and Tomato Products.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/usda-canning-GUIDE03_HomeCan_rev0715.pdf",
+      "snapshotSha256": "6f8d166be89c7260964bfa4746fae72e79164f19a712672b0c1aa3bb902d18ff",
+      "region": "US",
+      "shortName": "USDA Home Canning Guide"
+    },
+    {
+      "id": "usda-canning-2015-guide04",
+      "status": "request-needed",
+      "title": "USDA Complete Guide to Home Canning (2015 revision), Guide 4: Vegetables and Vegetable Products",
+      "publisher": "U.S. Department of Agriculture, National Institute of Food and Agriculture (via NCHFP)",
+      "url": "https://nchfp.uga.edu/papers/guide/GUIDE04_HomeCan_rev0715.pdf",
+      "lang": "en",
+      "license": "unknown",
+      "licenseNote": "USDA publication hosted by the National Center for Home Food Preservation (UGA); the NCHFP site footer says \"All rights reserved\", and no separate reuse terms are stated. Licensing deferred (D-028).",
+      "attribution": "USDA Complete Guide to Home Canning, 2015 revision, Guide 4: Vegetables and Vegetable Products.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/usda-canning-GUIDE04_HomeCan_rev0715.pdf",
+      "snapshotSha256": "bb1d6ccce65146b5caad8bdaf766424c702119a90aa834b25269816da165641f",
+      "region": "US",
+      "shortName": "USDA Home Canning Guide"
+    },
+    {
+      "id": "usda-canning-2015-guide06",
+      "status": "request-needed",
+      "title": "USDA Complete Guide to Home Canning (2015 revision), Guide 6: Fermented Foods and Pickled Vegetables",
+      "publisher": "U.S. Department of Agriculture, National Institute of Food and Agriculture (via NCHFP)",
+      "url": "https://nchfp.uga.edu/papers/guide/GUIDE06_HomeCan_rev0715.pdf",
+      "lang": "en",
+      "license": "unknown",
+      "licenseNote": "USDA publication hosted by the National Center for Home Food Preservation (UGA); the NCHFP site footer says \"All rights reserved\", and no separate reuse terms are stated. Licensing deferred (D-028).",
+      "attribution": "USDA Complete Guide to Home Canning, 2015 revision, Guide 6: Fermented Foods and Pickled Vegetables.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/usda-canning-GUIDE06_HomeCan_rev0715.pdf",
+      "snapshotSha256": "fa4be9f7ac718801178f4f04efa169d74b8c64757d35aa29aa8226fbdaeee4bf",
+      "region": "US",
+      "shortName": "USDA Home Canning Guide"
+    },
+    {
+      "id": "usda-canning-2015-guide07",
+      "status": "request-needed",
+      "title": "USDA Complete Guide to Home Canning (2015 revision), Guide 7: Jams and Jellies",
+      "publisher": "U.S. Department of Agriculture, National Institute of Food and Agriculture (via NCHFP)",
+      "url": "https://nchfp.uga.edu/papers/guide/GUIDE07_HomeCan_rev0715.pdf",
+      "lang": "en",
+      "license": "unknown",
+      "licenseNote": "USDA publication hosted by the National Center for Home Food Preservation (UGA); the NCHFP site footer says \"All rights reserved\", and no separate reuse terms are stated. Licensing deferred (D-028).",
+      "attribution": "USDA Complete Guide to Home Canning, 2015 revision, Guide 7: Jams and Jellies.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/usda-canning-GUIDE07_HomeCan_rev0715.pdf",
+      "snapshotSha256": "6023faf9ea45f8e20078c54c5d273a7717ce17c66eba57a18f363ba54021e411",
+      "region": "US",
+      "shortName": "USDA Home Canning Guide"
+    },
+    {
+      "id": "msu-montguide-drying-vegetables",
+      "status": "request-needed",
+      "title": "Drying Vegetables (MontGuide MT200907HR, rev. 2017)",
+      "publisher": "Montana State University Extension (L. Paul et al.)",
+      "url": "https://www.ccfruitandnuts.ucanr.edu/sites/default/files/2020-12/340865.pdf",
+      "lang": "en",
+      "license": "unknown",
+      "licenseNote": "University extension publication, referenced by NCHFP; reuse terms not checked. Licensing deferred (D-028).",
+      "attribution": "Montana State University Extension, MontGuide MT200907HR: Drying Vegetables (rev. 2017).",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/msu-montguide-drying-vegetables.pdf",
+      "snapshotSha256": "dd23513789d8bc6d356281af90c61c4897c55d263560b5807c2a7f1e69f318db",
+      "region": "US",
+      "shortName": "Montana State University"
+    },
+    {
+      "id": "nchfp-sun-drying",
+      "status": "request-needed",
+      "title": "Sun Drying",
+      "publisher": "National Center for Home Food Preservation, University of Georgia",
+      "url": "https://nchfp.uga.edu/how/dry/drying-general/sun-drying/",
+      "lang": "en",
+      "license": "all-rights-reserved",
+      "licenseNote": "Site footer: \"Copyright © 2026 National Center for Home Food Preservation, All rights reserved\". Licensing deferred (D-028).",
+      "attribution": "National Center for Home Food Preservation (University of Georgia): Sun Drying.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/nchfp-sun-drying.html",
+      "snapshotSha256": "63288dd0ef9db636a0ecf96c5817f277ef43f879712ce6fc5e5db1cfe4c97536",
+      "region": "US",
+      "shortName": "NCHFP (University of Georgia)"
+    },
+    {
+      "id": "dk-fvst-opbevar-maden-korrekt",
+      "status": "request-needed",
+      "title": "Opbevar maden korrekt",
+      "publisher": "Fødevarestyrelsen",
+      "url": "https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/madspild-i-hjemmet/opbevar-maden-korrekt",
+      "lang": "da",
+      "license": "unknown",
+      "licenseNote": "No reuse notice on foedevarestyrelsen.dk. Licensing deferred (D-028).",
+      "attribution": "Fødevarestyrelsen: Opbevar maden korrekt.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/dk-fvst-opbevar-maden-korrekt.html",
+      "snapshotSha256": "0d19c8a5546200617ad36dbccbbeab29b81a611c8007582ff8babfededa0a337",
+      "region": "DK",
+      "shortName": "Fødevarestyrelsen"
+    },
+    {
+      "id": "dk-bolius-udendoers-opbevaring",
+      "status": "request-needed",
+      "title": "Udendørs opbevaring af madvarer om vinteren",
+      "publisher": "Bolius (Realdania)",
+      "url": "https://www.bolius.dk/udendoers-opbevaring-af-madvarer-om-vinteren-13702",
+      "lang": "da",
+      "license": "all-rights-reserved",
+      "licenseNote": "Commercial/foundation-owned site; reuse terms not checked. Licensing deferred (D-028).",
+      "attribution": "Bolius: Udendørs opbevaring af madvarer om vinteren.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/dk-bolius-udendoers-opbevaring.html",
+      "snapshotSha256": "85a0f109ebd11b5412d07d014660a25e8b5e53984605907428283364a9afdc92",
+      "region": "DK",
+      "shortName": "Bolius"
+    },
+    {
+      "id": "dk-retnemt-agurker",
+      "status": "request-needed",
+      "title": "Opbevaring af agurker: Sådan bevarer du friskhed og smag",
+      "publisher": "Retnemt (meal-kit company, Cheffelo)",
+      "url": "https://www.retnemt.dk/artikel/opbevaring-af-agurker-sadan-bevarer-du-friskhed-og-smag",
+      "lang": "da",
+      "license": "unknown",
+      "licenseNote": "Commercial site without cited sources: only used where no authority covers a point (D-033). Licensing deferred (D-028).",
+      "attribution": "Retnemt: Opbevaring af agurker.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/dk-retnemt-agurker.html",
+      "snapshotSha256": "d06e434f0ab2a6404d0cb8a9d9e366221c653686262272a93245eb60edabd7a3",
+      "region": "DK",
+      "shortName": "Retnemt"
+    },
+    {
+      "id": "dk-lf-okoportalen-lagring",
+      "status": "request-needed",
+      "title": "Lagring og klargøring af grøntsager",
+      "publisher": "ØKO-Portalen (Landbrug & Fødevarer Økologi; text by Richard de Visser, HortiAdvice)",
+      "url": "https://okoportalen.lf.dk/jord-og-planter/groentsager/lagring-og-klargoering-af-groentsager/",
+      "lang": "da",
+      "license": "all-rights-reserved",
+      "licenseNote": "Footer \"© ØKO-PORTALEN\"; created Jan 2024, updated Feb 2024. Licensing deferred (D-028).",
+      "attribution": "ØKO-Portalen (Landbrug & Fødevarer): Lagring og klargøring af grøntsager.",
+      "retrievedAt": "2026-10-25",
+      "snapshot": "snapshots/dk-lf-okoportalen-lagring.html",
+      "snapshotSha256": "c61d9da43aa8c05a52eb97ef36c4854f602a333d0a4ecb1c44f934b363b7d67a",
+      "region": "DK",
+      "shortName": "ØKO-Portalen (L&F / HortiAdvice)"
     }
   ]
 }

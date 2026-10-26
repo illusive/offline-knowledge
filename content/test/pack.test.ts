@@ -71,7 +71,7 @@ test('buildPack writes a pack whose manifest matches the file and whose search h
   const bytes = await readFile(join(dir, manifest.file));
   assert.equal(manifest.sizeBytes, bytes.byteLength);
   assert.equal(manifest.sha256, createHash('sha256').update(bytes).digest('hex'));
-  assert.deepEqual(manifest.counts, { guides: 0, storageItems: 3, sources: 1 });
+  assert.deepEqual(manifest.counts, { guides: 0, produceGuides: 0, storageItems: 3, sources: 1 });
   assert.deepEqual(JSON.parse(await readFile(join(dir, 'manifest.json'), 'utf8')), manifest);
 
   const db = new DatabaseSync(join(dir, manifest.file), { readOnly: true });
@@ -86,7 +86,7 @@ test('buildPack writes a pack whose manifest matches the file and whose search h
     assert.deepEqual(db.prepare('SELECT location, kind, min_value, max_value, unit FROM storage_periods WHERE item_id = ?').all('a').map((r) => ({ ...r })),
       [{ location: 'fridge', kind: 'range', min_value: 1, max_value: 2, unit: 'weeks' }]);
     assert.equal((db.prepare('SELECT attribution FROM sources WHERE id = ?').get('test-source') as { attribution: string }).attribution, 'Source: test (CC0).');
-    assert.equal((db.prepare("SELECT value FROM meta WHERE key = 'schemaVersion'").get() as { value: string }).value, '2');
+    assert.equal((db.prepare("SELECT value FROM meta WHERE key = 'schemaVersion'").get() as { value: string }).value, '3');
     assert.deepEqual({ ...(db.prepare('SELECT text, text_da, text_da_checked FROM storage_notes WHERE item_id = ?').get('a') as object) }, {
       text: 'Blanch before freezing.',
       text_da: 'Blancher før indfrysning.',

@@ -8,6 +8,7 @@ export interface RegistrySource {
   id: string;
   status: 'cleared' | 'needs-review' | 'request-needed' | 'requested' | 'excluded';
   title: string;
+  shortName?: string;   // short label shown next to content, e.g. 'USDA Handbook 66'
   publisher: string;
   url: string;
   lang: 'da' | 'en';

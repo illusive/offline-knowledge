@@ -43,8 +43,6 @@ export interface Strings {
   toolsTitle: string;
   settingsTitle: string;
   comingLater: string;
-  notesTranslated: string;
-  notesOriginal: string;
   showOriginal: string;
   showTranslation: string;
   sensesTitle: string;
@@ -54,6 +52,21 @@ export interface Strings {
   downloadProgress: (done: number, total: number) => string;
   openingPack: string;
   firstLaunchNote: string;
+  guideSections: Record<'about' | 'prefers' | 'avoid' | 'together' | 'coolStorage' | 'drying' | 'pickling' | 'canning', string>;
+  kitchenTimes: string;
+  verdicts: {
+    drying: Record<'excellent' | 'good' | 'fair' | 'poor' | 'notRecommended' | 'noSource', string>;
+    pickling: Record<'tested' | 'noTestedMethod', string>;
+    canning: Record<'pressure' | 'waterBath' | 'asPickles' | 'notRecommended' | 'noTestedMethod', string>;
+  };
+  apartFromProducers: string;
+  apartFromSensitive: string;
+  storeWith: string;
+  ethyleneNeutral: string;
+  textTranslated: string;
+  textOriginal: string;
+  sourcesHeading: string;
+  basedOn: (names: string) => string;
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -109,8 +122,6 @@ export const strings: Record<Lang, Strings> = {
     toolsTitle: 'Værktøjer',
     settingsTitle: 'Indstillinger',
     comingLater: 'Kommer i et senere trin.',
-    notesTranslated: 'Noterne er oversat fra kilden på engelsk.',
-    notesOriginal: 'Noterne vises i originalsproget (engelsk).',
     showOriginal: 'Vis original',
     showTranslation: 'Vis på dansk',
     sensesTitle: 'Brug dine sanser',
@@ -120,6 +131,43 @@ export const strings: Record<Lang, Strings> = {
     downloadProgress: (done, total) => `${done} af ${total} filer`,
     openingPack: 'Henter indholdet …',
     firstLaunchNote: 'Første gang kan det tage lidt tid.',
+    guideSections: {
+      about: 'Om',
+      prefers: 'Det trives den med',
+      avoid: 'Undgå',
+      together: 'Sammen med andre',
+      coolStorage: 'Lang tids opbevaring',
+      drying: 'Tørring',
+      pickling: 'Syltning',
+      canning: 'Henkogning',
+    },
+    kitchenTimes: 'Holdbarhed i køkkenet',
+    verdicts: {
+      drying: {
+        excellent: 'Egner sig rigtig godt til tørring',
+        good: 'Egner sig godt til tørring',
+        fair: 'Egner sig nogenlunde til tørring',
+        poor: 'Egner sig dårligt til tørring',
+        notRecommended: 'Tørring frarådes',
+        noSource: 'Ingen af kilderne beskriver tørring af denne fødevare.',
+      },
+      pickling: { tested: 'Der findes testede opskrifter', noTestedMethod: 'Ingen af kilderne har en testet opskrift.' },
+      canning: {
+        pressure: 'Kun i trykkoger',
+        waterBath: 'I vandbad',
+        asPickles: 'Kun som syltede, efter en testet opskrift',
+        notRecommended: 'Henkogning frarådes',
+        noTestedMethod: 'Ingen af kilderne har en testet metode.',
+      },
+    },
+    apartFromProducers: 'Er følsom over for ethylen. Hold den væk fra disse, som danner meget ethylen:',
+    apartFromSensitive: 'Danner meget ethylen. Hold den væk fra disse, som er følsomme over for det:',
+    storeWith: 'Kan opbevares sammen med (i op til 7 dage):',
+    ethyleneNeutral: 'Hverken følsom over for ethylen eller danner meget af det.',
+    textTranslated: 'Teksten er skrevet på dansk ud fra kilderne.',
+    textOriginal: 'Teksten vises med kildernes egne ord.',
+    sourcesHeading: 'Kilder',
+    basedOn: (names) => `Kilde: ${names}`,
   },
   en: {
     appTitle: 'stead',
@@ -173,8 +221,6 @@ export const strings: Record<Lang, Strings> = {
     toolsTitle: 'Tools',
     settingsTitle: 'Settings',
     comingLater: 'Coming in a later step.',
-    notesTranslated: 'The notes are translated from the English source.',
-    notesOriginal: 'The notes are shown in the original language (English).',
     showOriginal: 'Show original',
     showTranslation: 'Show translation',
     sensesTitle: 'Use your senses',
@@ -184,5 +230,42 @@ export const strings: Record<Lang, Strings> = {
     downloadProgress: (done, total) => `${done} of ${total} files`,
     openingPack: 'Loading the content …',
     firstLaunchNote: 'The first time can take a little while.',
+    guideSections: {
+      about: 'About',
+      prefers: 'What it likes',
+      avoid: 'Avoid',
+      together: 'With other produce',
+      coolStorage: 'Long-term storage',
+      drying: 'Drying',
+      pickling: 'Pickling',
+      canning: 'Canning',
+    },
+    kitchenTimes: 'Storage times in the kitchen',
+    verdicts: {
+      drying: {
+        excellent: 'Excellent for drying',
+        good: 'Good for drying',
+        fair: 'Fair for drying',
+        poor: 'Poor for drying',
+        notRecommended: 'Drying not recommended',
+        noSource: 'None of the sources describe drying this food.',
+      },
+      pickling: { tested: 'Tested recipes exist', noTestedMethod: 'None of the sources has a tested recipe.' },
+      canning: {
+        pressure: 'Pressure canner only',
+        waterBath: 'Boiling-water bath',
+        asPickles: 'Only as pickles, following a tested recipe',
+        notRecommended: 'Canning not recommended',
+        noTestedMethod: 'None of the sources has a tested method.',
+      },
+    },
+    apartFromProducers: 'Sensitive to ethylene. Keep it away from these, which produce a lot of ethylene:',
+    apartFromSensitive: 'Produces a lot of ethylene. Keep it away from these, which are sensitive to it:',
+    storeWith: 'Can be stored with (for up to 7 days):',
+    ethyleneNeutral: 'Neither sensitive to ethylene nor a strong producer of it.',
+    textTranslated: 'The text is written in Danish from the sources.',
+    textOriginal: 'The text is shown in the sources\' own words.',
+    sourcesHeading: 'Sources',
+    basedOn: (names) => `Source: ${names}`,
   },
 };

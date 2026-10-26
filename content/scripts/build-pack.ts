@@ -3,6 +3,7 @@
 
 import { readFile } from 'node:fs/promises';
 import { buildPack } from '../lib/pack.ts';
+import { ethyleneProfiles, htmlToText, loadGuides, PRODUCE_DIR, relations, validateGuides, type CompatibilityEntry } from '../lib/produce.ts';
 import { loadRegistry, readSnapshot } from '../lib/registry.ts';
 import type { StorageDataset } from '../schema/storage.ts';
 
@@ -17,7 +18,28 @@ for (const dataset of storage) {
   if (source) await readSnapshot(source);
 }
 
+// Food guides (D-033): validate against the registry, and check quotes against HTML snapshots.
+const guides = await loadGuides();
+const guideSourceIds = new Set(guides.flatMap((g) => g.sections.flatMap((s) => s.blocks.map((b) => b.sourceRef.sourceId))));
+const snapshotText = new Map<string, string>();
+for (const id of [...guideSourceIds, 'us-ars-ah66-2016']) {
+  const source = sources.find((s) => s.id === id);
+  if (!source) continue;
+  const bytes = await readSnapshot(source);
+  if (source.snapshot?.endsWith('.html')) snapshotText.set(id, htmlToText(bytes.toString('utf8')));
+}
+const itemIds = new Set(storage.flatMap((d) => d.items.map((i) => i.id)));
+const guideProblems = validateGuides(guides, itemIds, sources, snapshotText);
+if (guideProblems.length > 0) throw new Error(`Food guide validation failed:\n- ${guideProblems.join('\n- ')}`);
+
+const compat = JSON.parse(await readFile(new URL('hb66-compatibility.json', `file://${PRODUCE_DIR}`), 'utf8')) as { entries: CompatibilityEntry[] };
+const mapping = JSON.parse(await readFile(new URL('foodkeeper-to-hb66.json', `file://${PRODUCE_DIR}`), 'utf8')) as { map: Record<string, string[]> };
+const ethylene = ethyleneProfiles(compat.entries, mapping.map);
+
 const outDir = new URL('dist/core/', root).pathname;
-const manifest = await buildPack({ packId: 'core', version, storage, sources }, outDir);
-console.log(`Built pack '${manifest.packId}' ${manifest.version}: ${manifest.counts.storageItems} storage items, ${manifest.counts.guides} guides, ${manifest.counts.sources} sources.`);
+const manifest = await buildPack(
+  { packId: 'core', version, storage, sources, guides, ethylene, relations: relations(ethylene), extraSourceIds: ['us-ars-ah66-2016'] },
+  outDir,
+);
+console.log(`Built pack '${manifest.packId}' ${manifest.version}: ${manifest.counts.storageItems} storage items, ${manifest.counts.produceGuides} food guides, ${manifest.counts.guides} guides, ${manifest.counts.sources} sources.`);
 console.log(`${outDir}${manifest.file}: ${manifest.sizeBytes} bytes, sha256 ${manifest.sha256}`);

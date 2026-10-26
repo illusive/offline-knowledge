@@ -1,0 +1,135 @@
+{
+ "id": "foodkeeper-283",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Agurker danner meget lidt ethylen, men er meget følsomme over for det. Ethylen fra anden frugt får dem til at blive gule og rådne hurtigere.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Cucumber chapter, Ethylene Production and Sensitivity, p. 303",
+      "quote": "Cucumber fruit produce little ethylene, about 0.1 to 1.0 µL kg-1 h-1 at 20 °C (68 °F), but they are very sensitive to it. Exposure to 1 to 5 µL L-1 ethylene accelerates yellowing and decay."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Fødevarestyrelsen anbefaler at opbevare agurker i køleskabet ved 5 °C, pakket i en plastikpose.",
+     "sourceRef": {
+      "sourceId": "dk-fvst-opbevar-maden-korrekt",
+      "locator": "I køleskabet",
+      "quote": "Grøntsager - bør pakkes i en plasticpose … Agurk … Hold øje med, at temperaturen i køleskabet er 5 °C."
+     }
+    },
+    {
+     "text": "Ved længere opbevaring trives agurker bedst ved 10–12,5 °C og høj luftfugtighed (95 %).",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Cucumber chapter, Optimum Storage Conditions, p. 303",
+      "quote": "Recommended conditions for commercial storage of cucumbers are 10 to 12.5 ºC (50 to 54 °F) at 95% RH (Hardenburg et al. 1986)."
+     }
+    },
+    {
+     "text": "Plastfolie mindsker vandtabet – derfor er drivhusagurker ofte pakket ind.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Cucumber chapter, Retail Outlet Display Considerations, p. 303",
+      "quote": "greenhouse slicers are wrapped in shrink plastic to reduce water loss"
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Under 10 °C får agurker kuldeskader efter blot 2–3 dage: små fordybninger i skrællen, gule områder og vandede pletter i kødet. Ved 15 °C bliver de hurtigt gule.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Cucumber chapter, Optimum Storage Conditions; Physiological Disorders, pp. 303–304",
+      "quote": "Storage below 10 °C (50 °F) results in chilling injury in as little as 2 or 3 days, while storage at 15 °C (59 °F) results in rapid yellowing and loss of quality. … Chilling injury is characterized by surface pitting, increased yellowing and disease susceptibility, and development of water-soaked areas of the flesh."
+     }
+    },
+    {
+     "text": "Kuldeskader kan undgås, hvis agurken spises lige efter, den er taget ud af køleskabet.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Cucumber chapter, Chilling Sensitivity, p. 303",
+      "quote": "Development of chilling injury symptoms can be avoided if chilled fruit are used immediately after removal from storage."
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": []
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Agurker holder sig generelt under 14 dage; derefter falder kvaliteten hurtigt.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Cucumber chapter, Optimum Storage Conditions, p. 303",
+      "quote": "Storage life is generally less than 14 days, with visual and sensory quality rapidly declining thereafter."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "noSource",
+   "blocks": []
+  },
+  {
+   "key": "pickling",
+   "verdict": "tested",
+   "blocks": [
+    {
+     "text": "USDA har testede opskrifter på syltede agurker, bl.a. fermenterede dildagurker, hurtige dildagurker og søde cornichoner.",
+     "sourceRef": {
+      "sourceId": "usda-canning-2015-guide06",
+      "locator": "Contents, p. 6-1",
+      "quote": "Dill pickles … Quick fresh-pack dill pickles … Sweet gherkin pickles"
+     }
+    },
+    {
+     "text": "Vælg faste agurker i den rigtige størrelse: ca. 4 cm (1½ tomme) til cornichoner og ca. 10 cm (4 tommer) til dildagurker. Brug skæve og mere modne agurker til relish og søde agurkeskiver.",
+     "sourceRef": {
+      "sourceId": "usda-canning-2015-guide06",
+      "locator": "Selection of fresh cucumbers, p. 6-5",
+      "quote": "Quality: Select firm cucumbers of the appropriate size: about 1-1/2 inches for gherkins and 4 inches for dills. Use odd-shaped and more mature cucumbers for relishes and bread-and-butter style pickles."
+     }
+    },
+    {
+     "text": "Skær altid ca. 1,5 mm (1/16 tomme) af blomsterenden, og smid den ud.",
+     "sourceRef": {
+      "sourceId": "usda-canning-2015-guide06",
+      "locator": "Dill pickles, procedure, p. 6-7",
+      "quote": "Cut 1/16-inch slice off blossom end and discard."
+     }
+    }
+   ]
+  },
+  {
+   "key": "canning",
+   "verdict": "asPickles",
+   "blocks": [
+    {
+     "text": "Agurker henkoges kun som syltede agurker efter en testet opskrift. Fuldt fermenterede dildagurker kan holde 4–6 måneder i køleskabet, hvis hinder og skimmel fjernes jævnligt – at henkoge dem er en bedre måde at gemme dem på.",
+     "sourceRef": {
+      "sourceId": "usda-canning-2015-guide06",
+      "locator": "Dill pickles, procedure, p. 6-7",
+      "quote": "Fully fermented pickles may be stored in the original container for about 4 to 6 months, provided they are refrigerated and surface scum and molds are removed regularly. Canning fully fermented pickles is a better way to store them."
+     }
+    }
+   ]
+  }
+ ]
+}

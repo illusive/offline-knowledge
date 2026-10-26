@@ -7,7 +7,9 @@ import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 import { PACK_SCHEMA_VERSION, type PackManifest } from '../schema/pack.ts';
+import { SECTION_ORDER, type ProduceGuide } from '../schema/produce.ts';
 import type { StorageDataset } from '../schema/storage.ts';
+import type { EthyleneProfile } from './produce.ts';
 import type { RegistrySource } from './registry.ts';
 
 export const PACK_DB_FILE = 'pack.sqlite';
@@ -18,6 +20,7 @@ CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
 CREATE TABLE sources (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
+  short_name TEXT NOT NULL,
   publisher TEXT NOT NULL,
   url TEXT NOT NULL,
   lang TEXT NOT NULL,
@@ -66,6 +69,40 @@ CREATE TABLE storage_notes (
 
 -- Trigram index so that Danish compound words match ('kål' finds 'Hvidkål').
 -- Queries need at least 3 characters; shorter queries need a prefix fallback in the app.
+-- Food guides (D-033): sections with a verdict, sourced blocks, and Handbook 66 storage relations.
+CREATE TABLE produce_sections (
+  item_id TEXT NOT NULL REFERENCES storage_items(id),
+  ord INTEGER NOT NULL,
+  section TEXT NOT NULL,
+  verdict TEXT,
+  PRIMARY KEY (item_id, section)
+);
+
+CREATE TABLE produce_blocks (
+  item_id TEXT NOT NULL REFERENCES storage_items(id),
+  section TEXT NOT NULL,
+  ord INTEGER NOT NULL,
+  text TEXT NOT NULL,
+  quote TEXT NOT NULL,
+  source_id TEXT NOT NULL REFERENCES sources(id),
+  locator TEXT NOT NULL,
+  PRIMARY KEY (item_id, section, ord)
+);
+
+CREATE TABLE produce_ethylene (
+  item_id TEXT PRIMARY KEY REFERENCES storage_items(id),
+  storage_groups TEXT NOT NULL,
+  producer INTEGER NOT NULL,
+  sensitive INTEGER NOT NULL
+);
+
+CREATE TABLE produce_relations (
+  item_id TEXT NOT NULL REFERENCES storage_items(id),
+  other_id TEXT NOT NULL REFERENCES storage_items(id),
+  relation TEXT NOT NULL CHECK (relation IN ('apart', 'with')),
+  PRIMARY KEY (item_id, other_id)
+);
+
 CREATE VIRTUAL TABLE storage_search USING fts5(
   item_id UNINDEXED,
   lang UNINDEXED,
@@ -81,6 +118,12 @@ export interface PackInput {
   version: string;
   storage: StorageDataset[];
   sources: RegistrySource[];
+  // Food guides and Handbook 66 relations (D-033); validated by lib/produce.ts before the build.
+  guides?: ProduceGuide[];
+  ethylene?: Map<string, EthyleneProfile>;
+  relations?: { itemId: string; otherId: string; relation: 'apart' | 'with' }[];
+  // Sources referenced only by guides and relations, e.g. Handbook 66 for Table 1.
+  extraSourceIds?: string[];
 }
 
 // Returns a list of problems; an empty list means the input may be published.
@@ -121,7 +164,11 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
   const dbPath = join(outDir, PACK_DB_FILE);
   await rm(dbPath, { force: true });
 
-  const usedSourceIds = new Set(input.storage.map((d) => d.sourceId));
+  const usedSourceIds = new Set([
+    ...input.storage.map((d) => d.sourceId),
+    ...(input.guides ?? []).flatMap((g) => g.sections.flatMap((s) => s.blocks.map((b) => b.sourceRef.sourceId))),
+    ...(input.extraSourceIds ?? []),
+  ]);
   const usedSources = input.sources.filter((s) => usedSourceIds.has(s.id));
   const dataVersions = new Map(input.storage.map((d) => [d.sourceId, d.sourceDataVersion]));
 
@@ -138,10 +185,10 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     meta.run('createdAt', now.toISOString());
 
     const insertSource = db.prepare(
-      'INSERT INTO sources (id, title, publisher, url, lang, license, license_url, attribution, retrieved_at, data_version) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      'INSERT INTO sources (id, title, short_name, publisher, url, lang, license, license_url, attribution, retrieved_at, data_version) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
     );
     for (const s of usedSources) {
-      insertSource.run(s.id, s.title, s.publisher, s.url, s.lang, s.license, s.licenseUrl ?? null, s.attribution || `${s.publisher}: ${s.title}`, s.retrievedAt, dataVersions.get(s.id) ?? null);
+      insertSource.run(s.id, s.title, s.shortName ?? s.publisher, s.publisher, s.url, s.lang, s.license, s.licenseUrl ?? null, s.attribution || `${s.publisher}: ${s.title}`, s.retrievedAt, dataVersions.get(s.id) ?? null);
     }
 
     const insertItem = db.prepare(
@@ -172,6 +219,19 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
       }
     }
 
+    const insertSection = db.prepare('INSERT INTO produce_sections (item_id, ord, section, verdict) VALUES (?, ?, ?, ?)');
+    const insertBlock = db.prepare('INSERT INTO produce_blocks (item_id, section, ord, text, quote, source_id, locator) VALUES (?, ?, ?, ?, ?, ?, ?)');
+    for (const guide of input.guides ?? []) {
+      for (const section of guide.sections) {
+        insertSection.run(guide.id, SECTION_ORDER.indexOf(section.key), section.key, section.verdict ?? null);
+        section.blocks.forEach((b, ord) => insertBlock.run(guide.id, section.key, ord, b.text, b.sourceRef.quote, b.sourceRef.sourceId, b.sourceRef.locator));
+      }
+    }
+    const insertEthylene = db.prepare('INSERT INTO produce_ethylene (item_id, storage_groups, producer, sensitive) VALUES (?, ?, ?, ?)');
+    for (const [itemId, p] of input.ethylene ?? []) insertEthylene.run(itemId, p.groups.join(','), p.producer ? 1 : 0, p.sensitive ? 1 : 0);
+    const insertRelation = db.prepare('INSERT INTO produce_relations (item_id, other_id, relation) VALUES (?, ?, ?)');
+    for (const r of input.relations ?? []) insertRelation.run(r.itemId, r.otherId, r.relation);
+
     db.exec('COMMIT');
     db.exec("INSERT INTO storage_search (storage_search) VALUES ('optimize')");
     db.exec('VACUUM');
@@ -194,6 +254,7 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     languages: ['da', 'en'],
     counts: {
       guides: 0,
+      produceGuides: input.guides?.length ?? 0,
       storageItems: input.storage.reduce((n, d) => n + d.items.length, 0),
       sources: usedSources.length,
     },

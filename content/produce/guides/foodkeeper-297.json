@@ -1,0 +1,208 @@
+{
+ "id": "foodkeeper-297",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Nyopgravede kartofler bliver hurtigt slatne ved stuetemperatur. Spis dem inden for nogle dage, eller opbevar dem mørkt, tørt og ikke under 4 grader.",
+     "sourceRef": {
+      "sourceId": "dk-bolius-udendoers-opbevaring",
+      "locator": "Kartofler",
+      "quote": "Nyopgravede kartofler bliver hurtigt slatne ved stuetemperatur. De skal spises i løbet af nogle dage eller opbevares mørkt, tørt og ikke under 4 grader."
+     }
+    },
+    {
+     "text": "Kartofler, der skal gemmes længe, skal først hærdes: 1–2 uger ved omkring 20 °C (helst 15 °C for at mindske råd) og høj luftfugtighed, så sår heler, og skrællen bliver fast.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Optimum Storage Conditions, p. 507",
+      "quote": "Long-term storage of potato tubers—up to 12 mo—requires that they be cured. Curing stimulates suberization and wound healing and reduces respiration. Optimal curing conditions are approximately 20 °C (68 °F) with RH of 80 to 100%. … Curing at 15 °C (59 °F) is commonly recommended to minimize decay. … Once cured, a process requiring 1 to 2 weeks"
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Fødevarestyrelsen anbefaler at opbevare kartofler tørt, mørkt og køligt.",
+     "sourceRef": {
+      "sourceId": "dk-fvst-opbevar-maden-korrekt",
+      "locator": "Tørt, mørkt og køligt",
+      "quote": "Følgende bør du opbevare tørt, mørkt og køligt: Kartofler"
+     }
+    },
+    {
+     "text": "Kartofler til madlavning holder sig bedst ved 7–10 °C. Så omdannes stivelsen ikke til sukker, som får dem til at blive mørke ved tilberedning.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Optimum Storage Conditions, p. 507",
+      "quote": "Tubers for fresh consumption are stored at 7 to 10 °C (45 to 50 °F), to minimize conversion of non-reducing sugars such as starch to reducing sugars such as glucose, which darken during cooking."
+     }
+    },
+    {
+     "text": "Ved længere lagring skal luften være fugtig (95–99 % luftfugtighed), så kartoflerne ikke skrumper og får trykskader.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Optimum Storage Conditions, p. 507",
+      "quote": "Maintaining 95 to 99% RH is required at all times to minimize shrink and pressure bruising in storage."
+     }
+    },
+    {
+     "text": "Hold dem mørkt. Lys gør kartofler grønne og danner bitre, giftige glykoalkaloider som solanin – også svagt lys i 1–2 uger.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Physiological Disorders (greening), p. 508",
+      "quote": "Darkness is essential for long-term storage because greening can occur during storage or marketing. Exposure to bright light during postharvest handling, or longer periods (1 to 2 weeks) of low light, can result in development of chlorophyll (greening) and bitter, toxic glycoalkaloids such as solanine."
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Undgå kulde. Ved 3–4 °C bliver kartofler søde, og det kan ikke rettes op igen. Ved 1–2 °C kan de blive brune indvendigt, og ved ca. −1 °C fryser de.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Chilling Sensitivity, p. 507",
+      "quote": "Potatoes freeze at approximately -1 °C (30 °F). Internal mahogany browning can occur at 1 to 2 °C (34 to 36 °F), while temperatures of 3 to 4 °C (37 to 39 °F) typically result in increased reducing sugar levels that are not reversible with reconditioning."
+     }
+    },
+    {
+     "text": "Kartofler tåler ikke frost og skal opbevares, hvor temperaturen aldrig kommer under 4–5 grader.",
+     "sourceRef": {
+      "sourceId": "dk-bolius-udendoers-opbevaring",
+      "locator": "Kartofler",
+      "quote": "Kartofler tåler ikke frost og skal opbevares, hvor temperaturen aldrig kommer under 4-5 grader"
+     }
+    },
+    {
+     "text": "Over 4 °C spirer kartofler hurtigere.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Optimum Storage Conditions, p. 507",
+      "quote": "Sprouting accelerates at temperatures >4 °C (40 °F), so seed tubers are commonly stored at 4 to 5 °C (40 °F)."
+     }
+    },
+    {
+     "text": "Solanin dannes også, når kartofler bliver stødt eller skåret, og når de spirer.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Physiological Disorders (greening), p. 508",
+      "quote": "Solanine also forms in response to bruising and wounding (including fresh processing followed by storage) and during sprouting."
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Kartofler danner meget lidt ethylen og er ikke særlig følsomme over for ethylen udefra.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Ethylene Production and Sensitivity, p. 508",
+      "quote": "Potatoes produce very low levels of ethylene: <0.1 µL kg-1 h-1 at 20 °C (68 °F). … Potato tubers are not very sensitive to external ethylene."
+     }
+    },
+    {
+     "text": "Efter 2–3 måneder over 5 °C uden spirehæmmer kan meget ethylen få kartoflerne til at spire, mens lidt ethylen kan hæmme spiringen.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Ethylene Production and Sensitivity, p. 508",
+      "quote": "After 2 to 3 mo at >5 °C (41 °F) without sprout inhibitor, low levels of ethylene may retard sprouting, while high amounts may induce sprouting."
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Kartofler af god kvalitet kan lagres i 2–12 måneder, afhængigt af kvaliteten ved høst, lagerforholdene, sorten og om der er brugt spirehæmmer.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Potato chapter, Optimum Storage Conditions, p. 507",
+      "quote": "Quality tubers can be stored for 2 to 12 mo, depending on quality at harvest, quality of storage facilities, variety, and whether or not sprout inhibitors are used."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "good",
+   "blocks": [
+    {
+     "text": "Vask og skræl. Skær dem i stave på ca. 6 mm (¼ tomme) eller i skiver på ca. 3 mm (⅛ tomme). Damp-blancher 6–8 minutter, eller blancher 5–6 minutter i kogende vand.",
+     "sourceRef": {
+      "sourceId": "msu-montguide-drying-vegetables",
+      "locator": "Table 1, Potatoes, p. 3",
+      "quote": "Potatoes Wash and peel. Cut into shoestring strips ¼ inch thick or cut in slices ¹⁄8 inch thick. [Steam] 6-8 [Water] 5-6 [Dehydrator hours] 8-12"
+     }
+    },
+    {
+     "text": "Tør dem 8–12 timer i et tørreapparat ved 60 °C (140 °F), til de er sprøde. I en almindelig ovn kan det tage op til dobbelt så lang tid; hold ovnlågen 5–15 cm (2–6 tommer) på klem.",
+     "sourceRef": {
+      "sourceId": "msu-montguide-drying-vegetables",
+      "locator": "Methods of Drying; Oven Drying; Table 1, pp. 1–3",
+      "quote": "The optimum temperature for drying food is 140°F. … For air circulation, leave the oven door propped open 2 to 6 inches. … Vegetables should be dried until they are brittle or “crisp.” … Drying times in a conventional oven could be up to twice as long, depending on air circulation."
+     }
+    },
+    {
+     "text": "Uden strøm: Grøntsager bør ikke tørres udendørs. De indeholder lidt sukker og syre, og det øger risikoen for fordærv. Tør dem i stedet indendørs under kontrollerede forhold i ovn eller tørreapparat.",
+     "sourceRef": {
+      "sourceId": "nchfp-sun-drying",
+      "locator": "Sun Drying",
+      "quote": "Vegetables (with the exception of vine dried beans) and meats are not recommended for out-of-doors drying. Vegetables are low in sugar and acid. This increases the risks for food spoilage. … It is best to dry meats and vegetables indoors using controlled conditions of an oven or food dehydrator."
+     }
+    }
+   ]
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "pressure",
+   "blocks": [
+    {
+     "text": "Alle friske grøntsager undtagen de fleste tomater er syrefattige (pH over 4,6), og sporerne af botulismebakterien er meget svære at dræbe ved kogepunktet. Syrefattige fødevarer skal derfor steriliseres ved 116–121 °C (240–250 °F) i en trykkoger.",
+     "sourceRef": {
+      "sourceId": "usda-canning-2015-guide01",
+      "locator": "Food acidity and processing methods, p. 1-8",
+      "quote": "Low-acid foods have pH values higher than 4.6. They include red meats, seafood, poultry, milk, and all fresh vegetables except for most tomatoes. … Botulinum spores are very hard to destroy at boiling-water temperatures; the higher the canner temperature, the more easily they are destroyed. Therefore, all low-acid foods should be sterilized at temperatures of 240° to 250°F, attainable with pressure canners operated at 10 to 15 PSIG."
+     }
+    },
+    {
+     "text": "Vælg små til mellemstore, modne kartofler af god kvalitet. Kartofler, der har været opbevaret under 7 °C (45 °F), kan blive misfarvede ved henkogning. Hele kartofler skal være 2,5–5 cm (1–2 tommer) i diameter.",
+     "sourceRef": {
+      "sourceId": "usda-canning-2015-guide04",
+      "locator": "Potatoes, white—cubed or whole, p. 4-17",
+      "quote": "Quality: Select small to medium-size mature potatoes of ideal quality for cooking. Tubers stored below 45°F may discolor when canned. Choose potatoes 1 to 2 inches in diameter if they are to be packed whole."
+     }
+    },
+    {
+     "text": "Vask og skræl kartoflerne, og læg dem i en opløsning med ascorbinsyre (C-vitamin), så de ikke bliver mørke. Skær dem evt. i tern på ca. 1,3 cm (½ tomme). Lad dem dryppe af, kog dem 2 minutter i kogende vand, og lad dem dryppe af igen; hele kartofler koges 10 minutter. Tilsæt evt. 1 tsk. salt pr. quart-glas (ca. 1 liter). Fyld de varme glas med varme kartofler og frisk, varmt vand, så der er 2,5 cm (1 tomme) fri plads øverst. Fjern luftbobler, juster den frie plads, tør glassenes kant af med et rent, fugtigt stykke køkkenrulle, sæt låg på, og henkog.",
+     "sourceRef": {
+      "sourceId": "usda-canning-2015-guide04",
+      "locator": "Potatoes, white—cubed or whole, p. 4-17",
+      "quote": "Procedure: Wash and peel potatoes. Place in ascorbic acid solution to prevent darkening (see pages 1-11). If desired, cut into 1/2-inch cubes. Drain. Cook 2 minutes in boiling water and drain again. For whole potatoes, boil 10 minutes and drain. Add 1 teaspoon of salt per quart to the jar, if desired. Fill hot jars with hot potatoes and fresh hot water, leaving 1-inch headspace. Remove air bubbles and adjust headspace if needed. Wipe rims of jars with a dampened clean paper towel. Adjust lids and process."
+     }
+    },
+    {
+     "text": "Henkogningstid op til 300 m over havet (1.000 fod): trykkoger med manometer ved 11 psi (ca. 0,76 bar) eller med vægtventil ved 10 psi (ca. 0,69 bar). Pint-glas (ca. 0,5 liter): 35 minutter. Quart-glas (ca. 1 liter): 40 minutter.",
+     "sourceRef": {
+      "sourceId": "usda-canning-2015-guide04",
+      "locator": "Potatoes, white—cubed or whole, process-time tables, p. 4-17",
+      "quote": "[Table] Recommended process time for White Potatoes in a dial-gauge pressure canner: Hot pack, Pints 35 min, Quarts 40; Canner Pressure (PSI) at 0–2,000 ft: 11 lb. Recommended process time for White Potatoes in a weighted-gauge pressure canner: Hot pack, Pints 35 min, Quarts 40; 0–1,000 ft: 10 lb."
+     }
+    }
+   ]
+  }
+ ]
+}
