@@ -1,0 +1,86 @@
+{
+ "id": "foodkeeper-260",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Dadler er stenfrugter med højt indhold af kulhydrat og meget energi. De smager snerpende, når de er umodne, og bliver søde, når de er modne.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Date chapter, Scientific Name and Introduction, p. 311",
+      "quote": "It tastes astringent when premature and becomes sweet when ripe. Dates are rich in carbohydrate and other nutrients and are a high-energy food."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Jo mere fugt og varme, jo hurtigere bliver dadler dårlige. Ved 0 °C kan de holde op til 1 år; modne dadler tåler både kulde og frost.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Date chapter, Optimum Storage Conditions; Chilling Sensitivity, p. 312",
+      "quote": "Pathological and physiological deterioration increases with increasing moisture content and storage temperature. … At 0 °C (32 °F), dates can be stored in good conditions up to 1 year, but some varieties may develop sugar spots or crystals. … Ripe dates at the rutab or tamr stages (see Horticultural Maturity Indices), commonly handled in the world market, are not sensitive to chilling and freezing temperatures."
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Dadler bliver mørke med tiden, hurtigere jo varmere og fugtigere de opbevares. Kulde og lavt vandindhold bremser det.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Date chapter, Physiological Disorders, p. 312",
+      "quote": "Darkening is a major problem in dates. Its rate varies with cultivar, temperature, and moisture content; and it is affected by several treatments. It can be reduced by storage in low temperatures, low moisture content, or in an inert gas."
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Modne dadler danner ingen ethylen og er ikke følsomme over for det.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Date chapter, Ethylene Production and Sensitivity, p. 312",
+      "quote": "At 20 °C (68 °F), dates produce less than 0.1 µL kg-1 h-1 ethylene at the khalal stage and none at the rutab and tamr stages. Ripe dates are not sensitive to ethylene exposure."
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Delvist tørrede dadler holder 1 år ved 0 °C eller koldere, men kun nogle uger ved stuetemperatur. Bløde Deglet Noor-dadler holder højst 1 måned ved 27 °C, 3 måneder ved 15 °C og 8 måneder ved 5 °C, men over 1 år i fryseren.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Date chapter, Optimum Storage Conditions, p. 312",
+      "quote": "Fully mature soft and firm ‘Deglet Noor’ dates can be kept for more than 1 year when stored at -17.5 °C (0 °F) but will not stand more than 1 mo at 27 °C (80 °F), 3 mo at 15 °C (59 °F), or 8 mo at 5 °C (41 °F) (Rygg 1956). Partially dried dates can be kept for 1 year at 0 °C (32 °F) or lower, or for a few weeks at ambient temperature."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "noSource",
+   "blocks": []
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  }
+ ]
+}

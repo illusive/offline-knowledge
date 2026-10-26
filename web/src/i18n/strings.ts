@@ -55,7 +55,7 @@ export interface Strings {
   guideSections: Record<'about' | 'prefers' | 'avoid' | 'together' | 'coolStorage' | 'drying' | 'pickling' | 'canning', string>;
   kitchenTimes: string;
   verdicts: {
-    drying: Record<'excellent' | 'good' | 'fair' | 'poor' | 'notRecommended' | 'noSource', string>;
+    drying: Record<'excellent' | 'good' | 'fair' | 'poor' | 'described' | 'notRecommended' | 'noSource', string>;
     pickling: Record<'tested' | 'noTestedMethod', string>;
     canning: Record<'pressure' | 'waterBath' | 'asPickles' | 'notRecommended' | 'noTestedMethod', string>;
   };
@@ -148,6 +148,7 @@ export const strings: Record<Lang, Strings> = {
         good: 'Egner sig godt til tørring',
         fair: 'Egner sig nogenlunde til tørring',
         poor: 'Egner sig dårligt til tørring',
+        described: 'Kilderne beskriver, hvordan den tørres',
         notRecommended: 'Tørring frarådes',
         noSource: 'Ingen af kilderne beskriver tørring af denne fødevare.',
       },
@@ -247,6 +248,7 @@ export const strings: Record<Lang, Strings> = {
         good: 'Good for drying',
         fair: 'Fair for drying',
         poor: 'Poor for drying',
+        described: 'The sources describe how to dry it',
         notRecommended: 'Drying not recommended',
         noSource: 'None of the sources describe drying this food.',
       },

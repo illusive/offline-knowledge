@@ -1,0 +1,94 @@
+{
+ "id": "foodkeeper-262",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Guava kan spises på to stadier: modent grøn, hvor kødet er hvidt og smager som et sødt æble, eller helt moden, hvor kødet er hvidt til knaldrødt, skrællen lysegul, og frugten er meget sød og duftende.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Guava chapter, Scientific Name and Introduction, p. 356",
+      "quote": "The guava (Psidium guajava L.) is round or oval and can be eaten as a fresh fruit at two stages: mature green when it has white flesh and tastes like a sweet apple, or fully ripe when it has white to bright-red flesh, light-yellow skin, tastes very sweet, and is quite fragrant."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Grønne og halvmodne guavaer holdes ved 8–10 °C; modne, bløde guavaer ved 5–8 °C. Luftfugtigheden bør være 90–95 %.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Guava chapter, Optimum Storage Conditions, p. 356",
+      "quote": "Mature green and partially ripe fruit can be held for 2 to 3 weeks at 8 to 10 °C (46 to 50 °F). Ripe, soft fruit can be held about 1 week at 5 to 8 °C (41 to 46 °F). RH of 90 to 95% is recommended"
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Umodne guavaer får kuldeskader – skjolder, fordybninger og manglende modning – og rådner lettere. Modne guavaer tåler 5 °C bedre.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Guava chapter, Chilling Sensitivity, pp. 356–357",
+      "quote": "Symptoms include skin scald, pitting, and a failure to ripen if fruit are mature green or partially ripe [p367] when chilled. Browning of the flesh can occur. Decay incidence and severity increase with chilling injury. Ripe, soft fruit can be held at 5 °C (41 °F), as they are less sensitive to chilling injury."
+     }
+    },
+    {
+     "text": "Udtørring og stød er de største problemer: Skrællen bliver mat og rynket, og stødte steder bliver brune og rådner let.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Guava chapter, Physiological Disorders, p. 357",
+      "quote": "Postharvest desiccation is a major problem, along with mechanical injury. Desiccation leads to a dull yellow, sometimes wrinkled, skin, while mechanical injury leads to browning that can extend into the flesh. Mechanically injured areas of the skin and flesh are very susceptible to decay."
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Guava danner en del ethylen, og modningen går hurtigere, når den udsættes for ethylen.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Guava chapter, Ethylene Production and Sensitivity, p. 357",
+      "quote": "Production rates vary from 1 to 20 µL kg-1 h-1 at 20 °C and show a climacteric pattern of respiration. … Ripening is accelerated by exposure to ethylene"
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Grønne og halvmodne guavaer holder 2–3 uger ved 8–10 °C, modne ca. 1 uge ved 5–8 °C og ca. 7 dage ved 20 °C.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Guava chapter, Optimum Storage Conditions, p. 356",
+      "quote": "Mature green and partially ripe fruit can be held for 2 to 3 weeks at 8 to 10 °C (46 to 50 °F). Ripe, soft fruit can be held about 1 week at 5 to 8 °C (41 to 46 °F). … Shelf-life is about 7 days when stored at 20 °C (68 °F)."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "noSource",
+   "blocks": []
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  }
+ ]
+}

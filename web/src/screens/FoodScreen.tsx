@@ -149,10 +149,8 @@ export function FoodScreen({ db, id, lang, s }: { db: DbClient; id: string; lang
               <p className="text-sm text-muted" lang={src.lang}>
                 {src.title} · {src.publisher}
               </p>
-              <p className="text-sm text-muted">
-                {src.license}
-                {src.data_version ? ` · ${s.dataDate(src.data_version)}` : ''}
-              </p>
+              {/* Licence line hidden while reuse terms are set aside (D-028, D-033). */}
+              {src.data_version ? <p className="text-sm text-muted">{s.dataDate(src.data_version)}</p> : null}
               <p className="break-all text-sm text-muted">{src.url}</p>
             </div>
           ))}

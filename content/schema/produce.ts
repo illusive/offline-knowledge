@@ -7,12 +7,13 @@ export const SECTION_ORDER: GuideSectionKey[] = ['about', 'prefers', 'avoid', 't
 
 // Verdicts summarise what the sources say; 'noSource' / 'noTestedMethod' mean the sources have
 // nothing on it, which the app states plainly instead of guessing.
-export type DryingVerdict = 'excellent' | 'good' | 'fair' | 'poor' | 'notRecommended' | 'noSource';
+// 'described': a source gives a drying method but no suitability rating.
+export type DryingVerdict = 'excellent' | 'good' | 'fair' | 'poor' | 'described' | 'notRecommended' | 'noSource';
 export type PicklingVerdict = 'tested' | 'noTestedMethod';
 export type CanningVerdict = 'pressure' | 'waterBath' | 'asPickles' | 'notRecommended' | 'noTestedMethod';
 
 export const VERDICTS: Record<'drying' | 'pickling' | 'canning', readonly string[]> = {
-  drying: ['excellent', 'good', 'fair', 'poor', 'notRecommended', 'noSource'],
+  drying: ['excellent', 'good', 'fair', 'poor', 'described', 'notRecommended', 'noSource'],
   pickling: ['tested', 'noTestedMethod'],
   canning: ['pressure', 'waterBath', 'asPickles', 'notRecommended', 'noTestedMethod'],
 };
@@ -20,7 +21,8 @@ export const VERDICTS: Record<'drying' | 'pickling' | 'canning', readonly string
 export interface GuideSourceRef {
   sourceId: string;   // registry id
   locator: string;    // where in the source: chapter, section, table, page
-  quote: string;      // the original passage; parts of one passage joined with " … "
+  quote: string;      // the original passage; parts of one passage joined with " … "; [brackets] are editorial
+  visualOnly?: true;  // the passage is printed as an image (no text layer): transcribed by eye, not checked by the build
 }
 
 export interface GuideBlock {

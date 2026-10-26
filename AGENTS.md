@@ -67,7 +67,7 @@ Do not create additional documents unless they solve a clear organizational prob
 
 When decisions change, update the relevant documentation and remove contradictory instructions.
 
-> **Current state (2026-10-24):** M0 done; M1 in progress: source registry and the `content/` pipeline (FoodKeeper import, pack build) exist. The app is a PWA in `web/` (React + Vite, D-021–D-023) with the food storage lookup working offline; `pwa-spike/` holds the iOS storage test. Start with `docs/ROADMAP.md` to see the next step.
+> **Current state (2026-10-26):** M1 in progress. The app is a PWA in `web/` (React + Vite, D-021–D-023), live on GitHub Pages, with the food storage lookup working offline. Food guides (D-033) are being written: 21 of 101 done; the continuation point is in `docs/ROADMAP.md` (M1, food guides) and the workflow in `content/authoring/README.md`.
 
 ## 4. Engineering principles
 

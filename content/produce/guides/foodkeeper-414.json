@@ -1,0 +1,21 @@
+{
+ "id": "foodkeeper-414",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "drying",
+   "verdict": "noSource",
+   "blocks": []
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  }
+ ]
+}

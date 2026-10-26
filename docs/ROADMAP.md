@@ -24,7 +24,11 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [ ] Test the live app on the iPhone from the Home Screen (install, airplane mode, VoiceOver last).
 - [x] App shell to the design brief (D-024, D-025): name "stead", Inter, tokens (lime/ink/paper, light and dark), tab bar (Home, Tools, Settings), Home with search, the "Storing food" category and the 112 emergency card. Tools and Settings are placeholders until their steps.
 - [x] Feedback round (2026-10-25): search placeholder "Søg", green "Klar offline" status, first-launch download progress, Danish translation of storage notes with a switch to the original (D-031), "Brug dine sanser" pill (D-032).
-- [ ] Food guides for all 101 foods (D-033): sources registered, guide format agreed on two examples, then all foods; shared method guides for drying, pickling and canning.
+- [ ] Food guides for all 101 foods (D-033). **Status 2026-10-26: 21 of 101 written and checked by the build.** Format agreed on Kartofler and Agurker. Done: 248 æbler, 249 abrikoser, 250 avocadoer, 251 bananer, 252 kirsebær/stikkelsbær/litchi, 253 brombær/boysenbær/ribs, 254 blåbær, 256 citrusfrugter, 258 kokosnødder, 259 tranebær, 260 dadler, 261 vindruer, 262 guava, 263 kiwi, 268 madbananer, 283 agurker, 297 kartofler, 414 kumquats (verdicts only), 481 jordbær, 482 hindbær, 483 kirsebær.
+  - **Continue from here (batch 4, fruit):** 264 meloner, 495 vandmelon, 496 cantaloupe, 497 honningmelon, 265 papaya/mango/feijoa/passionsfrugt, 266 ferskner/nektariner/blommer/pærer/sapote, 267 ananas, 269 granatæble, 255 cherimoya, 478 stjernefrugt, 479 kaktusfigen, 480 dragefrugt. The Handbook 66 chapters and NCHFP recipe pages for these are already registered and were read; nothing was written for them yet.
+  - **Then:** vegetables (270–308 and 415–423, 491–494, 547–550, 596–600, 640–678), then herbs (288, 505–513, 611), then the processed items (257, 493, 508, 562, 570; see OPEN_QUESTIONS).
+  - **Then:** shared method guides for drying, pickling and canning; replace the one image-transcribed potato quote with the NCHFP page; e2e check of a guide page.
+  - How to work: `content/authoring/README.md`.
 - [ ] Bookmarks (D-026): local store separate from the pack; "Saved" on Home.
 - [ ] Settings: offline library card from the pack manifest, language, appearance, text size, about and sources.
 - [ ] Tools: supply checklist (UK Be Ready, progress on the device) and compass (permission, no-sensor and inaccuracy states; test on a real iPhone).

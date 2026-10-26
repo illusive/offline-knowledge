@@ -17,21 +17,24 @@ The app depends only on the pack format, not on how the pack was produced.
 
 ```
 content/
-  sources/        Source registry (registry.json), snapshots, reuse requests
+  sources/        Source registry (registry.json), snapshots, text/ (PDF text layers), reuse requests
   storage/        Food storage data: generated imports + Danish names (names-da.json)
+  produce/        Food guides (guides/foodkeeper-<id>.json, D-033), Handbook 66 compatibility table and FoodKeeper mapping
   guides/         One file per guide per language (format not decided yet)
   schema/         Shared TypeScript types
   lib/            Pure mapping/validation code (unit tested)
-  scripts/        Entry points: import-foodkeeper, later validate and build-pack
+  scripts/        Entry points: import-foodkeeper, build-pack; extract-pdf-text.swift; quote-context.ts (authoring aid)
+  authoring/      Python helpers for writing food guides (not part of the build; see its README)
   test/           node:test tests
   dist/           Build output (pack.sqlite, manifest.json) — not committed
 
-Commands (in `content/`): `npm run typecheck`, `npm test`, `npm run import:foodkeeper`.
+Commands (in `content/`): `npm run typecheck`, `npm test`, `npm run import:foodkeeper`, `npm run build:pack`.
 ```
 
 - **Validate:** schema check, every block has a `sourceRef`, every source has a verified license, risk-level requirements met, only `published` guides selected.
 - **Build:** produces a SQLite database with an FTS5 index plus `manifest.json`. Fails on any validation error.
 - The build output is copied into the app as a bundled asset.
+- **Food guide quote check (D-033):** every guide block quotes its source passage, and the build fails unless each quote is found in the snapshot: HTML snapshots through `htmlToText` (inline tags joined, entities decoded), PDF snapshots through `sources/text/<id>.txt`, the PDFKit text layer made by `scripts/extract-pdf-text.swift` (macOS). The text file's first line records the snapshot's SHA-256, and the build refuses text made from another snapshot. `[bracketed]` words in a quote are editorial; `visualOnly` quotes (printed as images) are skipped and listed in the build output.
 
 ## 3. Content model (initial)
 
@@ -150,7 +153,7 @@ web/
 - Ranking: plain `bm25` ranks 'Grønkål' above 'Kål' for 'kål'. The app should rank exact and prefix name matches first.
 - **Guides (not built yet):** title, summary, tags and block text. Choose between trigram and `unicode61` when guide text exists; test with real Danish queries.
 
-## 5a. Pack schema (version 1)
+## 5a. Pack schema (version 3)
 
 Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
 
@@ -158,6 +161,8 @@ Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
 - `sources`: id, title, publisher, url, lang, license, licence URL, attribution, retrieval date, data version. Only sources the pack uses.
 - `storage_items`, `storage_periods`, `storage_notes`: one row per item / period / note, with source field names kept for traceability.
 - `storage_search`: FTS5 index (see §5).
+- `sources.short_name`: the short label shown next to guide text (version 3).
+- Food guides (version 3, D-033): `produce_sections` (item, order, section, verdict), `produce_blocks` (item, section, order, Danish text, original quote, source id, locator), `produce_ethylene` (item, Handbook 66 storage groups, producer, sensitive) and `produce_relations` (item, other item, `apart` | `with`). Relations are computed at build time from Handbook 66 Table 1: `apart` when one produces significant ethylene and the other is sensitive; `with` when they share a storage group, have no conflict and are both producers or both not.
 
 Build: `cd content && npm run build:pack`. Output goes to `content/dist/core/` (not committed). Pack version = `content/package.json` version.
 

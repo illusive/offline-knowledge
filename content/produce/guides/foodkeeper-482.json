@@ -1,0 +1,160 @@
+{
+ "id": "foodkeeper-482",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Hindbær er blandt de mest skrøbelige og letfordærvelige af alle frugter.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Raspberry chapter, Special Considerations, p. 531",
+      "quote": "Raspberries damage easily; they are one of the most fragile and perishable of all fruits."
+     }
+    },
+    {
+     "text": "De færreste bær og stenfrugter holder længe rå. De bør syltes, tørres, fryses eller behandles på anden måde, hvis de skal holde i længere tid.",
+     "sourceRef": {
+      "sourceId": "dk-bolius-udendoers-opbevaring",
+      "locator": "Bær- og stenfrugter",
+      "quote": "De færreste bær- og stenfrugter holder særligt længe i deres rå form, men bør syltes, tørres, fryses eller på anden måde behandles eller opbevares, så de kan holde i længere tid."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Hindbær opbevares bedst i den originale emballage i køleskabet, hvor de holder 1–2 dage.",
+     "sourceRef": {
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "locator": "Opbevar maden korrekt: Hindbær",
+      "quote": "Hindbær opbevarer du bedst i den originale indpakning i køleskabet. De kan holde sig 1-2 dage."
+     }
+    },
+    {
+     "text": "Hindbær holdes så koldt som muligt uden at fryse (−0,5 til 0 °C, over 90 % luftfugtighed).",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Raspberry chapter, Optimum Storage Conditions; Retail Outlet Display Conditions, pp. 530–531",
+      "quote": "at -0.5 to 0 ºC (31 to 32 ºF) with >90% RH. … Raspberries should be stored and displayed at the coldest refrigeration temperature possible without freezing."
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Allerede efter én dag ved 20 °C kan gråskimmel begynde at vokse.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Raspberry chapter, Retail Outlet Display Conditions, p. 531",
+      "quote": "As little as 1 day at 20 °C (68 °F) can result in growth of gray mold (Botrytis cinerea Pers.)."
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Ethylen kan fremme gråskimmel på hindbær og gøre røde hindbær mørkere, mere lilla.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Raspberry chapter, Ethylene Production and Sensitivity, p. 531",
+      "quote": "The presence of ethylene can stimulate growth of Botrytis cinerea (gray mold) on raspberries; also, color can be adversely affected, darkening to a purple-red in red raspberries."
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Hindbær bør højst gemmes 2–5 dage ved −0,5 til 0 °C, afhængigt af sorten.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Raspberry chapter, Optimum Storage Conditions, p. 530",
+      "quote": "Raspberries should be held no more than 2 to 5 days, depending on cultivar, at -0.5 to 0 ºC (31 to 32 ºF) with >90% RH."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "described",
+   "blocks": [
+    {
+     "text": "Bær: Vælg faste, modne bær, vask dem godt, og lad dem være hele eller halver dem. Bær med fast skind dyppes 30 sekunder i kogende vand, så skindet revner; bløde bær (jordbær) lægges 10 minutter i ascorbinsyre-opløsning. Lad dem dryppe godt af, og læg dem højst to lag dybt. Tør dem, til de er hårde og rasler, når bakken rystes (24–36 timer).",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Table 2, Berries",
+      "quote": "Berries Select firm ripe fruit. Wash well. Leave whole or cut in half. For berries with firm skins, dip in boiling water 30 seconds to crack skins. For berries with soft skins (strawberries), dip in ascorbic acid or other antimicrobial solution for 10 minutes. Remove and drain well. Place on drying trays not more than two berries deep. Dry until hard and berries rattle when shaken on trays (24-36 hours)."
+     }
+    },
+    {
+     "text": "Tør frugten i ét lag ved 60 °C (140 °F) i ovn eller tørreapparat. Vend store stykker hver 3.–4. time. Frugten er tør, når den er læderagtig og bøjelig: Klem en håndfuld afkølede stykker – der må ikke være fugt på hånden, og stykkerne skal springe fra hinanden.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Drying Methods; Testing for Dryness",
+      "quote": "Arrange pretreated fruits on drying trays in single layers, pit cavity up. Dry at 140 degrees F (60°C) in an oven or dehydrator. … If possible, stir food and turn large pieces over every 3 to 4 hours during the drying period. … Dried fruits should be leathery and pliable. … Squeeze a handful of the fruit. If no moisture is left on the hand and pieces spring apart when released, they are dry."
+     }
+    },
+    {
+     "text": "Lad den tørrede frugt efterbehandle i 4–10 dage i en løst tildækket beholder, og ryst den dagligt. Kommer der fugtperler, skal den tørres mere. Opbevar den derefter tæt lukket, køligt, tørt og mørkt; den holder 6–12 måneder.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Post-Drying Treatment; Packaging and Storage",
+      "quote": "Lightly cover and store in a warm, dry, well-ventilated place for four to 10 days. Stir or shake containers daily to separate pieces. If beads of moisture form inside, return food to drying trays for further drying, then repeat the conditioning step. … Store in a cool, dry, dark place or in the refrigerator or freezer. Properly stored, dried fruits keep well for six to 12 months."
+     }
+    },
+    {
+     "text": "Uden strøm kan frugt tørres udendørs i solen, fordi frugt indeholder meget sukker og syre. Det kræver varme, tørre dage med blæst, mindst 29 °C (85 °F) og helst en luftfugtighed under 60 %, og det tager flere dage. Dæk frugten til eller tag den i læ om natten, så den ikke trækker fugt igen.",
+     "sourceRef": {
+      "sourceId": "nchfp-sun-drying",
+      "locator": "Sun Drying",
+      "quote": "The high sugar and acid content of fruits make them safe to dry out-of-doors when conditions are favorable for drying. … To dry fruits out-of-doors hot, dry, breezy days are best. A minimum temperature of 85ºF is needed with higher temperatures being better. It takes several days to dry foods out-of-doors. … A humidity below 60 percent is best. … Fruits dried out-of-doors must be covered or brought under shelter at night. The cool night air condenses and could add moisture back to the food, thus slowing down the drying process."
+     }
+    }
+   ]
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "waterBath",
+   "blocks": [
+    {
+     "text": "Hele bær (brombær, blåbær, ribs, solbær, stikkelsbær, hindbær m.fl. – kun de bær, opskriften nævner): Vælg modne, søde bær med ensartet farve. Vask dem, og fjern stilke; stikkelsbær klippes i begge ender. Blåbær, ribs og stikkelsbær kan forvarmes 30 sekunder i kogende vand og fyldes på glas med varm saft. Alle bærrene kan også fyldes rå på glas og overhældes med varm sukkerlage, saft eller vand. Lad 1,3 cm (½ tomme) være fri øverst.",
+     "sourceRef": {
+      "sourceId": "nchfp-berries-whole",
+      "locator": "Berries-Whole, procedure",
+      "quote": "Blackberries, blueberries, currants, dewberries, gooseberries, huckleberries, loganberries, mulberries, raspberries. Use these directions only with the berries listed. … Quality: Choose ripe, sweet berries with uniform color. … Drain, cap, and stem if necessary. For gooseberries, snip off heads and tails with scissors. … Hot pack – For blueberries, currants, gooseberries, and huckleberries. Heat berries in boiling water for 30 seconds and drain. Fill jars and cover with hot juice, leaving ½-inch headspace. Raw pack – Fill jars with any of the raw berries, shaking down gently while filling. Cover with hot syrup, juice, or water, leaving ½-inch headspace."
+     }
+    },
+    {
+     "text": "Henkogningstid for hele bær i vandbad op til 300 m over havet: varm fyldning 15 minutter (pint- og quart-glas); rå fyldning 15 minutter for pint-glas (ca. 0,5 liter) og 20 minutter for quart-glas (ca. 1 liter).",
+     "sourceRef": {
+      "sourceId": "nchfp-berries-whole",
+      "locator": "Berries-Whole, Table 1",
+      "quote": "Table 1. Recommended process time for Berries, whole in a boiling-water canner. … Hot Pints or Quarts 15 min 20 20 25 Raw Pints 15 20 20 25 Quarts 20"
+     }
+    },
+    {
+     "text": "Bærsyltetøj uden pektin: ca. 2,1 liter (9 cups) knuste bær og 6 cups sukker koges, til det tykner, fyldes varmt på varme, steriliserede glas med 6 mm (¼ tomme) fri plads og henkoges 5 minutter i vandbad (op til 300 m over havet).",
+     "sourceRef": {
+      "sourceId": "nchfp-berry-jams-without-pectin",
+      "locator": "Berry Jams without Pectin",
+      "quote": "9 cups crushed berries 6 cups sugar … Remove from heat and fill hot jam into hot, sterile jars, leaving ¼-inch headspace. … Hot Half-pints or Pints 5 min"
+     }
+    }
+   ]
+  }
+ ]
+}

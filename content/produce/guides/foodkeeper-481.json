@@ -1,0 +1,160 @@
+{
+ "id": "foodkeeper-481",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Jordbær bliver ikke sødere efter plukning, så de skal plukkes helt modne. De er meget sarte og får let skader.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Strawberry chapter, Quality Characteristics and Criteria; Special Considerations, pp. 559–560",
+      "quote": "Sugar content does not increase after harvest; therefore, harvest when fully ripe for best flavor. … Strawberry fruit are very delicate and easily damaged."
+     }
+    },
+    {
+     "text": "De færreste bær og stenfrugter holder længe rå. De bør syltes, tørres, fryses eller behandles på anden måde, hvis de skal holde i længere tid.",
+     "sourceRef": {
+      "sourceId": "dk-bolius-udendoers-opbevaring",
+      "locator": "Bær- og stenfrugter",
+      "quote": "De færreste bær- og stenfrugter holder særligt længe i deres rå form, men bør syltes, tørres, fryses eller på anden måde behandles eller opbevares, så de kan holde i længere tid."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Jordbær spises helst samme dag, de købes, men kan holde 2–3 dage i køleskabet ved 2–6 grader.",
+     "sourceRef": {
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "locator": "Opbevar maden korrekt: Jordbær",
+      "quote": "Jordbær skal du helst spise samme dag, du køber dem. Men de kan holde sig 2-3 dage i køleskabet ved 2-6 grader."
+     }
+    },
+    {
+     "text": "Jordbær tåler kulde og opbevares så koldt som muligt uden at fryse: 0 °C og 90–95 % luftfugtighed. En tildækket bakke holder på fugten, så de ikke skrumper.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Strawberry chapter, Optimum Storage Conditions; Retail Outlet Display Considerations; Chilling Sensitivity, pp. 559–560",
+      "quote": "Store at 0 °C (32 °F) with 90 to 95% RH. … Covered baskets maintain higher RH around berries, reducing water loss and shrivel. … Strawberry fruit are not sensitive to chilling and should be stored as cold as possible without freezing."
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Jordbær er yderst letfordærvelige: Køl dem ned hurtigst muligt efter plukning – temperaturen er det vigtigste for holdbarheden.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Strawberry chapter, Precooling Conditions, p. 559",
+      "quote": "Strawberries are extremely perishable, and it is important to begin cooling within 1 h of harvest to avoid loss of quality and reduction in amount of marketable fruit … Temperature management is the single most important factor in minimizing strawberry deterioration and maximizing postharvest life."
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Jordbær danner meget lidt ethylen og reagerer ikke på det.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Strawberry chapter, Ethylene Production and Sensitivity, p. 560",
+      "quote": "Strawberries produce very low amounts of ethylene: <0.1 µL kg-1 h-1 at 20 °C (68 °F). They do not respond to ethylene"
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Ved 0 °C holder jordbær op til 7 dage, afhængigt af svampeangreb.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Strawberry chapter, Optimum Storage Conditions, p. 559",
+      "quote": "Strawberry fruit can be stored for up to 7 days at 0 °C (32 °F), depending on disease pressure."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "described",
+   "blocks": [
+    {
+     "text": "Bær: Vælg faste, modne bær, vask dem godt, og lad dem være hele eller halver dem. Bær med fast skind dyppes 30 sekunder i kogende vand, så skindet revner; bløde bær (jordbær) lægges 10 minutter i ascorbinsyre-opløsning. Lad dem dryppe godt af, og læg dem højst to lag dybt. Tør dem, til de er hårde og rasler, når bakken rystes (24–36 timer).",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Table 2, Berries",
+      "quote": "Berries Select firm ripe fruit. Wash well. Leave whole or cut in half. For berries with firm skins, dip in boiling water 30 seconds to crack skins. For berries with soft skins (strawberries), dip in ascorbic acid or other antimicrobial solution for 10 minutes. Remove and drain well. Place on drying trays not more than two berries deep. Dry until hard and berries rattle when shaken on trays (24-36 hours)."
+     }
+    },
+    {
+     "text": "Forbehandling mod mørkfarvning: Rør 34 g ren ascorbinsyre (C-vitamin) i 1 liter koldt vand, eller bland citronsaft og koldt vand i lige dele. Skær den skrællede frugt direkte ned i opløsningen, lad den ligge i 10 minutter, og lad den dryppe godt af.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Ascorbic Acid Pretreatment; Citric Acid or Lemon Juice Pretreatment",
+      "quote": "Stir 2 1/2 tablespoons (34 grams) of pure ascorbic acid crystals into one quart (1000 milliliters) of cold water. … Cut peeled fruit directly into ascorbic acid solution. Soak for 10 minutes, remove with a slotted spoon, drain well, and dehydrate. … For the lemon juice solution, mix equal parts of lemon juice and cold water (i.e., 1 cup lemon juice and 1 cup water)."
+     }
+    },
+    {
+     "text": "Tør frugten i ét lag ved 60 °C (140 °F) i ovn eller tørreapparat. Vend store stykker hver 3.–4. time. Frugten er tør, når den er læderagtig og bøjelig: Klem en håndfuld afkølede stykker – der må ikke være fugt på hånden, og stykkerne skal springe fra hinanden.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Drying Methods; Testing for Dryness",
+      "quote": "Arrange pretreated fruits on drying trays in single layers, pit cavity up. Dry at 140 degrees F (60°C) in an oven or dehydrator. … If possible, stir food and turn large pieces over every 3 to 4 hours during the drying period. … Dried fruits should be leathery and pliable. … Squeeze a handful of the fruit. If no moisture is left on the hand and pieces spring apart when released, they are dry."
+     }
+    },
+    {
+     "text": "Lad den tørrede frugt efterbehandle i 4–10 dage i en løst tildækket beholder, og ryst den dagligt. Kommer der fugtperler, skal den tørres mere. Opbevar den derefter tæt lukket, køligt, tørt og mørkt; den holder 6–12 måneder.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Post-Drying Treatment; Packaging and Storage",
+      "quote": "Lightly cover and store in a warm, dry, well-ventilated place for four to 10 days. Stir or shake containers daily to separate pieces. If beads of moisture form inside, return food to drying trays for further drying, then repeat the conditioning step. … Store in a cool, dry, dark place or in the refrigerator or freezer. Properly stored, dried fruits keep well for six to 12 months."
+     }
+    },
+    {
+     "text": "Uden strøm kan frugt tørres udendørs i solen, fordi frugt indeholder meget sukker og syre. Det kræver varme, tørre dage med blæst, mindst 29 °C (85 °F) og helst en luftfugtighed under 60 %, og det tager flere dage. Dæk frugten til eller tag den i læ om natten, så den ikke trækker fugt igen.",
+     "sourceRef": {
+      "sourceId": "nchfp-sun-drying",
+      "locator": "Sun Drying",
+      "quote": "The high sugar and acid content of fruits make them safe to dry out-of-doors when conditions are favorable for drying. … To dry fruits out-of-doors hot, dry, breezy days are best. A minimum temperature of 85ºF is needed with higher temperatures being better. It takes several days to dry foods out-of-doors. … A humidity below 60 percent is best. … Fruits dried out-of-doors must be covered or brought under shelter at night. The cool night air condenses and could add moisture back to the food, thus slowing down the drying process."
+     }
+    }
+   ]
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "waterBath",
+   "blocks": [
+    {
+     "text": "Der er ingen testet metode til at henkoge hele jordbær; opskriften på hele bær gælder kun de bær, den nævner, og jordbær er ikke blandt dem.",
+     "sourceRef": {
+      "sourceId": "nchfp-berries-whole",
+      "locator": "Berries-Whole",
+      "quote": "Blackberries, blueberries, currants, dewberries, gooseberries, huckleberries, loganberries, mulberries, raspberries. Use these directions only with the berries listed."
+     }
+    },
+    {
+     "text": "Jordbærsyltetøj med pektin: ca. 1,3 liter (5½ cups) knuste, helt modne jordbær, 1 pakke pulverpektin og 8 cups sukker. Kog hårdt i 1 minut, fyld syltetøjet på varme, steriliserede glas med 6 mm (¼ tomme) fri plads, og henkog 5 minutter i vandbad (op til 300 m over havet).",
+     "sourceRef": {
+      "sourceId": "nchfp-strawberry-jam-pectin",
+      "locator": "Strawberry Jam Pectin",
+      "quote": "5½ cups crushed strawberries (about 3 quart boxes strawberries) 1 package powdered pectin 8 cups sugar … Boil hard for 1 minute, stirring constantly. … Fill hot jam immediately into hot, sterile jars, leaving ¼ inch headspace. … Hot Half-pints or Pints 5 min"
+     }
+    }
+   ]
+  }
+ ]
+}

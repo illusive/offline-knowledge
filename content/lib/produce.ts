@@ -19,18 +19,36 @@ const NAMED_ENTITIES: Record<string, string> = {
   auml: 'ä', ouml: 'ö', uuml: 'ü', Auml: 'Ä', Ouml: 'Ö', Uuml: 'Ü', eacute: 'é', Eacute: 'É', egrave: 'è',
   ndash: '–', mdash: '—', hellip: '…', deg: '°', frac12: '½', frac14: '¼', frac34: '¾', times: '×',
   lsquo: '‘', rsquo: '’', ldquo: '“', rdquo: '”', laquo: '«', raquo: '»', shy: '',
+  ordm: 'º', ordf: 'ª', middot: '·', bull: '•', micro: 'µ', plusmn: '±', sup2: '²', sup3: '³', frac13: '⅓',
+  ntilde: 'ñ', aacute: 'á', iacute: 'í', oacute: 'ó', uacute: 'ú', ccedil: 'ç', agrave: 'à', ecirc: 'ê',
+  reg: '®', trade: '™', copy: '©', minus: '−', le: '≤', ge: '≥', rarr: '→',
 };
+
+// Inline elements do not separate words; everything else does.
+const INLINE_TAGS = /<\/?(a|abbr|b|em|i|span|strong|sub|sup|u|small|mark|font)(\s[^>]*)?>/gi;
 
 // Visible text of an HTML snapshot, whitespace-normalised, for quote checks.
 export function htmlToText(html: string): string {
   return normalize(
     html
       .replace(/<(script|style|noscript|svg)[\s\S]*?<\/\1>/gi, ' ')
+      .replace(INLINE_TAGS, '')
       .replace(/<[^>]+>/g, ' ')
       .replace(/&#(\d+);/g, (_, n: string) => String.fromCodePoint(Number(n)))
       .replace(/&#x([0-9a-f]+);/gi, (_, n: string) => String.fromCodePoint(parseInt(n, 16)))
       .replace(/&([a-zA-Z]+[0-9]*);/g, (whole, name: string) => NAMED_ENTITIES[name] ?? whole),
   );
+}
+
+// Text layer of a PDF snapshot (sources/text/<id>.txt, made by scripts/extract-pdf-text.swift),
+// normalised, after checking that it was extracted from the snapshot the registry names.
+export function pdfText(raw: string, sourceId: string, snapshotSha256: string): string {
+  const [header = '', ...rest] = raw.split('\n');
+  if (header !== `# ${sourceId} sha256 ${snapshotSha256}`) throw new Error(`Text of ${sourceId} was extracted from another snapshot; rerun extract-pdf-text.swift`);
+  // Drop page markers and the printed page number that starts each page.
+  const lines = rest.filter((line, i) => !/^--- p\d+$/.test(line) && !(/^\d+$/.test(line) && /^--- p\d+$/.test(rest[i - 1] ?? '')));
+  // PDFKit gives U+FFFD for some table spaces and U+FFFC for embedded objects.
+  return normalize(lines.join('\n').replace(/\uFFFD/g, ' ').replace(/\uFFFC/g, ''));
 }
 
 export function normalize(text: string): string {
@@ -67,9 +85,10 @@ export function validateGuides(
         if (!ref.locator.trim()) problems.push(`${where}: no locator`);
         if (!ref.quote.trim()) problems.push(`${where}: no quote`);
         const text = snapshotText.get(ref.sourceId);
-        if (text) {
+        if (text && !ref.visualOnly) {
           for (const part of ref.quote.split(' … ')) {
-            if (!text.includes(normalize(part))) problems.push(`${where}: quote not found in the ${ref.sourceId} snapshot: "${part.slice(0, 60)}…"`);
+            // [Bracketed] words are editorial (e.g. table column names) and are not matched.
+            if (!text.includes(normalize(part.replace(/\[[^\]]*\]/g, ' ')))) problems.push(`${where}: quote not found in the ${ref.sourceId} snapshot: "${part.slice(0, 60)}…"`);
           }
         }
       });

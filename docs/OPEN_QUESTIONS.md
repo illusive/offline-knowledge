@@ -32,6 +32,9 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 15. **Contradictions in the source.** Example: Taro lists 2–3 days in the fridge and the note "Refrigeration not recommended." Show both as the source does, or hold such items back? Working assumption: show both, as in the source.
 16. **US assumptions.** "Pantry" means room temperature in a US home; freezer times assume 0 °F (−18 °C). Danish homes often have a cool cellar or utility room. Do we need to say what each location assumes? (Possible source for cellar conditions: USDA Agriculture Handbook 66, once cleared.)
 17. **Data age.** The data is from 2018-09-06 (version 128). Show "data from 2018" in the app, and check for a newer FoodKeeper release before each pack build.
+17a. **Processed foods in the food list (D-033).** Shredded coconut (257), kimchi (493), dried basil (508), homemade applesauce (562) and vegetables marinated in oil (570) are not fresh produce. Applesauce has an NCHFP canning page; vegetables in oil need a botulism warning from an authority (NCHFP has a page on infused oils); the others have no source beyond FoodKeeper. Decide per item: a short guide, verdicts only, or no guide.
+17b. **Sources list length.** A food page can list several NCHFP recipe pages as separate sources. Group them under one heading?
+17c. **Kitchen times vs Danish advice.** FoodKeeper's pantry/fridge times and Tænk's Danish times sometimes differ (e.g. strawberries). Both are shown; should the page explain why?
 
 ## Product
 

@@ -1,0 +1,103 @@
+{
+ "id": "foodkeeper-263",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Kiwi er et bær med hundredvis af små, mørke kerner i grønt kød og en behåret, lysebrun skal. Rådene her gælder især den grønne sort Hayward; der vides mindre om gule kiwier.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Kiwifruit chapter, Scientific Name and Introduction, p. 372",
+      "quote": "The fruit, produced on climbing or straggling plants, is a berry containing hundreds of small, dark seeds embedded in green flesh. Its skin is hairy and light brown. … The guidelines presented here are based on information published for the ‘Hayward’ cultivar and similar types of A. deliciosa. A yellow-fleshed fruit of A. chinensis is rapidly gaining favor in the market, but little information is available."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Fødevarestyrelsen anbefaler at opbevare kiwi på køkkenbordet.",
+     "sourceRef": {
+      "sourceId": "dk-fvst-opbevar-maden-korrekt",
+      "locator": "På køkkenbordet",
+      "quote": "På køkkenbordet bør du opbevare: … Kiwi"
+     }
+    },
+    {
+     "text": "Til lang tids opbevaring holdes kiwi ved 0 °C og 90–95 % luftfugtighed.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Kiwifruit chapter, Optimum Storage Conditions, p. 374",
+      "quote": "The recommended condition for commercial storage of kiwifruit is 0 °C (32 °F) with 90 to 95% RH."
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Ifølge én kilde i kapitlet kan Hayward-kiwier få kuldeskader nær 0 °C: en ring af kornet, vandet væv i yderkødet ved blomsterenden. Frosne kiwier bliver gennemsigtige i kødet.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Kiwifruit chapter, Chilling Sensitivity; Physiological Disorders, p. 374",
+      "quote": "Lallu (1997) reports that the fruit of A. deliciosa cv. ‘Hayward’ are chilling sensitive at temperatures near 0 °C with symptoms appearing as a ring or zone of granular, water-soaked tissue in the outer pericarp at the stylar end of the fruit. … Inadvertent freezing results in flesh translucency"
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Kiwier på lager er ekstremt følsomme over for ethylen og bør ikke opbevares sammen med noget, der danner meget af det. Selv meget små mængder får dem til at blive bløde uden at modne ordentligt. Rådden frugt i nærheden øger også ethylenen.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Kiwifruit chapter, Ethylene Production and Sensitivity; Special Considerations, pp. 374–375",
+      "quote": "Kiwifruit in storage are extremely sensitive to the presence of ethylene and should not be stored with commodities that produce significant amounts. As little as 5 to 10 ppb (0.005 to 0.010 µL L-1) ethylene in the storage atmosphere can accelerate softening without affecting other ripening processes, resulting in unripe fruit that are excessively soft … and presence of decaying fruit in the storeroom all influence the efficacy of ethylene removal."
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Kiwier, der er behandlet godt før opbevaring, kan holde sig i 4–5 måneder ved 0 °C.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Kiwifruit chapter, Optimum Storage Conditions, p. 374",
+      "quote": "Fruit that are properly handled before storage may be held in good condition for 4 to 5 mo."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "noSource",
+   "blocks": []
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "waterBath",
+   "blocks": [
+    {
+     "text": "Der er ingen testet metode til at henkoge kiwi alene, men der er en testet opskrift på jordbær-kiwi-syltetøj: 3 cups knuste jordbær, 3 skrællede kiwier i tern, 1 spsk. citronsaft, 1 spsk. kandiseret ingefær, 1 æske pulverpektin og 5 cups sukker. Henkog 10 minutter i vandbad med 6 mm (¼ tomme) fri plads (op til 300 m over havet).",
+     "sourceRef": {
+      "sourceId": "nchfp-strawberry-kiwi-jam-pectin",
+      "locator": "Strawberry-Kiwi Jam Pectin",
+      "quote": "3 cups crushed strawberries 3 kiwi, peeled and diced 1 tablespoon lemon juice 1 tablespoon minced crystallized ginger 1 box regular powdered pectin (1.75 ounces) 5 cups sugar … Ladle hot jam into hot jars, leaving ¼ inch headspace. … Hot Half-pints or Pints 10 min"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "id": "foodkeeper-250",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Avocado er en af de få frugter med meget olie – nogle gange over 30 % af vægten.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Avocado chapter, Quality Characteristics and Criteria, p. 217",
+      "quote": "Avocados are one of the few fruit that contain significant quantities of oil; sometimes more than 30% of fresh weight, depending on cultivar and maturity."
+     }
+    },
+    {
+     "text": "Avocadoer får meget let stødskader, mens de bliver bløde.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Avocado chapter, Retail Outlet Display Considerations, p. 219",
+      "quote": "Avocados are very susceptible to bruising during softening"
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Fødevarestyrelsen anbefaler at opbevare avocado på køkkenbordet.",
+     "sourceRef": {
+      "sourceId": "dk-fvst-opbevar-maden-korrekt",
+      "locator": "På køkkenbordet",
+      "quote": "På køkkenbordet bør du opbevare: … Avokado"
+     }
+    },
+    {
+     "text": "Modne avocadoer bliver hurtigt dårlige og holder kun et par dage på køkkenbordet. Læg dem i køleskabet, når de er modne, så holder de længere.",
+     "sourceRef": {
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "locator": "Opbevar maden korrekt: Avocado",
+      "quote": "Modne avocado bliver hurtigt dårlige og kan kun holde sig et par dage på køkkenbordet. Forlæng holdbarheden ved at putte dine avocadoer i køleskabet, når de er modne."
+     }
+    },
+    {
+     "text": "Avocadoer modner bedst ved 15–20 °C. Modne eller næsten modne frugter holdes helst ved 1–6 °C.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Avocado chapter, Retail Outlet Display Considerations, p. 219",
+      "quote": "Avocados are best ripened at 15 to 20 ºC (59 to 68 ºF) (Hopkirk et al. 1994). … If possible, ripe or near-ripe fruit should be held at lower temperatures (1 to 6 °C, 34 to 43 °F)"
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Under 15 °C modner avocadoer langsomt; over 25 °C modner de ujævnt, rådner lettere og kan få bismag.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Avocado chapter, Retail Outlet Display Considerations, p. 219",
+      "quote": "The ripening rate at temperatures below 15 ºC (59 ºF) is relatively slow, and ripening at temperatures above 25 ºC (77 ºF) may result in increased decay, uneven ripening of the flesh, and off flavors."
+     }
+    },
+    {
+     "text": "Umodne avocadoer kan få kuldeskader (sorte pletter på skallen) under 3 °C. Modne frugter er mindre følsomme.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Avocado chapter, Chilling Sensitivity, p. 219",
+      "quote": "External chilling injury occurs as irregular patches of blackening on the skin … External chilling injury is generally induced by temperatures below 3 °C (38 °F). However, fruit become less sensitive with increasing maturity, and ripe fruit are less affected."
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Umodne avocadoer danner lidt ethylen, men modne danner meget. Opbevar derfor ikke modne avocadoer sammen med frugt og grønt, der er følsomt over for ethylen. Umodne avocadoer er selv meget følsomme og bør ikke ligge ved siden af moden frugt.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Avocado chapter, Ethylene Production and Sensitivity, p. 220",
+      "quote": "Rates of ethylene production are generally low for unripe avocados, less than 0.1 μL kg-1 h-1 at 20 ºC (68 ºF), but increase rapidly after harvest up to levels greater than 100 μL kg-1 h-1 at 20 ºC (68 ºF) when fully ripe. Therefore, ripe avocados should not be stored with fruits and vegetables that are sensitive to ethylene damage. Unripe avocados are very sensitive to ethylene. They should not be stored near ripe fruit or other fresh produce that produces more than trace ethylene."
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Umodne avocadoer kan lagres ved 5–12 °C og 85–95 % luftfugtighed. Efter 3–4 uger falder kvaliteten (målt på sorten Hass).",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Avocado chapter, Optimum Storage Conditions, p. 218",
+      "quote": "However, in general, unripe avocados should be stored at 5 to 12 ºC (41 to 54 ºF) with RH of 85 to 95%. … After 3 to 4 weeks storage, ‘Hass’ fruit quality is reduced"
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "noSource",
+   "blocks": []
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  }
+ ]
+}

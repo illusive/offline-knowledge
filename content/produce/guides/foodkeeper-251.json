@@ -1,0 +1,151 @@
+{
+ "id": "foodkeeper-251",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Bananer spises mest rå, fordi de er søde, når de er modne. Skrællen er meget følsom over for stød.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Scientific Name and Introduction; Special Considerations, pp. 224–228",
+      "quote": "Bananas are eaten mainly raw as a dessert fruit because they are sweet when ripe. … Banana peel is very sensitive to mechanical damage."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Fødevarestyrelsen anbefaler at opbevare bananer på køkkenbordet.",
+     "sourceRef": {
+      "sourceId": "dk-fvst-opbevar-maden-korrekt",
+      "locator": "På køkkenbordet",
+      "quote": "På køkkenbordet bør du opbevare: … Bananer"
+     }
+    },
+    {
+     "text": "Bananer holder 4–7 dage ved stuetemperatur og skal ikke i køleskabet.",
+     "sourceRef": {
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "locator": "Opbevar maden korrekt: Bananer",
+      "quote": "Bananer kan holde sig 4-7 dage ved stuetemperatur. Bananer skal ikke i køleskabet."
+     }
+    },
+    {
+     "text": "Grønne bananer holder sig bedst ved 13–14 °C og 90–95 % luftfugtighed.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Optimum Storage Conditions, p. 225",
+      "quote": "Optimum temperatures for storage and holding of green bananas are 13 to 14 ºC (56 to 58 ºF) … Optimum RH for holding and transporting fruit is 90 to 95%."
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Bananer – grønne som modne – får kuldeskader under ca. 13 °C, efter nogle timer til nogle dage. Skrællen bliver mat, grålig eller brun-sort, de kan holde op med at modne, og i slemme tilfælde bliver kødet brunt med bismag. Skaden ses først 18–24 timer senere.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Chilling Sensitivity, p. 226",
+      "quote": "Chilling injury results from exposing fruit to temperatures below about 13 ºC (56 ºF) for a few hours to a few days, depending on cultivar, maturity, condition of the fruit, temperature, and duration of exposure … Symptoms include subepidermal discoloration visible as brown or black streaks in a longitudinal cut, a dull or grayish (smokey) cast on ripe fruit, and failure to ripen. In severe cases, the peel turns dark brown or black, and even the flesh can turn brown and develop an off taste … Inflicted chill in green or ripe fruit may not become apparent until 18 to 24 h after actual damage has occurred."
+     }
+    },
+    {
+     "text": "Over 30–35 °C kan modningen gå i stå for altid.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Physiological Disorders, p. 227",
+      "quote": "If bananas and plantains are exposed to temperatures above 30 to 35 ºC, ripening can be irreversibly inhibited"
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Bananer er følsomme over for selv meget lidt ethylen (0,3–0,5 ppm), og de danner selv mere ethylen, jo mere modne og varme de er.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Ethylene Production and Sensitivity, p. 226",
+      "quote": "Bananas and plantains are sensitive to physiological levels of ethylene as low as 0.3 to 0.5 µL L-1 … Lower values in the range are for mature-green fruit, and higher values are for ripening fruit."
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Modne bananer bør ikke gemmes længe.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Optimum Storage Conditions, p. 225",
+      "quote": "Holding of ripe fruit should be kept to a minimum."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "described",
+   "blocks": [
+    {
+     "text": "Vælg faste, modne bananer. Skræl dem, og skær dem i skiver på 3 mm (⅛ tomme). Læg dem i citronsyre- eller citronsaftopløsning i 10 minutter, og lad dem dryppe godt af. Tør dem i ét lag, til de er seje og læderagtige (6–10 timer).",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Table 2, Bananas",
+      "quote": "Bananas Select firm, ripe fruit. Peel. Cut in 1/8 inch slices. Dip in citric acid or other antidarkening/antimicrobial solution for 10 minutes. Remove and drain well. Arrange in single layer on trays. Dry until tough and leathery (6-10 hours)."
+     }
+    },
+    {
+     "text": "Forbehandling mod mørkfarvning: Rør 34 g ren ascorbinsyre (C-vitamin) i 1 liter koldt vand, eller bland citronsaft og koldt vand i lige dele. Skær den skrællede frugt direkte ned i opløsningen, lad den ligge i 10 minutter, og lad den dryppe godt af.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Ascorbic Acid Pretreatment; Citric Acid or Lemon Juice Pretreatment",
+      "quote": "Stir 2 1/2 tablespoons (34 grams) of pure ascorbic acid crystals into one quart (1000 milliliters) of cold water. … Cut peeled fruit directly into ascorbic acid solution. Soak for 10 minutes, remove with a slotted spoon, drain well, and dehydrate. … For the lemon juice solution, mix equal parts of lemon juice and cold water (i.e., 1 cup lemon juice and 1 cup water)."
+     }
+    },
+    {
+     "text": "Tør frugten i ét lag ved 60 °C (140 °F) i ovn eller tørreapparat. Vend store stykker hver 3.–4. time. Frugten er tør, når den er læderagtig og bøjelig: Klem en håndfuld afkølede stykker – der må ikke være fugt på hånden, og stykkerne skal springe fra hinanden.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Drying Methods; Testing for Dryness",
+      "quote": "Arrange pretreated fruits on drying trays in single layers, pit cavity up. Dry at 140 degrees F (60°C) in an oven or dehydrator. … If possible, stir food and turn large pieces over every 3 to 4 hours during the drying period. … Dried fruits should be leathery and pliable. … Squeeze a handful of the fruit. If no moisture is left on the hand and pieces spring apart when released, they are dry."
+     }
+    },
+    {
+     "text": "Lad den tørrede frugt efterbehandle i 4–10 dage i en løst tildækket beholder, og ryst den dagligt. Kommer der fugtperler, skal den tørres mere. Opbevar den derefter tæt lukket, køligt, tørt og mørkt; den holder 6–12 måneder.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Post-Drying Treatment; Packaging and Storage",
+      "quote": "Lightly cover and store in a warm, dry, well-ventilated place for four to 10 days. Stir or shake containers daily to separate pieces. If beads of moisture form inside, return food to drying trays for further drying, then repeat the conditioning step. … Store in a cool, dry, dark place or in the refrigerator or freezer. Properly stored, dried fruits keep well for six to 12 months."
+     }
+    },
+    {
+     "text": "Uden strøm kan frugt tørres udendørs i solen, fordi frugt indeholder meget sukker og syre. Det kræver varme, tørre dage med blæst, mindst 29 °C (85 °F) og helst en luftfugtighed under 60 %, og det tager flere dage. Dæk frugten til eller tag den i læ om natten, så den ikke trækker fugt igen.",
+     "sourceRef": {
+      "sourceId": "nchfp-sun-drying",
+      "locator": "Sun Drying",
+      "quote": "The high sugar and acid content of fruits make them safe to dry out-of-doors when conditions are favorable for drying. … To dry fruits out-of-doors hot, dry, breezy days are best. A minimum temperature of 85ºF is needed with higher temperatures being better. It takes several days to dry foods out-of-doors. … A humidity below 60 percent is best. … Fruits dried out-of-doors must be covered or brought under shelter at night. The cool night air condenses and could add moisture back to the food, thus slowing down the drying process."
+     }
+    }
+   ]
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  }
+ ]
+}

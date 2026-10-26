@@ -199,7 +199,8 @@
      "sourceRef": {
       "sourceId": "usda-canning-2015-guide04",
       "locator": "Potatoes, white—cubed or whole, process-time tables, p. 4-17",
-      "quote": "[Table] Recommended process time for White Potatoes in a dial-gauge pressure canner: Hot pack, Pints 35 min, Quarts 40; Canner Pressure (PSI) at 0–2,000 ft: 11 lb. Recommended process time for White Potatoes in a weighted-gauge pressure canner: Hot pack, Pints 35 min, Quarts 40; 0–1,000 ft: 10 lb."
+      "quote": "[Table] Recommended process time for White Potatoes in a dial-gauge pressure canner: Hot pack, Pints 35 min, Quarts 40; Canner Pressure (PSI) at 0–2,000 ft: 11 lb. Recommended process time for White Potatoes in a weighted-gauge pressure canner: Hot pack, Pints 35 min, Quarts 40; 0–1,000 ft: 10 lb.",
+      "visualOnly": true
      }
     }
    ]

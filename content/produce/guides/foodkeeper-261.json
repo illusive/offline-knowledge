@@ -1,0 +1,152 @@
+{
+ "id": "foodkeeper-261",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Vindruer modner ikke efter høst. De taber let vand, så stilkene tørrer og bliver brune, og bærrene falder af eller skrumper. Gråskimmel er den største trussel under opbevaring.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Grape (Table) chapter, Scientific Name and Introduction, p. 344",
+      "quote": "The table grape (Vitis vinifera L.) is a nonclimacteric fruit with a relatively low rate of physiological activity. It is subject to serious water loss following harvest, which can result in stem drying and browning, berry shattering, and even wilting and shriveling of berries. Gray mold, caused by the fungus Botrytis cinerea, requires constant attention and treatment during storage and handling."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Vindruer holder sig bedst ved −1 til 0 °C og 90–95 % luftfugtighed; konstant kulde og fugtig luft begrænser vandtabet fra stilkene. De er ikke kuldefølsomme.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Grape (Table) chapter, Optimum Storage Conditions; Chilling Sensitivity, p. 345",
+      "quote": "Ideally, storage rooms should operate at -1 to 0 ºC (30 to 32 ºF) with 90 to 95% RH … The constant low temperature, high RH, and moderate airflow are important to limit water loss from fruit stems. … Table grapes are not chilling sensitive."
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Hårdhændet behandling får druerne til at falde af stilken – jo mere modne, jo lettere. Umodne druer kan tage frostskade; bærrene fryser fra ca. −3 °C.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Grape (Table) chapter, Physiological Disorders; Optimum Storage Conditions, pp. 345–346",
+      "quote": "In general, shatter increases in severity with increasing maturity (that is, the longer fruit remain on the vine). … Freezing damage may occur in less mature grapes. The highest freezing point for berries is -3.0 ºC (27 oF), but the freezing point varies depending on SSC."
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Vindruer danner meget lidt ethylen og er ikke særlig følsomme over for det.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Grape (Table) chapter, Ethylene Production and Sensitivity, p. 345",
+      "quote": "Table grapes produce less than 0.1 µL kg-1 h-1 at 20 ºC (68 ºF) ethylene. They are not very sensitive to ethylene."
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Holdbarheden varierer meget mellem sorterne og afhænger især af temperaturen og hvor udsatte de er for råd.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Grape (Table) chapter, Special Considerations, p. 347",
+      "quote": "Market life varies among table grape cultivars grown in California and is also strongly affected by temperature management and decay susceptibility."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "described",
+   "blocks": [
+    {
+     "text": "Vælg kerneløse sorter. Vask og sortér druerne, og fjern stilkene. Halver dem, eller lad dem være hele; hele druer dyppes 30 sekunder i kogende vand, så skindet revner, halve lægges 10 minutter i ascorbinsyre-opløsning. Tør dem, til de er bøjelige og læderagtige uden fugtigt midte (12–24 timer).",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Table 2, Grapes and Black Currants",
+      "quote": "Grapes and Black Currants Select seedless varieties. Wash, sort, remove stems. Cut in half or leave whole. If drying whole, crack skins by dipping in boiling water for 30 seconds. If halved, dip in ascorbic acid or other antimicrobial solution for 10 minutes. Drain. Dry until pliable and leathery with no moist center (12-24 hours)."
+     }
+    },
+    {
+     "text": "Soltørrede rosiner er de bedst kendte af alle tørrede fødevarer, men de kræver varme, lav luftfugtighed og konstant blæst. Regner det under tørringen, kan det hele gå tabt.",
+     "sourceRef": {
+      "sourceId": "nchfp-sun-drying",
+      "locator": "Sun Drying",
+      "quote": "Sun-dried raisins are the best known of all dried foods. California produces much of the world's supply of raisins. In the San Joaquin Valley, warm temperatures, low humidity and a constant breeze are ideal conditions for drying grapes. … If it rains in California while the grapes are drying, the entire supply of raisins can be destroyed."
+     }
+    },
+    {
+     "text": "Tør frugten i ét lag ved 60 °C (140 °F) i ovn eller tørreapparat. Vend store stykker hver 3.–4. time. Frugten er tør, når den er læderagtig og bøjelig: Klem en håndfuld afkølede stykker – der må ikke være fugt på hånden, og stykkerne skal springe fra hinanden.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Drying Methods; Testing for Dryness",
+      "quote": "Arrange pretreated fruits on drying trays in single layers, pit cavity up. Dry at 140 degrees F (60°C) in an oven or dehydrator. … If possible, stir food and turn large pieces over every 3 to 4 hours during the drying period. … Dried fruits should be leathery and pliable. … Squeeze a handful of the fruit. If no moisture is left on the hand and pieces spring apart when released, they are dry."
+     }
+    },
+    {
+     "text": "Lad den tørrede frugt efterbehandle i 4–10 dage i en løst tildækket beholder, og ryst den dagligt. Kommer der fugtperler, skal den tørres mere. Opbevar den derefter tæt lukket, køligt, tørt og mørkt; den holder 6–12 måneder.",
+     "sourceRef": {
+      "sourceId": "csu-drying-fruits",
+      "locator": "Post-Drying Treatment; Packaging and Storage",
+      "quote": "Lightly cover and store in a warm, dry, well-ventilated place for four to 10 days. Stir or shake containers daily to separate pieces. If beads of moisture form inside, return food to drying trays for further drying, then repeat the conditioning step. … Store in a cool, dry, dark place or in the refrigerator or freezer. Properly stored, dried fruits keep well for six to 12 months."
+     }
+    },
+    {
+     "text": "Uden strøm kan frugt tørres udendørs i solen, fordi frugt indeholder meget sukker og syre. Det kræver varme, tørre dage med blæst, mindst 29 °C (85 °F) og helst en luftfugtighed under 60 %, og det tager flere dage. Dæk frugten til eller tag den i læ om natten, så den ikke trækker fugt igen.",
+     "sourceRef": {
+      "sourceId": "nchfp-sun-drying",
+      "locator": "Sun Drying",
+      "quote": "The high sugar and acid content of fruits make them safe to dry out-of-doors when conditions are favorable for drying. … To dry fruits out-of-doors hot, dry, breezy days are best. A minimum temperature of 85ºF is needed with higher temperatures being better. It takes several days to dry foods out-of-doors. … A humidity below 60 percent is best. … Fruits dried out-of-doors must be covered or brought under shelter at night. The cool night air condenses and could add moisture back to the food, thus slowing down the drying process."
+     }
+    }
+   ]
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "waterBath",
+   "blocks": [
+    {
+     "text": "Hele druer: Vælg umodne, fastskindede, helst grønne kerneløse druer, plukket ca. 2 uger før de er bedst at spise. Fjern stilkene, vask druerne, og fyld dem på glas med varm, tynd sukkerlage, så der er 2,5 cm (1 tomme) fri plads. Ved varm fyldning blancheres de først 30 sekunder i kogende vand.",
+     "sourceRef": {
+      "sourceId": "nchfp-grapes-whole",
+      "locator": "Grapes Whole, procedure",
+      "quote": "Quality: Choose unripe, tight-skinned, preferably green seedless grapes harvested 2 weeks before they reach optimum eating quality. … Procedure: Stem, wash, and drain grapes. Prepare very light, or light syrup. Hot pack – Blanch grapes in boiling water for 30 seconds. Drain, and proceed as for raw pack. Raw pack – Fill jars with grapes and hot syrup, leaving 1-inch headspace."
+     }
+    },
+    {
+     "text": "Henkogningstid i vandbad op til 300 m over havet: varm fyldning 10 minutter; rå fyldning 15 minutter for pint-glas og 20 minutter for quart-glas.",
+     "sourceRef": {
+      "sourceId": "nchfp-grapes-whole",
+      "locator": "Grapes Whole, Table 1",
+      "quote": "Table 1. Recommended process time for Grapes, whole in a boiling-water canner. … Hot Pint or Quarts 10 min 15 15 20 Raw Pints 15 20 20 25 Quarts 20"
+     }
+    },
+    {
+     "text": "Druegelé med pulverpektin: 5 cups druesaft, 1 pakke pulverpektin og 7 cups sukker. Lad saften stå køligt natten over, og si den gennem dobbelt, fugtigt ostelærred, så der ikke dannes vinstenskrystaller i geléen. Henkog 5 minutter i vandbad med 6 mm (¼ tomme) fri plads.",
+     "sourceRef": {
+      "sourceId": "nchfp-grape-jelly-powdered-pectin",
+      "locator": "Grape Jelly Powdered Pectin",
+      "quote": "5 cups grape juice (about 3½ pounds Concord grapes and 1 cup water) 1 package powdered pectin 7 cups sugar … To prevent formation of tartrate crystals in the jelly, let juice stand in a cool place overnight, then strain through two thicknesses of damp cheesecloth to remove crystals that have formed. … leaving ¼ inch headspace. … Hot Half-pints or Pints 5 min"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -3,8 +3,8 @@
 
 import { readFile } from 'node:fs/promises';
 import { buildPack } from '../lib/pack.ts';
-import { ethyleneProfiles, htmlToText, loadGuides, PRODUCE_DIR, relations, validateGuides, type CompatibilityEntry } from '../lib/produce.ts';
-import { loadRegistry, readSnapshot } from '../lib/registry.ts';
+import { ethyleneProfiles, htmlToText, loadGuides, pdfText, PRODUCE_DIR, relations, validateGuides, type CompatibilityEntry } from '../lib/produce.ts';
+import { loadRegistry, readSnapshot, SOURCES_DIR } from '../lib/registry.ts';
 import type { StorageDataset } from '../schema/storage.ts';
 
 const root = new URL('../', import.meta.url);
@@ -18,7 +18,8 @@ for (const dataset of storage) {
   if (source) await readSnapshot(source);
 }
 
-// Food guides (D-033): validate against the registry, and check quotes against HTML snapshots.
+// Food guides (D-033): validate against the registry, and check quotes against the snapshots
+// (HTML directly; PDF through the extracted text in sources/text/).
 const guides = await loadGuides();
 const guideSourceIds = new Set(guides.flatMap((g) => g.sections.flatMap((s) => s.blocks.map((b) => b.sourceRef.sourceId))));
 const snapshotText = new Map<string, string>();
@@ -27,10 +28,13 @@ for (const id of [...guideSourceIds, 'us-ars-ah66-2016']) {
   if (!source) continue;
   const bytes = await readSnapshot(source);
   if (source.snapshot?.endsWith('.html')) snapshotText.set(id, htmlToText(bytes.toString('utf8')));
+  if (source.snapshot?.endsWith('.pdf')) snapshotText.set(id, pdfText(await readFile(`${SOURCES_DIR}text/${id}.txt`, 'utf8'), id, source.snapshotSha256 ?? ''));
 }
 const itemIds = new Set(storage.flatMap((d) => d.items.map((i) => i.id)));
 const guideProblems = validateGuides(guides, itemIds, sources, snapshotText);
 if (guideProblems.length > 0) throw new Error(`Food guide validation failed:\n- ${guideProblems.join('\n- ')}`);
+const byEye = guides.flatMap((g) => g.sections.flatMap((s) => s.blocks.filter((b) => b.sourceRef.visualOnly).map(() => g.id)));
+if (byEye.length > 0) console.log(`${byEye.length} quote(s) transcribed from images, not checked automatically: ${[...new Set(byEye)].join(', ')}`);
 
 const compat = JSON.parse(await readFile(new URL('hb66-compatibility.json', `file://${PRODUCE_DIR}`), 'utf8')) as { entries: CompatibilityEntry[] };
 const mapping = JSON.parse(await readFile(new URL('foodkeeper-to-hb66.json', `file://${PRODUCE_DIR}`), 'utf8')) as { map: Record<string, string[]> };

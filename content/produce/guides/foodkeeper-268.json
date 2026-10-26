@@ -1,0 +1,94 @@
+{
+ "id": "foodkeeper-268",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Madbananer (plantains) kaldes også kogebananer. De er langt mere stivelsesholdige end almindelige bananer og kan spises både modne og umodne.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Scientific Name and Introduction, p. 224",
+      "quote": "Plantains, also referred to as “cooking bananas,” are much starchier and can be eaten either ripe or unripe."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Grønne madbananer holdes ved 9–12 °C, fordi de lettere end bananer begynder at modne for tidligt. Luftfugtigheden bør være 90–95 %.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Optimum Storage Conditions, p. 225",
+      "quote": "Because marketing quality standards are more relaxed for plantains, and plantains are more prone to premature ripening during transit and storage, it is recommended that green plantains be held between 9 and 12 ºC (48 to 53 ºF). … Optimum RH for holding and transporting fruit is 90 to 95%."
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Ifølge samme kapitel kan både bananer og madbananer få kuldeskader under ca. 13 °C, afhængigt af sort, modenhed og hvor længe de udsættes for kulden. Skrællen bliver mat eller mørk, og frugten kan holde op med at modne.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Chilling Sensitivity, p. 226",
+      "quote": "Chilling injury is an important disorder of bananas and plantains. … Chilling injury results from exposing fruit to temperatures below about 13 ºC (56 ºF) for a few hours to a few days, depending on cultivar, maturity, condition of the fruit, temperature, and duration of exposure"
+     }
+    },
+    {
+     "text": "Over 30–35 °C kan modningen gå i stå for altid.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Physiological Disorders, p. 227",
+      "quote": "If bananas and plantains are exposed to temperatures above 30 to 35 ºC, ripening can be irreversibly inhibited"
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Madbananer er følsomme over for selv meget lidt ethylen (0,3–0,5 ppm).",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Ethylene Production and Sensitivity, p. 226",
+      "quote": "Bananas and plantains are sensitive to physiological levels of ethylene as low as 0.3 to 0.5 µL L-1"
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Modne madbananer bør ikke gemmes længe.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Banana and Plantain chapter, Optimum Storage Conditions, p. 225",
+      "quote": "Holding of ripe fruit should be kept to a minimum."
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "noSource",
+   "blocks": []
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  }
+ ]
+}

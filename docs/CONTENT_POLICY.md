@@ -62,6 +62,16 @@ Per D-006:
 - The guide summary is also traced to source passages.
 - Guides are presented in their source language (D-003). Content from sources in different languages is not mixed in one guide.
 
+### Food guides (D-033)
+
+Food guides are an owner-approved exception to the source-language and verbatim rules above (D-031, D-033): every block is written in Danish from one source passage, the original passage is stored with it and shown with "Vis original", and translations are unchecked (`translationChecked: false`).
+
+- One block = one source passage (parts of the same passage may be joined with ` … `). No facts, quantities, times or temperatures that are not in that passage.
+- Unit conversions (°F to °C, inches to cm, pints and quarts to litres, feet to metres) may be added; the US units stay in brackets.
+- Canning and pickling follow the tested USDA/NCHFP procedure in substance: process type, times, headspace and acidification are never changed. Low-acid vegetables only ever get a pressure-canning method, or none.
+- When sources disagree, authorities win; when two authorities differ, the Danish one is shown first and the other as nuance. A contradicted commercial claim is left out.
+- Where a food has no source for a section, the guide says so (`noSource`, `noTestedMethod`) instead of guessing.
+
 ### AI assistance
 
 AI may help restructure source text at build time. It may not introduce new claims. The output is treated as a draft, and the human check (§7) compares every block against its quoted source passage. AI output is never the sole basis for any instruction (`AGENTS.md` §6).

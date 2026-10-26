@@ -1,0 +1,86 @@
+{
+ "id": "foodkeeper-258",
+ "translationChecked": false,
+ "sections": [
+  {
+   "key": "about",
+   "blocks": [
+    {
+     "text": "Kokosnødder sælges på to stadier: unge (grønne) nødder med mest kokosvand og lidt geléagtigt kød, og modne nødder med det hårde, hvide kød. Ryst nødden – der skal kunne høres vand.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Coconut chapter, Scientific Name and Introduction; Quality Characteristics and Criteria, p. 294",
+      "quote": "Coconut (Cocos nucifera L.) is marketed at two stages of development. At an immature stage, the fruit (water coconut) contains mainly water and a little jellylike meat instead of the hard, white flesh (meat/endosperm) found in mature coconuts. … Check for a sloshing sound for presence of coconut water in the nut."
+     }
+    }
+   ]
+  },
+  {
+   "key": "prefers",
+   "blocks": [
+    {
+     "text": "Modne kokosnødder med skal kan ligge ved stuetemperatur i 3–5 måneder, før vandet fordamper, eller skallen revner eller spirer. Undgå tør luft og høj varme.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Coconut chapter, Optimum Storage Conditions, p. 295",
+      "quote": "Mature coconuts with husk can be kept at ambient conditions for 3 to 5 mo before the liquid endosperm evaporates or before the shell cracks due to desiccation or sprouting. … Low RH and high temperature should be avoided."
+     }
+    }
+   ]
+  },
+  {
+   "key": "avoid",
+   "blocks": [
+    {
+     "text": "Pludselige temperaturskift på 8 °C eller mere kan få modne kokosnødder til at revne. De fryser ved −3 °C.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Coconut chapter, Physiological Disorders, p. 295",
+      "quote": "A rapid temperature change of 8 °C (15 °F) or more during storage of mature husked coconut can lead to cracking (Burton 1982), while freezing occurs at -3 °C (27 °F)."
+     }
+    }
+   ]
+  },
+  {
+   "key": "together",
+   "blocks": [
+    {
+     "text": "Modne kokosnødder danner næsten ingen ethylen, og der er ingen kendt følsomhed over for ethylen.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Coconut chapter, Ethylene Production and Sensitivity, p. 295",
+      "quote": "Ethylene production is very low to near zero for mature husked coconut. There are no reports of sensitivity to ethylene."
+     }
+    }
+   ]
+  },
+  {
+   "key": "coolStorage",
+   "blocks": [
+    {
+     "text": "Afskallede, modne kokosnødder kan holde op til 60 dage ved 0–1,5 °C og 75–85 % luftfugtighed. Unge kokosnødder holdes ved 3–6 °C.",
+     "sourceRef": {
+      "sourceId": "us-ars-ah66-2016",
+      "locator": "Coconut chapter, Optimum Storage Conditions, p. 295",
+      "quote": "Storage at 0 to 1.5 ºC (32 to 35 ºF) and 75 to 85% RH is possible for up to 60 days for mature, dehusked coconuts … Young coconuts are normally held at 3 to 6 ºC (37 to 43 ºF) with 90 to 95% RH"
+     }
+    }
+   ]
+  },
+  {
+   "key": "drying",
+   "verdict": "noSource",
+   "blocks": []
+  },
+  {
+   "key": "pickling",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  },
+  {
+   "key": "canning",
+   "verdict": "noTestedMethod",
+   "blocks": []
+  }
+ ]
+}
