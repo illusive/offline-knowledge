@@ -45,6 +45,7 @@ export interface Strings {
   mapLoading: string;
   mapErrorTitle: string;
   mapErrorBody: string;
+  mapCrashBody: string;
   mapArea: {
     open: string;
     close: string;
@@ -192,6 +193,7 @@ export const strings: Record<Lang, Strings> = {
     mapLoading: 'Åbner kortet …',
     mapErrorTitle: 'Kortet kunne ikke vises',
     mapErrorBody: 'Enheden kan ikke tegne kortet (WebGL mangler). Resten af appen virker som normalt.',
+    mapCrashBody: 'Der skete en fejl. Prøv at åbne et andet faneblad og så Kort igen. Resten af appen virker som normalt.',
     mapArea: {
       open: 'Hent kort',
       close: 'Luk',
@@ -364,6 +366,7 @@ export const strings: Record<Lang, Strings> = {
     mapLoading: 'Opening the map …',
     mapErrorTitle: 'The map could not be shown',
     mapErrorBody: 'This device cannot draw the map (WebGL is missing). The rest of the app works as usual.',
+    mapCrashBody: 'Something went wrong. Open another tab and then Map again. The rest of the app works as usual.',
     mapArea: {
       open: 'Get maps',
       close: 'Close',

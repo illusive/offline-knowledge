@@ -11,6 +11,7 @@ import { usePrecacheProgress } from './pwa/usePrecacheProgress';
 import { tabOf, useRoute } from './router';
 import { FoodScreen } from './screens/FoodScreen';
 import { HomeScreen } from './screens/HomeScreen';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { MapScreen } from './screens/MapScreen';
 import { PlaceholderScreen } from './screens/PlaceholderScreen';
 import { StorageScreen } from './screens/StorageScreen';
@@ -61,7 +62,18 @@ export function App() {
 
   let content;
   // The map does not use the knowledge pack (D-036): it opens even while the pack loads or fails.
-  if (route.name === 'map') content = <MapScreen lang={lang} s={s} />;
+  if (route.name === 'map')
+    content = (
+      <ErrorBoundary
+        fallback={
+          <Page>
+            <MessageState title={s.mapErrorTitle} body={s.mapCrashBody} />
+          </Page>
+        }
+      >
+        <MapScreen lang={lang} s={s} />
+      </ErrorBoundary>
+    );
   else if (status === 'error') content = <Page><MessageState title={s.packErrorTitle} body={s.packErrorBody} /></Page>;
   else if (status === 'loading') content = <Page><LoadingState s={s} /></Page>;
   else if (route.name === 'food') content = <FoodScreen db={db} id={route.id} tab={route.tab} lang={lang} s={s} />;

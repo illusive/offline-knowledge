@@ -33,3 +33,20 @@ test('Kort renders the bundled overview offline, using only local files', async 
   await expect(page.getByText('© OpenStreetMap contributors')).toBeVisible();
   expect(foreign).toEqual([]);
 });
+
+test('Kort works again after leaving it for another tab', async ({ app: { page } }) => {
+  // Reported: Kort → "Se kortet uden at hente" → Hjem → Kort gave an empty page.
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto('./');
+  const nav = page.getByRole('navigation', { name: 'Hovedmenu' });
+  await nav.getByRole('link', { name: 'Kort' }).click();
+  await page.getByRole('button', { name: 'Se kortet uden at hente' }).click();
+  await expect(page.getByTestId('map')).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
+  await nav.getByRole('link', { name: 'Hjem' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Hvad har du brug for?' })).toBeVisible();
+  await nav.getByRole('link', { name: 'Kort' }).click();
+  await expect(page.getByTestId('map')).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
+  await expect(page.getByRole('button', { name: 'Hent kort' })).toBeVisible();
+  expect(errors).toEqual([]);
+});

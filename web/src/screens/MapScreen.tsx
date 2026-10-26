@@ -14,6 +14,12 @@ import type { AreaInfo, Home } from '../map/protocol';
 
 const MapView = lazy(() => import('../map/MapView'));
 
+// Redraw detail tiles; only once the style has its detail source (a map that is still loading
+// its style, e.g. when Kort is opened again, has none yet and would throw).
+function refreshDetail(map: MapLibreMap) {
+  if (map.getSource('detail')) map.refreshTiles('detail');
+}
+
 // The first-time step is shown once per app session (again after a restart, until an area exists).
 let introShownThisSession = false;
 
@@ -89,11 +95,11 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
     .join(',');
   const downloading = (areas ?? []).find((a) => a.state === 'downloading');
   useEffect(() => {
-    map?.refreshTiles('detail');
+    if (map) refreshDetail(map);
   }, [map, readyKey]);
   useEffect(() => {
     if (!map || !downloading) return;
-    const timer = setInterval(() => map.refreshTiles('detail'), 5000);
+    const timer = setInterval(() => refreshDetail(map), 5000);
     return () => clearInterval(timer);
   }, [map, downloading]);
 
