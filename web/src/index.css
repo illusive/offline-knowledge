@@ -78,3 +78,16 @@ body {
     outline-offset: 2px;
   }
 }
+
+/* Offline map (D-036): keep MapLibre's controls clear of the status bar and the floating tab bar
+   (52px tabs + 12px padding + 12px margin, plus the home indicator area). */
+.stead-map .maplibregl-ctrl-top-right {
+  top: env(safe-area-inset-top);
+}
+.stead-map .maplibregl-ctrl-bottom-left,
+.stead-map .maplibregl-ctrl-bottom-right {
+  bottom: calc(76px + max(12px, env(safe-area-inset-bottom)));
+}
+.stead-map .maplibregl-ctrl-attrib {
+  border-radius: 8px;
+}

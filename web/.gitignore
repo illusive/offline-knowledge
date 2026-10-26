@@ -5,3 +5,5 @@ dev-dist/
 public/pack/
 test-results/
 playwright-report/
+# local map builds (published from the stead-maps repo, D-036)
+dist-map/

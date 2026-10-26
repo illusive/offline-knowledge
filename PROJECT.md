@@ -54,7 +54,7 @@ High-risk areas (first aid, water treatment, food safety, electricity) follow a 
 
 ### Non-goals for v1
 
-- Offline maps and the Map tab (later milestone, D-008).
+- Offline maps and the Kort tab: being trialled (D-036).
 - Flashlight, SOS signal, emergency contacts, Wi-Fi-only and low-power settings (D-025).
 - High-risk guides (e.g. first aid) until a source that allows verbatim reuse is cleared (D-027).
 - Downloadable or updatable content packs inside the app (format designed now, delivery later).

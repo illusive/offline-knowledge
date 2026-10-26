@@ -75,6 +75,8 @@ self.addEventListener('message', (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
+  // Range requests (map area downloads, D-036) go straight to the network.
+  if (request.headers.has('range')) return;
   event.respondWith(
     (async () => {
       const cache = await caches.open(CACHE);

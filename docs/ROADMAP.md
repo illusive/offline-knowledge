@@ -55,8 +55,12 @@ Acceptance: a fresh install with no network shows the pilot guides, search finds
 - Optional packs, atomic update with integrity verification (`ARCHITECTURE.md` §7).
 - Tests for interrupted downloads, low storage and restarts.
 
-## M5 — Offline maps proof of concept
+## M5 — Offline map trial (D-036, started 2026-10-26)
 
-- MapLibre rendering fully offline on an iPhone with local style, fonts, sprites and tiles.
-- Tile source with a license that permits offline storage.
-- Then decide whether maps enter the product.
+- [x] Slice 1 — measured: Denmark z15 591 MB, regions 78–174 MB, 25 km radius 25–45 MB; GitHub Pages answers range requests; our PMTiles reader and writer checked against the reference library.
+- [x] Slice 2 — Kort tab with the bundled overview (z0–8), offline style, fonts and icons; offline WebKit test (renders, no request leaves the app's host); light and dark checked.
+- [ ] Publish the Denmark archive: create the public repo `illusive/stead-maps` with Pages from GitHub Actions; its workflow runs `web/scripts/map/build-map.ts` (pinned build date) and deploys `dk/`.
+- [ ] Slice 3 — area download: country / region / radius, size shown first, download in a worker into OPFS with resume, verify, then switch; interruption and low-storage tests.
+- [ ] Slice 4 — position toggle (permission, refusal, accuracy circle).
+- [ ] Slice 5 — manage areas; update to a newer map version.
+- [ ] Slice 6 — iPhone: install, download a 25 km radius, airplane mode, reboot, still renders; position on and off.

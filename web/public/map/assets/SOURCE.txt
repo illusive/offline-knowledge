@@ -1,0 +1,3 @@
+Fonts and sprites from https://github.com/protomaps/basemaps-assets at commit 028c18f713baecad011301ff7a69acc39bcc2ae7 (2025-10-31).
+Fonts: SIL Open Font License (fonts/OFL.txt). Sprites: derived from MIT-licensed tangrams/icons (sprites/LICENSE-tangrams-icons.md).
+Only Latin glyph ranges 0-255, 256-511 and 8192-8447 are included.

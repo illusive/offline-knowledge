@@ -61,4 +61,4 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 
 11. **Danish search quality.** Storage names use a trigram index (D-018), which handles compound words. Still open: guide text search (trigram or `unicode61`), and inflection (e.g. 'gulerod' does not match 'gulerødder').
 12. **Pack size budget.** Target maximum size for the bundled core pack.
-13. **Map tile source (M5).** Which dataset or provider permits offline storage and redistribution?
+13. **Map tile source (M5).** Resolved by D-036: Protomaps basemap (OpenStreetMap, ODbL), self-hosted.

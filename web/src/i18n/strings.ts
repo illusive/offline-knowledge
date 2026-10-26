@@ -39,7 +39,12 @@ export interface Strings {
   offlineReadyStatus: string;
   preparingOffline: string;
   navLabel: string;
-  tabs: Record<'home' | 'tools' | 'settings', string>;
+  tabs: Record<'home' | 'map' | 'tools' | 'settings', string>;
+  mapTitle: string;
+  mapLabel: string;
+  mapLoading: string;
+  mapErrorTitle: string;
+  mapErrorBody: string;
   toolsTitle: string;
   settingsTitle: string;
   comingLater: string;
@@ -126,7 +131,12 @@ export const strings: Record<Lang, Strings> = {
     offlineReadyStatus: 'Klar offline',
     preparingOffline: 'Gør klar til offline…',
     navLabel: 'Hovedmenu',
-    tabs: { home: 'Hjem', tools: 'Værktøjer', settings: 'Indstillinger' },
+    tabs: { home: 'Hjem', map: 'Kort', tools: 'Værktøjer', settings: 'Indstillinger' },
+    mapTitle: 'Kort',
+    mapLabel: 'Kort over Danmark',
+    mapLoading: 'Åbner kortet …',
+    mapErrorTitle: 'Kortet kunne ikke vises',
+    mapErrorBody: 'Enheden kan ikke tegne kortet (WebGL mangler). Resten af appen virker som normalt.',
     toolsTitle: 'Værktøjer',
     settingsTitle: 'Indstillinger',
     comingLater: 'Kommer i et senere trin.',
@@ -234,7 +244,12 @@ export const strings: Record<Lang, Strings> = {
     offlineReadyStatus: 'Offline ready',
     preparingOffline: 'Preparing offline use…',
     navLabel: 'Main menu',
-    tabs: { home: 'Home', tools: 'Tools', settings: 'Settings' },
+    tabs: { home: 'Home', map: 'Map', tools: 'Tools', settings: 'Settings' },
+    mapTitle: 'Map',
+    mapLabel: 'Map of Denmark',
+    mapLoading: 'Opening the map …',
+    mapErrorTitle: 'The map could not be shown',
+    mapErrorBody: 'This device cannot draw the map (WebGL is missing). The rest of the app works as usual.',
     toolsTitle: 'Tools',
     settingsTitle: 'Settings',
     comingLater: 'Coming in a later step.',

@@ -5,10 +5,11 @@ export type Route =
   | { name: 'home' }
   | { name: 'storage' }
   | { name: 'food'; id: string; tab: FoodTab }
+  | { name: 'map' }
   | { name: 'tools' }
   | { name: 'settings' };
 
-export type Tab = 'home' | 'tools' | 'settings';
+export type Tab = 'home' | 'map' | 'tools' | 'settings';
 
 // Sub-pages of a food (D-034). The default (no suffix) is 'storage'.
 export const FOOD_TABS = ['about', 'storage', 'preserving', 'sources'] as const;
@@ -22,6 +23,7 @@ export function parseRoute(hash: string): Route {
     return { name: 'food', id: decodeURIComponent(food[1]), tab };
   }
   if (hash === '#/storage') return { name: 'storage' };
+  if (hash === '#/map') return { name: 'map' };
   if (hash === '#/tools') return { name: 'tools' };
   if (hash === '#/settings') return { name: 'settings' };
   return { name: 'home' };
@@ -30,6 +32,7 @@ export function parseRoute(hash: string): Route {
 export const hrefs = {
   home: '#/',
   storage: '#/storage',
+  map: '#/map',
   tools: '#/tools',
   settings: '#/settings',
   food: (id: string, tab: FoodTab = DEFAULT_FOOD_TAB) =>
@@ -38,7 +41,7 @@ export const hrefs = {
 
 // Which tab a route belongs to (content pages sit under Home).
 export function tabOf(route: Route): Tab {
-  return route.name === 'tools' || route.name === 'settings' ? route.name : 'home';
+  return route.name === 'map' || route.name === 'tools' || route.name === 'settings' ? route.name : 'home';
 }
 
 // The pages visited in this session, so "back" can tell whether there is an in-app page to

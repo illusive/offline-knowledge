@@ -176,4 +176,4 @@ Build: `cd content && npm run build:pack`. Output goes to `content/dist/core/` (
 ## 7. Deferred subsystems
 
 - **Downloadable packs (M4):** download to temporary storage, verify size and checksum against the manifest, then switch atomically; the previous pack stays until the new one is verified.
-- **Offline maps (M5):** separate subsystem, proof of concept first (D-008).
+- **Offline maps (M5, D-036):** `web/src/map/` holds a PMTiles reader (`pmtiles.ts`), the area-to-tiles maths and range merging (`area.ts`), the manifest (`manifest.ts`), the tile provider (`tiles.ts`), the style (`style.ts`) and the lazily loaded `MapView.tsx`; MapLibre reads tiles through the `stead://` protocol. `web/public/map/` holds the bundled overview and the fonts and sprites (precached). `web/scripts/map/` builds archives from a pinned Protomaps build (`build-map.ts`, `write-pmtiles.ts`); boundaries are in `content/map/boundaries/`. Local full builds go to `web/dist-map/` (not committed).

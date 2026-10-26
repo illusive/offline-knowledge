@@ -256,6 +256,15 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Pack:** schema 5, `produce_blocks.recipe` (JSON); `text` may be empty for a recipe.
 - **Rejected:** keeping paragraphs with better typography (steps still hard to follow); separate tables for ingredients and steps (more schema for no gain while recipes are only read whole).
 
+## D-036 — Offline map trial: Protomaps/OpenStreetMap, user-chosen areas, own host
+
+- **Date:** 2026-10-26
+- **Decision:** The map is trialled now (updates D-008 and the "not in v1" line of D-025) as its own tab, **Kort**. Data: the Protomaps basemap (OpenStreetMap, ODbL; "© OpenStreetMap contributors" always shown), cut to the country outline from a pinned daily build (`20261024`) by our own script (`web/scripts/map/build-map.ts`), written as a standard PMTiles archive in parts under 100 MB, with a manifest listing parts and SHA-256, the outline and the regions (geoBoundaries, CC BY 4.0). Hosted in a separate GitHub Pages repo (`illusive/stead-maps`, same origin as the app, 1 GB per site), so the map is uploaded only when it changes.
+- **On the device:** a small overview (z0–8, 2.9 MB) ships with the app and is precached, so the map opens offline on first launch. Users choose what detail (z9–15) to download: a radius around where they live (10, 25 or 50 km), a region (only where the country has known regions), or the whole country. The app reads the remote archive's directories by HTTP range requests and downloads only the tiles of that area (exact size shown first). Position is a toggle the user switches on; permission is asked then; no background location.
+- **Rendering:** MapLibre GL JS 6.14.0 and `@protomaps/basemaps` 5.7.2 (both BSD-3), fonts (OFL) and sprites (MIT) from `protomaps/basemaps-assets` (pinned commit, Latin ranges only), all bundled. Two sources: the overview draws land and water underneath, so the map is never blank outside a downloaded area. The map tab works even if the knowledge pack cannot open.
+- **Measured (2026-10-26, z15):** Denmark 591 MB (z14: 291 MB); regions 78–174 MB; a 25 km radius 25–45 MB; 10 km 7–20 MB. Range merging adds 1–3 %.
+- **Rejected:** hot-linking Protomaps' daily builds (not meant for apps; deleted after about two months); hosting the map inside this repo's Pages site (every push would upload ~600 MB; close to the 1 GB limit); Danish official maps from SDFI (token-protected image tiles, heavy to download); a third-party PMTiles library (the reader we need is ~200 lines and checked against the reference library).
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

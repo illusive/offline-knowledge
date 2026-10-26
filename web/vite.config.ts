@@ -17,8 +17,9 @@ export default defineConfig({
       registerType: 'prompt',
       injectRegister: false,
       injectManifest: {
-        // Everything the app needs offline, including the SQLite WebAssembly build and the pack.
-        globPatterns: ['**/*.{html,js,css,wasm,sqlite,json,png,webmanifest,woff2,txt}'],
+        // Everything the app needs offline, including the SQLite WebAssembly build, the pack and the
+        // map overview with its fonts and icons (D-036). Downloaded map areas are not precached.
+        globPatterns: ['**/*.{html,js,mjs,css,wasm,sqlite,json,png,webmanifest,woff2,txt,pbf,pmtiles}'],
         maximumFileSizeToCacheInBytes: 20 * 1024 * 1024,
       },
       manifest: {
