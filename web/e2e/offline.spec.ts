@@ -52,17 +52,28 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   // Guide and notes are shown in Danish; the original wording is one tap away (D-031, D-033).
   await expect(page.getByText('Tiden i fryseren gælder kogte kartofler og kartoffelmos.')).toBeVisible();
   await expect(page.getByText('Teksten er skrevet på dansk ud fra kilderne.')).toBeVisible();
-  await expect(page.getByRole('heading', { level: 2, name: 'Henkogning' })).toBeVisible();
-  await expect(page.getByText('Kun i trykkoger')).toBeVisible();
   await page.getByRole('button', { name: 'Vis original' }).click();
   await expect(page.getByText('Freezer timeline applies to cooked and mashed potatoes.')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Vis på dansk' })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByText('Brug dine sanser')).toBeVisible();
+  // Sub-pages (D-034): Holdbarhed is the default; canning is under Konservering.
+  const subNav = page.getByRole('navigation', { name: 'Om fødevaren' });
+  await expect(subNav.getByRole('link', { name: 'Holdbarhed' })).toHaveAttribute('aria-current', 'page');
+  await subNav.getByRole('link', { name: 'Konservering' }).click();
+  await expect(page.getByRole('heading', { level: 2, name: 'Henkogning' })).toBeVisible();
+  await expect(page.getByText('Kun i trykkoger')).toBeVisible();
+  await expect(page.getByText('Brug dine sanser')).toBeVisible();
+  await subNav.getByRole('link', { name: 'Kilder' }).click();
+  await expect(page.getByText('USDA Handbook 66', { exact: true })).toBeVisible();
   await expect(page.getByText('Brug dine sanser')).toBeVisible();
 });
 
 test('opened directly on a food, back goes to the food list, then Home', async ({ app: { page } }) => {
   await page.goto('./#/food/foodkeeper-297');
   await expect(page.getByRole('heading', { level: 1, name: 'Kartofler' })).toBeVisible();
+  // Switching sub-pages does not add history entries: back still leaves the food.
+  await page.getByRole('navigation', { name: 'Om fødevaren' }).getByRole('link', { name: 'Om' }).click();
+  await expect(page).toHaveURL(/#\/food\/foodkeeper-297\/about$/);
   await page.getByRole('button', { name: 'Tilbage' }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Opbevaring af mad' })).toBeVisible();
   await page.getByRole('button', { name: 'Tilbage' }).click();

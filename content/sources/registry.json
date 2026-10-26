@@ -1691,6 +1691,54 @@
       "retrievedAt": "2026-10-26",
       "snapshot": "snapshots/nchfp-mango-chutney.html",
       "snapshotSha256": "8c61483d8f866e37e109db7f84366c48735b49c43dad1dd86f2ca79b071dd8cb"
+    },
+    {
+      "id": "dk-gocook-syltede-aebler",
+      "title": "Syltede æbler",
+      "shortName": "GoCook (Arla Fonden)",
+      "publisher": "GoCook, Arla Fonden",
+      "url": "https://gocook.dk/opskrift/syltede-aebler/",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Recipe site run by Arla Fonden for children and schools. A recipe, not tested for safety by an authority (D-034). Reuse terms not checked. Licensing deferred (D-028).",
+      "attribution": "GoCook (Arla Fonden): Syltede æbler.",
+      "snapshot": "snapshots/dk-gocook-syltede-aebler.html",
+      "snapshotSha256": "af62ea329ea7aca6f980cfce4f0f4cc64e4ed135df0303085776f5a601e6e273",
+      "status": "request-needed",
+      "retrievedAt": "2026-10-26"
+    },
+    {
+      "id": "dk-arla-syltede-aebler",
+      "title": "Syltede æbler",
+      "shortName": "Arla",
+      "publisher": "Arla Foods",
+      "url": "https://www.arla.dk/opskrifter/syltede-abler/",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Food brand recipe page. Not tested for safety by an authority (D-034); gives no keeping time. Reuse terms not checked. Licensing deferred (D-028).",
+      "attribution": "Arla: Syltede æbler.",
+      "snapshot": "snapshots/dk-arla-syltede-aebler.html",
+      "snapshotSha256": "15a98703f329b708a87f223c1df4f6c6d245d4086ee474b3dd005cabccdde82a",
+      "status": "request-needed",
+      "retrievedAt": "2026-10-26"
+    },
+    {
+      "id": "nchfp-storing-home-canned-foods",
+      "title": "Storing Home Canned Foods",
+      "shortName": "NCHFP (University of Georgia)",
+      "publisher": "National Center for Home Food Preservation, University of Georgia",
+      "url": "https://nchfp.uga.edu/how/can/general-information/storing-home-canned-foods/",
+      "lang": "en",
+      "region": "US",
+      "license": "all-rights-reserved",
+      "licenseNote": "Site footer: \"Copyright © 2026 National Center for Home Food Preservation, All rights reserved\". Licensing deferred (D-028).",
+      "attribution": "National Center for Home Food Preservation (University of Georgia): Storing Home Canned Foods.",
+      "snapshot": "snapshots/nchfp-storing-home-canned-foods.html",
+      "snapshotSha256": "b09ffef4f0a00051867039995b1d6610328982d67a7dddc7676a7fd941c4bb28",
+      "status": "request-needed",
+      "retrievedAt": "2026-10-26"
     }
   ]
 }

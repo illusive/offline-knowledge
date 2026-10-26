@@ -5,10 +5,12 @@ import json, os
 CONTENT=os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
 OUT=os.path.join(CONTENT,'produce','guides')
 S=dict(H='us-ars-ah66-2016',F='dk-fvst-opbevar-maden-korrekt',T='dk-taenk-holdbarhed-og-opbevaring',B='dk-bolius-udendoers-opbevaring',L='dk-lf-okoportalen-lagring',M='msu-montguide-drying-vegetables',C='csu-drying-fruits',NS='nchfp-sun-drying',NH='nchfp-drying-herbs',NV='nchfp-vine-drying',P='psu-preserving-broccoli-cauliflower',GI='usda-canning-2015-intro',G1='usda-canning-2015-guide01',G2='usda-canning-2015-guide02',G3='usda-canning-2015-guide03',G4='usda-canning-2015-guide04',G6='usda-canning-2015-guide06',G7='usda-canning-2015-guide07',R='dk-retnemt-agurker')
-def b(text,src,loc,quote,visual=False):
+def b(text,src,loc,quote,visual=False,untested=False):
     ref={'sourceId':S.get(src,src),'locator':loc,'quote':quote}
     if visual: ref['visualOnly']=True
-    return {'text':text,'sourceRef':ref}
+    block={'text':text,'sourceRef':ref}
+    if untested: block['note']='untested'   # recipe site or food brand, not tested by an authority (D-034)
+    return block
 def g(fid,about=(),prefers=(),avoid=(),together=(),cool=(),drying=None,pickling=None,canning=None):
     secs=[]
     for key,val in (('about',about),('prefers',prefers),('avoid',avoid),('together',together),('coolStorage',cool)):
@@ -82,3 +84,7 @@ BERRY_TIME=N('Henkogningstid for hele bær i vandbad op til 300 m over havet: va
  'Table 1. Recommended process time for Berries, whole in a boiling-water canner. … Hot Pints or Quarts 15 min 20 20 25 Raw Pints 15 20 20 25 Quarts 20')
 BERRY_JAM=N('Bærsyltetøj uden pektin: ca. 2,1 liter (9 cups) knuste bær og 6 cups sukker koges, til det tykner, fyldes varmt på varme, steriliserede glas med 6 mm (¼ tomme) fri plads og henkoges 5 minutter i vandbad (op til 300 m over havet).','berry-jams-without-pectin','Berry Jams without Pectin',
  '9 cups crushed berries 6 cups sugar … Remove from heat and fill hot jam into hot, sterile jars, leaving ¼-inch headspace. … Hot Half-pints or Pints 5 min')
+
+# How long canned (heat-processed) pickles and preserves keep, for every food with a canned recipe (D-034).
+CANNED_KEEP=b('Henkogte glas: Mærk glassene med indhold og dato, og opbevar dem rent, køligt, mørkt og tørt, helst ved 10–21 °C (50–70 °F). Henkog ikke mere, end du bruger inden for et år. Opbevar dem ikke over 35 °C (95 °F) eller i direkte sol – så forringes de på uger eller måneder og kan blive fordærvede.','nchfp-storing-home-canned-foods','Storing Home Canned Foods',
+ 'Label and date the jars and store them in a clean, cool, dark, dry place. For best quality, store between 50 and 70 °F. Also for best quality, can no more food than you will use within a year unless directions for a specific food provide other advice. Do not store jars above 95° F or near hot pipes, a range, a furnace, in an uninsulated attic, or in direct sunlight. Under these conditions, food will lose quality in a few weeks or months and may spoil.')

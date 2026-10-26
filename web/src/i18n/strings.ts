@@ -54,6 +54,11 @@ export interface Strings {
   firstLaunchNote: string;
   guideSections: Record<'about' | 'prefers' | 'avoid' | 'together' | 'coolStorage' | 'drying' | 'pickling' | 'canning', string>;
   kitchenTimes: string;
+  foodTabsLabel: string;
+  foodTabs: Record<'about' | 'storage' | 'preserving' | 'sources', string>;
+  noAboutYet: string;
+  noPreservingYet: string;
+  untestedRecipe: string;
   verdicts: {
     drying: Record<'excellent' | 'good' | 'fair' | 'poor' | 'described' | 'notRecommended' | 'noSource', string>;
     pickling: Record<'tested' | 'noTestedMethod', string>;
@@ -142,6 +147,11 @@ export const strings: Record<Lang, Strings> = {
       canning: 'Henkogning',
     },
     kitchenTimes: 'Holdbarhed i køkkenet',
+    foodTabsLabel: 'Om fødevaren',
+    foodTabs: { about: 'Om', storage: 'Holdbarhed', preserving: 'Konservering', sources: 'Kilder' },
+    noAboutYet: 'Der er endnu ingen beskrivelse af denne fødevare.',
+    noPreservingYet: 'Der er endnu ingen vejledning i tørring, syltning eller henkogning af denne fødevare.',
+    untestedRecipe: 'Opskrift – ikke testet af en myndighed',
     verdicts: {
       drying: {
         excellent: 'Egner sig rigtig godt til tørring',
@@ -242,6 +252,11 @@ export const strings: Record<Lang, Strings> = {
       canning: 'Canning',
     },
     kitchenTimes: 'Storage times in the kitchen',
+    foodTabsLabel: 'About this food',
+    foodTabs: { about: 'About', storage: 'Storage', preserving: 'Preserving', sources: 'Sources' },
+    noAboutYet: 'There is no description of this food yet.',
+    noPreservingYet: 'There is no guidance on drying, pickling or canning this food yet.',
+    untestedRecipe: 'Recipe – not tested by an authority',
     verdicts: {
       drying: {
         excellent: 'Excellent for drying',

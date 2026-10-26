@@ -28,6 +28,7 @@ export interface GuideSourceRef {
 export interface GuideBlock {
   text: string;       // Danish (D-033: written from the sources, unchecked)
   sourceRef: GuideSourceRef;
+  note?: 'untested';  // a recipe from a recipe site or food brand, not tested by an authority (D-034)
 }
 
 export interface GuideSection {

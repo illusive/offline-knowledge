@@ -4,7 +4,7 @@
 import type { Location, PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
-export const SUPPORTED_PACK_SCHEMA_VERSION = 3;
+export const SUPPORTED_PACK_SCHEMA_VERSION = 4;
 
 type Bind = (string | number | null)[];
 
@@ -48,6 +48,7 @@ export interface GuideBlockRow {
   quote: string;        // original passage
   source_id: string;
   locator: string;
+  note: 'untested' | null;  // recipe site or food brand, not tested by an authority (D-034)
 }
 
 export interface GuideSectionRow {
@@ -125,7 +126,7 @@ export function getItemDetail(db: SqlDb, id: string): ItemDetail | null {
   const sectionRows = rows<{ section: GuideSectionKey; verdict: string | null }>(db, 'SELECT section, verdict FROM produce_sections WHERE item_id = ? ORDER BY ord', [id]);
   const blockRows = rows<GuideBlockRow & { section: GuideSectionKey }>(
     db,
-    'SELECT section, text, quote, source_id, locator FROM produce_blocks WHERE item_id = ? ORDER BY section, ord',
+    'SELECT section, text, quote, source_id, locator, note FROM produce_blocks WHERE item_id = ? ORDER BY section, ord',
     [id],
   );
   const guide = sectionRows.map((s) => ({ ...s, blocks: blockRows.filter((b) => b.section === s.section) }));

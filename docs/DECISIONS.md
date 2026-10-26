@@ -240,6 +240,14 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Canning and pickling per food** come from the NCHFP recipe pages (USDA Complete Guide 2015 / So Easy to Preserve), because their process-time tables are text the build can check; in the USDA PDF the fruit tables are images. Times are given for 0–300 m (0–1,000 ft) above sea level only. Low-acid foods: pressure only, with the general USDA statement (Guide 1, p. 1-8).
 - **Sources added:** Forbrugerrådet Tænk (Danish storage list), Colorado State University (drying fruits), NCHFP (herbs, vine drying, sun drying, 76 recipe pages), Penn State (broccoli and cauliflower). Checked and left out: Highonlife (a shop page that adds nothing for our foods, and claims such as lemons ripening other produce contradict Handbook 66). Not found: Madens Verden.
 
+## D-034 — Food pages split into sub-pages; Danish pickle recipes
+
+- **Date:** 2026-10-26
+- **Decision:** A food page has four sub-pages under the heading: **Om** (about, what it prefers, what to avoid), **Holdbarhed** (kitchen times, langtidsopbevaring, "sammen med andre"; opens by default), **Konservering** (drying, pickling, canning) and **Kilder** (sources). Each has its own address (`#/food/<id>`, `/about`, `/preserving`, `/sources`); switching replaces the history entry, so "back" leaves the food. "Brug dine sanser" ends every sub-page. Related foods are listed one per row, sorted alphabetically in the interface language.
+- **Pickling:** a Danish recipe comes first where one exists (owner's choice), labelled "Opskrift – ikke testet af en myndighed", with the keeping time the recipe states (or a statement that it gives none). The USDA/NCHFP tested recipe stays below it as the way to keep pickles in the cupboard, followed by NCHFP's guidance on storing canned jars (cool, dark, dry; use within a year). This is a narrow exception to D-033's rule that commercial sources are never the basis for food-safety statements: only for refrigerated vinegar or sugar pickles, always labelled, never for anything stored at room temperature.
+- **First case:** æbler (GoCook/Arla Fonden: vinegar brine, 2 months in the fridge; Arla: sugar syrup, no keeping time given). Gastrofun was considered and left out: user-contributed recipes, no keeping time, nothing beyond GoCook.
+- **Rejected:** one long page (too long to read); replacing the tested recipes with Danish ones (no safe option for the cupboard); tab name "Tilberedning" (means cooking a meal).
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

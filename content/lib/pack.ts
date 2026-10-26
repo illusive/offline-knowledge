@@ -86,6 +86,7 @@ CREATE TABLE produce_blocks (
   quote TEXT NOT NULL,
   source_id TEXT NOT NULL REFERENCES sources(id),
   locator TEXT NOT NULL,
+  note TEXT,
   PRIMARY KEY (item_id, section, ord)
 );
 
@@ -220,11 +221,11 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     }
 
     const insertSection = db.prepare('INSERT INTO produce_sections (item_id, ord, section, verdict) VALUES (?, ?, ?, ?)');
-    const insertBlock = db.prepare('INSERT INTO produce_blocks (item_id, section, ord, text, quote, source_id, locator) VALUES (?, ?, ?, ?, ?, ?, ?)');
+    const insertBlock = db.prepare('INSERT INTO produce_blocks (item_id, section, ord, text, quote, source_id, locator, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
     for (const guide of input.guides ?? []) {
       for (const section of guide.sections) {
         insertSection.run(guide.id, SECTION_ORDER.indexOf(section.key), section.key, section.verdict ?? null);
-        section.blocks.forEach((b, ord) => insertBlock.run(guide.id, section.key, ord, b.text, b.sourceRef.quote, b.sourceRef.sourceId, b.sourceRef.locator));
+        section.blocks.forEach((b, ord) => insertBlock.run(guide.id, section.key, ord, b.text, b.sourceRef.quote, b.sourceRef.sourceId, b.sourceRef.locator, b.note ?? null));
       }
     }
     const insertEthylene = db.prepare('INSERT INTO produce_ethylene (item_id, storage_groups, producer, sensitive) VALUES (?, ?, ?, ?)');

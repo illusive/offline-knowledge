@@ -3,7 +3,7 @@
 // in px so large text does not squeeze the content column.
 
 import { ArrowLeft, Search, X } from 'lucide-react';
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 
 export function Card({ children, className = '', ...rest }: { children: ReactNode; className?: string } & HTMLAttributes<HTMLElement>) {
   return (
@@ -84,4 +84,42 @@ export function MessageState({ title, body }: { title: string; body?: string }) 
 // Page frame: safe-area padding at the top and room at the bottom for the floating tab bar.
 export function Page({ children }: { children: ReactNode }) {
   return <main className="mx-auto max-w-2xl px-[16px] pt-[max(1rem,env(safe-area-inset-top))] pb-[calc(96px+env(safe-area-inset-bottom))]">{children}</main>;
+}
+
+// Sub-page navigation within one page (D-034): links, so each sub-page has its own address,
+// with the current one marked. Switching replaces the history entry (onSelect).
+export function SubNav<T extends string>(props: {
+  label: string;
+  items: { key: T; label: string; href: string }[];
+  current: T;
+  onSelect: (href: string) => void;
+}) {
+  const { label, items, current, onSelect } = props;
+  return (
+    <nav aria-label={label}>
+      {/* Items share the width; at large text sizes they wrap to a second row instead of scrolling. */}
+      <ul className="flex flex-wrap gap-[2px] rounded-[24px] bg-surface p-[4px]">
+        {items.map((item) => {
+          const active = item.key === current;
+          return (
+            <li key={item.key} className="flex-auto">
+              <a
+                href={item.href}
+                aria-current={active ? 'page' : undefined}
+                onClick={(e: MouseEvent<HTMLAnchorElement>) => {
+                  e.preventDefault();
+                  if (!active) onSelect(item.href);
+                }}
+                className={`flex min-h-11 w-full items-center justify-center rounded-full px-[10px] text-sm font-medium whitespace-nowrap ${
+                  active ? 'bg-ink text-on-ink' : 'text-muted'
+                }`}
+              >
+                {item.label}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
 }

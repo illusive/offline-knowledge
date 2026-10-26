@@ -28,6 +28,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
   - **Continue from here (batch 4, fruit):** 264 meloner, 495 vandmelon, 496 cantaloupe, 497 honningmelon, 265 papaya/mango/feijoa/passionsfrugt, 266 ferskner/nektariner/blommer/pærer/sapote, 267 ananas, 269 granatæble, 255 cherimoya, 478 stjernefrugt, 479 kaktusfigen, 480 dragefrugt. The Handbook 66 chapters and NCHFP recipe pages for these are already registered and were read; nothing was written for them yet.
   - **Then:** vegetables (270–308 and 415–423, 491–494, 547–550, 596–600, 640–678), then herbs (288, 505–513, 611), then the processed items (257, 493, 508, 562, 570; see OPEN_QUESTIONS).
   - **Then:** shared method guides for drying, pickling and canning; replace the one image-transcribed potato quote with the NCHFP page; e2e check of a guide page.
+  - Food pages are split into Om / Holdbarhed / Konservering / Kilder (D-034). When writing pickling sections, look for a Danish recipe first (D-034) and add `CANNED_KEEP` after any canned recipe; apples are done this way, the other 20 written guides still need it.
   - How to work: `content/authoring/README.md`.
 - [ ] Bookmarks (D-026): local store separate from the pack; "Saved" on Home.
 - [ ] Settings: offline library card from the pack manifest, language, appearance, text size, about and sources.

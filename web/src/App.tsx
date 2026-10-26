@@ -61,7 +61,7 @@ export function App() {
   let content;
   if (status === 'error') content = <Page><MessageState title={s.packErrorTitle} body={s.packErrorBody} /></Page>;
   else if (status === 'loading') content = <Page><LoadingState s={s} /></Page>;
-  else if (route.name === 'food') content = <FoodScreen db={db} id={route.id} lang={lang} s={s} />;
+  else if (route.name === 'food') content = <FoodScreen db={db} id={route.id} tab={route.tab} lang={lang} s={s} />;
   else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;
   else if (route.name === 'tools') content = <PlaceholderScreen title={s.toolsTitle} s={s} />;
   else if (route.name === 'settings') content = <PlaceholderScreen title={s.settingsTitle} s={s} />;

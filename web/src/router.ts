@@ -4,15 +4,23 @@ import { useEffect, useState } from 'react';
 export type Route =
   | { name: 'home' }
   | { name: 'storage' }
-  | { name: 'food'; id: string }
+  | { name: 'food'; id: string; tab: FoodTab }
   | { name: 'tools' }
   | { name: 'settings' };
 
 export type Tab = 'home' | 'tools' | 'settings';
 
+// Sub-pages of a food (D-034). The default (no suffix) is 'storage'.
+export const FOOD_TABS = ['about', 'storage', 'preserving', 'sources'] as const;
+export type FoodTab = (typeof FOOD_TABS)[number];
+const DEFAULT_FOOD_TAB: FoodTab = 'storage';
+
 export function parseRoute(hash: string): Route {
-  const food = /^#\/food\/([^/]+)$/.exec(hash);
-  if (food?.[1]) return { name: 'food', id: decodeURIComponent(food[1]) };
+  const food = /^#\/food\/([^/]+)(?:\/([a-z]+))?$/.exec(hash);
+  if (food?.[1]) {
+    const tab = FOOD_TABS.find((t) => t === food[2]) ?? DEFAULT_FOOD_TAB;
+    return { name: 'food', id: decodeURIComponent(food[1]), tab };
+  }
   if (hash === '#/storage') return { name: 'storage' };
   if (hash === '#/tools') return { name: 'tools' };
   if (hash === '#/settings') return { name: 'settings' };
@@ -24,7 +32,8 @@ export const hrefs = {
   storage: '#/storage',
   tools: '#/tools',
   settings: '#/settings',
-  food: (id: string) => `#/food/${encodeURIComponent(id)}`,
+  food: (id: string, tab: FoodTab = DEFAULT_FOOD_TAB) =>
+    `#/food/${encodeURIComponent(id)}${tab === DEFAULT_FOOD_TAB ? '' : `/${tab}`}`,
 };
 
 // Which tab a route belongs to (content pages sit under Home).
@@ -37,9 +46,19 @@ export function tabOf(route: Route): Tab {
 // (replacing the history entry) instead of leaving the app or looping.
 const visited: string[] = [location.hash || hrefs.home];
 
+// Food sub-pages replace each other in history, so "back" leaves the food, not the last tab.
+const foodOf = (hash: string) => /^#\/food\/[^/]+/.exec(hash)?.[0] ?? null;
+
 function track(hash: string) {
+  const last = visited[visited.length - 1] ?? '';
   if (visited.length > 1 && visited[visited.length - 2] === hash) visited.pop();
-  else if (visited[visited.length - 1] !== hash) visited.push(hash);
+  else if (foodOf(hash) !== null && foodOf(hash) === foodOf(last)) visited[visited.length - 1] = hash;
+  else if (last !== hash) visited.push(hash);
+}
+
+// Switch between sub-pages of the same page without adding a history entry.
+export function replaceRoute(href: string) {
+  location.replace(href);
 }
 
 export function goBack(fallback: string) {

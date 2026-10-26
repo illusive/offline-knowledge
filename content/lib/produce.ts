@@ -80,6 +80,7 @@ export function validateGuides(
       section.blocks.forEach((block, i) => {
         const where = `${at} ${section.key}[${i}]`;
         if (!block.text.trim()) problems.push(`${where}: empty text`);
+        if (block.note !== undefined && block.note !== 'untested') problems.push(`${where}: unknown note '${String(block.note)}'`);
         const ref = block.sourceRef;
         if (!known.has(ref.sourceId)) problems.push(`${where}: source '${ref.sourceId}' not in registry`);
         if (!ref.locator.trim()) problems.push(`${where}: no locator`);

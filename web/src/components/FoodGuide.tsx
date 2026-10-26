@@ -1,5 +1,6 @@
 // Food guide sections (D-033): sourced statements in Danish, with the original wording one tap away.
 
+import { ChevronRight } from 'lucide-react';
 import type { ReactNode } from 'react';
 import type { Ethylene, GuideBlockRow, ItemDetail, RelatedItem } from '../db/queries';
 import type { Lang, Strings } from '../i18n/strings';
@@ -33,14 +34,21 @@ export function GuideCard(props: {
       {verdict ? <p className="font-semibold">{verdict}</p> : null}
       {blocks.map((b, i) => {
         const lang = sources.find((src) => src.id === b.source_id)?.lang ?? 'en';
-        return showOriginal ? (
-          <p key={i} lang={lang} className="text-muted">
+        const text = showOriginal ? (
+          <p lang={lang} className="text-muted">
             {b.quote}
           </p>
         ) : (
-          <p key={i} lang="da">
-            {b.text}
-          </p>
+          <p lang="da">{b.text}</p>
+        );
+        // Recipes from recipe sites and food brands are labelled as untested (D-034).
+        return b.note === 'untested' ? (
+          <div key={i} className="flex flex-col gap-1">
+            <p className="text-xs font-semibold tracking-wide text-muted uppercase">{s.untestedRecipe}</p>
+            {text}
+          </div>
+        ) : (
+          <div key={i}>{text}</div>
         );
       })}
       {children}
@@ -49,20 +57,29 @@ export function GuideCard(props: {
   );
 }
 
+// One food per row, sorted alphabetically in the interface language (æ, ø, å last in Danish).
 function RelatedList({ items, lang }: { items: RelatedItem[]; lang: Lang }) {
+  const collator = new Intl.Collator(lang);
+  const rows = items
+    .map((item) => ({
+      id: item.id,
+      name: lang === 'da' ? item.name_da : item.name_en,
+      subtitle: lang === 'da' ? item.subtitle_da : item.subtitle_en,
+    }))
+    .sort((a, b) => collator.compare(a.name, b.name) || collator.compare(a.subtitle ?? '', b.subtitle ?? ''));
   return (
-    <ul className="flex flex-wrap gap-[8px]">
-      {items.map((item) => {
-        const name = lang === 'da' ? item.name_da : item.name_en;
-        const subtitle = lang === 'da' ? item.subtitle_da : item.subtitle_en;
-        return (
-          <li key={item.id}>
-            <a href={hrefs.food(item.id)} className="inline-flex min-h-9 items-center rounded-full bg-background px-[12px] text-sm">
-              {subtitle ? `${name} (${subtitle})` : name}
-            </a>
-          </li>
-        );
-      })}
+    <ul className="flex flex-col divide-y divide-border rounded-2xl bg-background">
+      {rows.map((row) => (
+        <li key={row.id}>
+          <a href={hrefs.food(row.id)} className="flex min-h-11 items-center justify-between gap-[12px] px-[16px] py-2">
+            <span>
+              {row.name}
+              {row.subtitle ? <span className="text-muted"> ({row.subtitle})</span> : null}
+            </span>
+            <ChevronRight aria-hidden="true" className="size-4 shrink-0 text-muted" />
+          </a>
+        </li>
+      ))}
     </ul>
   );
 }

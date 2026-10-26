@@ -142,11 +142,37 @@
    "verdict": "tested",
    "blocks": [
     {
-     "text": "USDA har en testet opskrift på krydrede æbleringe: skiver på ca. 1,3 cm (½ tomme) kogt i en krydret lage med sukker og eddike og henkogt i vandbad i 10 minutter (halv-pint- eller pint-glas, op til 300 m over havet). NCHFP gør opmærksom på, at opskriften er meget sød, og at en opdateret udgave er på vej.",
+     "text": "Syltede æbler i eddikelage (GoCook): Kog 2 dl lagereddike, 1 dl sukker eller honning og 1 dl vand, til sukkeret er opløst, og lad lagen køle af til fingervarm. Skær 2 æbler i tynde både uden kernehus, og læg dem i et skoldet sylteglas med 5 laurbærblade, 1 tsk. peberkorn og ½ tsk. sennepskorn (evt. kanel, appelsinskal og nelliker). Hæld lagen over, luk glasset, og stil det i køleskabet. De er klar efter et par timer og holder 2 måneder i køleskabet.",
+     "sourceRef": {
+      "sourceId": "dk-gocook-syltede-aebler",
+      "locator": "Syltede æbler, ingredienser og fremgangsmåde",
+      "quote": "2 dl. lagereddike 1 dl. sukker eller honning 1 dl. vand 2 æbler 5 laurbærblade 1 tsk. peberkorn ½ tsk. sennepskorn 1 kanelstang eller 1 tsk. kanel Evt. appelsinskal fra økologisk appelsin Evt. ½ tsk. hele nelliker … Kom lagereddike, sukker og vand i en lille gryde, og lad det koge, indtil sukkeret er smeltet. Lad eddikelagen køle af, til den er fingervarm. … Skær derefter æblet i tynde både. … Kom æble-skiverne, lauerbærblade, peberkorn og sennepskorn i det skoldede sylteglas. … Hæld eddikelagen over æbleskiverne i sylteglasset. Kom låg på, og stil glasset i køleskabet. … Dine syltede æbler er klar efter et par timer, og de kan holde i køleskabet i 2 måneder."
+     },
+     "note": "untested"
+    },
+    {
+     "text": "Søde syltede æbler uden eddike (Arla): Skræl 1½ kg syrlige æbler, fjern kernehuset, og skær dem i både. Bring 4 dl vand, 175 g sukker og 2 kanelstænger i kog, og kog æblebådene 6–8 minutter uden låg, så de stadig har bid. Hæld dem i et rengjort sylteglas (ca. 1½ liter), og opbevar glasset i køleskabet. Opskriften siger ikke, hvor længe de holder.",
+     "sourceRef": {
+      "sourceId": "dk-arla-syltede-aebler",
+      "locator": "Syltede æbler, ingredienser og fremgangsmåde",
+      "quote": "1½ kg Syrlige æbler 4 dl Vand 175 g Sukker (ca. 2 dl) 2 Kanelstænger … Skræl æblerne, fjern kernehuset og skær æblerne i både. Bring vand, sukker og kanelstænger i kog. Kom æblebådene i gryden og kog dem i 6-8 min. uden låg - de skal stadig have bid. … Hæld æblerne i et rengjort sylteglas (ca. 1½ liter). Opbevar glasset på køl."
+     },
+     "note": "untested"
+    },
+    {
+     "text": "Til opbevaring i skabet: USDA har en testet opskrift på krydrede æbleringe – skiver på ca. 1,3 cm (½ tomme) kogt i en krydret lage med sukker og eddike og henkogt i vandbad i 10 minutter (halv-pint- eller pint-glas, op til 300 m over havet). NCHFP gør opmærksom på, at opskriften er meget sød, og at en opdateret udgave er på vej.",
      "sourceRef": {
       "sourceId": "nchfp-spiced-apple-rings",
       "locator": "Spiced Apple Rings",
       "quote": "IMPORTANT NOTE:  This is an older USDA offering that is still available and valid. However, it is an extremely high sugar concentration that most people  today  do not like. … Immediately cut crosswise into 1/2-inch slices … Hot Half-pints or Pints 10 min"
+     }
+    },
+    {
+     "text": "Henkogte glas: Mærk glassene med indhold og dato, og opbevar dem rent, køligt, mørkt og tørt, helst ved 10–21 °C (50–70 °F). Henkog ikke mere, end du bruger inden for et år. Opbevar dem ikke over 35 °C (95 °F) eller i direkte sol – så forringes de på uger eller måneder og kan blive fordærvede.",
+     "sourceRef": {
+      "sourceId": "nchfp-storing-home-canned-foods",
+      "locator": "Storing Home Canned Foods",
+      "quote": "Label and date the jars and store them in a clean, cool, dark, dry place. For best quality, store between 50 and 70 °F. Also for best quality, can no more food than you will use within a year unless directions for a specific food provide other advice. Do not store jars above 95° F or near hot pipes, a range, a furnace, in an uninsulated attic, or in direct sunlight. Under these conditions, food will lose quality in a few weeks or months and may spoil."
      }
     }
    ]
@@ -177,6 +203,14 @@
       "sourceId": "nchfp-applesauce",
       "locator": "Applesauce, procedure and Table 1",
       "quote": "Stirring occasionally to prevent burning, heat quickly until tender (5 to 20 minutes, depending on maturity and variety). Press through a sieve or food mill, or skip the pressing step if you prefer chunk-style sauce. Sauce may be packed without sugar. … Reheat sauce to boiling. Fill jars with hot sauce, leaving ½-inch headspace. … Hot Pints 15 min 20 20 25 Quarts 20"
+     }
+    },
+    {
+     "text": "Henkogte glas: Mærk glassene med indhold og dato, og opbevar dem rent, køligt, mørkt og tørt, helst ved 10–21 °C (50–70 °F). Henkog ikke mere, end du bruger inden for et år. Opbevar dem ikke over 35 °C (95 °F) eller i direkte sol – så forringes de på uger eller måneder og kan blive fordærvede.",
+     "sourceRef": {
+      "sourceId": "nchfp-storing-home-canned-foods",
+      "locator": "Storing Home Canned Foods",
+      "quote": "Label and date the jars and store them in a clean, cool, dark, dry place. For best quality, store between 50 and 70 °F. Also for best quality, can no more food than you will use within a year unless directions for a specific food provide other advice. Do not store jars above 95° F or near hot pipes, a range, a furnace, in an uninsulated attic, or in direct sunlight. Under these conditions, food will lose quality in a few weeks or months and may spoil."
      }
     }
    ]
