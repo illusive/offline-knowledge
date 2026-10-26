@@ -4,7 +4,7 @@
 import type { Location, PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
-export const SUPPORTED_PACK_SCHEMA_VERSION = 4;
+export const SUPPORTED_PACK_SCHEMA_VERSION = 5;
 
 type Bind = (string | number | null)[];
 
@@ -48,7 +48,15 @@ export interface GuideBlockRow {
   quote: string;        // original passage
   source_id: string;
   locator: string;
-  note: 'untested' | null;  // recipe site or food brand, not tested by an authority (D-034)
+  recipe: Recipe | null;  // a step-by-step method (D-035)
+}
+
+export interface Recipe {
+  title: string;
+  intro?: string;
+  facts?: Partial<Record<'time' | 'keeps' | 'yield', string>>;
+  ingredients?: string[];
+  steps: string[];
 }
 
 export interface GuideSectionRow {
@@ -124,11 +132,11 @@ export function getItemDetail(db: SqlDb, id: string): ItemDetail | null {
   if (!source) throw new Error(`Pack is missing source ${item.source_id}`);
 
   const sectionRows = rows<{ section: GuideSectionKey; verdict: string | null }>(db, 'SELECT section, verdict FROM produce_sections WHERE item_id = ? ORDER BY ord', [id]);
-  const blockRows = rows<GuideBlockRow & { section: GuideSectionKey }>(
+  const blockRows = rows<Omit<GuideBlockRow, 'recipe'> & { section: GuideSectionKey; recipe: string | null }>(
     db,
-    'SELECT section, text, quote, source_id, locator, note FROM produce_blocks WHERE item_id = ? ORDER BY section, ord',
+    'SELECT section, text, quote, source_id, locator, recipe FROM produce_blocks WHERE item_id = ? ORDER BY section, ord',
     [id],
-  );
+  ).map((b) => ({ ...b, recipe: b.recipe ? (JSON.parse(b.recipe) as Recipe) : null }));
   const guide = sectionRows.map((s) => ({ ...s, blocks: blockRows.filter((b) => b.section === s.section) }));
 
   const [eth] = rows<{ producer: number; sensitive: number }>(db, 'SELECT producer, sensitive FROM produce_ethylene WHERE item_id = ?', [id]);

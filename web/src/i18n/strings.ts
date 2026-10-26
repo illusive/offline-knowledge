@@ -58,7 +58,10 @@ export interface Strings {
   foodTabs: Record<'about' | 'storage' | 'preserving' | 'sources', string>;
   noAboutYet: string;
   noPreservingYet: string;
-  untestedRecipe: string;
+  recipeFacts: Record<'time' | 'keeps' | 'yield', string>;
+  ingredientsHeading: string;
+  stepsHeading: string;
+  originalWording: string;
   verdicts: {
     drying: Record<'excellent' | 'good' | 'fair' | 'poor' | 'described' | 'notRecommended' | 'noSource', string>;
     pickling: Record<'tested' | 'noTestedMethod', string>;
@@ -151,7 +154,10 @@ export const strings: Record<Lang, Strings> = {
     foodTabs: { about: 'Om', storage: 'Holdbarhed', preserving: 'Konservering', sources: 'Kilder' },
     noAboutYet: 'Der er endnu ingen beskrivelse af denne fødevare.',
     noPreservingYet: 'Der er endnu ingen vejledning i tørring, syltning eller henkogning af denne fødevare.',
-    untestedRecipe: 'Opskrift – ikke testet af en myndighed',
+    recipeFacts: { time: 'Tid', keeps: 'Holdbarhed', yield: 'Giver' },
+    ingredientsHeading: 'Du skal bruge',
+    stepsHeading: 'Sådan gør du',
+    originalWording: 'Kildens ord',
     verdicts: {
       drying: {
         excellent: 'Egner sig rigtig godt til tørring',
@@ -162,7 +168,7 @@ export const strings: Record<Lang, Strings> = {
         notRecommended: 'Tørring frarådes',
         noSource: 'Ingen af kilderne beskriver tørring af denne fødevare.',
       },
-      pickling: { tested: 'Der findes testede opskrifter', noTestedMethod: 'Ingen af kilderne har en testet opskrift.' },
+      pickling: { tested: 'Der findes opskrifter', noTestedMethod: 'Ingen af kilderne har en testet opskrift.' },
       canning: {
         pressure: 'Kun i trykkoger',
         waterBath: 'I vandbad',
@@ -256,7 +262,10 @@ export const strings: Record<Lang, Strings> = {
     foodTabs: { about: 'About', storage: 'Storage', preserving: 'Preserving', sources: 'Sources' },
     noAboutYet: 'There is no description of this food yet.',
     noPreservingYet: 'There is no guidance on drying, pickling or canning this food yet.',
-    untestedRecipe: 'Recipe – not tested by an authority',
+    recipeFacts: { time: 'Time', keeps: 'Keeps', yield: 'Makes' },
+    ingredientsHeading: 'You need',
+    stepsHeading: 'Steps',
+    originalWording: 'In the source\'s words',
     verdicts: {
       drying: {
         excellent: 'Excellent for drying',
@@ -267,7 +276,7 @@ export const strings: Record<Lang, Strings> = {
         notRecommended: 'Drying not recommended',
         noSource: 'None of the sources describe drying this food.',
       },
-      pickling: { tested: 'Tested recipes exist', noTestedMethod: 'None of the sources has a tested recipe.' },
+      pickling: { tested: 'Recipes exist', noTestedMethod: 'None of the sources has a tested recipe.' },
       canning: {
         pressure: 'Pressure canner only',
         waterBath: 'Boiling-water bath',

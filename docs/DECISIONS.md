@@ -244,9 +244,17 @@ Each entry records the decision, its rationale and the alternatives considered. 
 
 - **Date:** 2026-10-26
 - **Decision:** A food page has four sub-pages under the heading: **Om** (about, what it prefers, what to avoid), **Holdbarhed** (kitchen times, langtidsopbevaring, "sammen med andre"; opens by default), **Konservering** (drying, pickling, canning) and **Kilder** (sources). Each has its own address (`#/food/<id>`, `/about`, `/preserving`, `/sources`); switching replaces the history entry, so "back" leaves the food. "Brug dine sanser" ends every sub-page. Related foods are listed one per row, sorted alphabetically in the interface language.
-- **Pickling:** a Danish recipe comes first where one exists (owner's choice), labelled "Opskrift – ikke testet af en myndighed", with the keeping time the recipe states (or a statement that it gives none). The USDA/NCHFP tested recipe stays below it as the way to keep pickles in the cupboard, followed by NCHFP's guidance on storing canned jars (cool, dark, dry; use within a year). This is a narrow exception to D-033's rule that commercial sources are never the basis for food-safety statements: only for refrigerated vinegar or sugar pickles, always labelled, never for anything stored at room temperature.
+- **Pickling:** a Danish recipe comes first where one exists (owner's choice), with the keeping time the recipe states (or a statement that it gives none). The "not tested by an authority" label was dropped on 2026-10-26 by owner decision (D-035). The USDA/NCHFP tested recipe stays below it as the way to keep pickles in the cupboard, followed by NCHFP's guidance on storing canned jars (cool, dark, dry; use within a year). This is a narrow exception to D-033's rule that commercial sources are never the basis for food-safety statements: only for refrigerated vinegar or sugar pickles, always labelled, never for anything stored at room temperature.
 - **First case:** æbler (GoCook/Arla Fonden: vinegar brine, 2 months in the fridge; Arla: sugar syrup, no keeping time given). Gastrofun was considered and left out: user-contributed recipes, no keeping time, nothing beyond GoCook.
 - **Rejected:** one long page (too long to read); replacing the tested recipes with Danish ones (no safe option for the cupboard); tab name "Tilberedning" (means cooking a meal).
+
+## D-035 — Drying, pickling and canning as step-by-step recipes
+
+- **Date:** 2026-10-26
+- **Decision:** Methods people follow are stored and shown as recipes, not paragraphs: title, optional intro, facts (time, keeps, yield), "Du skal bruge" (ingredients and equipment) and "Sådan gør du" (numbered steps). On Konservering each method card lists its recipes as rows that open; closed rows show the title and the facts, so the page can be scanned. Short notes (e.g. the low-acid warning) stay as paragraphs. Storage of canned jars is its own small recipe ("Sådan opbevarer du henkogte glas"). Recipes from recipe sites are not labelled as untested (owner decision).
+- **Traceability:** a recipe is one block with one source; its quote covers the whole passage, and "Vis original" shows that quote in place of the steps. Shared methods (e.g. Colorado State's fruit drying) are folded into each food's recipe as steps instead of separate paragraphs.
+- **Pack:** schema 5, `produce_blocks.recipe` (JSON); `text` may be empty for a recipe.
+- **Rejected:** keeping paragraphs with better typography (steps still hard to follow); separate tables for ingredients and steps (more schema for no gain while recipes are only read whole).
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

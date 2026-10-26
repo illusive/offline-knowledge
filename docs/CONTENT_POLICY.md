@@ -71,7 +71,8 @@ Food guides are an owner-approved exception to the source-language and verbatim 
 - Canning and pickling follow the tested USDA/NCHFP procedure in substance: process type, times, headspace and acidification are never changed. Low-acid vegetables only ever get a pressure-canning method, or none.
 - When sources disagree, authorities win; when two authorities differ, the Danish one is shown first and the other as nuance. A contradicted commercial claim is left out.
 - Where a food has no source for a section, the guide says so (`noSource`, `noTestedMethod`) instead of guessing.
-- Danish pickle recipes (D-034): allowed for refrigerated vinegar or sugar pickles only, as one block marked `note: "untested"` (shown as "Opskrift – ikke testet af en myndighed"), with the recipe's own keeping time or a statement that it gives none. A tested USDA/NCHFP recipe and the NCHFP storage guidance stay alongside wherever they exist. Prefer recipes from established publishers over user-contributed sites.
+- Danish pickle recipes (D-034): allowed for refrigerated vinegar or sugar pickles only, with the recipe's own keeping time or a statement that it gives none.
+- Methods people follow are written as recipes with numbered steps (D-035). Each step comes from the recipe's one source; splitting a sentence into steps, adding unit conversions and naming the recipe are allowed, adding steps or quantities is not. A tested USDA/NCHFP recipe and the NCHFP storage guidance stay alongside wherever they exist. Prefer recipes from established publishers over user-contributed sites.
 
 ### AI assistance
 

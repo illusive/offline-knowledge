@@ -153,7 +153,7 @@ web/
 - Ranking: plain `bm25` ranks 'Grønkål' above 'Kål' for 'kål'. The app should rank exact and prefix name matches first.
 - **Guides (not built yet):** title, summary, tags and block text. Choose between trigram and `unicode61` when guide text exists; test with real Danish queries.
 
-## 5a. Pack schema (version 4)
+## 5a. Pack schema (version 5)
 
 Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
 
@@ -162,7 +162,7 @@ Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
 - `storage_items`, `storage_periods`, `storage_notes`: one row per item / period / note, with source field names kept for traceability.
 - `storage_search`: FTS5 index (see §5).
 - `sources.short_name`: the short label shown next to guide text (version 3).
-- `produce_blocks.note`: `untested` for recipes from recipe sites or food brands (version 4, D-034).
+- `produce_blocks.recipe`: a step-by-step recipe as JSON (title, intro, facts, ingredients, steps; version 5, D-035).
 - Food guides (version 3, D-033): `produce_sections` (item, order, section, verdict), `produce_blocks` (item, section, order, Danish text, original quote, source id, locator), `produce_ethylene` (item, Handbook 66 storage groups, producer, sensitive) and `produce_relations` (item, other item, `apart` | `with`). Relations are computed at build time from Handbook 66 Table 1: `apart` when one produces significant ethylene and the other is sensitive; `with` when they share a storage group, have no conflict and are both producers or both not.
 
 Build: `cd content && npm run build:pack`. Output goes to `content/dist/core/` (not committed). Pack version = `content/package.json` version.

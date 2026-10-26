@@ -25,10 +25,20 @@ export interface GuideSourceRef {
   visualOnly?: true;  // the passage is printed as an image (no text layer): transcribed by eye, not checked by the build
 }
 
+// A method someone follows step by step (D-035): drying, pickling and canning recipes.
+export const RECIPE_FACTS = ['time', 'keeps', 'yield'] as const;
+export interface GuideRecipe {
+  title: string;
+  intro?: string;
+  facts?: Partial<Record<(typeof RECIPE_FACTS)[number], string>>;  // short values, e.g. keeps: '2 måneder i køleskabet'
+  ingredients?: string[];
+  steps: string[];
+}
+
 export interface GuideBlock {
-  text: string;       // Danish (D-033: written from the sources, unchecked)
-  sourceRef: GuideSourceRef;
-  note?: 'untested';  // a recipe from a recipe site or food brand, not tested by an authority (D-034)
+  text?: string;      // Danish paragraph (D-033: written from the sources, unchecked); optional for recipes
+  recipe?: GuideRecipe;
+  sourceRef: GuideSourceRef;  // one source per block; for a recipe, the quote covers all of it
 }
 
 export interface GuideSection {

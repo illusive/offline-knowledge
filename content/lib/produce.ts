@@ -3,7 +3,7 @@
 
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { SECTION_ORDER, VERDICTS, type ProduceGuide } from '../schema/produce.ts';
+import { RECIPE_FACTS, SECTION_ORDER, VERDICTS, type ProduceGuide } from '../schema/produce.ts';
 import type { RegistrySource } from './registry.ts';
 
 export const PRODUCE_DIR = new URL('../produce/', import.meta.url).pathname;
@@ -79,8 +79,16 @@ export function validateGuides(
       if (!allowed && section.verdict) problems.push(`${at} ${section.key}: this section has no verdict`);
       section.blocks.forEach((block, i) => {
         const where = `${at} ${section.key}[${i}]`;
-        if (!block.text.trim()) problems.push(`${where}: empty text`);
-        if (block.note !== undefined && block.note !== 'untested') problems.push(`${where}: unknown note '${String(block.note)}'`);
+        const recipe = block.recipe;
+        if (!block.text?.trim() && !recipe) problems.push(`${where}: needs text or a recipe`);
+        if (recipe) {
+          if (!recipe.title.trim()) problems.push(`${where}: recipe without a title`);
+          if (recipe.steps.length === 0 || recipe.steps.some((step) => !step.trim())) problems.push(`${where}: recipe needs non-empty steps`);
+          if (recipe.ingredients?.some((i) => !i.trim())) problems.push(`${where}: empty ingredient`);
+          for (const key of Object.keys(recipe.facts ?? {})) {
+            if (!(RECIPE_FACTS as readonly string[]).includes(key)) problems.push(`${where}: unknown recipe fact '${key}'`);
+          }
+        }
         const ref = block.sourceRef;
         if (!known.has(ref.sourceId)) problems.push(`${where}: source '${ref.sourceId}' not in registry`);
         if (!ref.locator.trim()) problems.push(`${where}: no locator`);
