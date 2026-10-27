@@ -6,6 +6,8 @@
   "summary": "Kartofler er nemme at dyrke, da de kan vokse i både køkkenhave, spande og sække.",
   "sourceId": "dk-bolius-kartofler",
   "risk": "low",
+  "name": "Kartofler",
+  "season": { "text": "Læg sidst i marts–midt i april · høst juni–september", "quote": "Læg kartoflerne i jorden fra sidst i marts til midt i april … Det er typisk i juni/juli. … Det er bedst, at du høster dine kartofler i begyndelsen af september" },
   "foodId": "foodkeeper-297",
   "blocks": [
     { "kind": "section", "key": "sowing", "page": 1 },

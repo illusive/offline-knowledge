@@ -118,7 +118,9 @@ CREATE TABLE guides (
   owner_checked INTEGER NOT NULL,
   related TEXT NOT NULL, -- JSON array of guide ids
   abbreviations TEXT NOT NULL, -- JSON [{short, long}]
-  food_id TEXT REFERENCES storage_items(id) -- growing: the food page this crop links to
+  food_id TEXT REFERENCES storage_items(id), -- growing: the food page this crop links to
+  name TEXT,         -- plain name for lists and titles (growing)
+  season TEXT        -- growing period shown as subtitle
 );
 
 -- Search over guide titles, summaries and shown text (trigram, like storage_search).
@@ -302,16 +304,16 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
         if (!image) throw new Error(`Missing image ${file}`);
         insertImage.run(file, image.mime, image.data);
       }
-      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related, abbreviations, food_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related, abbreviations, food_id, name, season) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
       const insertGuideSearch = db.prepare('INSERT INTO guide_search (guide_id, title, body) VALUES (?, ?, ?)');
       const insertGuideBlock = db.prepare(
         'INSERT INTO guide_blocks (guide_id, ord, kind, title, text, items, step_images, image_id, alt, caption, page, source_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       );
       const insertCheck = db.prepare('INSERT INTO guide_checks (guide_id, ord, source_id, locator, quote, note) VALUES (?, ?, ?, ?, ?, ?)');
       for (const g of guides) {
-        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []), g.foodId ?? null);
+        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []), g.foodId ?? null, g.name ?? null, g.season?.text ?? null);
         const body = [g.summary ?? '', ...g.blocks.flatMap((b) => [...('title' in b && b.title ? [b.title] : []), ...shownTexts(b)]), ...(g.abbreviations ?? []).map((a) => a.long)];
-        insertGuideSearch.run(g.id, g.title, body.join('\n'));
+        insertGuideSearch.run(g.id, [g.name, g.title].filter(Boolean).join(' '), body.join('\n'));
         g.blocks.forEach((b, ord) => {
           const title = 'title' in b ? (b.title ?? null) : null;
           const text = 'text' in b ? (b.text ?? null) : b.kind === 'section' ? b.key : null;

@@ -27,7 +27,7 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
   }, [db, id]);
 
   const loaded = detail?.id === id ? detail.value : undefined;
-  const title = loaded?.guide.title ?? null;
+  const title = loaded ? (loaded.guide.name ?? loaded.guide.title) : null;
   const imageUrls = useImageUrls(loaded?.images);
 
   useEffect(() => {
@@ -50,8 +50,9 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
       <article className="mt-4 flex flex-col gap-3" lang="da">
         <header className="mb-1 px-1">
           <h1 ref={heading} tabIndex={-1} className="text-3xl font-normal tracking-tight outline-none">
-            {guide.title}
+            {guide.name ?? guide.title}
           </h1>
+          {guide.season ? <p className="mt-1 font-medium">{guide.season}</p> : null}
           {guide.summary ? <p className="mt-1 text-muted">{guide.summary}</p> : null}
         </header>
         {guide.abbreviations.length > 0 ? (

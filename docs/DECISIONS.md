@@ -286,7 +286,13 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Decision:** a "Dyrkning" category (tile on Home next to Opbevaring af mad) with one guide per crop, easy crops for the Danish climate first: radiser, ærter, kartofler (done), then salat, spinat, hestebønner, gulerødder, sætteløg. Danish sources first (owner decision): Videncentret Bolius (Realdania; "Indholdet må ikke gengives uden tilladelse", so a permission case, set aside while private, D-028). Frøsamlerne's material is a paid book; its Nordic plant lexicon (danskekulturplanter.dk) may serve old varieties later.
 - **Format:** the guide model of D-037 at risk `low`: text verbatim from the crop's page (checked by the build), laid out under fixed sections in the app's own words (Såning, Jord og placering, Pasning, Høst, Frø til næste år, Naboer og sædskifte). A block may quote another registered source (e.g. Bolius' general seed-saving page), checked against that source; high-risk guides still take all text from one source. No second authority is required at low risk. A crop links to its food page (Holdbarhed og konservering).
 - **Companion planting:** only what a credible source says. The popular "good/bad neighbours" lists online come from FAQ sites without sources and are not used; crop rotation and plant families (from Bolius) are.
+- **Owner feedback 2026-10-27:** crops are listed and titled like foods in Opbevaring af mad, with a plain name ("Radiser") and the growing period as subtitle ("Så april–august · høst efter 2–6 uger"). The period is our wording, built from quoted source passages that the build checks (schema 9: `guides.name`, `guides.season`).
 - **Pack:** schema 8: `guides.food_id`, `guide_blocks.source_id`, block kind `section`. Search covers growing guides; Home search groups hits by category.
+
+## D-039 — Design rule: category pages start with search
+
+- **Date:** 2026-10-27
+- **Decision (owner):** every category page (Opbevaring af mad, Førstehjælp, Dyrkning and later ones) has a search field at the top that filters that category's content as you type; titles only for one or two letters, full text from three. Lists show a count line ("3 afgrøder") like the food list.
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

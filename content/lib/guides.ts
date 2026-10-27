@@ -122,6 +122,13 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
         problems.push(`${at}: uses ${short} without explaining it (add it to "abbreviations")`);
       }
     }
+    if (guide.category === 'growing' && !guide.name?.trim()) problems.push(`${at}: growing guides need a plain name`);
+    if (guide.season) {
+      if (guide.risk === 'high') problems.push(`${at}: high-risk guides show no text of ours`);
+      for (const part of guide.season.quote.split(' … ')) {
+        if (!(texts.get(guide.sourceId) ?? '').includes(normalize(part))) problems.push(`${at} season: quote not found in ${guide.sourceId}: "${part.slice(0, 60)}"`);
+      }
+    }
     if (guide.risk === 'high' && guide.checks.length === 0) problems.push(`${at}: no second-authority check (D-027)`);
     guide.checks.forEach((c, i) => {
       const where = `${at} check ${i}`;

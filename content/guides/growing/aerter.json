@@ -6,6 +6,8 @@
   "summary": "Det er nemt at dyrke ærter udenfor, men husk at vande og undgå skadedyr.",
   "sourceId": "dk-bolius-aerter",
   "risk": "low",
+  "name": "Ærter",
+  "season": { "text": "Så sidst i april–midt i juni · høst fra sidst i juni", "quote": "Det er den ofte i slutningen af april. … Du kan så ærter frem til midten af juni … typisk er de første ærter klar til at blive plukket og spist i slutningen af juni eller begyndelsen af juli" },
   "foodId": "foodkeeper-273",
   "blocks": [
     { "kind": "section", "key": "sowing", "page": 1 },

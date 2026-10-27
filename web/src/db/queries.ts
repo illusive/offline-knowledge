@@ -4,7 +4,7 @@
 import type { Location, PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
-export const SUPPORTED_PACK_SCHEMA_VERSION = 8;
+export const SUPPORTED_PACK_SCHEMA_VERSION = 9;
 
 type Bind = (string | number | null)[];
 
@@ -97,9 +97,11 @@ export interface GuideRow {
   title: string;
   summary: string | null;
   abbreviations: { short: string; long: string }[];
+  name: string | null;     // growing: plain name, e.g. 'Radiser'
+  season: string | null;   // growing: the growing period
 }
 
-const GUIDE_COLUMNS = 'g.id, g.category, g.title, g.summary, g.abbreviations';
+const GUIDE_COLUMNS = 'g.id, g.category, g.title, g.summary, g.abbreviations, g.name, g.season';
 const guideRows = (db: SqlDb, sql: string, bind?: Bind) =>
   rows<Omit<GuideRow, 'abbreviations'> & { abbreviations: string }>(db, sql, bind).map((g) => ({ ...g, abbreviations: JSON.parse(g.abbreviations) as GuideRow['abbreviations'] }));
 
@@ -154,7 +156,7 @@ export function searchGuides(db: SqlDb, query: string): GuideRow[] {
 export function getGuide(db: SqlDb, id: string): GuideDetail | null {
   const [row] = rows<Omit<GuideRow, 'abbreviations'> & { abbreviations: string; owner_checked: number; source_id: string; related: string; food_id: string | null }>(
     db,
-    'SELECT id, category, title, summary, abbreviations, owner_checked, source_id, related, food_id FROM guides WHERE id = ?',
+    'SELECT id, category, title, summary, abbreviations, name, season, owner_checked, source_id, related, food_id FROM guides WHERE id = ?',
     [id],
   );
   if (!row) return null;
@@ -193,7 +195,7 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
   const relatedIds = JSON.parse(g.related) as string[];
   const related = relatedIds.flatMap((rid) => guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guides g WHERE g.id = ?`, [rid]));
   return {
-    guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, abbreviations: g.abbreviations, owner_checked: g.owner_checked === 1, food_id: g.food_id },
+    guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, abbreviations: g.abbreviations, name: g.name, season: g.season, owner_checked: g.owner_checked === 1, food_id: g.food_id },
     blockSources: rows<{ source_id: string }>(db, 'SELECT DISTINCT source_id FROM guide_blocks WHERE guide_id = ? AND source_id IS NOT NULL', [id]).map((r) => source(r.source_id)),
     blocks,
     images,

@@ -60,4 +60,9 @@ export interface Guide {
   ownerChecked: boolean;    // the project owner has compared the guide with the source (D-027)
   related?: string[];       // other guide ids
   foodId?: string;          // the storage item this crop becomes (links to its food page)
+  // Growing (D-038, owner 2026-10-27): a plain name for lists and the page title (our words, e.g.
+  // "Radiser"), and the growing period as a subtitle, written by us from quoted passages that
+  // the build finds in the source (parts joined with " … ").
+  name?: string;
+  season?: { text: string; quote: string };
 }

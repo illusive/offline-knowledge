@@ -162,6 +162,8 @@ export interface Strings {
   growingCount: (n: number) => string;
   growingSections: Record<'sowing' | 'conditions' | 'care' | 'harvest' | 'seeds' | 'neighbours', string>;
   storeThisCrop: string;
+  growingSearchPlaceholder: string;
+  growingSearchLabel: string;
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -360,9 +362,11 @@ export const strings: Record<Lang, Strings> = {
     foodCount: (n) => `${n} fødevarer`,
     growing: 'Dyrkning',
     growingIntro: 'Så, pas og høst – og gem frø til næste år. Nemme afgrøder til det danske klima.',
-    growingCount: (n) => `${n} afgrøder`,
+    growingCount: (n) => (n === 1 ? '1 afgrøde' : `${n} afgrøder`),
     growingSections: { sowing: 'Såning', conditions: 'Jord og placering', care: 'Pasning', harvest: 'Høst', seeds: 'Frø til næste år', neighbours: 'Naboer og sædskifte' },
     storeThisCrop: 'Holdbarhed og konservering',
+    growingSearchPlaceholder: 'Søg efter en afgrøde',
+    growingSearchLabel: 'Søg i dyrkning',
   },
   en: {
     appTitle: 'stead',
@@ -559,8 +563,10 @@ export const strings: Record<Lang, Strings> = {
     foodCount: (n) => `${n} foods`,
     growing: 'Growing food',
     growingIntro: 'Sow, tend and harvest – and save seed for next year. Easy crops for the Danish climate (in Danish).',
-    growingCount: (n) => `${n} crops`,
+    growingCount: (n) => (n === 1 ? '1 crop' : `${n} crops`),
     growingSections: { sowing: 'Sowing', conditions: 'Soil and site', care: 'Care', harvest: 'Harvest', seeds: 'Seed for next year', neighbours: 'Neighbours and rotation' },
     storeThisCrop: 'Storing and preserving',
+    growingSearchPlaceholder: 'Search for a crop',
+    growingSearchLabel: 'Search growing',
   },
 };

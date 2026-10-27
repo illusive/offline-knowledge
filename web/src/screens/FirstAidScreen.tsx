@@ -144,9 +144,9 @@ export function GuideList({ guides, numbered = true }: { guides: GuideRow[]; num
               </span>
             ) : null}
             <span className="flex-1">
-              <span className="block font-medium">{g.title}</span>
+              <span className="block font-medium">{g.name ?? g.title}</span>
               <TitleAbbreviations guide={g} />
-              {g.summary ? <span className="line-clamp-2 block text-sm text-muted">{g.summary}</span> : null}
+              {g.season ? <span className="block text-sm text-muted">{g.season}</span> : g.summary ? <span className="line-clamp-2 block text-sm text-muted">{g.summary}</span> : null}
             </span>
             <ChevronRight aria-hidden="true" className="size-5 shrink-0 text-muted" />
           </a>
