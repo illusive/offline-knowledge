@@ -53,6 +53,9 @@ export function shownTexts(block: GuideBlock): string[] {
   }
 }
 
+// Abbreviations the handbook uses that a reader may not know.
+const KNOWN_ABBREVIATIONS = ['HLR', 'AED', 'A-B-C', 'M-ABC'];
+
 // Problems that block publishing. `texts` maps source id -> verbatim/normalised text.
 export function validateGuides(guides: Guide[], sources: RegistrySource[], texts: Map<string, string>, imageFiles: Set<string>): string[] {
   const problems: string[] = [];
@@ -103,6 +106,16 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
         }
       }
     });
+    for (const a of guide.abbreviations ?? []) {
+      for (const part of a.long.split(', ')) check(`${at} abbreviation ${a.short}`, part, true);
+    }
+    // Every abbreviation in this list must be explained; the guide may not show it unexplained.
+    const shown = [guide.title, guide.summary ?? '', ...guide.blocks.flatMap(shownTexts)].join(' ');
+    for (const short of KNOWN_ABBREVIATIONS) {
+      if (new RegExp(`(^|[^\\p{L}])${short}([^\\p{L}]|$)`, 'u').test(shown) && !guide.abbreviations?.some((a) => a.short === short)) {
+        problems.push(`${at}: uses ${short} without explaining it (add it to "abbreviations")`);
+      }
+    }
     if (guide.checks.length === 0) problems.push(`${at}: no second-authority check (D-027)`);
     guide.checks.forEach((c, i) => {
       const where = `${at} check ${i}`;

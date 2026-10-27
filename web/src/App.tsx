@@ -28,6 +28,7 @@ export function App() {
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [homeQuery, setHomeQuery] = useState('');
   const [storageQuery, setStorageQuery] = useState('');
+  const [firstAidQuery, setFirstAidQuery] = useState('');
   const offlineReady = useOfflineReady(status === 'ready');
   const precache = usePrecacheProgress();
 
@@ -80,12 +81,12 @@ export function App() {
   else if (status === 'error') content = <Page><MessageState title={s.packErrorTitle} body={s.packErrorBody} /></Page>;
   else if (status === 'loading') content = <Page><LoadingState s={s} /></Page>;
   else if (route.name === 'food') content = <FoodScreen db={db} id={route.id} tab={route.tab} lang={lang} s={s} />;
-  else if (route.name === 'firstAid') content = <FirstAidScreen guides={guides} s={s} />;
+  else if (route.name === 'firstAid') content = <FirstAidScreen db={db} guides={guides} s={s} query={firstAidQuery} onQueryChange={setFirstAidQuery} />;
   else if (route.name === 'guide') content = <GuideScreen db={db} id={route.id} s={s} />;
   else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;
   else if (route.name === 'tools') content = <PlaceholderScreen title={s.toolsTitle} s={s} />;
   else if (route.name === 'settings') content = <PlaceholderScreen title={s.settingsTitle} s={s} />;
-  else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guideCount={guides?.length ?? null} query={homeQuery} onQueryChange={setHomeQuery} />;
+  else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guides={guides} query={homeQuery} onQueryChange={setHomeQuery} />;
 
   return (
     <>

@@ -4,7 +4,7 @@
 import type { Location, PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
-export const SUPPORTED_PACK_SCHEMA_VERSION = 6;
+export const SUPPORTED_PACK_SCHEMA_VERSION = 7;
 
 type Bind = (string | number | null)[];
 
@@ -96,7 +96,12 @@ export interface GuideRow {
   category: 'first-aid';
   title: string;
   summary: string | null;
+  abbreviations: { short: string; long: string }[];
 }
+
+const GUIDE_COLUMNS = 'g.id, g.category, g.title, g.summary, g.abbreviations';
+const guideRows = (db: SqlDb, sql: string, bind?: Bind) =>
+  rows<Omit<GuideRow, 'abbreviations'> & { abbreviations: string }>(db, sql, bind).map((g) => ({ ...g, abbreviations: JSON.parse(g.abbreviations) as GuideRow['abbreviations'] }));
 
 export interface GuideImage {
   id: string;
@@ -129,16 +134,27 @@ export interface GuideDetail {
 const SOURCE_COLUMNS = 'id, title, short_name, publisher, url, license, attribution, retrieved_at, data_version';
 
 export function listGuides(db: SqlDb, category: GuideRow['category']): GuideRow[] {
-  return rows<GuideRow>(db, 'SELECT id, category, title, summary FROM guides WHERE category = ? ORDER BY ord', [category]);
+  return guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guides g WHERE g.category = ? ORDER BY g.ord`, [category]);
+}
+
+// Full-text search over guide titles and text; title matches first, then emergency order.
+// Only for queries of at least MIN_FTS_QUERY_LENGTH characters.
+export function searchGuides(db: SqlDb, query: string): GuideRow[] {
+  if (query.trim().length < MIN_FTS_QUERY_LENGTH) throw new Error('Query too short for trigram search');
+  const found = guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guide_search s JOIN guides g ON g.id = s.guide_id WHERE guide_search MATCH ? ORDER BY g.ord`, [ftsPhrase(query)]);
+  const q = query.trim().toLocaleLowerCase('da');
+  const inTitle = (g: GuideRow) => (g.title.toLocaleLowerCase('da').includes(q) ? 0 : 1);
+  return found.sort((a, b) => inTitle(a) - inTitle(b)); // stable: emergency order within each group
 }
 
 export function getGuide(db: SqlDb, id: string): GuideDetail | null {
-  const [g] = rows<GuideRow & { owner_checked: number; source_id: string; related: string }>(
+  const [row] = rows<Omit<GuideRow, 'abbreviations'> & { abbreviations: string; owner_checked: number; source_id: string; related: string }>(
     db,
-    'SELECT id, category, title, summary, owner_checked, source_id, related FROM guides WHERE id = ?',
+    'SELECT id, category, title, summary, abbreviations, owner_checked, source_id, related FROM guides WHERE id = ?',
     [id],
   );
-  if (!g) return null;
+  if (!row) return null;
+  const g = { ...row, abbreviations: JSON.parse(row.abbreviations) as GuideRow['abbreviations'] };
   const source = (sid: string) => {
     const [s] = rows<SourceRow & { short_name: string }>(db, `SELECT ${SOURCE_COLUMNS} FROM sources WHERE id = ?`, [sid]);
     if (!s) throw new Error(`Pack is missing source ${sid}`);
@@ -169,9 +185,9 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
     (c) => ({ source: source(c.source_id), locator: c.locator, quote: c.quote }),
   );
   const relatedIds = JSON.parse(g.related) as string[];
-  const related = relatedIds.flatMap((rid) => rows<GuideRow>(db, 'SELECT id, category, title, summary FROM guides WHERE id = ?', [rid]));
+  const related = relatedIds.flatMap((rid) => guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guides g WHERE g.id = ?`, [rid]));
   return {
-    guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, owner_checked: g.owner_checked === 1 },
+    guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, abbreviations: g.abbreviations, owner_checked: g.owner_checked === 1 },
     blocks,
     images,
     source: source(g.source_id),

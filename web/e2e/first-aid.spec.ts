@@ -5,7 +5,19 @@ test('first aid: list, a guide with steps and photos, related guide; then offlin
   await page.getByRole('link', { name: /Førstehjælp/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Førstehjælp' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Ring 112, alarmcentralen' })).toHaveAttribute('href', 'tel:112');
-  await expect(page.getByRole('listitem').first()).toContainText('Førstehjælpens 3 hovedpunkter');
+  // The three main points as their own section, the rest underneath.
+  const mainPoints = page.getByRole('region', { name: 'Førstehjælpens 3 hovedpunkter' });
+  await expect(mainPoints.getByText('Punkt 1: Skab sikkerhed')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Alle vejledninger' })).toBeVisible();
+  await expect(page.getByText('HLR: hjertelungeredning').first()).toBeVisible();
+
+  // Search inside the guides' text.
+  const search = page.getByRole('searchbox', { name: 'Søg i førstehjælp' });
+  await search.fill('blodpøl');
+  await expect(page.getByRole('link', { name: /^Massive blødninger/ })).toBeVisible();
+  await search.fill('zzzz');
+  await expect(page.getByText('Ingen vejledninger matcher "zzzz".')).toBeVisible();
+  await search.fill('');
 
   await page.getByRole('link', { name: /^Stabilt sideleje/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Stabilt sideleje' })).toBeVisible();

@@ -52,6 +52,16 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
           </h1>
           {guide.summary ? <p className="mt-1 text-muted">{guide.summary}</p> : null}
         </header>
+        {guide.abbreviations.length > 0 ? (
+          <dl aria-label={s.abbreviationsLabel} className="flex flex-col gap-1 rounded-2xl bg-surface px-[16px] py-3 text-sm">
+            {guide.abbreviations.map((a) => (
+              <div key={a.short} className="flex gap-[8px]">
+                <dt className="font-semibold">{a.short}</dt>
+                <dd>{a.long}</dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
         <Card className="flex flex-col gap-4">
           {blocks.map((block, i) => (
             <Block key={i} block={block} imageUrls={imageUrls} />

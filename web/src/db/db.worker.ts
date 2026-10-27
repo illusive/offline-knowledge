@@ -3,7 +3,7 @@
 
 import sqlite3InitModule from '@sqlite.org/sqlite-wasm';
 import type { InitResult, PackInfo, Reply, Request } from './protocol';
-import { getGuide, getItemDetail, listGuides, listItems, searchItems, verifyPack, type SqlDb } from './queries';
+import { getGuide, getItemDetail, listGuides, listItems, searchGuides, searchItems, verifyPack, type SqlDb } from './queries';
 
 let db: SqlDb | undefined;
 
@@ -58,6 +58,8 @@ async function handle(request: Request) {
       return listGuides(requireDb(), request.category);
     case 'guide':
       return getGuide(requireDb(), request.id);
+    case 'searchGuides':
+      return searchGuides(requireDb(), request.query);
   }
 }
 

@@ -21,7 +21,8 @@ export type Request =
   | { type: 'search'; query: string }
   | { type: 'detail'; id: string }
   | { type: 'guides'; category: GuideRow['category'] }
-  | { type: 'guide'; id: string };
+  | { type: 'guide'; id: string }
+  | { type: 'searchGuides'; query: string };
 
 export interface Responses {
   init: InitResult;
@@ -30,6 +31,7 @@ export interface Responses {
   detail: ItemDetail | null;
   guides: GuideRow[];
   guide: GuideDetail | null;
+  searchGuides: GuideRow[];
 }
 
 export type Reply =

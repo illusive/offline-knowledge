@@ -10,6 +10,7 @@ import { PACK_SCHEMA_VERSION, type PackManifest } from '../schema/pack.ts';
 import type { Guide } from '../schema/guide.ts';
 import { SECTION_ORDER, type ProduceGuide } from '../schema/produce.ts';
 import type { StorageDataset } from '../schema/storage.ts';
+import { shownTexts } from './guides.ts';
 import type { EthyleneProfile } from './produce.ts';
 import type { RegistrySource } from './registry.ts';
 
@@ -115,7 +116,16 @@ CREATE TABLE guides (
   source_id TEXT NOT NULL REFERENCES sources(id),
   risk TEXT NOT NULL,
   owner_checked INTEGER NOT NULL,
-  related TEXT NOT NULL -- JSON array of guide ids
+  related TEXT NOT NULL, -- JSON array of guide ids
+  abbreviations TEXT NOT NULL -- JSON [{short, long}]
+);
+
+-- Search over guide titles, summaries and shown text (trigram, like storage_search).
+CREATE VIRTUAL TABLE guide_search USING fts5(
+  guide_id UNINDEXED,
+  title,
+  body,
+  tokenize = 'trigram remove_diacritics 1'
 );
 
 CREATE TABLE guide_blocks (
@@ -290,13 +300,16 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
         if (!image) throw new Error(`Missing image ${file}`);
         insertImage.run(file, image.mime, image.data);
       }
-      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related, abbreviations) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+      const insertGuideSearch = db.prepare('INSERT INTO guide_search (guide_id, title, body) VALUES (?, ?, ?)');
       const insertGuideBlock = db.prepare(
         'INSERT INTO guide_blocks (guide_id, ord, kind, title, text, items, step_images, image_id, alt, caption, page) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       );
       const insertCheck = db.prepare('INSERT INTO guide_checks (guide_id, ord, source_id, locator, quote, note) VALUES (?, ?, ?, ?, ?, ?)');
       for (const g of guides) {
-        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []));
+        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []));
+        const body = [g.summary ?? '', ...g.blocks.flatMap((b) => [...('title' in b && b.title ? [b.title] : []), ...shownTexts(b)]), ...(g.abbreviations ?? []).map((a) => a.long)];
+        insertGuideSearch.run(g.id, g.title, body.join('\n'));
         g.blocks.forEach((b, ord) => {
           const title = 'title' in b ? (b.title ?? null) : null;
           const text = 'text' in b ? (b.text ?? null) : null;
@@ -310,6 +323,7 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
 
     db.exec('COMMIT');
     db.exec("INSERT INTO storage_search (storage_search) VALUES ('optimize')");
+    db.exec("INSERT INTO guide_search (guide_search) VALUES ('optimize')");
     db.exec('VACUUM');
     const integrity = db.prepare('PRAGMA integrity_check').get() as { integrity_check: string };
     if (integrity.integrity_check !== 'ok') throw new Error(`SQLite integrity check failed: ${integrity.integrity_check}`);

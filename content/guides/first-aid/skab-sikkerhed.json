@@ -6,6 +6,7 @@
   "summary": "Som førstehjælper skal du sikre, at ulykken ikke udvikler sig.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
+  "abbreviations": [{ "short": "AED", "long": "hjertestarter, Automatisk Ekstern Defibrillator" }],
   "corrections": [{ "from": "situtionanen", "to": "situationen" }],
   "blocks": [
     { "kind": "list", "title": "Start med at skabe overblik over situationen:", "items": ["Er der fare for dig eller andre, når du hjælper den/de tilskadekomne?", "Hvilken type skade er der tale om?", "Hvor mange er der kommet til skade?"], "page": 9 },

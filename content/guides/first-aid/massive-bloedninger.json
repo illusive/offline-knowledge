@@ -6,6 +6,7 @@
   "summary": "En massiv blødning er en livstruende blødning, der skal behandles først i algoritmen.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
+  "abbreviations": [{ "short": "A-B-C", "long": "Airway – luftveje, Breathing – åndedræt, Circulation – blodcirkulation" }],
   "$comment": "The handbook's tourniquet lines (p. 18: apply a ready-made tourniquet first on arms and legs, 'high and tight') are held back: ERC 2025 starts with direct pressure and uses a tourniquet when pressure is not enough (D-037, owner decision 2026-10-27).",
   "blocks": [
     { "kind": "list", "title": "Der er tale om en livstruende blødning, når:", "items": ["Der ses en blodpøl på jorden", "Tøjet er gennemvædet af blod", "Blodet sprøjter eller strømmer hurtigt"], "page": 18 },

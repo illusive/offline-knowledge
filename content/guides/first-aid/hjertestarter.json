@@ -6,6 +6,7 @@
   "summary": "En AED er udviklet til at blive brugt af alle. Den er nem og sikker at betjene.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
+  "abbreviations": [{ "short": "HLR", "long": "hjertelungeredning" }, { "short": "AED", "long": "hjertestarter, Automatisk Ekstern Defibrillator" }],
   "corrections": [{ "from": "et apperat der", "to": "et apparat der" }],
   "blocks": [
     { "kind": "text", "text": "En hjertestarter, også kaldet Automatisk Ekstern Defibrillator (AED), er et apparat der kan ”genstarte” et hjerte ved personer med hjertestop.", "page": 33 },

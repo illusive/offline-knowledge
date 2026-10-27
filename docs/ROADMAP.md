@@ -50,7 +50,8 @@ Acceptance: a fresh install with no network shows the pilot guides, search finds
 - First aid, water treatment, food safety, electricity under the `high` process (`CONTENT_POLICY.md` §6).
 - [x] Second-source cross-check in place for guides: quotes from the second authority are checked by the build (`content/lib/guides.ts`).
 - [ ] First aid from Førstehjælpens ABC (D-037), about 20 guides. **Status 2026-10-27: 11 written, verbatim-checked by the build, not yet owner-checked.** Done: tre-hovedpunkter, skab-sikkerhed, bevidsthed, mabc, massive-bloedninger (tourniquet left out, D-037), frie-luftveje, vejrtraekning, stabilt-sideleje, hlr-voksne, hjertestarter, hlr-boern (OPEN_QUESTIONS 29).
-  - **Waiting for:** the owner's verdict on the format of these 11 (in the app under Førstehjælp).
+  - Done 2026-10-27: search, main points section, abbreviations explained, "<M>" removed.
+  - **Next:** the "Når der ikke kommer hjælp" section (D-037): register and snapshot the US field manuals (download needs the owner's OK), pick the problem list, then write handbook + field-manual pages per problem.
   - **Then:** kredsløbssvigt (p. 38–40), ikke livstruende blødninger and trykforbinding (p. 41–43, photos p. 43), ring 1-1-2 (p. 46–49), fremmedlegeme i luftvejene (p. 60–65), drukneulykker (p. 68), forbrændinger (p. 100), underafkøling (p. 102), alvorlige allergiske reaktioner (p. 129), stroke (p. 122), brystsmerter (p. 124). Second authority for these: `dk-drg-erc-first-aid-2025` (choking p. 10, anaphylaxis p. 9–10, stroke p. 13, chest pain p. 11, burns and hypothermia further on).
   - How to work: write `content/guides/first-aid/<id>.json` from `content/sources/text/dk-fsk-abc-foerstehjaelp.txt` (page markers `--- pNN`); crop photos with `content/scripts/render-pdf-region.swift`, save as JPEG in `content/guides/images/`; `npm run build:pack` lists any text that is not verbatim.
 

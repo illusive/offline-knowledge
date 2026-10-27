@@ -6,6 +6,7 @@
   "summary": "Hvis der ydes HLR til børn, tilpasses kompressioner og indblæsninger barnets størrelse.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
+  "abbreviations": [{ "short": "HLR", "long": "hjertelungeredning" }],
   "blocks": [
     { "kind": "text", "text": "Børn er defineret som personer under 18 år! Hvis et barn ligner en voksen, så håndteres personen som en voksen.", "page": 32 },
     { "kind": "text", "text": "For alle børn er trykhastigheden den samme som til voksne, dvs. minimum 100 tryk og maksimum 120 tryk pr. min.", "page": 32 },

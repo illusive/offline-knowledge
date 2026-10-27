@@ -2,13 +2,14 @@
   "id": "mabc",
   "category": "first-aid",
   "order": 4,
-  "title": "<M>ABC-princippet",
+  "title": "M-ABC-princippet",
   "summary": "For at kunne prioritere den mest nødvendige førstehjælp til én eller flere tilskadekomne, anvender vi M-ABC-princippet:",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
+  "abbreviations": [{ "short": "M-ABC", "long": "Massive blødninger, Airway – luftveje, Breathing – åndedræt, Circulation – blodcirkulation" }],
   "blocks": [
-    { "kind": "steps", "items": ["<M>Massive blødninger – livstruende blødninger", "Airway – luftveje", "Breathing – åndedræt", "Circulation – blodcirkulation"], "page": 17 },
-    { "kind": "text", "text": "Alle celler i kroppen har behov for ilt for at kunne opretholde deres funktion. <M>ABC sikrer denne livsvigtige ilttransport.", "page": 17 },
+    { "kind": "steps", "items": ["Massive blødninger – livstruende blødninger", "Airway – luftveje", "Breathing – åndedræt", "Circulation – blodcirkulation"], "page": 17 },
+    { "kind": "text", "text": "Alle celler i kroppen har behov for ilt for at kunne opretholde deres funktion.", "page": 17 },
     { "kind": "text", "text": "Nogle celler kan kun undvære ilt i få minutter, før de tager skade. Hjernens celler er blandt disse.", "page": 17 }
   ],
   "checks": [

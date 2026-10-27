@@ -6,6 +6,7 @@
   "summary": "Når du skal kontrollere, om den tilskadekomne har en normal vejrtrækning, skal du udføre se, lyt og føl!",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
+  "abbreviations": [{ "short": "HLR", "long": "hjertelungeredning" }],
   "blocks": [
     {
       "kind": "list",

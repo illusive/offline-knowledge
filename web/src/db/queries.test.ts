@@ -4,7 +4,7 @@
 import sqlite3InitModule from '@sqlite.org/sqlite-wasm';
 import { readFileSync } from 'node:fs';
 import { beforeAll, expect, test } from 'vitest';
-import { getGuide, getItemDetail, listGuides, listItems, searchItems, verifyPack, type SqlDb } from './queries';
+import { getGuide, getItemDetail, listGuides, listItems, searchGuides, searchItems, verifyPack, type SqlDb } from './queries';
 
 let db: SqlDb;
 
@@ -68,4 +68,14 @@ test('first aid guides are listed in emergency order; a guide brings its photos,
   expect(guide?.checks[0]?.source.short_name).toBe('Dansk Råd for Genoplivning');
   expect(guide?.related.map((r) => r.id)).toEqual(['vejrtraekning', 'frie-luftveje', 'hlr-voksne']);
   expect(getGuide(db, 'does-not-exist')).toBeNull();
+});
+
+test('guide search finds text inside guides, title matches first; abbreviations come explained', () => {
+  const ids = searchGuides(db, 'blødning').map((g) => g.id);
+  expect(ids[0]).toBe('massive-bloedninger');
+  expect(ids).toContain('mabc'); // matched in the text, not the title
+  expect(searchGuides(db, 'opkast').map((g) => g.id)).toContain('frie-luftveje');
+  expect(searchGuides(db, 'hjertelungeredning').map((g) => g.id)).toContain('hlr-boern'); // via its abbreviation
+  expect(listGuides(db, 'first-aid').find((g) => g.id === 'hlr-boern')?.abbreviations).toEqual([{ short: 'HLR', long: 'hjertelungeredning' }]);
+  expect(listGuides(db, 'first-aid').some((g) => g.title.includes('<M>'))).toBe(false);
 });

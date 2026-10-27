@@ -44,6 +44,9 @@ export interface Guide {
   sourceId: string;
   risk: 'high';
   corrections?: Correction[];
+  // Abbreviations the guide uses, explained at the top (owner: no unexplained abbreviations).
+  // `long` must be found in the source; parts separated by ", " are checked one by one.
+  abbreviations?: { short: string; long: string }[];
   blocks: GuideBlock[];
   checks: SecondCheck[];
   ownerChecked: boolean;    // the project owner has compared the guide with the source (D-027)

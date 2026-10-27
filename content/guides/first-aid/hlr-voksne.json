@@ -6,6 +6,7 @@
   "summary": "Definitionen på hjertestop er: En bevidstløs person uden normal vejrtrækning.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
+  "abbreviations": [{ "short": "HLR", "long": "hjertelungeredning" }],
   "corrections": [{ "from": "pegeog tommelfinger", "to": "pege- og tommelfinger" }],
   "blocks": [
     { "kind": "list", "title": "Hjertelungeredning består af serier af:", "items": ["30 brystkompressioner (hjertemassage)", "2 indblæsninger (kunstigt åndedræt)"], "page": 28 },

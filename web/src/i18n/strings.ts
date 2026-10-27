@@ -144,6 +144,12 @@ export interface Strings {
   checkedAgainst: string;
   ownerNotChecked: string;
   relatedGuides: string;
+  firstAidSearchPlaceholder: string;
+  firstAidSearchLabel: string;
+  noGuideResults: (query: string) => string;
+  allGuides: string;
+  readMore: string;
+  abbreviationsLabel: string;
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -327,6 +333,12 @@ export const strings: Record<Lang, Strings> = {
     checkedAgainst: 'Sammenholdt med',
     ownerNotChecked: 'Prøveversion: endnu ikke gennemlæst mod håndbogen.',
     relatedGuides: 'Se også',
+    firstAidSearchPlaceholder: 'Søg i førstehjælp, fx blødning',
+    firstAidSearchLabel: 'Søg i førstehjælp',
+    noGuideResults: (q) => `Ingen vejledninger matcher "${q}".`,
+    allGuides: 'Alle vejledninger',
+    readMore: 'Læs mere',
+    abbreviationsLabel: 'Forkortelser',
   },
   en: {
     appTitle: 'stead',
@@ -508,5 +520,11 @@ export const strings: Record<Lang, Strings> = {
     checkedAgainst: 'Compared with',
     ownerNotChecked: 'Trial version: not yet read against the handbook.',
     relatedGuides: 'See also',
+    firstAidSearchPlaceholder: 'Search first aid, e.g. blødning',
+    firstAidSearchLabel: 'Search first aid',
+    noGuideResults: (q) => `No guides match "${q}".`,
+    allGuides: 'All guides',
+    readMore: 'Read more',
+    abbreviationsLabel: 'Abbreviations',
   },
 };

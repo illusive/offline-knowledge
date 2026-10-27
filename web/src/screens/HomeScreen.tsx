@@ -7,7 +7,8 @@ import { DownloadCard, OFFLINE_DISABLED, OfflineStatus } from '../components/Off
 import { FoodList } from '../components/FoodList';
 import { Page, SearchField } from '../components/ui';
 import type { DbClient } from '../db/client';
-import type { ItemRow } from '../db/queries';
+import type { GuideRow, ItemRow } from '../db/queries';
+import { GuideList, useGuideSearch } from './FirstAidScreen';
 import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
 import type { PrecacheProgress } from '../pwa/usePrecacheProgress';
@@ -20,12 +21,14 @@ export function HomeScreen(props: {
   s: Strings;
   offlineReady: boolean;
   precache: PrecacheProgress | null;
-  guideCount: number | null;
+  guides: GuideRow[] | null;
   query: string;
   onQueryChange: (q: string) => void;
 }) {
-  const { db, foods, lang, s, offlineReady, precache, guideCount, query, onQueryChange } = props;
+  const { db, foods, lang, s, offlineReady, precache, guides, query, onQueryChange } = props;
   const results = useFoodSearch(db, foods, query, lang);
+  const guideResults = useGuideSearch(db, guides, query);
+  const guideCount = guides?.length ?? null;
   const searching = query.trim() !== '';
 
   return (
@@ -46,7 +49,15 @@ export function HomeScreen(props: {
       </section>
 
       {searching ? (
-        <div className="mt-6">
+        <div className="mt-6 flex flex-col gap-3">
+          {guideResults.length > 0 ? (
+            <section aria-labelledby="guide-results" className="flex flex-col gap-2">
+              <h2 id="guide-results" className="px-1 text-lg font-semibold">
+                {s.firstAid}
+              </h2>
+              <GuideList guides={guideResults} numbered={false} />
+            </section>
+          ) : null}
           <FoodList items={results} query={query} lang={lang} s={s} />
         </div>
       ) : (
