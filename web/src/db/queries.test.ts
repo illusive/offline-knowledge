@@ -84,7 +84,7 @@ test('growing guides: fixed sections, a link to the food page, and the seed page
   const crops = listGuides(db, 'growing');
   const names = crops.map((g) => g.name ?? '');
   expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, 'da')));
-  expect(names[0]).toBe('Gulerødder');
+  expect(names[0]).toBe('Broccoli');
   expect(names.at(-1)).toBe('Ærter'); // æ after z in Danish
   expect(crops.length).toBeGreaterThanOrEqual(15);
   expect(crops.every((g) => g.name && g.season)).toBe(true);
