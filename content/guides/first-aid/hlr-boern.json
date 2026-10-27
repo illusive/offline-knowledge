@@ -1,0 +1,35 @@
+{
+  "id": "hlr-boern",
+  "category": "first-aid",
+  "order": 11,
+  "title": "Basal HLR til børn",
+  "summary": "Hvis der ydes HLR til børn, tilpasses kompressioner og indblæsninger barnets størrelse.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    { "kind": "text", "text": "Børn er defineret som personer under 18 år! Hvis et barn ligner en voksen, så håndteres personen som en voksen.", "page": 32 },
+    { "kind": "text", "text": "For alle børn er trykhastigheden den samme som til voksne, dvs. minimum 100 tryk og maksimum 120 tryk pr. min.", "page": 32 },
+    {
+      "kind": "list",
+      "title": "Hvad er anderledes end basal HLR til voksne?",
+      "items": [
+        "Når der skabes frie luftveje, skal hovedet ikke nær så langt tilbage som til voksne, og spædbørn skal blot have hovedet i neutral stilling.",
+        "Når du laver indblæsninger, skal du tilpasse disse til barnets størrelse (til brystkassen hæver sig synligt) Blæs evt. over næse og mund!",
+        "Når du laver brystkompressioner, skal du mindst trykke en 1/3 af brystkassen (ved spædbørn brug 2 fingre, og ved øvrige kan du bruge én hånd)."
+      ],
+      "page": 32
+    },
+    { "kind": "text", "text": "Forsvaret underviser som udgangspunkt ikke i en særskilt algoritme for hjertestop hos børn.", "page": 32 },
+    { "kind": "text", "text": "Personer med særligt ansvar for børn kan med fordel blive uddannet i en HLR-algoritme tilpasset børn (eksempelvis livreddere og pædagoger).", "page": 32 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-bls-algoritme-2025",
+      "locator": "Basal genoplivning (algoritme), Børn",
+      "quote": "Uddannet i PBLS (ERC) Giv 5 indblæsninger Giv HLR 15:2",
+      "note": "Difference: the ERC algorithm has a separate child sequence for those trained in paediatric BLS (5 rescue breaths first, then 15:2). The handbook adapts the adult 30:2 sequence to the child's size."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["hlr-voksne", "hjertestarter"]
+}

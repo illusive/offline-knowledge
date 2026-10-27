@@ -1,0 +1,25 @@
+{
+  "id": "frie-luftveje",
+  "category": "first-aid",
+  "order": 6,
+  "title": "Skab frie luftveje",
+  "summary": "Når en person er bevidstløs, skal du altid skabe frie luftveje:",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    { "kind": "steps", "items": ["Placér den ene hånd på panden, og 2 fingre under hagen", "Forsigtigt føres hovedet bagover til naturlig modstand."], "page": 19 },
+    { "kind": "text", "text": "Der er skabt frie luftveje ved, at tungen er løftet op fra svælget. Så længe grebet holdes, er der skabt frie luftveje.", "page": 19 },
+    { "kind": "text", "text": "Stabilt sideleje sikrer også at personen har frie luftveje.", "page": 19 },
+    { "kind": "text", "text": "Ved et ”A-problem” er der fare for, at ilttransporten ophører, og cellerne dør, fordi luftvejene er blokeret. Udover at tungen kan blokere ved bevidstløshed, kan årsagerne være fremmedlegemer, blod, strangulering, opkast, hævelser eller skader på halsen.", "page": 19 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Tabel 3, A - Airway, s. 8",
+      "quote": "Placér den ene hånd på panden og fingerspidserne fra din anden hånd under den hårde del af hagen. Vip forsigtigt personens hoved tilbage, løft hagen for at skabe en fri luftvej",
+      "note": "Same head tilt and chin lift: one hand on the forehead, fingers under the chin, tilt the head back gently."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["vejrtraekning", "stabilt-sideleje"]
+}

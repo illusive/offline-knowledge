@@ -187,6 +187,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Rationale:** The authority's own editorial and medical review stands behind every word, and the owner's check verifies faithful reproduction rather than medical correctness. Resolves OPEN_QUESTIONS #4 for AGENTS.md §6 ("content requiring expert review").
 - **Alternatives:** owner check with restructuring allowed; a qualified medical reviewer for every high-risk guide.
 - **Consequences:** sources under "no derivatives" licences become usable for high-risk guides if the licence allows verbatim redistribution. The First aid category appears only once it has published guides. With D-028, licence clearance no longer blocks first-aid sources during the private phase; the verbatim and second-authority rules still apply.
+- **Changed 2026-10-27 (owner decision, D-037):** the wording stays verbatim, but layout and order may change for readability: running text may become numbered steps and bullet lists, warnings may move to where they are needed, and sections may be put in the order they are needed in an emergency. Headings come from the source. Nothing is reworded, merged into new sentences or translated; obvious typos may be corrected only when recorded (original and correction, both checked by the build). The second-authority check stays.
 
 ## D-028 — Licensing and reuse permissions deferred while the project is private
 
@@ -266,6 +267,14 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Detail while online, and making the offline limit clear (2026-10-26, owner feedback "details vanish when zooming"):** the overview alone (z0–8) cannot show streets. While online, detail tiles outside downloaded areas are fetched from the hosted map on demand and kept in memory only. Offline, missing detail tiles fail on purpose so MapLibre keeps drawing the overview's roads and names scaled up. A notice on the map says when the view is not downloaded ("Ikke hentet – virker ikke uden net", with "Hent"). Opening Kort without any downloaded area first shows a step explaining that the map only works offline in downloaded areas (once per app session, skippable); the "Hent kort" button opens the same guided flow: why → what (home / region / country) → which → confirm (size, free space, keep the app open) → progress → done.
 - **Measured (2026-10-26, z15):** Denmark 591 MB (z14: 291 MB); regions 78–174 MB; a 25 km radius 25–45 MB; 10 km 7–20 MB. Range merging adds 1–3 %.
 - **Rejected:** hot-linking Protomaps' daily builds (not meant for apps; deleted after about two months); hosting the map inside this repo's Pages site (every push would upload ~600 MB; close to the 1 GB limit); Danish official maps from SDFI (token-protected image tiles, heavy to download); a third-party PMTiles library (the reader we need is ~200 lines and checked against the reference library).
+
+## D-037 — First aid guides from Førstehjælpens ABC, verbatim, rearranged for readability
+
+- **Date:** 2026-10-27
+- **Decision:** The first first-aid guides come from *Førstehjælpens ABC* (Forsvarets Sanitetskommando, Center for Sundheds- og Sanitetsuddannelse, 11. rev. 2026), the handbook mandatory for first-aid training in the Danish armed forces. First version: the life-saving core (the three main points, consciousness, airways, breathing, recovery position, HLR for adults and children, hjertestarter, massive bleeding, shock, calling 112, choking, then drowning, burns, hypothermia, allergic reaction, stroke and chest pain), about 20 guides, in the order of an emergency.
+- **Verbatim, checked by the build:** every text shown (titles, paragraphs, steps, list items, warnings, captions) must be found word for word in the handbook's text, after joining words broken across lines and removing soft hyphens. Layout and order may change (D-027 as changed). The handbook's illustrations are used where they show a step, cut from its pages; alt text is ours (accessibility).
+- **Second authority (D-027):** each guide records where Dansk Råd for Genoplivning agrees, with quotes checked by the build: the Danish ERC Guidelines 2025 (BLS chapter, BLS algorithm, First Aid chapter 8, translated by DRG and reviewed with Dansk Førstehjælpsråd among others) and DRG's public guide. A point the second authority disagrees with is held back and recorded in OPEN_QUESTIONS.
+- **Owner check:** guides are shown to the owner in the app; each guide records whether the owner has checked it.
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

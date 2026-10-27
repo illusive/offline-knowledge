@@ -1,7 +1,7 @@
 // Home (design brief, D-025): search everything offline, then the available categories and the
 // emergency card. Only categories with content are shown.
 
-import { Asterisk, ArrowUpRight, Package } from 'lucide-react';
+import { Asterisk, ArrowUpRight, HeartPulse, Package } from 'lucide-react';
 import { EmergencyCard } from '../components/EmergencyCard';
 import { DownloadCard, OFFLINE_DISABLED, OfflineStatus } from '../components/OfflineStatus';
 import { FoodList } from '../components/FoodList';
@@ -20,10 +20,11 @@ export function HomeScreen(props: {
   s: Strings;
   offlineReady: boolean;
   precache: PrecacheProgress | null;
+  guideCount: number | null;
   query: string;
   onQueryChange: (q: string) => void;
 }) {
-  const { db, foods, lang, s, offlineReady, precache, query, onQueryChange } = props;
+  const { db, foods, lang, s, offlineReady, precache, guideCount, query, onQueryChange } = props;
   const results = useFoodSearch(db, foods, query, lang);
   const searching = query.trim() !== '';
 
@@ -51,6 +52,18 @@ export function HomeScreen(props: {
       ) : (
         <div className="mt-8 flex flex-col gap-3">
           <h2 className="px-1 text-xl font-semibold">{s.startHere}</h2>
+          {guideCount ? (
+            <a href={hrefs.firstAid} className="flex items-center gap-[16px] rounded-card bg-ink px-[20px] py-5 text-on-ink">
+              <span aria-hidden="true" className="grid size-12 shrink-0 place-items-center rounded-full bg-accent text-on-accent">
+                <HeartPulse className="size-6" />
+              </span>
+              <span className="flex-1">
+                <span className="block text-xl">{s.firstAid}</span>
+                <span className="block text-sm text-ink-muted">{s.firstAidSubtitle(guideCount)}</span>
+              </span>
+              <ArrowUpRight aria-hidden="true" className="size-6 shrink-0" />
+            </a>
+          ) : null}
           <a href={hrefs.storage} className="flex items-center gap-[16px] rounded-card bg-ink px-[20px] py-5 text-on-ink">
             <span aria-hidden="true" className="grid size-12 shrink-0 place-items-center rounded-full bg-accent text-on-accent">
               <Package className="size-6" />

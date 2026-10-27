@@ -4,7 +4,7 @@
 import type { Location, PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
-export const SUPPORTED_PACK_SCHEMA_VERSION = 5;
+export const SUPPORTED_PACK_SCHEMA_VERSION = 6;
 
 type Bind = (string | number | null)[];
 
@@ -90,7 +90,97 @@ export interface ItemDetail {
   sources: (SourceRow & { lang: 'da' | 'en'; short_name: string })[]; // every source used on the page
 }
 
-const ITEM_COLUMNS = 'i.id, i.category, i.name_da, i.subtitle_da, i.name_en, i.subtitle_en, i.source_id';
+// Guides (D-037): verbatim blocks from one source, with images and second-authority checks.
+export interface GuideRow {
+  id: string;
+  category: 'first-aid';
+  title: string;
+  summary: string | null;
+}
+
+export interface GuideImage {
+  id: string;
+  mime: string;
+  data: Uint8Array;
+}
+
+export type GuideBlock =
+  | { kind: 'heading' | 'text'; text: string; page: number }
+  | { kind: 'steps'; title: string | null; items: string[]; images: { after: number; imageId: string; alt: string; page: number }[]; page: number }
+  | { kind: 'list'; title: string | null; items: string[]; page: number }
+  | { kind: 'warning'; title: string | null; text: string | null; items: string[]; page: number }
+  | { kind: 'image'; imageId: string; alt: string; caption: string | null; page: number };
+
+export interface GuideCheck {
+  source: SourceRow & { short_name: string };
+  locator: string;
+  quote: string;
+}
+
+export interface GuideDetail {
+  guide: GuideRow & { owner_checked: boolean };
+  blocks: GuideBlock[];
+  images: GuideImage[];
+  source: SourceRow & { short_name: string };
+  checks: GuideCheck[];
+  related: GuideRow[];
+}
+
+const SOURCE_COLUMNS = 'id, title, short_name, publisher, url, license, attribution, retrieved_at, data_version';
+
+export function listGuides(db: SqlDb, category: GuideRow['category']): GuideRow[] {
+  return rows<GuideRow>(db, 'SELECT id, category, title, summary FROM guides WHERE category = ? ORDER BY ord', [category]);
+}
+
+export function getGuide(db: SqlDb, id: string): GuideDetail | null {
+  const [g] = rows<GuideRow & { owner_checked: number; source_id: string; related: string }>(
+    db,
+    'SELECT id, category, title, summary, owner_checked, source_id, related FROM guides WHERE id = ?',
+    [id],
+  );
+  if (!g) return null;
+  const source = (sid: string) => {
+    const [s] = rows<SourceRow & { short_name: string }>(db, `SELECT ${SOURCE_COLUMNS} FROM sources WHERE id = ?`, [sid]);
+    if (!s) throw new Error(`Pack is missing source ${sid}`);
+    return s;
+  };
+  type BlockRow = { kind: GuideBlock['kind']; title: string | null; text: string | null; items: string | null; step_images: string | null; image_id: string | null; alt: string | null; caption: string | null; page: number };
+  const blocks = rows<BlockRow>(db, 'SELECT kind, title, text, items, step_images, image_id, alt, caption, page FROM guide_blocks WHERE guide_id = ? ORDER BY ord', [id]).map(
+    (b): GuideBlock => {
+      const items = b.items ? (JSON.parse(b.items) as string[]) : [];
+      switch (b.kind) {
+        case 'heading':
+        case 'text':
+          return { kind: b.kind, text: b.text ?? '', page: b.page };
+        case 'steps':
+          return { kind: 'steps', title: b.title, items, images: b.step_images ? JSON.parse(b.step_images) : [], page: b.page };
+        case 'list':
+          return { kind: 'list', title: b.title, items, page: b.page };
+        case 'warning':
+          return { kind: 'warning', title: b.title, text: b.text, items, page: b.page };
+        case 'image':
+          return { kind: 'image', imageId: b.image_id ?? '', alt: b.alt ?? '', caption: b.caption, page: b.page };
+      }
+    },
+  );
+  const imageIds = [...new Set(blocks.flatMap((b) => (b.kind === 'image' ? [b.imageId] : b.kind === 'steps' ? b.images.map((i) => i.imageId) : [])))];
+  const images = imageIds.flatMap((imageId) => rows<GuideImage>(db, 'SELECT id, mime, data FROM guide_images WHERE id = ?', [imageId]));
+  const checks = rows<{ source_id: string; locator: string; quote: string }>(db, 'SELECT source_id, locator, quote FROM guide_checks WHERE guide_id = ? ORDER BY ord', [id]).map(
+    (c) => ({ source: source(c.source_id), locator: c.locator, quote: c.quote }),
+  );
+  const relatedIds = JSON.parse(g.related) as string[];
+  const related = relatedIds.flatMap((rid) => rows<GuideRow>(db, 'SELECT id, category, title, summary FROM guides WHERE id = ?', [rid]));
+  return {
+    guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, owner_checked: g.owner_checked === 1 },
+    blocks,
+    images,
+    source: source(g.source_id),
+    checks,
+    related,
+  };
+}
+
+const ITEM_COLUMNS ='i.id, i.category, i.name_da, i.subtitle_da, i.name_en, i.subtitle_en, i.source_id';
 
 function rows<T>(db: SqlDb, sql: string, bind?: Bind): T[] {
   return db.selectObjects(sql, bind) as T[];

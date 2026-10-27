@@ -1,0 +1,30 @@
+{
+  "id": "bevidsthed",
+  "category": "first-aid",
+  "order": 3,
+  "title": "Kontrol af bevidsthedstilstand",
+  "summary": "Når du yder førstehjælp, skal du først undersøge den tilskadekomnes bevidsthed.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    { "kind": "steps", "title": "Kontroller bevidstheden på følgende måde:", "items": ["Tal højt, og rusk behersket ved at tage fat i den tilskadekomnes skuldre."], "page": 16 },
+    { "kind": "list", "items": ["Hvis personen reagerer, er personen vågen.", "Hvis personen ikke reagerer, er personen bevidstløs."], "page": 16 },
+    { "kind": "warning", "text": "Hvis den tilskadekomne er bevidstløs, skal du straks ringe 1-1-2 før du fortsætter din førstehjælp!", "page": 16 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-bls-algoritme-2025",
+      "locator": "Basal genoplivning (algoritme)",
+      "quote": "Undersøg for bevidstløshed … Ring 1-1-2",
+      "note": "The ERC algorithm also checks for a response first and calls 1-1-2 straight away when there is none."
+    },
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Tabel 3, Bevidsthedsniveau, s. 8",
+      "quote": "Forsøg forsigtigt at vække personen.",
+      "note": "Same check: try to wake the person by speaking to them and touching them."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["mabc", "frie-luftveje"]
+}

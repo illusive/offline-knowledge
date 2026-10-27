@@ -4,7 +4,7 @@
 import sqlite3InitModule from '@sqlite.org/sqlite-wasm';
 import { readFileSync } from 'node:fs';
 import { beforeAll, expect, test } from 'vitest';
-import { getItemDetail, listItems, searchItems, verifyPack, type SqlDb } from './queries';
+import { getGuide, getItemDetail, listGuides, listItems, searchItems, verifyPack, type SqlDb } from './queries';
 
 let db: SqlDb;
 
@@ -51,4 +51,21 @@ test('detail returns periods, notes and source in source order', () => {
   });
   expect(detail?.source.license).toBe('CC0-1.0');
   expect(getItemDetail(db, 'does-not-exist')).toBeNull();
+});
+
+test('first aid guides are listed in emergency order; a guide brings its photos, source and checks', () => {
+  const guides = listGuides(db, 'first-aid');
+  expect(guides[0]?.id).toBe('tre-hovedpunkter');
+  expect(guides.map((g) => g.id)).toContain('stabilt-sideleje');
+
+  const guide = getGuide(db, 'stabilt-sideleje');
+  const steps = guide?.blocks.find((b) => b.kind === 'steps');
+  expect(steps?.kind === 'steps' && steps.items).toHaveLength(6);
+  expect(steps?.kind === 'steps' && steps.images.map((i) => i.after)).toEqual([2, 3, 4, 5, 6]);
+  expect(guide?.images).toHaveLength(5);
+  expect(guide?.images.every((i) => i.mime === 'image/jpeg' && i.data.byteLength > 1000)).toBe(true);
+  expect(guide?.source.publisher).toBe('Forsvarets Sanitetskommando, Center for Sundheds- & Sanitetsuddannelse');
+  expect(guide?.checks[0]?.source.short_name).toBe('Dansk Råd for Genoplivning');
+  expect(guide?.related.map((r) => r.id)).toEqual(['vejrtraekning', 'frie-luftveje', 'hlr-voksne']);
+  expect(getGuide(db, 'does-not-exist')).toBeNull();
 });

@@ -38,6 +38,12 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 17e. **Offline tests and OPFS.** Playwright's WebKit keeps OPFS per origin outside the temporary profile, so data leaked between test runs (found with the map areas). The fixture now clears OPFS, caches and service workers before each test. Playwright also cannot intercept requests made by a worker in WebKit; the preview server has a test-only outage switch (`/stead-maps/__fail`).
 17c. **Kitchen times vs Danish advice.** FoodKeeper's pantry/fridge times and Tænk's Danish times sometimes differ (e.g. strawberries). Both are shown; should the page explain why?
 
+## First aid (D-037)
+
+28. **Tourniquet first or pressure first (held back).** The handbook (p. 18) says a ready-made tourniquet may be applied first on arms and legs, "high and tight". The ERC 2025 First Aid chapter (DRG, p. 13–14) starts with firm direct pressure and uses a tourniquet when pressure is not enough. Under D-037 the tourniquet lines are left out of "Massive blødninger" until the owner decides: keep them out, or show them with the ERC wording next to them.
+29. **Children: 5 rescue breaths first?** The handbook adapts the adult 30:2 sequence to the child (no separate algorithm). The ERC BLS algorithm gives children 5 rescue breaths first (then 15:2 if trained in paediatric BLS). "Basal HLR til børn" is published because the handbook text shown does not contradict ERC, but the guide does not mention the 5 breaths. Decide whether to add the ERC point (from DRG, verbatim) to the guide.
+30. **Handbook line breaks that are real hyphens.** The verbatim check joins "pege-" + "og" into "pegeog"; such cases are recorded as corrections in the guide (`hlr-voksne`). Fine while rare.
+
 ## Product
 
 7. **App name.** Resolved: "stead" (D-024). Trademark and domain not checked.

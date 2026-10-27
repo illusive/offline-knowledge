@@ -1,0 +1,1806 @@
+# dk-drg-erc-first-aid-2025 sha256 b46f617a42c1d9f3c04bc891938a8bd3ee0272ccb7022ee8eefc4c7569bb38c2
+--- p1
+1
+￼
+--- p2
+2
+European Resuscitation Council Guidelines 2025
+Kapitel 8 – Førstehjælp
+Therese Djärv1*, Jessica Rogers2, Federico Semeraro3, Louise Brädde4, Pascal Cassan5, Diana Cimpoesu6, Sander van Goor7
+,
+Barry Klaassen8, Jorien Laermans9, Daniel Meyran10, Eunice M. Singletary11, Adam Mellett-Smith12, Kaushila Thilakasiri13
+,
+David Zideman14
+Om den danske oversættelse
+Denne danske oversættelse er sket i regi af Dansk Råd for Genoplivning (DRG), som er en del af det
+Europæiske Råd for Genoplivning (ERC) og efter aftale med ERC. I den danske oversættelse er der lagt vægt
+på at anvende de termer, der videnskabeligt og medicinsk ligger tættest på sproget i de europæiske
+guidelines. Dansk Råd for Genoplivning anser det for vigtigt at være tro mod guidelines og har prioriteret
+dette højt med et samtidigt blik for at tilpasse anbefalingerne til danske forhold og gøre sproget så
+flydende som muligt.
+Følgende har deltaget i den danske oversættelse af dette kapitel:
+• Kasper Bitzer, BSc in medicine, Præhospitalt Center, Region Sjælland
+• Theo Walther Jensen, MD. Phd., post doc, Præhospitalt Center, Region Sjælland
+Herudover har følgende bidraget til oversættelsen af øvrige kapitler og algoritmer:
+Anne Lippert, Jens Roland, Jens Rosenberg, Jeppe Sylvest Nielsen, Morten Aaboe, Niklas Breindahl og Stine
+Strandkjær.
+Oversættelsen er desuden kvalificeret af DRGs ekspertgruppe, rådsrepræsentanter fra lægefaglige
+selskaber og regionale akutberedskaber under DRG samt Dansk Førstehjælpsråd.
+Resumé
+ERC har udarbejdet disse guidelines for førstehjælp, der er baseret på konsensus fra en ekspertgruppe efter
+gennemgang af litteratur. Anbefalingerne fra ekspertgruppen er baseret på International Consensus on
+Science with Treatment Recommendations on First Aid fra International Liaison Committee on
+Resuscitation (ILCOR) udgivet i 2025. De overordnede emner i disse guidelines inkluderer: Forventninger til
+personer, der yder førstehjælp, førstehjælpskurser, indholdet af en førstehjælpskasse, hvordan håndterer
+personer bevidsthedssvækkelse, stabilt sideleje, brug af et pulsoximeter samt tilskud af medicinsk ilt.
+Medicinske nødsituationer inkluderer: Anafylaksi, luftvejsobstruktion, astma, brystsmerter, hypoglykæmi,
+opioidoverdosis, genkendelse af stroke og selvmordstanker. Emner, der defineres som traumerelaterede
+nødsituationer, omfatter håndtering af person med cervikal rygmarvsskade, kontrol af livstruende blødning,
+håndtering af åbne brystskader, hjernerystelse og håndtering af amputeret kropsdel. Emner, der defineres
+som miljøbetingede nødsituationer, omfatter drukning, hypotermi, hypertermi og slangebid. Førstehjælps-
+procedurer til forebyggelse og håndtering af livstruende tilstande, der kan udvikle sig til hjertestop, er
+inkluderet i aktuelle guidelines. Håndteringen af hjertestop er beskrevet i ERC Guidelines 2025, ”Basal
+hjertelungeredning og brug af en hjertestarter til voksne”
+.
+© 2025 European Resuscitation Council. All rights reserved.
+Translation of the official Guidelines 2025 of the European Resuscitation Council by the Danish
+Resuscitation Council
+--- p3
+3
+Introduktion og indhold
+Førstehjælp defineres som en hjælpsom handling udført af enhver i en nødsituation, inklusive selvhjælp. At
+yde førstehjælp indebærer typisk at erkende, vurdere og prioritere behov, yde hjælp inden for
+førstehjælperens kompetencer, mens man anerkender deresbegrænsninger og søge yderligere hjælp,
+såsom at tilkalde akutberedskabet. Al genoplivning, inklusiv basal og avanceret genoplivning, begynder
+med førstehjælpsinterventioner: Vurdering af sikkerheden på stedet; erkendelse af fald i bevidsthedsniveau
+eller fravær af normal vejrtrækning; korrekt placering af personen og at kunne reagere på livstruende
+tilstande.
+Førstehjælp fungerer som et afgørende første led i Overlevelseskæden. Siden 2021 har ERC skærpet sit
+fokus og fremhæver nu, hvor vigtig førstehjælp er i Overlevelseskæden ved hjertestop – både for at mindske
+følgerne af sygdom og for at forebygge hjertestop. ERC’s Guidelines for førstehjælp i 2025 har fokus på
+livstruende situationer og på situationer, hvor førstehjælp kan mindske følgerne af sygdom og forhindre, at
+det udvikler sig til hjertestop. Derfor er emner, der tidligere var inkluderet, men som ikke direkte relaterer
+sig til det reviderede fokusområde, muligvis ikke medtaget i år (se Tabel 1). Guidelines er baseret på
+International Liaison Committee on Resuscitation (ILCOR) Consensus on Science with Treatment
+Recommendations (CoSTR) for First Aid1 for 2025, der omhandler førstehjælp og basal genoplivning.2
+I udarbejdelsen af disse guidelines har ERC’s førstehjælps-skrivegruppe anvendt både publicerede
+systematiske reviews og scoping reviews samt CoSTR’er, hvor der er taget højde for Evidence to Decision-
+tabeller, narrative reviews og Task Force-diskussioner, som er beskrevet ud fra hvert emne. For emner, som
+ikke er blevet vurderet af ILCOR, har skrivegruppen brugt andre systematiske reviews, enkeltstående
+studier eller ekspertkonsensus til at udarbejde disse guidelines. I alt dækker disse guidelines 24 emner,
+fordelt på syv generelle principper, otte medicinske nødsituationer, fem traume-relaterede nødsituationer
+og fire nødsituationer betinget af omgivelserne.
+Vigtigheden af førstehjælp kan yderligere øges i fjerntliggende eller ressourcemæssigt begrænsede
+områder, når tilgængeligheden af professionel lægehjælp er forsinket. Derfor har man i disse guidelines
+anvendt World Health Organization’s (WHO) værktøj for lighed, WHO-INTEGRATE3, i forbindelse med
+udarbejdelsen af korte og klare retningslinjer til klinisk praksis. En borger (community advisor) var
+fuldgyldigt medlem af skrivegruppen og deltog i alle trin af processen for at sikre universel forståelse hos
+alle læsere. Ligeledes har et medlem af skrivegruppen (KT) med erfaring fra arbejde i områder med få
+ressourcer vurderet al klinisk rådgivning med fokus på lighed i henhold til INCLEN’s retningslinjer.4,5 Detaljer
+om hvordan lighed er blevet varetaget i alle faser af udviklingen af guidelines kan findes i Appendiks A
+(dette er ikke oversat til dansk). Derudover er en onlineundersøgelse udsendt via sociale medier fra 22/01/25
+til 09/04/25 med 1.406 deltagere fra 37 lande blevet brugt til at understøtte klinisk praksis (Appendiks B.
+Dette er ikke oversat til dansk). Alle medlemmer af førstehjælps-skrivegruppen og Guidelines styregruppen
+godkendte denne version, som har været i offentlig høring fra 15. maj til 30. maj 2025. I alt 115 personer
+indsendte 115 kommentarer, hvilket resulterede i 18 ændringer i den endelige version. Guidelines blev
+fremlagt for og godkendt af ERC’s bestyrelse samt generalforsamling i juni 2025. Metoden, der blev anvendt
+til udviklingen af guidelines, er beskrevet i Executive summary6 (dette er ikke oversat til dansk).
+--- p4
+4
+Figur 1. Førstehjælp – nøglebudskaber
+Resumé af centrale ændringer eller ny evidens
+Tabel 1. De væsentlige ændringer i ERC Guidelines 2025 for Førstehjælp
+ERC Guidelines 2021 ERC Guidelines 2025
+Ikke inkluderet Forventninger til en førstehjælper - Ring altid efter hjælp
+som en generel regel, og brug kun udstyr eller medicin, du er
+blevet trænet i at bruge.
+Ikke inkluderet Førstehjælpskurser - Bør styrke lighed og tilpasses
+nationale/regionale krav fremfor at blive gennemført i et
+standardformat. De bør udvide træningen i psykisk
+forberedelse, og hvordan man håndterer angst og stress før
+og efter at have ydet førstehjælp.
+Ikke inkluderet Førstehjælpskasser - En tilpasset kasse, baseret på risici og
+brugere, bør være tydeligt markeret og tilgængelig i hjem,
+køretøjer, bygninger, offentlige rum osv.
+Stabilt sideleje
+Optimal positionering ved shock
+Tilgang til og kropspositionering af en person med nedsat
+bevidsthed - Struktureret første vurdering af en person, der
+ser syg eller skadet ud (ABCDE).
+Hjertestop, stabilt sideleje og optimal positionering ved shock
+er blevet samlet i en enkelt algoritme.
+￼
+--- p5
+5
+Ikke inkluderet Brug af pulsoximetri og tilskud af ilt - Brug et pulsoximeter
+til at titrere den administrerede ilt til en mætning på 94-98 %.
+Hos personer med kendt kronisk obstruktiv lungesygdom,
+skal man sigte efter en iltmætning på 88 – 92 %.
+Ikke inkluderet Kvælning - Brug en eskalerende strategi fra opmuntring til
+hoste til dunk i ryggen til tryk i maven.
+Ikke inkluderet Opioidoverdosis - Administrér nasal naloxon til en bevidstløs
+person med mistanke om opioidoverdosis, som ikke trækker
+vejret eller trækker vejret unormalt.
+Ikke inkluderet Selvmordstanker – (ikke oversat, da ERC’s anbefalinger ikke
+er i overensstemmelse med dansk praksis).
+Ikke inkluderet Bevaring af en amputeret legemsdel - Hold delen kold uden
+at fryse den og transportér den sammen med den
+tilskadekomne til hospitalet.
+Ikke inkluderet Drukning – Utrænede førstehjælpere bør ikke gå i vandet,
+men i stedet tilbyde et flyderedskab eller redningskrans. Hvis
+du er trænet og det er forsvarligt, gå i vandet med
+flydeudstyr. Efter fjernelse fra vandet, hvis personen er
+bevidstløs, tilkald hjælp, giv 5 indblæsninger og fortsæt med
+standard BLS.
+Ikke inkluderet Slangebid (Europæisk hugorm) - Hold personen rolig og
+med den bidte legemsdel immobiliseret, mens der
+transporteres til en medicinsk facilitet.
+• Orale rehydreringsløsninger til
+behandling af
+anstrengelsesudløst dehydrering
+• Håndtering af presynkope
+• Nedkøling af termiske
+forbrændinger
+• Forbindinger til termiske
+forbrændinger
+• Afrevet tand
+• Kompressionsbandage til lukkede
+ledskader på ekstremiteter
+• Udretning af en vinklet fraktur
+• Øjenskade fra kemisk
+eksponering
+Ikke inkluderet.
+Siden 2021 har ERC skærpet sit fokus og fremhæver nu, hvor
+vigtig førstehjælp er i Overlevelseskæden ved hjertestop –
+både for at mindske følgerne af sygdom og for at forebygge
+hjertestop. Da disse emner ikke var direkte relateret til det
+reviderede fokus, blev de ikke længere inkluderet.
+Kortfattede guidelines til klinisk praksis
+Implementering af førstehjælpsguidelines og overvejelser ved forskellige omgivelser
+Hvis man tager højde for forskellene mellem disse fire centrale områder, bliver det lettere at implementere
+guidelines (Tabel 2).
+• Person, der modtager førstehjælp
+• Førstehjælper
+• Behandling
+• Situation og omgivelser
+--- p6
+6
+Tabel 2
+Forventninger til førstehjælperen
+Som førstehjælper kan du minimere yderligere skader, forbedre helbredet og forebygge dødsfald ved at
+følge disse tre nøgleprincipper:
+• Kontrollér om skadestedet er sikkert.
+• Ring 1-1-2 med det samme.
+• Brug kun det udstyr eller de medikamenter, du er blevet trænet i at bruge.
+Førstehjælpskurser
+• Førstehjælpskurser bør være tilgængelige for den bredest mulige målgruppe og fremme lige
+muligheder både i at yde og modtage førstehjælp.
+• Kursusudbydere bør tilpasse indholdet ud fra deltagernes behov, deres kontekst (ressourcesvage
+omgivelser, landdistrikter), sociokulturel relevans og gennemførlighed.
+• Kurser bør undervise i regional ’Good Samaritan’ lovgivning.
+• Kurser bør indeholde redskaber, der hjælper både forbipasserende, lægfolk og professionelle
+førstehjælpere med at håndtere frygt og bekymringer vedrørende moral og etik både under og efter, at
+de yder førstehjælp.
+Førstehjælpsudstyr
+• Alle arbejdspladser, fritidscentre, offentlige bygninger, private hjem og køretøjer bør have
+førstehjælpskasser.
+• Offentlige førstehjælpskasser bør opfylde lokale lovkrav, være tydeligt markeret og let tilgængelige.
+• Indholdet af førstehjælpskasser bør baseres på lokale vurderinger, forventede risici og brugere.
+• Alle førstehjælpskasser bør inspiceres regelmæssigt og vedligeholdes korrekt.
+Hjertestop
+• Hvis du mistænker et hjertestop, skal du ringe 112 og følge den sundhedsfaglige visitators vejledning i,
+hvordan du udfører hjertelungeredning (HLR).
+• Begynd HLR med det samme uden at bekymre dig om at skade personen. Det er vigtigere at redde
+deres liv end at være bekymret for at skade ofret ved genoplivningsforsøg.
+• Fortsæt HLR, indtil professionel hjælp ankommer og overtager, eller indtil du får besked på at stoppe.
+Førstehjælpsområder for evaluering af evidens
+og behandlingsanbefalinger Eksempler på karaktertræk
+Person der modtager førstehjælp Alder, køn, kønsidentitet, helbredstilstand, evne til at
+give samtykke
+Førstehjælper Viden, uddannelse/træning, parathed, kendskab,
+pligt til at reagere, fagligt ansvarsområde, evne
+Behandling Invasivitet, nødvendige færdigheder, teknologi,
+virkning og effektivitet, omkostninger
+Situation og omgivelser Lav- eller højressource, sikkerhed, kulturelle normer
+og værdier, bymæssig eller afsides
+--- p7
+7
+Struktureret vurdering for førstehjælpere af personer, der fremstår syge, tilskadekomne eller i shock
+(ABCDE)
+• Vær straks opmærksom på sikkerheden ved skadestedet, om personen er ved bevidsthed og eventuelle
+livstruende blødninger (Figur 2).
+• Brug ABCDE-tilgangen til systematisk vurdering af tilskadekomne (Tabel 3).
+Figur 2. Tilgang til en person med nedsat bevidsthed og placering af deres krop
+￼
+--- p8
+8
+Tabel 3. ABCDE for en førstehjælper
+Vurdér Mulige øjeblikkelige handlinger for en
+voksen person
+Sikkerhed
+Er det sikkert at nærme sig
+personen? (Vejtrafik? Spildte
+kemikalier?) Voldelige personer?)
+Bevidsthedsniveau Forsøg forsigtigt at vække personen.
+Spørg højt: "Er du okay?"
+Livstruende
+blødning
+Er der tegn på livstruende blødning? Stop blødningen med direkte manuelt
+tryk, gazeforbindinger, hæmostatiske
+forbindinger eller en tourniquet (Figur
+9).
+A - Airway (luftvej) Er personens luftvej fri?
+Er personen faldet fra en højde eller
+oplevet større traumer? (Overvej
+skade på halshvirvelsøjlen)
+Placér den ene hånd på panden og
+fingerspidserne fra din anden hånd
+under den hårde del af hagen. Vip
+forsigtigt personens hoved tilbage, løft
+hagen for at skabe en fri luftvej
+(QR-kode 1).
+Flyt ikke personen, medmindre de
+befinder sig i en usikker situation.
+Anvend cervikal immobilisering
+(QR-kode 1)
+B - Breathing
+(vejrtrækning)
+Trækker personen vejret?
+“Se, føl, lyt” for normal vejrtrækning
+(maksimalt 10 sekunder).
+Lyt efter hvæsende vejrtrækning eller
+stridor.
+Er der nogen tydelig hævelse i de
+orale luftveje?
+Er personen ved at kvæles og ude af
+stand til at hoste? Spørg "Bliver du
+kvalt?"
+Er der nogen tegn på hypoksi (blålig
+misfarvning af læber, negle eller
+hud)?
+Vurdér iltmætningsniveauet med et
+pulsoximeter.
+Hvis personen er bevidstløs og ikke
+trækker vejret normalt, ring til 1-1-2 og
+start HLR i henhold til instruktionerne
+fra den sundhedsfaglige visitator.
+Hvis der er mistanke om anafylaksi,
+administrer adrenalin 0,5 mg
+intramuskulært, hvis du er trænet (Figur
+4).
+Hvis der er mistanke om kvælning, giv
+dunk i ryggen og tryk i maven (Figur 5).
+Hvis uddannet, og det er indiceret,
+administrér ilt for at forbedre
+iltmætningen til 94-98 %.
+C - Circulation
+(kredsløb)
+Har personen brystsmerter?
+Er der nogen smerter i brystet,
+nakken eller armen; eller en følelse af
+'alvorlig trykken i brystet'?
+Er der nogen tegn på lavt blodtryk
+eller shock:
+• Meget hurtig eller meget
+langsom puls?
+• Hud bleg, kold eller klam?
+• Svimmelhed eller forvirring?
+Gør personen komfortabel.
+Hvis mistanke om hjertesmerter,
+administrér 150-500 mg aspirin
+tyggetablet (dette er ikke tilgængeligt i
+Danmark. Afvent i stedet ambulancen.)
+Overvej brugen af passiv benløftning
+som en midlertidig foranstaltning, mens
+du venter på avanceret akutmedicinsk
+behandling.
+Fortsæt med at overvåge personen nøje
+for forværring eller tab af bevidsthed
+(muligt hjertestop).
+D - Disability
+(neurologisk status)
+Vurdér bevidsthedsniveauet ved
+hjælp af akronymet ACVPU;
+• A - Alert (vågen)
+• C - Confusion (forvirret)
+Hvis der er mistanke om hjernerystelse –
+fjern fra fysisk aktivitet.
+Hvis der er mistanke om hypoglykæmi
+(lavt blodsukker), administrér glukose-
+--- p9
+9
+• V - Verbal (reagerer på din
+stemme)
+• P - Smerte (reagerer på smerte
+ved at klemme deres skulder)
+• U - Unresponsive
+(bevidsthedsniveau)
+Brug en skala til vurdering af stroke,
+hvis det er relevant.
+eller dextrosetabletter (15-20 g) gennem
+munden.
+Hvis der er mistanke om
+opioidoverdosis, administrér nasal
+naloxon (Figur 6).
+E - Exposure
+(eksponering)
+Kontrollér for ydre skader ved at
+undersøge hele kroppens
+overfladeareal (hoved, hals, krop og
+legemsdele).
+Mål kernetemperatur (hvis muligt).
+Forebyg hypotermi. Fjern vådt tøj og
+brug tæpper.
+Hypertermi – start aktiv nedkøling.
+Bevar amputerede dele i en nedkølet
+beholder og bring dem til det samme
+hospital som den tilskadekomne person.
+Brug stabilt sideleje hos en person med et fald i bevidsthedsniveau af ikke-traumatisk ætiologi, som
+trækker vejret normalt og ikke kræver øjeblikkelig genoplivning (Figur 3).
+Revurdér for tegn på luftvejsobstruktion, utilstrækkelig eller agonal vejrtrækning og bevidstløshed.
+Stabilt sideleje
+• Placér voksne og børn med nedsat bevidsthedsniveau, som IKKE opfylder kriterierne for påbegyndelse
+af HLR, i stabilt sideleje (Figur 3).
+• I tilfælde af agonal vejrtrækning eller traume må du IKKE placere personen i stabilt sideleje.
+Brug et pulsoximeter og anvend ilt-tilførsel ved akut vejrtrækningsbesvær
+• Giv ilt til en person, der har svært ved at trække vejret og ser cyanotisk ud (blålig farvet), men kun hvis
+du er uddannet i administration af medicinsk ilt. I Danmark må man kun give medicinsk ilt på
+delegation fra en læge.
+• Brug et pulsoximeter til at justere den administrerede ilt.
+• Giv ilt via ansigtsmaske eller en maske, der forhindrer gen-indånding og justér derefter
+flowhastigheden for at opretholde en iltmætning på 94-98 %.
+• Hvis personen har kronisk obstruktiv lungesygdom (KOL), skal ilt-tilførslen tilpasses, så iltmætningen
+holdes mellem 88 og 92 %.
+• Hvis der er livstruende lav iltmætning (iltmætning under 88 %), skal du give ilt med højere flow til alle –
+også personer med kronisk obstruktiv lungesygdom, der har svært ved at trække vejret, når det sker
+uden for hospital.
+Medicinske nødsituationer
+Anafylaksi
+• Mistænk anafylaksi, hvis en person har:
+o Stridor (som kan skyldes hævelse i de øvre luftveje), hvæsende vejrtrækning (som kan skyldes
+luftvejsobstruktion i den nedre del af luftvejen) eller vejrtrækningsbesvær.
+o Rødmen (flushing), udslæt (nældefeber), kold eller svedig hud eller en følelse af svimmelhed eller at
+være ved at besvime.
+--- p10
+10
+o Mavesmerter, opkastning eller diarré.
+o En nylig eksponering for kendte fødevareallergener eller insektstik.
+• Ring 1-1-2.
+• Sørg for, at personen forbliver i en siddende eller liggende position.
+• Giv intramuskulær adrenalin så hurtigt som muligt via autoinjektor i ydersiden af låret i den anbefalede
+dosis (selvadministreret eller givet af personer, som er trænet i det) (Figur 4).
+o 0,15 mg til børn i alderen 1-5 år
+o 0,3 mg for børn i alderen 6-12 år
+o 0,5 mg for voksne
+• Hvis en autoinjektor ikke er tilgængelig, brug en næsespray til intranasal administration.
+• Giv endnu én dosis adrenalin, hvis symptomerne fortsætter 5 minutter efter administration.
+Figur 4. Rækkefølge af handlinger ved anafylaksi
+Luftvejsobstruktion hos en voksen person
+• Mistænk luftvejsobstruktion, hvis en person pludselig ikke kan tale eller hoste, især hvis de er i gang
+med at spise.
+• Spørg personen: ”Har du fået noget galt i halsen?”
+• Opfordr personen til at hoste.
+• Hvis personen ikke er i stand til at hoste, eller hvis hosten bliver ineffektiv, giv op til 5 dunk i ryggen
+(Figur 5).
+• Hvis dunk i ryggen er ineffektive, giv op til 5 tryk i maven (Figur 5).
+• Hvis luftvejsblokeringen fortsat er til stede efter 5 tryk i maven, fortsæt da med skiftevis at give 5 dunk i
+ryggen efterfulgt af 5 tryk i maven, indtil fremmedlegemet er frigjort, eller personen bliver bevidstløs.
+• Ring 1-1-2.
+• Brug IKKE fingeren til at forsøge at fjerne et fremmedlegeme fra munden eller luftvejen.
+• Start HLR, hvis personen bliver bevidstløs.
+￼
+--- p11
+11
+• Enhver person, der med succes er blevet behandlet for kvælning med tryk i maven eller hjertemassage,
+bør vurderes af en sundhedsperson, da komplikationer og skader kan opstå.
+Astma
+• Hvis en person med astma har svært ved at trække vejret, skal førstehjælperen hjælpe med at bruge
+deres egen inhalator og anvende en spacer, hvis der er én til rådighed.
+Brystsmerter
+• Berolig personen og få dem til at sidde eller ligge i en komfortabel stilling.
+• Opfordr personer med brystsmerter, der lyder til at udgå fra hjertet, til at tage 150-500 mg aspirin
+tyggetablet så hurtigt som muligt (dog ikke for voksne kendt med allergi overfor NSAID). Dette
+anbefales dog ikke i Danmark, hvor tyggetabletterne ikke er tilgængelige. Afvent i stedet ambulancen.
+• Hjælp en person med kendt angina med selv at anvende deres nitroglycerinspray eller -tabletter.
+• Bliv hos personen til professionel hjælp ankommer.
+Hypoglykæmi (lavt blodsukkerniveau)
+• Mistænk hypoglykæmi hos en person med diabetes eller kronisk underernæring OG pludseligt nedsat
+bevidsthedsniveau eller ændret adfærd.
+• Hvis personen er vågen og kan synke, så giv 15–20 g glukose eller dextrose i tabletform via munden.
+• Hvis det er muligt, skal du måle blodsukkeret med et blodsukkerapparat. Er det lavt (under 4,0 mmol/L
+eller 70 mg/dL), skal du behandle og derefter gentage målingen.
+• Hvis glukose- eller dextrosetabletter ikke er tilgængelige, kan du give andre sukkerholdige fødevarer,
+såsom en håndfuld sukkerslik eller 50–100 ml frugtjuice eller sukkerholdig sodavand.
+• Hvis der ikke er en tilgængelig sukkerholdig fødevare eller glukosetablet, kan du give glukosegel i
+munden – påfør en del direkte på kindens slimhinde, resten sluges.
+• Gentag dette, hvis symptomerne fortsat er til stede og ikke er forbedret efter 15 minutter.
+• Hvis personen har en ordineret glukagon autoinjektor, kan denne administreres under huden på
+ydersiden af låret (enten af personen selv eller af en, der er trænet i det.). Nogle diabetikere kan have
+glukagonsprøjter til nasal brug.
+• Hos børn kan du overveje at give en halv teskefuld sukker (2,5 g) under tungen, hvis barnet ikke vil eller
+kan synke anden form for sukker (glukose).
+• Ring 1-1-2, hvis personen er/bliver bevidstløs, eller hvis tilstanden ikke bliver bedre.
+• Når symptomerne er forsvundet (typisk 5–10 minutter efter at have fået sukker), så opfordr personen til
+at spise et let måltid.
+• Hvis personen er bevidstløs eller ikke reagerer, må du ikke give sukker (glukose) eller andre fødevarer
+via munden, da der er risiko for, at det kommer i lungerne. Ring i stedet 1-1-2.
+Opioidoverdosis
+• Mistænk opioidoverdosis, hvis personen trækker vejret langsomt, uregelmæssigt eller slet ikke, er
+ekstremt døsig eller bevidstløs, eller har små (snævre) pupiller.
+• Hvis personen er bevidstløs og ikke trækker vejret normalt, start HLR og ring 1-1-2 (Figur 6).
+--- p12
+12
+• Giv naloxon som spray gennem næsen eller brug en intramuskulær naloxon-autoinjektor, hvis du er
+trænet i det.
+• Revurdér personen i henhold til ABCDE (Tabel 3).
+• Følg vejledningen på pakken for, hvornår en ny dosis naloxon skal gives.
+Håndtering af generelle forgiftninger og opioidoverdosis er beskrevet i ERC Guidelines 2025,
+”Special
+Circumstances in Resuscitation” (dette er ikke oversat til dansk).
+Figur 6. Rækkefølge af handlinger ved opioidoverdosis
+￼
+--- p13
+13
+Stroke
+• Brug en stroke-vurderingsskala for at reducere tiden til erkendelse og tilkald hjælp. I Danmark
+anvendes huskereglen: Stræk. Snak. Smil. Ring 1-1-2.
+• Giv kun ilt, hvis du er trænet i brugen af det, og personen viser tegn på hypoksi (blålige læber og hurtig
+vejrtrækning).
+Selvmordstanker
+Dette afsnit er ikke oversat til dansk, da ERC’s anbefalinger ikke er i overensstemmelse med dansk praksis.
+Traumatisk betingede nødsituationer
+Spinal immobilisering
+• Mistænk skade på ryggen (halshvirvler eller ryghvirvler) hos en person, der er faldet, dykket fra en højde,
+er blevet klemt af maskineri eller en tung genstand eller har været involveret i en trafikulykke eller en
+sportsulykke.
+• Minimér bevægelse af nakken, hvis personen er vågen og opmærksom, og opfordr dem til selv at holde
+nakken i en behagelig og stabil position.
+• Tving aldrig en person, der ikke samarbejder, ind i en bestemt stilling, da dette kan forværre en skade.
+• Hos bevidstløse personer, der ligger på ryggen, knæl bag deres hoved og immobilisér hoved og nakke
+ved hjælp af et greb om hovedet eller omkring nakken ved trapeziusmusklen (Figur 8).
+• Overvej behovet for at skabe en fri luftvej hos personen ved hjælp af hovedkip-hageløft-teknikken (QR-
+kode 1).
+• Hvis personen er bevidstløs og ligger på maven med ansigtet nedad, kontroller da om personens luftvej
+er fri, og hold nakken i en stabil position.
+• Hvis du har brug for at skabe en fri luftvej hos personen, så bed andre om at hjælpe dig med forsigtigt at
+rulle dem som en enhed om på ryggen, mens nakken holdes på linje med kroppen og så stabil som
+muligt. Derefter holdes hovedet og nakken stille med greb om hovedet eller trapeziusmusklen.
+• Førstehjælpere med specialiseret træning (f.eks. skibjergningspatrulje, livredder) kan overveje målrettet
+brug af immobilisering af rygsøjlen i henhold til deres eksisterende protokoller.
+QR-kode 1. Åbning af luftvejen, kæbeskub (a) og hovedkip-hageløft (b)
+Kontrol af livstruende blødning
+• Giv et fast, direkte manuelt tryk på den blødende skade (Figur 9).
+• Læg en standard- eller hæmostatisk forbinding direkte på blødningen, og tryk derefter fast ovenpå
+forbindingen.
+• Når blødningen er under kontrol, anlægges en trykforbinding.
+￼
+--- p14
+14
+• Påfør en tourniquet så hurtigt som muligt ved livstruende blødning fra en arm eller et ben, som ikke kan
+kontrolleres med direkte manuelt tryk.
+• Notér tidspunktet for påsættelsen på tourniqueten.
+Åbne brystsår
+• Efterlad et åbent sår på brystkassen utildækket, så luft frit kan passere til og fra omgivelserne.
+• Anvend ikke en forbinding eller dæk såret til.
+• Hvis nødvendigt, kontrollér lokaliseret blødning med direkte tryk.
+• Hvis du er trænet, og udstyret er tilgængeligt, påfør en specialiseret ikke-okkluderende eller ventileret
+forbinding, og sørg for fri luftudstrømning under udånding.
+• Hold øje med, om blødning eller størknet blod blokerer luftstrømmen fra såret.
+Hjernerystelse
+• Mistænk hjernerystelse, hvis en person har problemer med at koncentrere sig eller huske, udviser fysiske
+symptomer (hovedpine, synsforstyrrelser, svimmelhed, kvalme eller opkastning, kramper, lys- eller
+lydfølsomhed), følelsesmæssige ændringer eller ændringer i adfærd (øget træthed, mindre aktivitet end
+normalt, nedsat reaktionsevne, forvirring). Der er forskellige definitioner på hjernerystelse i Danmark.
+• Fjern personen fra fysiske aktiviteter.
+• Henvis til en sundhedsperson for yderligere vurdering og rådgivning.
+Bevarelse af en amputeret kropsdel
+• Stop alvorlig blødning først (se ”Standsning af livstruende blødning”).
+• Find den amputerede legemsdel så hurtigt som muligt, og hold den kold uden at fryse den under 0
+grader (Figur 10).
+o Pak den amputerede legemsdel ind i en steril forbinding eller et rent klæde fugtet med saltvand
+eller vand.
+o Placér den indpakkede legemsdel i en ren, vandtæt plastikpose eller beholder.
+o Læg posen eller beholderen med den amputerede legemsdel i en anden pose med is eller isvand.
+Hvis is ikke er tilgængelig, kan du bruge en køletaske med hurtigtvirkende køleelementer.
+• Hold den amputerede legemsdel kølet hele tiden. Undgå, at den amputerede legemsdel får direkte
+kontakt med is eller frysning. Mærk beholderen med personens navn og tidspunktet for, hvornår den
+amputerede legemsdel blev placeret i beholderen.
+• Transportér den amputerede legemsdel sammen med den tilskadekomne til samme hospital så hurtigt
+som muligt.
+Miljømæssige nødsituationer
+Drukning
+• Gå ikke i vandet for at redde personer, der er ved at drukne, medmindre du er trænet i vandredning, da
+du ellers selv kan komme til at drukne.
+• Hvis personen er vågen og reagerer, bliv på land og nå ud til personen med flyderedskaber,
+redningskrans, redningsbøje eller andet redningsudstyr.
+--- p15
+15
+Uddannede førstehjælpere eller livreddere i vandet eller på en båd (Figur 11)
+• Råb om hjælp, før du går i vandet.
+• Tilbyd den nødstedte et flyderedskab, en redningskrans, en redningsbøje eller andet redningsudstyr.
+• Hold personens hoved over vandet.
+• Vurdér, om personen er bevidstløs, og om personen trækker vejret. Hvis det er muligt og sikkert (med et
+effektivt flyderedskab), giv da 5 indblæsninger i vandet så hurtigt som muligt.
+• Bring personen på land eller på en redningsbåd så hurtigt som muligt.
+• Når personen er ude af vandet, giv 5 indblæsninger, såfremt personen ikke trækker vejret. Hvis det er
+nødvendigt, start standard HLR.
+• Tilslut en hjertestarter, hvis tilgængelig, tør brystkassen af og følg instruktionerne.
+På land, såfremt personen er druknet og er bevidstløs uden normal vejrtrækning
+• Hvis det er muligt og sikkert, giv 5 indblæsninger og start standard HLR.
+• Tilslut en hjertestarter, hvis tilgængelig, tør brystkassen af og følg instruktionerne.
+--- p16
+16
+Figur 11. HLR efter drukning
+Forebyggelse af hypotermi (nedkøling)
+• Isolering: Dæk personen med tørre tæpper eller tøj for at minimere varmetab.
+• Vindbeskyttelse: Skærm personen mod vind ved hjælp af vindbarrierer (læ) eller ved at flytte i læ.
+• Fjernelse af vådt tøj: Fjern forsigtigt vådt tøj og erstat det med tørt tøj for at forhindre yderligere
+nedkøling.
+• Jordisolering: Læg isolerende materialer, f.eks. tæpper eller underlag, mellem personen og den kolde
+jord.
+￼
+--- p17
+17
+• I omgivelser, hvor hypotermi kan være almindeligt, implementér tilpassede forebyggelsesplaner og
+træning for førstehjælperen.
+Hedeslag
+• Overvej symptomer på hedeslag ved høje temperaturer i omgivelserne, såsom forhøjet
+kernetemperatur, forvirring, uro, desorientering, kramper eller bevidstløshed.
+• Forebyg anstrengelsesudløst hedeslag (f.eks. ved langdistanceløb i varmt vejr) ved at forberede sig
+ordentligt og have udstyr klar til både at opdage tilstanden (rektal termometer) og køle ned (isvandbad).
+• Ved mistanke om hedeslag bør personen fjernes fra varmekilden, og passiv nedkøling påbegyndes ved
+at fjerne overskydende tøj og placere personen et køligere/skyggefuldt sted (Figur 12).
+• Brug enhver tilgængelig teknik til straks at give aktiv nedkøling, hvis kernetemperaturen > 40 °C.
+• Køl hele kroppen (fra halsen og ned) ned i koldt vand (1–26 °C), indtil kernetemperaturen falder til under
+39 °C. Alternativer er: Tarp-Assisted Cooling Oscillation (TACO) (Figur 13), issvøb, kommercielle ispakker,
+afkøling med ventilator, kold bruser, køleenheder til hænder, køleveste og -jakker eller evaporativ
+nedkøling (vandforstøvning og ventilator)."
+• Hvor det er muligt, overvåg kernetemperaturen (rektaltermometer).
+• Hvis en kernetemperatur ikke kan opnås, fortsæt nedkøling i 15 minutter eller indtil neurologiske
+symptomer forsvinder, alt efter hvad der kommer først.
+• Husk: Nedkøling først, overførsel derefter.
+• Bliv ved med at køle personen ned under transport til hospitalet for videre undersøgelse.
+--- p18
+18
+Figur 12. Håndtering af hedeslag og anstrengelsesudløst hypertermi
+￼
+--- p19
+19
+Figur 13. Presenning assisteret oscillerende nedkøling ved hedeslag
+Slangebid
+Den eneste naturligt forekommende, meget giftige slange i Europa er hugormen, som har en gift, der
+nedbryder blodets celler.
+• Ring 1-1-2.
+• Hold personen rolig og i hvile.
+• Hold den bidte kropsdel i ro og immobilisér den påvirkede ekstremitet, da dette kan nedsætte
+spredningen af gift.
+• Fjern stramt tøj, ringe eller ure fra den berørte kropsdel.
+• Undgå skadelige handlinger:
+o Anvend ikke trykforbinding, is, varme eller brug af tourniquet.
+o Skær ikke i såret, og forsøg aldrig at suge giften ud.
+QR-kode 2. ERC Guidelines 2025 — Førstehjælp i billeder
+Evidensen bag guidelines for førstehjælp
+Forventninger til en førstehjælper, førstehjælpskurser, implementering af guidelines for
+førstehjælp og hensyn til forskellige kontekster
+Disse guidelines præsenterer evidensbaserede anbefalinger med dét formål at forbedre den umiddelbare
+indsats ved skade og pludselig sygdom. Forskning i førstehjælp er begrænset, og indirekte evidens fra
+præhospitale studier er anvendt til at udarbejde disse guidelines. Al genoplivning starter med førstehjælp,
+og førstehjælp er ofte kun begyndelsen på de tiltag, der er nødvendige for at redde liv. Førstehjælp er den
+hjælpsomme adfærd, der kan være livreddende. For nogle førstehjælpere vil det eneste skridt bestå i at
+￼
+￼
+--- p20
+20
+ringe 1-1-2. For andre er det første, de gør, at ringe 112 – og derefter følger en række tiltag. Alle førstehjælpere
+bør kun anvende det udstyr og den medicin, de er oplært i at bruge. Et systematisk review7 og to
+kohortestudier8 indikerer, at simple manøvrer som at åbne luftvejen eller stoppe en blødning kan forhindre
+dødsfald. Et ILCOR scoping-review antyder, at disse hjælpsomme handlinger og viljen til at træne er
+stærkere hos førstehjælperen, der har overværet, at en person kollapsede.9 Når man underviser i førstehjælp
+og implementerer førstehjælpsguidelines, bør fire væsentlige domæner overvejes: Modtageren,
+førstehjælperen, behandlingen og omgivelserne (Tabel 2). At tage disse domæner i betragtning vil
+understøtte implementering på tværs af forskellige kompetencer, fra utrænede tilskuere til
+sundhedsprofessionelle, og i forskellige omgivelser, herunder fjerntliggende og ressourcestærke områder. I
+fjerntliggende eller områder med få ressourcer bliver førstehjælp særligt vigtig, fordi der kan gå længere
+tid, før der kommer professionel sundhedsfaglig hjælp. Mange steder er førstehjælperen juridisk beskyttet
+af ’Good Samaritan’
+-lovgivning.10 De etiske aspekter af førstehjælp er beskrevet i ERC Guidelines 2025,
+”Ethics in Resuscitation”11, mens de uddannelsesmæssige aspekter er beskrevet i ERC Guidelines 2025,
+”Education for Resuscitation”
+.
+12
+Førstehjælpskurser er udformet til at give deltagerne den viden, de færdigheder og den selvtillid, der er
+nødvendig for at kunne handle i en bred vifte af situationer, og dermed styrke et samfund, der er forberedt
+på at reagere effektivt, når nødsituationer opstår. ERC fremmer strukturerede uddannelsesprogrammer,
+der reducerer kendte barrierer for træning, såsom høj alder, lav socioøkonomisk og uddannelsesmæssig
+status samt det at tilhøre minoritetsgrupper på baggrund af race eller sprog.13 At hjælpe alvorligt syge eller
+tilskadekomne personer som førstehjælper kan være stressende.14,15 Et ILCOR-scoping review9 har påpeget,
+at kurser med skræddersyet indhold baseret på deltagernes behov og krav, relateret til specifikke
+kontekstafhængige risici, kan være mere effektive end standardiserede ’one-size-fits-all’-kurser.9
+Kursusledere bør fremme lighed ved at tilbyde kurser, der reducerer uligheder mellem udsatte og
+privilegerede befolkningsgrupper. Derudover bør indholdet være socialt og kulturelt passende, og den
+viden og de færdigheder, der undervises i, bør være anvendelige inden for det regionale sundhedssystem.3,5
+De omfattende og mangesidede aspekter af uddannelse inden for genoplivning er beskrevet i ERC
+Guidelines 2025, ”Education for Resuscitation”
+.
+12
+Førstehjælpsudstyr
+ERC anbefaler, at alle arbejdspladser, fritidscentre, offentlige bygninger, hjem og køretøjer bør være
+udstyret med passende førstehjælpsudstyr. Indholdet af en førstehjælpskasse bør tilpasses miljøet og de
+potentielle medicinske nødsituationer, der kan opstå. På arbejdspladser og i offentlige rum bør
+førstehjælpsudstyr overholde lokale lovmæssige sundheds- og sikkerhedskrav, være tydeligt markeret og
+forblive lettilgængelige.16 Til brug i hjemmet eller køretøjet kan man købe en færdigpakket
+førstehjælpskasse eller selv samle én, hvis den lokale lovgivning tillader det. En veludstyret
+førstehjælpskasse bør indeholde basale fornødenheder såsom plastre, mellemstore og store
+sårforbindinger, rullebind, trekantede tørklæder, sikkerhedsnåle, tape, engangshandsker,
+engangsmundbind, plastforklæder, hånddesinfektion samt en ansigtsskærm eller en lomme-maske – alt
+sammen opbevaret i en egnet, tydeligt mærket og vandtæt beholder. Andre nyttige genstande kan
+omfatte en saks, en pincet og en kraftig tekstil-saks. I mange lande skal biler have en førstehjælpskasse
+med advarselstrekant og refleksvest, så førstehjælperen er mere sikker og for at opfylde lovkrav.
+--- p21
+21
+Specialiseret førstehjælpsudstyr bør inkluderes i førstehjælpskasser baseret på de specifikke risici, der er
+forbundet med et arbejde eller en lokation.
+En onlineundersøgelse udført af ERCs arbejdsgruppe for førstehjælp (Appendiks B) viste, at tourniqueter (til
+livstruende blødninger) og naloxon (til behandling af opioidoverdosis) bliver mere tilgængelige og
+anvendte, hvilket understreger den stigende forståelse af deres betydning i førstehjælp og nødsituationer.
+Førstehjælpskasser på arbejdspladser med høj risiko for livstruende blødning, såsom skovbrug eller byggeri,
+bør indeholde tourniquets og hæmostatiske forbindinger.17 Tilstedeværelsen af førstehjælpsudstyr til
+håndtering af blødning i offentlige rum har vist sig at øge tilliden hos lægfolk, som derfor er mere tilbøjelige
+til at bruge dem, især hvis de har modtaget forudgående træning i disse teknikker. Derudover har
+træningsprogrammer som ‘Stop the Bleed’ vist, at personer med førstehjælpskasser udstyret til traumer er
+mere selvsikre og effektive i håndtering af blødninger.17 Steder med høj risiko for opioidoverdosis, f.eks.
+misbrugscentre, natklubber og stationer, bør have naloxon klar til hurtig hjælp18, hvis loven tillader det.
+Førstehjælpere i områder med ekstreme vejrforhold bør overveje at tilføje en kompakt overlevelsespose,
+splints, sårforbindinger, lommelygte og fløjte til førstehjælpskasser.
+Hjertestop
+At give hjertemassage af høj kvalitet er et afgørende led i Overlevelseskæden ved hjertestop, og når
+førstehjælperen starter HLR med det samme, øger det chancen for overlevelse. Der kan dog være en vis
+tilbageholdenhed blandt førstehjælpere med at starte HLR af frygt for at gøre skade. Skader som følge af
+HLR udført på personer med længerevarende hjertestop er almindelige og omfatter primært brud på
+ribben og brystben samt skader på lunger og organer i abdomen.19,20 Omvendt er risikoen for samlet set at
+skade personer ved at udføre HLR, når de faktisk ikke er i hjertestop, stort set ubegrundet. Et systematisk
+review af personer, der modtog hjertemassage, men ikke var i hjertestop, udført af ILCOR First Aid Task
+Force, omfattede fem observationsstudier med 1031 patienter,21 hvor kun 9 (< 1 %) oplevede skader, herunder
+ribbensbrud og forskellige indre blødninger, og 24 (2 %) rapporterede symptomer som brystsmerter efter
+hændelsen.21 Førstehjælperen og andre trænede lægmænd, sundhedspersonale og personer med pligt til
+at yde hjælp, bør starte hjertelungeredning (HLR) ved formodet hjertestop uden bekymring for utilsigtede
+skader – selv hvis personen muligvis ikke er i hjertestop. Den indledende behandling af et hjertestop er
+beskrevet i ERC Guidelines 2025, ”Basal hjertelungeredning og brug af en hjertestarter til voksne”.22
+Struktureret vurdering for førstehjælpere af personer, der fremstår syge, tilskadekomne
+eller i shock (ABCDE)
+Et nylig scoping-review23, der inkluderede 57 studier, rapporterede 39 forskellige vurderingsværktøjer til
+sundhedspersonale eller studerende inden for sundhedsuddannelser. Af disse anvendte 23 en struktureret
+ABCDE-tilgang.23 Årsagerne til variationen mellem de 23 forskellige ABCDE-tilgange relaterede sig til
+forskellige evaluatorers kompetencer og de specifikke overordnede mål for vurderingen. Tiden til
+færdiggørelse af den første vurdering var i ét scoping-review mellem to og seks minutter i et simulations-
+studie. ERC anbefaler brugen af den strukturerede ABCDE-tilgang eller et tilsvarende vurderingsværktøj for
+sundhedspersoner og førstehjælpere til vurdering af akut syge og tilskadekommende. Efter at have sikret,
+at skadestedet er sikkert, skal førstehjælperen begynde med at undersøge, om personen reagerer, og om
+der er livstruende tilstande som alvorlig blødning eller hjertestop. For at vurdere en person, der er ved
+bevidsthed, skal du observere deres adfærd, stille spørgsmål for at få viden om symptomer, allergier og
+--- p22
+22
+sygehistorie og undersøge for fysiske tegn på sygdom eller skade (efter at have fået samtykke). ABCDE-
+tilgangen kan bruges til at strukturere vurderingen af en person, der ser syg ud eller er kommet til skade.
+Tabel 3 præsenterer en opsummering af ABCDE-tilgangen og de umiddelbare handlinger, der skal udføres;
+detaljer er angivet under hvert afsnit. Vurderingen skal være grundig, men bør kun tage et par minutter at
+gennemføre. Vurderingen af et barn der er sygt eller kommet til skade, er beskrevet i ERC Guidelines 2025,
+”Paediatric Life Support” (dette er ikke oversat til dansk).
+24
+European Society of Intensive Care Medicine har defineret shock som en livstruende, generaliseret form for
+akut kredsløbssvigt, der er forbundet med utilstrækkelig iltudnyttelse i cellerne.25 Shock kan have mange
+årsager, men den primære opgave for en førstehjælper er at opdage yderligere forværring ved at revurdere
+vital parametre og holde personen i rygleje frem for at flytte dem til en alternativ stilling.26 Brugen af passiv
+benløftning kan give en forbigående (< 7 min) forbedring i hjertefrekvens, middelarterietryk, cardiac index
+eller slagvolumen for personer uden tegn på forudgående traume.27,28 Den optimale grad af elevation er
+ikke blevet fastlagt med studier af passiv benløftning, der varierer mellem 30-60 graders elevation. Fordi
+forbedring med passiv benløft er kortvarig, og dens kliniske betydning er usikker, anbefales det ikke som en
+rutinemæssig procedure, selvom det kan være relevant i visse førstehjælpssituationer. Disse anbefalinger
+tillægger en øget værdi til den potentielle, men usikre, kliniske fordel ved forbedrede vitale parametre og
+hjertefunktion ved at placere en person med shock i rygleje (med eller uden passivt benløft) frem for
+risikoen ved at flytte personen.
+Stabilt sideleje
+Et ILCOR scoping review af aflåst sideleje hos voksne og børn med nedsat bevidsthedsniveau — som følge
+af medicinsk sygdom eller ikke-fysisk traume og som ikke opfylder kriterierne for hjertelungeredning (HLR)
+identificerede 34 studier.26 De fleste af disse blev udført på vågne, raske frivillige og havde fokus på komfort
+samt at sikre, at den afhængige arms blodforsyning ikke blev afklemt. En nylig randomiseret kontrolleret
+undersøgelse (RCT) på frivillige placeret i stabilt sideleje med enten bøjet eller lige arm viste ingen forskel i
+overarmens vaskulære forsyning eller komfort29, derfor kan begge positioner anvendes. Det kan anvendes
+hos personer med nedsat bevidsthed for at opretholde en fri luftvej, og hos børn har det vist sig at reducere
+indlæggelsesrater.30 I ét enkelt observationelt studie blev en halvt siddende stilling dog foretrukket frem for
+sideleje ved opioidoverdosis.31 Baseret på et ILCOR scoping review anbefaler ERC at placere tilskadekommet
+i lateral sideleje i stedet for at lade personen ligge på ryggen. En person, der er placeret i sideleje, bør
+overvåges for at sikre fortsat fri luftvej, vejrtrækning og bevidsthedsniveau. Hvis disse kritiske tegn
+forværres, bør personen lægges i rygleje, og hvis det er nødvendigt, påbegyndes HLR med en hjertestarter.
+Hos en person med agonal vejrtrækning eller som har været udsat for traume, bør sideleje ikke anvendes.
+Personer med historik med traume bør holdes i rygleje.
+For voksne og børn med et fald i bevidsthed på grund af medicinsk sygdom eller ikke-fysisk traume, som
+IKKE opfylder kriterierne for påbegyndelse af indblæsninger eller hjertemassage (HLR), placeres personen i
+stabilt sideleje (Figur 3):
+• Sørg for, at personens ben ligger lige.
+• Placér den arm, der er tættest på dig, i en ret vinkel til kroppen. Armen kan ligge lige (Figur 3a) eller
+bøjet (Figur 3b).
+--- p23
+23
+• Før den arm, der er fjernest, over brystet og hold bagsiden af hånden mod dén af personens kinder, der
+er tættest på dig.
+• Med din anden hånd, tag fat i det ben der er fjernest fra dig lige over knæet og løft forsigtigt knæet op,
+mens foden holdes på jorden, for at bøje knæet.
+• Hold hånden presset mod kinden, træk i det ben, der er fjernest fra dig, og rul forsigtigt personen mod
+dig og over på siden.
+• Justér det øverste ben, så både hofte og knæ er bøjet i rette vinkler.
+• Vip forsigtigt hovedet tilbage for at sikre, at luftvejen forbliver åben.
+• Justér hånden under kinden, hvis nødvendigt, for at holde hovedet vippet og vendt nedad til siden, så
+væsker og flydende substanser kan drænes fra munden.
+• Kontrollér regelmæssigt for normal vejrtrækning.
+• Efterlad kun personen uden opsyn, hvis det er nødvendigt for at søge hjælp.
+I tilfælde, hvor der er en stor størrelsesforskel mellem førstehjælperen og den bevidstløse person, kan du
+overveje at placere knæet først for at reducere den strækning, der kræves for at nå den fjerneste arm.
+Figur 3. Stabilt sideleje for at opretholde en fri luftvej med armen bøjet (a) og armen strakt (b)
+Brug af pulsoximetri
+Et pulsoximeter er et ikke-invasivt apparat, der sender rødt og infrarødt lys gennem en fingerspids, øreflip
+eller andet væv og ved hjælp af en sensor måler iltmætningen (niveauet af ilt bundet til hæmoglobin) i
+blodet og pulsfrekvensen. Et ILCOR scoping review fra 2022 fandt ikke nogen studier, der evaluerede
+brugen af pulsoximetri specifikt i førstehjælpssammenhæng.32 Imidlertid er pulsoximetre blevet bredt
+anvendt af offentligheden til daglig selvmonitorering af blodets iltmætning og hjertefrekvens under
+COVID-19 og andre luftvejsinfektioner samt hos patienter med kronisk obstruktiv lungesygdom (KOL),
+lungeemboli, astma og cystisk fibrose.32 Pulsoksimetre er nu ofte inkluderet i mange førstehjælpskasser og
+bærbare enheder som ure og fitnessarmbånd. Brugen af et pulsoximeter bør aldrig erstatte eller forsinke en
+struktureret ABCDE-tilgang og vurdering (Tabel 3). Hypoxæmi kan blive overset på grund af en
+overvurdering af iltmætning hos personer med mørk hud og andre med høje niveauer af
+hudpigmentering.7,33-36 Pulsoximetermålinger kan også være unøjagtige eller ulæselige ved shock eller
+￼
+--- p24
+24
+tilstande med lav perfusion, med øget negletykkelse eller neglelak, lavt batteriniveau, bevægelse eller
+vibration, og i ekstreme temperaturer.37
+Brug af ilt ved akut åndedrætsbesvær
+Ikke alle førstehjælpere er uddannet eller har tilladelse til at give ilt. Nogle førstehjælpsorganisationer
+træner og udstyrer dog deres medlemmer til sikkert og effektivt at give supplerende ilt til specifikke
+tilstande forbundet med hypoksi såsom efter drukning eller kulilteforgiftning. I Danmark må man kun give
+medicinsk ilt på delegation fra en læge. Et ILCOR review fra 2015 indikerede brugen af supplerende ilt hos
+personer med symptomer på hypoksi.38,39 For nylig blev brugen af supplerende ilt hos personer med en akut
+forværring af KOL fremhævet i et ILCOR scoping review fra 2025.40 Et RCT41 evaluerede præhospitale
+akutberedskabers brugen af ilt med fast flow på 8-10 L/min via en ansigtsmaske, der forhindrer gen-
+indånding, sammenlignet med titreret ilt via næsebriller for at opretholde en iltmætning mellem 88 %-92 %
+hos personer med diagnoser af KOL og akut åndenød. Brugen af titreret ilt hos personer med en akut
+forværring af KOL viste sig at reducere dødeligheden med 58 % sammenlignet med høj-flow ilt. Ligeledes
+har retrospektive studier også fundet, at ukontrolleret iltstrøm ved akutte forværringer af KOL er forbundet
+med en øget risiko for død, assisteret ventilation eller respirationssvigt.42-44 Der blev ikke fundet nogen
+evidens i det indledende review, der taler imod førstehjælpstilskud af ilt til voksne eller børn, der udviser
+tegn eller symptomer på akut åndenød eller hypoksi uden for hospital. Den indirekte evidens, der er
+identificeret, antyder, at ukontrolleret ilt kan være skadelig for personer med akutte forværringer af KOL.
+Disse førstehjælpsanbefalinger er baseret på ILCORs 'good practice' erklæring, der foreslår, at tilskud af ilt
+bør titreres til en iltmætning på 88-92 % for patienter med en akut forværring af KOL.40 Men i tilfælde af
+livstruende hypoxæmi (iltmætning < 88 %) bør høj-flow eller høj koncentration ilt ikke begrænses.
+Medicinske nødsituationer
+Anafylaksi
+Anafylaksi er en alvorlig, livstruende overfølsomhedsreaktion, der kan være dødelig, hvis den ikke hurtigt
+identificeres og behandles. Et systematisk review viser, at fødevarer, medicin, insektstik eller gift og latex er
+de mest almindelige årsager til anafylaksi i Europa.45 Omkring en fjerdedel af alle tilfælde af anafylaksi i det
+Europæiske Anafylaksi Register forekommer hos børn, hvor den mest almindelige udløser er mad (nødder
+fra træer, komælk, hønseæg), mens bistik er mest almindelige hos voksne.46,47 Fatal anafylaksi kan opstå
+hurtigt efter eksponering for allergen. Reaktionstiden afhænger af eksponeringsvejen og typen af allergen
+— inden for fem minutter for iatrogene reaktioner, 15 minutter for insektstik eller gift, 30 minutter for
+fødevare-relaterede reaktioner og op til en forsinkelse på mere end 4 timer for orale lægemidler.46 Disse
+tidsrammer understreger den afgørende betydning af effektive førstehjælpsstrategier til håndtering af
+anafylaksi.48
+Erkendelse af anafylaksi
+At erkende og diagnosticere anafylaksi kan være udfordrende på grund af en bred vifte af symptomer, der
+ofte ligner både allergiske og ikke-allergiske lidelser.49 Et opdateret ILCOR review fra 2023 angiver de mest
+almindelige tegn og symptomer på anafylaksi som angst, vejrtrækningsbesvær (inklusive støjende
+vejrtrækning, hvæsende vejrtrækning eller vedvarende hoste), luftvejsforsnævring, hævelse af ansigt og
+tunge, vanskeligheder med at tale og/eller hæs stemme, mavesmerter, diarré, kvalme og opkastning,
+--- p25
+25
+nældefeber, vabler og rødme (flushing), tegn på shock (inklusive forvirring, uro, bleghed og slaphed, tab af
+bevidsthed) og hjertestop.50 Det samme ILCOR scoping review identificerede nylige studier vedrørende
+uddannelse, handlingsplaner, protokoller og faktorer, der påvirker brugen af adrenalin autoinjektorer, som
+antyder, at træning forbedrer erkendelsen af anafylaksi.
+Behandling af anafylaksi
+At placere personen liggende på ryggen med benene hævet eller, i tilfælde af vejrtrækningsproblemer,
+siddende med strakte ben, kan muligvis forebygge kredsløbsforværring (ekspertvurdering).51,52
+The World Allergy Organisation anbefaler administration af intramuskulær adrenalin som førstevalg til
+behandling af anafylaksi i en dosis på 0,01 mg/kg op til maksimalt 0,5 mg for voksne og teenagere. For børn
+svarer dette til 0,15 mg for børn i alderen 1-5 år og 0,3 mg for børn i alderen 6-12 år.53 Adrenalin administreres
+typisk via en autoinjektor og kan gives af trænede personer, herunder familiemedlemmer, venner og
+førstehjælpere. Hurtig administration er afgørende, og hos personer, hvor symptomerne vedvarer, kan en
+anden dosis være nødvendig (Figur 4). ILCORs scoping review identificerede tre studier relateret til
+administration af en anden dosis adrenalin for anafylaksi, men ingen fokuserede på førstehjælpssituationer.
+Ét studie fandt, at patienter, der modtog flere doser adrenalin for anafylaksi, havde højere indlæggelsesrater
+på hospitalet, men der blev ikke rapporteret data om symptomlindring eller bivirkninger.54 Et andet studie
+dokumenterede, at anafylaksi-patienter, der havde brug for flere doser adrenalin, oplevede mere alvorlige
+symptomer, men i sidste ende var mere tilbøjelige til at få symptomerne til at forsvinde sammenlignet med
+dem, der ikke modtog flere doser.55 Det tredje studie sammenlignede farmakokinetikken og
+farmakodynamikken af tre forskellige metoder til adrenalin-administration: Intramuskulær injektion,
+autoinjektorer og intranasal administration og konkluderede, at intranasal administration kunne være en
+sikker og effektiv mulighed, især for personer, der er tilbageholdende med at bære og anvende
+injektionsudstyr.56 Baseret på et ILCOR scoping review57 og en evidensopdatering fra 20251 anbefales det, at
+en anden dosis adrenalin kan injiceres efter 5 minutter, hvis symptomerne på svær anafylaksi ikke
+forsvinder.58 Håndteringen af anafylaksi er beskrevet i ERC Guidelines 2025, ”Special Circumstances in
+Resuscitation”
+.
+59
+Obstrueret luftvej
+Obstrueret luftvej eller fremmedlegeme i luftvejen er et almindeligt problem og forekommer hyppigst hos
+små børn og ældre personer.60,61 Børn har især en tendens til at putte forskellige genstande i munden, som
+let kan forårsage luftvejsobstruktion62
+, mens voksne ofte oplever kvælning i kød, nødder, druer og anden
+mad.62,63 ERC guidelines er baseret på ILCORs systematiske review fra 202064 og ILCORs evidensopdatering
+fra 2025 samt CoSTR, inklusive begrundelser.1
+Erkendelse og øjeblikkelig indgriben
+Et fremmedlegeme kan sætte sig fast i den øvre del af luftvejen, luftrøret eller den nedre del af luftvejen
+(bronkier og bronkioler).65 Ved en delvis luftvejsobstruktion kan luft stadig passere rundt om obstruktionen,
+hvilket tillader en vis ventilation og evne til at hoste eller tale. Ved fuldstændig blokering kan ingen luft
+passere rundt om blokeringen, og personen er ude af stand til at tale, har en svækket eller fraværende
+hoste og kæmper eller er ude af stand til at trække vejret. Hvis dette lades ubehandlet, vil fuldstændig
+luftvejsobstruktion hurtigt forårsage hypoksi, tab af bevidsthed og hjertestop inden for få minutter.
+--- p26
+26
+Evidens fra 2025 ILCOR evidensopdateringen1 støtter eksisterende anbefalinger for lægfolk til at foretage
+fjernelse af fremmedlegeme så hurtigt som muligt efter erkendelse. Når det udføres før hjertestop, har
+lægfolks førstehjælpsinterventioner til fjernelse af fremmedlegemer vist sig at være effektive og forbedre
+overlevelsen.60,66-68 Ved studier af interventioner for personer med fremmedlegemer i luftvejen uden for
+hospital er det største studie et observationel kohortestudie, der evaluerer effektiviteten af forskellige
+interventioner udført af lægfolk.
+60 Lægfolk udførte den indledende intervention i 643 tilfælde (90,7 %) og
+lykkedes med at lindre obstruktionen hos 492 patienter (76,5 %). Af de 492 patienter, der fik fjernet
+fremmedlegemet af lægmænd, overlevede 480 (97,6 %). Et andet observationelt multicenter studie med
+407 patienter, der blev transporteret til akutmodtagelsen efter et fremmedlegeme i luftvejen,
+rapporteredes det, at lægfolk forsøgte at gribe ind i 192/352 (55 %) af de observerede tilfælde og med succes
+fjernede obstruktionen i 93/192 (48 %) af de observerede tilfælde. Overlevelse var signifikant højere med
+lægfolksinterventioner, og 96/407 (24 %) af patienterne havde et favorabelt neurologisk outcome.69
+Behandling af en vågen, responsiv person med fremmedlegeme i luftvejen
+En person, der er vågen, reagerer og er i stand til at hoste, bør opmuntres til at gøre det, da hoste genererer
+høje og vedvarende luftvejstryk og kan udstøde fremmedlegemet.70-72 Dunk i ryggen, tryk i maven og og på
+brystet er forbeholdt personer, der viser tegn på alvorlig komplet luftvejsobstruktion såsom manglende
+evne til at hoste eller tale. Hvis personen begynder at vise tegn på udtrætning, anbefales det at starte med
+dunk i ryggen som den første intervention. Sammenlignet med dunk i ryggen er tryk i maven og på brystet
+eller hjertemassage som første indgreb forbundet med faldende odds for, at fremmedlegeme fjernes og
+flere rapporter om interventionsrelaterede skader.60 Selvom guidelines anbefaler at skifte mellem dunk i
+ryggen og tryk i maven/brystet, kan mange fremmedlegemer muligvis løses ved hjælp af en enkelt teknik. I
+et kohortestudie fra 2024 rapporteredes det, at kun 16 % af deltagerne anvendte skiftende teknikker.60
+Hvis det ikke er muligt at hoste, eller hvis hosten bliver ineffektiv, giv op til 5 dunk i ryggen (Figur 5):
+• Stå bag personen.
+• Brug din håndryg til at give dunk mellem skulderbladene i midten af ryggen.
+Hvis dunk mod ryggen er ineffektive, giv op til 5 tryk i maven (Figur 5):
+• Stå bag personen og læg begge arme rundt om den øvre del af personens maveregion.
+• Bøj personen fremad.
+• Knyt din ene hånd og placér den mellem navlen og brystkassen.
+• Grib den knyttede hånd med den anden hånd og tryk kraftigt indad og opad.
+Hvis luftvejsblokeringen fortsat er til stede efter 5 tryk i maven, fortsæt da med skiftevis at give 5 dunk i
+ryggen efterfulgt af 5 tryk i maven, indtil fremmedlegemet er frigjort, eller personen bliver bevidstløs.
+Vi har ikke identificeret nogen studier med personer, der er alene ved fremmedlegemer i luftvejen og
+mangler derfor data om situationen, og hvad der er muligt at gøre.
+Figur 5. Rækkefølge af handlinger ved kvælning
+--- p27
+27
+Behandling af den bevidstløse person med fremmedlegeme i luftvejen
+Hvis personen med fremmedlegeme i luftvejen på noget tidspunkt bliver bevidstløs med fraværende eller
+unormal vejrtrækning, skal hjertemassage påbegyndes i overensstemmelse med standard BLS, og HLR
+fortsættes, indtil personen kommer sig, eller præhospitalt sundhedspersonale ankommer. Begrundelsen
+for dette er, at hjertemassage genererer højere luftvejstryk end tryk i maven og potentielt kan lindre
+obstruktionen, samtidig med at det også giver et cardiac output.73,74 Det anbefales ikke at føre fingeren
+blindt gennem mundhulen (’finger sweep’) for at fjerne et fremmedlegeme, hvis fremmedlegemet ikke kan
+ses. Det kan forværre luftvejsobstruktionen eller forårsage skade på det bløde væv.75 Forsøg kun at fjerne
+fremmedlegemet med fingeren, når et fremmedlegeme tydeligt kan ses i mundhulen.
+Apparater til fjernelse af fremmedlegemer via sugning
+I de senere år er flere kommercielt udbudte apparater til manuel sugning (fjernelse) af fremmedlegemer i
+luftvejen blevet tilgængelige. Apparaterne fungerer ved at fastgøre en maske til en stempel enhed med en
+envejsventil, placere masken over persons ansigt og trække i stemplets håndtag for at skabe sug (via
+undertryk). En version af enheden inkluderer en flangetilslutning til masken, som skal indsættes i
+patientens mund. Et systematisk review fra ILCOR i 202075 og en CoSTR inkluderede et enkelt
+observationelt studie, der rapporterede om fjernelse af fremmedlegeme i luftvejen og overlevelse hos 10
+patienter med fremmedlegeme i luftvejen, som blev behandlet med et apparat til fjernelse af
+fremmedlegemer via sugning. Evidensen var utilstrækkelig til at give nogen anbefaling vedrørende brugen
+af disse enheder. Siden 2020 er der blevet offentliggjort adskillige nye undersøgelser af disse apparater. Det
+største studie af apparater til fjernelse af fremmedlegemer via sugning er udført i Japan og var et prospektiv
+multicenter observationelt studie af 407 patienter, der blev transporteret til akutmodtagelsen efter
+fremmedlegeme i luftvejen.69 Studiet rapporterede, at lægmænd forsøgte at gribe ind i 55 % af de
+observerede tilfælde og med succes fjernede fremmedlegemet i 48 % (92/192). Brugen af apparater til
+fjernelse af fremmedlegemer via sugning var den mest almindelige første intervention (25 %, n=101/407)
+efterfulgt af dunk i ryggen (21 %, n=85/407). Det var dog ikke klart hvilken type apparat, der blev brugt i
+denne undersøgelse (f.eks. bærbar elektrisk, vakuum eller manuel teknik). Seks case-serier rapporterede
+fjernelse af fremmedlegeme ved brug af et sugebaseret apparat i i alt 595/610 tilfælde (97,5 %).76,81 To af disse
+casestudier fokuserede på børn (i alt 320 tilfælde77,79), mens to fokuserede på brugen af et specifikt apparat
+anvendt af sundhedspersonale på voksen i dagcenter/ældrecenter. I casestudiet af Bhanderi76 var brugen af
+￼
+--- p28
+28
+apparatet en del af en protokol og blev introduceret efter 2 runder med 5 dunk i ryggen, der vekslede med 5
+tryk i maven/brystet, hvis det ikke lykkedes at fjerne fremmedlegemet. Yderligere en case-serie67 noterede
+fjernelse af fremmedlegeme i luftvejen i 3 ud af 8 tilfælde ved brug af sug fra en støvsuger. I en case-serie
+fra 2023 af Dunne78 var brugen af apparater til fjernelse af fremmedlegemer via sugningen den sidste
+intervention før fjernelse af fremmedlegemet og symptomer i 96,2 % af 157 tilfælde med ét type apparat, og
+for 93,1 % af 29 tilfælde med et andet type apparat. De fleste case-serier brugte data leveret af
+producenterne, hvilket skaber en alvorlig skævhed af data, da kun de positive eller succesfulde resultater
+typisk rapporteres, og nævneren mangler. Et simulationsstudie viste et lige så succesfuldt antal forsøg, men
+højere positive trykgradienter i thorax med tryk i maven som ved brug af et specifik hyppigt anvendt
+apparat.82 Det rapporterede antal 'træk' eller sugemanøvrer, der kræves for at fjerne fremmedlegemet,
+varierer mellem forskellige case-serier, hvor et studie81 rapporterer, at 54 % kræver et enkelt træk, og 37 %
+kræver 2-3 træk. Case-serien af Costable77 rapporterede, at fjernelse af fremmedlegemet krævede mellem 1
+og 10 træk med apparatet. Efter brug af et apparat var det i op til en tredjedel af tilfældene i en case-serie
+nødvendigt at udføre enten et fingersweep (at feje med en finger i munden) eller at rulle personen om på
+siden for fuldstændigt at fjerne fremmedlegemet.78 Få komplikationer er blevet rapporteret ved brug af
+apparater til at fjerne fremmedlegemer fra luftvejen. To tilfælde af blå mærker omkring munden, som
+menes at skyldes apparatet, blev rapporteret af Dunne.78 For andre rapporterede bivirkninger, herunder
+hævelse i den øvre del af luftvejen (3 tilfælde), intraorale rifter/smerter (3 tilfælde) og øsofageal perforation (1
+tilfælde), var det uklart, om disse skyldtes fremmedlegemet, andre BLS-interventioner før brug af apparatet,
+eller om det skyldtes selve apparatet. Tandskade blev rapporteret ved brug af et bestemt mærke apparat
+hos 1/25 (3 %) af patienterne i en retrospektiv analyse81
+, og et enkelt tilfælde af rifter i oropharynx (svælg) og
+tandkød blev rapporteret ved brug af samme mærke i casestudiet af Dunne.78 Rapporterede fejl på
+apparatet inkluderer lejlighedsvis adskillelse af masken fra stemplet.78 Evidensen, der støtter brugen af
+dunk i ryggen og tryk i maven, kommer også primært fra kasuistikker.64 Disse interventioner kan dog
+anvendes med det samme med minimal træning og uden ekstra omkostninger og er med succes
+rapporteret i over tre fjerdedele af tilfældene. Brugere af apparatet skal fjerne det fra emballagen, samle
+det, og medmindre de er uddannet, kigge i brugsvejledningen, hvilket kan forsinke fjernelse af
+fremmedlegemet. Brugere af disse apparater bør være opmærksomme på potentielle bivirkninger og
+problemer såsom manglende tilstrækkelig sugekraft, manglende effektivitet, skader på munden,
+manglende lindring og potentiel forsinkelse af HLR, når en person får et fremmedlegeme i luftvejen og
+bliver bevidstløs. ILCOR gav ikke en anbefaling på grund af utilstrækkelig evidens1
+, og af samme grund er
+ERC også ude af stand til at give en anbefaling for eller imod brugen af disse apparater.
+Efterbehandling og henvisning til medicinsk vurdering
+Der er flere tilfælde af alvorlige skader efter fjernelse af fremmedlegemer fra luftvejen ved hjælp af tryk i
+maven, og færre rapporter om skader efter tryk i brystet/hjertemassage og dunk i ryggen, samt rapporter
+om skader ved brug af sugeanordninger.64,78 Enhver person, der er blevet behandlet med disse
+foranstaltninger, bør derfor undersøges af en sundhedsfaglig person. Håndteringen af kvælning hos børn er
+også blevet beskrevet i ERC Guidelines 2025, ”Paediatric Life Support”
+.
+24
+Astma
+--- p29
+29
+Et scoping review fra 2022 udført af ILCOR fandt ingen betydelig skadevirkning ved brug af bronko-
+dilatatorer administreret til personer med astma og respiratoriske symptomer.1 ERC er enig med ILCOR
+First Aid Task Force’s anbefaling om, at førstehjælpere bør hjælpe med at administrere personens egne
+bronkodilatatorer til personer med astma, der oplever vejrtrækningsbesvær.
+Brystsmerter
+Brystsmerter er det mest almindelige symptom på akut koronart syndrom også kendt som et
+'hjerteanfald'.83 Smerten beskrives ofte som en trykken i brystet med eller uden udstråling af smerten til
+halsen, underkæben eller venstre arm. Ifølge European Society of Cardiology rapporterer en fjerdedel af
+kvinder kæbesmerter, kvalme eller åndenød i stedet for de klassiske symptomer, hvilket kan forsinke
+diagnosticering og behandling.84 Patienter med diabetes kan opleve smerter i det epigastriske område eller
+åndenød.83 Et systematisk review fra ILCOR i 2020 fandt, at tidlig præhospital administration af aspirin
+forbedrede overlevelsen sammenlignet med senere administration på hospitalet, og der var ingen
+signifikant forskel i risikoen for komplikationer.85 Selvom skadevirkninger af aspirin hos personer med ikke-
+traumatiske brystsmerter er ualmindelige, fandt ILCORs systematiske review ingen studier, der evaluerede
+risiciene ved administration af aspirin i en førstehjælpssammenhæng.85 Derfor anbefales fortsat tidlig
+præhospital administration af 150–500 mg aspirin til personer med kardielle brystsmerter, givet af
+førstehjælperen inden ankomsten af præhospitalt sundhedspersonale, medmindre der foreligger en
+potentiel kontraindikation såsom aspirinallergi. For personer med kendt angina pectoris anbefales, at
+førstehjælpere hjælper dem med at selvadministrere deres egen nitroglycerinspray eller -tabletter.
+Hypoglykæmi
+Hypoglykæmi defineres oftest som et blodsukkerniveau under 4 mmol/L (eller 70 mg/dL).86,87 Der findes
+flere formuleringer af definitionen på hypoglykæmi. En tværsnitsundersøgelse fra USA har vist, at
+formuleringen af forskellige definitioner er forbundet med misfortolkninger og dermed uoverens-
+stemmelser i forekomsten af svær hypoglykæmi og antallet af episoder med svær hypoglykæmi.88 Personer
+med lavere uddannelse, lavere husstandsindkomst og selvidentificerede raceminoriteter var forbundet med
+disse uoverensstemmelser.88 Hypoglykæmi forekommer oftest hos personer med diabetes, der bruger
+insulin eller andre blodsukkersænkende medicin, men det kan også forekomme hos personer uden
+diabetes på grund af langvarig faste, overdreven alkoholforbrug eller kritisk sygdom.87 Symptomer på
+hypoglykæmi kan variere fra svedtendens, rystelser og hjertebanken til forvirring, kramper og
+bevidstløshed.86 Et ILCOR systematisk review fra 2019 demonstrerede, at tidlig erkendelse og intervention
+betydeligt reducerede risikoen for alvorlige komplikationer forbundet med hypoglykæmi, herunder
+kognitiv svækkelse og hjertearytmier.89 En artikelgennemgang fra 2018 fremhævede vigtigheden af
+strukturerede uddannelsesprogrammer for personer med diabetes for at øge bevidstheden og
+selvhåndteringen af symptomer på hypoglykæmi.90 European Diabetes Working Group understreger
+vigtigheden af kontinuerlig glukosemonitorering i at reducere alvorlige tilfælde af hypoglykæmi, især hos
+insulin-afhængige personer. 91
+Behandling af hypoglykæmi
+--- p30
+30
+ILCORs systematiske review fra 2019 identificerede evidens, der anbefaler, at hvis den hypoglykæmiske
+person er responsiv og i stand til at synke sikkert, bør personen opfordres til at indtage 15-20 gram
+hurtigtvirkende kulhydrater, såsom glukose- eller dextrosetabletter, frugtjuice eller almindelig
+(sukkerholdig) sodavand.89 Blodglukoseværdier bør kontrolleres igen 15 minutter efter indtagelse af sukker,
+og hvis hypoglykæmi fortsætter, bør der gives yderligere 15 gram kulhydrater.89 Hvis symptomerne
+forbedres, bør personen følge op med et balanceret måltid for at forebygge tilbagevendende hypoglykæmi.
+Orale sukkerstoffer bør ikke gives til bevidstløse personer på grund af risikoen for at blokere luftvejen og
+aspiration. Førstehjælpere kan administrere glukagon, enten via injektion eller næsespray i henhold til
+producentens anvisninger, hvis det er tilgængeligt, og hvis de er blevet trænet i administration af
+glukagon.87 Tidlig administration af glukagon ved svær hypoglykæmi har vist sig at forbedre patientens
+tilstand og reducerer risikoen for langvarige komplikationer forårsaget af hypoglykæmi.92 Implemen-
+teringen af offentlige træningsprogrammer, især blandt skolelærere, i administration af glukagon har
+markant forbedret responstider og outcomes.93-95
+Opioidoverdosis
+Opioidoverdosis forårsager depression af centralnervesystemet (søvnighed, bevidstløshed) og
+respirationsdepression, som kan udvikle sig til respirationsstop, hjertestop og død, hvis ubehandlet. Naloxon
+er en sikker og effektiv modgift, der ophæver virkningerne af en opioidoverdosis, og genopretter
+bevidsthed og vejrtrækning.96,97 Naloxon er kun effektivt mod overdoser af opioider, og det kan tage flere
+minutter, før det virker. Denne guideline er baseret på ILCORs anbefaling fra 202440 og på 2024-guidelines
+fra American Heart Association og American Red Cross for førstehjælp.98 Ifølge et online survey fra 2025
+udført af ERC førstehjælps- skrivegruppen (Appendiks B) anvendes naloxon af flere faggrupper, fra læger til
+lægmænd, uanset om de har modtaget formel træning eller ej. Respondenterne angav, at naloxon oftest
+blev administreret ved bekræftede opioidoverdoser (82 %, n = 903) eller hos bevidstløse personer med
+mistanke om opioidoverdosis (71 %, n = 787). Kun en tredjedel af de adspurgte rapporterede om eksistensen
+af formelle træningsprogrammer for brugen af naloxon. Sættene indeholdt oftest injicerbar naloxon eller
+autoinjektorer (90 %, n = 874), efterfulgt af intranasale formuleringer (40 %, n = 394) Intranasal naloxon har
+mindre effektivitet, men højere anvendelighed sammenlignet med intramuskulær administration99,100 og er
+nu bredt tilgængelig i mange lande. Det var den foretrukne mulighed blandt respondenterne,
+hovedsageligt på grund af dens brugervenlighed for ikke-medicinsk personale. I de fleste lande kan
+naloxon administreres af læger, sygeplejersker og paramedicinere. I nogle lande er politibetjente og lægfolk
+også autoriseret til at bruge det. Personer, der reagerer på en opioidoverdosis med naloxon, bør forblive
+under observation efter administration på grund af risikoen for, at respirationsdepression kan vende tilbage.
+Træning i genkendelse af opioidoverdosis og administration af naloxon øger sandsynligheden for en
+effektiv intervention, selvom undersøgelsesresultaterne varierer.101,102 Et RCT fandt, at personer, der modtog
+praktisk træning, var mere tilbøjelige til at bruge naloxon end dem, der kun modtog passiv undervisning.103
+ERC anbefaler, at førstehjælpere administrerer naloxon til personer med mistanke om opioidoverdosis.
+Håndteringen af opioidoverdosis og generel forgiftning er begge beskrevet i ERC Guidelines 2025,
+”Special
+Circumstances in Resuscitation”
+.
+59
+--- p31
+31
+Stroke
+Den globale byrde af stroke er høj og stigende.104 I løbet af de sidste 20 år har nye behandlinger såsom
+hurtig administration af trombolytisk behandling eller endovaskulære reperfusionsteknikker ved iskæmisk
+stroke, sammen med medicinsk eller kirurgisk behandling af hæmoragisk stroke, markant forbedret
+behandlingsresultaterne.105 Derfor anbefaler European Academy of Neurology og European Stroke
+Organisation på det kraftigste kampagner til genkendelse af stroke for almindelige borgere samt værktøjer,
+der fremmer tidlig erkendelse af stroke og tidlig underretning af hospitalet.
+105 Et ideelt system til vurdering
+af stroke til brug i førstehjælp skal være let at forstå, lære og huske, have høj følsomhed og tage minimal tid
+at gennemføre. I Danmark anvendes huskereglen: Stræk, Snak, Smil. Ring 1-1-2 i Red Hjernen-kampagnen,
+som Dansk Råd for Genoplivning og TrygFonden typisk afholder to gange årligt. Opdateringen af evidens
+for 20241 fra ILCORs First Aid Task Force identificerede ingen relevante artikler vedrørende genkendelse af
+stroke siden det tidligere systematiske review, der blev offentliggjort i 2020.106 Hverken review’et eller
+evidensopdateringen kunne finde evidens, der støtter brugen af den ene skala frem for den anden. Der er
+flere egnede stroke skalaer for førstehjælpere, såsom BE-FAST (Balance, Eyes, Face, Arm, Speech, Time)107
+eller FAST (Face, Arm, Speech, Time)108 eller CPSS (Cincinnati Prehospital Stroke Scale).109 Desuden kan
+brugen af MASS (Melbourne Ambulance Stroke Screening)110 eller LAPSS (Los Angeles Prehospital Stroke
+Screening)111 øge specificiteten af stroke genkendelse, hvis glukosemåling er tilgængelig.
+Selvmordstanker
+Teksten oversættes ikke, da denne ikke er i overensstemmelse med national praksis.
+Traumatisk betingede nødsituationer
+Spinal immobilisering
+Et systematisk review fra 2015 af ILCORs First Aid Task Force indikerede, at førstehjælpere ikke bør bruge
+halskraver.58 Et ILCOR scoping review fra 2024 identificerede 46 eksperimentelle og 20 observationsstudier
+om effektiviteten af forskellige typer af spinal immobilisering.121 Det indledende review1,122 identificerede
+evidens fra 35 studier, der understøtter ikke rutinemæssigt at anvende halskraver, da de godt nok reducerer
+bevægelsesudslaget i halshvirvelsøjlen, men samtidig kan hæmme respiration og synkning samt bidrage til
+forhøjet intrakranielt tryk.
+123 I 2024 anerkendte ILCORs First Aid Task Force, at denne behandlingsanbefaling
+dog ikke bør udelukke, at uddannede førstehjælpere (f.eks. livreddere, der behandler en person med en
+dykkerulykke) anvender udstyr til spinal immobilisering (såsom halskraver) i overensstemmelse med
+gældende lokale protokoller for spinal immobilisering. Baseret på ILCOR's scoping review fra 2019124, hvor
+der ikke blev identificeret modstridende evidens i scoping review’et fra 2024121, foreslår ERC, at manuel
+stabilisering kan anvendes enten ved hjælp af hovedklemmeteknikken eller trapeziusklemmeteknikken for
+at begrænse bevægelse af halshvirvelsøjlen.
+Hovedklem (Figur 8a):
+• Placér dine albuer på jorden eller på dine knæ.
+• Hold personens hoved mellem dine hænder.
+• Placér dine hænder, så dine tommelfingre er over deres ører, og dine andre fingre er under deres ører.
+• Dæk ikke deres ører, så personen stadig kan høre.
+--- p32
+32
+Trapezius klem (Figur 8b):
+• Placér dine albuer på jorden eller på dine knæ.
+• Placér dine hænder på personens skuldermuskler på hver side af deres hoved.
+• Sørg for, at dine tommelfingre peger nedad på forsiden af musklerne, og at dine fingre er parallelle med
+rygsøjlen på bagsiden.
+• Flyt dine underarme indad for at støtte deres hoved. Fastgør hovedet fast mellem dine underarme i
+ørehøjde.
+• Overvej behovet for at skabe en fri luftvej hos personen ved hjælp af hovedkip-hageløft-teknikken (QR-
+kode 1).
+• Hvis personen er bevidstløs og ligger på maven med ansigtet nedad, kontrollér da om personens luftvej
+er fri, og hold nakken i en stabil position.
+• Hvis du har brug for at skabe en fri luftvej hos personen, så bed andre om at hjælpe dig med forsigtigt
+at rulle dem som en enhed om på ryggen, mens nakken holdes på linje med kroppen og så stabil som
+muligt. Anvend derefter hoved- eller trapeziusklemmet (Figur 8).
+• Førstehjælpere med specialiseret træning (f.eks. skipatrulje eller livredder) kan overveje selektiv brug af
+spinal immobilisering ved hjælp af deres eksisterende protokoller.
+• Tving aldrig en person, der ikke samarbejder, ind i en bestemt stilling, da dette kan forværre en skade.
+Figur 8. Spinal immobilisering for at opretholde en fri luftvej med hoved-klemmeteknikken (a) og trapezius-
+klemmeteknikken (b)
+Kontrol af livstruende blødning
+Ukontrolleret blødning er en potentielt forebyggelig dødsårsag ved traumer.125 Rækkefølgen af handlinger
+(Figur 9) for kontrol af livstruende blødning er baseret på interventioner inkluderet i ILCORs
+evidensopdatering fra 20251 og to indledende systematiske reviews fra 2021.126,127
+￼
+--- p33
+33
+Figur 9. Kontrol af livstruende blødning
+Trykenheder eller trykpunkter
+Siden det systematiske review i 2021 har ILCORs evidensopdatering1 identificeret syv nye studier, der
+sammenligner trykanordninger til at påføre tryk lokalt på såret eller proximalt for det, eller trykpunkter
+proximalt for såret med direkte manuelt tryk på selve såret. Mens resultaterne i disse undersøgelser
+antydede nogle potentielle fordele ved brugen af trykpunkter eller trykanordninger i visse sammenhænge,
+var der utilstrækkelige data til at ændre nogen ILCOR-anbefalinger. ERC er enig med ILCORs fortsatte
+anbefaling om at bruge direkte manuelt tryk i stedet for trykanordninger eller trykforbindinger og er imod
+brugen af trykpunkter.
+Tourniquetter
+Siden det systematiske review i 2021 har ILCOR evidensopdateringen1 identificeret data fra 29 nye studier,
+der viser reduceret hospitalsmortalitet og en lavere forekomst af shock ved brug af tourniquetter, hvilket
+dermed støtter deres anvendelse til at begrænse livstruende blødning. Kommercielle tourniquetter viste sig
+at være enklere at anvende og opnåede, sammenlignet med improviserede tourniquetter, bedre arteriel
+okklusion. Et systematisk review og en meta-analyse fra 2025 viste imidlertid ikke en signifikant reduktion i
+dødelighed eller blodprodukter ved brug af præhospitale tourniquetter128. Nylige undersøgelser fra Ukraine
+har rejst bekymring om sekundære undgåelige skader på grund af langvarig brug af tourniquetter.129,130
+Brug en fabriksfremstillet tourniquet, hvis tilgængelig:
+• Placér tourniquetten omkring den traumatiserede legemsdel 5-7 cm over skaden, men ikke over et led.
+• Stram tourniquetten, indtil blødningen aftager og stopper. Dette kan være smertefuldt for personen.
+• Notér tidspunktet for, hvornår tourniquetten blev anlagt, på selve udstyret.
+• Løsn ikke tourniquetten. Den bør kun løsnes af en sundhedsprofessionel.
+• I nogle tilfælde kan det være nødvendigt at anvende en anden tourniquet, over den første tourniquet,
+for at bremse eller stoppe blødningen.
+ILCORs systematiske review fra 2021 sammenlignede effektiviteten af forskellige typer af
+børnetourniquetter. Baseret på to kohortestudier foreslog ILCOR anvendelsen af en fabriksfremstillet
+vindelåstourniquet til behandling af livstruende blødninger fra ekstremiteter hos børn.127 Der var
+￼
+--- p34
+34
+utilstrækkelig evidens til at anbefale for eller imod brugen af andre typer af tourniquetter hos børn. For
+nyfødte og børn med ekstremiteter, der er for små til at tillade effektiv anvendelse af en tourniquet, før den
+cirkulære stramningsmekanisme aktiveres, anbefales direkte manuelt tryk, med eller uden anvendelse af
+en hæmostatisk traumeforbinding.
+Hæmostatiske forbindinger
+Siden ILCORs systematiske review i 2021 har en ILCOR evidensopdatering1 identificeret fem nye artikler, der
+antyder, at hæmostatiske forbindinger medfører et fald i blødningens varighed og forbedrer overlevelsen
+med lavt rapporterede bivirkningsrater sammenlignet med konventionelle gazeforbindinger. Derfor
+anbefales brugen af hæmostatiske forbindinger af ERC til førstehjælpere.
+Åbne brystsår
+Korrekt behandling af et åbent brystsår er vigtig, fordi utilsigtet lukning af såret med en okklusiv forbinding
+eller anordning kan medføre den potentielt livstruende komplikation tryk pneumothorax.131 ILCOR CoSTR
+fra 2015 indikerede, at førstehjælperen ikke bør anvende en okklusiv forbinding eller enhed på personer
+med et åbent brystsår på grund af manglende studier med mennesker. En 2024 ILCOR evidensopdatering
+fandt, at det er rimeligt for den uddannede førstehjælper at anvende en specialiseret ikke-okklusiv eller
+ventileret forbinding, hvis den er tilgængelig1. Denne erklæring var baseret på identifikation af fem
+svinestudier132-136
+, en eksperimentel undersøgelse af brystforseglingens vedhæftning på raske frivillige137 og
+en retrospektiv observationsundersøgelse af præhospitale data om penetrerende brysttraumer.138 ERC er
+enig i ILCORs anbefaling om god praksis og anbefaler, at brystsår som udgangspunkt efterlades åbne, så
+luft frit kan passere til og fra omgivelserne. Hvis man er uddannet, kan der dog anvendes en passende ikke-
+okklusiv eller ventileret forbinding, som sikrer frit luftudløb ved udånding, og såret bør nøje observeres for
+luftstrømsobstruktion som følge af blødning eller størknet blod
+Hjernerystelse
+Hjernerystelse (ofte kaldet mindre traumatisk hjerneskade) er almindelig hos voksne og børn efter
+hovedskade. Hovedskader er vigtige at genkende, fordi hvis den primære skade overses, kan det føre til
+sekundær hjerneskade og et dårligere outcome. Hjernerystelse er svær at genkende på grund af
+kompleksiteten af symptomerne og tegnene samt variationen fra øjeblikkelig til forsinket debut. Desuden
+findes der ingen konsensusdefinition af hjernerystelse på trods af omfattende arbejde med at definere
+denne.139 Symptomer som problemer med at tænke/huske, fysiske symptomer (hovedpine, ændret syn,
+svimmelhed, kvalme eller opkastning, kramper og følsomhed over for lys/støj), følelsesmæssige ændringer
+eller ændringer i adfærd (øget søvnighed, nedsat deltagelse i normale aktiviteter, manglende respons,
+forvirring) kan alle være tegn på en hjernerystelse. ILCOR CoSTR fra 201558 samt ERC First Aid 2021
+Guidelines140 afgav ingen anbefaling om et specifikt værktøj frem for et andet til at genkende hjernerystelse,
+men anerkendte den rolle, som et simpelt, valideret, enkelttrins scoringssystem for hjernerystelse kan
+betyde for førstehjælperes genkendelse af hjernerystelse En undersøgelse af lægpersoner identificerede
+utilstrækkelig selvtillid og viden til at træffe en beslutning om, hvordan man skulle handle i en situation
+med hovedtraume ud over at søge lægehjælp.141 Følgende validerede værktøjer til vurdering af
+hjernerystelse, udviklet til brug af uddannet sundhedspersonale, blev identificeret, men de opfylder ikke
+kravene for, at førstehjælpere pålideligt kan vurdere hjernerystelse på grund af deres kompleksitet eller
+--- p35
+35
+behovet for at udføre neurokognitive tests: Glasgow Coma Scale (GCS)142, Alert Verbal Pain Unresponsive-
+skalaen (AVPU)143, Concussion Recognition Tool (CRT 6)144, Immediate Post-Concussion Assessment and
+Cognitive Testing (ImPACT)145, Standardized Assessment of Concussion (SAC)146 og Sport Concussion
+Assessment Tool (SCAT 6).147 Sportsrelaterede retningslinjer og undersøgelser139,148,149 henviser til sætninger,
+som er nemme at huske: ”Genkend, fjern og henvis” eller ”Ved tvivl, sæt dem på bænken”. ERC anbefaler, at
+personer med mistænkt hjernerystelse af enhver årsag skal undgå fysiske aktiviteter og søge øjeblikkelig
+medicinsk vurdering.
+Bevarelse af en amputeret legemsdel
+ERC anerkender, at det har højeste prioritet at stoppe blødningen og genoplive personen, når man tilgår en
+person med en amputeret eller afrevet legemsdel. Dog bør man ikke glemme at indsamle og bevare den
+amputerede legemsdel, da kirurgisk rekonstruktion kan forsøges. En ILCOR-undersøgelse fra 2024
+identificerede 37 publikationer, hovedsageligt kasuistikker og observationsstudier, der dokumenterer
+forskellige teknikker til at bevare amputerede og afrevne legemsdele inden ankomst til et hospital.150
+Evidensen fra dette review støtter ikke-frysende kold opbevaring af amputerede legemsdele. Denne
+opbevaringsmetode er forbundet med højere succesrater for rekonstruktion selv efter længere tid mellem
+skaden og operationen. Den anbefalede opbevaringsmetode er: Pak legemsdelen ind i en steril
+gazeforbinding eller et rent stykke klæde fugtet med saltvand eller vand. Placér den indpakkede legemsdel
+i en ren vandtæt plastikpose eller beholder. Nedkøl posen eller beholderen, der indeholder legemsdelen,
+inde i en anden pose med is eller isvand (Figur 10). Den fundne legemsdel bør transporteres sammen med
+den tilskadekomne til hospitalet. Uanset hvilken del, der er amputeret eller afrevet (øre, næse, læbe,
+hovedbund, penis), er succesraterne for rekonstruktion overraskende høje. Selv når køleopbevaring ikke er
+mulig, og transporttiden er mere end 6 timer, kan det stadig være muligt at rekonstruere legemsdelen med
+succes. Især ser fingerspidser og fingre ud til at tolerere mangel på nedkøling bedre end andre væv.150
+Figur 10. Trin til bevarelse af en amputeret legemsdel
+￼
+--- p36
+36
+Miljømæssige nødsituationer
+Drukning
+Drukning er en proces, hvor vejrtrækningsbesvær opstår som følge af at være nedsænket eller neddykket i
+væske.151 Børn under fem år udgør næsten en fjerdedel af alle dødsfald blandt de 300.000 årlige drukninger
+på verdensplan.152 Redning fra drukning understreger vigtigheden af forebyggelse, genkendelse, tilveje-
+bringelse af opdriftsmidler, fjernelse fra vandet og yderligere behandling efter behov (Figur 14). Ifølge et
+scoping review fra 2021 kunne risikoen for, at en utrænet person dør, mens vedkommende forsøger at
+redde en druknet person, reduceres ved at anvende en ikke-kontakt tilgang.153 En ikke-kontakt tilgang
+indebærer at række ud til personen via en stang, et reb eller flydemidler uden at gå i vandet.153 Når man
+vurderer hvilke handlinger, der skal udføres i vandet versus på land, skal tiden på land tages i betragtning.
+Dette er noget, der kan diskuteres i kurser og træningssessioner.
+De vigtigste medicinske problemer ved drukning er hypoksi (iltmangel), hypovolæmi (væskemangel i
+blodkredsløbet) og hypotermi (nedkøling). ILCORs systematiske review fra 2022 anbefalede, at genoplivning
+i vand skulle starte med kun indblæsninger, og at genoplivning på båd enten skulle indebære kun
+indblæsninger eller standard HLR baseret på gennemførlighed og sikkerhed.154 Det oprindelige antal
+indblæsninger mangler videnskabelig evidens, men for klarhedens skyld anbefaler ERC fem indledende
+indblæsninger. Et retrospektivt case-matchet observationsstudie omhandlende ilttilskud af livreddere viste
+ikke en stigning i iltmætning eller overlevelse.155
+ILCORs systematiske review fra 2022 stratificerede handlinger mellem lægfolk og dem med en pligt til at
+reagere, såsom livreddere. Lægfolk anbefales at starte genoplivning med hjertemassage for at prioritere
+igangsættelsen af en enkel og hurtig genoplivning. Dette bør følges af mund-til-mund eller brugen af en
+lommemaske for at give udåndingsventilation, om muligt. De, der har pligt til at reagere, bør overveje at
+give indledende indblæsninger med en Rubens ventilationspose, da tiden til at ventilere er kritisk i 'ikke-
+hjertestop' og kan forebygge forværring til et hjertestop.156
+En minoritet (6 %) af druknede, der får hjertestop, har en stødbar rytme.157 Brugen af en AED er blevet givet
+lavere prioritet end de indledende indblæsninger, men for dem med en stødbar rytme vil tidlig brug af en
+AED øge chancerne for overlevelse. Håndteringen af drukning er beskrevet i ERC Guidelines 2025,
+”Special
+Circumstances in Resuscitation”
+.
+59
+--- p37
+37
+Figur 14. Førstehjælp ved drukning
+Forebyggelse af hypotermi (nedkøling)
+Utilsigtet hypotermi, defineret som et utilsigtet fald i kropstemperaturen til under 35 °C, udgør betydelige
+risici, herunder hjertestop. Førstehjælpere spiller en afgørende rolle i forebyggelsen og den indledende
+håndtering af hypotermi. Præhospital isolering, hurtig transport til et hospital og genopvarmning er vigtige
+￼
+--- p38
+38
+interventioner. Et prospektivt observationsstudie har vist, at førstehjælpsinterventioner som at fjerne vådt
+tøj, tørre personens krop, brugen af (isotermiske) tæpper og brugen af opvarmningspads, alle individuelt
+øgede kernetemperaturen hos traumepatienter.158 Et to-trins RCT blandt brandmænd har vist, at aktive
+metoder som genopvarmning med varm luft kan være gavnlige under en teknisk redning i udfordrende
+terræn, og det er blevet vist, at fleecetæpper vil stoppe, men ikke korrigere varmetab.159 Et RCT, der
+involverede traumepatienter, sammenlignede standardinterventioner såsom at fjerne vådt tøj, give rent,
+tørt tøj og anvende lokaliserede afdækninger for varme med en mere proaktiv strategi, der inkluderede en
+skræddersyet forebyggelsesplan og målrettet træning.160 Studiet fandt, at den skræddersyede tilgang førte
+til forbedret temperaturregulering, forbedret kvalitet af temperaturkontrolsbehandling, bedre
+koagulationsfunktion og en reduceret forekomst af bivirkninger.160
+Den fulde håndtering af utilsigtet hypotermi er blevet beskrevet i ERC Guidelines 2025,
+”Special
+Circumstances in Resuscitation”
+.
+59
+Hedeslag og anstrengelsesudløst hypertermi (overophedning)
+Hedeslag er en alvorlig varmerelateret sygdom, der opstår, når kroppens termoreguleringssystem bliver
+overvældet eller holder op med at fungere. Det er en ægte medicinsk nødsituation og kan føre til alvorlig
+organskade, kardiovaskulært kollaps og død.161 Ikke-anstrengelsesudløst hedeslag opstår typisk efter
+længerevarende udsættelse for solen og ses ofte under hedebølger. Det kan dog forekomme i perioder
+med varmt vejr hos personer med nedsat varmeregulering, såsom ældre mennesker eller børn.
+Anstrengelsesudløst hypertermi præsenterer sig på lignende måde, men er forbundet med anstrengende
+motion.
+Genkendelse og Øjeblikkelig Behandling
+Mistænk hedeslag i forbindelse med høje omgivelsestemperaturer hos en person med en høj
+kernetemperatur, der overstiger 40 °C, og med ændret mental tilstand (forvirring, desorientering, agitation,
+koma) eller kramper. Lignende tegn og symptomer er til stede hos en person med anstrengelsesudløst
+hedeslag på grund af anstrengende fysisk aktivitet. Selvom en kernetemperatur over 40 °C er et vigtigt
+fund hos en person med mistanke om hedeslag, kan måling af kernetemperatur i forbindelse med
+førstehjælp være problematisk, da det kræver tilgængelighed af et specialiseret termometer, der indsættes
+i personens endetarm.162,163 Ud over hensyn til privatliv og kultur kan det være nødvendigt med træning i
+brugen af et termometer til måling af kernetemperatur. Den tympaniske temperatur kan måles, men det
+vil kun give en tilnærmelse og ikke en præcis måling af kernetemperaturen. Ligeledes har orale og kutane
+termometermålinger vist sig at være unøjagtige164, men når en temperatur er forhøjet med en af disse
+enheder, kan det støtte klinisk mistanke om hypertermi og hedeslag.
+Håndteringen af hedeslag og anstrengelsesudløst hypertermi er øjeblikkelig, hurtig nedkøling. En
+nedkølingshastighed på ≥ 0,15 °C/min har vist sig at være forbundet med overlevelse uden medicinske
+komplikationer ved anstrengelsesudløst hedeslag.165,166 At flytte en person med mistanke om hedeslag ud af
+solen eller væk fra et varmt miljø til et køligere, skyggefuldt sted, fjerne overflødig beklædning og begrænse
+anstrengelse vil starte nedkølingsprocessen (Figur 12). Akutmedicinske tjenester bør tilkaldes samtidig med,
+at nedkøling påbegyndes, og nedkøling bør fortsættes under transporten til hospitalet, indtil en målrettet
+kernetemperatur under 39 °C er nået.167,168
+--- p39
+39
+Aktiv nedkøling
+Aktive nedkølingsinterventioner fjerner aktivt varme fra kroppen og giver hurtigere nedkøling ved hedeslag
+end passiv nedkøling. Disse interventioner kan omfatte nedsænkning i køligt, koldt eller iskoldt vand,
+sprøjtning eller forstøvning med vand og viftning, samt anvendelse af ispakker til armhulerne og lyskerne.
+Et systematisk review fra ILCOR i 2020 om nedkølingsmetoder til hedeslag opsummerede
+nedkølingshastigheden opnået med forskellige teknikker fra 63 studier.169 Evidensen støtter aktiv nedkøling
+ved brug af helkropsnedsænkning (fra halsen og ned) i 1 til 6 °C koldt vand, indtil en kernetemperatur under
+39 °C er nået. Hvis måling af kropstemperaturen ikke er mulig, anbefaler amerikanske førstehjælps-
+retningslinjer at fortsætte nedkøling i op til 15 minutter eller indtil neurologiske symptomer forsvinder, alt
+efter hvad der kommer først98. Nedsænkning i vand kølede hurtigere end alle andre former for aktiv
+nedkøling, men is og koldt vand er måske ikke altid til rådighed. Alternative metoder til nedkøling
+inkluderer isposer til armhulerne, lyskerne og nakken, brug af brusere, isslag eller håndklæder, samt
+forstøvning/viftning, men de er mindre effektive end nedsænkning i vand. Der er ingen studier af
+nedkølingsteknikker hos børn eller hos personer med ikke-anstrengelsesudløst hedeslag, men evidensen
+fra ILCORs systematiske review støtter hurtig nedkøling med lignende modaliteter i disse populationer.169 I
+en førstehjælpssituation kan det være nødvendigt at improvisere for at sikre aktiv nedkøling. At placere den
+varme-skadede person i et badebassin fyldt med vand fra en slange eller at vikle en presenning omkring
+personen (fyldt med is og forsigtigt oscillere presenningen) er alternative måder at udøve aktiv nedkøling i
+udendørs omgivelser (Figur 13). Nedkølingsteknikker gennemgået i det systematiske review var, i faldende
+rækkefølge efter effektivitet, nedsænkning i isvand (15 °C), nedsænkning i tempereret vand (20-25 °C),
+nedsænkning i koldt vand (14-17 °C), nedsænkning i koldere vand (8 til 12°C), kommercielle ispakker, brusere
+(20 °C), isslag og håndklæder (3 °C), nedsænkning af hænder og fødder i koldt vand (16-17 °C),
+nedkølingsveste og jakker, kolde intravenøse væsker, viftning, passiv nedkøling, nedkølingsenheder til
+hænder og fordampningsnedkøling.169 Den fulde håndtering af utilsigtet hypotermi og hedeslag er blevet
+beskrevet i ERC Guidelines 2025,
+”Special Circumstances in Resuscitation”
+.
+59
+Slangebid
+Slangebid i Europa er relativt sjældne med cirka 7.992 tilfælde rapporteret årligt, hvoraf 15 % klassificeres
+som alvorlige.170 De fleste hændelser involverer hugorme af slægten Vipera, såsom den almindelige
+europæiske hugorm (Vipera berus), aspishugormen (Vipera aspis) og sandhugormen (Vipera ammodytes).
+Der er dog mange sjældne og farlige slanger, som holdes som kæledyr. Envenomation (bid) resulterer ofte i
+lokaliserede symptomer såsom smerte, hævelse og blå mærker, mens alvorlige tilfælde kan føre til
+systemiske komplikationer som koagulopati og i sjældne tilfælde organsvigt. To systematiske reviews om
+førstehjælp ved slangebid171,172 og en ekspertudtalelse173 understreger vigtigheden af at minimere
+bevægelse, immobilisere den berørte legemsdel og undgå ineffektive eller skadelige indgreb såsom
+tourniqueter, snitsår eller sugegift. At søge øjeblikkelig lægehjælp er afgørende for effektiv behandling.
+Europæiske sundhedsorganisationer, World Health Organization og National Health Service UK174,175 leverer
+specifikke behandlingsprotokoller. I modsætning til elapid-slangebid med ikke-hævende neurotoksisk
+gift,175 som kan drage fordel af trykimmobilisering, kræver hugormeforgiftninger simpel immobilisering af
+legemsdele uden kompression.
+--- p40
+40
+Taksigelser
+Vi er taknemmelige for alle kommentarer, der er kommet i løbet af den offentlige høringsperiode. Disse
+kommentarer bidrog til at forbedre indholdet af ERC Guidelines 2025. Vi takker alle, der har bidraget til
+guidelines som forfattere. Vi takker også alle repræsentanter fra patientforeninger og alle medlemmerne af
+de nationale genoplivningsråd, som bidrog med deres råd, forslag og kommentarer. Deres råd og forslag
+hjalp til i processen med at forbedre ERC Guidelines 2025. Forfatterne anerkender følgende personer, der
+bidrog til ERC Guidelines 2021 for førstehjælp: Vere Borra, Emmy De Buck, Anthony J Handley, Emily Oliver
+og Kurtis Poole.
+--- p41
+41
+Referencer
+1. Djarv T, Douma MJ, Carlson JN, et al. 2025 International Liaison Committee on Resuscitation Consensus on
+Science With Treatment Recommendations: First Aid. Resuscitation 2025 (https://ilcor.org/publications/preprint).
+2. Bray JE, Smyth MA, Perkins GD, et al. 2025 International Liaison Committee on Resuscitation Consensus on
+Science With Treatment Recommendations: Adult Basic Life Support. Resuscitation 2025.
+3. Rehfuess EA, Stratil JM, Scheel IB, Portela A, Norris SL, Baltussen R. The WHO-INTEGRATE evidence to decision
+framework version 1.0: integrating WHO norms and values and a complexity perspective. BMJ Glob Health
+2019;4(Suppl 1):e000844. DOI: 10.1136/bmjgh-2018-000844.
+4. Mizen LA, Macfie ML, Findlay L, Cooper SA, Melville CA. Clinical guidelines contribute to the health inequities
+experienced by individuals with intellectual disabilities. Implement Sci 2012;7:42. DOI: 10.1186/1748-5908-7-42.
+5. Dans AM, Dans L, Oxman AD, et al. Assessing equity in clinical practice guidelines. J Clin Epidemiol
+2007;60(6):540–6. DOI: 10.1016/j.jclinepi.2006.10.008.
+6. Greif RL, K. G.; Djärv, T.; Ek, J. E.; Monnelly, V.; Monsieurs, K. G.; Nikolaou, N.; Olasveengen, T. M.; Semeraro, F.;
+Spartinou, A.; Yeung, J.; Baldi, E.; Biarent, D.; Djakow, J.; van Gils, M.; van Goor, S.; Gräsner, J-T.; Hogeveen, M.;
+Karageorgos, V.; Lott, C.; Madar, J.; Nabecker, S.; de Raad, T.; Raffay, V.; Rogers, J.; Sandroni, C.; Schnaubelt, S.;
+Smyth, M. A.; Soar, J.; Wittig, J.; Perkins, G. D.; Nolan, J. P.;. European Resuscitation Council Guidelines 2025:
+Executive Summary. Resuscitation2025.
+7. Tannvik TD, Bakke HK, Wisborg T. A systematic literature review on first aid provided by laypeople to trauma
+victims. Acta Anaesthesiol Scand 2012;56(10):1222–7. DOI: 10.1111/j.1399-6576.2012.02739.x.
+8. Ashour A, Cameron P, Bernard S, Fitzgerald M, Smith K, Walker T. Could bystander first-aid prevent trauma
+deaths at the scene of injury? Emerg Med Australas 2007;19(2):163–8. DOI: 10.1111/j.1742-6723.2007.00948.x.
+9. Schnaubelt S, Veigl C, Snijders E, et al. Tailored Basic Life Support Training for Specific Layperson Populations-A
+Scoping Review. J Clin Med 2024;13(14). DOI: 10.3390/jcm13144032.
+10. West B, Varacallo MA. Good Samaritan Laws. StatPearls. Treasure Island (FL)2025.
+11. Raffay VW, J.; Bossaert, L.; Djakow, J.; Djarv, T.; Estella, A.; Lulic, I.; Mentzelopoulos, S. D.; Monsieurs, K. G.; Van De
+Voorde, P.; Lauridsen, K. G.; . European Resuscitation Council Guidelines 2025: Ethics in Resuscitation. 2025.
+12. Nabecker SdR, T.; Abelairas-Gomez, C.; Breckwoldt, J.; Chakroun-Walha, O.; Farquharson, B.; Hunyadi-Antičević,
+S.; Lott, C.; Schnaubelt, S.; Yeung, J.; Lockey, A.; Greif, R.;. European Resuscitation Council Guidelines 2025:
+Education for Resuscitation. 2025.
+13. Ko YC, Hsieh MJ, Schnaubelt S, Matsuyama T, Cheng A, Greif R. Disparities in layperson resuscitation education: A
+scoping review. Am J Emerg Med 2023;72:137–146. DOI: 10.1016/j.ajem.2023.07.033.
+14. Rowe C, Ceschi G, Boudoukha AH. Trauma Exposure and Mental Health Prevalence Among First Aiders. Front
+Psychol 2022;13:824549. DOI: 10.3389/fpsyg.2022.824549.
+15. Kragh AR, Folke F, Andelius L, Ries ES, Rasmussen RV, Hansen CM. Evaluation of tools to assess psychological
+distress: how to measure psychological stress reactions in citizen responders- a systematic review. BMC Emerg
+Med 2019;19(1):64. DOI: 10.1186/s12873-019-0278-6.
+16. Steins K, Goolsby C, Gronback AM, et al. Recommendations for Placement of Bleeding Control Kits in Public
+Spaces-A Simulation Study. Disaster Med Public Health Prep 2023;17:e527. DOI: 10.1017/dmp.2023.190.
+17. Andrade EG, Hayes JM, Punch LJ. Stop the bleed: The impact of trauma first aid kits on post-training confidence
+among community members and medical professionals. Am J Surg 2020;220(1):245–248. DOI:
+10.1016/j.amjsurg.2019.11.028.
+18. Gage CB, Powell JR, Ulintz A, et al. Layperson-Administered Naloxone Trends Reported in Emergency Medical
+Service Activations, 2020-2022. JAMA Netw Open 2024;7(10):e2439427. DOI:
+10.1001/jamanetworkopen.2024.39427.
+19. Becker TK, Gul SS, Cohen SA, et al. Public perception towards bystander cardiopulmonary resuscitation. Emerg
+Med J 2019;36(11):660–665. DOI: 10.1136/emermed-2018-208234.
+20. Pei-Chuan Huang E, Chiang WC, Hsieh MJ, et al. Public knowledge, attitudes and willingness regarding
+bystander cardiopulmonary resuscitation: A nationwide survey in Taiwan. J Formos Med Assoc 2019;118(2):572–
+581. DOI: 10.1016/j.jfma.2018.07.018.
+21. Williamson F, Heng PJ, Okubo M, et al. Does delivering chest compressions to patients who are not in cardiac
+arrest cause unintentional injury? A systematic review. Resusc Plus 2024;20:100828. DOI:
+10.1016/j.resplu.2024.100828.
+22. Smyth MAvG, S.; Hansen, C. M.; Fijačko, N.; Masterson, S.; Nakagawa, N. K.; Raffay, V.; Ristagno, G.; Rogers, J.;
+Scquizzato, T.; Smith, C. M.; Spartinou, A.; Keck, W.; Perkins, G. D.;. European Resuscitation Council Guidelines
+2025: Adult Basic Life Support. 2025.
+23. Bruinink LJ, Linders M, de Boode WP, Fluit C, Hogeveen M. The ABCDE approach in critically ill patients: A
+scoping review of assessment tools, adherence and reported outcomes. Resusc Plus 2024;20:100763. DOI:
+10.1016/j.resplu.2024.100763.
+24. Djakow JB, C. M. P.; Cardona, F.; de Lucas, N.; del Castillo, J.; Kiviranta, P.; Lauridsen, K. G.; Markel, F.; Martinez-
+Mejias, A.; Roggen, I.; Skellett, S.; Turner, N. M.; Biarent, D.;. European Resuscitation Council Guidelines 2025:
+Paediatric Life Support. 2025.
+25. Cecconi M, De Backer D, Antonelli M, et al. Consensus on circulatory shock and hemodynamic monitoring. Task
+force of the European Society of Intensive Care Medicine. Intensive Care Med 2014;40(12):1795–815. DOI:
+10.1007/s00134-014-3525-z.
+26. Douma MJ, Handley AJ, MacKenzie E, et al. The recovery position for maintenance of adequate ventilation and
+the prevention of cardiac arrest: A systematic review. Resusc Plus 2022;10:100236. DOI:
+10.1016/j.resplu.2022.100236.
+27. Wong DH, O'Connor D, Tremper KK, Zaccari J, Thompson P, Hill D. Changes in cardiac output after acute blood
+loss and position change in man. Crit Care Med 1989;17(10):979–83. DOI: 10.1097/00003246-198910000-00002.
+--- p42
+42
+28. Toppen W, Aquije Montoya E, Ong S, et al. Passive Leg Raise: Feasibility and Safety of the Maneuver in Patients
+With Undifferentiated Shock. J Intensive Care Med 2020;35(10):1123–1128. DOI: 10.1177/0885066618820492.
+29. De Buck E, Scheers H, Vandekerckhove P, Vermeulen D, Heidbuchel H, Heuten H. The impact of different
+recovery positions on the perfusion of the lower forearm and comfort: A cross-over randomized controlled trial.
+Resusc Plus 2024;19:100722. DOI: 10.1016/j.resplu.2024.100722.
+30. Julliand S, Desmarest M, Gonzalez L, et al. Recovery position significantly associated with a reduced admission
+rate of children with loss of consciousness. Arch Dis Child 2016;101(6):521–526. DOI: 10.1136/archdischild-2015-
+308857.
+31. Adnet F, Borron SW, Finot MA, Minadeo J, Baud FJ. Relation of body position at the time of discovery with
+suspected aspiration pneumonia in poisoned comatose patients. Crit Care Med 1999;27(4):745–8. DOI:
+10.1097/00003246-199904000-00028.
+32. Singletary EM, Douma MJ, Kung J, Myhre C, MacKenzie E, Force. obotILCoRFAT. Pulse Oximetry Use in the First
+Aid Setting: Task Force Synthesis of a Scoping Review International Liaison Committee on Resuscitation (ILCOR).
+December 5, 2022 (http://ilcor.org).
+33. Sjoding MW, Dickson RP, Iwashyna TJ, Gay SE, Valley TS. Racial Bias in Pulse Oximetry Measurement. N Engl J
+Med 2020;383(25):2477–2478. DOI: 10.1056/NEJMc2029240.
+34. Shi C, Goodall M, Dumville J, et al. The accuracy of pulse oximetry in measuring oxygen saturation by levels of
+skin pigmentation: a systematic review and meta-analysis. BMC Med 2022;20(1):267. DOI: 10.1186/s12916-022-
+02452-8.
+35. Crooks CJ, West J, Morling JR, et al. Pulse oximeter measurements vary across ethnic groups: an observational
+study in patients with COVID-19. Eur Respir J 2022;59(4). DOI: 10.1183/13993003.03246-2021.
+36. Gaffney FA, Bastian BC, Thal ER, Atkins JM, Blomqvist CG. Passive leg raising does not produce a significant or
+sustained autotransfusion effect. J Trauma 1982;22(3):190–3. DOI: 10.1097/00005373-198203000-00003.
+37. Silverston P, Ferrari M, Quaresima V. Pulse oximetry in primary care: factors affecting accuracy and
+interpretation. Br J Gen Pract 2022;72(716):132–133. DOI: 10.3399/bjgp22X718769.
+38. Zideman DA, De Buck ED, Singletary EM, et al. European Resuscitation Council Guidelines for Resuscitation 2015
+Section 9. First aid. Resuscitation 2015;95:278–87. DOI: 10.1016/j.resuscitation.2015.07.031.
+39. Zideman DA, Singletary EM, De Buck ED, et al. Part 9: First aid: 2015 International Consensus on First Aid Science
+with Treatment Recommendations. Resuscitation 2015;95:e225–61. DOI: 10.1016/j.resuscitation.2015.07.047.
+40. Greif R, Bray JE, Djarv T, et al. 2024 International Consensus on Cardiopulmonary Resuscitation and Emergency
+Cardiovascular Care Science With Treatment Recommendations: Summary From the Basic Life Support;
+Advanced Life Support; Pediatric Life Support; Neonatal Life Support; Education, Implementation, and Teams;
+and First Aid Task Forces. Resuscitation 2024;205:110414. DOI: 10.1016/j.resuscitation.2024.110414.
+41. Austin MA, Wills KE, Blizzard L, Walters EH, Wood-Baker R. Effect of high flow oxygen on mortality in chronic
+obstructive pulmonary disease patients in prehospital setting: randomised controlled trial. BMJ 2010;341:c5462.
+DOI: 10.1136/bmj.c5462.
+42. Wijesinghe M, Perrin K, Healy B, et al. Pre-hospital oxygen therapy in acute exacerbations of chronic obstructive
+pulmonary disease. Intern Med J 2011;41(8):618–22. DOI: 10.1111/j.1445-5994.2010.02207.x.
+43. Bentsen LP, Lassen AT, Titlestad IL, Brabrand M. A change from high-flow to titrated oxygen therapy in the
+prehospital setting is associated with lower mortality in COPD patients with acute exacerbations: an
+observational cohort study. Acute Med 2020;19(2):76–82. (https://www.ncbi.nlm.nih.gov/pubmed/32840257).
+44. Ringbaek TJ, Terkelsen J, Lange P. Outcomes of acute exacerbations in COPD in relation to pre-hospital oxygen
+therapy. Eur Clin Respir J 2015;2 (In eng). DOI: 10.3402/ecrj.v2.27283.
+45. Panesar SS, Javad S, de Silva D, et al. The epidemiology of anaphylaxis in Europe: a systematic review. Allergy
+2013;68(11):1353–61. DOI: 10.1111/all.12272.
+46. Worm M, Moneret-Vautrin A, Scherer K, et al. First European data from the network of severe allergic reactions
+(NORA). Allergy 2014;69(10):1397–404. DOI: 10.1111/all.12475.
+47. Grabenhenrich LB, Dolle S, Moneret-Vautrin A, et al. Anaphylaxis in children and adolescents: The European
+Anaphylaxis Registry. J Allergy Clin Immunol 2016;137(4):1128–1137 e1. DOI: 10.1016/j.jaci.2015.11.015.
+48. Pumphrey RS. Lessons for management of anaphylaxis from a study of fatal reactions. Clin Exp Allergy
+2000;30(8):1144–50. DOI: 10.1046/j.1365-2222.2000.00864.x.
+49. Muraro A, Worm M, Alviani C, et al. EAACI guidelines: Anaphylaxis (2021 update). Allergy 2022;77(2):357–377. DOI:
+10.1111/all.15032.
+50. Meyran D, Cassan P, Nemeth M, et al. The Ability of First Aid Providers to Recognize Anaphylaxis: A Scoping
+Review. Cureus 2023;15(7):e41547. DOI: 10.7759/cureus.41547.
+51. Hearrell M, Anagnostou A. Diagnosis and management of anaphylaxis. J Food Allergy 2020;2(1):64–68. DOI:
+10.2500/jfa.2020.2.200001.
+52. Pumphrey RS. Fatal posture in anaphylactic shock. J Allergy Clin Immunol 2003;112(2):451–2. DOI:
+10.1067/mai.2003.1614.
+53. Cardona V, Ansotegui IJ, Ebisawa M, et al. World allergy organization anaphylaxis guidance 2020. World Allergy
+Organ J 2020;13(10):100472. DOI: 10.1016/j.waojou.2020.100472.
+54. Campbell RL, Bashore CJ, Lee S, et al. Predictors of Repeat Epinephrine Administration for Emergency
+Department Patients with Anaphylaxis. J Allergy Clin Immunol Pract 2015;3(4):576–84. DOI:
+10.1016/j.jaip.2015.04.009.
+55. Araki M, Hamahata Y, Usui M, Akashi M. [Use of Multiple Doses of Adrenaline for Food-Induced Anaphylaxis].
+Arerugi 2018;67(6):751–758. DOI: 10.15036/arerugi.67.751.
+56. Casale TB, Ellis AK, Nowak-Wegrzyn A, Kaliner M, Lowenthal R, Tanimoto S.
+Pharmacokinetics/pharmacodynamics of epinephrine after single and repeat administration of neffy, EpiPen,
+and manual intramuscular injection. J Allergy Clin Immunol 2023;152(6):1587–1596. DOI: 10.1016/j.jaci.2023.08.007.
+57. Carlson JN, Cook S, Djarv T, Woodin JA, Singletary E, Zideman DA. Second Dose of Epinephrine for Anaphylaxis in
+the First Aid Setting: A Scoping Review. Cureus 2020;12(11):e11401. DOI: 10.7759/cureus.11401.
+--- p43
+43
+58. Singletary EM, Zideman DA, De Buck ED, et al. Part 9: First Aid: 2015 International Consensus on First Aid Science
+With Treatment Recommendations. Circulation 2015;132(16 Suppl 1):S269–311. DOI:
+10.1161/CIR.0000000000000278.
+59. Lott CK, V.; Abelairaz-Gomez, C.; Aird, R.; Alfonzo, A.; Bierens, J.; Cantellow, S.; Debaty, G.; Einav, S.; Fischer, M.;
+González-Salvado, V.; Greif, R.; Metelmann, B.; Metelmann, C.; Meyer, T.; Paal, P.; Peran, D.; Scapigliati, A.;
+Spartinou, A.; Thies, K.; Truhlar, A.; Deakin, C.; . European Resuscitation Council Guidelines 2025: Special
+Circumstances in Resuscitation. 2025.
+60. Dunne CL, Cirone J, Blanchard IE, et al. Evaluation of basic life support interventions for foreign body airway
+obstructions: A population-based cohort study. Resuscitation 2024;201:110258. DOI:
+10.1016/j.resuscitation.2024.110258.
+61. Saccomanno S, Saran S, Coceani Paskay L, et al. Risk factors and prevention of choking. Eur J Transl Myol
+2023;33(4) (In eng). DOI: 10.4081/ejtm.2023.11471.
+62. Foltran F, Ballali S, Passali FM, et al. Foreign bodies in the airways: a meta-analysis of published papers. Int J
+Pediatr Otorhinolaryngol 2012;76 Suppl 1:S12–9. (In eng). DOI: 10.1016/j.ijporl.2012.02.004.
+63. Hemsley B, Steel J, Sheppard JJ, Malandraki GA, Bryant L, Balandin S. Dying for a Meal: An Integrative Review of
+Characteristics of Choking Incidents and Recommendations to Prevent Fatal and Nonfatal Choking Across
+Populations. Am J Speech Lang Pathol 2019;28(3):1283–1297. (In eng). DOI: 10.1044/2018_AJSLP-18-0150.
+64. Couper K, Abu Hassan A, Ohri V, et al. Removal of foreign body airway obstruction: A systematic review of
+interventions. Resuscitation 2020;156:174–181. DOI: 10.1016/j.resuscitation.2020.09.007.
+65. Igarashi Y, Norii T, Sung-Ho K, et al. New classifications for Life-threatening foreign body airway obstruction. Am J
+Emerg Med 2019;37(12):2177–2181. (In eng). DOI: 10.1016/j.ajem.2019.03.015.
+66. Gudichsen JH, Baekdal EA, Jessen FB, et al. Anaphylaxis: first clinical presentation, subsequent referral practise,
+and suspected elicitor-an observational study. Intern Emerg Med 2024;19(7):2047–2056. DOI: 10.1007/s11739-024-
+03589-5.
+67. Norii T, Igarashi Y, Braude D, Sklar DP. Airway foreign body removal by a home vacuum cleaner: Findings of a
+multi-center registry in Japan. Resuscitation 2021;162:99–101. DOI: 10.1016/j.resuscitation.2021.02.006.
+68. Wolthers SA, Holgersen MG, Jensen JT, et al. Foreign body airway obstruction resulting in out-of-hospital cardiac
+arrest in Denmark - Incidence, survival and interventions. Resuscitation 2024;198:110171. DOI:
+10.1016/j.resuscitation.2024.110171.
+69. Norii T, Igarashi Y, Yoshino Y, et al. The effects of bystander interventions for foreign body airway obstruction on
+survival and neurological outcomes: Findings of the MOCHI registry. Resuscitation 2024;199:110198. DOI:
+10.1016/j.resuscitation.2024.110198.
+70. Igarashi Y, Yokobori S, Yoshino Y, Masuno T, Miyauchi M, Yokota H. Prehospital removal improves neurological
+outcomes in elderly patient with foreign body airway obstruction. Am J Emerg Med 2017;35(10):1396–1399. DOI:
+10.1016/j.ajem.2017.04.016.
+71. Redding JS. The choking controversy: critique of evidence on the Heimlich maneuver. Crit Care Med
+1979;7(10):475–9. (In eng) (https://www.ncbi.nlm.nih.gov/pubmed/477356).
+72. Vilke GM, Smith AM, Ray LU, Steen PJ, Murrin PA, Chan TC. Airway obstruction in children aged less than 5 years:
+the prehospital experience. Prehosp Emerg Care 2004;8(2):196–9. (In eng). DOI: 10.1016/j.prehos.2003.12.014.
+73. Langhelle A, Sunde K, Wik L, Steen PA. Airway pressure with chest compressions versus Heimlich manoeuvre in
+recently dead adults with complete airway obstruction. Resuscitation 2000;44(2):105–8. DOI: 10.1016/s0300-
+9572(00)00161-1.
+74. Ruben H, Macnaughton FI. The treatment of food-choking. Practitioner 1978;221(1325):725–9.
+(https://www.ncbi.nlm.nih.gov/pubmed/740619).
+75. Olasveengen TM, Mancini ME, Perkins GD, et al. Adult Basic Life Support: 2020 International Consensus on
+Cardiopulmonary Resuscitation and Emergency Cardiovascular Care Science With Treatment
+Recommendations. Circulation 2020;142(16_suppl_1):S41–S91. DOI: 10.1161/CIR.0000000000000892.
+76. Bhanderi BG, Palmer Hill S. Evaluation of DeChoker, an Airway Clearance Device (ACD) Used in Adult Choking
+Emergencies Within the Adult Care Home Sector: A Mixed Methods Case Study. Front Public Health
+2020;8:541885. DOI: 10.3389/fpubh.2020.541885.
+77. Costable NJ, Costable JM, Rabin G. The use of LifeVac, a novel airway clearance device, in the assistance of
+choking victims aged five and under: Results of a retrospective 10-year observational study. Journal of Pediatric
+Critical Care 2024;11(3):93–98. DOI: 10.4103/jpcc.jpcc_3_24.
+78. Dunne CL, Viguers K, Osman S, Queiroga AC, Szpilman D, Peden AE. A 2-year prospective evaluation of airway
+clearance devices in foreign body airway obstructions. Resusc Plus 2023;16:100496. DOI:
+10.1016/j.resplu.2023.100496.
+79. Gal LL PP, Peterman D. Resuscitation of choking victims in a pediatric population using a novel portable non-
+powered suction device: Real world data. Pediatr Ther. . (. https://vitalvac.com/wp-
+content/uploads/2024/07/estudo-2.pdf).
+80. McKinley MJ, Deede J, Markowitz B. Use of a Novel Portable Non-powered Suction Device in Patients With
+Oropharyngeal Dysphagia During a Choking Emergency. Front Med (Lausanne) 2021;8:742734. DOI:
+10.3389/fmed.2021.742734.
+81. Lorente-Ros A, Rubio Soler P, Curto Prieto D, Fernandez Lozano I. Paving the way: Exploring the efficacy of anti-
+choking suction devices in foreign body airway obstruction. Resusc Plus 2023;15:100441. DOI:
+10.1016/j.resplu.2023.100441.
+82. Hristonof MLS, Amantea MC, Lazzaretti FJ, Bernardes MM, Xavier LF, Amantea SL. Comparative efficacy of
+LifeVac(R) and Heimlich maneuver in simulated airway obstruction. J Pediatr (Rio J) 2025;101(3):473–478. DOI:
+10.1016/j.jped.2025.02.002.
+83. Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC Guidelines for the management of acute coronary syndromes.
+Eur Heart J 2023;44(38):3720–3826. DOI: 10.1093/eurheartj/ehad191.
+--- p44
+44
+84. Cardiology ESo. Cardiopractice: Acute coronary syndrome in women.
+(https://www.escardio.org/Councils/Council-for-Cardiology-Practice-(CCP)/Cardiopractice/acute-coronary-
+syndrome-in-women).
+85. Djarv T, Swain JM, Chang WT, Zideman DA, Singletary E. Early or First Aid Administration Versus Late or In-
+hospital Administration of Aspirin for Non-traumatic Adult Chest Pain: A Systematic Review. Cureus
+2020;12(2):e6862. DOI: 10.7759/cureus.6862.
+86. Seaquist ER, Anderson J, Childs B, et al. Hypoglycemia and diabetes: a report of a workgroup of the American
+Diabetes Association and the Endocrine Society. Diabetes Care 2013;36(5):1384–95. DOI: 10.2337/dc12-2480.
+87. McCall AL, Lieb DC, Gianchandani R, et al. Management of Individuals With Diabetes at High Risk for
+Hypoglycemia: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab 2023;108(3):529–562.
+DOI: 10.1210/clinem/dgac596.
+88. Lin YK, Ye W, Hepworth E, Ang L, Amiel SA, Fisher SJ. Evaluating the impact of severe hypoglycaemia definition
+wording on severe hypoglycaemia history assessment. Diabet Med 2025;42(4):e15513. DOI: 10.1111/dme.15513.
+89. De Buck E, Borra V, Carlson JN, Zideman DA, Singletary EM, Djarv T. First aid glucose administration routes for
+symptomatic hypoglycaemia. Cochrane Database Syst Rev 2019;4(4):CD013283. DOI:
+10.1002/14651858.CD013283.pub2.
+90. Iqbal A, Heller SR. The role of structured education in the management of hypoglycaemia. Diabetologia
+2018;61(4):751–760. DOI: 10.1007/s00125-017-4334-z.
+91. Battelino T, Alexander CM, Amiel SA, et al. Continuous glucose monitoring and metrics for clinical trials: an
+international consensus statement. Lancet Diabetes Endocrinol 2023;11(1):42–57. DOI: 10.1016/S2213-
+8587(22)00319-9.
+92. Singh-Franco D, Moreau C, Levin AD, Rosa D, Johnson M. Efficacy and Usability of Intranasal Glucagon for the
+Management of Hypoglycemia in Patients With Diabetes: A Systematic Review. Clin Ther 2020;42(9):e177–e208.
+DOI: 10.1016/j.clinthera.2020.06.024.
+93. Tournilhac C, Dolladille C, Armouche S, Vial S, Brouard J. Evaluation of a new training program to reassure
+primary school teachers about glucagon injection in children with type 1 diabetes during the 2017-2018 school
+year. Arch Pediatr 2020;27(4):212–218. DOI: 10.1016/j.arcped.2020.02.002.
+94. Bassi M, Scalas M, Spacco G, et al. Management of Type 1 Diabetes in a school setting: effectiveness of an online
+training program for school staff. Front Public Health 2023;11:1228975. DOI: 10.3389/fpubh.2023.1228975.
+95. Krecic MR. Undesignated Glucagon in Schools for the Treatment of Diabetes-Related Hypoglycemia: A 2025
+Update. NASN Sch Nurse 2025;40(2):73–79. DOI: 10.1177/1942602X241311112.
+96. Kim HK, Nelson LS. Reducing the harm of opioid overdose with the safe use of naloxone : a pharmacologic
+review. Expert Opin Drug Saf 2015;14(7):1137–46. DOI: 10.1517/14740338.2015.1037274.
+97. Dezfulian C, Orkin AM, Maron BA, et al. Opioid-Associated Out-of-Hospital Cardiac Arrest: Distinctive Clinical
+Features and Implications for Health Care and Public Responses: A Scientific Statement From the American
+Heart Association. Circulation 2021;143(16):e836–e870. DOI: 10.1161/CIR.0000000000000958.
+98. Hewett Brumberg EK, Douma MJ, Alibertis K, et al. 2024 American Heart Association and American Red Cross
+Guidelines for First Aid. Circulation 2024;150(24):e519–e579. DOI: 10.1161/CIR.0000000000001281.
+99. Skulberg AK, Tylleskar I, Valberg M, et al. Comparison of intranasal and intramuscular naloxone in opioid
+overdoses managed by ambulance staff: a double-dummy, randomised, controlled trial. Addiction
+2022;117(6):1658–1667. DOI: 10.1111/add.15806.
+100. Dietze P, Jauncey M, Salmon A, et al. Effect of Intranasal vs Intramuscular Naloxone on Opioid Overdose: A
+Randomized Clinical Trial. JAMA Netw Open 2019;2(11):e1914977. DOI: 10.1001/jamanetworkopen.2019.14977.
+101. Dwyer K, Walley AY, Langlois BK, et al. Opioid education and nasal naloxone rescue kits in the emergency
+department. West J Emerg Med 2015;16(3):381–4. DOI: 10.5811/westjem.2015.2.24909.
+102. Doe-Simkins M, Quinn E, Xuan Z, et al. Overdose rescues by trained and untrained participants and change in
+opioid use among substance-using participants in overdose education and naloxone distribution programs: a
+retrospective cohort study. BMC Public Health 2014;14:297. DOI: 10.1186/1471-2458-14-297.
+103. Jones JD, Campbell AN, Brandt L, et al. A randomized clinical trial of the effects of brief versus extended opioid
+overdose education on naloxone utilization outcomes by individuals with opioid use disorder. Drug Alcohol
+Depend 2022;237:109505. DOI: 10.1016/j.drugalcdep.2022.109505.
+104. Martinez R, Munoz-Venturelli P, Ordunez P, et al. Risk and impact of stroke across 38 countries and territories of
+the Americas from 1990 to 2021: a population-based trends analysis from the Global Burden of Disease Study
+2021. Lancet Reg Health Am 2025;43:101017. DOI: 10.1016/j.lana.2025.101017.
+105. Kobayashi A, Czlonkowska A, Ford GA, et al. European Academy of Neurology and European Stroke Organization
+consensus statement and practical guidance for pre-hospital management of stroke. Eur J Neurol
+2018;25(3):425–433. DOI: 10.1111/ene.13539.
+106. Meyran D, Cassan P, Avau B, Singletary E, Zideman DA. Stroke Recognition for First Aid Providers: A Systematic
+Review and Meta-Analysis. Cureus 2020;12(11):e11386. DOI: 10.7759/cureus.11386.
+107. Aroor S, Singh R, Goldstein LB. BE-FAST (Balance, Eyes, Face, Arm, Speech, Time): Reducing the Proportion of
+Strokes Missed Using the FAST Mnemonic. Stroke 2017;48(2):479–481. DOI: 10.1161/STROKEAHA.116.015169.
+108. Harbison J, Hossain O, Jenkinson D, Davis J, Louw SJ, Ford GA. Diagnostic accuracy of stroke referrals from
+primary care, emergency room physicians, and ambulance staff using the face arm speech test. Stroke
+2003;34(1):71–6. DOI: 10.1161/01.str.0000044170.46643.5e.
+109. Kothari RU, Pancioli A, Liu T, Brott T, Broderick J. Cincinnati Prehospital Stroke Scale: reproducibility and validity.
+Ann Emerg Med 1999;33(4):373–8. DOI: 10.1016/s0196-0644(99)70299-4.
+110. Bray JE, Martin J, Cooper G, Barger B, Bernard S, Bladin C. An interventional study to improve paramedic
+diagnosis of stroke. Prehosp Emerg Care 2005;9(3):297–302. DOI: 10.1080/10903120590962382.
+111. Kidwell CS, Starkman S, Eckstein M, Weems K, Saver JL. Identifying stroke in the field. Prospective validation of
+the Los Angeles prehospital stroke screen (LAPSS). Stroke 2000;31(1):71–6. DOI: 10.1161/01.str.31.1.71.
+112. Organization WH. Suicide. (https://www.who.int/news-room/fact-sheets/detail/suicide).
+--- p45
+45
+113. Howarth EJ, O'Connor DB, Panagioti M, Hodkinson A, Wilding S, Johnson J. Are stressful life events prospectively
+associated with increased suicidal ideation and behaviour? A systematic review and meta-analysis. J Affect
+Disord 2020;266:731–742. DOI: 10.1016/j.jad.2020.01.171.
+114. Hadlaczky G, Hokby S, Mkrtchian A, Carli V, Wasserman D. Mental Health First Aid is an effective public health
+intervention for improving knowledge, attitudes, and behaviour: a meta-analysis. Int Rev Psychiatry
+2014;26(4):467–75. DOI: 10.3109/09540261.2014.924910.
+115. Morgan AJ, Ross A, Reavley NJ. Systematic review and meta-analysis of Mental Health First Aid training: Effects
+on knowledge, stigma, and helping behaviour. PLoS One 2018;13(5):e0197102. DOI: 10.1371/journal.pone.0197102.
+116. Richardson R, Dale HE, Robertson L, et al. Mental Health First Aid as a tool for improving mental health and well-
+being. Cochrane Database Syst Rev 2023;8(8):CD013127. DOI: 10.1002/14651858.CD013127.pub2.
+117. Stroobants S, Dockx, K., Scheers, H., Borra, V., De Brier, N., Verlinden, S., Lauwers, K., Vandekerckhove, P. & De
+Buck, E. Providing First Aid to People Experiencing Mental Health Problems: Development of Evidence-Based
+Guidance Materials for Laypeople International Journal of First Aid Education 2023;6(1), 37–60. DOI:
+https://doi.org/10.25894/ijfae.6.1.8.
+118. Shultz JM, Forbes D. Psychological First Aid: Rapid proliferation and the search for evidence. Disaster Health
+2014;2(1):3–12. DOI: 10.4161/dish.26006.
+119. Committee I-AS. IASC Guidelines on Mental Health and Psychosocial Support in Emergency Settings. .
+(https://interagencystandingcommittee.org/iasc-task-force-mental-health-and-psychosocial-support-
+emergency-settings/iasc-guidelines-mental-health-and-psychosocial-support-emergency-settings-2007).
+120. Hobfoll SE, Watson P, Bell CC, et al. Five essential elements of immediate and mid-term mass trauma
+intervention: empirical evidence. Psychiatry 2007;70(4):283–315; discussion 316–69. DOI: 10.1521/psyc.2007.70.4.283.
+121. Laermans J, Djärv T, Singletary EM, et al. Spinal motion restriction Task Force Synthesis of a Scoping Review
+[Internet] Brussels, Belgium: International Liaison Committee on Resuscitation (ILCOR) First Aid Task Force, 2024
+October 28. Available from: https://costr.ilcor.org/document/spinal-motion-restriction-fa-7311-tf-scr.
+122. Laermans J, Singletary EM, Macneil F, et al. Spinal Motion Restriction for Possible Traumatic Cervical Spine Injury:
+A Scoping Review. Cureus 2025;17(5):e84393. DOI: 10.7759/cureus.84393.
+123. Pandor A, Essat M, Sutton A, et al. Cervical spine immobilisation following blunt trauma in pre-hospital and
+emergency care: A systematic review. PLoS One 2024;19(4):e0302127. DOI: 10.1371/journal.pone.0302127.
+124. Woodin JA DT, Poole K, Singletary EM, Zideman DA. On behalf of the International Liaison Committee on
+Resuscitation First Aid Task Force. . Cervical Spinal Injury Manual Stabilization Review and International Liaison
+Committee on Resuscitation (ILCOR) First Aid Task Force Insights. (http://ilcor.org).
+125. Kalkwarf KJ, Drake SA, Yang Y, et al. Bleeding to death in a big city: An analysis of all trauma deaths from
+hemorrhage in a metropolitan area during 1 year. J Trauma Acute Care Surg 2020;89(4):716–722. DOI:
+10.1097/TA.0000000000002833.
+126. Charlton NP, Swain JM, Brozek JL, et al. Control of Severe, Life-Threatening External Bleeding in the Out-of-
+Hospital Setting: A Systematic Review. Prehosp Emerg Care 2021;25(2):235–267. DOI:
+10.1080/10903127.2020.1743801.
+127. Charlton NP, Goolsby CA, Zideman DA, Maconochie IK, Morley PT, Singletary EM. Appropriate Tourniquet Types
+in the Pediatric Population: A Systematic Review. Cureus 2021;13(4):e14474. DOI: 10.7759/cureus.14474.
+128. Cirocchi R, Prigorschi D, Properzi L, et al. Is the Use of Tourniquets More Advantageous than Other Bleeding
+Control Techniques in Patients with Limb Hemorrhage? A Systematic Review and Meta-Analysis. Medicina
+(Kaunas) 2025;61(1). DOI: 10.3390/medicina61010093.
+129. Jarrassier A, Py N, de Rocquigny G, et al. Lessons learned from the war in Ukraine for the anesthesiologist and
+intensivist: A scoping review. Anaesth Crit Care Pain Med 2024;43(5):101409. DOI: 10.1016/j.accpm.2024.101409.
+130. Butler F, Holcomb JB, Dorlac W, et al. Who needs a tourniquet? And who does not? Lessons learned from a
+review of tourniquet use in the Russo-Ukrainian war. J Trauma Acute Care Surg 2024;97(2S Suppl 1):S45–S54. DOI:
+10.1097/TA.0000000000004395.
+131. Ayling J. Handle with care. Emerg Med Serv 2004;33(7):34. (https://www.ncbi.nlm.nih.gov/pubmed/15327170).
+132. Arnaud F, Maudlin-Jeronimo E, Higgins A, et al. Adherence evaluation of vented chest seals in a swine skin
+model. Injury 2016;47(10):2097–2104. DOI: 10.1016/j.injury.2016.05.041.
+133. Arnaud F, Tomori T, Teranishi K, Yun J, McCarron R, Mahon R. Evaluation of chest seal performance in a swine
+model: comparison of Asherman vs. Bolin seal. Injury 2008;39(9):1082–8. DOI: 10.1016/j.injury.2008.03.003.
+134. Kheirabadi BS, Terrazas IB, Miranda N, et al. Do vented chest seals differ in efficacy? An experimental evaluation
+using a swine hemopneumothorax model. J Trauma Acute Care Surg 2017;83(1):182–189. DOI:
+10.1097/TA.0000000000001501.
+135. Kotora JG, Jr., Henao J, Littlejohn LF, Kircher S. Vented chest seals for prevention of tension pneumothorax in a
+communicating pneumothorax. J Emerg Med 2013;45(5):686–94. DOI: 10.1016/j.jemermed.2013.05.011.
+136. Schachner T, Isser M, Haselbacher M, et al. Rescue Blanket as a Provisional Seal for Penetrating Chest Wounds in
+a New Ex Vivo Porcine Model. Ann Thorac Surg 2022;114(1):280–285. DOI: 10.1016/j.athoracsur.2021.06.083.
+137. Hoggarth A, Grist M, Board B, Murch T. Development of a New Vented Chest Seal Dressing for Treatment of
+Open Pneumothorax. J Spec Oper Med 2020;20(3):159–165. DOI: 10.55460/28BO-67AK.
+138. Schauer SG, April MD, Naylor JF, et al. Chest Seal Placement for Penetrating Chest Wounds by Prehospital
+Ground Forces in Afghanistan. J Spec Oper Med 2017;17(3):85–89. DOI: 10.55460/8ILY-W3MX.
+139. Patricios JS, Schneider KJ, Dvorak J, et al. Consensus statement on concussion in sport: the 6th International
+Conference on Concussion in Sport-Amsterdam, October 2022. Br J Sports Med 2023;57(11):695–711. DOI:
+10.1136/bjsports-2023-106898.
+140. Zideman DA, Singletary EM, Borra V, et al. European Resuscitation Council Guidelines 2021: First aid.
+Resuscitation 2021;161:270–290. DOI: 10.1016/j.resuscitation.2021.02.013.
+141. Kulnik ST, Halter M, Hilton A, et al. Confidence and willingness among laypersons in the UK to act in a head injury
+situation: a qualitative focus group study. BMJ Open 2019;9(11):e033531. DOI: 10.1136/bmjopen-2019-033531.
+--- p46
+46
+142. Teasdale G, Jennett B. Assessment of coma and impaired consciousness. A practical scale. Lancet
+1974;2(7872):81–4. DOI: 10.1016/s0140-6736(74)91639-0.
+143. Teasdale G, Murray G, Parker L, Jennett B. Adding up the Glasgow Coma Score. Acta Neurochir Suppl (Wien)
+1979;28(1):13–6. DOI: 10.1007/978-3-7091-4088-8_2.
+144. Echemendia RJ, Ahmed OH, Bailey CM, et al. The Concussion Recognition Tool 6 (CRT6). Br J Sports Med
+2023;57(11):692–694. DOI: 10.1136/bjsports-2023-107021.
+145. Covassin T, Elbin RJ, 3rd, Stiller-Ostrowski JL, Kontos AP. Immediate post-concussion assessment and cognitive
+testing (ImPACT) practices of sports medicine professionals. J Athl Train 2009;44(6):639–44. DOI: 10.4085/1062-
+6050-44.6.639.
+146. McCrea M, Kelly JP, Kluge J, Ackley B, Randolph C. Standardized assessment of concussion in football players.
+Neurology 1997;48(3):586–8. DOI: 10.1212/wnl.48.3.586.
+147. Echemendia RJ, Brett BL, Broglio S, et al. Sport concussion assessment tool - 6 (SCAT6). Br J Sports Med
+2023;57(11):622–631. DOI: 10.1136/bjsports-2023-107036.
+148. Salman D, Marino K, Griffin S, et al. Concussion in sport: are new guidelines a game changer for primary care? Br
+J Gen Pract 2023;73(735):440–442. DOI: 10.3399/bjgp23X735009.
+149. Guskiewicz KM, Broglio SP. Sport-related concussion: on-field and sideline assessment. Phys Med Rehabil Clin N
+Am 2011;22(4):603–17, vii. DOI: 10.1016/j.pmr.2011.08.003.
+150. Singletary E, Laermans J, Pek JH, et al. Preservation of Traumatic Completely Amputated or Avulsed Body Parts
+in the First Aid Setting: A Scoping Review. Cureus 2025;17(4):e81998. DOI: 10.7759/cureus.81998.
+151. van Beeck EF, Branche CM, Szpilman D, Modell JH, Bierens JJ. A new definition of drowning: towards
+documentation and prevention of a global public health problem. Bull World Health Organ 2005;83(11):853–6.
+(https://www.ncbi.nlm.nih.gov/pubmed/16302042).
+152. Zhu W, He X, San R, et al. Global, regional, and national drowning trends from 1990 to 2021: Results from the 2021
+Global Burden of Disease Study. Acad Emerg Med 2024;31(12):1212–1222. DOI: 10.1111/acem.15003.
+153. Barcala-Furelos R, Graham D, Abelairas-Gomez C, Rodriguez-Nunez A. Lay-rescuers in drowning incidents: A
+scoping review. Am J Emerg Med 2021;44:38–44. DOI: 10.1016/j.ajem.2021.01.069.
+154. Wyckoff MH, Greif R, Morley PT, et al. 2022 International Consensus on Cardiopulmonary Resuscitation and
+Emergency Cardiovascular Care Science With Treatment Recommendations: Summary From the Basic Life
+Support; Advanced Life Support; Pediatric Life Support; Neonatal Life Support; Education, Implementation, and
+Teams; and First Aid Task Forces. Resuscitation 2022;181:208–288. (In eng). DOI: 10.1016/j.resuscitation.2022.10.005.
+155. Thom O, Roberts K, Devine S, Leggat PA, Franklin RC. Impact of lifeguard oxygen therapy on the resuscitation of
+drowning victims: Results from an Utstein Style for Drowning Study. Emerg Med Australas 2024;36(6):841–848.
+DOI: 10.1111/1742-6723.14454.
+156. Bierens J, Bray J, Abelairas-Gomez C, et al. A systematic review of interventions for resuscitation following
+drowning. Resusc Plus 2023;14:100406. DOI: 10.1016/j.resplu.2023.100406.
+157. Claesson A, Lindqvist J, Herlitz J. Cardiac arrest due to drowning--changes over time and factors of importance
+for survival. Resuscitation 2014;85(5):644–8. DOI: 10.1016/j.resuscitation.2014.02.006.
+158. Mota MAL, Santos MR, Santos EJF, Henriques C, Matos A, Cunha M. Trauma Prehospital Hypothermia Prevention
+and Treatment: An Observational Study. J Trauma Nurs 2021;28(3):194–202. DOI: 10.1097/JTN.0000000000000583.
+159. Lier M, Jebens C, Lorey-Tews A, et al. What is the best way to keep the patient warm during technical rescue?
+Results from two prospective randomised controlled studies with healthy volunteers. BMC Emerg Med
+2023;23(1):83. DOI: 10.1186/s12873-023-00850-6.
+160. Xu TL, Jiang YL, Zhou GX, Wu CH. Application of a feedforward control-based intervention for preventing
+hypothermia in trauma patients in a pre-hospital emergency setting. Am J Transl Res 2024;16(4):1155–1164. DOI:
+10.62347/IRMG4893.
+161. Singletary EM, Zideman DA, Bendall JC, et al. 2020 International Consensus on First Aid Science With Treatment
+Recommendations. Resuscitation 2020;156:A240–A282. DOI: 10.1016/j.resuscitation.2020.09.016.
+162. Strapazzon G, Procter E, Paal P, Brugger H. Pre-hospital core temperature measurement in accidental and
+therapeutic hypothermia. High Alt Med Biol 2014;15(2):104–11. DOI: 10.1089/ham.2014.1008.
+163. Skaiaa SC, Brattebo G, Assmus J, Thomassen O. The impact of environmental factors in pre-hospital thermistor-
+based tympanic temperature measurement: a pilot field study. Scand J Trauma Resusc Emerg Med 2015;23:72.
+DOI: 10.1186/s13049-015-0148-5.
+164. Mazerolle SM, Ganio MS, Casa DJ, Vingren J, Klau J. Is oral temperature an accurate measurement of deep body
+temperature? A systematic review. J Athl Train 2011;46(5):566–73. DOI: 10.4085/1062-6050-46.5.566.
+165. Casa DJ, McDermott BP, Lee EC, Yeargin SW, Armstrong LE, Maresh CM. Cold water immersion: the gold
+standard for exertional heatstroke treatment. Exerc Sport Sci Rev 2007;35(3):141–9. DOI:
+10.1097/jes.0b013e3180a02bec.
+166. McDermott BP, Casa DJ, Ganio MS, et al. Acute whole-body cooling for exercise-induced hyperthermia: a
+systematic review. J Athl Train 2009;44(1):84–93. DOI: 10.4085/1062-6050-44.1.84.
+167. Epstein Y, Yanovich R. Heatstroke. N Engl J Med 2019;380(25):2449–2459. DOI: 10.1056/NEJMra1810762.
+168. Eifling KP, Gaudio FG, Dumke C, et al. Wilderness Medical Society Clinical Practice Guidelines for the Prevention
+and Treatment of Heat Illness: 2024 Update. Wilderness Environ Med 2024;35(1_suppl):112S–127S. DOI:
+10.1177/10806032241227924.
+169. Douma MJ, Aves T, Allan KS, et al. First aid cooling techniques for heat stroke and exertional hyperthermia: A
+systematic review and meta-analysis. Resuscitation 2020;148:173–190. DOI: 10.1016/j.resuscitation.2020.01.007.
+170. Chippaux JP. Epidemiology of snakebites in Europe: a systematic review of the literature. Toxicon 2012;59(1):86–
+99. DOI: 10.1016/j.toxicon.2011.10.008.
+171. Avau B, Borra V, Vandekerckhove P, De Buck E. The Treatment of Snake Bites in a First Aid Setting: A Systematic
+Review. PLoS Negl Trop Dis 2016;10(10):e0005079. DOI: 10.1371/journal.pntd.0005079.
+172. Seifert SA, Armitage JO, Sanchez EE. Snake Envenomation. N Engl J Med 2022;386(1):68–78. DOI:
+10.1056/NEJMra2105228.
+--- p47
+47
+173. Parker-Cote J, Meggs WJ. First Aid and Pre-Hospital Management of Venomous Snakebites. Trop Med Infect Dis
+2018;3(2). DOI: 10.3390/tropicalmed3020045.
+174. Service NH. Snakebites. 2025 (https://www.nhs.uk/conditions/snake-bites/).
+175. Organization WH. Control of neglected diseases- Snakebite. (https://www.who.int/teams/control-of-neglected-
+tropical-diseases/snakebite-envenoming/treatment).
+176. Dewidar O, Pardo JP, Welch V, et al. Operationalizing the GRADE-equity criterion to inform guideline
+recommendations: application to a medical cannabis guideline. J Clin Epidemiol 2024;165:111185. DOI:
+10.1016/j.jclinepi.2023.10.001.
+Tilhørsforhold
+1 Karolinska University Hospital, Karolinska Institutet, Stockholm, Sweden, therese.djarv@ki.se
+2 Barts Health NHS Trust, London, UK, jessicarogers@doctors.org.uk
+3 Department of Anaesthesia, Intensive Care and EMS, Azienda USL di Bologna, Bologna, Italy,
+federico.semeraro@erc.edu
+4 Swedish Lifesaving Society, Sweden, louise.bradde@sls.a.se
+5 International Federation of Red Cross and Red Cresent National Societies, Paris, France pascal.cassan@ifrc.org,
+6 University of Medicine and Pharmacy "Grigore T Popa" Iasi, Emergency Department, Emergency County Hospital Sf.
+Spiridon Iasi, Romania, carmen.cimpoesu@umfiasi.ro
+7 Emergency Medical Service RAV Haaglanden, The Hague, Netherlands. sander.vangoor@erc.edu
+8 Emergency Department Ninewells Hospital and Medical School University of Dundee UK and British Red Cross.
+BKlaassen@redcross.org.uk
+9 Centre for Evidence-Based Practice, Belgian Red Cross-Flanders, Mechelen, Belgium; Department of Public Health and
+Primary Care, Leuven Institute for Healthcare Policy, KU Leuven, Leuven, Belgium; Cochrane First Aid, Mechelen,
+Belgium, Jorien.Laermans@rodekruis.be
+10 French Red Cross, Paris, France, daniel.meyran@croix-rouge.fr
+11 Department of Emergency Medicine, University of Virginia, USA, niciems1@gmail.com
+12 Warwick Clinical Trials Unit, University of Warwick, Warwick, UK; London Ambulance Service NHS Trust, London, UK
+adam.smith56@nhs.net
+13 Ministry of Health Sri Lanka, kaushila@gmail.com
+14 Thames Valley Air Ambulance, Stokenchurch, Oxford, UK, david.zideman@gmail.com
+* Korresponderende forfatter: Therese Djarv, therese.djarv@ki.se

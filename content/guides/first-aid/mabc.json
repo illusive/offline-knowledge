@@ -1,0 +1,24 @@
+{
+  "id": "mabc",
+  "category": "first-aid",
+  "order": 4,
+  "title": "<M>ABC-princippet",
+  "summary": "For at kunne prioritere den mest nødvendige førstehjælp til én eller flere tilskadekomne, anvender vi M-ABC-princippet:",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    { "kind": "steps", "items": ["<M>Massive blødninger – livstruende blødninger", "Airway – luftveje", "Breathing – åndedræt", "Circulation – blodcirkulation"], "page": 17 },
+    { "kind": "text", "text": "Alle celler i kroppen har behov for ilt for at kunne opretholde deres funktion. <M>ABC sikrer denne livsvigtige ilttransport.", "page": 17 },
+    { "kind": "text", "text": "Nogle celler kan kun undvære ilt i få minutter, før de tager skade. Hjernens celler er blandt disse.", "page": 17 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Struktureret vurdering (ABCDE), s. 7",
+      "quote": "Vær straks opmærksom på sikkerheden ved skadestedet, om personen er ved bevidsthed og eventuelle livstruende blødninger … Brug ABCDE-tilgangen til systematisk vurdering af tilskadekomne",
+      "note": "Same order: life-threatening bleeding first, then airway, breathing, circulation. ERC adds D (neurological status) and E (exposure)."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["massive-bloedninger", "frie-luftveje", "vejrtraekning"]
+}

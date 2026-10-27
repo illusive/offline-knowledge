@@ -1,0 +1,42 @@
+{
+  "id": "vejrtraekning",
+  "category": "first-aid",
+  "order": 7,
+  "title": "Er der vejrtrækning?",
+  "summary": "Når du skal kontrollere, om den tilskadekomne har en normal vejrtrækning, skal du udføre se, lyt og føl!",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "list",
+      "title": "Samtidig med at fastholder dit hageløft:",
+      "items": [
+        "Se: Om brystkassen og maven hæver og sænker sig",
+        "Lyt: Efter vejrtrækning ved at placere øret meget tæt på den tilskadekomnes mund og næse",
+        "Føl: Efter udåndingsluft på din kind."
+      ],
+      "page": 20
+    },
+    { "kind": "heading", "text": "Normal, unormal eller ingen vejrtrækning", "page": 20 },
+    { "kind": "text", "text": "Normal vejrtrækning lyder ubesværet, mens en unormal vejrtrækning kan være enkelte gisp, eller at man trækker vejret langsomt og med hørlig lyd (som en fisk på land).", "page": 20 },
+    { "kind": "text", "text": "Ved ingen vejrtrækning kan du hverken se, høre eller føle vejrtrækning.", "page": 20 },
+    { "kind": "warning", "title": "Vigtigt", "text": "Hjertelungeredning (HLR) påbegyndes ved unormal (agonal), ingen vejrtrækning, eller hvis du er i tvivl.", "page": 21 },
+    { "kind": "text", "text": "Hvis der er normal vejrtrækning, og den tilskadekomne stadig er bevidstløs, placeres personen i et stabilt sideleje!", "page": 22 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Tabel 3, B - Breathing, s. 8",
+      "quote": "for normal vejrtrækning (maksimalt 10 sekunder). … Hvis personen er bevidstløs og ikke trækker vejret normalt, ring til 1-1-2 og start HLR",
+      "note": "Same look, listen and feel check, and CPR when breathing is not normal. ERC adds: take no more than 10 seconds."
+    },
+    {
+      "sourceId": "dk-drg-erc-bls-2025",
+      "locator": "Ikke normal vejrtrækning, s. 15",
+      "quote": "Agonal vejrtrækning fejltolkes ofte som et livstegn",
+      "note": "Agrees that gasping (agonal) breathing is not normal breathing and calls for CPR."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["frie-luftveje", "stabilt-sideleje", "hlr-voksne"]
+}

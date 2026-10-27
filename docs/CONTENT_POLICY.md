@@ -84,7 +84,7 @@ AI may help restructure source text at build time. It may not introduce new clai
 |-------|--------|-------------------|
 | `low` | Supplies lists, storage, growing, general preparedness | Source check (§7) |
 | `elevated` | Preservation methods, heating, basic repairs, tool use | Source check; prefer Tier 1–2 source |
-| `high` | First aid, water treatment, food safety, electricity, gas, carbon monoxide | **Verbatim only (D-027):** the source's text and structure unchanged; whole sections may be selected, nothing split, merged, reordered, reworded or translated. Owner check of exact reproduction, **plus** agreement from a second independent authority. Primary source must be current and Tier 1 or 2; a Tier 3 source alone is never sufficient. The guide shows the emergency card (112) and the source date |
+| `high` | First aid, water treatment, food safety, electricity, gas, carbon monoxide | **Verbatim only (D-027, changed 2026-10-27):** the source's words unchanged, nothing reworded or translated; layout and order may change (sentences set as steps, lists or warnings; sections reordered; headings taken from the source); obvious typos corrected only as recorded corrections. The build checks every shown text against the source (`content/lib/guides.ts`, D-037). Owner check of exact reproduction, **plus** agreement from a second independent authority. Primary source must be current and Tier 1 or 2; a Tier 3 source alone is never sufficient. The guide shows the emergency card (112) and the source date |
 
 When sources disagree on a high-risk point, the guide is not published until the disagreement is resolved or the point is removed. Record it in `OPEN_QUESTIONS.md`.
 

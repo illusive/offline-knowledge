@@ -1,0 +1,70 @@
+{
+  "id": "hlr-voksne",
+  "category": "first-aid",
+  "order": 9,
+  "title": "Basal hjertelungeredning (HLR)",
+  "summary": "Definitionen på hjertestop er: En bevidstløs person uden normal vejrtrækning.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "corrections": [{ "from": "pegeog tommelfinger", "to": "pege- og tommelfinger" }],
+  "blocks": [
+    { "kind": "list", "title": "Hjertelungeredning består af serier af:", "items": ["30 brystkompressioner (hjertemassage)", "2 indblæsninger (kunstigt åndedræt)"], "page": 28 },
+    {
+      "kind": "steps",
+      "title": "HLR – Voksne – Brystkompressioner",
+      "items": [
+        "Placér den tilskadekomne på et fast og jævnt underlag.",
+        "Fjern tøj fra overkroppen, så brystet er bart",
+        "Placér den ene håndrod midt på den tilskadekomnes brystkasse med bøjede fingre",
+        "Placér den anden hånd ovenpå. Flet og lås med fingrene",
+        "Læn dig ind over brystkassen, og tryk med håndroden lodret ned med strakte arme",
+        "Trykdybden skal være 5 cm, men ikke over 6 cm"
+      ],
+      "page": 28
+    },
+    { "kind": "image", "file": "hlr-tryksted.jpg", "alt": "En førstehjælper trykker med strakte arme og flettede fingre midt på en liggende persons bare brystkasse.", "caption": "På billedet ses trykstedet, der er midt på brystkassen. Hvis muligt, afdæk brystkassen.", "page": 29 },
+    { "kind": "text", "text": "Trykhastigheden skal være 100-120 tryk pr. minut (30 tryk skal tage mellem 15 og 18 sekunder)", "page": 28 },
+    { "kind": "text", "text": "Kontakten med brystkassen må ikke mistes, men der må ikke hviles på brystkassen.", "page": 28 },
+    {
+      "kind": "steps",
+      "title": "HLR – Voksne – Indblæsninger (mund-til-mund)",
+      "items": [
+        "Skab frie luftveje med hageløft. Placér den ene hånd på panden og 2 fingre under hagen",
+        "Forsigtigt føres hovedet bagover til naturlig modstand",
+        "Klem den tilskadekomnes næse sammen med pege- og tommelfinger",
+        "Placér din mund omkring tilskadekomnes mund, så den slutter tæt",
+        "Giv en indblæsning på ca. 1 sekund til brystkassen hæver sig synligt",
+        "Drej dit hoved, tag en normal indånding og kontrollér samtidig at brystkassen sænker sig",
+        "Giv en indblæsning mere."
+      ],
+      "page": 29
+    },
+    {
+      "kind": "warning",
+      "title": "Vigtigt",
+      "items": [
+        "Hvis du ikke kan, ikke vil, eller det ikke er muligt at give indblæsninger er det bedre kun at give hjertemassage end ikke at gøre noget",
+        "Giv kun 2 indblæsningsforsøg pr. gang, uanset om brystkassen hæver sig tydeligt eller ej!",
+        "Husk, at HLR fortsættes indtil redningsmandskabet fortæller dig at du skal stoppe eller hvis den tilskadekomne trækker vejret normalt igen."
+      ],
+      "page": 29
+    },
+    { "kind": "image", "file": "hlr-flowchart.jpg", "alt": "Rutediagram med fotos: Skab sikkerhed, Bevidsthedskontrol, Ring 1-1-2 (sæt telefonen på højttaler), Skab frie luftveje, Se, lyt og føl. Vejrtrækning? Ja: stabilt sideleje. Nej: blotlæg brystkassen og påbegynd HLR, 30 kompressioner og 2 indblæsninger, igen og igen.", "page": 30 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-bls-2025",
+      "locator": "Basal genoplivning, s. 7–8",
+      "quote": "Placér din ene hånds håndrod på nederste halvdel af brystbenet (på midten af brystkassen). … Tryk mindst 5 cm ned, men ikke mere end 6 cm. … Hold en frekvens på 100–120 tryk i minuttet med så få afbrydelser som muligt. … Hvis du er blevet uddannet i at give kunstigt åndedræt, skal du skiftevis give 30 tryk og 2 indblæsninger.",
+      "note": "Same hand position, depth (5–6 cm), rate (100–120 per minute) and 30:2."
+    },
+    {
+      "sourceId": "dk-drg-bls-algoritme-2025",
+      "locator": "Basal genoplivning (algoritme)",
+      "quote": "Giv hjertemassage … Giv HLR 30:2",
+      "note": "Agrees that someone not trained in rescue breaths gives chest compressions only."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["vejrtraekning", "hjertestarter", "hlr-boern"]
+}

@@ -20,10 +20,10 @@ content/
   sources/        Source registry (registry.json), snapshots, text/ (PDF text layers), reuse requests
   storage/        Food storage data: generated imports + Danish names (names-da.json)
   produce/        Food guides (guides/foodkeeper-<id>.json, D-033), Handbook 66 compatibility table and FoodKeeper mapping
-  guides/         One file per guide per language (format not decided yet)
+  guides/         Guides (D-037): <category>/<id>.json (schema/guide.ts) and images/ (JPEG cut from the source's pages)
   schema/         Shared TypeScript types
   lib/            Pure mapping/validation code (unit tested)
-  scripts/        Entry points: import-foodkeeper, build-pack; extract-pdf-text.swift; quote-context.ts (authoring aid)
+  scripts/        Entry points: import-foodkeeper, build-pack; extract-pdf-text.swift, render-pdf-region.swift (crop a page region to PNG); quote-context.ts (authoring aid)
   authoring/      Python helpers for writing food guides (not part of the build; see its README)
   test/           node:test tests
   dist/           Build output (pack.sqlite, manifest.json) — not committed
@@ -35,6 +35,7 @@ Commands (in `content/`): `npm run typecheck`, `npm test`, `npm run import:foodk
 - **Build:** produces a SQLite database with an FTS5 index plus `manifest.json`. Fails on any validation error.
 - The build output is copied into the app as a bundled asset.
 - **Food guide quote check (D-033):** every guide block quotes its source passage, and the build fails unless each quote is found in the snapshot: HTML snapshots through `htmlToText` (inline tags joined, entities decoded), PDF snapshots through `sources/text/<id>.txt`, the PDFKit text layer made by `scripts/extract-pdf-text.swift` (macOS). The text file's first line records the snapshot's SHA-256, and the build refuses text made from another snapshot. `[bracketed]` words in a quote are editorial; `visualOnly` quotes (printed as images) are skipped and listed in the build output.
+- **Guide verbatim check (D-037):** every text a guide shows (title, summary, headings, block titles, paragraphs, steps, list items, warnings, captions) must be a substring of `verbatimText(source)`: the PDF text with page markers and page numbers dropped, words broken across lines joined, soft hyphens removed and bullet glyphs turned into spaces, whitespace collapsed. Titles and headings ignore case (the handbook sets many in capitals). Recorded corrections (`{from, to}`) are undone before matching. Each guide needs at least one second-authority check from another source, whose quote is checked the same way. Step photos must exist and have alt text.
 
 ## 3. Content model (initial)
 
@@ -116,13 +117,14 @@ web/
   scripts/make-icons.ts           Generates the placeholder icons
   src/
     main.tsx, App.tsx             Opens the pack, routes, tab bar, search state, per-page scroll positions
-    router.ts                     Hash routes: #/ (Home), #/storage, #/food/<id>, #/tools, #/settings;
+    router.ts                     Hash routes: #/ (Home), #/storage, #/food/<id>, #/first-aid, #/guide/<id>, #/map, #/tools, #/settings;
                                   "back" falls back to the parent page after a direct launch
     sw.ts                         Service worker: caches every built file; updates wait for "Update"
     db/db.worker.ts               SQLite WebAssembly in a worker; pack in OPFS ("opfs-sahpool")
     db/queries.ts                 All SQL; runs in the worker and in tests against the real pack
     db/client.ts, protocol.ts     Typed messages between app and worker
-    screens/                      Home, Storage ("Storing food"), Food, Placeholder (Tools, Settings)
+    screens/                      Home, Storage ("Storing food"), Food, FirstAid (guide list), Guide (reader;
+                                  photos from the pack as blob URLs), Map, Placeholder (Tools, Settings)
     components/                   ui.tsx (Card, SourceNote, SearchField, BackButton, MessageState, Page),
                                   TabBar, EmergencyCard (112), FoodList
     storage/useFoodSearch.ts      Food search shared by Home and Storing food
@@ -153,7 +155,7 @@ web/
 - Ranking: plain `bm25` ranks 'Grønkål' above 'Kål' for 'kål'. The app should rank exact and prefix name matches first.
 - **Guides (not built yet):** title, summary, tags and block text. Choose between trigram and `unicode61` when guide text exists; test with real Danish queries.
 
-## 5a. Pack schema (version 5)
+## 5a. Pack schema (version 6)
 
 Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
 
@@ -164,6 +166,8 @@ Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
 - `sources.short_name`: the short label shown next to guide text (version 3).
 - `produce_blocks.recipe`: a step-by-step recipe as JSON (title, intro, facts, ingredients, steps; version 5, D-035).
 - Food guides (version 3, D-033): `produce_sections` (item, order, section, verdict), `produce_blocks` (item, section, order, Danish text, original quote, source id, locator), `produce_ethylene` (item, Handbook 66 storage groups, producer, sensitive) and `produce_relations` (item, other item, `apart` | `with`). Relations are computed at build time from Handbook 66 Table 1: `apart` when one produces significant ethylene and the other is sensitive; `with` when they share a storage group, have no conflict and are both producers or both not.
+
+- Guides (version 6, D-037): `guides` (id, category, order, title, summary, source, risk, owner checked, related ids), `guide_blocks` (guide, order, kind `heading` | `text` | `steps` | `list` | `warning` | `image`, title, text, items JSON, step photos JSON, image, alt, caption, source page), `guide_images` (file name, MIME type, bytes; only images in use) and `guide_checks` (guide, order, second-authority source, locator, quote, note).
 
 Build: `cd content && npm run build:pack`. Output goes to `content/dist/core/` (not committed). Pack version = `content/package.json` version.
 

@@ -1,0 +1,32 @@
+{
+  "id": "massive-bloedninger",
+  "category": "first-aid",
+  "order": 5,
+  "title": "Massive blødninger",
+  "summary": "En massiv blødning er en livstruende blødning, der skal behandles først i algoritmen.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "$comment": "The handbook's tourniquet lines (p. 18: apply a ready-made tourniquet first on arms and legs, 'high and tight') are held back: ERC 2025 starts with direct pressure and uses a tourniquet when pressure is not enough (D-037; OPEN_QUESTIONS).",
+  "blocks": [
+    { "kind": "list", "title": "Der er tale om en livstruende blødning, når:", "items": ["Der ses en blodpøl på jorden", "Tøjet er gennemvædet af blod", "Blodet sprøjter eller strømmer hurtigt"], "page": 18 },
+    { "kind": "warning", "text": "Hvis ét eller flere af disse kriterier er opfyldt, skal du behandle det som det første inden A-B-C!", "page": 18 },
+    { "kind": "text", "text": "En livstruende blødning er sjælden, men når den opstår kræver den øjeblikkelig handling, så den tilskadekomne ikke forbløder.", "page": 18 },
+    { "kind": "text", "text": "Et modtryk mod en blødning er det, der standser en blødning.", "page": 42 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Kontrol af livstruende blødning, s. 13",
+      "quote": "Giv et fast, direkte manuelt tryk på den blødende skade",
+      "note": "Both treat life-threatening bleeding before anything else and stop it with pressure."
+    },
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Struktureret vurdering (ABCDE), s. 7",
+      "quote": "Vær straks opmærksom på sikkerheden ved skadestedet, om personen er ved bevidsthed og eventuelle livstruende blødninger",
+      "note": "ERC also looks for life-threatening bleeding first, before the airway."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["mabc"]
+}

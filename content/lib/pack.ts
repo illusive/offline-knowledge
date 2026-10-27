@@ -7,6 +7,7 @@ import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 import { PACK_SCHEMA_VERSION, type PackManifest } from '../schema/pack.ts';
+import type { Guide } from '../schema/guide.ts';
 import { SECTION_ORDER, type ProduceGuide } from '../schema/produce.ts';
 import type { StorageDataset } from '../schema/storage.ts';
 import type { EthyleneProfile } from './produce.ts';
@@ -104,6 +105,50 @@ CREATE TABLE produce_relations (
   PRIMARY KEY (item_id, other_id)
 );
 
+-- Guides (D-037): verbatim blocks from one primary source, images, and second-authority checks.
+CREATE TABLE guides (
+  id TEXT PRIMARY KEY,
+  category TEXT NOT NULL,
+  ord INTEGER NOT NULL,
+  title TEXT NOT NULL,
+  summary TEXT,
+  source_id TEXT NOT NULL REFERENCES sources(id),
+  risk TEXT NOT NULL,
+  owner_checked INTEGER NOT NULL,
+  related TEXT NOT NULL -- JSON array of guide ids
+);
+
+CREATE TABLE guide_blocks (
+  guide_id TEXT NOT NULL REFERENCES guides(id),
+  ord INTEGER NOT NULL,
+  kind TEXT NOT NULL CHECK (kind IN ('heading', 'text', 'steps', 'list', 'warning', 'image')),
+  title TEXT,
+  text TEXT,
+  items TEXT,        -- JSON array for steps, lists and warnings
+  step_images TEXT,  -- JSON [{after, imageId, alt, page}] for steps with photos
+  image_id TEXT REFERENCES guide_images(id),
+  alt TEXT,
+  caption TEXT,
+  page INTEGER NOT NULL,
+  PRIMARY KEY (guide_id, ord)
+);
+
+CREATE TABLE guide_images (
+  id TEXT PRIMARY KEY,   -- file name
+  mime TEXT NOT NULL,
+  data BLOB NOT NULL
+);
+
+CREATE TABLE guide_checks (
+  guide_id TEXT NOT NULL REFERENCES guides(id),
+  ord INTEGER NOT NULL,
+  source_id TEXT NOT NULL REFERENCES sources(id),
+  locator TEXT NOT NULL,
+  quote TEXT NOT NULL,
+  note TEXT NOT NULL,
+  PRIMARY KEY (guide_id, ord)
+);
+
 CREATE VIRTUAL TABLE storage_search USING fts5(
   item_id UNINDEXED,
   lang UNINDEXED,
@@ -125,6 +170,8 @@ export interface PackInput {
   relations?: { itemId: string; otherId: string; relation: 'apart' | 'with' }[];
   // Sources referenced only by guides and relations, e.g. Handbook 66 for Table 1.
   extraSourceIds?: string[];
+  // Guides (D-037), validated by lib/guides.ts before the build; images by file name.
+  guideSet?: { guides: Guide[]; images: Map<string, { mime: string; data: Uint8Array }> };
 }
 
 // Returns a list of problems; an empty list means the input may be published.
@@ -169,6 +216,7 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     ...input.storage.map((d) => d.sourceId),
     ...(input.guides ?? []).flatMap((g) => g.sections.flatMap((s) => s.blocks.map((b) => b.sourceRef.sourceId))),
     ...(input.extraSourceIds ?? []),
+    ...(input.guideSet?.guides ?? []).flatMap((g) => [g.sourceId, ...g.checks.map((c) => c.sourceId)]),
   ]);
   const usedSources = input.sources.filter((s) => usedSourceIds.has(s.id));
   const dataVersions = new Map(input.storage.map((d) => [d.sourceId, d.sourceDataVersion]));
@@ -233,6 +281,33 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     const insertRelation = db.prepare('INSERT INTO produce_relations (item_id, other_id, relation) VALUES (?, ?, ?)');
     for (const r of input.relations ?? []) insertRelation.run(r.itemId, r.otherId, r.relation);
 
+    if (input.guideSet) {
+      const { guides, images } = input.guideSet;
+      const insertImage = db.prepare('INSERT INTO guide_images (id, mime, data) VALUES (?, ?, ?)');
+      const usedImages = new Set(guides.flatMap((g) => g.blocks.flatMap((b) => (b.kind === 'image' ? [b.file] : b.kind === 'steps' ? (b.images ?? []).map((i) => i.file) : []))));
+      for (const file of usedImages) {
+        const image = images.get(file);
+        if (!image) throw new Error(`Missing image ${file}`);
+        insertImage.run(file, image.mime, image.data);
+      }
+      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+      const insertGuideBlock = db.prepare(
+        'INSERT INTO guide_blocks (guide_id, ord, kind, title, text, items, step_images, image_id, alt, caption, page) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      );
+      const insertCheck = db.prepare('INSERT INTO guide_checks (guide_id, ord, source_id, locator, quote, note) VALUES (?, ?, ?, ?, ?, ?)');
+      for (const g of guides) {
+        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []));
+        g.blocks.forEach((b, ord) => {
+          const title = 'title' in b ? (b.title ?? null) : null;
+          const text = 'text' in b ? (b.text ?? null) : null;
+          const items = 'items' in b && b.items ? JSON.stringify(b.items) : null;
+          const stepImages = b.kind === 'steps' && b.images?.length ? JSON.stringify(b.images.map((i) => ({ after: i.after, imageId: i.file, alt: i.alt, page: i.page }))) : null;
+          insertGuideBlock.run(g.id, ord, b.kind, title, text, items, stepImages, b.kind === 'image' ? b.file : null, b.kind === 'image' ? b.alt : null, b.kind === 'image' ? (b.caption ?? null) : null, b.page);
+        });
+        g.checks.forEach((c, ord) => insertCheck.run(g.id, ord, c.sourceId, c.locator, c.quote, c.note));
+      }
+    }
+
     db.exec('COMMIT');
     db.exec("INSERT INTO storage_search (storage_search) VALUES ('optimize')");
     db.exec('VACUUM');
@@ -254,7 +329,7 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     dependencies: [],
     languages: ['da', 'en'],
     counts: {
-      guides: 0,
+      guides: input.guideSet?.guides.length ?? 0,
       produceGuides: input.guides?.length ?? 0,
       storageItems: input.storage.reduce((n, d) => n + d.items.length, 0),
       sources: usedSources.length,

@@ -1,0 +1,2171 @@
+# dk-drg-erc-bls-2025 sha256 8fc5df220fa61986f6a32c24461f37738f27d84feb3628b61b4a332a1901c605
+--- p1
+1
+￼
+--- p2
+2
+European Resuscitation Council Guidelines 2025
+Kapitel 4 – Basal hjertelungeredning og brug af en hjertestarter til voksne
+Michael A Smyth*1,2, Sander van Goor 3, Carolina Malta Hansen4,5,6, Nino Fijačko7, Naomi Kondo Nakagawa8, Violetta Raffay9
+,
+Giuseppe Ristagno10,11, Jessica Rogers12, Tommaso Scquizzato13, Christopher M Smith1,2, Anastasia Spartinou14,15, Keck
+Wolfgang16, Gavin D Perkins1,2,17
+Om den danske oversættelse
+Denne danske oversættelse er sket i regi af Dansk Råd for Genoplivning (DRG), som er en del af det Europæiske
+Råd for Genoplivning (ERC) og efter aftale med ERC. I den danske oversættelse er der lagt vægt på at anvende
+de termer, der videnskabeligt og medicinsk ligger tættest på sproget i de europæiske guidelines. Dansk Råd for
+Genoplivning anser det for vigtigt at være tro mod guidelines og har prioriteret dette højt med et samtidigt blik
+for at tilpasse anbefalingerne til danske forhold og gøre sproget så flydende som muligt.
+Følgende har deltaget i den danske oversættelse af dette kapitel:
+• Jens Roland, formand for HLR-AED-styregruppen i Danmark
+Herudover har følgende bidraget til oversættelsen af øvrige kapitler og algoritmer:
+Anne Lippert, Jens Rosenberg, Jeppe Sylvest Nielsen, Kasper Bitzer, Morten Aaboe, Niklas Breindahl, Stine
+Strandkjær og Theo Walther Jensen.
+Oversættelsen er desuden kvalificeret af DRGs ekspertgruppe, rådsrepræsentanter fra lægefaglige selskaber og
+regionale akutberedskaber under DRG samt Dansk Førstehjælpsråd.
+Resumé
+ERC har udarbejdet disse 2025 guidelines for basal hjertelungeredning og brug af en hjertestarter til voksne.
+Guidelines er baseret på ILCOR's Consensus on Cardiopulmonary Resuscitation Science with Treatment
+Recommendations publiceret siden 2021.1-3 Emnerne, der behandles, inkluderer erkendelse af hjertestop,
+alarmering, hjertemassage, kunstigt åndedræt, brug af en hjertestarter (også kaldet automatisk ekstern
+defibrillator (AED)) og overvejelser om sikkerhed for førstehjælpere. Kvalitet af hjertelungeredning (HLR) og
+brug af teknologier er blevet indarbejdet i de relevante afsnit, i stedet for at blive beskrevet selvstændigt.
+Håndteringen af hjertestop hos børn, nyfødte og neonatale er beskrevet i ERC Guidelines 2025, ”Newborn
+resuscitation and support of transition of infants at birth” (dette er ikke oversat til dansk).
+© 2025 European Resuscitation Council. All rights reserved.
+Translation of the official Guidelines 2025 of the European Resuscitation Council by the Danish
+Resuscitation Council
+--- p3
+3
+Introduktion
+Disse ERC 2025 guidelines for basal hjertelungeredning og brug af en hjertestarter (HLR) til voksne er skrevet
+med baggrund i International Liaison Committee on Resuscitation (ILCOR) Consensus on Science and
+Treatment Recommendations (CoSTR) for basal genoplivning.1-4 For områder, hvor ILCOR ikke har haft nylige
+anbefalinger, har ERC gennemgået resultater fra nyere publicerede studier for at kvalificere 2025 guidelines, og
+hvor det har været nødvendigt, er der indhentet konsensus fra eksperter i ERC's BLS-skrivegruppe. BLS-
+skrivegruppens medlemmer og styregruppen for ERC Guidelines er enige om denne version, som blev lagt ud
+til offentlig høring mellem 5. og 30. maj 2025. I alt 111 personer indsendte 114 kommentarer, der førte til 20
+ændringer i denne endelige version. Guidelines blev præsenteret for og godkendt af ERC's bestyrelse og ved
+generalforsamlingen i juni 2025. Metoden for udarbejdelsen af guidelines er beskrevet i ERC Guidelines 2025,
+”Executive Summary” (dette er ikke oversat til dansk).5
+I disse guidelines anvendes udtrykket hjertelungeredning (HLR) dækkende de specifikke tekniske færdigheder
+inden for hjertemassage og kunstigt åndedræt, mens hjertelungeredning og brug af en hjertestarter er brugt
+som en generisk betegnelse, der dækker et bredere udsnit af færdigheder og handlinger i forbindelse med
+genoplivning af en person. Udtrykket førstehjælper er brugt til at beskrive personer, der tilfældigvis er til stede
+for at yde hjælp, uanset om de har modtaget forudgående træning eller ej, eller som bliver alarmeret for at
+deltage med en hjertestarter ved et hjertestop. Udtrykket sundhedsfagligt personale er anvendt om personer,
+der arbejder i sundhedssektoren, såvel præhospitalt som in-hospitalt. Udtrykket lægfolk er anvendt om
+personer, der ikke arbejder i sundhedssektoren og som er på stedet og yder hjælp. Basal hjertelungeredning og
+brug af en hjertestarter defineres som at igangsætte overlevelseskæden med tidlig erkendelse og alarmering,
+tidlig hjertemassage af høj kvalitet, effektivt kunstigt åndedræt og tidlig brug af en hjertestarter. Enhver form
+for genoplivning ud over basal hjertelungeredning og brug af en hjertestarter beskrives generelt som
+avanceret genoplivning (neonatal, pædiatrisk og voksen genoplivning). Når udtrykket 'ALS' anvendes, henviser
+det specifikt til ERC's kursus i avanceret genoplivning til voksne.
+Skrivegruppen for ERC 2025 guidelines for basal hjertelungeredning og brug af en hjertestarter til voksne har
+overvejet den for nyligt introducerede tilgang i ERC til mangfoldighed, lighed, retfærdighed og inklusion i
+udarbejdelsen af guidelines og har medinddraget elementerne, hvor det var muligt. Skrivegruppen har
+anerkendt og indset, at det er et område, der kan forbedres i udarbejdelsen af evidensbaserede guidelines.
+--- p4
+4
+Figur 1. Basal hjertelungeredning og brug af en hjertestarter til voksne – nøglebudskaber
+Tabel 1. De væsentlige ændringer i 2025 guidelines for basal hjertelungeredning og brug af en hjertestarter til
+voksne.
+ERC's 2021 guidelines ERC's 2025 guidelines
+Ændringer i guidelines
+ERC's 2021 guidelines for basal
+hjertelungeredning og brug af en hjertestarter til
+voksne understregede betydningen af at
+erkende hjertestop hos en person, der er
+bevidstløs og ikke trækker vejret normalt, før der
+ringes 1-1-2.
+ERC's 2025 guidelines for basal hjertelungeredning og
+brug af en hjertestarter til voksne understreger
+betydningen af at ringe 1-1-2 for enhver person, der er
+bevidstløs. Førstehjælpere skal ikke længere undersøge
+for normal vejrtrækning, inden de ringer 1-1-2.
+Ring 1-1-2, og undersøg derefter vejrtrækningen, mens
+du venter på, at opkaldet bliver besvaret. Den
+sundhedsfaglige visitator vil kunne hjælpe dig med at
+afgøre, om vejrtrækningen er normal, hvis det er
+påkrævet.
+￼
+--- p5
+5
+ERC's 2021 guidelines for basal
+hjertelungeredning og brug af en hjertestarter til
+voksne understregede beskrivelsen af langsom
+eller besværet vejrtrækning som indikatorer på
+unormal vejrtrækning.
+Sport og motion er en almindelig udløsende faktor ved
+hjertestop. I begyndelsen af et hjertestop kan
+idrætsudøvere have et næsten normalt eller prustende
+vejrtrækningsmønster.
+Nye emner tilføjet i ERC's 2025 guidelines for basal hjertelungeredning og brug af en hjertestarter til
+voksne
+Den sundhedsfaglige visitators rolle blev
+tidligere beskrevet i ERC Guidelines 2025,
+”Systems Saves Life”, som beskriver den
+sundhedsfaglige visitators rolle i forhold til det
+samlede systems ydeevne og det samlede antal
+personer med hjertestop i befolkningen.
+ERC's 2025 guidelines for basal hjertelungeredning og
+brug af en hjertestarter til voksne indeholder en række
+detaljer om den sundhedsfaglige visitators rolle. Den
+sundhedsfaglige visitators rolle er afgørende for en
+tidlig erkendelse af hjertestop og påbegyndelse af HLR.
+Der er nogle få studier, der indikerer, at HLR med
+hovedet opad (head-up HLR) kan hjælpe med at
+forbedre personens outcome. Der har været en
+stigende interesse i fagmiljøet omkring
+genoplivning for de potentielle fordele ved head-
+up HLR.
+Eksisterende studier af head-up HLR inkluderer en
+række interventioner og er ikke begrænset til blot at
+placere personen i en oprejst position. Evidens, der
+beskriver betydningen af head-up HLR uden at
+indarbejde de øvrige elementer i en samlet pakke,
+mangler.
+Det psykologiske velbefindende hos personer
+blev ikke tidligere beskrevet i guidelines for
+hjertelungeredning og brug af en hjertestarter til
+voksne.
+Der er en stigende evidens for, at dét at finde en person
+med hjertestop og påbegynde hjertelungeredning er
+en potentielt traumatisk oplevelse for mange lægfolk.
+ERC's 2025 guidelines for basal hjertelungeredning og
+brug af en hjertestarter til voksne anerkender nu, at
+lægfolk og førstehjælpere kan have gavn af
+efterfølgende psykologisk støtte.
+HLR hos personer med overvægt blev ikke
+tidligere behandlet i guidelines for
+hjertelungeredning og brug af en hjertestarter til
+voksne.
+Der er en voksende mængde af evidens, der beskriver
+håndtering af hjertestop og outcomes hos personer
+med overvægt. ERC's 2025 guidelines for basal
+hjertelungeredning og brug af en hjertestarter til
+voksne anbefaler, at personer med overvægt får
+standard 30:2 HLR uden ændringer.
+Emner fjernet fra ERC's 2025 guidelines for basal hjertelungeredning og brug af en hjertestarter til
+voksne
+ERC's 2021 guidelines for basal
+hjertelungeredning og brug af en hjertestarter til
+voksne beskrev en vejledning til ændring af
+hjertelungeredning som følge af COVID-19.
+Vejledningen for ændringer som følge af COVID-19 er
+blevet fjernet i 2025 guidelines. COVID-19 findes nu
+endemisk i samfundet, hvorfor anbefalingen er blevet
+fjernet i overensstemmelse med de nationale
+sundhedspolitikker. Personer med COVID-19 bør
+behandles som alle andre personer. Det er ikke
+længere nødvendigt med ændringer til HLR.
+ERC's 2021 guidelines for basal
+hjertelungeredning og brug af en hjertestarter til
+voksne beskrev vejledning til håndtering af et
+fremmedlegeme i luftvejen.
+Håndtering af et fremmedlegeme i luftvejen er blevet
+flyttet fra 2025 guidelines for basal hjertelungeredning
+og brug af en hjertestarter til voksne til ERC Guidelines
+2025, ”Førstehjælp” (dette kapitel er oversat til dansk).
+6
+--- p6
+6
+Kortfattede guidelines for alle førstehjælpere
+Hvis du støder på en person, der ser ud til at være uden bevidsthed, skal du følge de 3 trin for at redde liv:
+1. Undersøg
+• Er det sikkert at nærme sig?
+• Er personen ved bevidsthed?
+2. Ring straks 1-1-2, hvis personen ikke reagerer
+• Undersøg vejrtrækning
+• Hvis du er usikker, vil den sundhedsfaglige visitator på 1-1-2 hjælpe og guide dig
+3. HLR: Start straks HLR, hvis personen er bevidstløs og uden normal vejrtrækning.
+• Så snart hjertestarteren er fremme, tænd den og følg hjertestarterens instruktioner
+• Hvis du er usikker, vil den sundhedsfaglige visitator på 1-1-2 hjælpe og guide dig
+Figur 2. Tre trin til at redde liv
+Erkendelse af hjertestop
+• Mistænk hjertestop hos enhver person, der ikke reagerer.
+• Ring straks 1-1-2 uden forsinkelse.
+• Undersøg personens vejrtrækning, mens du venter på, at opkaldet bliver besvaret.
+• Langsom, besværet vejrtrækning samt andre unormale, agonale vejrtrækningsmønstre med gispende,
+støjende og uregelmæssig vejrtrækning skal betragtes som et tegn på hjertestop.
+• Kortvarige krampelignende bevægelser kan forekomme umiddelbart efter, at et hjertestop er indtrådt. Når
+bevægelserne er stoppet, undersøg for vejrtrækning.
+• Hvis en person er bevidstløs og ikke har en normal vejrtrækning, bør det antages, at der er hjertestop.
+• Hvis du er usikker, vil den sundhedsfaglige visitator på 1-1-2 kunne hjælpe og guide dig
+• Hvis der er nogen tvivl, mistænk hjertestop og start HLR.
+￼
+--- p7
+7
+Figur 3. Algoritmen for basal hjertelungeredning og brug af en hjertestarter
+Alarmering
+• Hvis du har en mobiltelefon, ring straks 1-1-2 og sæt telefonen på højttaler.
+• Undersøg for vejrtrækning, mens du venter på at opkaldet bliver besvaret.
+• Hvis du er alene og ikke har en mobiltelefon, eller der ikke er netværksdækning, kan du råbe på hjælp og
+derefter fortsætte med at undersøge for vejrtrækning.
+• Hvis du tror, at der ikke kommer nogen for at hjælpe dig, bliver du nødt til at forlade personen for at få
+alarmeret 1-1-2. Gør dette så hurtigt som muligt.
+• Hvis personen er bevidstløs og ikke trækker vejret normalt, når du vender tilbage efter at have tilkaldt
+hjælp, skal du straks påbegynde HLR.
+Den sundhedsfaglige visitators rolle
+• Den sundhedsfaglige visitator bør anvende standardiserede protokoller for at sikre hurtig og valid
+erkendelse af hjertestop.
+￼
+--- p8
+8
+• Når hjertestop er erkendt, skal den sundhedsfaglige visitator vejlede i udførelsen af HLR til alle indringere.
+• De sundhedsfaglige visitatorer bør antage, at indringeren ikke ved, hvordan man giver HLR, og instruere i
+at give hjertemassage uden afbrydelser. Hvis indringeren efterfølgende oplyser, at de ved, hvordan man
+giver indblæsninger, bør den sundhedsfaglige visitator vejlede i HLR 30:2.
+• Når HLR er i gang, bør den sundhedsfaglige visitator spørge, om der er en hjertestarter tilgængelig på
+stedet.
+• Hvis der ikke er en hjertestarter tilgængelig på stedet, og der er mere end én førstehjælper til stede, bør
+den sundhedsfaglige visitator guide én af førstehjælperne til den nærmeste hjertestarter.
+• Så snart hjertestarteren er kommet frem til personen, bør den sundhedsfaglige visitator instruere
+førstehjælperen i at tænde hjertestarteren og herefter følge dens instruktioner.
+• Hvor systemer til førstehjælp er blevet implementeret, bør den sundhedsfaglige visitator aktivere disse og
+sende førstehjælpere til lokationen for hjertestoppet og til at hente en nærliggende hjertestarter. I
+Danmark er der på landsplan implementeret systemer, bl.a. Hjerteløberordningen, hvor førstehjælpere
+aktiveres af den sundhedsfaglige visitator via en app, og hvor flere førstehjælpere sendes afsted til såvel
+lokationen for hjertestoppet som til nærmeste hjertestarter for at bringe én til lokationen for hjertestoppet.
+Figur 4. Fælles indsats
+Hjertemassage af høj kvalitet
+• Påbegynd hjertemassage så hurtigt som muligt.
+• Placér din ene hånds håndrod på nederste halvdel af brystbenet (på midten af brystkassen).
+• Hvis du ikke er i stand til, i tilstrækkelig grad, at kunne lokalisere brystbenet grundet påklædning, er det
+tilrådeligt at fjerne beklædningen, så du kan udpege det korrekte tryksted.
+• Placér håndroden af din anden hånd oven på den første.
+• Flet fingrene for at sikre, at der ikke trykkes på ribbenene.
+• Hold dine arme strakte.
+• Anbring dig lodret over personens brystkasse.
+• Tryk mindst 5 cm ned, men ikke mere end 6 cm.
+￼
+--- p9
+9
+• Hold en frekvens på 100–120 tryk i minuttet med så få afbrydelser som muligt.
+• Efter hvert tryk, let trykket helt uden at miste kontakten mellem dine hænder og personens brystkasse.
+Læn dig ikke på brystkassen.
+• HLR er mest effektivt, når det udføres på et fast underlag. Dog bør førstehjælpere ikke flytte en person fra et
+'blødt' underlag, f.eks. seng, til gulvet. Start HLR i sengen, og om nødvendigt, tryk dybere under
+hjertemassagen for at kompensere for den bløde madras.
+Kunstigt åndedræt
+• Hvis du er blevet uddannet i at give kunstigt åndedræt, skal du skiftevis give 30 tryk og 2 indblæsninger.
+• Når du giver indblæsninger, skal du blæse nok luft til, at brystkassen netop begynder at hæve sig. Undgå
+overdreven indblæsning.
+• Hvis du ikke er i stand til at få brystkassen til at hæve sig ved de 2 indblæsninger, overvej da om der er et
+fremmedlegeme i luftvejen (se ERC Guidelines 2025, ”Førstehjælp”).6
+• Hvis du ikke er uddannet i kunstigt åndedræt, giv da kun hjertemassage uden afbrydelser.
+Brug af en hjertestarter
+• Enhver kan bruge en hjertestarter.
+Hvordan finder man en hjertestarter
+• Sørg for, at placeringen af en hjertestarter er tydelig markeret med skiltning (se figur 5).
+Figur 5. Hjertestarterskilt
+• Skiltet angiver, at hjertestarteren kan bruges af alle, og at der ikke er behov for egentlig træning.
+• Hjertestarteres placeringer kan også findes ved hjælp af elektroniske kortsystemer, der er tilgængelige på
+mobiltelefon og computer som app's og lignende. I Danmark findes de registrerede hjertestartere på
+www.hjertestarter.dk og i Hjertestarter app'en.
+• Den regionale vagtcentral på 1-1-2 kan dirigere indringere til den nærmeste tilgængelige hjertestarter. I
+Danmark vil 1-1-2 informere om, hvor den nærmeste hjertestarter findes, herunder tilkalde en førstehjælper
+til at hente den.
+Hvornår og hvordan bruges en hjertestarter
+• Brug en hjertestarter, så snart den er tilgængelig.
+￼
+--- p10
+10
+• Pak hjertestarteren ud. Nogle hjertestartere vil tænde automatisk, når låget åbnes.
+På andre skal du lokalisere 'ON'-knappen og tænde hjertestarteren ved at trykke på den.
+Følg de audio/visuelle instruktioner fra hjertestarteren.
+• Påsæt hjertestarterens pads på personens bare brystkasse som vist på de to pads og i figur 6.
+• Såfremt der er mere end én førstehjælper til stede, skal hjertelungeredning (HLR) fortsættes, mens de to
+pads påsættes brystkassen.
+• Sørg for, at ingen rører ved personen, mens hjertestarteren analyserer hjerterytmen.
+• Hvis stød anbefales, sørg for, at ingen rører ved personen.
+• Fuldautomatiske hjertestartere vil automatisk afgive stød, mens halvautomatiske hjertestartere kræver, at
+førstehjælperen trykker på stødknappen for at afgive stødet.
+• Efter stød er afgivet, genoptag straks HLR 30:2.
+• Hvis stød ikke anbefales, genoptag straks HLR 30:2.
+• Fortsæt med at følge hjertestarterens instruktioner.
+• Normalt vil hjertestarteren instruere førstehjælperen i at udføre HLR. Efter et fastsat tidsinterval vil
+hjertestarteren instruere førstehjælperen i at pause HLR for at foretage analyse af hjerterytmen.
+Figur 6. Anterior-lateral pad position (a) eller anterior-posterior pad position (b)
+￼
+--- p11
+11
+Hvor skal hjertestartere placeres
+• Hjertestartere bør placeres synligt.
+• Hjertestarterskabe bør være ulåste og let tilgængelige 24 timer i døgnet, 7 dage om ugen, 365 dage om
+året.
+• Steder med høj befolkningstæthed, såsom lufthavne, indkøbscentre og togstationer, bør have
+hjertestartere opsat, og de bør være offentligt tilgængelige.
+• Lokalsamfund opfordres til at opsætte hjertestartere i det offentlige rum, især i områder med en højere
+forekomst af hjertestop.
+• Hjertestartere bør registreres hos de regionale vagtcentraler, især hvis de er tilknyttet hjertestarterregistre
+og førstehjælperprogrammer. I Danmark findes Hjertestarternetværket, som er et centralt
+hjertestarterregister, der er koordineret med 1-1-2 og tilhørende hjerteløberordninger mm.
+Sikkerhed
+• Sikr dig, at der ikke er fare for dig selv, personen med hjertestop og eventuelle omkringstående.
+• Alle bør påbegynde HLR ved mistanke om hjertestop uden bekymring for at påføre skade, selvom
+personen ikke har hjertestop.
+• Risikoen for smitte hos førstehjælpere, der giver HLR, er lav.
+• Risikoen for skade på førstehjælpere fra et utilsigtet stød ved brug af en hjertestarter er lav.
+• Risikoen for fysisk skade på førstehjælperen ved at give HLR er lav.
+• Overvej førstehjælperes og omkringståendes psykologiske velbefindende. Tilbyd dem efterfølgende
+psykologisk støtte.
+--- p12
+12
+Figur 7. HLR trin for trin
+￼
+--- p13
+13
+￼
+--- p14
+14
+Evidensgrundlag for guidelines
+Erkendelse af hjertestop
+Definitionen på hjertestop er, at en person er bevidstløs og uden normal vejrtrækning.7 Selvom bevidstløshed
+og ikke normal vejrtrækning også forekommer i andre potentielt livstruende medicinske tilstande, har de en
+meget høj sensitivitet som diagnostiske kriterier for hjertestop.8,9 Ved anvendelse af disse kriterier vil der
+erkendes hjertestop hos nogle personer10, der efterfølgende viser sig ikke at have hjertestop. Den lille risiko
+forbundet med at påbegynde HLR på en person, der viser sig ikke at have hjertestop, anses for langt at opveje
+den øgede dødelighed, som er forbundet med forsinket opstart af HLR hos personer med hjertestop.11 ERC
+anerkender, at erkendelse af bevidstløshed uden normal vejrtrækning fortsat er den primære udfordring ved
+erkendelse af hjertestop uden for hospital.12
+Figur 8a. Sikkerhed
+Figur 8b. Undersøg
+￼
+￼
+--- p15
+15
+Ikke normal vejrtrækning
+ERC's 2025 guidelines for basal hjertelungeredning og brug af en hjertestarter til voksne fortsætter med at
+fremhæve, at det er afgørende at genkende agonal vejrtrækning som et tegn på hjertestop.12 Agonal
+vejrtrækning er et ikke normalt vejrtrækningsmønster. Det observeres i 30-60 % af alle hjertestop13 og oftest
+umiddelbart efter et hjertestop er indtrådt.14 Det indikerer tilstedeværelse af hjernefunktion og forbindes med
+en bedre prognose.15 Agonal vejrtrækning fejltolkes ofte som et livstegn8 og udgør en udfordring for
+førstehjælpere og sundhedsfaglige visitatorer. Det er almindeligt, at førstehjælpere beskriver agonal
+vejrtrækning med begreber som gispende vejrtrækning, næsten ingen eller uregelmæssig vejrtrækning,
+stønnende, sukkende, gurglende, støjende, larmende, tung eller besværet vejrtrækning.13,16
+En fejlagtig fortolkning af ikke normal vejrtrækning er fortsat den største udfordring i forbindelse med
+erkendelsen af hjertestop uden for hospital.9,13,17 Erkendelse af ikke normal vejrtrækning som et tegn på
+hjertestop vil gøre det muligt, at HLR kan påbegyndes uden forsinkelse. Manglende erkendelse af hjertestop af
+sundhedsfaglige visitatorer ved opringninger til 1-1-2 er også forbundet med nedsat overlevelse.18,19
+Ud over agonal vejrtrækning er andre ikke normale vejrtrækningsmønstre blevet beskrevet, især når der har
+været hjertestop i forbindelse med, at en person er faldet om under sport og motion.20 Sportsudøvere, der får
+hjertestop, kan fortsætte med at trække vejret mere regelmæssigt21-23 og/eller have øjnene åbne, efter de er
+faldet om.24 Det har fået ERC til at inkludere beskrivelsen af gispende vejrtrækning i afsnittet for erkendelse af
+hjertestop.
+Figur 8c. Undersøg vejrtrækning – åbn luftvejen
+￼
+--- p16
+16
+Figur 8d. Trækker ikke vejret normalt
+Kramper
+Kortvarige krampelignende bevægelser hos personer med hjertestop udgør en anden betydende udfordring
+ved erkendelse af hjertestop. Kramper er en hyppig akut medicinsk tilstand og udgør omkring 3-4 % af alle
+opkald til de regionale vagtcentraler.25,26 Kun i 0,6–2,1 % af disse opkald har personen hjertestop.27-29 Et
+observationsstudie af 3.502 hjertestop uden for hospital identificerede 149 (4,3 %) personer med
+krampelignende bevægelser.29 Personerne, som havde krampelignende bevægelser, var yngre (54 vs. 66 år
+gammel; p < 0,05), havde oftere bevidnet hjertestop (88 % vs. 45 %; p < 0,05), havde oftere en initial stødbar
+rytme (52 % vs. 24 %; p < 0,05), og havde højere overlevelse til udskrivning fra hospital (44 % vs. 16 %; p < 0,05).
+En nyere undersøgelse identificerede krampelignende bevægelser i 59 ud af 465 ikke-traumatiske hjertestop
+uden for hospital (12,7 %) og observerede også en sammenhæng til forbedret overlevelse.30 Ligesom agonal
+vejrtrækning udgør kramper en udfordring for førstehjælperes og sundhedsfaglige visitatorers erkendelse af
+hjertestop (mediantid til visitatorens diagnosticering af hjertestoppet; 130 sek vs 62 sek; p < 0,05).29
+Det er vigtigt at erkende hjertestop hos en person, der efter en krampeperiode forbliver bevidstløs uden normal
+vejrtrækning, for at undgå forsinkelse i påbegyndelsen af HLR. Konsekvenserne ved forsinkelse i påbegyndelse
+af HLR hos en person med hjertestop vejer tungere end enhver risiko forbundet med at udføre HLR på en
+person, der ikke har hjertestop.
+Alarmering
+Når en person findes bevidstløs, bør førstehjælpere med en mobiltelefon ringe 1-1-2 og sætte telefonen på
+højttaler.31 Mens de venter på, at opkaldet besvares, bør førstehjælperen gå videre i sin undersøgelse af
+personen: skabe en fri luftvej og undersøge for normal vejrtrækning.
+Hvis personen er bevidstløs og ikke trækker vejret normalt, påbegynd straks HLR (30:2).12 Hvis der er nogen tvivl
+om vejrtrækningens karakter, vil den sundhedsfaglige visitator kunne hjælpe og guide førstehjælperen med at
+vurdere, om vejrtrækningen er normal.13 Førstehjælpere bør ikke vente med at ringe 1-1-2, til efter de har
+undersøgt for normal vejrtrækning.
+￼
+--- p17
+17
+Anbefalingen er baseret på et nyere ILCOR scoping review, der viser, at de fleste hjertestop først bliver erkendt
+af den sundhedsfaglige visitator under opkaldet, snarere end af førstehjælperen på stedet.13 At prioritere opkald
+til 1-1-2 for alle personer, efter de er konstateret bevidstløse, vil øge antallet af opkald, også for personer, der ikke
+har hjertestop. Dog vil størstedelen af disse bevidstløse personer sandsynligvis have brug for en eller anden
+form for sundhedsfaglig hjælp, selvom de måske ikke har hjertestop. Tilgangen vil sandsynligvis ikke forringe
+opfattelsen af den sundhedsfaglige hjælp og service til borgerne i den første akutte fase.32 På trods af at langt
+de fleste mennesker har en mobiltelefon, vil der uundgåeligt opstå situationer, hvor det ikke er tilfældet, eller
+hvor mobiltelefonen ikke har kontakt med telenetværket. Her har førstehjælperen 2 muligheder – at råbe på
+hjælp eller forlade personen med hjertestop for at alarmere 1-1-2.
+Hvis førstehjælperen, der er alene, vurderer, at der er mennesker i nærheden, og at de vil komme til hjælp, er
+det tilrådeligt at råbe på hjælp og begynde HLR. Hvis ingen reagerer på råbet om hjælp, vil førstehjælperen, der
+er alene, være nødt til at stoppe HLR og forlade personen med hjertestop for at alarmere 1-1-2. Der er for
+nuværende ingen evidens for, hvor længe man skal fortsætte med HLR, før man forlader personen for at
+alarmere 1-1-2. Hvis førstehjælperen, der er alene, har brug for at forlade personen med hjertestop for at tilkalde
+hjælp, anbefaler ERC, at dette sker så hurtigt som muligt.
+Figur 8e. Bevidstløs – Ring 1-1-2
+Den sundhedsfaglige visitators rolle
+Den sundhedsfaglige visitators erkendelse af hjertestop
+Hurtig og valid erkendelse af hjertestop er afgørende for, at førstehjælpere hurtigt kan påbegynde HLR,
+herunder HLR vejledt af den sundhedsfaglige visitator.33 De fleste hjertestop bliver ikke erkendt af
+førstehjælperen og bliver først erkendt af den sundhedsfaglige visitator under opkaldet til 1-1-2, hvilket
+understreger visitatorens kritiske rolle i at facilitere erkendelse så hurtigt som muligt.13 Et diagnostisk
+systematisk review af ILCOR, publiceret i 2021, inkluderede 47 studier og identificerede en stor variation i de
+sundhedsfaglige visitatorers evne til at erkende hjertestop uden for hospital (sensitivitet og specificitet for
+erkendelsen varierede fra 0,46 til 0,98 og 0,32 til 1,00). Det var ikke muligt at identificere en forskel i diagnostisk
+nøjagtighed mellem kriterier eller algoritmer.10
+￼
+--- p18
+18
+Et nyere ILCOR scoping review vurderede 62 studier og fandt, at den største udfordring i forbindelse med
+telefonvejledt erkendelse af hjertestop uden for hospital var at fastslå, om personen trak vejret normalt.13 Flere
+strategier blev undersøgt, men ingen strategi klarede sig bedre end den almindeligt anvendte 'to-spørgsmål'
+strategi (dvs. "Er personen ved bevidsthed?" og "Trækker personen vejret normalt?"). Selvom flere strategier
+blev testet, var der ingen randomiserede kontrollerede forsøg (RCT), der sammenlignede forskellige strategier.
+Et af de inkluderede RCT'er testede en model med tilføjelse af kunstig intelligens (AI), men fandt ikke, at denne
+tilføjelse forbedrede den sundhedsfaglige visitators erkendelse af hjertestop uden for hospital.13
+I overensstemmelse med ILCOR fortsætter ERC med at anbefale, at sundhedsfaglige visitatorer følger en
+standardiseret algoritme og/eller standardiserede kriterier for hurtigt at fastslå, om en person har hjertestop.12
+Yderligere detaljer om, hvordan procedurer for sundhedsfaglige visitatorer kan forbedre overlevelsen efter
+hjertestop, kan findes i ERC Guidelines 2025, ”Systems Saves Life”
+.
+34
+Telefonvejledt HLR
+Brugen af telefonvejledt HLR anbefales til en person med hjertestop,33 ligesom det anbefales, at det er bredt
+implementeret.35-38 Sammenlignet med, at der ikke gives HLR, giver telefonvejledt HLR forbedringer i
+overlevelse til udskrivning fra hospital (OR 1,67, 95 % CI 1,39 til 2,0) og overlevelse til udskrivning fra hospital med
+forbedret intakt neurologisk funktion (OR 2,21, 95 % 1,44 til 3,40).39 Et ILCOR scoping review fra 2024 kunne ikke
+identificere tilstrækkelig høj grad af evidens til at anbefale specifikke tiltag til at optimere telefonvejledt HLR.33
+Imidlertid tyder studier om telefonvejledt HLR, der fokuserer på betydningen af at bruge enkle instruktioner i
+den telefonvejledte HLR, på en reduktion i tid til første tryk40-42 i hjertemassagen og en forbedring i kvaliteten af
+HLR.43,44 En ændring i instruktionen "Vil du udføre HLR" til "Vi skal udføre HLR" øgede antallet af tilfælde, hvor
+HLR faktisk blev udført,45 mens instruktionen "Læg telefonen ned" ikke medførte en forskel i kvaliteten af HLR.46
+Selvom der i øjeblikket er utilstrækkelig evidens til at understøtte en specifik brug af instruktioner ved
+telefonvejledt HLR, fortsætter ERC med at anbefale, at de sundhedsfaglige visitatorer giver instruktioner i alle
+tilfælde, hvor en person har hjertestop.
+Brug af video i forbindelse med den sundhedsfaglige visitators vejledning
+Traditionelt set har de sundhedsfaglige visitatorer givet isolerede auditive instruktioner og vejledning i HLR via
+telefonen. Nyudviklet teknologi gør det imidlertid muligt for dem at give vejledning om HLR via videostreaming
+på indringerens mobiltelefon. Et nyligt systematisk review og en metaanalyse identificerede ni studier, der
+undersøgte videoinstruktioner til simulerede hjertestop uden for hospitalet.33 Trykfrekvensen var bedre med
+videoinstruktioner,47-49 trykhastighederne var højere48-51, og der var en tendens til en bedre håndplacering.48 Der
+blev ikke observeret forskel i trykdybden eller tid til første indblæsning, og der var en lille øgning i tiden til
+påbegyndelse af HLR med videoinstruktioner. Et nyere retrospektivt studie undersøgte samlet 1.720 voksne
+personer med hjertestop uden for hospital (1.489 og 231 i henholdsvis audio- og videogrupperne). Median-
+instruktionstidsintervallet var sammenlignelige (136 sekunder i audiogruppen og 122 sekunder i videogruppen).
+Overlevelsesraterne til udskrivning var 8,9 % i audiogruppen og 14,3 % i videogruppen (p < 0,001). Et godt
+neurologisk outcome var til stede i 5,8 % og 10,4 % i henholdsvis audio- og videogrupperne (p < 0,001).52 Der
+mangler RCT'er, der undersøger effekten af live videostreaming i forhold til overlevelse.
+--- p19
+19
+Der er i øjeblikket ikke tilstrækkelig evidens til at understøtte en bred implementering af video i forbindelse
+med telefonvejledt HLR. ERC anbefaler, at hvis teknologien implementeres, bør det ske på en meget
+kontrolleret måde og helst som en del af et formelt forskningsprogram.
+Telefonvejledt brug af en hjertestarter
+Der er blevet observeret en høj overlevelse efter førstehjælperes brug af hjertestartere på steder såsom i
+kasinoer, lufthavne, sportsfaciliteter og togstationer.53-64 Selvom hjertestartere er udbredt i brug, er der mindre
+evidens om telefonvejledning i forbindelse med hentning og brug af en hjertestarter.11,38 I et ILCOR scoping
+review fra 2024 var der ingen studier, der adresserede klinisk overlevelse, der kunne tilskrives telefonvejledning
+for hentning og brug af en hjertestarter. Gennemgangen omfattede ikke studier om brugen af hjertestartere,
+hvor førstehjælperen var blevet sendt af 1-1-2.4 I 2024 rapporterede et før- og efterstudie, at veludført hentning
+af en hjertestarter og placering af pads efter telefonvejledning var forbundet med en øget overlevelse til
+udskrivning fra hospital og en forbedring i overlevelse med intakt neurologisk funktion. Selve afgivelsen af stød
+var ikke forbundet med en forbedring, hverken som et resultat af de få personer, der modtog et stød, eller på
+grund af bagvedliggende faktorer.65
+Der er begrænset evidens for, at overlevelsen forbedres som følge af frivillige førstehjælpere, som bliver
+alarmeret via en mobilapp eller en tekstbesked for at bringe en hjertestarter frem til stedet — uanset om de er
+førstehjælpere, nødbehandlere eller sundhedspersonale. Et RCT randomiserede 5.989 førstehjælpere, der blev
+sendt ud via et sms-system, og fandt at HLR påbegyndt af førstehjælpere var højere i interventionsgruppen
+sammenlignet med kontrolgruppen (62 % vs 48 %, p < 0.001).66 En klynge-randomiseret stepped-wedge-
+undersøgelse, hvor vagtcentralen sendte 5.735 førstehjælpere til hjertestop i private boliger, fandt, at
+overlevelsen steg fra 26 % til 39 % med en forbedret intakt neurologisk overlevelse.67 Flere observationsstudier
+har fundet, at aktivering af førstehjælpere er forbundet med øget andel af HLR og defibrillering samt en
+reduktion i tid til defibrillering og en forbedret overlevelse.68-70 Betydelig uensartethed i systemernes struktur
+og afrapportering begrænser muligheden for at sammenligne systemer indbyrdes og overføre resultater på
+tværs. Desuden ses en øget interesse for anvendelsen af droner til at bringe hjertestartere frem til hjertestop.
+Efterhånden som systemerne udvikler sig, er det hensigtsmæssigt, at de sundhedsfaglige visitatorer informerer
+førstehjælperne om, at yderligere hjælp og/eller at en hjertestarter er på vej til stedet. I overensstemmelse med
+ILCOR anbefaler ERC, at de sundhedsfaglige visitatorer, efter at førstehjælperen har erkendt hjertestop og
+påbegyndt HLR, spørger, om der er en hjertestarter tilgængelig på stedet. Hvis der ikke er en hjertestarter
+tilgængelig på stedet, og der er mere end en førstehjælper til stede, bør den sundhedsfaglige visitator vejlede
+en af førstehjælperne i at finde og hente en hjertestarter, hvis der er en tilgængelig i nærheden.12 Placering og
+tilgængelighed af hjertestartere bør registreres i hjertestarterregistre, og disse registre bør integreres i
+alarmsystemerne.71
+Brug af teknologi til at støtte de sundhedsfaglige visitatorer
+Brugen af teknologi til at støtte de sundhedsfaglige visitatorer er mere fuldstændigt beskrevet i ERC Guidelines
+2025, ”Systems Saves Life”
+.
+34 Oversigten nedenfor er inkluderet i ERC 2025 guidelines for basal
+--- p20
+20
+hjertelungeredning og brug af en hjertestarter til voksne for at demonstrere, hvordan der kan interageres med
+teknologi under et opkald ved hjertestop.
+Videotransmission fra hjertestoplokationen (CCTV)
+Et ILCOR scoping review fra 2024 identificerede to studier, der undersøgte, hvordan videotransmission fra
+stedet for et hjertestop påvirkede den sundhedsfaglige visitators opfattelse af situationen og stedet.13 Den ene
+undersøgelse antydede, at en mangel på situationsfornemmelse var en barriere for erkendelsen, og at live-
+stream video fra stedet ville kunne forbedre situationsfornemmelsen.72 Den anden antydede, at visuel
+information fra stedet ville forbedre den sundhedsfaglige visitators opfattelse af hjertestopsituationen, hvilket
+igen kunne forbedre kommunikationen og den sundhedsfaglige visitators vejledning af førstehjælperen samt
+forbedre kvaliteten af HLR.73
+Maskinlæring
+Et ILCOR scoping review fra 2024 identificerede seks studier, der undersøgte, hvordan maskinlæring kunne
+forbedre erkendelsen af hjertestop.13 To af disse studier undersøgte, om en model med maskinlæring kunne
+erkende hjertestop uden for hospital ved hjælp af historiske lydoptagelser af opkald foretaget til vagtcentralen.
+74,75 Det første vurderede, hvordan modellen med maskinlæring klarede sig sammenlignet med den
+sundhedsfaglige visitator.74 Modellen med maskinlæring havde højere sensitivitet (72,5 % vs. 84,1 %, p < 0,001)
+men lavere specificitet (98,8 % versus 97,3 %, p < 0,001) og lavere positiv prædiktiv værdi end sundhedsfaglige
+visitatorer (20,9 % versus 33,0 %, p < 0,001). Tid-til-erkendelse var kortere for modellen med maskinlæring
+sammenlignet med sundhedsfaglige visitatorer (median 44s versus 54s, p < 0,001). Det andet studie vurderede
+evnen hos en 'dyb neuralt netværk'-model (avanceret maskinlæringsmodel) til at bestemme hjertestop uden
+for hospital gennem talegenkendelse.75 Modellen genkendte 36 % (n = 305) af hjertestoppene uden for hospital
+inden for 60 sekunder med en median erkendelsestid på 72 sekunder (IQR, 40–132 s), mens sundhedsfaglige
+visitatorer erkendte 25 % (n = 213), median erkendelsestid var 94 sekunder (IQR, 51–174 s). Modellen med
+maskinlæring og sundhedsfaglige visitatorer var på ethvert tidspunkt under opkaldet lige effektive til at
+erkende hjertestop uden for hospital. Modellen med maskinlæring erkendte 6 % (n = 52) af hjertestop uden for
+hospital, som ikke blev identificeret af sundhedsfaglige visitatorer, mens visitatorer erkendte 4 % (n = 38) af
+hjertestop uden for hospital, som ikke blev genkendt af modellen opbygget med 'dyb neuralt netværk'.76
+Et RCT studie undersøgte effekten af en model for maskinlæring med alarm for hjertestop i forbindelse med
+sundhedsfaglige visitatorers erkendelse af hjertestop uden for hospital. Sundhedsfaglige visitatorer i den ene
+gruppe blev alarmeret, når maskinlæringsmodellen mistænkte et hjertestop, mens de i den anden gruppe
+fulgte normale protokoller uden alarm fra en maskinlæringsmodel. Sundhedsfaglige visitatorer erkendte 93,1 %
+af bekræftede hjertestop i alarmgruppen og 90,5 % af hjertestop i ingen-alarmgruppen (P=0,15). Tilfældene med
+maskinlæringsalarm havde en betydeligt højere sensitivitet end tilfældene uden alarm for bekræftet hjertestop
+(85,0 % vs. 77,5 %; p < 0,001), men lavere specificitet (97,4 % vs. 99,6 %; p < 0,001) og lavere positiv prædiktiv værdi
+(17,8 % vs. 55,8 %; p < 0,001). Undersøgelsen fandt ikke en signifikant øgning i visitatorers evne til at erkende
+hjertestop ved brug af maskinlæringsalgoritmen.
+--- p21
+21
+Der er i øjeblikket ikke tilstrækkelig evidens for, at teknologier inden for maskinlæring forbedrer overlevelsen
+hos personer med hjertestop uden for hospital. ERC anerkender dog, at maskinlæring som forskningsområde
+udvikler sig hastigt, og det kan få en betydende rolle i fremtiden, efterhånden som teknologien udvikles. ERC
+anbefaler, at hvis maskinlæring indarbejdes i algoritmerne for sundhedsfaglige visitatorer, bør det
+implementeres på en meget kontrolleret måde og helst som en del af et formelt forskningsprogram.
+Smart devices til at bestemme agonal vejrtrækning
+ILCOR fandt kun ét proof-of-concept studie, der omfattede eksisterende teknologi til at bestemme agonal
+vejrtrækning.13 Studiet havde til formål at bestemme, om en smart-højttaler og mobiltelefon kunne trænes til at
+erkende agonal vejrtrækning ved hjælp af opkald optaget af vagtcentralen sammenlignet med normale lyde
+fra søvn optaget i et søvnlaboratorium. Forfatterne rapporterede en sensitivitet på 97,17 % (95 % CI: 96,79–97,55
+%), specificitet på 99,38 % (95 % CI: 99,20–99,56 %) og en falsk positiv rate på 0,22 %.
+77 Til dato er der ingen
+evidens for, at disse teknologier øger overlevelsen hos personer med hjertestop.13 Der er i øjeblikket
+utilstrækkelig evidens for, at brugen af smart devices til at bestemme agonal vejrtrækning øger overlevelsen
+hos personer med hjertestop. Hvis teknologien udvikles, kan den dog få en rolle i fremtiden. ERC anbefaler, at
+brugen af smartdevices til at bestemme agonal vejrtrækning kun bør implementeres inden for rammerne af et
+formelt forskningsprogram.
+Bærbare devices
+Der er blevet udviklet bærbare devices, der kan bestemme og overvåge en persons hjerterytme.78 Nogle
+devices er i stand til at bestemme unormale og livstruende hjertearytmier eller fravær af en puls og automatisk
+kontakte 1-1-2. Teknologierne bliver i øjeblikket undersøgt i eksperimentelle omgivelser79. For nylig blev et
+smartwatch kommercielt tilgængeligt, der automatisk kan opdage pulsløshed, hvilket for første gang muliggør
+automatisk hjertestopsdetektion uden for hospitalet.80 Sådanne devices kan potentielt reducere intervallet fra
+kollaps til erkendelse af hjertestop og påbegyndelse af HLR og dermed forbedre både pleje og overlevelse ved
+hjertestop, især blandt personer med uobserveret hjertestop.81 Der er dog i øjeblikket ingen kliniske studier, der
+viser fordelen ved at bære disse devices. Der er således i øjeblikket ingen evidens, der understøtter brugen af
+bærbare devices til at forbedre overlevelsen efter hjertestop. ERC anbefaler, at brugen af bærbare devices til at
+bestemme livstruende arytmier kun bør implementeres inden for rammerne af et formelt forskningsprogram.
+Hjertemassage af høj kvalitet
+Hjertemassage er den mest betydende komponent i effektiv HLR, da den er det lettest tilgængelige middel til
+at opretholde blodgennemstrømning til hjernen og organer under hjertestop. Effekten af hjertemassagen
+afhænger af korrekt håndplacering og trykdybde, trykhastighed (frekvens) og graden af recoil efter hvert tryk.
+Pauser i hjertemassagen afbryder gennemblødning og skal minimeres for at nedsætte den iskæmiske skade.
+Mekanisk HLR falder uden for anvendelsesområdet for basal hjertelungeredning og brug af en hjertestarter til
+voksne og behandles i ERC Guidelines 2025,
+”Adult Advanced Life Support”
+.
+82
+--- p22
+22
+Påbegyndelse af HLR
+Anbefalingen om at påbegynde HLR (tryk først versus indblæsning først) er blevet opdateret af ILCOR i 2025.4
+Fem studier blev inkluderet.83-87 Alle studierne var med træningsdukker, hvoraf et anvendte en pædiatrisk
+træningsdukke.87 Tre af studierne med voksne træningsdukker undersøgte tid til første tryk.83,85,86 En tryk-først
+tilgang resulterede i kortere tid til det første tryk. Et studie med voksne træningsdukker omhandlede tid til
+første indblæsning.85 En tryk-først tilgang resulterede i længere tid til første indblæsning. Et studie med en
+voksen træningsdukker omhandlede tid til afslutning af den første HLR-cyklus (30 tryk og 2 indblæsninger).85
+En tryk først tilgang resulterede i en kortere tid til afslutning af den første HLR-cyklus. Et studie med voksen
+træningsdukker undersøgte effekten på trykhastighed, trykdybde og andelen, hvori der blev givet
+hjertemassage, ved at starte med tryk versus at starte med indblæsninger.83 Undersøgelsen fandt, at valget af
+tilgang ikke havde nogen indflydelse på trykhastighed, trykdybde og andelen, hvori der blev givet
+hjertemassage. Jævnfør ILCOR's behandlingsvejledninger anbefaler ERC en tryk-først tilgang.
+Underlag hvorpå hjertemassage udføres
+ILCOR opdaterede CoSTR for HLR på et fast underlag i 2024.88 Når hjertemassage udføres på et blødt underlag
+(f.eks. en madras), bliver både brystkassen og den underliggende madras komprimeret.89 Dermed risikerer
+man, at den effektive trykdybde formindskes. En effektiv trykdybde kan imidlertid opnås på et blødt underlag,
+hvis førstehjælperen øger trykket og dermed dybden for at kompensere for kompressionen af madrassen.90-96
+ILCOR identificerede 17 studier, der omhandler betydningen af et fast underlag under HLR. Studierne blev
+analyseret efter gruppering — gulv versus fast hospitalsmadras, hjertebræt versus hospitalsmadras, gulv versus
+hjemmemadras og andre typer af underlag. Der blev ikke identificeret studier, der rapporterede på den kliniske
+overlevelse.88 To RCT'er97,98 med træningsdukker sammenlignede hjertemassage udført i en hospitalsseng
+versus på gulvet. Syv RCT'er99-105 med træningsdukker sammenlignede hjertemassage med og uden et
+hjertebræt i hospitalsmadras. To RCT'er med træningsdukker sammenlignede hjertemassage udført i en
+normal seng versus på gulvet.106,107 Der var ingen forskel i trykdybden i en hospitalsseng eller almindelig seng
+sammenlignet med på gulvet.88 Der var en lille forbedring i trykdybden, når der blev brugt et hjertebræt.108 To
+yderligere RCT'er med træningsdukker sammenlignede hjertemassage udført på en sportsmadras, med og
+uden et hjertebræt, og i en tandlægestol.109 Hjertemassagen var mere overfladisk både på sportsmadrassen og i
+tandlægestolen.108,109
+I overensstemmelse med ILCOR anbefaler ERC at udføre hjertemassage på et fast underlag. Når det gælder in-
+hospitalt, anbefales det at aktivere HLR-funktionen, når der gives HLR, hvis hospitalssengen har denne funktion.
+Det anbefales ikke at flytte en personen fra sengen til gulvet. ERC anbefaler ikke brugen af et hjertebræt.
+Håndplacering under hjertemassage
+Evidensen for den optimale håndplacering blev gennemgået af ILCOR i 2025.4 Kun tre studier blev identificeret,
+hvoraf ingen inkluderede bedre neurologisk funktion, overlevelse eller tilbagevenden til spontan cirkulation
+(ROSC). Alle identificerede studier rapporterede alene på fysiologiske parametre.110-112 Billedanalysestudier blev
+udelukket fra ILCOR's systematiske review, da de ikke rapporterer kliniske effektmål for personer med
+hjertestop. Dog kan denne type studier understøtte evidens for den optimale håndplacering til hjertemassage.
+--- p23
+23
+Evidens tyder på, at det maksimale tværsnitsareal af ventriklerne hos de fleste voksne og børn ligger under den
+nederste tredjedel af brystbenet, mens udløbsdelen af venstre ventrikel og den opadgående aorta ligger under
+midten af brystkassen.111,113-118 Dog vil der være individuelle forskelle i anatomien afhængig af alder, body mass
+index, medfødt hjertesygdom og graviditet. Derfor vil én specifik håndplacering måske ikke skabe optimal
+hjertemassage hos alle personer.114,117,119
+ILCOR's systematiske review fra 2025 identificerede et crossover-studie af 17 voksne personer med langvarig
+genoplivning efter ikke-traumatisk hjertestop, som observerede et bedre peak arterietryk under
+hjertemassagen og bedre end-tidal kuldioxid, når hjertemassagen blev givet på den nederste tredjedel af
+brystbenet sammenlignet med midten af brystbenet. Der var ikke forskelle i arterietryk under hjertemassagens
+recoil, peak tryk i højre atrie og koronart perfusionstryk.110 Et andet crossover studie af 30 voksne personer med
+hjertestop observerede ingen sammenhæng mellem end-tidal kuldioxidværdier og håndplacering.112 Et
+crossover studie af 10 børn observerede højere peak systolisk tryk og højere middelarterietryk, når
+hjertemassagen blev givet på den nederste tredjedel af brystbenet sammenlignet med på midten af
+brystbenet.120,4
+I overensstemmelse med ILCOR's behandlingsvejledninger fortsætter ERC med at anbefale, at instruktører
+underviser i at give hjertemassage 'på midten af brystkassen', og samtidig demonstrerer placering af
+håndroden på den nederste halvdel af brystbenet.
+Figur 8f. Hånd på midten af brystkassen
+￼
+--- p24
+24
+Figur 8g. Begge hænder giver hjertemassage
+Figur 8h. Armene strakte, lodret over personens brystkasse
+Trykdybde, trykhastighed og recoil
+ERC 2025 guidelines for basal hjertelungeredning og brug af en hjertestarter til voksne bibeholder de tidligere
+anbefalinger fra 202112 og det tidligere offentliggjorte ILCOR scoping review.121 Review'et omfattede fem
+observationsstudier, der undersøgte både hjertemassagens frekvens og hjertemassagens dybde.122-126 Et RCT127
+,
+et crossover studie 128og seks observationsstudier124,129-133 undersøgte alene hjertemassagens frekvens.135-140 Et
+RCT134 og seks observationsstudier undersøgte alene hjertemassagens dybde, mens to observationsstudier
+undersøgte brystkassens tilbagevenden til normal udvidelse. 141,142 Der blev ikke identificeret studier, der
+undersøgte forskellige grader af brystkassens tilbagevenden til normal udvidelse.
+I overensstemmelse med ILCOR fortsætter ERC med at anbefale en trykhastighed i hjertemassagen på 100 til
+120 tryk pr. minut og en trykdybde på 5-6 cm (undgå overdreven trykdybde på mere end 6 cm), mens
+førstehjælperen undgår at læne sig på brystkassen mellem trykkene for at tillade brystkassens fulde
+tilbagevenden til normal udvidelse (recoil).12
+￼
+￼
+--- p25
+25
+Minimere afbrydelser i hjertemassagen
+Afbrydelser omfatter pauser til hjertestarterens analyse af hjerterytmen, opladning, afgivelse af stød,
+luftvejshåndtering, indblæsninger og enhver anden afbrydelse i hjertemassagen. Intervallet, hvor der ikke gives
+hjertemassage, beskrives som hands-off tid. Andelen af hjertemassage (chest compression fraction — CCF)
+defineres som den del af HLR-cyklussen, hvor der gives tryk. Øget hands-off tid reducerer CCF. Evidensen, der
+vurderer betydningen af afbrydelser i HLR, blev opdateret af ILCOR i 2025. Et systematisk review143 og seks ikke-
+randomiserede studier144-149 blev identificeret.4
+Det systematiske review inkluderede otte studier, der indikerede, at feedback både i realtid og efter hændelsen
+kan være forbundet med en marginal forbedring i CCF, men ikke var forbundet med forbedrede kliniske
+outcomes.143 Et RCT150 og fire observationsstudier151-154 antydede, at feedback i realtid ikke forbedrede CCF. Tre
+observationsstudier antydede, at feedback efter hændelsen førte til forbedret CCF (MD 7,11; 95 % CI, 5,85, 8,36) (I2
+= 0 %).143 Seks nyere observationsstudier antydede, at afbrydelser ikke havde indflydelse på CCF144,146,147
+,
+ROSC144,146,147 eller overlevelse til udskrivning.147 Opladning af hjertestarteren, mens der gives hjertemassage,
+øgede CCF og kan være forbundet med ROSC (justeret OR 2,91; 95 %CI 1,09–7,8145), mens anlæggelse af en
+sikker luftvej (endotrakeal tube eller supraglottisk airway) resulterede i en øget CCF (89,9 % vs 84,5 %) og ROSC
+(31,8 % vs 12,2 %).109
+ILCOR fortsætter med at anbefale, at pauser før og efter stød skal være så korte som muligt. Desuden bør CCF
+være så høj som muligt, og mindst 60 %.
+4 I overensstemmelse med ILCOR's behandlingsvejledninger fortsætter
+ERC med at anbefale, at instruktører underviser i, at tiden uden hjertemassage skal minimeres, og at andelen af
+den tid, der gives hjertemassage, skal maksimeres.
+Hjertemassage uden afbrydelser
+Behovet for indblæsninger og iltning i den indledende behandling af hjertestop er fortsat omdiskuteret. ILCOR
+har sidst udgivet et systematisk review af hjertemassage uden afbrydelser (continuous chest compressions —
+CCC) versus standard HLR i 2017.155 ILCOR har siden foretaget tre forskellige reviews, der omhandler CCC udført
+af lægfolk, præhospitalt personale og klinisk personale på hospitaler.
+Et systematisk review4 fra 2024 kunne ikke identificere nye studier, der omhandlede CCC udført af lægfolk. Det
+tidligere systematiske review155 inkluderede fire relevante observationsstudier156-159, der sammenlignede CCC
+med HLR i et forhold på 15 tryk til to indblæsninger (15:2156,157,159) eller 30 tryk til to indblæsninger (30:2).158 Et af de
+identificerede studier rapporterede en forbedring i neurologisk funktion med CCC sammenlignet med HLR
+15:2.159 I et studie med voksne personer var overlevelsen til udskrivning fra hospital højere for CCC end for HLR
+30:2.158 I to studier, der omfattede alle aldersgrupper, fandt det ene ingen forskel i ROSC eller overlevelse til
+udskrivning,156 mens det andet dokumenterede ingen forskel i overlevelse til hospitalsindlæggelse eller
+overlevelse til 30 dage,157 når man sammenlignede CCC og HLR 15:2.157
+Et systematisk review fra 2024 identificerede et RCT160 og tre kohortestudier148,161,162, der omhandler CCC af
+præhospitalt personale.4 To af kohortestudierne148,162 var post-hoc/sekundære analyser af tidligere
+offentliggjorte forsøg.160,163,164 RCT'en kunne ikke identificere en forskel i neurologisk outcome, overlevelse til
+udskrivning fra hospital eller ROSC, når man sammenlignede CCC og HLR 30:2.160
+--- p26
+26
+Sekundære analyser af samlede forsøgsdata160,163,164 tydede oprindeligt på, at CCC udført af præhospitalt
+personale muligvis er forbundet med forbedret overlevelse til udskrivning fra hospital.148 Men når data blev
+analyseret ud fra en overholdelse af den tilsigtede behandlingsstrategi, var CCC forbundet med en lavere
+overlevelsesrate end HLR 30:2.148 De resterende observationsstudier161 kunne ikke rapportere forbedringer i
+intakt neurologisk funktion, men konkluderede, at minimering af afbrydelser i hjertelungeredning var
+forbundet med forbedret overlevelse til udskrivning fra hospital, men fandt ingen forskel i ROSC.
+Ligeledes kunne et systematisk review4 fra 2024 ikke identificere nye studier, der undersøger CCC in-hospitalt.
+Det tidligere systematiske review155 inkluderede et enkelt observationsstudie, der sammenlignede kontinuerlig
+mekanisk hjertemassage (med asynkron ventilation via en sikker luftvej) og afbrudt mekanisk hjertemassage (5
+tryk til 1 ventilation via en sikker luftvej) blandt personer indlagt på akutmodtagelsen efter hjertestop uden for
+hospital.165 Personer, der modtog kontinuerlig mekanisk HLR med asynkron ventilation, havde større
+sandsynlighed for at opnå ROSC og overleve til udskrivning fra hospital end personer, der modtog afbrudt
+mekanisk hjertemassage.165,3
+Endelig identificerede et ILCOR scoping review omhandlende kontinuerlig hjertemassage og udtrætning fire
+studier med træningsdukker. 166 Et studie omfattende 84 lægpersoner, der sammenlignede standard HLR 30:2
+med CCC, rapporterede ingen forskel i andelen af korrekt (trykhastighed og trykdybde) hjertemassage og
+ingen forskel i tid til påbegyndelse af hjertemassagen. Studiet dokumenterede yderligere et højere antal tryk
+med CCC og længere varighed væk fra brystet med HLR 30:2. De fandt heller ingen forskel i tid til udtrætning
+eller niveauet af udtrætning.166 Et større studie randomiserede 517 lægpersoner til forskellige HLR-protokoller;
+30 tryk:2 sekunders pause (30k:2s), 50 tryk:5 sekunders pause (50k:5s), 100 tryk:10 sekunders pause (100k:10s) og
+CCC. De dokumenterede en betydelig forskel i procentdelen af tryk med korrekt trykdybde blandt grupperne
+(30c2s, 96 %; 50c5s, 96 %; 100c10s, 92 %; CCC, 79 %; p=0.006). De dokumenterede også en højere CCF i CCC-
+gruppen og en større hyppighed af pauser længere end 10 sekunder i 100c10s-gruppen.168
+Et andet studie, der omfattede 124 sundhedsfaglige personer, randomiserede deltagerne til at give CCC i én af
+to HLR-positioner – i den konventionelle position ved siden af dukken eller siddende overskrævs på dukken.167
+De fandt ingen forskel i trykhastighed, trykdybde eller udtrætning (målt ved hjælp af deltagernes blodtryk,
+hjertefrekvens og respirationsfrekvens). Dog var forsøgsperioden kun på 4 minutter.167
+Et studie rekrutterede tre mandlige deltagere til at udføre HLR i højden (3.776 m) for at undersøge effekten af
+at udføre HLR i et miljø med lav iltkoncentration.169 Den fysiske belastning blev målt ved hjælp af perkutan
+arteriel iltmætning og dokumenteret ved hjælp af Borg-skalaen, der er en subjektiv vurdering af
+anstrengelsesniveau. Perkutan iltmætning blev reduceret ved udførelse af CCC, men ikke ved udførelse af HLR
+30:2. Deltagernes egen opfattelse af anstrengelsesniveau blev angivet som 'noget hårdt' eller 'hårdt'.169
+ERC støtter ILCOR's anbefalinger om, at hjertemassage gives på alle voksne med hjertestop. Hvor
+førstehjælpere er trænet, i stand til og villig til at give indblæsninger, bør de udføre HLR med et forhold på 30
+tryk til 2 indblæsninger. Hvis de ikke er trænet, i stand til eller villige, bør de give kontinuerlige tryk
+(hjertemassage) uden afbrydelser. Sundhedsfagligt personale kan give enten HLR med et forhold på 30 tryk til
+2 indblæsninger, eller hjertemassage uden afbrydelser med asynkron overtryksventilation, indtil luftvejen er
+sikret med en endotrakeal tube eller en supraglottisk airway. Når luftvejen er sikret, bør de give hjertemassage
+uden afbrydelser med asynkrone ventilationer.
+--- p27
+27
+Figur 8i. Hvis du er utrænet eller ikke i stand til at give indblæsninger, skal du give hjertemassage uden
+afbrydelser
+HLR hos personer med overvægt
+Den stigende forekomst af overvægt på verdensplan og udfordringerne ved at yde HLR til denne befolknings-
+gruppe fik ILCOR til at gennemføre et scoping review i 2024.170 Femten studier rapporterede data for favorabelt
+neurologisk funktion relateret til voksne.171-178179-184 Otte studier antydede, at personer med overvægt havde
+dårligere funktion sammenlignet med personer uden overvægt. Seks studier antydede, at der ikke var forskel i
+forhold til favorabelt neurologisk funktion, mens et studie antydede, at personer med overvægt havde større
+sandsynlighed for at have en favorabel neurologisk funktion. 22 studier rapporterede data om overlevelse til
+udskrivning fra hospital relateret til voksne.171-173,176,186-190 Ni studier antydede, at personer med overvægt havde
+dårligere chancer for overlevelse ved udskrivning end personer uden overvægt. Ni dokumenterede, at der ikke
+var forskel i overlevelse til udskrivning fra hospital179-182,191-195, mens fire studier antydede, at personer med
+overvægt var mere tilbøjelige til at overleve til udskrivning fra hospital.
+Seks studier rapporterede data om langtidsoverlevelsen (måneder til år) relateret til voksne.180 Et studie
+antydede, at personer med overvægt havde værre outcomes end personer uden overvægt. Fire antydede, at
+der ikke var forskel i langtidsoverlevelsen171,183,184,200, mens et studie antydede, at personer med overvægt var
+mere tilbøjelige til at overleve på lang sigt. Seks studier rapporterede ROSC-data relateret til voksne.187,189 To
+studier antydede, at personer med overvægt havde lavere ROSC-rater end personer uden overvægt. To
+antydede, at der ikke var forskel i ROSC-rater191,192, mens et studie antydede, at personer med overvægt var mere
+tilbøjelige til at opnå ROSC.199 Et studie rapporterede endvidere en forskel i outcome afhængigt af den
+underliggende årsag til hjertestoppet.201 Hos personer, der får et hjertestop, hvor årsagen kan henføres til selve
+hjertet, var ROSC mindre sandsynligt hos personer med overvægt, mens der ved hjertestop, hvor årsagen ikke
+er henført til selve hjertet, ikke var forskel i ROSC-raterne.201 Der sås en betydelig variation i forbindelsen mellem
+overvægt og neurologiske outcomes, overlevelse til udskrivning fra hospital, længerevarende overlevelse
+(måneder til år) og ROSC. Få studier dokumenterede indikatorer for kvaliteten i genoplivningen, og ingen
+studier dokumenterede justeringer i HLR-teknikker eller førstehjælperens udførelse. ILCOR og ERC anbefaler,
+at standard HLR protokoller anvendes for personer med overvægt.
+￼
+--- p28
+28
+Head-up HLR
+Den opdaterede ILCOR CoSTR for head-up HLR1 fandt to nye studier202,203 til at supplere det ene studie204, der
+blev identificeret i den tidligere gennemgang fra 2021. Alle tre studier blev udført af den samme forskergruppe.
+204 Det første studie, et før-efter studie, omfattende 2.322 voksne hjertestop uden for hospital sammenlignede
+HLR i to 'pakker'. Den første 'pakke' omfattede en pit-crew tilgang med hurtig påsætning af en mekanisk
+brystkassekompressionsenhed, placering af personen i en position med hovedet hævet (≈ 20°), brug af et
+'impedance threshold device' og overtryksventilation i flere minutter. Den anden 'pakke' omfattede alene
+mekanisk brystkassekompressionsenhed med et 'impedance threshold device'. Efter den første 'pakke' var
+blevet introduceret, steg antallet af mangelfulde beskrivelser af genoplivninger, og overlevelse med forbedret
+neurologi var højere (17,9 % vs 34,2 %), dog var der ingen forskel i overlevelse med forbedring i neurologisk
+funktion (de faktiske tal blev ikke dokumenteret).202 Det andet studie sammenlignede outcome for 227
+personer, der blev genoplivet ved hjælp af head-up HLR, med en propensity-matchet kohorte af 860 liggende
+personer udtrukket fra tre tidligere forsøg. Overlevelse med favorabel neurologisk funktion var højere i head-up
+HLR-gruppen 5,9 % (13/222) mod 4,1 % (35/860); OR, 1,47 (95 %CI, 0,76–2,82).202,203 Det tredje studie
+sammenlignede outcomes for 353 ikke-stødbare hjertestop, der blev genoplivet ved hjælp af head-up HLR,
+med en propensity-matchet kohorte af liggende patienter hentet fra to tidligere forsøg. Overlevelse med
+favorabel neurologisk funktion var højere i head-up HLR-gruppen 4,2 % (15/353) versus 1,1 % (4/353); OR, 3,87 (95
+%CI, 1,27–11,78).203 På trods af en tilsyneladende stigning i favorabel neurologisk funktion med baggrund i head-
+up HLR-'pakken', er der i øjeblikket utilstrækkelig evidens til at indikere, at rutinemæssig anvendelse af head-
+up HLR uden de andre elementer fra de første grupper (mekanisk brystkassekompressionsenhed og
+'impedance threshold device'), er forbundet med en bedring i outcomes. Head-up HLR-'pakken' inkluderer
+brug af en automatisk hoved-/thorax-op positioneringsenhed, en mekanisk automatiseret
+hjertemassageenhed, en tærskelmodstandsenhed og betydelig investering i yderligere træning. I
+overensstemmelse med ILCOR foreslår ERC, at rutinemæssig brug af head-op HLR undgås, da der ikke kunne
+findes evidens, der indikerer, at head-up HLR uden en samlet pakke fører til forbedrede outcomes.
+Brug af feedbackudstyr i HLR
+For at forbedre kvaliteten af HLR er der behov for at måle på væsentlige parametre under HLR. Data for
+kvaliteten af HLR kan blive tilgængelig for førstehjælperen i realtid og/eller opsummeres i en rapport, der kan
+gives efterfølgende. Tre forskellige typer af feedbackudstyr blev beskrevet, der alle vejleder i hjertemassage: 1)
+digital audio-visuel feedback inklusiv korrigerende lydmeddelelser; 2) analog auditiv og taktil 'klikker'-feedback
+om trykdybde og recoil; og 3) metronomvejledning i af hjertemassages hastighed. Den seneste ILCOR CoSTR
+for feedback på kvaliteten i HLR i reel genoplivning3 omfattede 60 manuskripter, hvoraf 24 er blevet
+offentliggjort siden 2020.205 Fem temaer blev identificeret: Systemændring/kvalitetsforbedring, indvirkning på
+personens outcome, forbedret HLR-kvalitet uden forbedring i personens outcome, HLR-feedback som en
+generator for andre HLR-parametre og HLR-feedback som en potentiel skadevolder.205 Brugen af feedback i
+HLR til at forbedre effekten af den samlede indsats behandles i ERC Guidelines 2025, ”Systems Save Lives”
+.
+34
+Dette afsnit vil behandle betydningen af realtids HLR feedbackudstyr på personens outcome og HLR-
+parametre. 40 studier undersøgte betydningen af feedback i realtid på både kvaliteten af hjertemassagen
+--- p29
+29
+og/eller personens outcome.126,128,134,140,143,146,150,206-238 Feedback i realtid førte ikke til forbedret ROSC,134,143,150,206,208-
+210,212,215-218,220-222,226,230,231,233,235,237,238 forbedret overlevelse126,143,150,206,208-210,212,215,216,218,220,222,230,231,233,237,238 eller overlevelse med
+forbedret neurologisk outcome.143,209,215,220,222,231 Feedback i realtid forbedrede kvaliteten af hjertemassage. Seks
+studier rapporterede større overensstemmelse med anbefalingerne134,208,232,235,236,238 i guidelines. To studier
+rapporterede forbedret output af blod fra hjertet.140,210,227,229 Flere studier rapporterede forbedret
+trykhastighed126,140,143,146,206,209,213-215,217,218,221,225-229,233,238, trykdybde126,140,143,146,150,206,209,214,215,217-219,221,225-227,229,233
+,
+trykfraktion126,143,146,206,209,215,217,225-227
+, reduceret hands-off tid, reduceret lænen på bryskassen140,143,146,211,214,221,224,227
+,
+mere passende indblæsningshastigheder143,206,225,238 og øget EtCO2.
+128,207,232,237,238 Et enkelt manuskript beskrev
+tilfælde, hvor personer var døde med synlige skader på brystkassen forårsaget af feedbackudstyr.239
+ERC støtter ILCOR's anbefaling mod isoleret rutinemæssig implementering af audiovisuel feedback og
+anvisningssudstyr til brug under hjertemassage, f.eks. er det usandsynligt, at feedbackudstyr forbedrer det
+kliniske outcome hos personen direkte foran dig. Feedbackudstyr bør snarere implementeres som en del af et
+omfattende handlingsorienteret kvalitetsforbedringsprogram, der er designet til at forbedre kvaliteten i HLR på
+tværs af en fælles indsats (se ERC Guidelines 2025,
+”Systems Saving Lives”34).
+Kunstigt åndedræt
+Ventilation under hjertestop er et kritisk aspekt i hjertelungeredning, der påvirker outcome.240,241 I forbindelse
+med hjertelungeredning kan ventilation gives som mund-til-mund, mund-til-næse, mund-til-stoma, mund-til-
+maske eller med ventilationsballon. ERC anbefaler, at indblæsninger skal have et tilstrækkeligt volumen til at få
+brystkassen til at hæve sig synligt.242 Førstehjælpere bør tilstræbe en varighed af indblæsningen på omkring 1
+sekund og med et tilstrækkeligt volumen til, at brystkassen netop hæver sig, men undgå hurtige eller kraftige
+indblæsninger. Hvis førstehjælperen ikke er i stand til at få brystkassen til at hæve sig, bør fremmedlegeme i
+luftvejen mistænkes (se ERC Guidelines 2025,
+”Førstehjælp”6). Den maksimale afbrydelse i hjertemassage for at
+give to indblæsninger bør ikke overstige 10 sekunder.243 Disse anbefalinger gælder for alle former for ventilation
+under HLR, når luftvejen ikke er sikret, inklusiv mund-til-mund og ventilation med ventilationsballon, med og
+uden supplerende ilt.
+Figur 8j. Hvis du er trænet og i stand til det, giv indblæsninger med tryk-indblæsninger i forholdet 30:2
+￼
+--- p30
+30
+Feedbackudstyr ved ventilation
+Mængden af evidens, der indikerer, at ventilation under genoplivning muligvis ikke overholder anbefalingerne i
+guidelines, er voksende. 244,245 Flere former for realtids feedbackudstyr er blevet udviklet for at forbedre
+kvaliteten af ventilation under hjertestop. ILCOR foretog et indledende scoping review for at fastslå, om der var
+tilstrækkelig evidens til at anbefale deres implementering.246 19 studier blev identificeret, hvoraf seks var studier
+med mennesker220,247-251
+, og 13 var simulationsstudier.252-264
+Kun tre studier206,220,247
+, en RCT220 og to prospektive observationsstudier206,247 undersøgte kliniske outcomes med
+og uden feedback i realtid. RCT'en rapporterede højere rater af ROSC (55,5 % versus 36,2 %, p=0,004) med
+feedback i realtid, men fandt ingen forskel i overlevelse med gunstig neurologisk outcome (11,1 % versus 10,3 %,
+p=0,77).220 Observationsstudierne fandt ingen forskel i hverken ROSC eller overlevelse til udskrivning; dog
+dokumenterede begge forbedrede ventilationsparametre med realtids feedback.206,247 De fleste af
+simulationsstudierne antydede forbedret ventilationskvalitet, når der blev anvendt realtids feedbackudstyr.
+ILCOR har ikke udgivet en anbefaling eller erklæring om god praksis. Baseret på ILCOR's scoping review er det
+ERC's opfattelse, at der i øjeblikket er utilstrækkelig evidens til at anbefale rutinemæssig brug af
+feedbackudstyr ved ventilation under HLR. ERC anerkender også, at det er et forskningsområde i udvikling, og
+at det kan få betydning i fremtiden, efterhånden som teknologien udvikles. ERC anbefaler, at hvis
+feedbackudstyr ved ventilation implementeres, bør det kun ske på en yderst kontrolleret måde og helst som en
+del af et formelt forskningsprogram.
+Forholdet mellem tryk og ventilation
+ILCOR opdaterede CoSTR for forholdet mellem tryk og ventilation i 20254 og identificerede syv retrospektive
+kohortestudier265-271 og et prospektivt studie272
+, der undersøgte betydningen af ændringerne i 2005 fra 15 tryk og
+2 ventilationer (15:2) til 30 tryk og 2 ventilationer (30:2).273 To kohortestudier rapporterede om bedring i intakte
+neurologiske funktioner efter skiftet fra 15:2 til 30:2.265,272 Et studie, der omfattede 3.960 ikke-stødbare tilfælde,
+rapporterede bedring i intakt neurologisk overlevelse ved udskrivning fra hospital med 30:2 sammenlignet med
+15:2.265 Et andet kohortestudie, der omfattede 522 stødbare tilfælde, rapporterede imidlertid ingen forskel i
+intakt neurologisk overlevelse (CPC-score 1–2).272 Seks kohortestudier rapporterede om overlevelsen til
+udskrivning fra hospital eller 30-dages overlevelsen.265,268,269 Tre studier rapporterede, at 30:2 øgede overlevelsen,
+mens to studier ikke fandt en forskel i sandsynligheden for at overleve.267,271 En analyse af 200 lægmands-
+bevidnede hjertestop med stødbar rytme rapporterede en øgning i overlevelse til udskrivning fra hospital med
+et tryk til ventilationsforhold på 50:2 sammenlignet med 5:1.266 I overensstemmelse med ILCOR anbefaler ERC et
+tryk-ventilationsforhold på 30:2 til voksne personer med hjertestop.
+Passiv ventilation
+Passiv ventilation beskriver den luftudveksling, der sker som følge af brystkassens og lungernes tilbagevenden
+til normal udvidelse under hjertemassage. Det er blevet antydet, at passiv ventilation kan medføre
+tidalvolumener, der er tilstrækkelige til at sikre en passende luftudveksling under hjertestop.274 ILCOR
+opdaterede deres systematiske review fra 2022 i 2025 og identificerede ingen nye studier.4,277 Tre RCT'er275-277
+,
+hvoraf ét var en meget lille pilotundersøgelse og ét var et observationsstudie, blev278 identificeret. Meta-analyse
+--- p31
+31
+af to af RCT'erne275,276 antydede, at passiv ventilation ikke forbedrede ROSC eller overlevelse til udskrivning fra
+intensivafdelingen.2 Baseret på ILCOR's review fraråder ERC rutinemæssig anvendelse af passive
+ventileringsteknikker i forbindelse med almindelig HLR.
+Brug af en automatisk ekstern defibrillator (hjertestarter)
+En automatisk ekstern defibrillator (hjertestarter) er et transportabelt, batteridrevet apparat med to
+selvklæbende pads, som skal sættes på personens bare brystkasse for at analyse hjerterytmen ved mistanke
+om hjertestop. Hjertestartere er meget præcise i deres analyse af hjerterytmen, og lægfolk kan anvende dem
+sikkert og effektivt.279 Hvis hjerterytmen er en stødbar rytme (ventrikelflimren eller pulsløs ventrikulær
+takykardi), vil førstehjælperen få auditive eller audio-visuelle instruktioner om at afgive et stød (defibrillering) for
+at genetablere en koordineret virkningsfuld hjerterytme.280 Blandt personer med en stødbar rytme er hvert
+minuts forsinkelse til defibrillering forbundet med en 6 % højere sandsynlighed for ikke at kunne afslutte VF, og
+en 3-6 % lavere sandsynlighed for overlevelse til udskrivning.
+281-283 Ved alle andre hjerterytmer (inklusiv asystoli
+og en normal rytme) vil hjertestarteren ikke anbefale stød.
+Chancerne for overlevelse efter hjertestop uden for hospitalet kan øges markant, hvis personerne tidligt får
+HLR, og en hjertestarter anvendes.284 Hjertestartere gør det muligt for lægfolk at give tidlig defibrillering ved
+hjertestop flere minutter, før professionel hjælp når frem.284 De højeste overlevelsesrater efter genoplivning af
+en person er blevet rapporteret efter brug af hjertestartere på steder, såsom i lufthavne, kasinoer,
+sportsfaciliteter og togstationer.55,285-288 En nylig opdatering af et systematisk review fra 2020 af ILCOR
+identificerede én videnskabelig erklæring fra ILCOR289
+, ét systematisk review290 og fire observationsstudier.291-293
+Det systematiske review omfattede 30 studier og rapporterede, at HLR med brug af en hjertestarter udført af
+lægmand øgede overlevelsen.294 Ét observationsstudie rapporterede forbedring i intakt neurologisk funktion,
+mens et andet antydede, at der ingen forskel var i forbedring intakt neurologisk funktion.291 På samme måde
+rapporterede et observationsstudie en forbedring i ROSC292, mens et andet antydede, at der ikke var forbedring
+i intakt neurologisk funktion.291 Det fjerde studie rapporterede, at de årlige antal dødsfald som følge af
+hjertestop blev reduceret efter implementeringen af et program med offentlig tilgængelige hjertestartere
+(PAD) for personer under 65 år, men ikke for personer på 65 år eller derover.293 Baseret på ILCOR CoSTR3
+anbefaler ERC implementeringen af programmer for offentlig tilgængelige hjertestartere, og at offentligt
+tilgængelige hjertestartere skal være tilgængelige for brug 24 timer i døgnet, 7 dage om ugen samt opsættes
+på steder, der er let tilgængelige for offentligheden og i ulåste skabe. Dette afsnit handler om defibrillering i
+sammenhæng med HLR. Mere avancerede begreber, herunder synkroniseret kardioversion, vektorændring og
+dobbeltsekvens defibrillering, kan findes i ERC Guidelines 2025,
+”Adult Advanced Life Support” (dette er ikke
+oversat til dansk).
+82 Bredere overvejelser om systemer for placering og anvendelse af hjertestartere er angivet i
+ERC Guidelines 2025,
+”Systems Save Lives”
+.
+34
+Ultratransportable hjertestartere
+Flere producenter har udviklet ultratransportable eller lomme-hjertestartere til personlig anvendelse eller til
+anvendelse af frivillige førstehjælpere i lokalsamfundet. Dette giver en mulighed for at øge tilgængeligheden af
+hjertestartere og dermed forbedre personernes outcome. Men disse apparater kan være begrænset i antal og i
+--- p32
+32
+energien fra de stød, de kan afgive (f.eks. begrænset til op til 20 stød og maksimalt 85J). Selvom disse apparater
+muligvis er blevet godkendt som sikre at anvende, giver dette ikke evidens for apparaternes effekt i faktisk
+anvendelse. For effektivt at kunne informere om anbefalinger for implementering, har ILCOR gennemført et
+review af evidensen295, som identificerede tre studier.296-298 En økonomisk model dokumenterede, at
+ultratransportable hjertestartere ville reducere den årlige risiko for at dø som følge af et hjertestop og forbedre
+livskvaliteten efter hjertestop.296 Det ene var en studieprotokol for et klynge-RCT297
+, mens det tredje var en
+abstraktpublikation, der beskrev foreløbige data fra klynge-RCT'en.298 Der er i øjeblikket ikke tilstrækkelig klinisk
+evidens, der indikerer, at ultratransportable hjertestartere forbedrer personernes outcome.3 ERC er i øjeblikket
+ikke i stand til at anbefale deres anvendelse, indtil kliniske data med høj sikkerhed dokumenterer forbedrede
+personoutcomes ved deres brug.
+Hvordan finder man en hjertestarter
+Alle offentligt tilgængelige hjertestartere bør registreres. I Danmark registreres de på hjertestarter.dk. Sådanne
+registre gør det muligt for den sundhedsfaglige visitator at identificere den nærmeste tilgængelige
+hjertestarter på tidspunktet for alarmopkaldet.299-304 Hvis der er mere end én førstehjælper til stede ved et
+hjertestop, kan den sundhedsfaglige visitator vejlede en anden af førstehjælperne i at finde og hente en
+hjertestarter. En anden måde, hvorpå en tilgængelig hjertestarter kan hentes og anvendes til en person med
+hjertestop kan være, at førstehjælperen, der foretager alarmopkaldet, spørges, om der er en hjertestarter
+tilgængelig i umiddelbar nærhed af stedet (dvs. umiddelbart synlig fra det sted, hvor personen er faldet om).
+Hvis hjertestarteren er i umiddelbar nærhed af personen, og tiden hvori personen forlades er lille, kan det være
+tilrådeligt at hente den, selv for en enlig førstehjælper. ERC anbefaler, at der centralt opretholdes et nøjagtigt
+register over hjertestarteres placering.
+Figur 8k. Hent en hjertestarter
+Apps med geolokation
+Det globale positioneringssystem (GPS) i smartphones har gjort det muligt for adskillige apps at lokalisere
+telefonens bruger og vise placering og tilgængelighed af hjertestartere i nærheden.303-306 De tillader ofte
+￼
+--- p33
+33
+brugeren at tilføje nye hjertestartere, detaljer om eksisterende hjertestartere og at give oplysninger om
+manglende eller defekte hjertestartere. Disse apps kan supplere eksisterende registre.303,304 De kan have
+mulighed for at anvise en rute til en hjertestarter og integrere med alarmsystemer, så sundhedsfaglige
+visitatorer kan sende en push-besked til en mobiltelefon (eller en anden smart-enhed, f.eks. et smartwatch) i
+forbindelse med et hjertestop og herved hjælpe med at guide en førstehjælper til den nærmeste hjertestarter. I
+Danmark findes der bl.a. en app til hjerteløbere.303,306 Teknologiens rolle i forbindelse med mobiltelefoner som
+redskab til at lokalisere hjertestartere er beskrevet mere detaljeret i ERC Guidelines 2025,
+”Systems Save Lives”
+.
+34
+Hjertestarterskilt (Figur 8k)
+Selvom der findes flere forskellige hjertestarterskilte, mangler der ofte en forståelse af betydningen af disse
+skilte.307-309 Nyere skilte er blevet udviklet efter offentlige høringer309,310
+, men der mangler evidens for, hvordan
+skilte øger anvendelsen af hjertestartere. Desuden har mange hjertestartere ingen skiltning, dér hvor de er
+opsat, eller skilte i nærheden, der kunne guide førstehjælpere til deres placering.311 ERC og ILCOR anbefaler, at
+hjertestartere skal være meget synlige og lette at finde. Dette indebærer tydelig skiltning på stedet, der er
+synlig på afstand, samt skilte i nærheden af hjertestarteren, der klart leder førstehjælperen mod dens placering.
+Skilte skal angive, hvad hjertestarteren bruges til, og at alle kan anvende hjertestarteren, selvom de ikke
+tidligere har modtaget træning i anvendelsen.
+Hjertestarterskabe
+Bekymringer om tyveri eller hærværk har ført til sikkerhedsforanstaltninger til at opbevare hjertestartere på
+offentlige steder såsom brug af aflåste skabe. Da hvert minuts forsinkelse i forsøget på defibrillering kritisk
+reducerer chancen for overlevelse, kan den ekstra tid, der kræves for at få adgang til en hjertestarter i et låst
+skab, have en negativ indflydelse på personens overlevelse.312 Et ILCOR scoping review fra 2025 vurderede
+fordele og ulemper ved at placere hjertestartere i låste skabe versus i ulåste skabe. Der var begrænset evidens,
+fordi der kun blev identificeret 10 studier, hvoraf nogle var simulationsstudier eller konferenceabstrakter.313-321
+Samlet set blev der dokumenteret en lav risiko for tyveri, manglende hjertestartere eller hærværk (< 2 %).
+Desuden identificerede to simulationsstudier en betydeligt langsommere afhentning af hjertestartere, når der
+blev anvendt yderligere sikkerhedsforanstaltninger såsom låste skabe.313 En undersøgelse af førstehjælpere
+rapporterede endvidere, at halvdelen af alle skader skete i forbindelse med, at man forsøgte at knuste glasset
+for skaffe sig adgang til hjertestarteren.322 I overensstemmelse med ILCOR anbefaler ERC, at hjertestarterskabe
+ikke er låst. Hvis aflåsning er nødvendigt, skal informationer for oplåsning være tydelige for at forebygge
+forsinkelser. Der bør være etableret strategier og systemer for at håndtere hjertestartere, der har været brugt.
+Brug af droner til at levere hjertestartere
+Droner og ubemandede luftfartøjer har potentialet til at fremskynde leveringen af en hjertestarter, især i
+områder med længere responstider. Evidens, der understøtter dronelevering af hjertestartere, mangler i
+øjeblikket, men praktiske studier viser, at dronelevering af hjertestartere er gennemførlig, og i cirka 60 % af
+tilfældene er der observeret en tidsfordel på 1-3 minutter i forhold til ambulancer. Matematisk modellering kan
+bruges til at optimere placeringen af droner for at forbedre responstiden ved hjertestop uden for hospitalet.
+--- p34
+34
+ILCOR udførte et scoping review i 20233 og en opdatering af evidensen i 20244 for at undersøge
+gennemførlighed og effekt af droneleverede hjertestartere til hjertestop uden for hospital. 39 studier blev
+inkluderet. De fleste af studierne var simulationsstudier eller computer/forudsigelsesmodeller. Kun tre studier
+rapporterede om dronelevering af en hjertestarter til reelle hjertestop uden for hospital.323-325 Der var ingen
+RCT'er, der undersøgte dronelevering af hjertestartere. ERC anbefaler, at hvor dronelevering af hjertestartere er
+mulig, bør sundhedsfaglige visitatorer informere førstehjælpere om, at en drone er blevet afsendt for at levere
+en hjertestarter og give instruktion om, hvordan man henter hjertestarteren fra dronen.
+Hvordan og hvornår man bruger en hjertestarter
+En hjertestarter bør kun påsættes en person, der er bevidstløs uden normal vejrtrækning. HLR bør ikke
+forsinkes, mens hjertestarteren lokaliseres og hentes. Så snart hjertestarteren er fremme ved personen med
+hjertestop, skal den pakkes ud og tændes, og de to pads påsættes personen.3 Hvis der er mere end én
+førstehjælper til stede, bør den ene fortsætte med HLR, mens den anden påsætter de to pads. Nogle
+hjertestartere tænder automatisk, når deres etui åbnes, mens andre kræver, at der trykkes på en tænd-knap.
+De fleste hjertestartere har stemme- og visuelle instruktioner, der anviser, hvor man skal placere de to pads. Når
+hjertestarterens pads er påsat, bør ingen røre personen, mens hjertestarteren udfører analysen af hjerterytmen.
+Hvis hjertestarteren anbefaler stød, vil den enten selv afgive stødet (fuldautomatiske hjertestartere) eller bede
+førstehjælperen om at trykke på stødknappen (semi-automatiske hjertestartere). Nogle hjertestartere giver
+også vejledning i og feedback på kvaliteten af hjertemassagen.
+Figur 8l. Når hjertestarteren kommer frem, fortsæt med hjertemassage mens pads påsættes
+￼
+--- p35
+35
+Figur 8m. Følg hjertestarterens anvisninger
+Figur 8n. Hvis stød anbefales, afgiv stød og fortsæt straks med HLR
+Figur 8o. Hvis et stød ikke anbefales, fortsæt straks med hjertemassage
+￼
+￼
+￼
+--- p36
+36
+Bør hjertemassage udføres før defibrillering?
+ILCOR har opdateret CoSTR11 to gange siden 2020 for, hvornår defibrillering skal udføres, men der er ikke
+identificeret nye studier.2,3 Et systematisk review fra 2020 af ILCOR1 identificerede fem RCT'er326-330, der
+sammenlignede et kortere med et længere interval med hjertemassage før defibrillering.1 Ingen klar fordel af et
+længere interval med HLR før defibrillering blev fundet. Fire studier rapporterede, at der ingen signifikant
+forskel var i forbedret intakt neurologisk funktion blandt personer, der fik en kortere periode med HLR før
+defibrillering sammenlignet med en længere periode med HLR.326,327,329,330 Fem studier rapporterede ingen
+signifikant forskel i overlevelse til udskrivning fra hospital blandt personer, der fik en kortere periode med HLR
+før defibrillering sammenlignet med en længere periode med HLR.327-330 I overensstemmelse med ILCOR
+anbefaler ERC, at HLR fortsættes, indtil en hjertestarter er fremme på stedet, er tændt, og pads er påsat
+personen. Når hjertestarterens pads er påsat, vil hjertestarteren analysere, og hvis det anbefales, skal stød med
+det samme. Defibrillering bør ikke forsinkes yderligere for at give ekstra HLR.
+Placering af pads
+ILCOR foretog i 2024 et systematisk review, der omfattede størrelsen af hjertestarterens pads og placering.4 To
+observationsstudier331,332 og et RCT333 blev identificeret. Ingen af studierne omfattede betydningen af forskellige
+størrelser på pads'ene på ROSC, overlevelse eller forbedret intakt neurologisk funktion. Et observationsstudie
+rapporterede ingen forskel i defibrilleringssucces ved brug af store pads.331,332 Et prospektivt studie fandt ingen
+signifikant forskel i forbedring i intakt neurologisk funktion, overlevelse til udskrivning fra hospital eller succes
+med defibrillering ved initial anterior-posterior placering af pads sammenlignet med initial anterior-lateral
+placering. Dog var anterior-posterior pad placeringen forbundet med højere ROSC-rater efter justering af
+kendte forudsætninger.333 RCT'et undersøgte placering af pads til refraktær ventrikelflimren, hvilket ligger ud
+over basal hjertelungeredning med brug af en hjertestarter til voksne, og yderligere information kan findes i
+ERC Guidelines 2025, ”Adult Advanced Life Support”.
+Der er i øjeblikket ikke tilstrækkelig evidens til at anbefale en specifik størrelse på pads eller position for optimal
+ekstern defibrillering med en hjertestarter til voksne. ILCOR har udstedt en erklæring om god praksis, der
+anbefaler at følge producentens vejledning og instruktioner for placering af hjertestarterens pads til voksne.
+ERC støtter denne anbefaling. For de fleste producenter vil dette betyde at pads placeres på forsiden af
+personens brystkasse og på venstre side (den antero-laterale position). Den ene pad skal placeres under
+personens højre kraveben lige til højre for den øvre kant af brystbenet. Den anden pad skal placeres centralt på
+personens venstre midt-aksillære linje under armhulen. Placeringen af pads bør undgå brystvæv, hvis det er
+muligt. Denne placering kræver mindre manuel håndtering af personen, hvilket reducerer risikoen for skader
+på personen, minimerer den tid, der er krævet for at placere pads og dermed minimerer afbrydelser i
+hjertemassagen. Den anden mulige position er at placere pads på personens bryst og ryg (den anteriore-
+posterior position). Placér den forreste pad på venstre side af brystet mellem midtlinjen og brystvorten. På
+kvinder bør der om muligt forsøges en placering, der minimerer placering på brystvævet eller helt undgår det.
+Den posteriore pad skal placeres på venstre side af patientens rygsøjle, lige under skulderbladet. Denne
+placeringsmåde kræver en større grad af manuel håndtering af personen end den antero-laterale position. Hvis
+--- p37
+37
+den anteriore-laterale pad position ikke er mulig, kan førstehjælperen overveje at bruge den anteriore-posterior
+pad position, hvis vedkommende er trænet (Figur 6).
+Fjernelse af en bh før brug af en hjertestarter
+Udenlandske studier indikerer, at kvinder med hjertestop er mindre tilbøjelige til at få HLR og defibrillering af
+førstehjælpere.
+334-336 Dette kan skyldes en bekymring over at skulle blotlægge og røre ved en kvindes bryst samt
+frygten for at kunne blive anklaget for et seksuelt overgreb.
+338,339 I Danmark ser vi ikke denne skævhed. Kvinder
+og mænd bliver i lige høj grad forsøgt genoplivet.
+For at vurdere betydningen af at bære en bh ved defibrillering gennemførte ILCOR et systematisk review, der
+identificerede to studier med træningsdukker og et dyreforsøg.340 Dyreforsøget antydede, at en metaltråd i en
+bh ikke påvirkede forsøget på defibrillering negativt eller forårsagede skade på personen.340 Studierne med
+træningsdukker antydede, at de kvindelige træningsdukker i mindre grad blev blotlagt eller afklædt,338 og at
+tid til defibrillering var længere med kvindelige træningsdukker.339 Der blev ikke identificeret studier, der
+undersøgte ROSC, overlevelse eller forbedret intakt neurologisk funktion.341 Hjertestarterens pads skal placeres
+på bar hud. Hos personer, der bærer bh, er der kun lidt evidens for, om bh'en skal løsnes eller klippes af, og
+ingen evidens for at en bøjle i bh'en forårsager skade. ILCOR fastslår, at der ikke er tilstrækkelig evidens til at
+anbefale rutinemæssig løsning eller klipning af en bh, når en hjertestarter anvendes. Pads skal placeres på bar
+hud i den korrekte position, hvilket kan være muligt ved at justere bh'ens position snarere end ved at løsne eller
+klippe den op.
+ERC anbefaler, at førstehjælpere prioriterer at placere pads på det korrekte sted og i fuld kontakt med bar hud.
+Kan dette gøres hurtigt uden at løsne eller klippe bh'en, er det acceptabelt at lade bh'en blive siddende. Men
+hvis bh'en er i vejen for korrekt placering af pads, bør bh'en flyttes for at lette korrekt placering af pads.
+Førstehjælpere bør ikke være bekymrede for at blotte personens brystkasse for at påsætte pads. De bør
+prioritere livreddende håndgreb frem for bekymringer om blufærdighed.
+ERC anbefaler endvidere, at producenter af træningsdukker udvikler realistiske træningsdukker, der afspejler
+forskellige kropsstørrelser og -former. Træning i HLR bør indeholde placering af pads på personer, der bærer
+bh'er.
+Placering af en hjertestarter i det offentlige rum
+Evidens omhandlende geografisk placering af hjertestartere kan findes i ERC Guidelines 2025, ”Systems Save
+Lives”. ERC anbefaler, at placeringen af hjertestartere baseres på data, der tager hensyn til den historiske
+forekomst af hjertestop uden for hospital, responstider og placeringen af eksisterende hjertestartere.
+Sikkerhed
+Personligt Beskyttelsesudstyr (PPE)
+Brug af personligt beskyttelsesudstyr i forbindelse med hjertelungeredning og brug af en hjertestarter spiller
+en betydelig rolle i at beskytte førstehjælpere mod en potentiel eksponering for smitsomme stoffer. En
+metaanalyse af seks simuleringsbaserede randomiserede studier fandt ingen meningsfuld effekt af personligt
+beskyttelsesudstyr på trykdybden eller trykhastigheden ved HLR til voksne. Dette var også tilfældet i studier
+--- p38
+38
+udført under COVID-19 pandemien, hvor personligt beskyttelsesudstyr blev brugt i vid udstrækning. Imidlertid
+rapporterede førstehjælpere iført personligt beskyttelsesudstyr, at de følte sig mere udtrættede. Selvom
+personligt beskyttelsesudstyr bør anvendes, når det er tilgængeligt — især i situationer med kendt eller
+mistænkt infektionsrisiko — bør dets anvendelse ikke føre til unødvendige forsinkelser i at påbegynde
+hjertemassage. ERC anbefaler regelmæssig træning i rettidig påklædning og aftagning af personligt
+beskyttelsesudstyr, så beskyttelse og hurtig handling følges ad.342
+Skader på førstehjælpere, der yder HLR
+ILCOR udførte et scoping review relateret til skader på førstehjælpere, der yder HLR, og meget få studier om
+pådragelse af skade under udførelse af HLR og defibrillering blev identificeret. Fem eksperimentelle studier og
+én caserapport, udgivet efter 2008, blev gennemgået. De fem eksperimentelle studier rapporterede fund fra
+eksperimentelle opstillinger under defibrillering ved elektiv kardiovertering. Forfatterne målte strømmens
+bevægelse og den gennemsnitlige lækstrøm i forskellige opstillinger for at vurdere førstehjælperens sikkerhed.
+På trods af begrænset evidens til at vurdere sikkerheden var der en bred enighed i ILCOR og ERC om
+opfattelsen af, at det generelt er sikkert at anvende en hjertestarter.11,273 I overensstemmelse med ILCOR
+anbefaler ERC, at førstehjælpere giver HLR og bruger en hjertestarter, da risikoen for pådragelse af skader fra et
+tilfældigt stød ved brug af en hjertestarter er lav.
+Utilsigtet skade ved at give HLR til personer, der ikke har hjertestop
+Lægfolk kan være tilbageholdende med at give HLR til en bevidstløs person uden normal vejrtrækning af frygt
+for, at hjertemassage på en person, der ikke har hjertestop, kan påføre alvorlig skade. Der er dog kun lidt
+evidens for, at HLR på en person som ikke havde hjertestop, har medført betydelig skade. Der er dog en
+betydelig bekymring for, at forsinkelser i påbegyndelse af HLR resulterer i dårligere outcome for personen.312 De
+potentielle fordele i overlevelse ved at påbegynde HLR udført af lægfolk på personer med hjertestop opvejer
+langt den lave risiko for gøre skade på personer, der ikke har hjertestop.
+ILCOR anbefaler, at lægfolk og førstehjælpere påbegynder HLR på personer med mistænkt hjertestop uden
+bekymring for at gøre skade på personer, der ikke har hjertestop (anbefaling for god praksis). ERC's guidelines
+er i overensstemmelse med ILCOR's behandlingsvejledninger.
+Sikkerhed ved brug af hjertestartere
+Fejl i brugen af hjertestartere opstår oftest med baggrund i problemer med, hvordan bruger interagerer med
+hjertestarteren snarere end fejl eller funktionsfejl i selve apparatet. Det inkluderer fortsættelse af HLR under
+hjertestarterens analyse, undlade at afgive stød når hjertestarteren anbefaler det og for tidlig aftagning af
+hjertestarteren.343 Simulationsstudier antyder, at fuldautomatiske hjertestartere øger sikkerheden, reducerer
+fejl og forkorter tiden til defibrillering sammenlignet med semi-automatiske hjertestartere.344,345 ERC anbefaler
+brugen af hjertestartere, da de er sikre at anvende og udgør en lav risiko for skader på personer.
+--- p39
+39
+Taksigelser
+Vi værdsætter bidragene fra medlemmerne af den pædiatriske genoplivnings skrivegruppe, deres input og
+konceptet 3 trin til at redde liv.
+Vi vil gerne takke medlemmerne af ERC's BLS Science and Education Committee (Enrico Baldi, Jaques Delchef,
+Ahmed Elshaer, Jose M Giraldo, Cristian Abelairas Gomez, Vlasios Karageorgos, Carsten Lott, Kaushila Modarage
+og Patrick van de Voorde) samt Siobhan Masterson for deres kommentarer og input under tilblivelsen af disse
+ERC 2025 guidelines for basal hjertelungeredning og brug af en hjertestarter til voksne, og især for deres råd
+vedrørende de indeholdte figurer.
+--- p40
+40
+Forkortelser
+AED Automatisk ekstern defibrillator
+AI Kunstig intelligens
+ALS Avanceret genoplivning
+AR Augmented reality
+BLS Basal hjertelungeredning med brug af en hjertestarter
+CoSTR Konsensus om videnskab og behandlingsvejledninger
+EMS Akutberedskaber
+ERC Europæisk Råd for Genoplivning
+HBB Hjælper babyer med at trække vejret
+HCP'er Sundhedsfagligt personale
+HLR Hjertelungeredning
+ILCOR International Liaison Committee on Resuscitation
+ILS Immediate genoplivning
+NLS Neonatal genoplivning
+PAD Offentlig tilgængelig hjertestarter
+PBLS Basal pædiatrisk genoplivning af børn
+RCT Randomiseret kontrolleret forsøg
+VLE Virtuelt læringsmiljø
+VR Virtual reality
+--- p41
+41
+Referencer
+1. Wyckoff MH, Singletary EM, Soar J, Olasveengen TM, Greif R, Liley HG, Zideman D, Bhanji F, Andersen LW, Avis SR, et
+al. 2021 International Consensus on Cardiopulmonary Resuscitation and Emergency Cardiovascular Care Science
+With Treatment Recommendations: Summary From the Basic Life Support; Advanced Life Support; Neonatal Life
+Support; Education, Implementation, and Teams; First Aid Task Forces; and the COVID-19 Working Group.
+Resuscitation. 2021;169:229-311. doi: 10.1016/j.resuscitation.2021.10.040
+2. Wyckoff MH, Greif R, Morley PT, Ng K-C, Olasveengen TM, Singletary EM, Soar J, Cheng A, Drennan IR, Liley HG, et al.
+2022 International Consensus on Cardiopulmonary Resuscitation and Emergency Cardiovascular Care Science With
+Treatment Recommendations: Summary From the Basic Life Support; Advanced Life Support; Pediatric Life Support;
+Neonatal Life Support; Education, Implementation, and Teams; and First Aid Task Forces. Resuscitation. 2022;181:208-
+288. doi: 10.1016/j.resuscitation.2022.10.005
+3. Berg KM, Bray JE, Ng K-C, Liley HG, Greif R, Carlson JN, Morley PT, Drennan IR, Smyth M, Scholefield BR, et al. 2023
+International Consensus on Cardiopulmonary Resuscitation and Emergency Cardiovascular Care Science With
+Treatment Recommendations: Summary From the Basic Life Support; Advanced Life Support; Pediatric Life Support;
+Neonatal Life Support; Education, Implementation, and Teams; and First Aid Task Forces. Resuscitation.
+2024;195:109992. doi: https://doi.org/10.1016/j.resuscitation.2023.109992
+4. ILCOR. 2025 ILCOR Consensus on Science With Treatment Recommendations. https://ilcor.org/publications/preprint.
+2025.
+5. Greif RL, K. G.; Djärv, T.; Ek, J. E.; Monnelly, V.; Monsieurs, K. G.; Nikolaou, N.; Olasveengen, T. M.; Semeraro, F.; Spartinou,
+A.; Yeung, J.; Baldi, E.; Biarent, D.; Djakow, J.; van Gils, M.; van Goor, S.; Gräsner, J-T.; Hogeveen, M.; Karageorgos, V.; Lott,
+C.; Madar, J.; Nabecker, S.; de Raad, T.; Raffay, V.; Rogers, J.; Sandroni, C.; Schnaubelt, S.; Smyth, M. A.; Soar, J.; Wittig, J.;
+Perkins, G. D.; Nolan, J. P.;. European Resuscitation Council Guidelines 2025: Executive Summary. In: Resuscitation.
+2025.
+6. Djärv TR, J.; Semeraro, F.; Brädde, L.; Cassan, P.; Cimpoesu, D.; van Goor, S.; Klaassen, B.; Laermans, J.; Meyran, D.;
+Singletary, E. M.; Mellet-Smith, A.; Thilakasiri, K.; Zideman, D.; . European Resuscitation Council Guidelines 2025: First
+Aid. In; 2025.
+7. Perkins GD, Gräsner J-T, Semeraro F, Olasveengen T, Soar J, Lott C, Van de Voorde P, Madar J, Zideman D,
+Mentzelopoulos S. European resuscitation council guidelines 2021: executive summary. Resuscitation. 2021;161:1-60.
+8. Vaillancourt C, Charette ML, Bohm K, Dunford J, Castrén M. In out-of-hospital cardiac arrest patients, does the
+description of any specific symptoms to the emergency medical dispatcher improve the accuracy of the diagnosis of
+cardiac arrest: A systematic review of the literature. Resuscitation. 2011;82:1483-1489. doi:
+10.1016/j.resuscitation.2011.05.020
+9. Kirby K, Voss S, Bird E, Benger J. Features of Emergency Medical System calls that facilitate or inhibit Emergency
+Medical Dispatcher recognition that a patient is in, or at imminent risk of, cardiac arrest: A systematic mixed studies
+review. Resuscitation Plus. 2021;8:100173. doi: https://doi.org/10.1016/j.resplu.2021.100173
+10. Drennan IR, Geri G, Brooks S, Couper K, Hatanaka T, Kudenchuk P, Olasveengen T, Pellegrino J, Schexnayder SM,
+Morley P. Diagnosis of out-of-hospital cardiac arrest by emergency medical dispatch: A diagnostic systematic review.
+Resuscitation. 2021;159:85-96.
+11. Olasveengen TM, Mancini ME, Perkins GD, Avis S, Brooks S, Castrén M, Chung SP, Considine J, Couper K, Escalante R.
+Adult basic life support: 2020 international consensus on cardiopulmonary resuscitation and emergency
+cardiovascular care science with treatment recommendations. Circulation. 2020;142:S41-S91.
+12. Olasveengen TM, Semeraro F, Ristagno G, Castren M, Handley A, Kuzovlev A, Monsieurs KG, Raffay V, Smyth M, Soar J.
+European resuscitation council guidelines 2021: basic life support. Resuscitation. 2021;161:98-114.
+13. Grabmayr AJ, Dicker B, Dassanayake V, Bray J, Vaillancourt C, Dainty KN, Olasveengen T, Hansen CM, Force
+ILCoRBLST. Optimising telecommunicator recognition of out-of-hospital cardiac arrest: a scoping review.
+Resuscitation plus. 2024;20:100754.
+14. Perkin R, Resnik D. The agony of agonal respiration: is the last gasp necessary? Journal of Medical Ethics.
+2002;28:164-169.
+15. Debaty G, Labarere J, Frascone RJ, Wayne MA, Swor RA, Mahoney BD, Domeier RM, Olinger ML, O’Neil BJ,
+Yannopoulos D. Long-term prognostic value of gasping during out-of-hospital cardiac arrest. Journal of the
+American College of Cardiology. 2017;70:1467-1476.
+16. Voos MHR, Okamoto CM, Trommer AB, Silva ABd, Cruz EFd, Laporte GA, Crespo ARPT, Regner A, Viegas K.
+Observational Study of Words Used by Emergency Callers and Their Impact on the Recognition of an Out-Of-
+Hospital Cardiopulmonary Arrest by the Medical Dispatcher. Arquivos Brasileiros de Cardiologia. 2024;121:e20230343.
+17. Watkins CL, Jones SP, Hurley MA, Benedetto V, Price CI, Sutton CJ, Quinn T, Bangee M, Chesworth B, Miller C, et al.
+Predictors of recognition of out of hospital cardiac arrest by emergency medical services call handlers in England: a
+mixed methods diagnostic accuracy study. Scandinavian Journal of Trauma, Resuscitation and Emergency
+Medicine. 2021;29:7. doi: 10.1186/s13049-020-00823-9
+18. Berdowski J, Beekhuis F, Zwinderman AH, Tijssen JG, Koster RW. Importance of the first link: description and
+recognition of an out-of-hospital cardiac arrest in an emergency call. Circulation. 2009;119:2096-2102.
+19. Viereck S, Møller TP, Ersbøll AK, Bækgaard JS, Claesson A, Hollenberg J, Folke F, Lippert FK. Recognising out-of-
+hospital cardiac arrest during emergency calls increases bystander cardiopulmonary resuscitation and survival.
+Resuscitation. 2017;115:141-147.
+--- p42
+42
+20. Smith CM, Moore F, Drezner JA, Aird R, Benson Clarke A, Cant J, Hamilton-Bower I, Hampshire S, Hodgson L,
+Johnston C, et al. Resuscitation on the field of play: a best-practice guideline from Resuscitation Council UK. British
+Journal of Sports Medicine. 2024;58:1098. doi: 10.1136/bjsports-2024-108440
+21. Drezner JA, Rogers KJ. Sudden cardiac arrest in intercollegiate athletes: detailed analysis and outcomes of
+resuscitation in nine cases. Heart Rhythm. 2006;3:755-759. doi: 10.1016/j.hrthm.2006.03.023
+22. Drezner JA, Rao AL, Heistand J, Bloomingdale MK, Harmon KG. Effectiveness of Emergency Response Planning for
+Sudden Cardiac Arrest in United States High Schools With Automated External Defibrillators. Circulation.
+2009;120:518-525. doi: 10.1161/CIRCULATIONAHA.109.855890
+23. Tanaka H, Kinoshi T, Tanaka S, Sagisaka R, Takahashi H, Sone E, Hara T, Takeda Y, Takyu H. Prehospital interventions
+and neurological outcomes in marathon-related sudden cardiac arrest using a rapid mobile automated external
+defibrillator system in Japan: a prospective observational study. British Journal of Sports Medicine. 2022;56:1210. doi:
+10.1136/bjsports-2021-104964
+24. Steinskog DM, Solberg EE. Sudden cardiac arrest in sports: a video analysis. British Journal of Sports Medicine.
+2019;53:1293. doi: 10.1136/bjsports-2018-099578
+25. Dickson JM, Taylor LH, Shewan J, Baldwin T, Grünewald RA, Reuber M. Cross-sectional study of the prehospital
+management of adult patients with a suspected seizure (EPIC1). BMJ Open. 2016;6:e010573. doi: 10.1136/bmjopen-
+2015-010573
+26. Kämppi L, Puolakka T, Ritvanen J, Tuppurainen K, Päkkilä J, Kuisma M, Peltola J. Burden of suspected epileptic
+seizures on emergency services: A population-based study. European Journal of Neurology. 2023;30:2197-2205. doi:
+https://doi.org/10.1111/ene.15800
+27. Sporer KA, Johnson NJ. Detailed analysis of prehospital interventions in medical priority dispatch system
+determinants. West J Emerg Med. 2011;12:19-29.
+28. Dami F, Rossetti AO, Fuchs V, Yersin B, Hugli O. Proportion of out-of-hospital adult non-traumatic cardiac or
+respiratory arrest among calls for seizure. Emerg Med J. 2012;29:758-760. doi: 10.1136/emermed-2011-200234
+29. Schwarzkoph M, Yin L, Hergert L, Drucker C, Counts CR, Eisenberg M. Seizure-like presentation in OHCA creates
+barriers to dispatch recognition of cardiac arrest. Resuscitation. 2020;156:230-236.
+30. Murasaka K, Takada K, Yamashita A, Ushimoto T, Wato Y, Inaba H. Seizure-like activity at the onset of emergency
+medical service-witnessed out-of-hospital cardiac arrest: An observational study. Resuscitation Plus. 2021;8:100168.
+doi: https://doi.org/10.1016/j.resplu.2021.100168
+31. Steensberg AT, Eriksen MM, Andersen LB, Hendriksen OM, Larsen HD, Laier GH, Thougaard T. Bystander capability to
+activate speaker function for continuous dispatcher assisted CPR in case of suspected cardiac arrest. Resuscitation.
+2017;115:52-55. doi: 10.1016/j.resuscitation.2017.04.002
+32. Bjørshol CA, Nordseth T, Kramer-Johansen J. Why the Norwegian 2021 guideline for basic life support are different.
+Resuscitation Plus. 2023;14:100392. doi: https://doi.org/10.1016/j.resplu.2023.100392
+33. Dainty K, Debaty G, Waddick J, Vaillancourt C, Hansen CM, Olasveengen T, Bray J, Force ILCoRBLST. Interventions to
+optimize dispatcher-assisted CPR instructions: a scoping review. Resuscitation plus. 2024;19:100715.
+34. Semeraro FS, S.; Olasveengen, T. M.; Bignami, E. G.; Böttiger, B. W.; Fijačko, N.; Gamberini, L.; Hansen, C. M.; Lockey, A.;
+Metelmann, B.; Metelmann, C.; Ristagno, G.; van Schuppen, H.; Thilakasiri, K.; Monsieurs, K. G.; . European
+Resuscitation Council Guidelines 2025: Systems Saving Lives. In; 2025.
+35. Govindarajan P, Lin L, Landman A, McMullan JT, McNally BF, Crouch AJ, Sasson C. Practice variability among the EMS
+systems participating in Cardiac Arrest Registry to Enhance Survival (CARES). Resuscitation. 2012;83:76-80.
+36. Lee SCL, Mao DR, Ng YY, Leong BS-H, Supasaovapak J, Gaerlan FJ, Son DN, Chia BY, Do Shin S, Lin C-H. Emergency
+medical dispatch services across Pan-Asian countries: a web-based survey. BMC emergency medicine. 2020;20:1-8.
+37. Tjelmeland IB, Masterson S, Herlitz J, Wnent J, Bossaert L, Rosell-Ortiz F, Alm-Kruse K, Bein B, Lilja G, Gräsner J-T.
+Description of Emergency Medical Services, treatment of cardiac arrest patients and cardiac arrest registries in
+Europe. Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine. 2020;28:1-16.
+38. Beck B, Bray JE, Smith K, Walker T, Grantham H, Hein C, Thorrowgood M, Smith A, Inoue M, Smith T. Description of
+the ambulance services participating in the Aus‐ROC Australian and New Zealand out‐of‐hospital cardiac arrest
+Epistry. Emergency Medicine Australasia. 2016;28:673-683.
+39. Nikolaou N, Dainty KN, Couper K, Morley P, Tijssen J, Vaillancourt C. A systematic review and meta-analysis of the
+effect of dispatcher-assisted CPR on outcomes from sudden cardiac arrest in adults and children. Resuscitation.
+2019;138:82-105. doi: 10.1016/j.resuscitation.2019.02.035
+40. Bray JE, Deasy C, Walsh J, Bacon A, Currell A, Smith K. Changing EMS dispatcher CPR instructions to 400
+compressions before mouth-to-mouth improved bystander CPR rates. Resuscitation. 2011;82:1393-1398.
+41. Rodriguez SA, Sutton RM, Berg MD, Nishisaki A, Maltese M, Meaney PA, Niles DE, Leffelman J, Berg RA, Nadkarni VM.
+Simplified dispatcher instructions improve bystander chest compression quality during simulated pediatric
+resuscitation. Resuscitation. 2014;85:119-123.
+42. Trethewey SP, Vyas H, Evans S, Hall M, Melody T, Perkins GD, Couper K. The impact of resuscitation guideline
+terminology on quality of dispatcher-assisted cardiopulmonary resuscitation: A randomised controlled manikin
+study. Resuscitation. 2019;142:91-96.
+43. Mirza M, Brown TB, Saini D, Pepper TL, Nandigam HK, Kaza N, Cofield SS. Instructions to “push as hard as you can”
+improve average chest compression depth in dispatcher-assisted cardiopulmonary resuscitation. Resuscitation.
+2008;79:97-102.
+44. Leong PWK, Leong BS-H, Arulanandam S, Ng MXR, Ng YY, Ong MEH, Mao DRH. Simplified instructional phrasing in
+dispatcher-assisted cardiopulmonary resuscitation–when ‘less is more’. Singapore medical journal. 2021;62:647.
+--- p43
+43
+45. Riou M, Ball S, Whiteside A, Bray J, Perkins GD, Smith K, O’Halloran KL, Fatovich DM, Inoue M, Bailey P. ‘We’re going
+to do CPR’: a linguistic study of the words used to initiate dispatcher-assisted CPR and their association with caller
+agreement. Resuscitation. 2018;133:95-100.
+46. Brown TB, Saini D, Pepper T, Mirza M, Nandigam HK, Kaza N, Cofield SS. Instructions to “put the phone down” do not
+improve the quality of bystander initiated dispatcher-assisted cardiopulmonary resuscitation. Resuscitation.
+2008;76:249-255.
+47. Bolle SR, Scholl J, Gilbert M. Can video mobile phones improve CPR quality when used for dispatcher assistance
+during simulated cardiac arrest? Acta Anaesthesiologica Scandinavica. 2009;53:116-120.
+48. Lee JS, Jeon WC, Ahn JH, Cho YJ, Jung YS, Kim GW. The effect of a cellular-phone video demonstration to improve
+the quality of dispatcher-assisted chest compression-only cardiopulmonary resuscitation as compared with audio
+coaching. Resuscitation. 2011;82:64-68.
+49. Kim H-J, Kim J-H, Park D. Comparing audio-and video-delivered instructions in dispatcher-assisted cardiopulmonary
+resuscitation with drone-delivered automatic external defibrillator: a mixed methods simulation study. PeerJ.
+2021;9:e11761.
+50. Yang C-W, Wang H-C, Chiang W-C, Hsu C-W, Chang W-T, Yen Z-S, Ko PC-I, Ma MH-M, Chen S-C, Chang S-C.
+Interactive video instruction improves the quality of dispatcher-assisted chest compression-only cardiopulmonary
+resuscitation in simulated cardiac arrests. Critical care medicine. 2009;37:490-495.
+51. Linderoth G, Lippert F, Østergaard D, Ersbøll AK, Meyhoff CS, Folke F, Christensen HC. Live video from bystanders’
+smartphones to medical dispatchers in real emergencies. BMC Emergency Medicine. 2021;21:1-10.
+52. Lee SY, Song KJ, Do Shin S, Hong KJ, Kim TH. Comparison of the effects of audio-instructed and video-instructed
+dispatcher-assisted cardiopulmonary resuscitation on resuscitation outcomes after out-of-hospital cardiac arrest.
+Resuscitation. 2020;147:12-20.
+53. Becker L, Eisenberg M, Fahrenbruch C, Cobb L. Public locations of cardiac arrest: implications for public access
+defibrillation. Circulation. 1998;97:2106-2109.
+54. Karch SB, Graff J, Young S, Ho C-H. Response times and outcomes for cardiac arrests in Las Vegas casinos. The
+American journal of emergency medicine. 1998;16:249-253.
+55. Valenzuela TD, Roe DJ, Nichol G, Clark LL, Spaite DW, Hardman RG. Outcomes of rapid defibrillation by security
+officers after cardiac arrest in casinos. New England Journal of Medicine. 2000;343:1206-1209.
+56. Murakami Y, Iwami T, Kitamura T, Nishiyama C, Nishiuchi T, Hayashi Y, Kawamura T, Project UO. Outcomes of out‐of‐
+hospital cardiac arrest by public location in the public‐access defibrillation era. Journal of the American Heart
+Association. 2014;3:e000533.
+57. Marijon E, Bougouin W, Karam N, Beganton F, Lamhaut L, Perier M-C, Benameur N, Tafflet M, Beal G, Hagege A.
+Survival from sports-related sudden cardiac arrest: In sports facilities versus outside of sports facilities. American
+heart journal. 2015;170:339-345. e331.
+58. Marijon E, Bougouin W, Tafflet M, Karam N, Jost D, Lamhaut L, Beganton F, Pelloux P, Degrange H, Béal G.
+Population movement and sudden cardiac arrest location. Circulation. 2015;131:1546-1554.
+59. Masterson S, McNally B, Cullinan J, Vellano K, Escutnaire J, Fitzpatrick D, Perkins GD, Koster RW, Nakajima Y,
+Pemberton K. Out-of-hospital cardiac arrest survival in international airports. Resuscitation. 2018;127:58-62.
+60. Frisk Torell M, Strömsöe A, Herlitz J, Claesson A, Svensson L, Börjesson M. Outcome of exercise-related out-of-hospital
+cardiac arrest is dependent on location: Sports arenas vs outside of arenas. PloS one. 2019;14:e0211723.
+61. Miyako J, Nakagawa K, Sagisaka R, Tanaka S, Takeuchi H, Takyu H, Tanaka H. Neurological outcomes of out-of-
+hospital cardiac arrest occurring in Tokyo train and subway stations. Resuscitation Plus. 2021;8:100175.
+62. Nielsen CG, Andelius LC, Hansen CM, Blomberg SNF, Christensen HC, Kjølbye JS, Gregers MCT, Ringgren KB, Folke F.
+Bystander interventions and survival following out-of-hospital cardiac arrest at Copenhagen International Airport.
+Resuscitation. 2021;162:381-387.
+63. Shekhar AC, Ruskin KJ. Sudden cardiac arrest in commercial airports: incidence, responses, and implications. The
+American Journal of Emergency Medicine. 2022;59:118-120.
+64. Sheikh AP, Grabmayr AJ, Kjølbye JS, Ersbøll AK, Hansen CM, Folke F. Incidence and Outcomes After Out‐of‐Hospital
+Cardiac Arrest at Train Stations in Denmark. Journal of the American Heart Association. 2024;13:e035733.
+65. Huang CH, Chien CY, Ng CJ, Fang SY, Wang MF, Lin CC, Chen CB, Tsai LH, Hsu KH, Chiu SYH. Effects of Dispatcher‐
+Assisted Public‐Access Defibrillation Programs on the Outcomes of Out‐of‐Hospital Cardiac Arrest: A Before‐and‐
+After Study. Journal of the American Heart Association. 2024;13:e031662. doi: 10.1161/JAHA.123.031662
+66. Ringh M, Rosenqvist M, Hollenberg J, Jonsson M, Fredman D, Nordberg P, Järnbert-Pettersson H, Hasselqvist-Ax I,
+Riva G, Svensson L. Mobile-phone dispatch of laypersons for CPR in out-of-hospital cardiac arrest. N Engl J Med.
+2015;372:2316-2325. doi: 10.1056/NEJMoa1406038
+67. Stieglis R, Zijlstra JA, Riedijk F, Smeekes M, van der Worp WE, Tijssen JGP, Zwinderman AH, Blom MT, Koster RW.
+Alert system-supported lay defibrillation and basic life-support for cardiac arrest at home. Eur Heart J. 2022;43:1465-
+1474. doi: 10.1093/eurheartj/ehab802
+68. Jonsson M, Berglund E, Baldi E, Caputo ML, Auricchio A, Blom MT, Tan HL, Stieglis R, Andelius L, Folke F, et al.
+Dispatch of Volunteer Responders to Out-of-Hospital Cardiac Arrests. J Am Coll Cardiol. 2023;82:200-210. doi:
+10.1016/j.jacc.2023.05.017
+69. Andelius L, Malta Hansen C, Lippert FK, Karlsson L, Torp-Pedersen C, Kjær Ersbøll A, Køber L, Collatz Christensen H,
+Blomberg SN, Gislason GH, et al. Smartphone Activation of Citizen Responders to Facilitate Defibrillation in Out-of-
+Hospital Cardiac Arrest. J Am Coll Cardiol. 2020;76:43-53. doi: 10.1016/j.jacc.2020.04.073
+--- p44
+44
+70. Smith CM, Lall R, Fothergill RT, Spaight R, Perkins GD. The effect of the GoodSAM volunteer first-responder app on
+survival to hospital discharge following out-of-hospital cardiac arrest. Eur Heart J Acute Cardiovasc Care. 2022;11:20-
+31. doi: 10.1093/ehjacc/zuab103
+71. O'Sullivan J, Moore E, Dunn S, Tennant H, Smith D, Black S, Yates S, Lawrence A, McManus M, Day E, et al.
+Development of a centralised national AED (automated external defibrillator) network across all ambulance services
+in the United Kingdom. Resusc Plus. 2024;19:100729. doi: 10.1016/j.resplu.2024.100729
+72. Linderoth G, Hallas P, Lippert FK, Wibrandt I, Loumann S, Møller TP, Østergaard D. Challenges in out-of-hospital
+cardiac arrest–a study combining closed-circuit television (CCTV) and medical emergency calls. Resuscitation.
+2015;96:317-322.
+73. Linderoth G, Møller TP, Folke F, Lippert FK, Østergaard D. Medical dispatchers’ perception of visual information in
+real out-of-hospital cardiac arrest: a qualitative interview study. Scandinavian Journal of Trauma, Resuscitation and
+Emergency Medicine. 2019;27:1-7.
+74. Blomberg SN, Folke F, Ersbøll AK, Christensen HC, Torp-Pedersen C, Sayre MR, Counts CR, Lippert FK. Machine
+learning as a supportive tool to recognize cardiac arrest in emergency calls. Resuscitation. 2019;138:322-329.
+75. Byrsell F, Claesson A, Ringh M, Svensson L, Jonsson M, Nordberg P, Forsberg S, Hollenberg J, Nord A. Machine
+learning can support dispatchers to better and faster recognize out-of-hospital cardiac arrest during emergency
+calls: a retrospective study. Resuscitation. 2021;162:218-226.
+76. Blomberg SN, Christensen HC, Lippert F, Ersbøll AK, Torp-Petersen C, Sayre MR, Kudenchuk PJ, Folke F. Effect of
+machine learning on dispatcher recognition of out-of-hospital cardiac arrest during calls to emergency medical
+services: a randomized clinical trial. JAMA network open. 2021;4:e2032320-e2032320.
+77. Chan J, Rea T, Gollakota S, Sunshine JE. Contactless cardiac arrest detection using smart devices. NPJ digital
+medicine. 2019;2:52.
+78. Hutton J, Lingawi S, Puyat JH, Kuo C, Shadgan B, Christenson J, Grunau B. Sensor technologies to detect out-of-
+hospital cardiac arrest: A systematic review of diagnostic test performance. Resuscitation Plus. 2022;11:100277.
+79. Edgar R, Scholte NTB, Ebrahimkheil K, Brouwer MA, Beukema RJ, Mafi-Rad M, Vernooy K, Yap S-C, Ronner E, van
+Mieghem N, et al. Automated cardiac arrest detection using a photoplethysmography wristband: algorithm
+development and validation in patients with induced circulatory arrest in the DETECT-1 study. The Lancet Digital
+Health. 2024;6:e201-e210. doi: 10.1016/S2589-7500(23)00249-2
+80. van den Beuken WM, Nideröst B, Goossen SA, Kooy TA, Demirtas D, Autar D, Loer SA, Eberl S, van Halm VP, Winkler
+BE. Automated Cardiac Arrest Detection and Emergency Service Alerting Using Device-Independent Smartwatch
+Technology: Proof-of-Principle. Resuscitation. 2025:110657.
+81. Shah K, Wang A, Chen Y, Munjal J, Chhabra S, Stange A, Wei E, Phan T, Giest T, Hawkins B, et al. Automated loss of
+pulse detection on a consumer smartwatch. Nature. 2025. doi: 10.1038/s41586-025-08810-9
+82. Soar JB, B. W.; Carli, P.; Jiménez, F. C.; Cimpoesu, D.; Cole, G.; Couper, K.; D'Arrigo, S.; Deakin, C. D.; Ek, J. E.; Holmberg,
+M. J.; Magliocca, A.; Nikolaou, N.; Paal, P.; Pocock, H.; Sandroni, C.; Scquizzato, T.; Skrifvars, M. B.; Verginella, F.; Yeung, J.;
+Nolan, J. P.;. European Resuscitation Council Guidelines 2025: Adult Advanced Life Support. In; 2025.
+83. Kobayashi M, Fujiwara A, Morita H, Nishimoto Y, Mishima T, Nitta M, Hayashi T, Hotta T, Hayashi Y, Hachisuka E. A
+manikin-based observational study on cardiopulmonary resuscitation skills at the Osaka Senri medical rally.
+Resuscitation. 2008;78:333-339.
+84. Lubrano R, Cecchetti C, Bellelli E, Gentile I, Levano HL, Orsini F, Bertazzoni G, Messi G, Rugolotto S, Pirozzi N.
+Comparison of times of intervention during pediatric CPR maneuvers using ABC and CAB sequences: a randomized
+trial. Resuscitation. 2012;83:1473-1477.
+85. Marsch S, Tschan F, Semmer NK, Zobrist R, Hunziker PR, Hunziker S. ABC versus CAB for cardiopulmonary
+resuscitation: a prospective, randomized simulator-based trial. Swiss medical weekly. 2013;143:w13856.
+86. Sekiguchi H, Kondo Y, Kukita I. Verification of changes in the time taken to initiate chest compressions according to
+modified basic life support guidelines. The American journal of emergency medicine. 2013;31:1248-1250.
+87. Suppan L, Jampen L, Siebert JN, Zünd S, Stuby L, Ozainne F. Impact of two resuscitation sequences on alveolar
+ventilation during the first minute of simulated pediatric cardiac arrest: randomized cross-over trial. Paper/Poster
+presented at: Healthcare; 2022;
+88. Dewan M, Schachna E, Eastwood K, Perkins G, Bray J, Force ILCoRBLST. The optimal surface for delivery of CPR: an
+updated systematic review and meta-analysis. Resuscitation Plus. 2024;19:100718.
+89. Perkins GD, Kocierz L, Smith SC, McCulloch RA, Davies RP. Compression feedback devices over estimate chest
+compression depth when performed on a bed. Resuscitation. 2009;80:79-82.
+90. Sato H, Komasawa N, Ueki R, Yamamoto N, Fujii A, Nishi S-i, Kaminoh Y. Backboard insertion in the operating table
+increases chest compression depth: a manikin study. Journal of Anesthesia. 2011;25:770-772. doi: 10.1007/s00540-011-
+1196-2
+91. Nishisaki A, Maltese MR, Niles DE, Sutton RM, Urbano J, Berg RA, Nadkarni VM. Backboards are important when
+chest compressions are provided on a soft mattress. Resuscitation. 2012;83:1013-1020. doi:
+https://doi.org/10.1016/j.resuscitation.2012.01.016
+92. Oh J, Song Y, Kang B, Kang H, Lim T, Suh Y, Chee Y. The use of dual accelerometers improves measurement of chest
+compression depth. Resuscitation. 2012;83:500-504. doi: https://doi.org/10.1016/j.resuscitation.2011.09.028
+93. Song Y, Oh J, Lim T, Chee Y. A new method to increase the quality of cardiopulmonary resuscitation in hospital.
+Paper/Poster presented at: 2013 35th Annual International Conference of the IEEE Engineering in Medicine and
+Biology Society (EMBC); 3-7 July 2013, 2013;
+94. Beesems SG, Koster RW. Accurate feedback of chest compression depth on a manikin on a soft surface with
+correction for total body displacement. Resuscitation. 2014;85:1439-1443.
+--- p45
+45
+95. Lee S, Oh J, Kang H, Lim T, Kim W, Chee Y, Song Y, Ahn C, Cho JH. Proper target depth of an accelerometer-based
+feedback device during CPR performed on a hospital bed: a randomized simulation study. The American Journal of
+Emergency Medicine. 2015;33:1425-1429. doi: https://doi.org/10.1016/j.ajem.2015.07.010
+96. Ruiz de Gauna S, González-Otero DM, Ruiz J, Gutiérrez JJ, Russell JK. A Feasibility Study for Measuring Accurate
+Chest Compression Depth and Rate on Soft Surfaces Using Two Accelerometers and Spectral Analysis. BioMed
+Research International. 2016;2016:6596040. doi: https://doi.org/10.1155/2016/6596040
+97. Jäntti H, Silfvast T, Turpeinen A, Kiviniemi V, Uusaro A. Quality of cardiopulmonary resuscitation on manikins: On the
+floor and in the bed. Resuscitation. 2008;77:S48. doi: 10.1016/j.resuscitation.2008.03.149
+98. Perkins GD, Benny R, Giles S, Gao F, Tweed MJ. Do different mattresses affect the quality of cardiopulmonary
+resuscitation? Intensive Care Medicine. 2003;29:2330-2335. doi: 10.1007/s00134-003-2014-6
+99. Oh J, Chee Y, Song Y, Lim T, Kang H, Cho Y. A novel method to decrease mattress compression during CPR using a
+mattress compression cover and a vacuum pump. Resuscitation. 2013;84:987-991.
+100. Cuvelier Z, Houthoofdt R, Serraes B, Haentjens C, Blot S, Mpotos N. Effect of a backboard on chest compression
+quality during in-hospital adult cardiopulmonary resuscitation: a randomised, single-blind, controlled trial using a
+manikin model. Intensive and Critical Care Nursing. 2022;69:103164.
+101. Andersen L, Isbye D, Rasmussen L. Increasing compression depth during manikin CPR using a simple backboard.
+Acta Anaesthesiologica Scandinavica. 2007;51:747-750.
+102. Fischer EJ, Mayrand K, Ten Eyck RP. Effect of a backboard on compression depth during cardiac arrest in the ED: a
+simulation study. The American journal of emergency medicine. 2016;34:274-277.
+103. Perkins GD, Smith CM, Augre C, Allan M, Rogers H, Stephenson B, Thickett DR. Effects of a backboard, bed height,
+and operator position on compression depth during simulated resuscitation. Intensive care medicine. 2006;32:1632-
+1635.
+104. Sanri E, Karacabey S. The impact of backboard placement on chest compression quality: a mannequin study.
+Prehospital and Disaster Medicine. 2019;34:182-187.
+105. Sato H, Komasawa N, Ueki R, Yamamoto N, Fujii A, Nishi S-i, Kaminoh Y. Backboard insertion in the operating table
+increases chest compression depth: a manikin study. J Anesth. 2011;25:770-772.
+106. Missel AL, Donnelly JP, Tsutsui J, Wilson N, Friedman C, Rooney DM, Neumar RW, Cooke JM. Effectiveness of lay
+bystander hands-only cardiopulmonary resuscitation on a mattress versus the floor: a randomized cross-over trial.
+Annals of emergency medicine. 2023;81:691-698.
+107. Ahn HJ, Cho Y, You YH, Min JH, Jeong WJ, Ryu S, Lee JW, Cho SU, Oh SK, Park JS. Effect of using a home-bed
+mattress on bystander chest compression during out-of-hospital cardiac arrest. Hong Kong Journal of Emergency
+Medicine. 2021;28:37-42.
+108. Kingston T, Tiller NB, Partington E, Ahmed M, Jones G, Johnson MI, Callender NA. Sports safety matting diminishes
+cardiopulmonary resuscitation quality and increases rescuer perceived exertion. PLoS one. 2021;16:e0254800.
+109. Shimizu Y, Sadamori T, Saeki N, Mukai A, Doi M, Oue K, Yoshida M, Irifune M. Efficacy of chest compressions
+performed on patients in dental chairs versus on the floor. Anesthesia Progress. 2021;68:85.
+110. Orlowski JP. Optimum position for external cardiac compression in infants and young children. Annals of emergency
+medicine. 1986;15:667-673.
+111. Cha KC, Kim YJ, Shin HJ, Cha YS, Kim H, Lee KH, Kwon W, Hwang SO. Optimal position for external chest
+compression during cardiopulmonary resuscitation: an analysis based on chest CT in patients resuscitated from
+cardiac arrest. Emergency Medicine Journal. 2013;30:615-619.
+112. Qvigstad E, Kramer-Johansen J, Tømte Ø, Skålhegg T, Sørensen Ø, Sunde K, Olasveengen TM. Clinical pilot study of
+different hand positions during manual chest compressions monitored with capnography. Resuscitation.
+2013;84:1203-1207.
+113. Park M, Oh WS, Chon S-B, Cho S. Optimum chest compression point for cardiopulmonary resuscitation in children
+revisited using a 3D coordinate system imposed on CT: a retrospective, cross-sectional study. Pediatric Critical Care
+Medicine. 2018;19:e576-e584.
+114. Lee J, Oh J, Lim TH, Kang H, Park JH, Song SY, Shin GH, Song Y. Comparison of optimal point on the sternum for
+chest compression between obese and normal weight individuals with respect to body mass index, using computer
+tomography: a retrospective study. Resuscitation. 2018;128:1-5.
+115. Nestaas S, Stensæth KH, Rosseland V, Kramer-Johansen J. Radiological assessment of chest compression point and
+achievable compression depth in cardiac patients. Scandinavian journal of trauma, resuscitation and emergency
+medicine. 2016;24:1-8.
+116. Papadimitriou P, Chalkias A, Mastrokostopoulos A, Kapniari I, Xanthos T. Anatomical structures underneath the
+sternum in healthy adults and implications for chest compressions. The American Journal of Emergency Medicine.
+2013;31:549-555.
+117. Holmes S, Kirkpatrick ID, Zelop CM, Jassal DS. MRI evaluation of maternal cardiac displacement in pregnancy:
+implications for cardiopulmonary resuscitation. American journal of obstetrics and gynecology. 2015;213:401. e401-
+401. e405.
+118. Catena E, Ottolina D, Fossali T, Rech R, Borghi B, Perotti A, Ballone E, Bergomi P, Corona A, Castelli A. Association
+between left ventricular outflow tract opening and successful resuscitation after cardiac arrest. Resuscitation.
+2019;138:8-14.
+119. Park J-B, Song I-K, Lee J-H, Kim E-H, Kim H-S, Kim J-T. Optimal chest compression position for patients with a single
+ventricle during cardiopulmonary resuscitation. Pediatric Critical Care Medicine. 2016;17:303-306.
+120. Cha KC, Kim HJ, Shin HJ, Kim H, Lee KH, Hwang SO. Hemodynamic effect of external chest compressions at the
+lower end of the sternum in cardiac arrest patients. The Journal of emergency medicine. 2013;44:691-697.
+--- p46
+46
+121. Considine J, Gazmuri RJ, Perkins GD, Kudenchuk PJ, Olasveengen TM, Vaillancourt C, Nishiyama C, Hatanaka T,
+Mancini ME, Chung SP. Chest compression components (rate, depth, chest wall recoil and leaning): a scoping review.
+Resuscitation. 2020;146:188-202.
+122. Sainio M, Hoppu S, Huhtala H, Eilevstjønn J, Olkkola KT, Tenhunen J. Simultaneous beat-to-beat assessment of
+arterial blood pressure and quality of cardiopulmonary resuscitation in out-of-hospital and in-hospital settings.
+Resuscitation. 2015;96:163-169.
+123. Sutton RM, Case E, Brown SP, Atkins DL, Nadkarni VM, Kaltman J, Callaway C, Idris A, Nichol G, Hutchison J. A
+quantitative analysis of out-of-hospital pediatric and adolescent resuscitation quality–A report from the ROC epistry-
+cardiac arrest. Resuscitation. 2015;93:150-157.
+124. Sutton RM, Reeder RW, Landis W, Meert KL, Yates AR, Berger JT, Newth CJ, Carcillo JA, McQuillen PS, Harrison RE.
+Chest compression rates and pediatric in-hospital cardiac arrest survival outcomes. Resuscitation. 2018;130:159-166.
+125. Edelson DP, Abella BS, Kramer-Johansen J, Wik L, Myklebust H, Barry AM, Merchant RM, Hoek TLV, Steen PA, Becker
+LB. Effects of compression depth and pre-shock pauses predict defibrillation failure during cardiac arrest.
+Resuscitation. 2006;71:137-145.
+126. Kramer-Johansen J, Myklebust H, Wik L, Fellows B, Svensson L, Sørebø H, Steen PA. Quality of out-of-hospital
+cardiopulmonary resuscitation with real time automated feedback: a prospective interventional study. Resuscitation.
+2006;71:283-292.
+127. Hwang SO, Cha K-C, Kim K, Jo YH, Chung SP, You JS, Shin J, Lee HJ, Park YS, Kim S. A randomized controlled trial of
+compression rates during cardiopulmonary resuscitation. Journal of Korean medical science. 2016;31:1491-1498.
+128. Kern KB, Sanders AB, Raife J, Milander MM, Otto CW, Ewy GA. A study of chest compression rates during
+cardiopulmonary resuscitation in humans: the importance of rate-directed chest compressions. Archives of internal
+medicine. 1992;152:145-149.
+129. Kilgannon JH, Kirchhoff M, Pierce L, Aunchman N, Trzeciak S, Roberts BW. Association between chest compression
+rates and clinical outcomes following in-hospital cardiac arrest at an academic tertiary hospital. Resuscitation.
+2017;110:154-161.
+130. Idris AH, Guffey D, Pepe PE, Brown SP, Brooks SC, Callaway CW, Christenson J, Davis DP, Daya MR, Gray R. Chest
+compression rates and survival following out-of-hospital cardiac arrest. Critical care medicine. 2015;43:840-848.
+131. Idris AH, Guffey D, Aufderheide TP, Brown S, Morrison LJ, Nichols P, Powell J, Daya M, Bigham BL, Atkins DL.
+Relationship between chest compression rates and outcomes from cardiac arrest. Circulation. 2012;125:3004-3012.
+132. Abella BS, Sandbo N, Vassilatos P, Alvarado JP, O’Hearn N, Wigder HN, Hoffman P, Tynus K, Vanden Hoek TL, Becker
+LB. Chest compression rates during cardiopulmonary resuscitation are suboptimal: a prospective study during in-
+hospital cardiac arrest. circulation. 2005;111:428-434.
+133. ORNATO JP, GONZALEZ ER, GARNETT AR, LEVINE RL, McCLUNG BK. Effect of cardiopulmonary resuscitation
+compression rate on end-tidal carbon dioxide concentration and arterial pressure in man. Critical care medicine.
+1988;16:241-245.
+134. Bohn A, Weber TP, Wecker S, Harding U, Osada N, Van Aken H, Lukas RP. The addition of voice prompts to
+audiovisual feedback and debriefing does not modify CPR quality or outcomes in out of hospital cardiac arrest–a
+prospective, randomized trial. Resuscitation. 2011;82:257-262.
+135. Stiell IG, Brown SP, Nichol G, Cheskes S, Vaillancourt C, Callaway CW, Morrison LJ, Christenson J, Aufderheide TP,
+Davis DP. What is the optimal chest compression depth during out-of-hospital cardiac arrest resuscitation of adult
+patients? Circulation. 2014;130:1962-1970.
+136. Vadeboncoeur T, Stolz U, Panchal A, Silver A, Venuti M, Tobin J, Smith G, Nunez M, Karamooz M, Spaite D. Chest
+compression depth and survival in out-of-hospital cardiac arrest. Resuscitation. 2014;85:182-188.
+137. Hellevuo H, Sainio M, Nevalainen R, Huhtala H, Olkkola KT, Tenhunen J, Hoppu S. Deeper chest compression–more
+complications for cardiac arrest patients? Resuscitation. 2013;84:760-765.
+138. Stiell IG, Brown SP, Christenson J, Cheskes S, Nichol G, Powell J, Bigham B, Morrison LJ, Larsen J, Hess E. What is the
+role of chest compression depth during out-of-hospital cardiac arrest resuscitation? Critical care medicine.
+2012;40:1192-1198.
+139. Babbs CF, Kemeny AE, Quan W, Freeman G. A new paradigm for human resuscitation research using intelligent
+devices. Resuscitation. 2008;77:306-315.
+140. Sutton RM, French B, Niles DE, Donoghue A, Topjian AA, Nishisaki A, Leffelman J, Wolfe H, Berg RA, Nadkarni VM.
+2010 American Heart Association recommended compression depths during pediatric in-hospital resuscitations are
+associated with survival. Resuscitation. 2014;85:1179-1184.
+141. Cheskes S, Common MR, Byers AP, Zhan C, Silver A, Morrison LJ. The association between chest compression release
+velocity and outcomes from out-of-hospital cardiac arrest. Resuscitation. 2015;86:38-43.
+142. Kovacs A, Vadeboncoeur TF, Stolz U, Spaite DW, Irisawa T, Silver A, Bobrow BJ. Chest compression release velocity:
+association with survival and favorable neurologic outcome after out-of-hospital cardiac arrest. Resuscitation.
+2015;92:107-114.
+143. Lyngby RM, Händel MN, Christensen AM, Nikoletou D, Folke F, Christensen HC, Barfod C, Quinn T. Effect of real-time
+and post-event feedback in out-of-hospital cardiac arrest attended by EMS — A systematic review and meta-
+analysis. Resuscitation Plus. 2021;6:100101. doi: https://doi.org/10.1016/j.resplu.2021.100101
+144. Dewolf P, Wauters L, Clarebout G, Van Den Bempt S, Uten T, Desruelles D, Verelst S. Assessment of chest
+compression interruptions during advanced cardiac life support. Resuscitation. 2021;165:140-147. doi:
+10.1016/j.resuscitation.2021.06.022
+--- p47
+47
+145. Iversen BN, Meilandt C, Væggemose U, Terkelsen CJ, Kirkegaard H, Fjølner J. Pre-charging the defibrillator before
+rhythm analysis reduces hands-off time in patients with out-of-hospital cardiac arrest with shockable rhythm.
+Resuscitation. 2021;169:23-30. doi: 10.1016/j.resuscitation.2021.09.037
+146. Leo WZ, Chua D, Tan HC, Ho VK. Chest compression quality and patient outcomes with the use of a CPR feedback
+device: A retrospective study. Scientific Reports. 2023;13:19852. doi: 10.1038/s41598-023-46862-x
+147. Lyngby RM, Quinn T, Oelrich RM, Nikoletou D, Gregers MCT, Kjølbye JS, Ersbøll AK, Folke F. Association of Real‐Time
+Feedback and Cardiopulmonary‐Resuscitation Quality Delivered by Ambulance Personnel for Out‐of‐Hospital
+Cardiac Arrest. Journal of the American Heart Association. 2023;12:e029457. doi: 10.1161/JAHA.123.029457
+148. Schmicker RH, Nichol G, Kudenchuk P, Christenson J, Vaillancourt C, Wang HE, Aufderheide TP, Idris AH, Daya MR.
+CPR compression strategy 30:2 is difficult to adhere to, but has better survival than continuous chest compressions
+when done correctly. Resuscitation. 2021;165:31-37. doi: https://dx.doi.org/10.1016/j.resuscitation.2021.05.027
+149. Shimizu K, Wakasugi M, Kawagishi T, Hatano T, Fuchigami T, Okudera H. Effect of advanced airway management by
+paramedics during out-of-hospital cardiac arrest on chest compression fraction and return of spontaneous
+circulation. Open Access Emergency Medicine. 2021:305-310.
+150. Hostler D, Everson-Stewart S, Rea TD, Stiell IG, Callaway CW, Kudenchuk PJ, Sears GK, Emerson SS, Nichol G. Effect of
+real-time feedback during cardiopulmonary resuscitation outside hospital: prospective, cluster-randomised trial.
+BMJ. 2011;342:d512. doi: 10.1136/bmj.d512
+151. Lyon RM, Clarke S, Milligan D, Clegg GR. Resuscitation feedback and targeted education improves quality of pre-
+hospital resuscitation in Scotland. Resuscitation. 2012;83:70-75. doi: https://doi.org/10.1016/j.resuscitation.2011.07.016
+152. Bobrow BJ, Vadeboncoeur TF, Stolz U, Silver AE, Tobin JM, Crawford SA, Mason TK, Schirmer J, Smith GA, Spaite DW.
+The Influence of Scenario-Based Training and Real-Time Audiovisual Feedback on Out-of-Hospital Cardiopulmonary
+Resuscitation Quality and Survival From Out-of-Hospital Cardiac Arrest. Annals of Emergency Medicine. 2013;62:47-
+56.e41. doi: 10.1016/j.annemergmed.2012.12.020
+153. Weston BW, Jamie J, Melissa M, Jackson U, Kelly T, Ziyan Y, Riccardo CM, and Aufderheide TP. Self-Assessment
+Feedback Form Improves Quality of Out-of-Hospital CPR. Prehospital Emergency Care. 2019;23:66-73. doi:
+10.1080/10903127.2018.1477887
+154. Lakomek F, Lukas R-P, Brinkrolf P, Mennewisch A, Steinsiek N, Gutendorf P, Sudowe H, Heller M, Kwiecien R, Zarbock
+A, et al. Real-time feedback improves chest compression quality in out-of-hospital cardiac arrest: A prospective
+cohort study. PLOS ONE. 2020;15:e0229431. doi: 10.1371/journal.pone.0229431
+155. Ashoor HM, Lillie E, Zarin W, Pham B, Khan PA, Nincic V, Yazdi F, Ghassemi M, Ivory J, Cardoso R, et al. Effectiveness of
+different compression-to-ventilation methods for cardiopulmonary resuscitation: A systematic review. Resuscitation.
+2017;118:112-125. doi: https://doi.org/10.1016/j.resuscitation.2017.05.032
+156. Ong MEH, Ng FSP, Anushia P, Tham LP, Leong BS-H, Ong VYK, Tiah L, Lim SH, Anantharaman V. Comparison of
+chest compression only and standard cardiopulmonary resuscitation for out-of-hospital cardiac arrest in Singapore.
+Resuscitation. 2008;78:119-126. doi: https://doi.org/10.1016/j.resuscitation.2008.03.012
+157. Bohm K, Rosenqvist Mr, Herlitz J, Hollenberg J, Svensson L. Survival is similar after standard treatment and chest
+compression only in out-of-hospital bystander cardiopulmonary resuscitation. Circulation. 2007;116:2908-2912.
+158. Bobrow BJ, Spaite DW, Berg RA, Stolz U, Sanders AB, Kern KB, Vadeboncoeur TF, Clark LL, Gallagher JV, Stapczynski
+JS, et al. Chest Compression–Only CPR by Lay Rescuers and Survival From Out-of-Hospital Cardiac Arrest. JAMA.
+2010;304:1447-1454. doi: 10.1001/jama.2010.1392
+159. Group S-KS. Cardiopulmonary resuscitation by bystanders with chest compression only (SOS-KANTO): an
+observational study. The Lancet. 2007;369:920-926.
+160. Nichol G, Leroux B, Wang H, Callaway CW, Sopko G, Weisfeldt M, Stiell I, Morrison LJ, Aufderheide TP, Cheskes S, et al.
+Trial of Continuous or Interrupted Chest Compressions during CPR. New England Journal of Medicine.
+2015;373:2203-2214. doi: doi:10.1056/NEJMoa1509139
+161. Bobrow BJ, Clark LL, Ewy GA, Chikani V, Sanders AB, Berg RA, Richman PB, Kern KB. Minimally Interrupted Cardiac
+Resuscitation by Emergency Medical Services for Out-of-Hospital Cardiac Arrest. JAMA. 2008;299:1158-1165. doi:
+10.1001/jama.299.10.1158
+162. Grunau B, Singer J, Lee T, Scheuermeyer FX, Straight R, Schlamp R, Wand R, Dick WF, Connolly H, Pennington S, et
+al. A Local Sensitivity Analysis of the Trial of Continuous or Interrupted Chest Compressions during Cardiopulmonary
+Resuscitation: Is a Local Protocol Change Required? Cureus. 2018;10:e3386. doi: 10.7759/cureus.3386
+163. Kudenchuk PJ, Brown SP, Daya M, Morrison LJ, Grunau BE, Rea T, Aufderheide T, Powell J, Leroux B, Vaillancourt C, et
+al. Resuscitation Outcomes Consortium–Amiodarone, Lidocaine or Placebo Study (ROC-ALPS): Rationale and
+methodology behind an out-of-hospital cardiac arrest antiarrhythmic drug trial. American Heart Journal.
+2014;167:653-659.e654. doi: https://doi.org/10.1016/j.ahj.2014.02.010
+164. Lesnick JA, Moore JX, Zhang Y, Jarvis J, Nichol G, Daya MR, Idris AH, Klug C, Dennis D, Carlson JN, et al. Airway
+insertion first pass success and patient outcomes in adult out-of-hospital cardiac arrest: The Pragmatic Airway
+Resuscitation Trial. Resuscitation. 2021;158:151-156. doi: https://doi.org/10.1016/j.resuscitation.2020.11.030
+165. Lee IH, How C-K, Lu W-H, Tzeng Y-M, Chen Y-J, Chern C-H, Kao W-F, Yen DH-T, Huang M-S. Improved survival
+outcome with continuous chest compressions with ventilation compared to 5:1 compressions-to-ventilations
+mechanical cardiopulmonary resuscitation in out-of-hospital cardiac arrest. Journal of the Chinese Medical
+Association. 2013;76.
+166. Rössler B, Goschin J, Maleczek M, Piringer F, Thell R, Mittlböck M, Schebesta K. Providing the best chest compression
+quality: Standard CPR versus chest compressions only in a bystander resuscitation model. PLoS One.
+2020;15:e0228702. doi: 10.1371/journal.pone.0228702
+--- p48
+48
+167. Supatanakij P, Yuksen C, Chantawong T, Sawangwong P, Jenpanitpong C, Patchkrua J, Kanchayawong P. Straddle
+versus Conventional Chest Compressions in a Confined Space; a Comparative Study. Arch Acad Emerg Med.
+2021;9:e4. doi: 10.22037/aaem.v9i1.994
+168. Baldi E, Contri E, Burkart R, Borrelli P, Ferraro OE, Paglino M, Pugliesi M, Barbati C, Bertaia D, Tami C, et al. A
+Multicenter International Randomized Controlled Manikin Study on Different Protocols of Cardiopulmonary
+Resuscitation for Laypeople: The MANI-CPR Trial. Simul Healthc. 2021;16:239-245. doi: 10.1097/sih.0000000000000505
+169. Suto T, Saito S, Tobe M, Kanamoto M, Matsui Y. Reduction of Arterial Oxygen Saturation Among Rescuers During
+Cardiopulmonary Resuscitation in a Hypobaric Hypoxic Environment. Wilderness Environ Med. 2020;31:97-100. doi:
+10.1016/j.wem.2019.10.008
+170. Considine J, Couper K, Greif R, Ong GY-K, Smyth MA, Ng KC, Kidd T, Mariero Olasveengen T, Bray J. Cardiopulmonary
+resuscitation in obese patients: A scoping review. Resuscitation Plus. 2024;20:100820. doi:
+https://doi.org/10.1016/j.resplu.2024.100820
+171. Kosmopoulos M, Kalra R, Alexy T, Gaisendrees C, Jaeger D, Chahine J, Voicu S, Tsangaris A, Gutierrez AB, Elliott A, et
+al. The impact of BMI on arrest characteristics and survival of patients with out-of-hospital cardiac arrest treated with
+extracorporeal cardiopulmonary resuscitation. Resuscitation. 2023;188:109842. doi:
+https://doi.org/10.1016/j.resuscitation.2023.109842
+172. Kojima M, Mochida Y, Shoko T, Inoue A, Hifumi T, Sakamoto T, Kuroda Y. Association between body mass index and
+clinical outcomes in patients with out-of-hospital cardiac arrest undergoing extracorporeal cardiopulmonary
+resuscitation: A multicenter observational study. Resuscitation Plus. 2023;16:100497. doi:
+https://doi.org/10.1016/j.resplu.2023.100497
+173. Wang C-H, Huang C-H, Chang W-T, Fu C-M, Wang H-C, Tsai M-S, Yu P-H, Wu Y-W, Ma MH-M, Chen W-J. Associations
+between body size and outcomes of adult in-hospital cardiac arrest: A retrospective cohort study. Resuscitation.
+2018;130:67-72. doi: https://doi.org/10.1016/j.resuscitation.2018.07.006
+174. Wang C-H, Chen W-J, Chang W-T, Tsai M-S, Yu P-H, Wu Y-W, Huang C-H. The association between timing of tracheal
+intubation and outcomes of adult in-hospital cardiac arrest: A retrospective cohort study. Resuscitation. 2016;105:59-
+65. doi: https://doi.org/10.1016/j.resuscitation.2016.05.012
+175. Wolff B, Machill K, Schumacher D, Schulzki I, Werner D. Early achievement of mild therapeutic hypothermia and the
+neurologic outcome after cardiac arrest. International Journal of Cardiology. 2009;133:223-228. doi:
+https://doi.org/10.1016/j.ijcard.2007.12.039
+176. Schurr JW, Noubani M, Santore LA, Rabenstein AP, Dhundale K, Fitzgerald J, Cahill J, Bilfinger TV, Seifert FC, McLarty
+AJ. Survival and Outcomes After Cardiac Arrest With VA-ECMO Rescue Therapy. Shock. 2021;56.
+177. Aoki M, Aso S, Suzuki M, Tagami T, Sawada Y, Yasunaga H, Kitamura N, Oshima K. Association between obesity and
+neurological outcomes among out-of-hospital cardiac arrest patients: The SOS-KANTO 2017 study. Resuscitation
+Plus. 2024;17:100513. doi: https://doi.org/10.1016/j.resplu.2023.100513
+178. Aoki M, Hagiwara S, Oshima K, Suzuki M, Sakurai A, Tahara Y, Nagao K, Yonemoto N, Yaguchi A, Morimura N, et al.
+Obesity was associated with worse neurological outcome among Japanese patients with out-of-hospital cardiac
+arrest. Intensive Care Medicine. 2018;44:665-666. doi: 10.1007/s00134-017-5042-3
+179. Lee H, Oh J, Kang H, Lim TH, Ko BS, Choi HJ, Park SM, Jo YH, Lee JS, Park YS, et al. Association between the body
+mass index and outcomes of patients resuscitated from out-of-hospital cardiac arrest: a prospective multicentre
+registry study. Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine. 2021;29:24. doi:
+10.1186/s13049-021-00837-x
+180. Bunch TJ, White RD, Lopez-Jimenez F, Thomas RJ. Association of body weight with total mortality and with ICD
+shocks among survivors of ventricular fibrillation in out-of-hospital cardiac arrest. Resuscitation. 2008;77:351-355. doi:
+https://doi.org/10.1016/j.resuscitation.2007.12.014
+181. Chen C-T, Lin M-C, Lee Y-J, Li L-H, Chen Y-J, Chuanyi Hou P, How C-K. Association between body mass index and
+clinical outcomes in out-of-hospital cardiac arrest survivors treated with targeted temperature management.
+Journal of the Chinese Medical Association. 2021;84.
+182. Gil E, Na SJ, Ryu J-A, Lee D-S, Chung CR, Cho YH, Jeon K, Sung K, Suh GY, Yang JH. Association of body mass index
+with clinical outcomes for in-hospital cardiac arrest adult patients following extracorporeal cardiopulmonary
+resuscitation. PLOS ONE. 2017;12:e0176143. doi: 10.1371/journal.pone.0176143
+183. Jung YH, Lee BK, Lee DH, Lee SM, Cho YS, Jeung KW. The association of body mass index with outcomes and
+targeted temperature management practice in cardiac arrest survivors. The American Journal of Emergency
+Medicine. 2017;35:268-273. doi: https://doi.org/10.1016/j.ajem.2016.10.070
+184. Testori C, Sterz F, Losert H, Krizanac D, Haugk M, Uray T, Arrich J, Stratil P, Sodeck G. Cardiac arrest survivors with
+moderate elevated body mass index may have a better neurological outcome: A cohort study. Resuscitation.
+2011;82:869-873. doi: https://doi.org/10.1016/j.resuscitation.2011.02.027
+185. Lee SE, Kim HH, Chae MK, Park EJ, Choi S. Predictive Value of Estimated Lean Body Mass for Neurological Outcomes
+after Out-of-Hospital Cardiac Arrest. Journal of Clinical Medicine. 2021;10:71.
+186. Breathett K, Mehta N, Yildiz V, Abel E, Husa R. The impact of body mass index on patient survival after therapeutic
+hypothermia after resuscitation. The American Journal of Emergency Medicine. 2016;34:722-725. doi:
+https://doi.org/10.1016/j.ajem.2015.12.077
+187. Hjalmarsson A, Rawshani A, Råmunddal T, Rawshani A, Hjalmarsson C, Myredal A, Höskuldsdottir G, Hessulf F,
+Hirlekar G, Angerås O, et al. No obesity paradox in out-of-hospital cardiac arrest: Data from the Swedish registry of
+cardiopulmonary resuscitation. Resuscitation Plus. 2023;15:100446. doi: https://doi.org/10.1016/j.resplu.2023.100446
+--- p49
+49
+188. Shahreyar M, Dang G, Bashir MW, Kumar G, Hussain J, Ahmad S, Pandey B, Thakur A, Bhandari S, Thandra K, et al.
+Outcomes of In-Hospital Cardiopulmonary Resuscitation in Morbidly Obese Patients. JACC: Clinical
+Electrophysiology. 2017;3:174-183. doi: doi:10.1016/j.jacep.2016.08.011
+189. Jain R, Nallamothu BK, Chan PS, for the American Heart Association National Registry of Cardiopulmonary
+Resuscitation I. Body Mass Index and Survival After In-Hospital Cardiac Arrest. Circulation: Cardiovascular Quality
+and Outcomes. 2010;3:490-497. doi: 10.1161/CIRCOUTCOMES.109.912501
+190. Lewandowski Ł, Czapla M, Uchmanowicz I, Kubielas G, Zieliński S, Krzystek-Korpacka M, Ross C, Juárez-Vela R,
+Zielińska M. Machine Learning and Clinical Predictors of Mortality in Cardiac Arrest Patients: A Comprehensive
+Analysis. Med Sci Monit. 2024;30:e944408. doi: 10.12659/msm.944408
+191. White RD, Blackwell TH, Russell JK, Jorgenson DB. Body weight does not affect defibrillation, resuscitation, or
+survival in patients with out-of-hospital cardiac arrest treated with a nonescalating biphasic waveform defibrillator.
+Critical Care Medicine. 2004;32:S387-S392. doi: 10.1097/01.Ccm.0000139460.25406.78
+192. Ogunnaike BO, Whitten CW, Minhajuddin A, Melikman E, Joshi GP, Moon TS, Schneider PM, Bradley SM. Body mass
+index and outcomes of in-hospital ventricular tachycardia and ventricular fibrillation arrest. Resuscitation.
+2016;105:156-160. doi: https://doi.org/10.1016/j.resuscitation.2016.05.028
+193. Chavda MP, Bihari S, Woodman RJ, Secombe P, Pilcher D. The impact of obesity on outcomes of patients admitted
+to intensive care after cardiac arrest. Journal of Critical Care. 2022;69:154025. doi:
+https://doi.org/10.1016/j.jcrc.2022.154025
+194. Chavda MP, Pakavakis A, Ernest D. Does Obesity Influence the Outcome of the Patients Following a Cardiac Arrest?
+Indian J Crit Care Med. 2020;24:1077-1080. doi: 10.5005/jp-journals-10071-23665
+195. Czapla M, Kwaśny A, Słoma-Krześlak M, Juárez-Vela R, Karniej P, Janczak S, Mickiewicz A, Uchmanowicz B, Zieliński S,
+Zielińska M. The Impact of Body Mass Index on In-Hospital Mortality in Post-Cardiac-Arrest Patients—Does Sex
+Matter? Nutrients. 2023;15:3462.
+196. Danciu SC, Klein L, Hosseini MM, Ibrahim L, Coyle BW, Kehoe RF. A predictive model for survival after in-hospital
+cardiopulmonary arrest. Resuscitation. 2004;62:35-42. doi: https://doi.org/10.1016/j.resuscitation.2004.01.035
+197. Gupta T, Kolte D, Mohananey D, Khera S, Goel K, Mondal P, Aronow WS, Jain D, Cooper HA, Iwai S, et al. Relation of
+Obesity to Survival After In-Hospital Cardiac Arrest. The American Journal of Cardiology. 2016;118:662-667. doi:
+https://doi.org/10.1016/j.amjcard.2016.06.019
+198. Beckett V, Knight M, Sharpe P. The CAPS Study: incidence, management and outcomes of cardiac arrest in
+pregnancy in the UK: a prospective, descriptive study. BJOG: An International Journal of Obstetrics & Gynaecology.
+2017;124:1374-1381. doi: https://doi.org/10.1111/1471-0528.14521
+199. Swindell WR, and Gibson CG. A simple ABCD score to stratify patients with respect to the probability of survival
+following in-hospital cardiopulmonary resuscitation. Journal of Community Hospital Internal Medicine Perspectives.
+2021;11:334-342. doi: 10.1080/20009666.2020.1866251
+200. Geri G, Savary G, Legriel S, Dumas F, Merceron S, Varenne O, Livarek B, Richard O, Mira J-P, Bedos J-P, et al. Influence
+of body mass index on the prognosis of patients successfully resuscitated from out-of-hospital cardiac arrest treated
+by therapeutic hypothermia. Resuscitation. 2016;109:49-55. doi: https://doi.org/10.1016/j.resuscitation.2016.09.011
+201. Wang YG, Obed C, Wang YL, Deng FF, Zhou SS, Fu YY, Sun J, Wang WW, Xu J, Jin K. Factors associated with the
+clinical outcomes of adult cardiac and non-cardiac origin cardiac arrest in emergency departments: a nationwide
+retrospective cohort study from China. World J Emerg Med. 2023;14:238-240. doi: 10.5847/wjem.j.1920-8642.2023.044
+202. Moore JC, Pepe PE, Scheppke KA, Lick C, Duval S, Holley J, Salverda B, Jacobs M, Nystrom P, Quinn R. Head and
+thorax elevation during cardiopulmonary resuscitation using circulatory adjuncts is associated with improved
+survival. Resuscitation. 2022;179:9-17.
+203. Bachista KM, Moore JC, Labarère J, Crowe RP, Emanuelson LD, Lick CJ, Debaty GP, Holley JE, Quinn RP, Scheppke
+KA. Survival for nonshockable cardiac arrests treated with noninvasive circulatory adjuncts and head/thorax
+elevation. Critical Care Medicine. 2024;52:170-181.
+204. Pepe PE, Scheppke KA, Antevy PM, Crowe RP, Millstone D, Coyle C, Prusansky C, Garay S, Ellis R, Fowler RL.
+Confirming the clinical safety and feasibility of a bundled methodology to improve cardiopulmonary resuscitation
+involving a head-up/torso-up chest compression technique. Critical care medicine. 2019;47:449-455.
+205. Masterson S, Norii T, Yabuki M, Ikeyama T, Nehme Z, Bray J. Real-time feedback for CPR quality–A scoping review.
+Resuscitation Plus. 2024;19:100730.
+206. Abella BS, Edelson DP, Kim S, Retzer E, Myklebust H, Barry AM, O’Hearn N, Hoek TLV, Becker LB. CPR quality
+improvement during in-hospital cardiac arrest using a real-time audiovisual feedback system. Resuscitation.
+2007;73:54-61.
+207. Berg RA, Sanders AB, Milander M, Tellez D, Liu P, Beyda D. Efficacy of Audio‐prompted Rate Guidance in Improving
+Resuscitator Performance of Cardiopulmonary Resuscitation on Children. Academic Emergency Medicine. 1994;1:35-
+40.
+208. Bolstridge J, Delaney HM, Matos RI. Use of a metronome to improve quality of in-hospital cardiopulmonary
+resuscitation. Circulation. 2016;134:A18583-A18583.
+209. Chandra S, Hess EP, Kolb L, Myers L, White RD. Effect of Real-time Automated and Delayed Summative Feedback on
+CPR Quality in Adult Out-of-hospital Cardiac Arrest: A Prospective Multicenter Controlled Clinical Trial: 374.
+Academic Emergency Medicine. 2011;18:S145-S146.
+210. Chiang W-C, Chen W-J, Chen S-Y, Ko PC-I, Lin C-H, Tsai M-S, Chang W-T, Chen S-C, Tsan C-Y, Ma MH-M. Better
+adherence to the guidelines during cardiopulmonary resuscitation through the provision of audio-prompts.
+Resuscitation. 2005;64:297-301.
+--- p50
+50
+211. Fried DA, Leary M, Smith DA, Sutton RM, Niles D, Herzberg DL, Becker LB, Abella BS. The prevalence of chest
+compression leaning during in-hospital cardiopulmonary resuscitation. Resuscitation. 2011;82:1019-1024.
+212. Goharani R, Vahedian-Azimi A, Farzanegan B, Bashar FR, Hajiesmaeili M, Shojaei S, Madani SJ, Gohari-Moghaddam K,
+Hatamian S, Mosavinasab SM. Real-time compression feedback for patients with in-hospital cardiac arrest: a multi-
+center randomized controlled clinical trial. Journal of Intensive Care. 2019;7:1-11.
+213. Khajouei AS, Rabbani M, Bahrami P. Comparison of the CPR Feedback Device Effect on the Effective Technique of
+the CPR in Two Modes of the Device Warning Being On and Off. ARYA atherosclerosis. 2023;19:1.
+214. Khorasani-Zadeh A, Krowl LE, Chowdhry AK, Hantzidiamantis P, Hantzidiamantis K, Siciliano R, Grover MA, Dhamoon
+AS. Usefulness of a metronome to improve quality of chest compressions during cardiopulmonary resuscitation.
+Paper/Poster presented at: Baylor University Medical Center Proceedings; 2021;
+215. Kirkbright S, Finn J, Tohira H, Bremner A, Jacobs I, Celenza A. Audiovisual feedback device use by health care
+professionals during CPR: a systematic review and meta-analysis of randomised and non-randomised trials.
+Resuscitation. 2014;85:460-471.
+216. Koch M, Mueller M, Warenits A-M, Holzer M, Spiel A, Schnaubelt S. Carotid artery ultrasound in the (peri-) arrest
+setting—A prospective pilot study. Journal of Clinical Medicine. 2022;11:469.
+217. Lakomek F, Lukas R-P, Brinkrolf P, Mennewisch A, Steinsiek N, Gutendorf P, Sudowe H, Heller M, Kwiecien R, Zarbock
+A. Real-time feedback improves chest compression quality in out-of-hospital cardiac arrest: a prospective cohort
+study. PloS one. 2020;15:e0229431.
+218. Lee H, Kim J, Joo S, Na S-H, Lee S, Ko S-B, Lee J, Oh S-Y, Ha EJ, Ryu HG. The effect of audiovisual feedback of
+monitor/defibrillators on percentage of appropriate compression depth and rate during cardiopulmonary
+resuscitation. BMC anesthesiology. 2023;23:334.
+219. Lee SGWG, Kim THH, Song KJ, Park JH, Kim KH, Choi Y, Kim M, Hong K. Effect of audiovisual feedback device type on
+prehospital chest compression quality during prehospital resuscitation. Circulation. 2023;148:A383-A383.
+220. Lee ED, Jang YD, Kang JH, Seo YS, Yoon YS, Kim YW, Jeong WB, Ji JG. Effect of a real-time audio ventilation feedback
+device on the survival rate and outcomes of patients with out-of-hospital cardiac arrest: a prospective randomized
+controlled study. Journal of Clinical Medicine. 2023;12:6023.
+221. Leis CC, González VA, Hernandez RDE, Sanchez O, Martin JLM, Hermosa EJM, Torres EC. Feedback on chest
+compression quality variables and their relationship to rate of return of spontaneous circulation. Emergencias.
+2013;25:99-104.
+222. Lv GW, Hu QC, Zhang M, Feng SY, Li Y, Zhang Y, Zhang YY, Wang WJ. Effect of real-time feedback on patient’s
+outcomes and survival after cardiac arrest: a systematic review and meta-analysis. Medicine. 2022;101:e30438.
+223. Miller AC, Scissum K, McConnell L, East N, Vahedian-Azimi A, Sewell KA, Zehtabchi S. Real-time audio-visual feedback
+with handheld nonautomated external defibrillator devices during cardiopulmonary resuscitation for in-hospital
+cardiac arrest: a meta-analysis. International Journal of Critical Illness and Injury Science. 2020;10:109-122.
+224. Niles D, Nysaether J, Sutton R, Nishisaki A, Abella BS, Arbogast K, Maltese MR, Berg RA, Helfaer M, Nadkarni V.
+Leaning is common during in-hospital pediatric CPR, and decreased with automated corrective feedback.
+Resuscitation. 2009;80:553-557.
+225. Olasveengen TM, Tomlinson A-E, Wik L, Sunde K, Steen PA, Myklebust H, Kramer-Johansen J. A failed attempt to
+improve quality of out-of-hospital CPR through performance evaluation. Prehospital Emergency Care. 2007;11:427-
+433.
+226. Pfeiffer S, Duval-Arnould J, Wenger J, Lauridsen K, Hunt E, Haskell S, Atkins D, Knight L, Cheng A, Gilfoyle E. 345: CPR
+coach role improves depth, rate, and return of spontaneous circulation. Critical care medicine. 2018;46:155.
+227. Picard C, Drew R, Norris CM, O’Dochartaigh D, Burnett C, Keddie C, Douma MJ. Cardiac arrest quality improvement: a
+single-center evaluation of resuscitations using defibrillator, feedback device, and survey data. Journal of Emergency
+Nursing. 2022;48:224-232. e228.
+228. Rainey K, Birkhoff S. Turn the Beat On: An Evidenced‐Based Practice Journey Implementing Metronome Use in
+Emergency Department Cardiac Arrest. Worldviews on Evidence‐Based Nursing. 2021;18:68-70.
+229. Riyapan S, Naulnark T, Ruangsomboon O, Chaisirin W, Limsuwat C, Prapruetkit N, Chakorn T, Monsomboon A.
+Improving quality of chest compression in Thai emergency department by using real-time audio-visual feedback
+cardio-pulmonary resuscitation monitoring. Journal of the Medical Association of Thailand. 2019;102.
+230. Sainio M, Sutton RM, Huhtala H, Eilevstjønn J, Tenhunen J, Olkkola KT, Nadkarni VM, Hoppu S. Association of arterial
+blood pressure and CPR quality in a child using three different compression techniques, a case report. Scandinavian
+Journal of Trauma, Resuscitation and Emergency Medicine. 2013;21:1-6.
+231. Sainio M, Kämäräinen A, Huhtala H, Aaltonen P, Tenhunen J, Olkkola KT, Hoppu S. Real-time audiovisual feedback
+system in a physician-staffed helicopter emergency medical service in Finland: the quality results and barriers to
+implementation. Scandinavian journal of trauma, resuscitation and emergency medicine. 2013;21:1-8.
+232. Setälä P, Virkkunen I, Kämäräinen A, Huhtala H, Virta J, Yli-Hankala A, Hoppu S. Nothing beats quality-controlled
+manual chest compressions: End-tidal carbon dioxide changes between manual cardiopulmonary resuscitation and
+with active compression–decompression device. Resuscitation. 2015;96:70-71.
+233. Sood N, Sangari A, Goyal A, Sun C, Horinek M, Hauger JA, Perry L. Do cardiopulmonary resuscitation real-time
+audiovisual feedback devices improve patient outcomes? A systematic review and meta-analysis. World Journal of
+Cardiology. 2023;15:531.
+234. Targett C, Harris T. Towards evidence-based emergency medicine: best BETs from the Manchester Royal Infirmary.
+BET 3: can metronomes improve CPR quality? Emergency Medicine Journal: EMJ. 2014;31:251-254.
+235. Vahedian-Azimi A, Hajiesmaeili M, Amirsavadkouhi A, Jamaati H, Izadi M, Madani SJ, Hashemian SM, Miller AC. Effect
+of the Cardio First Angel™ device on CPR indices: a randomized controlled clinical trial. Critical Care. 2016;20:1-8.
+--- p51
+51
+236. Vahedian-Azimi A, Rahimibashar F, Miller AC. A comparison of cardiopulmonary resuscitation with standard manual
+compressions versus compressions with real-time audiovisual feedback: a randomized controlled pilot study.
+International Journal of Critical Illness and Injury Science. 2020;10:32-37.
+237. Wang S-A, Su C-P, Fan H-Y, Hou W-H, Chen Y-C. Effects of real-time feedback on cardiopulmonary resuscitation
+quality on outcomes in adult patients with cardiac arrest: a systematic review and meta-analysis. Resuscitation.
+2020;155:82-90.
+238. Yeung J, Meeks R, Edelson D, Gao F, Soar J, Perkins GD. The use of CPR feedback/prompt devices during training and
+CPR performance: a systematic review. Resuscitation. 2009;80:743-751.
+239. Cho G. Skin and soft tissue damage caused by use of feedback-sensor during chest compressions. Resuscitation.
+2009;80:600.
+240. Neth MR, Idris A, McMullan J, Benoit JL, Daya MR. A review of ventilation in adult out-of-hospital cardiac arrest. J Am
+Coll Emerg Physicians Open. 2020;1:190-201. doi: 10.1002/emp2.12065
+241. Chang MP, Lu Y, Leroux B, Aramendi Ecenarro E, Owens P, Wang HE, Idris AH. Association of ventilation with
+outcomes from out-of-hospital cardiac arrest. Resuscitation. 2019;141:174-181. doi: 10.1016/j.resuscitation.2019.05.006
+242. Baskett P, Nolan J, Parr M. Tidal volumes which are perceived to be adequate for resuscitation. Resuscitation.
+1996;31:231-234. doi: https://doi.org/10.1016/0300-9572(96)00994-X
+243. Beesems SG, Wijmans L, Tijssen JG, Koster RW. Duration of ventilations during cardiopulmonary resuscitation by lay
+rescuers and first responders: relationship between delivering chest compressions and outcomes. Circulation.
+2013;127:1585-1590.
+244. Benoit JL, Lakshmanan S, Farmer SJ, Sun Q, Gray JJ, Sams W, Tadesse DG, McMullan JT. Ventilation rates measured
+by capnography during out-of-hospital cardiac arrest resuscitations and their association with return of spontaneous
+circulation. Resuscitation. 2023;182. doi: 10.1016/j.resuscitation.2022.11.028
+245. Vissers G, Duchatelet C, Huybrechts SA, Wouters K, Hachimi-Idrissi S, Monsieurs KG. The effect of ventilation rate on
+outcome in adults receiving cardiopulmonary resuscitation. Resuscitation. 2019;138:243-249. doi:
+10.1016/j.resuscitation.2019.03.037
+246. Debaty G, Johnson N, Dewan M, Morrison L, Bray J. Ventilation quality feedback devices: BLS TF 2402 ScR.
+247. Drennan IR, Lee M, Héroux J-P, Lee A, Riches J, Peppler J, Poitras A, Cheskes S. The impact of real-time feedback on
+ventilation quality during out-of-hospital cardiac arrest: A before-and-after study. Resuscitation. 2024;204:110381.
+248. Abella BS, Edelson DP, Kim S, Retzer E, Myklebust H, Barry AM, O’Hearn N, Vanden Hoek TL, Becker LB. CPR quality
+improvement during in-hospital cardiac arrest using a real-time audiovisual feedback system. Resuscitation.
+2007;73:54-61.
+249. McCarty K, Roosa J, Kitamura B, Page R, Roque P, Silver A, Spaite D, Stolz U, Vadeboncoeur T, Bobrow B. Ventilation
+rates and tidal volume during emergency department cardiac resuscitation. Resuscitation. 2012;83:e45.
+250. Lemoine F, Jost D, Tassart B, Petermann A, Lemoine S, Salome M, Frattini B, Travers S. 464 Evaluation of ventilation
+quality by basic life support teams during out-of-hospital cardiac arrest : preliminary results from a prospective
+observational study - the &#x201c;vecars 1&#x201d; study. Resuscitation. 2024;203:S215. doi: 10.1016/S0300-
+9572(24)00746-9
+251. Gerber S, Pourmand A, Sullivan N, Shapovalov V, Pourmand A. Ventilation assisted feedback in out of hospital cardiac
+arrest. The American Journal of Emergency Medicine. 2023;74:198. e191-198. e195.
+252. Charlton K, McClelland G, Millican K, Haworth D, Aitken-Fell P, Norton M. The impact of introducing real time
+feedback on ventilation rate and tidal volume by ambulance clinicians in the North East in cardiac arrest simulations.
+Resuscitation Plus. 2021;6:100130.
+253. D'Agostino F, Agrò FE, Petrosino P, Ferri C, Ristagno G. Are instructors correctly gauging ventilation competence
+acquired by course attendees? Resuscitation. 2024;200:110240.
+254. Tran Dinh A, Eyer X, Chauvin A, Outrey J, Khoury A, Plaisance P. Évaluation d’un dispositif d’aide à la ventilation au
+masque EOlifeX® pendant la réanimation cardiopulmonaire au cours de la formation des étudiants de médecine.
+Médecine de Catastrophe - Urgences Collectives. 2023;7:276. doi: https://doi.org/10.1016/j.pxur.2023.10.013
+255. Gould JR, Campana L, Rabickow D, Raymond R, Partridge R. Manual ventilation quality is improved with a real-time
+visual feedback system during simulated resuscitation. International journal of emergency medicine. 2020;13:1-5.
+256. Heo S, Yoon SY, Kim J, Kim HS, Kim K, Yoon H, Hwang SY, Cha WC, Kim T. Effectiveness of a real-time ventilation
+feedback device for guiding adequate minute ventilation: a manikin simulation study. Medicina. 2020;56:278.
+257. Khoury A, De Luca A, Sall FS, Pazart L, Capellier G. Ventilation feedback device for manual ventilation in simulated
+respiratory arrest: a crossover manikin study. Scandinavian Journal of Trauma, Resuscitation and Emergency
+Medicine. 2019;27:1-8.
+258. Kim JW, Park SO, Lee KR, Hong DY, Baek KJ. Efficacy of Amflow®, a Real‐Time‐Portable Feedback Device for
+Delivering Appropriate Ventilation in Critically Ill Patients: A Randomised, Controlled, Cross‐Over Simulation Study.
+Emergency Medicine International. 2020;2020:5296519.
+259. Lyngby RM, Clark L, Kjoelbye JS, Oelrich RM, Silver A, Christensen HC, Barfod C, Lippert F, Nikoletou D, Quinn T.
+Higher resuscitation guideline adherence in paramedics with use of real-time ventilation feedback during simulated
+out-of-hospital cardiac arrest: A randomised controlled trial. Resuscitation plus. 2021;5:100082.
+260. Melia MR, Handbury JD, Janney J. Evaluation Of Ventilatory Rates And The Benefits Of An Immediate Feedback
+Device With And Without Supplementary Instruction On Out-Of-Hospital Resuscitations: 493. Academic Emergency
+Medicine. 2012;19:S261.
+261. Scott JB, Schneider JM, Schneider K, Li J. An evaluation of manual tidal volume and respiratory rate delivery during
+simulated resuscitation. The American journal of emergency medicine. 2021;45:446-450.
+--- p52
+52
+262. Wagner M, Gröpel P, Eibensteiner F, Kessler L, Bibl K, Gross IT, Berger A, Cardona FS. Visual attention during pediatric
+resuscitation with feedback devices: a randomized simulation study. Pediatric Research. 2022;91:1762-1768.
+263. You KM, Lee C, Kwon WY, Lee JC, Suh GJ, Kim KS, Park MJ, Kim S. Real-time tidal volume feedback guides optimal
+ventilation during simulated CPR. The American journal of emergency medicine. 2017;35:292-298.
+264. Lemoine S, Jost D, Petermann A, Salome M, Tassart B, Lemoine F, Briche F, Liscia J, Bon O, Travers S. 411 compliance
+with pediatric manual ventilation guidelines by professional basic life support rescuers during out-of-hospital
+cardiac arrest: a simulation study. Resuscitation. 2024;203:S192. doi: 10.1016/S0300-9572(24)00701-9
+265. Kudenchuk PJ, Redshaw JD, Stubbs BA, Fahrenbruch CE, Dumas F, Phelps R, Blackwood J, Rea TD, Eisenberg MS.
+Impact of changes in resuscitation practice on survival and neurological outcome after out-of-hospital cardiac arrest
+resulting from nonshockable arrhythmias. Circulation. 2012;125:1787-1794.
+266. Garza AG, Gratton MC, Salomone JA, Lindholm D, McElroy J, Archer R. Improved patient survival using a modified
+resuscitation protocol for out-of-hospital cardiac arrest. Circulation. 2009;119:2597-2605.
+267. Olasveengen TM, Vik E, Kuzovlev A, Sunde K. Effect of implementation of new resuscitation guidelines on quality of
+cardiopulmonary resuscitation and survival. Resuscitation. 2009;80:407-411.
+268. Steinmetz J, Barnung S, Nielsen S, Risom M, Rasmussen L. Improved survival after an out‐of‐hospital cardiac arrest
+using new guidelines. Acta Anaesthesiologica Scandinavica. 2008;52:908-913.
+269. Sayre MR, Cantrell SA, White LJ, Hiestand BC, Keseg DP, Koser S. Impact of the 2005 American Heart Association
+cardiopulmonary resuscitation and emergency cardiovascular care guidelines on out-of-hospital cardiac arrest
+survival. Prehospital Emergency Care. 2009;13:469-477.
+270. Hostler D, Rittenberger JC, Roth R, Callaway CW. Increased chest compression to ventilation ratio improves delivery
+of CPR. Resuscitation. 2007;74:446-452.
+271. Deasy C, Bray J, Smith K, Wolfe R, Harriss L, Bernard S, Cameron P. Cardiac arrest outcomes before and after the
+2005 resuscitation guidelines implementation: evidence of improvement? Resuscitation. 2011;82:984-988.
+272. Berdowski J, ten Haaf M, Tijssen JG, Chapman FW, Koster RW. Time in recurrent ventricular fibrillation and survival
+after out-of-hospital cardiac arrest. Circulation. 2010;122:1101-1108.
+273. Perkins GD, Travers AH, Berg RA, Castren M, Considine J, Escalante R, Gazmuri RJ, Koster RW, Lim SH, Nation KJ, et
+al. Part 3: Adult basic life support and automated external defibrillation: 2015 International Consensus on
+Cardiopulmonary Resuscitation and Emergency Cardiovascular Care Science with Treatment Recommendations.
+Resuscitation. 2015;95:e43-e69. doi: 10.1016/j.resuscitation.2015.07.041
+274. Deakin CD, O’Neill JF, Tabor T. Does compression-only cardiopulmonary resuscitation generate adequate passive
+ventilation during cardiac arrest? Resuscitation. 2007;75:53-59. doi: https://doi.org/10.1016/j.resuscitation.2007.04.002
+275. Saïssy J-M, Boussignac G, Cheptel E, Rouvin B, Fontaine D, Bargues L, Levecque J-P, Michel A, Brochard L. Efficacy of
+continuous insufflation of oxygen combined with active cardiac compression-decompression during out-of-hospital
+cardiorespiratory arrest. Anesthesiology. 2000;92:1523-1530.
+276. Bertrand C, Hemery F, Carli P, Goldstein P, Espesson C, Rüttimann M, Macher JM, Raffy B, Fuster P, Dolveck F.
+Constant flow insufflation of oxygen as the sole mode of ventilation during out-of-hospital cardiac arrest. Intensive
+care medicine. 2006;32:843-851.
+277. Fuest K, Dorfhuber F, Lorenz M, von Dincklage F, Mörgeli R, Kuhn KF, Jungwirth B, Kanz K-G, Blobner M, Schaller SJ.
+Comparison of volume-controlled, pressure-controlled, and chest compression-induced ventilation during
+cardiopulmonary resuscitation with an automated mechanical chest compression device: a randomized clinical pilot
+study. Resuscitation. 2021;166:85-92.
+278. Bobrow BJ, Ewy GA, Clark L, Chikani V, Berg RA, Sanders AB, Vadeboncoeur TF, Hilwig RW, Kern KB. Passive oxygen
+insufflation is superior to bag-valve-mask ventilation for witnessed ventricular fibrillation out-of-hospital cardiac
+arrest. Annals of emergency medicine. 2009;54:656-662. e651.
+279. de Graaf C, Beesems SG, Oud S, Stickney RE, Piraino DW, Chapman FW, Koster RW. Analyzing the heart rhythm
+during chest compressions: Performance and clinical value of a new AED algorithm. Resuscitation. 2021;162:320-328.
+doi: https://doi.org/10.1016/j.resuscitation.2021.01.003
+280. DeSilva RA, Graboys TB, Podrid PJ, Lown B. Cardioversion and defibrillation. American Heart Journal. 1980;100:881-
+895. doi: https://doi.org/10.1016/0002-8703(80)90071-X
+281. Rajan S, Wissenberg M, Folke F, Hansen SM, Gerds TA, Kragholm K, Hansen CM, Karlsson L, Lippert FK, Køber L.
+Association of bystander cardiopulmonary resuscitation and survival according to ambulance response times after
+out-of-hospital cardiac arrest. Circulation. 2016;134:2095-2104.
+282. Hansen CM, Kragholm K, Granger CB, Pearson DA, Tyson C, Monk L, Corbett C, Nelson RD, Dupre ME, Fosbøl EL, et al.
+The role of bystanders, first responders, and emergency medical service providers in timely defibrillation and related
+outcomes after out-of-hospital cardiac arrest: Results from a statewide registry. Resuscitation. 2015;96:303-309. doi:
+10.1016/j.resuscitation.2015.09.002
+283. Stieglis R, Verkaik BJ, Tan HL, Koster RW, van Schuppen H, van der Werf C. Association Between Delay to First Shock
+and Successful First-Shock Ventricular Fibrillation Termination in Patients With Witnessed Out-of-Hospital Cardiac
+Arrest. Circulation. 2025;151:235-244. doi: 10.1161/circulationaha.124.069834
+284. Berdowski J, Blom MT, Bardai A, Tan HL, Tijssen JGP, Koster RW. Impact of Onsite or Dispatched Automated External
+Defibrillator Use on Survival After Out-of-Hospital Cardiac Arrest. Circulation. 2011;124:2225-2232. doi:
+10.1161/CIRCULATIONAHA.110.015545
+285. Caffrey SL, Willoughby PJ, Pepe PE, Becker LB. Public use of automated external defibrillators. New England journal
+of medicine. 2002;347:1242-1247.
+--- p53
+53
+286. Hallstrom A, Ornato J, Weisfeldt M. travers A, Christneson J, BcBurnie MA: Public Access Defibrilation Trial
+Investigators. Public-access defibrillation and survival after out-of-hospital cardiac arrest. N Engl J Med. 2004;351:637-
+646.
+287. Myerburg RJ, Fenster J, Velez M, Rosenberg D, Lai S, Kurlansky P, Newton S, Knox M, Castellanos A. Impact of
+community-wide police car deployment of automated external defibrillators on survival from out-of-hospital cardiac
+arrest. Circulation. 2002;106:1058-1064.
+288. Capucci A, Aschieri D, Piepoli MF, Bardy GH, Iconomu E, Arvedi M. Tripling Survival From Sudden Cardiac Arrest Via
+Early Defibrillation Without Traditional Education in Cardiopulmonary Resuscitation. Circulation. 2002;106:1065-1070.
+doi: 10.1161/01.CIR.0000028148.62305.69
+289. Brooks SC, Clegg GR, Bray J, Deakin CD, Perkins GD, Ringh M, Smith CM, Link MS, Merchant RM, Pezo-Morales J, et al.
+Optimizing Outcomes After Out-of-Hospital Cardiac Arrest With Innovative Approaches to Public-Access
+Defibrillation: A Scientific Statement From the International Liaison Committee on Resuscitation. Circulation.
+2022;145:e776-e801. doi: 10.1161/CIR.0000000000001013
+290. Elhussain M, Ahmed F, Mustafa N, Mohammed D, Berkiah I, Alnaeim N, Ali R, Mohyeldeen N, Ahamed H, Elataya F, et
+al. Abstract 4141290: The Role of Automated External Defibrillator Use in the Out-of-Hospital Cardiac Arrest Survival
+Rate and Outcome: A Systematic Review. Circulation. 2024;150:A4141290-A4141290. doi: 10.1161/circ.150.suppl_1.4141290
+291. Komori A, Iriyama H, Abe T. Impact of defibrillation with automated external defibrillator by bystander before
+defibrillation by emergency medical system personnel on neurological outcome of out-of-hospital cardiac arrest
+with non-cardiac etiology. Resuscitation Plus. 2023;13:100363. doi: https://doi.org/10.1016/j.resplu.2023.100363
+292. Heidet M, Freyssenge J, Claustre C, Deakin J, Helmer J, Thomas-Lamotte B, Wohl M, Danny Liang L, Hubert H, Baert
+V, et al. Association between location of out-of-hospital cardiac arrest, on-scene socioeconomic status, and
+accessibility to public automated defibrillators in two large metropolitan areas in Canada and France. Resuscitation.
+2022;181:97-109. doi: https://doi.org/10.1016/j.resuscitation.2022.10.016
+293. Ishii T, Nawa N, Morio T, Fujiwara T. Association between nationwide introduction of public-access defibrillation and
+sudden cardiac death in Japan: An interrupted time-series analysis. International Journal of Cardiology. 2022;351:100-
+106. doi: https://doi.org/10.1016/j.ijcard.2021.12.016
+294. Haskins B, Nehme Z, Andrew E, Bernard S, Cameron P, Smith K. One-year quality-of-life outcomes of cardiac arrest
+survivors by initial defibrillation provider. Heart. 2023;109:1363. doi: 10.1136/heartjnl-2021-320559
+295. Debaty G, Perkins GD, Dainty KN, Norii T, Olasveengen TM, Bray JE. Effectiveness of ultraportable automated external
+defibrillators: A scoping review. Resuscitation Plus. 2024;19:100739. doi: https://doi.org/10.1016/j.resplu.2024.100739
+296. Shaker MS, Abrams EM, Oppenheimer J, Singer AG, Shaker M, Fleck D, Greenhawt M, Grove E. Estimation of Health
+and Economic Benefits of a Small Automatic External Defibrillator for Rapid Treatment of Sudden Cardiac Arrest
+(SMART): A Cost-Effectiveness Analysis. Frontiers in Cardiovascular Medicine. 2022;Volume 9 - 2022. doi:
+10.3389/fcvm.2022.771679
+297. Todd V, Dicker B, Okyere D, Smith K, Smith T, Howie G, Stub D, Ray M, Stewart R, Scott T, et al. A study protocol for a
+cluster-randomised controlled trial of smartphone-activated first responders with ultraportable defibrillators in out-
+of-hospital cardiac arrest: The First Responder Shock Trial (FIRST). Resuscitation Plus. 2023;16:100466. doi:
+https://doi.org/10.1016/j.resplu.2023.100466
+298. Todd V, Dicker B, Okyere D, Smith K, Howie G, Smith T, Stub D, Ray M, Stewart R, Scott T, et al. The First Responder
+Shock Trial (FIRST): Can We Improve Cardiac Arrest Survival by Providing Community Responders With Ultraportable
+Automated External Defibrillators? Heart, Lung and Circulation. 2023;32:S88. doi: 10.1016/j.hlc.2023.04.240
+299. O’Sullivan J, Moore E, Dunn S, Tennant H, Smith D, Black S, Yates S, Lawrence A, McManus M, Day E, et al.
+Development of a centralised national AED (automated external defibrillator) network across all ambulance services
+in the United Kingdom. Resuscitation Plus. 2024;19:100729. doi: https://doi.org/10.1016/j.resplu.2024.100729
+300. Bo N, Juul Grabmayr A, Folke F, Jakobsen LK, Kjølbye JS, Sødergren STF, Bundgaard Ringgren K, Andelius L, Torp-
+Pedersen C, Tofte Gregers MC, et al. Volunteer Responder Recruitment, Voluntary Deployment of Automated
+External Defibrillators, and Coverage of Out-of-Hospital Cardiac Arrest in Denmark. J Am Heart Assoc.
+2025;14:e036363. doi: 10.1161/jaha.124.036363
+301. Jespersen SS, Kjoelbye JS, Christensen HC, Andelius L, Gregers MCT, Torp-Pedersen C, Hansen CM, Folke F.
+Functionality of registered automated external defibrillators. Resuscitation. 2022;176:58-63. doi:
+10.1016/j.resuscitation.2022.05.013
+302. Fredman D, Ringh M, Svensson L, Hollenberg J, Nordberg P, Djärv T, Hasselqvist-Ax I, Wagner H, Forsberg S, Nord A,
+et al. Experiences and outcome from the implementation of a national Swedish automated external defibrillator
+registry. Resuscitation. 2018;130:73-80. doi: 10.1016/j.resuscitation.2018.06.036
+303. Scquizzato T, Pallanch O, Belletti A, Frontera A, Cabrini L, Zangrillo A, Landoni G. Enhancing citizens response to out-
+of-hospital cardiac arrest: A systematic review of mobile-phone systems to alert citizens as first responders.
+Resuscitation. 2020;152:16-25. doi: https://doi.org/10.1016/j.resuscitation.2020.05.006
+304. Timler W, Jaskiewicz F, Kempa J, Timler D. Automatic external defibrillator (AED) location – seconds that save lifes.
+Archives of Public Health. 2024;82:153. doi: 10.1186/s13690-024-01395-1
+305. Neves Briard J, Frédéric G-B, Alaa EB, Catherine S, François dC, and Homier V. Automated External Defibrillator
+Geolocalization with a Mobile Application, Verbal Assistance or No Assistance: A Pilot Randomized Simulation (AED
+G-MAP). Prehospital Emergency Care. 2019;23:420-429. doi: 10.1080/10903127.2018.1511017
+306. Ming Ng W, Ross DSC, Pin PP, Nur S, Yng NY, Shalini A, Elgin WA, Sieu-Hon LB, and Ong MEH. myResponder
+Smartphone Application to Crowdsource Basic Life Support for Out-of-Hospital Cardiac Arrest: The Singapore
+Experience. Prehospital Emergency Care. 2021;25:388-396. doi: 10.1080/10903127.2020.1777233
+--- p54
+54
+307. Maes F, Marchandise S, Boileau L, Le Polain de Waroux J-B, Scavée C. Evaluation of a new semiautomated external
+defibrillator technology: a live cases video recording study. Emergency Medicine Journal. 2015;32:481. doi:
+10.1136/emermed-2013-202962
+308. Aagaard R, Grove EL, Mikkelsen R, Wolff A, Iversen KW, Løfgren B. Limited public ability to recognise and understand
+the universal sign for automated external defibrillators. Heart. 2016;102:770. doi: 10.1136/heartjnl-2015-308700
+309. Smith CM, Colquhoun MC, Samuels M, Hodson M, Mitchell S, O'Sullivan J. New signs to encourage the use of
+Automated External Defibrillators by the lay public. Resuscitation. 2017;114:100-105. doi:
+https://doi.org/10.1016/j.resuscitation.2017.03.012
+310. Stretton B, Page G, Kovoor J, Zaka A, Gupta A, Bacchi S, Amarasekera A, Gunaratne A, Thiagalingam A,
+Sivagangabalan G, et al. Iso-lating optimal automated external defibrillator signage: An international survey.
+Resuscitation Plus. 2024;20:100798. doi: https://doi.org/10.1016/j.resplu.2024.100798
+311. Sidebottom DB, Potter R, Newitt LK, Hodgetts GA, Deakin CD. Saving lives with public access defibrillation: A deadly
+game of hide and seek. Resuscitation. 2018;128:93-96. doi: https://doi.org/10.1016/j.resuscitation.2018.04.006
+312. Larsen MP, Eisenberg MS, Cummins RO, Hallstrom AP. Predicting survival from out-of-hospital cardiac arrest: a
+graphic model. Annals of emergency medicine. 1993;22:1652-1658.
+313. Telec W, Baszko A, Dąbrowski M, Dąbrowska A, Sip M, Puslecki M, Kłosiewicz T, Potyrała P, Jurczyk W, Maciejewski A,
+et al. Automated external defibrillator use in public places: a study of acquisition time. Polish Heart Journal
+(Kardiologia Polska). 2018;76:181-185. doi: {}
+314. Salerno J, Willson C, Weiss L, Salcido D. Myth of the stolen AED. Resuscitation. 2019;140:1.
+315. Peberdy MA, Ottingham LV, Groh WJ, Hedges J, Terndrup TE, Pirrallo RG, Mann NC, Sehra R. Adverse events
+associated with lay emergency response programs: The public access defibrillation trial experience. Resuscitation.
+2006;70:59-65. doi: https://doi.org/10.1016/j.resuscitation.2005.10.030
+316. Page G, Bray JE. Unlocking the key to increasing survival from out-of-hospital cardiac arrest &#x2013; 24/7 accessible
+AEDs. Resuscitation. 2024;199. doi: 10.1016/j.resuscitation.2024.110227
+317. Ludgate MB, Kern KB, Bobrow BJ, Ewy GA. Abstract 39: Donating Automated External Defibrillators May Not Be
+Enough. Circulation. 2012;126:A39-A39. doi: 10.1161/circ.126.suppl_21.A39
+318. Claudio B, Roman B, Romano M. Public defibrillators and vandalism: Myth or reality? Resuscitation. 2013;84:S69. doi:
+10.1016/j.resuscitation.2013.08.177
+319. Cheema K, O'Connell D, Herz N, Adebayo A, Thorpe J, Benson-Clarke A, Perkins G. P120 The influence of locked
+automated external defibrillators (AEDs) cabinets on the rates of vandalism and theft. Resuscitation. 2022;175:S80.
+doi: 10.1016/S0300-9572(22)00530-5
+320. Brugada R, Morales À, Ramos R, Heredia J, de Morales ER, Batlle P. Girona, cardio-protected territory. Resuscitation.
+2014;85:S57. doi: 10.1016/j.resuscitation.2014.03.144
+321. Didcoe M, Pavey-Smith C, Finn J, Belcher J. Locked vs. unlocked AED cabinets: The Western Australian perspective
+on improving accessibility and outcomes. Resusc Plus. 2024;20:100807. doi: 10.1016/j.resplu.2024.100807
+322. NG JSY, HO RJS, YU JY, NG YY. Factors influencing success and safety of AED retrieval in out of hospital cardiac
+arrests in Singapore. The Korean Journal of Emergency Medical Services. 2022;26:97-111.
+323. Schierbeck S, Hollenberg J, Nord A, Svensson L, Nordberg P, Ringh M, Forsberg S, Lundgren P, Axelsson C, Claesson
+A. Automated external defibrillators delivered by drones to patients with suspected out-of-hospital cardiac arrest.
+Eur Heart J. 2022;43:1478-1487. doi: 10.1093/eurheartj/ehab498
+324. Schierbeck S, Nord A, Svensson L, Ringh M, Nordberg P, Hollenberg J, Lundgren P, Folke F, Jonsson M, Forsberg S, et
+al. Drone delivery of automated external defibrillators compared with ambulance arrival in real-life suspected out-of-
+hospital cardiac arrests: a prospective observational study in Sweden. Lancet Digit Health. 2023;5:e862-e871. doi:
+10.1016/S2589-7500(23)00161-9
+325. Jakobsen LK, Bang Gram JK, Grabmayr AJ, Højen A, Hansen CM, Rostgaard-Knudsen M, Claesson A, Folke F. Semi-
+autonomous drone delivering automated external defibrillators for real out-of-hospital cardiac arrest: A Danish
+feasibility study. Resuscitation. 2025;208:110544. doi: 10.1016/j.resuscitation.2025.110544
+326. Wik L, Hansen TB, Fylling F, Steen T, Vaagenes P, Auestad BH, Steen PA. Delaying defibrillation to give basic
+cardiopulmonary resuscitation to patients with out-of-hospital ventricular fibrillation: a randomized trial. Jama.
+2003;289:1389-1395.
+327. Baker PW, Conway J, Cotton C, Ashby DT, Smyth J, Woodman RJ, Grantham H, Investigators C. Defibrillation or
+cardiopulmonary resuscitation first for patients with out-of-hospital cardiac arrests found by paramedics to be in
+ventricular fibrillation? A randomised control trial. Resuscitation. 2008;79:424-431.
+328. Jacobs IG, Finn JC, Oxer HF, Jelinek GA. CPR before defibrillation in out‐of‐hospital cardiac arrest: a randomized trial.
+Emergency Medicine Australasia. 2005;17:39-45.
+329. Ma MH-M, Chiang W-C, Ko PC-I, Yang C-W, Wang H-C, Chen S-Y, Chang W-T, Huang C-H, Chou H-C, Lai M-S. A
+randomized trial of compression first or analyze first strategies in patients with out-of-hospital cardiac arrest: results
+from an Asian community. Resuscitation. 2012;83:806-812.
+330. Stiell IG, Nichol G, Leroux BG, Rea TD, Ornato JP, Powell J, Christenson J, Callaway CW, Kudenchuk PJ, Aufderheide
+TP. Early versus later rhythm analysis in patients with out-of-hospital cardiac arrest. New England Journal of
+Medicine. 2011;365:787-797.
+331. Yin RT, Taylor TG, de Graaf C, Ekkel MM, Chapman FW, Koster RW. Automated external defibrillator electrode size
+and termination of ventricular fibrillation in out-of-hospital cardiac arrest. Resuscitation. 2023;185:109754. doi:
+https://doi.org/10.1016/j.resuscitation.2023.109754
+--- p55
+55
+332. Lupton JR, Newgard CD, Dennis D, Nuttall J, Sahni R, Jui J, Neth MR, Daya MR. Initial Defibrillator Pad Position and
+Outcomes for Shockable Out-of-Hospital Cardiac Arrest. JAMA Network Open. 2024;7:e2431673-e2431673. doi:
+10.1001/jamanetworkopen.2024.31673
+333. Cheskes S, Verbeek PR, Drennan IR, McLeod SL, Turner L, Pinto R, Feldman M, Davis M, Vaillancourt C, Morrison LJ, et
+al. Defibrillation Strategies for Refractory Ventricular Fibrillation. New England Journal of Medicine. 2022;387:1947-
+1956. doi: doi:10.1056/NEJMoa2207304
+334. Grunau B, Humphries K, Stenstrom R, Pennington S, Scheuermeyer F, van Diepen S, Awad E, Al Assil R, Kawano T,
+Brooks S, et al. Public access defibrillators: Gender-based inequities in access and application. Resuscitation.
+2020;150:17-22. doi: https://doi.org/10.1016/j.resuscitation.2020.02.024
+335. Ishii M, Tsujita K, Seki T, Okada M, Kubota K, Matsushita K, Kaikita K, Yonemoto N, Tahara Y, Ikeda T, et al. Sex- and
+Age-Based Disparities in Public Access Defibrillation, Bystander Cardiopulmonary Resuscitation, and Neurological
+Outcome in Cardiac Arrest. JAMA Network Open. 2023;6:e2321783-e2321783. doi: 10.1001/jamanetworkopen.2023.21783
+336. Kiyohara K, Katayama Y, Kitamura T, Kiguchi T, Matsuyama T, Ishida K, Sado J, Hirose T, Hayashida S, Nishiyama C, et
+al. Gender disparities in the application of public-access AED pads among OHCA patients in public locations.
+Resuscitation. 2020;150:60-64. doi: https://doi.org/10.1016/j.resuscitation.2020.02.038
+337. Perman SM, Shelton SK, Knoepke C, Rappaport K, Matlock DD, Adelgais K, Havranek EP, Daugherty SL. Public
+Perceptions on Why Women Receive Less Bystander Cardiopulmonary Resuscitation Than Men in Out-of-Hospital
+Cardiac Arrest. Circulation. 2019;139:1060-1068. doi: 10.1161/CIRCULATIONAHA.118.037692
+338. Kramer CE, Wilkins MS, Davies JM, Caird JK, Hallihan GM. Does the sex of a simulated patient affect CPR?
+Resuscitation. 2015;86:82-87. doi: https://doi.org/10.1016/j.resuscitation.2014.10.016
+339. O’Hare P, Di Maio R, McCanny P, McIntyre C, Torney H, Adgey J. Public access defibrillator use by untrained
+bystanders: Does patient gender affect the time to first shock during resuscitation attempts? Resuscitation.
+2014;85:S49. doi: 10.1016/j.resuscitation.2014.03.124
+340. Di Maio R, O’Hare P, Crawford P, McIntyre A, McCanny P, Torney H, Adgey J. Self-adhesive electrodes do not cause
+burning, arcing or reduced shock efficacy when placed on metal items. Resuscitation. 2015;96:11. doi:
+10.1016/j.resuscitation.2015.09.026
+341. Nørskov AS, Considine J, Nehme Z, Olasveengen TM, Morrison LJ, Morley P, Bray JE. Removal of bra for pad
+placement and defibrillation – A scoping review. Resuscitation Plus. 2025;22:100885. doi:
+https://doi.org/10.1016/j.resplu.2025.100885
+342. Cui Y, Jiang S. Influence of Personal Protective Equipment on the Quality of Chest Compressions: A Meta-Analysis of
+Randomized Controlled Trials. Front Med (Lausanne). 2021;8:733724. doi: 10.3389/fmed.2021.733724
+343. Zijlstra JA, Bekkers LE, Hulleman M, Beesems SG, Koster RW. Automated external defibrillator and operator
+performance in out-of-hospital cardiac arrest. Resuscitation. 2017;118:140-146. doi:
+https://doi.org/10.1016/j.resuscitation.2017.05.017
+344. Hosmans TP, Maquoi I, Vogels C, Courtois A-C, Micheels J, Lamy M, Monsieurs KG. Safety of fully automatic external
+defibrillation by untrained lay rescuers in the presence of a bystander. Resuscitation. 2008;77:216-219.
+345. Monsieurs KG, Vogels C, Bossaert LL, Meert P, Calle PA. A study comparing the usability of fully automatic versus
+semi-automatic defibrillation by untrained nursing students. Resuscitation. 2005;64:41-47. doi:
+https://doi.org/10.1016/j.resuscitation.2004.07.003
+Tilhørsforhold
+1 Warwick Medical School, University of Warwick, Coventry, England
+2 University Hospital Coventry and Warwickshire NHS Trust, Coventry, England
+3 Emergency Medical Services, RAV Haaglanden, The Haque, Netherlands
+4 Copenhagen Emergency Medical Services, University of Copenhagen, Denmark
+5 Department of Cardiology, Herlev and Gentofte Hospital, University of Denmark
+6 Department of Clinical Medicine, University of Copenhagen, Denmark
+7 University of Maribor, Faculty of health sciences, Slovenia
+8 Department of Physiotherapy, University of São Paulo Medical School, Brazil
+9 Department of Medicine, School of Medicine, European University Cyprus, Nicosia, Cyprus
+10 University of Milan, Italy
+11 Fondazione IRCCS Ca' Granda Ospedale Maggiore Policlinico Milano, Italy
+12 Barts Health NHS Trust, London, England
+13 Department of Anesthesia and Intensive Care, IRCCS San Raffaele Scientific Institute, Milan, Italy
+14 Emergency Department, University Hospital of Heraklion, Greece
+15 Cardiopulmonary Resuscitation Lab, School of Medicine, University of Crete, Greece
+16 Department of Anesthesiology, AUVA UKH Klagenfurt, Austria
+17 University Hospitals Birmingham NHS Foundation Trust, Birmingham, England
+*Korresponderende forfatter: Michael A Smyth (m.a.smyth@warwick.ac.uk)

@@ -5,6 +5,8 @@ export type Route =
   | { name: 'home' }
   | { name: 'storage' }
   | { name: 'food'; id: string; tab: FoodTab }
+  | { name: 'firstAid' }
+  | { name: 'guide'; id: string }
   | { name: 'map' }
   | { name: 'tools' }
   | { name: 'settings' };
@@ -22,6 +24,9 @@ export function parseRoute(hash: string): Route {
     const tab = FOOD_TABS.find((t) => t === food[2]) ?? DEFAULT_FOOD_TAB;
     return { name: 'food', id: decodeURIComponent(food[1]), tab };
   }
+  const guide = /^#\/guide\/([^/]+)$/.exec(hash);
+  if (guide?.[1]) return { name: 'guide', id: decodeURIComponent(guide[1]) };
+  if (hash === '#/first-aid') return { name: 'firstAid' };
   if (hash === '#/storage') return { name: 'storage' };
   if (hash === '#/map') return { name: 'map' };
   if (hash === '#/tools') return { name: 'tools' };
@@ -32,7 +37,9 @@ export function parseRoute(hash: string): Route {
 export const hrefs = {
   home: '#/',
   storage: '#/storage',
-  map: '#/map',
+  firstAid: '#/first-aid',
+  guide: (id: string) => `#/guide/${encodeURIComponent(id)}`,
+  map:'#/map',
   tools: '#/tools',
   settings: '#/settings',
   food: (id: string, tab: FoodTab = DEFAULT_FOOD_TAB) =>

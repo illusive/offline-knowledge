@@ -9,7 +9,9 @@ import { UpdateBanner } from './pwa/UpdateBanner';
 import { useOfflineReady } from './pwa/useOfflineReady';
 import { usePrecacheProgress } from './pwa/usePrecacheProgress';
 import { tabOf, useRoute } from './router';
+import { FirstAidScreen, useGuides } from './screens/FirstAidScreen';
 import { FoodScreen } from './screens/FoodScreen';
+import { GuideScreen } from './screens/GuideScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { MapScreen } from './screens/MapScreen';
@@ -42,6 +44,7 @@ export function App() {
   }, []);
 
   const foods = useAllFoods(status === 'ready' ? db : null);
+  const guides = useGuides(status === 'ready' ? db : null);
 
   // Remember each page's scroll position: going back restores it, new pages start at the top.
   const scrollPositions = useRef(new Map<string, number>());
@@ -77,10 +80,12 @@ export function App() {
   else if (status === 'error') content = <Page><MessageState title={s.packErrorTitle} body={s.packErrorBody} /></Page>;
   else if (status === 'loading') content = <Page><LoadingState s={s} /></Page>;
   else if (route.name === 'food') content = <FoodScreen db={db} id={route.id} tab={route.tab} lang={lang} s={s} />;
+  else if (route.name === 'firstAid') content = <FirstAidScreen guides={guides} s={s} />;
+  else if (route.name === 'guide') content = <GuideScreen db={db} id={route.id} s={s} />;
   else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;
   else if (route.name === 'tools') content = <PlaceholderScreen title={s.toolsTitle} s={s} />;
   else if (route.name === 'settings') content = <PlaceholderScreen title={s.settingsTitle} s={s} />;
-  else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} query={homeQuery} onQueryChange={setHomeQuery} />;
+  else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guideCount={guides?.length ?? null} query={homeQuery} onQueryChange={setHomeQuery} />;
 
   return (
     <>

@@ -1,0 +1,45 @@
+{
+  "id": "stabilt-sideleje",
+  "category": "first-aid",
+  "order": 8,
+  "title": "Stabilt sideleje",
+  "summary": "Hvis der er normal vejrtrækning, og den tilskadekomne stadig er bevidstløs, placeres personen i et stabilt sideleje!",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "steps",
+      "title": "Sådan udføres stabilt sideleje:",
+      "items": [
+        "Læg personens nærmeste arm ud fra kroppen",
+        "Tag fjerneste hånd og før denne op mod personens kind (knoerne skal vende ind mod kinden) - bliv ved med at holde hånden under hele drejet",
+        "Bøj fjerneste ben i knæleddet",
+        "Træk i knæet, så den tilskadekomne rulles mod førstehjælperen",
+        "Ret personens knæ i 90 grader, så personen ligger stabilt",
+        "Læg hovedet bagover, så der skabes frie luftveje."
+      ],
+      "images": [
+        { "after": 2, "file": "sideleje-1-2.jpg", "alt": "Førstehjælper knæler ved siden af en person på ryggen. Den nærmeste arm ligger ud fra kroppen, og den fjerneste hånd holdes mod personens kind.", "page": 23 },
+        { "after": 3, "file": "sideleje-3.jpg", "alt": "Det fjerneste ben er bøjet i knæet.", "page": 23 },
+        { "after": 4, "file": "sideleje-4.jpg", "alt": "Førstehjælperen trækker i knæet, så personen ruller om på siden mod førstehjælperen.", "page": 23 },
+        { "after": 5, "file": "sideleje-5.jpg", "alt": "Personen ligger på siden med det øverste knæ bøjet i 90 grader.", "page": 23 },
+        { "after": 6, "file": "sideleje-6.jpg", "alt": "Førstehjælperen lægger personens hoved bagover og lytter efter vejrtrækning.", "page": 23 }
+      ],
+      "page": 22
+    },
+    { "kind": "heading", "text": "Udfør se-lyt-føl", "page": 22 },
+    { "kind": "text", "text": "Undersøg regelmæssigt vejrtrækningen ved at anvende se, lyt og føl.", "page": 22 },
+    { "kind": "text", "text": "Stabilt sideleje medvirker til opretholdelse af frie luftveje, idet tungen, blod og/eller opkast ikke kommer til at spærre luftvejene.", "page": 22 },
+    { "kind": "warning", "text": "Indpak altid den tilskadekomne for at forebygge kredsløbssvigt.", "page": 22 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Stabilt sideleje, s. 9",
+      "quote": "Placér voksne og børn med nedsat bevidsthedsniveau, som IKKE opfylder kriterierne for påbegyndelse af HLR, i stabilt sideleje … I tilfælde af agonal vejrtrækning eller traume må du IKKE placere personen i stabilt sideleje. … Revurdér for tegn på luftvejsobstruktion, utilstrækkelig eller agonal vejrtrækning og bevidstløshed.",
+      "note": "Both: recovery position for an unconscious person who breathes normally, and check breathing again regularly. ERC adds: not after trauma."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["vejrtraekning", "frie-luftveje", "hlr-voksne"]
+}

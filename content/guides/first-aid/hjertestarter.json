@@ -1,0 +1,55 @@
+{
+  "id": "hjertestarter",
+  "category": "first-aid",
+  "order": 10,
+  "title": "Anvendelse af hjertestarter",
+  "summary": "En AED er udviklet til at blive brugt af alle. Den er nem og sikker at betjene.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "corrections": [{ "from": "et apperat der", "to": "et apparat der" }],
+  "blocks": [
+    { "kind": "text", "text": "En hjertestarter, også kaldet Automatisk Ekstern Defibrillator (AED), er et apparat der kan ”genstarte” et hjerte ved personer med hjertestop.", "page": 33 },
+    { "kind": "text", "text": "I en AED er der indbygget et talemodul, hvor en stemme fortæller dig, hvad du skal gøre. Nogle har også et display, som vejleder dig.", "page": 33 },
+    { "kind": "heading", "text": "Sådan påsættes elektroderne:", "page": 34 },
+    { "kind": "text", "text": "Der vil være en illustration på elektroderne, som du altid skal følge. Elektroderne skal placeres under højre kraveben, ved siden af brystbenet, og under venstre armhule, på nederste del af brystkassen.", "page": 34 },
+    { "kind": "image", "file": "aed-elektroder.jpg", "alt": "Foto af en bar brystkasse med hjertestarterens to elektroder: én under højre kraveben ved siden af brystbenet og én under venstre armhule på nederste del af brystkassen. Midt på brystet ligger desuden en lilla pude med et billede af to hænder.", "page": 34 },
+    { "kind": "heading", "text": "Sikkerhed ved analyse og stød", "page": 36 },
+    { "kind": "text", "text": "Rør hverken ved personen under analyse af hjerterytmen, opladning eller afgivelse af stød.", "page": 36 },
+    {
+      "kind": "steps",
+      "title": "Inden afgivelse af stød skal førstehjælperen:",
+      "items": [
+        "Tænde AED’en, hvis ikke den allerede er tændt",
+        "Kigge op og advisere: ”alle væk, der analyseres!”",
+        "Kontrollere, at ingen rører personen eller personens umiddelbare omgivelser, eksempelvis en seng.",
+        "Advisere: ”Her stødes!” inden afgivelse af stød."
+      ],
+      "page": 36
+    },
+    { "kind": "image", "file": "hlr-aed-flowchart.jpg", "alt": "Rutediagram med fotos: Skab sikkerhed, Bevidsthedskontrol, Ring 1-1-2, Skab frie luftveje, Se, lyt og føl. Vejrtrækning? Ja: stabilt sideleje. Nej: blotlæg brystkassen og påbegynd HLR, påsæt elektroder og start hjertestarteren, hold afstand under analyse og stød, fortsæt 30:2.", "page": 31 },
+    { "kind": "heading", "text": "Sikkerhed ved brug af hjertestarter", "page": 35 },
+    {
+      "kind": "list",
+      "items": [
+        "Aftør hurtigt brystkassen, før AED-elektroderne påsættes.",
+        "Ved kraftig hårvækst, der forhindrer optimal elektrisk kontakt mellem elektroder og hud, fjernes hårene med en engangsskraber.",
+        "Fjern plastre og andet materiale fra personens brystkasse, hvor elektroderne skal placeres, for at sikre en optimal elektrisk kontakt mellem elektroder og huden.",
+        "Fjern enhver form for metalsmykker, der kan komme i kontakt med AED-elektroderne.",
+        "En elektrode må aldrig placeres oven på en pacemaker, men kan placeres umiddelbart under eller ved siden af.",
+        "Derfor skal du fjerne iltmasken/næsebrillen væk inden der stødes (min. 1 meter fra nærmeste elektrode)."
+      ],
+      "page": 35
+    },
+    { "kind": "text", "text": "Ved tidlig HLR og stød fra en hjertestarter (AED) inden ambulancen ankommer, vil op mod 1/3 overleve et hjertestop (hjertestopregister.dk).", "page": 33 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-bls-2025",
+      "locator": "Hvornår og hvordan bruges en hjertestarter, s. 9–10",
+      "quote": "Brug en hjertestarter, så snart den er tilgængelig. … Sørg for, at ingen rører ved personen, mens hjertestarteren analyserer hjerterytmen. … Efter stød er afgivet, genoptag straks HLR 30:2.",
+      "note": "Agrees: use the AED as soon as it arrives, follow its voice prompts, nobody touches the person during analysis and shock. ERC adds: restart CPR 30:2 straight after the shock."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["hlr-voksne", "hlr-boern"]
+}

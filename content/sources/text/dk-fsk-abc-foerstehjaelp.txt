@@ -1,0 +1,3985 @@
+# dk-fsk-abc-foerstehjaelp sha256 432a7e77456e60b8fe496c398b103b612c6a0bfbb7a0db96615b271b1b262d01
+--- p1
+FØRSTEHJÆLPENS ABC
+FØRSTE-
+HJÆLPENS
+ABC
+Udarbejdet af Center for
+Sundheds- og Sanitetsuddannelse
+ved Forsvarets Sanitetskommando
+Obligatorisk til brug for førstehjælps-
+uddannelsen i Forsvaret
+FORSVARETS
+SANITETSKOMMANDO
+1
+2026
+--- p2
+FØRSTEHJÆLPENS ABC
+FORSVARETS
+SANITETSKOMMANDO
+Bogens forfattere:
+Stefan Koust Hansen
+Rikke Bøgh Rasmussen
+Jesper Hermund
+Mikael Kemner
+Morten Ørskov
+Nicholas Szczyrbak
+René Mouritzen
+René Grundtvig
+Klaus Rasmussen
+Freja Tylvad
+Fagligt ansvarlige:
+Stefan Koust Hansen
+Martin Vedel Nielsen
+Korrektur:
+Anne Kosack Laisen
+Foto:
+Daniel Vang, Lars Kofoed
+og Lars Rasmussen,
+Flyvevåbnets Fototjeneste,
+Kattegatcentret og Colorbox
+Tak til:
+Alle vores modeller
+Diabetes Foreningen
+Dansk Råd for Genoplivning
+Giftlinjen
+Illustrationer:
+Valdemar Alfred
+Dansk Råd for Genoplivning
+Grafiker:
+Pernille Gaarden
+Tryk: PRInfo Paritas
+© Forsvarets Sanitetskommando
+11. rev. 2026
+Materialenummer
+7610-22-631-3789
+2
+--- p3
+FØRSTEHJÆLPENS ABC
+INDHOLD
+FØRSTEHJÆLPENS 3 HOVEDPUNKTER.......... 8
+PUNKT 1: SKAB SIKKERHED...........................................9
+Overblik 1,2
+.....................................................................................9
+Sikring 1,2
+.....................................................................................11
+Liv frem for førlighed 1,2
+..............................................................12
+Nødflytning 1,2
+..............................................................................12
+Underarmsgreb 1,2
+.......................................................................13
+PUNKT 2: GIV FØRSTEHJÆLP....................................16
+Kontrol af bevidsthedstilstand 1,2
+.................................................16
+<M> Massive blødninger 1,2
+.........................................................17
+Airway – luftveje 1,2
+.....................................................................17
+Breathing – åndedræt 1,2
+.............................................................17
+A – Luftveje: Skab frie luftveje 1,2
+...............................................19
+B – åndedræt: Er der vejrtrækning 1,2
+.........................................20
+Stabilt sideleje og indpakning 1,2
+.................................................22
+C – kredsløb: oprethold blodcirkulation .....................................24
+Overlevelseskæden 1,2
+.................................................................25
+Basal Hjertelungeredning (HLR) 1,2
+..............................................28
+HLR – Voksne – Brystkompressioner 1,2
+......................................28
+HLR – Voksne – Indblæsninger (mund-til-mund) 1,2
+...................29
+Procedure for basal hjertelungeredning (HLR) 1,2
+........................30
+Procedure for basal HLR med hjertestarter (AED) 1,2
+..................31
+Basal HLR TIL BØRN....................................................................32
+Anvendelse af hjertestarter 1,2
+.....................................................33
+Sikkerhed ved brug af hjertestarter 1,2
+........................................35
+KREDSLØBSSVIGT............................................................38
+Kredsløbssvigt 1,2
+.........................................................................38
+Symptomer på kredsløbssvigt 1,2
+.................................................39
+IKKE LIVSTRUENDE BLØDNINGER 1,2
+....................41
+3
+1 Relaterer sig til FSK 267, Livreddende førstehjælp.
+2 Relaterer sig til FSK 265, Fagansvarlig for Livreddende førstehjælp.
+--- p4
+FØRSTEHJÆLPENS ABC
+PUNKT 3: TILKALD HJÆLP..........................................46
+Ring 1-1-2 1,2
+...............................................................................46
+Mobiltelefon 1,2
+.............................................................................48
+Alarmering fra strande i Danmark 1,2
+...........................................49
+MENS DU VENTER PÅ AMBULANCEN.....................52
+Revurdér førstehjælpen 1,2
+...........................................................52
+Overlevering 1,2
+............................................................................54
+PSYKISK FØRSTEHJÆLP...............................................56
+BEVAR DINE FÆRDIGHEDER.....................................59
+FØRSTEHJÆLPSSITUATIONER.................................60
+Fremmedlegeme i luftvejene 1,2
+...................................................60
+Førstehjælp til alvorlig blokering 1,2
+.............................................62
+Hvis børn får fremmedlegemer i luftvejene 1,2
+............................64
+STRANGULERING OG HÆNGNING..........................66
+DRUKNEULYKKER..............................................................68
+JORD- OG SNESKRED......................................................70
+SILO- OG BRØNDULYKKER..........................................72
+SKADER MOD BRYSTKASSEN.....................................74
+EL ULYKKER..........................................................................76
+SKADER I MAVEREGIONEN.........................................78
+KNOGLEBRUD.......................................................................80
+LED, FORSTUVNINGER OG MUSKELSKADER....82
+AFREVNE LEGEMSDELE..................................................86
+4
+1 Relaterer sig til FSK 267, Livreddende førstehjælp.
+2 Relaterer sig til FSK 265, Fagansvarlig for Livreddende førstehjælp.
+--- p5
+FØRSTEHJÆLPENS ABC
+HOVEDSKADER....................................................................88
+SKADER PÅ NAKKE OG RYGSØJLE..........................92
+FORGIFTNINGER...............................................................94
+TEMPERATURPÅVIRKNINGER - HEDESLAG......98
+Temperaturpåvirkninger - forbrændinger 1,2
+..............................100
+Temperaturpåvirkninger - underafkøling 1,2
+...............................102
+Temperaturpåvirkninger - forfrysninger 1,2
+................................104
+SMÅSKADER.......................................................................106
+Bid.............................................................................................106
+Skovflåt.....................................................................................107
+Fjæsingstik................................................................................108
+Insektstik fra bi og hveps..........................................................109
+Hugormebid...............................................................................110
+Brandmand................................................................................111
+Fremmedlegeme i øret..............................................................112
+Fremmedlegeme i næsen..........................................................113
+Skader på øjnene......................................................................114
+Fremmedlegeme i huden...........................................................115
+Stik- og snitsår 2
+........................................................................116
+Hudafskrapninger......................................................................117
+Næseblod..................................................................................118
+Tandskader................................................................................119
+Bjørneklo...................................................................................120
+5
+1 Relaterer sig til FSK 267, Livreddende førstehjælp.
+2 Relaterer sig til FSK 265, Fagansvarlig for Livreddende førstehjælp.
+--- p6
+FØRSTEHJÆLPENS ABC
+SYGDOMME.........................................................................122
+Stroke 1,2
+....................................................................................122
+Brystsmerter/Hjertekramper.....................................................124
+Sygdomme i luftvejene.............................................................126
+Falsk strubehoste......................................................................128
+Alvorlige allergiske reaktioner...................................................129
+Sukkersyge................................................................................130
+Feber.........................................................................................132
+Feberkramper............................................................................133
+Mavesmerter.............................................................................134
+Akutte mavesmerter..................................................................135
+Kramper og Epilepsi..................................................................136
+MENNESKETS ANATOMI OG FYSIOLOGI 2
+.......138
+Livsbetingelser..........................................................................138
+Nervesystemet..........................................................................142
+Åndedrætssystemet..................................................................146
+Kredsløbssystemet....................................................................152
+Fordøjelsessystemet..................................................................158
+Bevægeapparatet......................................................................164
+Huden og Hormonerne..............................................................170
+6
+1 Relaterer sig til FSK 267, Livreddende førstehjælp.
+2 Relaterer sig til FSK 265, Fagansvarlig for Livreddende førstehjælp.
+--- p7
+FØRSTEHJÆLPENS ABC
+7
+--- p8
+FØRSTEHJÆLPENS ABC
+FØRSTEHJÆLPENS 3 HOVEDPUNKTER
+Førstehjælpens 3 hovedpunkter
+ Punkt 1: Skab sikkerhed
+ Punkt 2: Giv førstehjælp
+ Punkt 3: Tilkald hjælp
+Værktøjet bruges til at skabe sig et overblik over situationen.
+På denne måde bliver indsatsen så effektiv som mulig.
+Når en person bliver alvorligt syg eller kommer ud for en
+ulykke, vil alle involverede blive berørt af situationen. Situa-
+tionen påvirker både den tilskadekomne, pårørende, tilskuere,
+førstehjælpere og redningspersonalet.
+Situationen kan virke uoverskuelig og kaotisk. Derfor kan det
+være svært at vide, hvad man skal gøre først.
+Under hele forløbet ydes der samtidigt psykisk førstehjælp,
+som er beregnet til at berolige den tilskadekomne.
+8
+--- p9
+FØRSTEHJÆLPENS ABC
+PUNKT 1: SKAB SIKKERHED
+Skab sikkerhed
+Som førstehjælper skal du sikre, at ulykken ikke udvikler sig.
+ Hvor mange der er kommet til skade
+ Hvilken type skade er der tale om
+ Om der er fare for dig eller andre,
+når du hjælper den/de tilskadekomne.
+Overblik
+Start med at skabe overblik over situationen:
+ Er der fare for dig eller andre,
+når du hjælper den/de tilskadekomne?
+ Hvilken type skade er der tale om?
+ Hvor mange er der kommet til skade?
+Stands ulykken
+Som førstehjælper skal du sikre, at ulykken ikke udvikler sig.
+Dette kan du gøre ved: At fjerne personen fra ulykken el-
+ler fjerne ulykken fra personen.
+9
+--- p10
+FØRSTEHJÆLPENS ABC
+Det kan i nogle tilfælde vise sig, at der slet ikke bliver brug
+for yderligere førstehjælp, når ulykken først er standset. Der
+er måske kun sket materielle skader.
+Et godt overblik nedsætter risikoen for, at man som første-
+hjælper overser tilskadekomne eller faremomenter. Du må al-
+drig gå på kompromis med din egen eller andres sikkerhed for
+at redde en person. Hvis du kommer til skade, har du forvær-
+ret situtionanen og du kan ikke hjælpe den tilskadekomne.
+Ved en ulykke kan tilskuere, forbipasserende eller pårørende
+hjælpe med mange opgaver – også uden at have første-
+hjælpsuddannelse. Det kan derfor være nødvendigt, at du
+tager styringen og fordeler opgaverne.
+10
+--- p11
+FØRSTEHJÆLPENS ABC
+Sikring
+For at ulykken ikke udvikler sig, skal førstehjælperen:
+ Standse trafikken eller sætte advarselstrekant op
+(en advarselstrekant skal placeres 100 m. fra skades-
+stedet på en motorvej og 50 m. fra skadesstedet på
+alle øvrige veje)
+ Få hjælp til at nødflytte eller ”holde hovedet” på den
+tilskadekomne, hvis vedkommende sidder i et køretøj.
+ Få hentet tæpper, førstehjælpsmidler, hjertestarter
+(AED) m.m.
+ Drukneulykker: Ring 1-1-2 eller få en anden til at gøre
+det, før du forsøger en redning. Redning i vand kan
+være farlig, og professionel hjælp skal være på vej
+hurtigst muligt.
+ El-ulykker: Slukke for alt strøm eller fjerne strømkilden
+ Brand og kulilteforgiftning: Altid ringe 1-1-2, før du
+evt. nødflytter personen.
+HUSK:
+Du må derfor aldrig gå på kompromis med din egen sik-
+kerhed når du hjælper andre!
+11
+--- p12
+FØRSTEHJÆLPENS ABC
+Nødflytning
+Liv frem for førlighed
+Det betyder, at det vigtigste er at redde liv – også selv om en
+eventuel skade på nakke eller ryg kan blive forværret.
+Du skal som hovedregel altid udføre førstehjælpen på finde-
+stedet, men det kan være nødvendigt at nødflytte personen,
+hvis:
+du ikke kan udføre din førstehjælp på stedet eller hvis der
+er fare for dig selv eller den tilskadekomne.
+En person, der er bevidstløs i en bil skal altid nødflyttes!
+Nødflytningsteknik
+Når du nødflytter, er det altid ud fra princippet ”liv frem for
+førlighed”. Selvom en situation kan være hektisk, og den til-
+skadekomnes tilstand kan være livstruende, skal du dog altid
+passe på dig selv.
+Du skal derfor:
+ Være i god balance
+ Løfte med naturligt lændesvaj
+ Holde den tilskadekomne tæt til kroppen
+ Løfte med benene og ikke ryggen
+12
+--- p13
+FØRSTEHJÆLPENS ABC
+Underarmsgreb
+Underarmsgreb er en hurtig og effektiv måde at nødflytte en
+tilskadekommen på. Teknikken kan bruges til at nødflytte en
+tilskadekommen fra jorden eller fra et køretøj.
+Drej den tilskadekomne, og før armene ind under den tilska-
+dekomnes armhu­le, og fat med begge hænder om den tilska-
+dekomnes ene underarm. Løft og træk den tilskadekomne ved
+at benytte korrekt løfteteknik. Prøv at holde den tilskadekom-
+nes hoved så roligt så muligt.
+Ikke udløste airbags
+Der er set meget få eksempler på udløste airbags, efter ulyk-
+ken er sket. Derfor må det ikke være en forhindring for at yde
+førstehjælp.
+Airbags må aldrig være en hindring for at der kan ydes første-
+hjælp, men ud fra et forsigtighedsprincip, skal førstehjælpe-
+ren undgå at læne sig ind foran rattet.
+13
+--- p14
+FØRSTEHJÆLPENS ABC
+Nødflytning fra jorden
+1. Placér dig bagved den tilskadekomnes hoved. 2. Før ar-
+mene ind under den tilskadekomnes armhuler bagfra og fat
+med begge hænder om den tilskadekomnes ene underarm.
+3. Løft og træk den tilskadekomne ved at benytte korrekt
+løfteteknik. 4. Prøv at holde den tilskadekomnes hoved så
+roligt så muligt, mens der nødflyttes, både ved løft fra og ved
+placering på jorden
+Nødflytning fra bil
+Hvis det er muligt, så nærm dig køretøjet forfra, og tal til den
+tilskadekomne, således at den tilskadekomne ikke prøver at
+dreje hovedet. Inden nødflytningen bør du standse motoren,
+tage nøglerne ud og lægge dem i bunden af bilen. Tænd ha-
+variblink. Frigør sikkerhedsselen, og skub sædet tilbage, hvis
+det er muligt eller nødvendigt. Træk benene op til kanten af
+sædet, således at fødderne er fri af pedaler m.m.
+14
+--- p15
+FØRSTEHJÆLPENS ABC
+Hvis muligt skal du prøve at få drejet den tilskadekomne, så du
+kan få fat i vedkommende bagfra. Før armene ind under den
+tilskadekomnes armhuler, og fat med begge hænder om den
+tilskadekomnes ene underarm. Løft og træk den tilskadekomne
+ved at benytte korrekt løfteteknik. Vær opmærksom på, at
+den tilskadekomnes fødder ikke pludseligt hænger fast i sæde,
+pedaler m.m. Prøv at holde den tilskadekomnes hoved så roligt
+som muligt, mens der nødflyttes, både på vej ud af bilen og ved
+placering på jorden.
+Tomandsløft
+Den ene person anvender underarmsgreb, mens den anden
+løfter den tilskadekomnes ben enten ved at placere sig mel-
+lem benene og løfte herfra eller ved at løfte fra siden. Den, der
+er nærmest den tilskadekomnes hoved, har kommandoen. Løft
+og flyt samtidig og i samme retning. Når du har skabt overblik,
+sikret skadestedet eller den tilskadekomne, kan du begynde din
+førstehjælp.
+Bemærk:
+Under førstehjælpsuddannelsen i Forsvaret, gennemføres
+nødflytningen ikke, da det kan medføre skader på nakke og
+ryg. I stedet markeres løftet med et underarmsgreb!
+15
+--- p16
+FØRSTEHJÆLPENS ABC
+PUNKT 2: GIV FØRSTEHJÆLP
+Når du yder førstehjælp, skal du først undersøge den tilskade-
+komnes bevidsthed.
+Vågen eller Bevidstløs
+Kontrol af bevidsthedstilstand
+Kontroller bevidstheden på følgende måde:
+Tal højt, og rusk behersket ved at tage fat i den tilskadekom-
+nes skuldre.
+ Hvis personen reagerer, er personen vågen.
+ Hvis personen ikke reagerer, er personen
+bevidstløs.
+Hvis den tilskadekomne er bevidstløs,
+skal du straks ringe 1-1-2
+før du fortsætter din førstehjælp!
+16
+--- p17
+FØRSTEHJÆLPENS ABC
+<M>ABC-princippet
+For at kunne prioritere den mest nødvendige førstehjælp til én
+eller flere tilskadekomne, anvender vi M-ABC-princippet:
+<M>Massive blødninger – livstruende blødninger
+Airway – luftveje
+Breathing – åndedræt
+Circulation – blodcirkulation
+Alle celler i kroppen har behov for ilt for at kunne opretholde
+deres funktion. <M>ABC sikrer denne livsvigtige ilttransport.
+Nogle celler kan kun undvære ilt i få minutter, før de tager
+skade. Hjernens celler er blandt disse.
+Hvis hjernens celler går til grunde, påvirkes resten af krop-
+pen, fordi hjernen styrer kroppens funktioner.
+<M>ABC princippet
+<M>: Massive bleedings
+Massive/livstruende
+blødningerninger
+A: Airways
+Luftveje
+B: Breathing
+Vejrtrækning
+C: Cirkulation
+Cirkulation/kredsløb
+17
+--- p18
+FØRSTEHJÆLPENS ABC
+<M> Massive blødninger
+- Livstruende blødninger
+En massiv blødning er en livstruende blødning, der skal
+behandles først i algoritmen. Der er tale om en livstruende
+blødning, når:
+ Der ses en blodpøl på jorden
+ Tøjet er gennemvædet af blod
+ Blodet sprøjter eller strømmer hurtigt
+Hvis du har et præfabrikeret
+Tourniquet til rådighed,
+må du anlægge det som det
+første på arme og ben”
+Læg det altid ”high and tight”
+Hvis ét eller flere af disse kriterier er opfyldt, skal du behand-
+le det som det første inden A-B-C! En livstruende blødning er
+sjælden, men når den opstår kræver den øjeblikkelig hand-
+ling, så den tilskadekomne ikke forbløder.
+18
+--- p19
+FØRSTEHJÆLPENS ABC
+A - LUFTVEJE: SKAB FRIE LUFTVEJE
+Skab frie luftveje:
+Når en person er bevidstløs, skal du altid skabe frie luftveje:
+ Placér den ene hånd på panden,
+og 2 fingre under hagen
+ Forsigtigt føres hovedet bagover til naturlig modstand.
+Der er skabt frie luftveje ved, at tungen er løftet op fra svæl-
+get. Så længe grebet holdes, er der skabt frie luftveje.
+Stabilt sideleje sikrer også at personen har frie luftveje.
+Ved et ”A-problem” er der fare for, at ilttransporten ophører,
+og cellerne dør, fordi luftvejene er blokeret. Udover at tungen
+kan blokere ved bevidstløshed, kan årsagerne være fremmed-
+legemer, blod, strangulering, op­kast, hævelser eller skader på
+halsen.
+Førstehjælpen til ”A-problemer/kredsløbsproblemer” gennem-
+gås senere i bogen.
+19
+--- p20
+FØRSTEHJÆLPENS ABC
+B - ÅNDEDRÆT:
+ER DER VEJRTRÆKNING?
+Kontrollér for normal vejrtrækning
+Når du skal kontrollere, om den tilskadekomne har en normal
+vejrtrækning, skal du udføre se, lyt og føl!
+Samtidig med at fastholder dit hageløft:
+ Se: Om brystkassen og maven hæver og sænker sig
+ Lyt: Efter vejrtrækning ved at placere øret
+meget tæt på den tilskadekomnes mund og næse
+ Føl: Efter udåndingsluft på din kind.
+Normal, unormal eller ingen vejrtrækning
+Normal vejrtrækning lyder ubesværet, mens en unormal vejr-
+trækning kan være enkelte gisp, eller at man trækker vejret
+langsomt og med hørlig lyd (som en fisk på land).
+Ved ingen vejrtrækning kan du hverken se, høre eller føle
+vejrtræk­ning.
+Et ”B-problem” skyldes, at en person ikke trækker vejret
+normalt. Årsagerne kan være alt fra skader på vores luftveje
+til sygdomme eller for lidt ilt i indåndingsluften; eksempelvis
+brøndulykker, eller hvis vi befinder os i et røgfyldt rum.
+20
+--- p21
+FØRSTEHJÆLPENS ABC
+VIGTIGT
+Hjertelungeredning (HLR) påbegyndes ved unormal (agonal),
+ingen vejrtræk­ning, eller hvis du er i tvivl.
+Førstehjælpen til ”B-problemer” gennemgås senere i bogen.
+21
+--- p22
+FØRSTEHJÆLPENS ABC
+Hvis der er normal vejrtrækning, og den tilskadekomne stadig
+er bevidstløs, placeres personen i et stabilt sideleje!
+Sådan udføres stabilt sideleje:
+(1) Læg personens nærmeste arm ud fra kroppen
+(2) Tag fjerneste hånd og før denne op mod
+personens kind (knoerne skal vende ind mod kinden)
+- bliv ved med at holde hånden under hele drejet
+(3) Bøj fjerneste ben i knæleddet
+(4) Træk i knæet, så den tilskadekomne rulles
+mod førstehjælperen
+(5) Ret personens knæ i 90 grader, så personen ligger
+stabilt
+(6) Læg hovedet bagover, så der skabes frie luftveje.
+Udfør se-lyt-føl
+Undersøg regelmæssigt vejrtrækningen ved at anvende se,
+lyt og føl.
+Stabilt sideleje medvirker til opretholdelse af frie luftveje,
+idet tungen, blod og/eller opkast ikke kommer til at spærre
+luftvejene.
+Indpak altid den tilskadekomne for at forebygge kredsløbs-
+svigt.
+Flowchart til stabilt sideleje
+Ja
+Stabilt
+sideleje
+Bevidst-
+løs?
+Ja
+Vejrtræk-
+ning?
+Nej
+HLR
+22
+--- p23
+1
+6
+4
+FØRSTEHJÆLPENS ABC
+3
+2
+5
+23
+--- p24
+FØRSTEHJÆLPENS ABC
+C - KREDSLØB: OPRETHOLD
+BLODCIRKULATION
+Et ”C-problem” kan spænde fra hjertestop, hvor blodcirkulationen
+er ophørt til blødninger, der dog ikke er livstruende.
+Når vores kredsløbssystem påvirkes, skyldes det, at blodcir-
+kutionen ikke er tilstrækkelig, og derved får kroppens celler
+ikke tilstrækkelig ilt. Et ”C-problem” kan føre til kredsløbssvigt
+og i sidste ende hjertestop, hvis ikke den livsreddende første-
+hjælp startes.
+Førstehjælpen til ”C-problemer/kredsløbsproblemer” gennem-
+gås senere i bogen!
+VIGTIGT
+PÅBEGYND HJERTELUNGE
+REDNING (HLR) VED BEVIDSTLØSE,
+SÅ SNART DER KONSTATERES
+UNORMAL VEJRTRÆKNING,
+INGEN VEJRTRÆKNING,
+ELLER HVIS DU ER I TVIVL
+Kortvarig krampe, en krampe der ret hurtigt hører op, kan
+være tegn på hjer­testop. Påbegynd hurtigst muligt HLR.
+Hjertestop i Danmark
+En opgørelse fra 2023 viser, at der hvert år sker 5000 hjerte-
+stop i Danmark uden for hospitalet (hjertestopsregister.dk). I
+dag overlever knap 14 % efter 30 dage.
+Ved tidlig HLR, og hvis personen bliver stødt med en hjer-
+testarter indenfor 3 til 5 minutter efter hjertestoppet, kan
+overlevelsen være op til 50-70 %.
+24
+--- p25
+FØRSTEHJÆLPENS ABC
+Det er især kombinationen af tidlig HLR og tidlig defi-
+brillering, der giver en høj overlevelse.
+Overlevelseskæden
+Overlevelseskæden illustrerer førstehjælpen til en person med
+hjertestop uden for hospital. Hurtig igangsætning af overle-
+velseskæden kan medvirke til overlevelse og efterfølgende
+bevaring af livskvalitet.
+Kæden er aldrig stærkere end det svageste led, og intet led
+kan stå alene. Den indledende førstehjælp er afgørende for
+at kæden igangsættes, og for at personen overhovedet kan
+overleve et hjertestop.
+Tidlig erkendelse og hurtig alarmering
+– forebyg hjertestop
+Det mest effektive mod et hjertestop, er at forebygge det.
+Hvis du hurtigt kan erkende tegn på en blodprop, kan du
+starte overlevelseskæden allerede inden at personen får et
+hjertestop ved at alarmere 1-1-2 .
+Tidlig HLR og defibrillering - beskyt hjernen og
+genstart hjertet
+Med HLR kompentserer du for kroppens manglende blodcirku-
+lation. Hjernen er særlig følsom overfor manglende ilt
+25
+--- p26
+FØRSTEHJÆLPENS ABC
+Avanceret efterbehandling - optimér hjernens og
+hjertets funktion
+Her er det fagfolk, der på grund af din tidlige indsats, kan
+sikre bedre overlevelseschancer og livskvalitet på længere
+sigt. hjertet til sin normalrytme.
+Overlevelse og genoptræning
+- Genopret livskvalitet
+Punktet her er tiltænkt fagfolk, der går ind og genopretter
+de funktioner, personen måske har mistet. Jo hurtigere du
+har igangsat overlevelseskæden, jo større er chancen for, at
+personen kommer tilbage til sit funktionsniveau før hjerte-
+stoppet.
+26
+--- p27
+FØRSTEHJÆLPENS ABC
+NOTATER:
+27
+--- p28
+FØRSTEHJÆLPENS ABC
+BASAL HJERTELUNGEREDNING (HLR)
+Definitionen på hjertestop er:
+En bevidstløs person uden normal vejrtrækning.
+Hvis en person har hjertestop skal du yde (HLR).
+Hjertelungeredning består af serier af:
+30 brystkompressioner (hjertemassage)
+2 indblæsninger (kunstigt åndedræt)
+Hjertemassagen presser blodet ud af hjertet og ud i kreds-
+løbssystemet, så kroppens celler kan få den livsvigtige ilt.
+Hjertemassagen kompenserer delvist for hjertets manglende
+pumpefunktion.
+Når vi ikke trækker vejret, vil den tilbageværende ilt hurtigt
+blive opbrugt. Indblæsningerne tilfører ilt til lungerne,
+der bagefter optages i blodet.
+HLR – Voksne – Brystkompressioner
+ Placér den tilskadekomne på et fast og jævnt underlag.
+ Fjern tøj fra overkroppen, så brystet er bart
+ Placér den ene håndrod midt på den tilskadekomnes
+brystkasse med bøjede fingre
+ Placér den anden hånd ovenpå.
+Flet og lås med fingrene
+ Læn dig ind over brystkassen,
+og tryk med håndroden lodret ned med strakte arme
+ Trykdybden skal være 5 cm, men ikke over 6 cm
+Trykhastigheden skal være 100-120 tryk pr. minut (30 tryk
+skal tage mellem 15 og 18 sekunder)
+Kontakten med brystkassen må ikke mistes, men der må ikke
+hviles på brystkassen.
+28
+--- p29
+FØRSTEHJÆLPENS ABC
+HLR – Voksne – Indblæsninger (mund-til-mund)
+ Skab frie luftveje med hageløft.
+Placér den ene hånd på panden og 2 fingre under
+hagen
+ Forsigtigt føres hovedet bagover til naturlig modstand
+ Klem den tilskadekomnes næse sammen med pege-
+og tommelfinger
+ Placér din mund omkring tilskadekomnes mund,
+så den slutter tæt
+ Giv en indblæsning på ca. 1 sekund til brystkassen
+hæver sig synligt
+ Drej dit hoved, tag en normal indånding
+og kontrollér samtidig at bryst­kassen sænker sig
+ Giv en indblæsning mere.
+VIGTIGT
+ Hvis du ikke kan, ikke vil, eller det ikke er muligt
+at give ind­blæsninger er det bedre kun at give hjerte-
+massage end ikke at gøre noget
+ Giv kun 2 indblæsningsforsøg pr. gang, uanset om
+brystkassen hæver sig tydeligt eller ej!
+ Husk, at HLR fortsættes indtil redningsmandskabet
+fortæller dig at du skal stoppe eller hvis den tilskade-
+komne trækker vejret normalt igen.
+På billedet ses trykstedet, der er midt på brystkassen. Hvis muligt,
+afdæk brystkassen.
+29
+--- p30
+FØRSTEHJÆLPENS ABC
+BASAL HJERTELUNGEREDNING (HLR)
+30
+--- p31
+FØRSTEHJÆLPENS ABC
+BASAL HLR MED HJERTESTARTER (AED)
+31
+--- p32
+FØRSTEHJÆLPENS ABC
+BASAL HLR TIL BØRN (HLR)
+Forsvaret underviser som udgangspunkt ikke i en særskilt
+algoritme for hjertestop hos børn. Hvis der ydes HLR til børn,
+tilpasses kompressioner og indblæsninger barnets størrelse.
+Børn er defineret som personer under 18 år! Hvis et barn lig-
+ner en voksen, så håndteres personen som en voksen. Perso-
+ner med særligt ansvar for børn kan med fordel blive uddan-
+net i en HLR-algoritme tilpasset børn (eksempelvis livreddere
+og pædagoger).
+For alle børn er trykhastigheden den samme som til voksne,
+dvs. minimum 100 tryk og maksimum 120 tryk pr. min.
+Hvad er anderledes end basal HLR til voksne?
+Når der skabes frie luftveje, skal hovedet ikke nær så langt
+tilbage som til voksne, og spædbørn skal blot have hovedet i
+neutral stilling.
+Når du laver indblæsninger, skal du tilpasse disse til barnets
+størrelse (til brystkassen hæver sig synligt) Blæs evt. over
+næse og mund!
+Når du laver brystkompressioner, skal du mindst trykke en
+1/3 af brystkassen (ved spædbørn brug 2 fingre, og ved øv-
+rige kan du bruge én hånd).
+32
+--- p33
+FØRSTEHJÆLPENS ABC
+ANVENDELSE AF HJERTESTARTER
+En hjertestarter, også kaldet Automatisk Ekstern Defibril-
+lator (AED), er et apperat der kan ”genstarte” et hjerte ved
+personer med hjertestop. En AED undersøger personens
+hjerterytme, og AED’en vil anbefale, at der gives et stød, hvis
+den registrerer en stød­bar rytme. Man kan ikke komme til at
+støde på ikke-stødbare rytmer. En AED er udviklet til at blive
+brugt af alle. Den er nem og sikker at betjene. Der findes for-
+skellige modeller, men de vir­ker og betjenes principielt ens.
+Stemmeinstruktion
+I en AED er der indbygget et talemodul, hvor en stemme for-
+tæller dig, hvad du skal gøre. Nogle har også et display, som
+vejleder dig. Hvis du føler dig sikker i brugen, behøver du ikke
+vente på stemme­vejledningen, men kan påsætte elektroderne
+med det samme.
+Analyse
+AED’en analyserer hjerterytmen og afgør automatisk, om stød
+anbefales.
+Overlevelse
+En AED er livreddende. Ved tidlig HLR og stød fra en hjerte-
+starter (AED) inden ambulancen ankom­mer, vil op mod 1/3
+overleve et hjertestop (hjertestopregister.dk).
+33
+--- p34
+FØRSTEHJÆLPENS ABC
+Sådan påsættes elektroderne:
+Der vil være en illustration på elektroderne, som du altid skal
+følge. Elektroderne skal placeres under højre kraveben, ved
+siden af brystbenet, og under venstre armhule, på nederste
+del af brystkassen.
+34
+--- p35
+FØRSTEHJÆLPENS ABC
+SIKKERHED VED BRUG
+AF HJERTESTARTER
+Våd brystkasse
+Hos nogle personer kan brystkassen være våd, eksempelvis
+pga. af sved eller efter at være reddet op af vandet. Aftør
+hurtigt brystkassen, før AED-elektro­derne påsættes.
+Kraftig hårvækst på brystkassen
+Ved kraftig hårvækst, der forhindrer optimal elektrisk kontakt
+mellem elektroder og hud, fjernes hårene med en engangs-
+skraber. Undlad rutinemæssig barbering - det spilder kostbar
+tid, men fjern det hvis det er nødvendigt. I de fleste hjerte-
+startere ligger der en engangsskraber.
+Plaster
+Fjern plastre og andet materiale fra personens brystkasse,
+hvor elektroderne skal placeres, for at sikre en optimal elek-
+trisk kontakt mellem elektroder og huden.
+Smykker
+Fjern enhver form for metalsmykker, der kan komme i kontakt
+med AED-elektroderne. Pads bør ikke komme i berøring
+med fastsiddende smykker eller piercinger.
+Pacemaker
+En indopereret pacemaker kan ses under huden og er oftest
+indopereret i venstre side under kravebenet. En elektrode
+må aldrig placeres oven på en pacemaker, men kan placeres
+umiddelbart under eller ved siden af.
+Medicinsk ilt
+Når AED’en giver et stød, er der fare for at en lille gnist op-
+står. Ilt nærer denne gnist, og der er derfor brandfare. Derfor
+skal du fjerne iltmasken/næsebrillen væk inden der stødes
+(min. 1 meter fra nærmeste elektrode).
+35
+--- p36
+FØRSTEHJÆLPENS ABC
+Sikkerhed ved analyse og stød
+Rør hverken ved personen under analyse af hjerterytmen, op-
+ladning eller af­givelse af stød. Berøring under stød kan med-
+føre i personskade. Berøring under analyse af hjerterytmen
+kan resultere i forstyr­relse af AED’ens rytmegenkendelse.
+Inden afgivelse af stød skal førstehjælperen:
+-
+Tænde AED’en, hvis ikke den allerede er tændt
+-
+Kigge op og advisere: ”alle væk, der analyseres!”
+-
+Kontrollere, at ingen rører personen eller personens
+umiddelbare omgivelser, eksempelvis en seng.
+-
+Advisere: ”Her stødes!” inden afgivelse af stød.
+BLIV HJERTELØBER
+Du kan redde liv! Trygfonden lancerede i 2017 hjerteløber-
+ordningen i region Hovedstaden. Siden er ordningen blevet
+tilgængelig i hele landet, og dag for dag kommer der flere
+hjerteløbere til!
+Det skal du være opmærksom på
+At være hjerteløber kan føre til situationer, der er både følel-
+sesmæssigt og etisk svære. Du kan for eksempel opleve, at
+en pårørende beder dig om at stoppe HLR, fordi personen for-
+tæller, at den tilskadekomne ikke ønskede at blive genoplivet.
+Det korte svar er, at du som udgangspunkt skal fortsætte
+HLR.
+I Danmark kan personer, der er fyldt 60 år, registrere, at de
+ikke ønsker genoplivningsforsøg ved hjertestop. Som første-
+hjælper har du dog ikke mulighed for at kontrollere, om et
+sådant fravalg er registreret og gælder i den konkrete situa-
+tion. Derfor er en pårørendes oplysninger ikke nok til, at du
+må stoppe HLR.
+36
+--- p37
+FØRSTEHJÆLPENS ABC
+Du skal fortsætte HLR, indtil en sundhedsprofessionel over-
+tager behandlingen. Genoplivningen må først ophøre, når en
+sundhedsprofessionel har bekræftet, at der er registreret et
+gyldigt fravalg af genoplivningsforsøg, eller når en læge vur-
+derer, at genoplivningen skal afsluttes.
+Du kan i særlige tilfælde undlade at yde
+livreddende førstehjælp, hvis:
+-
+Du udsætter dig selv for fare
+-
+Døden er tydeligt indtrådt: eksempelvis omfattende
+forrådnelse eller åbenlyst dødelige skader.
+Kilde: stps.dk
+Men…..
+Vi mangler at du tilmelder dig som hjerteløber!
+Når du tilmelder dig som hjerteløber, er du med til at øge
+overlevelsen ved hjertestop. Herudover bliver du en god am-
+bassadør for hjerteløberordningen, og for Forsvaret!
+37
+--- p38
+FØRSTEHJÆLPENS ABC
+KREDSLØBSSVIGT
+Kredsløbssvigt
+Kredsløbssvigt er en kritisk tilstand, hvor den nødvendige blodcirkulation ikke længere kan opretholdes. Årsagerne kan
+være stort blodtab, forbrændinger, udvidelse af blodkarrene
+eller nedsat hjertefunktion.
+Stort blodtab
+Stort blodtab bevirker manglende fylde i blodbanen, hvilket
+resulterer i et blodtryksfald.
+Dette medfører, at blodcirkulationen ikke vil være tilstrække-
+lig, så den livsvigtige ilttransport ikke kan opretholdes.
+Forbrænding
+Ved forbrænding af store områder på huden vil der sive væ-
+ske ud af sårene. Dette medfører, at der mistes meget væske fra kroppen, hvorved blodcirkulationen påvirkes.
+Karudvidelse
+Kraftig overfølsomhedsreaktion (bistik, medicin m.m.) eller
+bakterier i blod­banen kan bevirke, at blodkarrene i kroppen udvider sig, så de bliver utætte, og væsken forsvinder væk
+fra blodbanen.
+Påvirkninger af nervesystemet, der styrer blodkarrenes nor-
+male sammentræk­ning svigter, og blodkarrene derved udvider
+sig.
+Nedsat hjertefunktion
+En blodprop, en skade eller sygdom i hjertet kan nedsætte
+hjertets evne til at pumpe blod ud i kredsløbssystemet.
+
+
+
+
+
+38
+--- p39
+FØRSTEHJÆLPENS ABC
+Symptomer på kredsløbssvigt
+Ved nedsat blodcirkulation vil kroppen for en tid forsøge at
+kompensere for den manglende ilttilførsel ved at øge hjerte-
+og vejrtrækningsfrekvensen, og blodkarrene vil trække sig
+sammen. Symptomerne på kredsløbssvigt er:
+ Hurtig vejrtrækning
+ Bleghed
+ Kold og klamtsvedende
+ Svimmel og omtåget til bevidstløshed.
+Du kan som førstehjælper ikke forhindre et kredsløbssvigt,
+men du kan forsinke det ved at yde den korrekte førstehjælp,
+indtil hjælpen kommer frem. Hvis der ikke handles, kan per-
+sonen udvikle et hjertestop.
+39
+--- p40
+FØRSTEHJÆLPENS ABC
+For at forsinke kredsløbssvigt,
+skal førstehjælperen:
+ Lægge den tilskadekomne ned
+ Standse udvendige blødninger
+ Sikre at der kan opretholdes en normal
+legemstemperatur
+ Undersøge om der er andre skader,
+der kan give mistanke om indre blødninger
+ Yd psykisk førstehjælp igennem hele forløbet.
+VIGTIGT
+En person, som udviser tegn på kredsløbssvigt og har nedsat
+hjertefunktion, må ikke lægges ned. Personen skal sidde eller
+lejres i aflastende rygleje.
+40
+--- p41
+FØRSTEHJÆLPENS ABC
+IKKE LIVSTRUENDE BLØDNINGER
+En mindre blødning, eksempelvis fra en underarm, vil den
+ofte ikke være livstruende, og skal behandles til sidst i <M>-
+ABC-algoritmen under C
+Symptomer
+En mindre blødning, der hverken gennemvæder tøjet, sprøj-
+ter/ strømmer hurtigt eller danner en blodpøl på jorden.
+Skab sikkerhed
+Er der tale om en igangværende forbrydelse, må du ikke
+bringe dig selv eller andre i fare. Ved trafikulykker eller andre
+ulykker, skal du sikre skadestedet, før du yder førstehjælp.
+Som udgangspunkt mindre blødninger ikke livstruende, men
+hvis blødningen ikke standses, kan personens tilstand forvær-
+res.
+Giv førstehjælp
+ Stands blødningen ved direkte tryk
+ Forbind såret med en forbinding
+ Yd psykisk førstehjælp gennem hele forløbet.
+Tilkald hjælp
+ Ring 1-1-2, hvis den tilskadekomne
+er bevidsthedspåvirket
+ Henvis den tilskadekomne til skadestuen.
+41
+--- p42
+FØRSTEHJÆLPENS ABC
+Et modtryk mod en blødning er det, der standser en blødning. Oftest
+er det nok, at holde et tryk med dine fingre indtil blødningen standser
+af sig selv.
+42
+--- p43
+FØRSTEHJÆLPENS ABC
+1 2
+3
+4
+5
+6
+1 Tilpas gazen størrelse til såret
+2 Hold tryk på såret under hele anlæggelsen. Forbindingen
+skal være så stram, så der kun akkurat kan komme en
+lillefinger under
+3 Afslut med knuden ovenpå såret
+4 Hvis det bløder igennem, kan du lægge et yderligere tryk
+med dine fingre ovenpå forbindingen
+5 Brug evt. en hård genstand (pelotte) til at lægge yderlige-
+re trykm
+6 Brug en ekstra forbinding, eksempelvis et idealbind, til at
+lægge tryk på ”pelotten” ned mod såret. Afslut trykforbin-
+dingen med en knude ovenpå såret.
+43
+--- p44
+FØRSTEHJÆLPENS ABC
+INDRE BLØDNINGER
+Man kan ikke umiddelbart se en indre blødning. Indre blød-
+ninger kan opstå efter trafikulykker, fald, vold eller cykelstyrt.
+De kan også skyldes akut opståede sygdomme. Det kan være
+svært at opdage, at der er tale om indre blødninger. Derfor
+skal førstehjælperen være opmærksom på:
+Skadesmekanismen og symptomerne på indre blødninger.
+Symptomer
+ Evt. et blåt mærke, hvis blødningen skyldes et slag
+ Svimmel og omtåget til bevidstløs
+ Hurtig vejrtrækning samt bleg og kold hud (tegn på kredsløbssvigt)
+ Smerter og uro eller angst
+ Blodigt opkast eller blod i afføringen kan også være
+tegn på en indre blødning.
+Skab sikkerhed
+Er der tale om en igangværende forbrydelse, må du ikke
+bringe dig selv eller andre i fare. Ved trafikulykker eller andre
+ulykker skal du sikre skadestedet, før du yder førstehjælp.
+Giv førstehjælp
+ Læg den tilskadekomne ned for at forebygge
+kredsløbssvigt
+ Indpak den tilskadekomne for at forebygge
+kredsløbssvigt
+ Yd psykisk førstehjælp gennem hele forløbet.
+Tilkald hjælp
+ Ring 1-1-2 med det samme, hvis du har mistanke om
+en indre blødning.
+44
+--- p45
+FØRSTEHJÆLPENS ABC
+Indre blødninger, fortsat
+Personer med indre blødninger fra bryst, bughule eller bæk-
+kenregionen, er i risiko for at udvikle et kredsløbssvigt. Ved
+kraftige slag mod kroppen kan blandt andet leveren og milten
+blive beskadiget og give anledning til alvorlige indre blødnin-
+ger. Indre blødninger kan skyldes brud på lårbenene, bæk-
+kenet eller overarmsknoglerne, da disse knogler indeholder
+en blodholdig knoglemarv. Beskadigede knogler kan skære
+blodkar over, uden at huden brydes.
+45
+--- p46
+FØRSTEHJÆLPENS ABC
+PUNKT 3: TILKALD HJÆLP
+RING 1-1-2
+Ring 1-1-2 ved akut kritisk sygdom eller alvorlig tilskade-
+komst.
+Når du ringer 1-1-2, får du først fat i politiets alarmcentral.
+Hvis dit opkald drejer sig om sygdom eller ulykke, bliver du
+straks stillet om til en sund-
+hedsfaglig medarbejder.
+Den sundhedsfaglige medarbej-
+der stiller dig en række spørgs-
+mål for at finde ud af, hvad der
+er sket og hvilken hjælp, der er
+behov for. De vil eksempelvis
+spørge ind til:
+ Hvor ulykken er sket?
+Er du usikker på adres-
+sen, kan du beskrive
+kendte bygninger, vej-
+navne eller andre tydelige
+pejlemærker
+ Hvad der er sket?
+Hvor alvorlig er skaden?
+ Hvem der er kommet til
+skade? En eller flere?
+Børn eller voksne?
+ Om personen er vågen?
+Kan du komme i kontakt
+med den tilskadekomne?
+ Om der er vejrtrækning? Er vejrtrækningen besværet?
+Trækker den tilskadekomne vejret?
+Punkterne er ikke udtryk for en bestemt rækkefølge. Alarm-
+centralen skal nok spørge ind til de relevante informationer.
+The golden rule:Er der flere til stede, så lad én alarmere 1-1-2 straks,
+mens de andre yder førstehjælp.
+46
+--- p47
+FØRSTEHJÆLPENS ABC
+At redde liv er en fælles indsats
+Figuren ”Fælles indsats redder liv” viser, at livreddende før-
+stehjælp er en fælles indsats. Som førstehjælper er du den
+første og vigtigste person på skadestedet. Alarmcentralens
+sundhedsfaglige visitator guider dig gennem situationen,
+sender den nødvendige hjælp og kan ved hjertestop også
+aktivere en hjerteløber med en hjertestarter.
+Du bliver derfor alarmcentralens ”øjne, ører og hænder” på
+skadestedet. De beslutninger, du træffer, og den førstehjælp,
+du yder, kan være afgørende, indtil hjælpen når frem.
+Det er vigtigt, at du bliver i røret og følger visitatorens anvis-
+ninger. Afslut derfor aldrig opkaldet, før du får besked om det.
+FÆLLES
+INDSATS
+REDDER
+LIV
+47
+--- p48
+FØRSTEHJÆLPENS ABC
+Mobiltelefon
+AML aktiveres automatisk, når du ringer 1-1-2 fra en
+smartphone. Det hjælper alarmcentralen med at finde din præcise position – ofte med en nøjagtighed på ned til 10
+meter.
+På mobiltelefoner kan du ringe 1-1-2 uden at indtaste en pin-
+kode, selvom telefo­nen er låst, eller der ikke er taletid på.
+Alarmcentralen kan også bede dig om at livestreame direkte
+fra din telefon via et link, som de sender til dig.
+Billeder fra skadestedet kan hjælpe alarmcentralen med at
+vurdere situationen og give dig den bedst mulige vejledning.
+Funktionen virker på de fleste moderne smartphones, gem-
+mer ikke videoen på selve telefonen og kræver ikke nogen
+præinstalleret app.
+48
+--- p49
+FØRSTEHJÆLPENS ABC
+Alarmering fra strande i Danmark
+På de fleste danske strande findes et grønt skilt med et unikt
+nummer, du skal oplyse, når du ringer 1-1-2. Det gør det let-
+tere for alarmcentralen at sende hjælpen til det rigtige sted
+Nødtelefon og kantpæl
+På nogle få udvalgte tunneler og broer findes der stadig
+nødtelefoner. Hvis du foreta­ger et opkald fra en nødtelefon,
+så gør det i samme side af vejen, som ulykken er sket. Oplys
+alle oplysningerne på kantpælen, så alarmcentralen kan finde
+din præcise placering.
+49
+--- p50
+FØRSTEHJÆLPENS ABC
+Afmærk stedet
+Der kan være situationer, hvor du bliver nødt til at forlade
+stedet. Er dette tilfældet, så afmærk stedet, så du eller red-
+ningsmandskabet kan finde den tilskadekomne igen!
+50
+--- p51
+FØRSTEHJÆLPENS ABC
+NOTATER:
+51
+--- p52
+FØRSTEHJÆLPENS ABC
+MENS DU VENTER PÅ AMBULANCEN
+Når du har udført førstehjælp og alarmeret 1-1-2, bruges ti-
+den indtil redningsmandskabet ankommer til at revurdere den
+hjælp, du har givet, eller om den tilskadekomne har behov for
+yderligere hjælp.
+Revurder førstehjælpen
+ Er der stadig kontrol over den livstruende blødning? (M)
+ Er der stadig frie luftveje? (A)
+ Er der stadig vejrtrækning? (B)
+ Er forbindinger gennemblødt? (C)
+Isoler mod kulde, og forebyg kredsløbssvigt
+En person, der er kommet til skade, skal altid pakkes ind for
+at forebygge kredsløbssvigt!
+For at beskytte personen fra underlaget, skal personen isole-
+res fra jorden. Brug det, du har ved hånden, f.eks. et tæppe,
+en jakke eller andet isolerende materiale. Når vi afkøles, for-
+værres vores tilstand markant. Når kroppen bliver kold, bliver
+blodets evne til at størkne dårligere, og det bliver sværere at
+standse blødninger. Personer, der er kommet til skade, bliver
+ofte hurtigt kolde – også selv om vejret ikke føles koldt.
+52
+--- p53
+FØRSTEHJÆLPENS ABC
+Pak altid personen ind så kropskernen prioriteres. Brug hvad du har
+til rådighed.
+Hvis du har et redningstæppe/alufolie kan du bruge dette
+53
+--- p54
+FØRSTEHJÆLPENS ABC
+Overlevering
+Når redningsmandskabet når frem, er det vigtigt, at informa-
+tionerne gives kort og præcist:
+ Hvad der er sket?
+ Hvad har du gjort?
+Det er vigtigt, at du fortsætter førstehjælpen, indtil rednings-
+mandskabet beder dig om at stoppe eller overtager behand-
+lingen. Hvis din førstehjælp er god, er du en vigtig ressource,
+som redningsmanskabet kan bruge til at ”vinde tid”, mens de
+klargører udstyr m.m.
+54
+--- p55
+FØRSTEHJÆLPENS ABC
+NOTATER:
+55
+--- p56
+FØRSTEHJÆLPENS ABC
+PSYKISK FØRSTEHJÆLP
+Psykisk førstehjælp handler om at give ro, tryghed og følel-
+sesmæssig støtte til en person i krise. Psykisk og ”den fysiske
+førstehjælp” hænger sammen. Hvis den tilskadekomne slap-
+per mere af, vil det også have en positiv effekt på den tilska-
+dekomnes tilstand.
+En person, der udsættes for en ulykke, pludselig sygdom eller
+anden voldsom oplevelse, vil ofte være påvirket og chokeret.
+Der er mange forskellige reaktioner: Nogle reagerer slet ikke,
+andre bliver passive, voldsomme eller nægter at modtage
+hjælp. Nogle reagerer voldsomt følelsesmæssigt med vrede
+eller gråd, rysteture, svimmelhed, kvalme eller opkastning.
+VIGTIGT
+Det er vigtigt, at der ydes psykisk førstehjælp gennem hele
+forløbet, altså også imens der ydes førstehjælp.
+56
+--- p57
+FØRSTEHJÆLPENS ABC
+Skab ro – fremtræd roligt
+Sørg for, at der er så roligt som muligt omkring den tilskade-
+komne, og optræd selv roligt. Det smitter. En rolig optræden
+i rolige omgivelser gør samtale mellem førstehjælper og den
+tilskadekomne meget lettere.
+Optræd med bestemthed
+Optræd bestemt og ledende (med autoritet), men uden at
+umyndiggøre eller at være nedsættende.
+Undlad at:
+ Stille diagnose
+ Dominere med egne følelser og oplevelser
+ Være bebrejdende
+ Give urealistiske løfter
+ Virke omklamrende
+ Involvere dig på længere sigt.
+Vis omsorg
+Når du viser omsorg til et andet menneske, yder du den
+følelsesmæssige støtte, som personen har behov for i en
+krisesituation. En simpel hånd på skulderen, kan have en stor
+effekt. Pas dog på, ikke at blive for omklamrende.
+Lyt til den tilskadekomne
+Brug den nødvendige tid. Lad den tilskadekomne tale, og stil
+medlevende spørgsmål. Lyt aktivt. I videst muligt omfang skal
+du bruge den tid, der er nødvendig. Du skal være tålmodig og
+ikke afbryde, når den tilskadekomne taler.
+Pas på dig selv
+Ligesom med alt andet førstehjælp gælder det også her, at
+din egen sikkerhed er vigtigst. Det betyder også, at du kun
+skal involvere dig i det omfang, at det er sikkert og trygt for
+dig. Er en person udafreagerende, så træk dig væk fra situa-
+tionen.
+57
+--- p58
+FØRSTEHJÆLPENS ABC
+Vær ærlig
+Selvom virkeligheden er barsk og pinefuld, så kan en løgn
+ikke ændre på virkeligheden. Svar derfor ærligt på den til-
+skadekomnes spørgsmål, men uden at dramatisere og gøre
+situationen værre. Som førstehjælper er det ikke dit ansvar,
+at overdrage tragiske beskeder, der omhandler død og svær
+lemlæstelse. Uden at lyve, kan du svare kort og ærligt, at
+situationen håndteres af professionelle, eller at hjælpen er på
+vej, og at du gør hvad du kan for at hjælpe.
+Tal din behandling igennem
+Når du åbent og højt fortæller, hvad du gør imens du yder
+førstehjælp, har det flere positive effekter:
+(1) Det får dig automatisk lidt ned i tempo
+(så du ”skynder dig langsomt”)
+(2) Den tilskadekomne kan følge med i behandlingen,
+så personen føler sig mere tryg ved, hvad du gør.
+Dermed hjælper det med at få den tilskadekomne til
+at slappe mere af
+(3) Det hjælper dig med at arbejde mere systematisk
+og dermed at du husker alle punkterne i førstehjælpen
+(4) Er I flere førstehjælpere, mindsker det risikoen for,
+at vigtig information eller førstehjælp bliver overset.
+Egne begrænsninger
+Du kan komme ud for situationer, hvor den hjælp, som du
+giver, ikke er tilstrækkelig. Tilkald hjælp. Acceptér dine egne
+begrænsninger, så du ikke forværrer situationen for den til-
+skadekomne. Udfør aldrig førstehjælp eller behandling, som
+du ikke er uddannet eller instrueret i.
+58
+--- p59
+FØRSTEHJÆLPENS ABC
+BEVAR DINE FÆRDIGHEDER
+Undersøgelser viser, at dine førstehjælpsfærdigheder bliver
+dårligere, hvis du ikke øver dig. Derfor er det vigtigt, at du
+træner din førstehjælp regelmæssigt for at fastholde dine
+færdigheder. Selv korte øvelser er effektive til at bevare dine
+færdigheder, eksempelvis 2 minutters HLR et par gange om
+ugen.
+Behovet for at yde førstehjælp opstår oftest uden forvarsel og
+kræver derfor, at dine færdigheder ”sidder på rygraden”
+Efter et halvt år begynder man at glemme, hvad man har
+lært. Derfor kan det være en god ide at skimme førstehjælps-
+bogen igennem fra tid til anden.
+Du kan bevare dine færdigheder ved at:
+ Se førstehjælpsbogen igennem
+ Øve stabilt sideleje
+ Deltage på et repetitionskursus i førstehjælp
+minimum hvert 2. år.
+59
+--- p60
+FØRSTEHJÆLPENS ABC
+FØRSTEHJÆLPSSITUATIONER
+FREMMEDLEGEME I LUFTVEJENE
+Når vi får noget ”i den gale hals”, skyldes det, at et fremmed-
+legeme er kommet ned i luftvejene i stedet for spiserøret. Det
+kan være alt fra krummer og væske til større fødeemner eller
+andre genstande. I de fleste tilfælde kan personen selv hoste
+fremmedlegemet op. Børn og ældre er mere udsatte for at få
+fremmedlegemer i luftvejene.
+Mild blokering
+Ved en mild blokering er luftvejene kun delvist blokerede, så
+personen kan stadig trække vejret og hoste.
+Symptomer
+Ved en mild blokering af luftvejene vil personen hoste, og den
+tilskadekomne kan være panisk/angst.
+Skab sikkerhed
+Flyt/hjælp evt. den tilskadekomne lidt væk fra spisebordet el-
+ler lign. for at skabe plads omkring personen, hvis situationen
+udvikler sig.
+Spørg personen:
+
+”Er du ved at blive kvalt?”
+ ”Har du fået noget galt i halsen?”
+Giv førstehjælp
+Det vigtigste er at opfordre den tilskadekomne til at hoste
+kraftigt. Giv psykisk første­hjælp – skab ro og fremtræd rolig,
+og vis omsorg. Bliv hos personen, indtil fremmedlegemet er
+hostet op, eller situationen ændrer sig.
+60
+--- p61
+FØRSTEHJÆLPENS ABC
+Tilkald hjælp
+Hvis personen har hostet fremmedlegemet op og har det godt
+bagefter, er yderligere behandling normalt ikke nødvendig.
+Ved vedvarende hoste, smerter eller mistanke om, at noget
+stadig sidder fast, bør personen vurderes af en læge
+Alvorlig blokering
+Ved en alvorlig blokering har fremmedlegemet sat sig fast i
+luftvejene og har blokeret luftvejene helt. Personen kan ikke
+tale, hoste effektivt eller trække vejret normalt
+Symptomer
+Personen vil ikke kunne tale eller fremstamme ord, og vil
+være panisk angst.
+Personen vil vise tegn på kvælning (tager sig panisk til hal-
+sen), have blåfarvning (cyanose) af læber, ører og næsefløje
+eller blive bevidstløs.
+61
+--- p62
+FØRSTEHJÆLPENS ABC
+FØRSTEHJÆLP TIL ALVORLIG BLOKERING
+Skab sikkerhed
+Flyt/hjælp evt. den tilskadekomne lidt væk fra spisebordet el-
+ler lign. for at skabe plads til at yde førstehjælp, eller hvis den
+tilskadekomne bliver bevidstløs.
+Spørg personen:
+ Er du ved at blive kvalt?
+ Har du fået noget galt i halsen?
+Giv førstehjælp
+Giv skiftevis 5 slag mellem skulderbladene og 5 ”Heimlich-
+slag”. Fortsæt indtil:
+ Fremmedlegemet kommer op
+ Personen bliver bevidstløs, og du skal påbegynde HLR.
+Når du åbner luftvejen for at give indblæsninger,
+skal du kort se efter, om fremmedlegemet er synligt.
+Fjern det kun, hvis du tydeligt kan se det
+VIGTIGT
+En person, der har været udsat for Heimlich-metoden skal
+ALTID undersøges af en læge for at sikre, at der ikke er sket
+skader på indre organer.
+Tilkald hjælp
+Alarmer 1-1-2, hvis:
+ Du ikke får fremmedlegemet ud efter første serie
+(5 slag mellem skulderbladene og 5 Heimlich-slag)
+ Personen bliver bevidstløs
+Slag mellem skulderbladene
+Bøj personen godt fremover og giv op til 5 slag (tilpasset den
+tilskadekomnes størrelse) med håndroden mellem skulderbla-
+dene.
+62
+--- p63
+FØRSTEHJÆLPENS ABC
+Heimlich-metoden
+Knyt dine hænder, og placer disse mellem nederste spids på
+brystbenet og navlen. Giv op til 5 hurtige bugstød indad og
+opad (op mod mellemgulvet) med 2-3 sekunders mellemrum.
+VIGTIGT:
+Kontrollér, om fremmedlegemet er kommet fri efter hver
+serie.
+63
+--- p64
+FØRSTEHJÆLPENS ABC
+HVIS BØRN FÅR FREMMEDELEGEMER
+I LUFTVEJENE
+Børn og især spædbørn putter ofte ting i munden, der kan
+føre til, at deres luftveje blokeres.
+Hvis barnet er et spædbarn, skal du i stedet for Heimlich-
+metoden kompri­mere med 2 fingre på barnets brystkasse
+(som ved HLR).
+Tilpas trykkene til spædbarnets størrelse. Ved børn over 1 år
+anvendes samme teknik som hos voksne – tilpas slag og tryk
+efter barnets størrelse.
+Forældrene vil ofte være i krise i sådanne situationer, og kan
+have behov for en særlig omsorg. De kan reagere med panik
+mens det står på, og her er det vigtigt at bevare roen.
+VIGTIGT
+Ryst aldrig barnet for at få fremmedlegemet ud. Voldsom
+rystelse kan medføre alvorlige skader på hjernen. Et barn, der
+har været udsat for brystkompressioner, skal altid undersøges
+af en læge.
+Giv førstehjælp
+ Læg barnet med maven ned over din underarm med
+hovedet nedad. Støt barnets hoved med dine fingre
+uden at holde for mund og næse. Giv op til 5 slag
+(tilpasset barnets størrelse) med flad hånd mellem
+skulderbladene
+ Hvis det ikke hjælper, læg barnet på ryggen ned ad
+underarmen eller på fast underlag, og giv op til 5 tryk
+på trykstedet (som ved hjertemassage)
+ Fortsæt med skiftevis 5 slag og 5 bryststød,
+indtil fremmedlegemet kommer ud, eller barnet bliver
+bevidstløst
+ Ved bevidstløshed uden vejrtrækning påbegyndes HLR.
+64
+--- p65
+FØRSTEHJÆLPENS ABC
+Tilkald hjælp
+Ring straks 1-1-2 ved en alvorlig blokering af barnets luftveje.
+VIGTIGT
+Et barn, der har været udsat for brystkompressioner, skal
+ALTID undersøges af en læge for at sikre, at der ikke er sket
+skader på indre organer.
+65
+--- p66
+FØRSTEHJÆLPENS ABC
+STRANGULERING OG HÆNGNING
+Strangulering og hængning kan opstå ved selvmordsforsøg
+eller ulykker, f.eks. hvis et barns halstørklæde hænger fast i
+et legeredskab.
+Ved hængning og strangulering sker der en mekanisk påvirk-
+ning af halsen, der kan medføre afklemning af luftvejene og
+blodkarrene til hjernen, der kan medføre hjertestop. I nogle
+tilfælde kan der også opstå skader på halshvirvelsøjlen.
+Symptomer
+Er personen vågen, vil vedkommende ofte være angst eller i
+panik, evt. have blåfarvning af læber, ører og næsefløje (cya-
+nose), og eventuelt blodsprængte øjne. Er personen bevidst-
+løs og trækker ikke vejret normalt, skal situationen behandles
+som et hjertestop.
+Skab sikkerhed
+Skær den tilskadekomne fri, eller fjern det, der strammer. Er I
+flere til stede, kan én støtte personens vægt, mens en anden
+frigør det, der strammer om halsen.
+Giv førstehjælp
+Følg ABC-princippet, og udfør HLR ved en bevidstløs person
+uden normal vejrtrækning og stabilt sideleje ved bevidstløs
+med normal vejrtrækning.
+VIGTIGT
+Husk, at liv altid går forud for førlighed ved hængning og
+strangulering.
+Tilkald hjælp
+Ring straks 1-1-2. Er I flere til stede, skal én ringe, mens de
+øvrige yder førstehjælp.
+Søg læge eller akutmodtagelse/skadestue, hvis den tilskade-
+komne er ved bevidsthed, og der har været tegn på hæng-
+ning, kvælning eller strangulering.
+66
+--- p67
+FØRSTEHJÆLPENS ABC
+67
+--- p68
+FØRSTEHJÆLPENS ABC
+DRUKNELYKKER
+Drukneulykker forekommer oftest ved åbent hav, eksempel-
+vis stranden, men kan ske alle steder. Drukneulykker skyldes
+ofte, at personen overvurderer sine evner, fejlbedømmer
+vandforholdene eller bliver akut syg i vandet. En hyppig årsag
+er alkoholpåvirkning, hvor personer falder i vandet og druk-
+ner.
+Symptomer
+En person, der er ved at drukne vil typisk gispe efter luft,
+kæmpe for at holde sig oven vande og signalere nød med
+armene. Til sidst flyder personen rundt med ansigtet nedad
+i mere end blot få sekunder. Ved en drukneulykke kan der
+være blåfarvning af læber, ører og næsefløje (cyanose), even-
+tuelt skum omkring mund og næse, samt evt. bevidstløshed.
+Personen vil ofte være underafkølet.
+Skab sikkerhed
+Husk på egen sikkerhed (vurdér egne svømmefærdigheder,
+vandforholdene, vandets temperatur samt afstanden til den
+druknede person). Forsøg kun at bjærge personen, hvis det
+kan ske uden at bringe dig selv i fare.
+Tilkald hjælp
+Ring straks 1-1-2, hvis personen ikke kan bjærges uden risiko
+for din egen sikkerhed. Oplys, at der er tale om en drukne-
+ulykke. Er du ved en strand, kan du bruge de grønne strand-
+skilte til at angive din præcise position. Hvis du er nødt til at
+forlade stedet for at hente hjælp, skal du markere stedet, så
+personen lettere kan findes igen.
+Giv førstehjælp
+Hvis personen ikke trækker vejret normalt efter at være ble-
+vet bjærget, gives først 5 indblæsninger. Er der herefter for-
+sat ingen vejrtrækning, påbegyndes HLR ud fra den normale
+algoritme 30:2.
+68
+--- p69
+FØRSTEHJÆLPENS ABC
+De fem baderåd fra TrygFonden:
+ Lær at svømme
+ Gå aldrig alene i vandet
+ Læs vindretning og vandet
+ Lær stranden at kende
+ Slip ikke børn af syne.
+Baderådene er udviklet af Trygfonden og Dansk Svømmeuni-
+on.
+69
+--- p70
+FØRSTEHJÆLPENS ABC
+JORD- OG SNESKRED
+Store mængder løs jord i grusgrave eller udgravninger samt
+laviner kan begrave en person. Trykket fra jord eller sne kan
+hindre brystkassens bevægelser og blokere luftvejene, hvilket
+kan føre til kvælning.
+Symptomer
+Personen kan udvikle blåfarvning af læber og hud (cyanose),
+vejrtrækningsbesvær og i værste fald blive bevidstløs.
+Skab sikkerhed
+Gå ikke ind på skadestedet, hvis der er risiko for nye jord- el-
+ler sneskred. Afmærk stedet, hvis muligt, ellers skal du blive
+på sikker afstand og holde øje med stedet, og ring 1-1-2.
+Oplys, at der er tale om et jord- eller sneskred.
+Giv førstehjælp
+Grav først den tilskadekomnes hoved og brystkasse fri, hvis
+det kan gøres sikkert. Vurdér derefter vejrtrækningen, og giv
+5 indblæsninger, hvis personen ikke trækker vejret.
+Tilkald hjælp
+Ring straks 1-1-2, og oplys, at der er tale om et jord- eller
+sneskred, før HLR påbegyndes.
+70
+--- p71
+FØRSTEHJÆLPENS ABC
+71
+--- p72
+FØRSTEHJÆLPENS ABC
+SILO- OG BRØNDULYKKER
+I siloer, tanke, kedler og dybe brønde kan iltkoncentrationen
+være lav, og der kan samtidig være giftige eller eksplosive
+gasser. Personer, der opholder sig i sådanne rum, kan hurtigt
+udvikle iltmangel eller blive påvirket af giftige gasser og miste
+bevidstheden.
+Symptomer
+Personen kan være forvirret, svimmel, omtåget eller blive
+bevidstløs. Ved svær iltmangel kan der opstå blåfarvning af
+læber og hud (cyanose).
+Skab sikkerhed
+Gå aldrig ned til den tilskadekomne uden korrekt redningsud-
+styr. Du risikerer selv at blive påvirket af iltmangel eller giftige
+gasser.
+Giv førstehjælp
+Forsøg ikke selv at gå ned i siloen eller brønden. Hvis det kan
+gøres sikkert udefra, kan naturlig udluftning forsøges, men
+vent altid på redningsberedskabet.
+Tilkald hjælp
+Ring straks 1-1-2, og oplys, at der er tale om en silo- eller
+brøndulykke, da redning fra lukkede rum kræver særligt red-
+ningsudstyr og uddannet redningspersonale.
+72
+--- p73
+FØRSTEHJÆLPENS ABC
+73
+--- p74
+FØRSTEHJÆLPENS ABC
+SKADER MOD BRYSTKASSEN
+Ved trafikulykker, vold, stikskader eller lignende kan brystkas-
+sen blive ramt, og der kan opstå skader på lungerne. Hvis et
+ribben brækkes, kan dette også give indvendige skader på
+lungerne.
+Symptomer
+Symptomer kan være smerter, vejrtrækningsbesvær, blå
+mærker omkring skaden, blåfarvning af læber og hud, tegn
+på kredsløbssvigt samt boblende eller skummende blod eller
+sekret fra såret.
+Skab sikkerhed
+Sørg for, at skadestedet er sikkert, før du går i gang med
+førstehjælpen.
+Giv førstehjælp
+Vurdér ABC, og lejr personen i aflastende rygleje.
+VIGTIGT:
+Ved et åbent sår i brystkassen
+må du tildække såret med forbinding.
+Det kan forværre personens vejrtrækning og tilstand.
+Tilkald hjælp
+Ring straks 1-1-2 ved mistanke om alvorlig skade på bryst-
+kassen.
+74
+--- p75
+FØRSTEHJÆLPENS ABC
+NOTATER:
+75
+--- p76
+FØRSTEHJÆLPENS ABC
+EL ULYKKER
+El-ulykker kan blandt andet ske ved defekt el-værktøj, fejl på
+el-installationer eller kontakt med køreledninger. Når elektrisk
+strøm passerer gennem kroppen, kan det påvirke hjertets
+rytme og medføre alvorlige hjerterytmeforstyrrelser. Derud-
+over kan der opstå både indre og ydre forbrændinger.
+Man skelner mellem lavspænding under 1.000 volt
+(eksempelvis kontakter i en normal husstand)
+og højspænding over 1.000 volt
+(eksempelvis højspændingsledninger)
+Symptomer
+Hjertebanken, forbrænding, kramper, svimmelhed, omtåget-
+hed, bevidstløshed, hjertestop.
+LAVSPÆNDINGSULYKKER
+Skab sikkerhed
+-
+-
+-
+Rør ikke personen, før strømmen er afbrudt
+og hold afstand
+Er det ikke muligt, brug en ikke-ledende genstand,
+som et kosteskaft eller et stykke plastik til at fjerne
+strømkilden fra personen
+Kan strømmen ikke afbrydes, så ring 1-1-2 og meld
+”el-ulykke”.
+Giv førstehjælp
+Vurdér ABC. Undersøg personen for forbrændinger, og be-
+handl dem ved at skylle i minimum 20 min. (se afsnit om
+forbrændinger). Forebyg kredsløbssvigt.
+Tilkald hjælp
+Alle personer, der har været udsat for en el-ulykke, bør
+vurderes af en læge eller på en akutmodtagelse – også ved
+lavspænding.
+76
+--- p77
+FØRSTEHJÆLPENS ABC
+HØJSPÆNDINGSULYKKER
+Skab sikkerhed
+Ring 1-1-2 og meld ”el ulykke”.
+Hold mindst 18 meters afstand til nedstyrtede højspændings-
+ledninger. Du må aldrig nærme dig skadestedet .før forsy-
+ningsselskabet har bekræftet, at det er sikkert at nærme sig.
+VIGTIG
+Ved højspændingsulykker ringes altid 1-1-2.
+Fsu Førstehjælpens abc 69
+20-01-2018 15:13:32
+77
+--- p78
+FØRSTEHJÆLPENS ABC
+SKADER I MAVEREGIONEN
+Ved eksempelvis trafikulykker, vold med stikvåben, hårde slag
+mod maven og cykelstyrt, kan der ske skader på de bagved-
+liggende organer. Især leveren og milten indeholder meget
+blod. Selv små stik- eller snitsår kan medføre alvorlige ind-
+vendige skader. Ved større åbne skader på maven kan tarme
+eller andet bugindhold falde frem.
+Symptomer
+Symptomer kan være mavesmerter, kvalme, spændte mave-
+muskler, blå mærker efter slaget og tegn på kredsløbssvigt.
+Skab sikkerhed
+Skab sikkerhed for dig selv og den tilskadekomne. Hvis ska-
+destedet ikke er sikkert, skal du ringe 1-1-2.
+Giv førstehjælp
+ Vågne personer lejres i aflastende rygleje med benene
+bøjede for at aflaste maveregionen
+ Pak tarmene ind med et rent, ikke-sugende materiale,
+f.eks. en plastpose eller et alutæppe. Har du ikke dette,
+kan du bruge fugtige forbindinger eller et rent stykke
+stof. Forsøg ikke at putte tarmene ind i maven
+ Forebyg kredsløbssvigt.
+78
+--- p79
+FØRSTEHJÆLPENS ABC
+Tilkald hjælp
+Ring 1-1-2 ved skader på maveregionen
+VIGTIGT
+Giv ikke den tilskadekomne noget at spise eller drikke
+79
+--- p80
+FØRSTEHJÆLPENS ABC
+KNOGLEBRUD
+Der skelnes mellem to typer af brud:
+Lukkede knoglebrud, hvor huden ikke er brudt
+Åbne knoglebrud, hvor huden er brudt
+Knoglebrud skyldes typisk fald, kontaktsport eller trafikulyk-
+ker med høj energi.
+Hos ældre kan knogleskørhed eller svækkede knogler med-
+føre brud, selv efter mindre påvirkninger. Børns knogler er
+mere eftergivelige, og det kan derfor være svært at erkende
+et brud. Særligt brud på lårbenet og bækkenet kan give store
+blødninger og være livstruende.
+Symptomer
+Symptomer kan være smerter, nedsat bevægelighed, fejlstil-
+ling, hævelse, misfarvning og føleforstyrrelser. Ved åbne brud
+vil knoglerne være synlige. Ved store brud på bækken og
+lårben, er der risiko for udvikling af kredsløbssvigt.
+Skab sikkerhed
+Skab sikkerhed for dig selv og den tilskadekomne. Hvis ska-
+destedet ikke er sikkert, skal du ringe 1-1-2.
+Giv førstehjælp
+ Vurdér ABC, og behandl ud fra princippet
+”liv frem for førlighed”
+ Stabilisér i findestilling med tæpper, tasker og lignende
+ Anlæg armslynge ved brud på arm eller skulder.
+ Ved åbne brud (efter stabilisering) dækkes såret med
+en løs, ren forbinding. Hvis det ikke er muligt,
+kan et rent tæppe eller en jakke anvendes
+ Er der flere førstehjælpere, kan de støtte brudstedet
+når der lejres, for at minimere bevægelsen.
+80
+--- p81
+FØRSTEHJÆLPENS ABC
+Tilkald hjælp
+Søg skadestuen eller vagtlæge:
+ Ved lukkede knoglebrud. Et knoglebrud skal altid be-
+handles
+ Når der er tale om mindre lukkede brud, hvor den
+tilskadekomne kan sidde i en bil med eksempelvis en
+armslynge.
+Ring 1-1-2:
+ Ved åbne brud
+ Når det ikke er muligt at transportere den tilskade-
+komne på grund af smerter
+ Ved livstruende blødninger eller mistanke om større
+indre blødninger
+ Hvis den tilskadekomne viser tegn på kredsløbssvigt.
+81
+--- p82
+FØRSTEHJÆLPENS ABC
+LEDSKRED, FORSTUVNINGER
+OG MUSKELSKADER
+LEDSKRED
+Et ledskred opstår, når et led går af led, så knogleenderne
+forskydes fra deres normale position. Det skyldes ofte slag,
+vrid, overbelastning eller fald, f.eks. i forbindelse med idræt.
+Et ledskred er som regel meget smertefuldt, og leddet vil ofte
+have en tydelig fejlstilling.
+Symptomer
+Ved ledskred vil der være stærke smerter, og leddet vil være
+fastlåst i en unormal position.
+Skab sikkerhed
+Hold den tilskadekomne i ro. Bevægelse kan gøre skaden
+værre og gøre smerterne kraftigere, end de er i forvejen.
+Giv førstehjælp
+Immobilisér (støt) det skadede område, og forsøg aldrig selv
+at sætte leddet på plads, da det kan ødelægge leddet og
+omkringliggende muskler, sener, nerver og blodkar. Anlæg en
+armslynge ved skulderskade, hvis det er muligt.
+Tilkald hjælp
+Ring 1-1-2 ved ledskred, og den tilskadekomne ikke kan flyt-
+tes. Den tilskadekomne kan transporteres til skadestuen eller
+akutmodtagelsen, hvis det vurderes forsvarligt.
+82
+--- p83
+FØRSTEHJÆLPENS ABC
+83
+--- p84
+FØRSTEHJÆLPENS ABC
+FORSTUVNINGER OG MUSKELSKADER
+Forstuvninger og muskelskader er de hyppigste årsager til
+arbejds- og idrætsskader.
+En forstuvning En forstuvning opstår, når et led vrides eller
+overstrækkes, så ledbåndene bliver beskadiget. En forstuv-
+ning er en hyppig sportsskade, men kan også ske under
+march i ujævnt terræn.
+En muskelskade kan opstå ved slag mod et kropsområde el-
+ler ved overrivning af muskelceller (fibersprængning). Herved
+kan der opstå en kraftig blødning i muskulaturen.
+Symptomer
+Ved forstuvninger og muskelskader opstår der typisk smerter,
+ømhed, hævelse, misfarvning og nedsat bevægelighed i og
+omkring det skadede sted.
+Skab sikkerhed
+Hold den tilskadekomne i ro. Bevægelse kan gøre skaden
+værre, og blødningen kraftigere end den er i forvejen.
+Giv førstehjælp
+I forbindelse med forstuvninger og muskelskader bruges RICE
+som førstehjælp. Ordet er et huskeord, men udgør ikke en
+rækkefølge.
+Rest – Ro: Stop fysisk aktivitet omgående, for ikke at for-
+værre skadens omfang.
+Ice – Is: Fortsæt is-behandlingen i op til 24 timer. Isen må
+ikke lægges direkte på huden. Isen har en smertelindrende
+effekt.
+Compression – Kompression: Anlæg 4-6 rundture fordelt
+stramt omkring det skadede område, men ikke så stramt, at
+det forhindrer blodcirkulationen. Læg herefter isposen på, og
+afslut med resten af forbindingen over isposen.
+Elevation – Hæve: Løft det skadede område over hjerteni-
+veau. Herved nedsættes trykket i blodkarrene, så blodet ikke
+siver så hurtigt ud i vævet fra ødelagte kar.
+84
+--- p85
+FØRSTEHJÆLPENS ABC
+Tilkald hjælp
+Ved forstuvninger og muskelskader skal den tilskadekomne i
+første omgang ikke opsøge skadestue, men hvis det ikke for-
+bedres i løbet af 3-4 dage, kan den tilskadekomne søge læge.
+85
+--- p86
+FØRSTEHJÆLPENS ABC
+AFREVNE LEGEMSDELE
+Afrivning eller delvis afrivning af legemsdele skyldes typisk
+ulykker med værktøj som rundsave, vinkelslibere og motor-
+save, fyrværkeri eller skader fra økser og knive.
+Den afrevne legemsdel kan i nogle tilfælde opereres på igen.
+Symptomer
+Symptomer kan være smerter, blødning, bleg og koldsveden-
+de hud (tegn på kredsløbssvigt) samt bevidstløshed.
+Skab sikkerhed
+Fjern personen fra ulykken eller ulykken fra personen; sluk
+det elektriske værktøj, eller fjern personen væk fra værktøjet.
+Giv førstehjælp
+ Vurdér <M>ABC.
+ Ved afrivning af en større legemsdel kan blødningen
+være livstruende og skal behandles som en massiv
+blødning (<M>)
+ En afskåret finger medfører som udgangspunkt ikke en
+livstruende blødning, men kræver stadig hurtig behand-
+ling
+ Anlæg en forbinding på det blødende sted.
+ Den afrevne legemsdel skal holdes ren, tør og kølig –
+men må ikke komme i direkte kontakt med is eller
+vand. Læg legemsdelen i en tæt plastpose, og læg
+derefter posen i en beholder med koldt vand og ister-
+ninger.
+Tilkald hjælp
+Den tilskadekomne skal vurderes på skadestuen.
+Alarmér 1-1-2 ved en livstruende blødning eller hvis personen
+viser tegn på kredsløbssvigt
+86
+--- p87
+FØRSTEHJÆLPENS ABC
+87
+--- p88
+FØRSTEHJÆLPENS ABC
+HOVEDSKADER
+Hovedskader skyldes typisk slag mod hovedet, f.eks. ved fald,
+vold eller sportsskader. Selv mindre slag mod hovedet kan
+medføre en hovedskade.
+I førstehjælpen skelnes der mellem 3
+typer af hovedskader:
+1. Hjernerystelse
+Hjernen ligger godt beskyttet inde i
+kraniet. Ved et slag mod hovedet vil
+kraften fra slaget ”forplante” sig videre
+ind i hovedet, og hjernen vil fortsætte
+i bevægelse og slå op mod kraniet, så
+hjernen rystes. Hjernen rystes mod kra-
+niets inderside, hvilket kan påvirke hjernens funktion.
+2. Ydre og indre blødninger
+Det kan bløde fra selve såret, og hjer-
+nens egne små blodkar kan briste, og
+der kan sive blod ud i kraniet. Trykket
+i hjernen kan stige, når blod og væske
+ophober sig i kraniekassen. I yderste
+konsekvens kan trykket føre til hjerte-
+stop, hvis den forlængede marv påvir-
+kes.
+3. Kraniebrud
+Ved kraniebrud har kraniekassen været
+udsat for en så voldsom en påvirkning,
+at der kan opstå et eller flere brud på
+kraniet.
+Symptomer
+Symptomer kan være hovedpine,
+svimmelhed, kvalme, opkast, træthed,
+kortvarigt hukommelses- eller bevidsthedstab,
+dobbeltsyn, lysfølsomhed og blødning.
+88
+--- p89
+FØRSTEHJÆLPENS ABC
+Skab sikkerhed
+Vurdér, om det er sikkert at nærme sig skadestedet.
+Giv førstehjælp
+ Vurdér <C>ABC
+ Ved synlige blødninger anlægges en løs forbinding,
+der ikke lægger pres på hovedet
+ Forebyg kredsløbssvigt
+ Undgå at bevæge den tilskadekomnes nakke.
+Tilkald hjælp
+Ring 1-1-2, hvis:
+ Du har mistanke om en alvorlig hovedskade
+ Personen har været bevidstløs efter et slag
+mod hovedet
+ Personen har eller har haft kramper
+ Personen fremstår omtåget og forvirre
+ Personen oplever synsforstyrrelser, f.eks. dobbeltsyn
+eller lysfølsomhed
+Kontakt straks vagtlæge eller skadestue, hvis:
+ Personen har eller har haft kvalme eller opkast
+ Personen oplever kraftig hovedpine
+ Personen ikke kommer sig i løbet af de følgende timer
+eller dage
+ Personens almene tilstand ændres, eksempelvis med
+øget træthed eller nedsat opmærksomhed
+OBS Hvis personen er i blodfortyndende behandling skal man
+altid vurderes af en læge.
+89
+--- p90
+FØRSTEHJÆLPENS ABC
+VIGTIGT
+En person med hjernerystelse bør ikke være alene de før-
+ste 24 timer efter skaden. En myndig og pålidelig person
+bør være til stede, drage omsorg for den tilskadekomne og
+reagere, hvis tilstanden forværres. Den tilskadekomne bør
+samtidig holde sig i ro og undgå aktiviteter, der kan forværre
+symptomerne, som tv, læsning, skærmbrug og kraftigt lys.
+90
+--- p91
+FØRSTEHJÆLPENS ABC
+NOTATER:
+91
+--- p92
+FØRSTEHJÆLPENS ABC
+SKADER PÅ NAKKE OG RYGSØJLE
+Ved fald fra stor højde, hovedspring på lavt vand, cykelstyrt,
+trampolinulykke og trafikulykker kan der opstå skader på
+nakke og rygsøjle.
+En kraftig påvirkning af nakken eller rygsøjlen kan føre til, at
+den beskadiges og medføre et brud.
+Personer i biler:
+Nødflyt kun den tilskadekomne, hvis skadestedet ikke er
+sikkert, eller personen er bevidstløs (liv frem for førlighed)
+Symptomer
+Smerter, ømhed og muskelspændinger i nakke og ryg, føle-
+forstyrrelser og eventuelle lammelser nedenfor det skadede
+område.
+Skab sikkerhed
+Tal til den tilskadekomne forfra, så personen undgår at dreje
+hovedet.
+Bed den tilskadekomne om at holde sig i ro. Hvis det er sik-
+kert, bør den tilskadekomne blive siddende i bilen.
+Giv førstehjælp
+Vurdér ABC, og udfør HLR ved en bevidstløs person uden
+normal vejrtrækning og i stabilt sideleje ved bevidstløs med
+normal vejrtrækning.
+Er den tilskadekomne ved bevidsthed, bør personen holde sig
+så roligt som muligt og undgå unødige bevægelser af hoved
+og nakke
+Tilkald hjælp
+Alarmér altid 1-1-2 ved mistanke om skade på nakke eller
+rygsøjle.
+VIGTIGT
+Tænk altid på liv frem for førlighed.
+92
+--- p93
+FØRSTEHJÆLPENS ABC
+93
+--- p94
+FØRSTEHJÆLPENS ABC
+FORGIFTNINGER
+VIGTIGT
+Du skal som førstehjælper ikke
+vide en masse om forskellige
+forgiftninger, men du skal vide,
+at du altid kan søge vejledning
+ved Giftlinjen:
+Hjemmeside:
+bispebjerghospital.dk/giftlinjen
+Symptomer
+Symptomer på alvorlig forgiftning kan være kvalme, opkast,
+vejrtrækningsbesvær, kramper og bevidstløshed.
+Skab sikkerhed
+Beskyt eventuelt dig selv med værnemidler som handsker el-
+ler beskyttelsesbriller, hvis disse er til rådighed.
+Ved indblæsninger ifm. HLR skal du anvende en indblæsnings-
+maske eller et stykke stof (T-shirt eller lign.).
+Ved personer, hvor du mistænker kulilteforgiftning, skal du
+kun forsøge at nødflytte personen, hvis det er sikkert for dig
+selv. Tag en dyb indånding, inden du går ind i rummet. Ofte
+er det eneste, du kan gøre, at ringe 1-1-2 og – hvis det kan
+gøres sikkert – åbne døre og vinduer for at lufte ud.
+Giv førstehjælp
+ Ved væske i øjnene, kan du skylle med øjenskyl
+eller vand fra vandhanen – skyl fra næseroden og ud
+ Ved ætsende væsker på huden skylles området efter
+de samme principper som ved forbrændinger
+ Ved bevidstløse uden normal vejrtrækning,
+udføres HLR. Hvis der er risiko for, at førstehjælperen
+udsættes for giftige stoffer under indblæsninger, kan
+brystkompressioner udføres alene.
+ Ved kulilteforgiftninger kan du lufte ud i rummet ved
+at åbne døre og vinduer
+94
+--- p95
+FØRSTEHJÆLPENS ABC
+ Medbring så vidt muligt emballagen fra medicin,
+euforiserende stoffer eller andre giftige stoffer til red-
+ningsmandskabet, læge eller akutmodtagelse/skade-
+stue.
+Tilkald hjælp
+Ring 1-1-2, hvis den tilskadekomne får vejrtrækningsbesvær,
+kramper eller bliver bevidstløs. Ved øvrige henvendelser kon-
+taktes Giftlinjen.
+95
+--- p96
+FØRSTEHJÆLPENS ABC
+Om forgiftninger i Danmark
+Der sker årligt omkring 600 dødsfald i Danmark som følge
+af forgiftninger (Sundhed.dk). Hos voksne skyldes det ofte
+alkohol-, narkotika- og medicinforgiftning eller forgiftning af
+fordærvede fødevarer. En del af disse tilfælde skyldes selv-
+mordsforsøg,, hvor personer tænder en grill indendørs.
+Hos børn er det oftest deres nysgerrighed, der er årsag til
+forgiftningen. Småbørn får ofte fat i vitaminpiller, medicin,
+giftige planter, rengøringsmidler eller kemikalier. Det er derfor
+vigtigt, at der sættes fokus på forebyggelse, eksempelvis ved
+at:
+ Opbevare alt, der er farligt for børn, uden for
+rækkevidde.
+ Aldrig at omhælde væsker til andre beholdere.
+Kilde: Giftlinjen.dk
+96
+--- p97
+FØRSTEHJÆLPENS ABC
+NOTATER:
+97
+--- p98
+FØRSTEHJÆLPENS ABC
+TEMPERATURPÅVIRKNINGER
+- HEDESLAG
+Hedeslag er en tilstand, hvor kroppen ikke er i stand til re-
+gulere temperaturen. Hedeslag kan, i værste tilfælde, være
+livstruende.
+Symptomer
+ Utilpashed, kvalme, mathed, hovedpine og svimmelhed
+ Ændret opførsel; angst og forvirring
+ Besvimelse, bevidstløshed og kramper
+ Rød, varm og tør hud (ingen eller nedsat svedproduk-
+tion).
+Skab sikkerhed
+ Flyt den tilskadekomne i skygge.
+ Fjern varm påklædning.
+Giv førstehjælp - Vurdér ABC
+ Afkøl personen med køligt vand, eller nedsænk
+personen i vand. Vandet må være helt ned til 1 grad.
+ Brug hvad du har. En teltflage, der laves til et ”bade-
+kar” med koldt vand
+ Er det ikke muligt, kan der anvendes f.eks. isposer
+eller kolde klude på isse, håndled og ankler.
+ Giv væske, gerne med salt i en blanding af 1-1,5
+teskefulde groft køkkensalt i 1 liter vand.
+Tilkald hjælp
+ Søg akutmodtagelse eller skadestue, hvis den tilskade-
+komne har symptomer på hedeslag.
+ Ring 1-1-2, hvis den tilskadekomne kramper
+eller er bevidstløs.
+98
+--- p99
+FØRSTEHJÆLPENS ABC
+Når en person opholder sig i varme omgivelser, eventuelt i
+kombination med hårdt fysisk arbejde og for lidt væske, kan
+kroppen ikke komme af med varmen. Tilstanden kan udvikle
+sig til at være kritisk, hvis er ikke ydes den rette førstehjælp.
+Hedeslag kan oftest forebygges ved at opholde sig i skygge,
+drikke rigeligt med væske og tilpasse påklædningen til kli-
+maet.
+Nedkøl personen indefra ved at give væske og/eller ved at
+nedsænke personen i koldt vand.
+Er det ikke muligt så nedkøl isse, håndled og ankler.
+99
+--- p100
+FØRSTEHJÆLPENS ABC
+TEMPERATURPÅVIRKNINGER
+- FORBRÆNDINGER
+Forbrændinger kan opstå ved åben ild eller ved kontakt med
+kogende vand eller andre varme væsker. Forbrændinger op-
+deles i 3 grader:
+1. grads forbrænding: Medfører rødme af huden. Den ses
+typisk ved solskoldning. Den er ufarlig, men kan give sviende
+smerte og let hudafskal­ning efter et par dage.
+2. grads forbrænding: Medfører stærke smerter. Der vil
+være rødme med lysegule og væskefyldte vabler. En 2. grads-
+forbrænding er som udgangspunkt ufarlig, men kan i visse
+tilfælde kræve lægelig behandling.
+3. grads forbrænding: Ved åben ild som årsag ses forkul-
+ning og ved en skold­ning vil huden være ”kogt”. Tilstanden
+er kritisk og kræver øjeblikkelig behandling, og der kan være
+risiko for kredsløbssvigt.
+Skab sikkerhed
+Ved ild i den tilskadekomnes tøj lægges personen ned på jor-
+den og sluk eller kvæl ilden med vand, tæppe, beklædning el-
+ler andet. Sluk flammerne fra hovedet og nedad for at undgå
+forbrænding af luftveje (sluk altid ild med vinden i ryggen).
+Hvis forbrændingen skyldes varm væske eller en varmekilde,
+fjern den tilskadekomne fra kilden. Fjern forsigtigt tøj fra det
+forbrændte område, hvis det ikke sidder fast i huden.
+Giv førstehjælp
+Nedkøl med vand (lad den tilskadekomne selv regulere vand-
+temperaturen, så vandet føles behageligt og smertelindrende.
+i minimum 20 minutter eller indtil smerten forsvin­der. Hvis
+rindende vand ikke er muligt, kan en vådv klud lægges på,
+der vendes hyppigt og gøres våd igen.
+Efter nedkøling vikles madfilm (eksempelvis Vita Vrap)
+omkring forbræn­dingen/skoldningen. Hvis dette ikke er til
+rådighed, kan en steril forbinding bruges. Giv væske til den
+tilskadekomne.
+100
+--- p101
+FØRSTEHJÆLPENS ABC
+Tilkald hjælp
+Ved 1.-gradsforbrændinger er lægehjælp normalt ikke nød-
+vendig. Aftersun kan anvendes efter nedkøling for at lindre
+huden, men erstatter ikke selve førstehjælpen.
+Ved 2. gradsforbrændinger søges der skadestue, når:
+ Forbrændingen er mere end 5-7 cm. i diameter
+ Forbrændingen er på hænder, fødder, i lysken, sædet
+eller over led og omkring legemsåbninger.
+Ved 3. gradsforbrændinger alarmeres altid 1-1-2!
+Når vi udsættes for høje temperaturer, kan vores hud blive
+beskadiget, og vi kan få en forbrænding. Et klassisk eksempel
+er, at der bruges benzin som tændvæske til et bål. Forbræn-
+dinger kan være livstruende alt efter omfanget og graden.
+Det er dybden af forbrændingen, der afgør om det er en 1.,
+2. eller 3. gradsforbrænding. De fleste forbrændinger heler
+heldigvis op, men alt efter omfanget og dybden kan det hele
+med arvæv.
+3 grader af forbrændinger
+101
+--- p102
+FØRSTEHJÆLPENS ABC
+TEMPERATURPÅVIRKNINGER
+- UNDERAFKØLING
+ En kombination af vand, vind og lav temperatur
+samt mangel på bevægelse kan forårsage under-
+afkøling.
+ Børn, ældre og bevidstløse personer er særligt udsatte
+for underafkøling. Et klassisk eksempel er en alkohol-
+påvirket person, der falder i søvn på en bænk.
+Hvis en person opholder sig i vand, vil underafkøling
+kunne opstå endnu hurtigere, da vand leder varme væk
+fra kroppen ca. 25 gange hurtigere end luft.
+Symptomer
+Ved en mild underafkølig vil personen være:
+Kold, rystende, bleg og eventuelt blåmarmoreret hud og eks-
+tremiteter, nedsat bevægelighed i arme og ben.
+Ved en svær underafkøling:
+Personen kan være omtåget, konfus, have nedsat bevidsthed
+eller være bevidstløs. I yderste konsekvens kan kulderystelserne
+ophøre, og personen kan risikere at få et hjertestop.
+Skab sikkerhed
+Flyt/hjælp den tilskadekomne væk fra vand, vind og lav tem-
+peratur ved at flytte personen til et sted med læ.
+Giv førstehjælp
+ Aftag vådt tøj
+ Indpak den tilskadekomne i redningstæppe og/eller i
+tæpper. Isoler personen fra underlaget, og prioriter
+kropskerne og hoved.
+ Brug, hvad du har, f.eks. tæpper, tøj eller pap
+ Hvis personen er vågen, kan du give noget varmt og
+sødt at drikke (ikke alkohol)
+102
+--- p103
+FØRSTEHJÆLPENS ABC
+ Ved let underafkøling kan personen aktiveres med let
+fysisk aktivitet, f.eks. med kuske-slag, eller lig tæt sam-
+men i en sovepose og opvarm hinanden.
+Tilkald hjælp
+Ring 1-1-2 ved svære kuldepåvirkninger.
+Et eksempel på en indpakningsmetode er “mumieindpakning” hvor
+hovedet og kropskernen prioriteres”
+103
+--- p104
+FØRSTEHJÆLPENS ABC
+TEMPERATURPÅVIRKNINGER
+- FORFRYSNINGER
+Forfrysninger er en stærk kuldepåvirkning, der rammer ube-
+skyttet hud som f.eks. ansigt, næse og ører, samt hænder
+og fødder. I modsætning til underafkøling, hvor hele kroppen
+rammes, er forfrysninger lokale og kan beskadige huden.
+Forfrysningen inddeles i overfladiske eller dybe.
+En overfladisk forfrysning rammer det yderste af huden. Ved
+en dyb forfrysning fryser vævet under huden til iskrystaller,
+og vil efterhånden dø.
+Symptomer
+ En overfladisk forfrysning giver en prikkende eller
+snurrende fornemmelse i det forfrosne område, der kan
+være ledsaget af smerte. Det er kun det yderste hud-
+lag, der er skadet, og den døde hud kan skalle af og
+efterlade et sår
+ Ved en dyb forfrysning er huden hvid eller voksgul med
+grå-blå skygger, kold og vil være hård og voksagtig
+at røre ved. Området kan samtidig være følelsesløst.
+Skab sikkerhed
+Flyt den tilskadekomne væk fra vand, vind og kulde, og bring
+personen i læ.
+Giv førstehjælp
+Ved en overfladisk forfrysning kan området opvarmes ved
+at placere de forfrosne hænder eller fødder inde under tøjet
+mod varm hud, f.eks. i armhulen. Indpak den tilskadekomne i
+redningstæppe og/eller i tæpper.
+Gnid aldrig på det forfrosne område.
+104
+--- p105
+FØRSTEHJÆLPENS ABC
+Tilkald hjælp
+Søg akutmodtagelse eller skadestue, hvis den tilskadekomne
+har en dyb forfrysning.
+Ring 1-1-2 før HLR påbegyndes, eller hvis den tilskadekomne
+bliver bevidstløs.
+VIGTIGT
+Ved dyb forfrysning, hvor huden er hvid, hård og uforskydelig,
+skal der ske en hurtig optøning i 39-42 °C varmt vand. Denne
+optøning er så smertefuld, at den skal ske på et sygehus,
+hvor der kan smertebehandles.
+105
+--- p106
+FØRSTEHJÆLPENS ABC
+SMÅSKADER
+BID
+Bid kan give vævs- og muskelskader, og ved bid, hvor huden
+er gennembrudt, er der stor risiko for infektion. Det er vigtigt
+at tænke på stivkrampevaccination. Vaccinen skal fornyes
+hvert 10. år.
+Symptomer
+Symptomer efter et hundebid kan være smerte, ømhed,
+blødning samt skader på knogler og væv. Hvis der er infek-
+tion i såret, kan der opstå rødme, ømhed, varme, hævelse og
+udslæt omkring såret samt feber.
+Skab sikkerhed
+Husk på egen sikkerhed. Flyt/hjælp evt. den tilskadekomne
+væk fra dyret eller mennesket.
+Giv førstehjælp
+Vask med vand og sæbe, hvis huden er gennembrudt. Brug
+efterfølgende gerne desinfektionsmiddel (eksempelvis klor-
+hexidin). Anlæg herefter et plaster eller en forbinding. Er
+huden ikke gennembrudt, skal du stadig være opmærksom på
+dybere vævsskader og eventuelle knoglebrud.
+Tilkald hjælp
+Søg læge eller akutmodtagelsen/skadestue ved store eller
+dybe sår. Særligt ved dybe bid på sener eller led er det vig-
+tigt, at såret tilses af en læge.
+106
+--- p107
+FØRSTEHJÆLPENS ABC
+SKOVFLÅT
+Skovflåten er en blodsugende
+mide, der sætter sig fast ved at
+bide sig fast i huden. Skovflå­ten
+findes typisk i skoven og sætter
+sig på dyr og men­nesker. Efter
+skovture bør man altid kontrol-
+lere for skovflåter.
+Skovflåten kan være smitte-
+bærer af Borrelia-bakterien eller
+TBE (Tick-Borne Encephalitis), der kan smitte både dyr og
+mennesker. Ca. 15 % af alle skovflåter indeholder bakterien.
+Borrelia-bakterien kan give borreliose. Det er TBE-virus, der i
+sjældne tilfælde kan medføre hjernebetændelse, hvis infektio-
+nen ikke bliver behandlet medicinsk. Fjernes flåten inden for
+16 timer, er risikoen for Borrelia-smitte meget lille.
+Symptomer
+Ved bid vil ca. 2 % af tilfældene påvirke almentilstanden.
+Efter biddet vil der være en smule rødmen omkring bidstedet,
+som er ufarlig og ikke behandlingskrævende. Ved Borrelia-in-
+fektion kan der efter 1-2 uger udvikles en ringformet rødme,
+som gradvist breder sig.
+Giv førstehjælp
+Efterse hele kroppen for skovflåter. De sidder ofte i knæha-
+ser, armhuler, lysken og ved halsen. Fjern skovflåten hurtigst
+muligt med en flåttang eller en fin pincet ved at tage fat tæt
+ved huden.
+Tilkald hjælp
+Søg læge, hvis:
+ Der efter 1-2 uger (efter rødmen er forsvundet)
+opstår en rødmen igen.
+ Rødmen danner en ”ring”, der breder sig.
+Tegn gerne ringen op for at se om den spreder sig.
+107
+--- p108
+FØRSTEHJÆLPENS ABC
+FJÆSINGSTIK
+Fjæsingen er en giftig fisk, der
+lever i lavvandede kystområder
+i danske farvande. Føler den
+sig truet, rejser den rygfinnen,
+og man kan blive stukket, hvis
+man træder på den. Stikket gi-
+ver ofte meget kraftige smerter
+og kan medføre infektion, så
+vær opmærksom på, om den
+tilskadekomne er vaccineret
+mod stivkrampe. I sjældne tilfælde kan en alvorlig allergisk
+reaktion udvikle sig og blive livstruende.
+Symptomer
+Et stik fra en fjæsing kan give smerter, hævelse og misfarv-
+ning af huden. Smerterne kan brede sig til hele armen eller
+benet, der er blevet stukket. Smerterne tager til over en ca.
+30 min. Der kan opstå svimmelhed og hovedpine samt en
+allergisk reaktion, som kan medføre vejrtrækningsbesvær og
+nedsat bevidsthed.
+Skab sikkerhed
+Flyt/hjælp evt. den tilskadekomne op ad vandet.
+Giv førstehjælp
+Anbring stikstedet i 40-45 grader varmt vand i 30-60 min. Af-
+prøv temperaturen med en rask hånd. Det varme vand lindrer
+smerten. Fjern eventuelle rester af piggen, og vask med vand
+og sæbe. Søg læge eller ring til Giftlinjen på 82121212, hvis
+symptomerne fortsætter eller er meget udtalte - eller hvis der
+opstår tegn på infektion.
+Tilkald hjælp
+Der vil sjældent være behov for akut hjælp. Ring 1-1-2 ved
+en alvorlig allergisk reaktion, nedsat bevidsthed og vejrtræk-
+ningsbesvær.
+108
+--- p109
+FØRSTEHJÆLPENS ABC
+INSEKTSTIK FRA
+BI OG HVEPS
+Det hyppigste i Danmark er bi-
+eller hvepsestik, som alminde-
+ligvis er ufarligt, men kan være
+uhyre farligt, hvis personen er
+allergisk over for insektstik, eller
+hvis man bliver stukket i mun-
+den.
+Symptomer
+Et stik fra en bi eller hveps kan give smerte, rødme, hævelse
+og kløe. Ved en allergisk reaktion kan symptomerne variere
+meget i sværhedsgrad. Der kan opstå kraftig hævelse og
+rødme omkring stikket, samt hjertebanken, vejrtrækningsbe-
+svær, nældefeber og nedsat bevidsthed.
+Skab sikkerhed
+Flyt/hjælp evt. den tilskadekomne væk fra området.
+Giv førstehjælp
+Fjern brodden hurtigst muligt ved at skrabe den væk eller
+med en pincet. Nedkøl med ispose i 30 min. Ved stik i mund,
+køl med isterning. Hvis den tilskadekomne har allergi overfor
+bi- og hvepsestik, og har medicin (modgift), så hjælp med at
+finde medicinen frem.
+Tilkald hjælp
+Ring 1-1-2 ved stik i mund eller hals, vejrtrækningsbesvær
+eller tegn på en alvorlig allergisk reaktion.
+109
+--- p110
+FØRSTEHJÆLPENS ABC
+HUGORMEBID
+Hugormen er Danmarks eneste
+giftslange. Den lever især i
+lyng-, hede- og klitområder og
+er mest aktiv i sommerhalvåret.
+Hugormen bider kun, hvis den
+føler sig truet. For de fleste er
+et hugormebid ikke farligt, men
+ofte smertefuldt. Der opstår
+som regel hævelse og smerter
+omkring bidstedet. En alvorlig
+reaktion på hugormegift kan være livstruende. Børn, ældre og
+gravide har desuden større risiko for et alvorligt sygdomsfor-
+løb. Der er risiko for infektion. Vær derfor opmærksom på, om
+den tilskadekomne er vaccineret mod stivkrampe. Vaccinatio-
+nen bør fornyes hvert 10. år.
+Symptomer
+Et bid fra en hugorm kan give smerter, hævelse, rødme og
+misfarvning af huden omkring bidstedet samt mavesmerter,
+kvalme og opkast. Der kan opstå en allergisk reaktion, som
+kan medføre, at hævelsen spreder sig, hjertebanken, vejr-
+trækningsbesvær og nedsat bevidsthed.
+Skab sikkerhed
+Hjælp den tilskadekomne væk fra området.
+Giv førstehjælp
+Hold den tilskadekomne i ro, så giften ikke spredes. Giv ikke
+mad eller drikke, hvis personen har kvalme eller nedsat be-
+vidsthed. Smertestillende medicin bør først gives efter lægelig
+vurdering. Det er ikke nødvendigt at dække bidstedet.
+Tilkald hjælp
+Alle personer med hugormebid bør vurderes af en læge eller
+på en akutmodtagelse.
+110
+--- p111
+FØRSTEHJÆLPENS ABC
+BRANDMAND
+Brandmanden er en giftig gople,
+der er let at genkende på sin
+orangerøde farve, med fange-
+tråde, der kan blive flere meter
+lange. Ved kraftigt blæsevejr
+bliver brandmændene skyllet
+ind på lavt vand, hvor badende
+kan blive forbrændt af dem.
+Symptomer
+Når huden har været i kontakt med en brandmand, kan det
+give svie i huden, hævelse og rødme, eventuelt i et stribefor-
+met område. Ved store forbrændinger kan der opstå en aller-
+gisk reaktion, som kan medføre kvalme, opkast, brystsmerter,
+muskelkramper, rystelser, hjertebanken, vejrtrækningsbesvær
+og nedsat bevidsthed.
+Skab sikkerhed
+Hjælp den tilskadekomne op af vandet og væk fra området.
+Giv førstehjælp
+Skyl området med havvand eller saltvand. Brug aldrig fersk-
+vand, da det vil øge smerten. Fjern forsigtigt eventuelle
+fangetråde ved forsigtigt at skrabe dem væk med en flad
+genstand, f.eks. et kreditkort, ispind eller kniv.
+Tilkald hjælp
+Søg læge eller akutmodtagelse ved påvirket almentilstand,
+vejrtrækningsbesvær eller bevidsthedspåvirkning.
+111
+--- p112
+FØRSTEHJÆLPENS ABC
+FREMMEDLEGEME
+I ØRET
+Fremmedlegemer i øret ses
+især hos børn, der har fået små
+genstande ind i øregangen. I
+sjældne tilfælde kan der også
+være tale om et lille insekt, der
+har fundet vej til øregangen.
+Hvis fremmedlegemet ikke fjer-
+nes, kan det give anledning til
+betændelse i øret eller beskadigelse af trommehinden.
+Symptomer
+Symptomerne afhænger af, hvor dybt fremmedlegemet sid-
+der, og hvor længe det har været i øret. Disse kan være ir-
+ritation eller smerter, og der kan måske være nedsat hørelse-
+Skab sikkerhed
+Pas på ikke at ”trykke” på fremmedlegemet, da det kan sætte
+sig mere fast.
+Giv førstehjælp
+Kan du se fremmedlegemet, så forsøg forsigtigt at fjerne det
+med en pincet. Forsøg kun at fjerne fremmedlegemet, hvis
+det sidder synligt og let tilgængeligt.
+Tilkald hjælp
+Søg læge eller akutmodtagelse, hvis fremmedlegemet sidder
+fast eller ikke kan fjernes ved første forsøg, eller hvis der op-
+står smerter, blødning eller mistanke om skade på øret
+112
+--- p113
+FØRSTEHJÆLPENS ABC
+FREMMEDLEGEME
+I NÆSEN
+Ligesom fremmedlegemer i øret
+ses fremmedlegemer i næsen
+oftest hos børn. Problemet opda-
+ges ikke altid med det samme
+og der kan nemt gå et par dage
+før det opdages. Barnet kan få
+næseblod eller ildelugtende flåd
+fra næsen. Fremmedlegemet
+kan give betændelses­tilstand i næsen, eller genstanden kan
+glide bagud i svælget og give risiko for kvælning.
+Symptomer
+Ved fremmedlegeme i næsen kan der være smerter, ømhed,
+blod eller væske, der løber ud fra næseboret.
+Skab sikkerhed
+Pas på ikke at ”trykke” på fremmedlegemet, da det kan sætte
+sig mere fast.
+Giv førstehjælp
+Bed den personen om forsigtigt at pudse næsen. Hvis frem-
+medlegemet ikke kommer ud, så forsøg forsigtigt, at fjerne
+synlige fremmedlegemer med en pincet. Forsøg kun at fjerne
+fremmedlegemet, hvis det sidder synligt og let kan nås.
+Tilkald hjælp
+Søg læge eller akutmodtagelsen/skadestue ved fastsiddende
+fremmed legeme, eller hvis det ikke kan fjernes i første for-
+søg.
+113
+--- p114
+FØRSTEHJÆLPENS ABC
+SKADER
+PÅ ØJNENE
+Træsplinter fra rundsave, fyr-
+værkeri og lignende er hyp-
+pige årsager til øjenskader. Det
+skyldes ofte manglende brug af
+beskyttelsesbriller.
+Symptomer
+Ved skader på øjnene kan der være smerter, blødning og
+tåreflod. Den tilskadekomne kan føle, at der er ”noget i øjet”,
+og øjet vil være lysfølsomt.
+Skab sikkerhed
+Flyt om muligt den tilskadekomne væk fra området. Hold evt.
+en hånd foran øjet for at beskytte det. Pas på ikke at trykke
+på øjet, da fremmedlegemet kan sætte sig mere fast.
+Giv førstehjælp
+Hvis du kan se fremmedlegemet, kan du kigge forsigtigt
+under øjenlågene. Forsøg aldrig at vende øjenlågene efter et
+slag mod øjet. Skyl øjet med vand fra næserod og udefter.
+Kan fremmedlegemet ikke skylles ud, kan du forsigtigt forsø-
+ge én gang at fjerne et synligt fremmedlegeme med en fugtig
+vatpind eller hjørnet af et rent klæde. Ved mistanke om hul
+på øjet må du ikke forsøge at fjerne fremmedlegemet. Skyl
+kun øjet, hvis skaden skyldes et kemisk stof. Lykkes det ikke
+at fjerne fremmedlegemet, skal det fjernes af en øjenlæge.
+Ved slag mod øjet kan en kølig klud holdes forsigtigt over
+øjet. Brug aldrig is eller isposer direkte på øjet, da kulden kan
+beskadige vævet. Ved dobbeltsyn dækkes det ene øje.
+Tilkald hjælp
+Søg læge eller akutmodtagelsen/skadestue ved fastsiddende
+fremmedlegeme, smerter, blødning, dobbeltsyn eller hvis øjet
+fortsat løber i vand, eller symptomerne ikke aftager.
+114
+--- p115
+FØRSTEHJÆLPENS ABC
+FREMMEDLEGEME
+I HUDEN
+Have-, metal-, glas- og træ-
+arbejde er hyppige årsager
+til fremmedlegemer i huden.
+Hænderne er særligt udsatte, da
+de bruges i de fleste arbejdsop-
+gaver. Fjernes fremmedlegemet
+ikke, kan der opstå infektion.
+Vær opmærksom på, om den
+tilskadekomne er vaccineret mod stivkrampe. Vaccinationen
+bør fornyes hvert 10. år.
+Symptomer
+Fremmedlegemer i huden kan give smerter og ømhed.
+Hvis der er en infektion, kan der opstå rødme, ømhed, varme
+og hævelse omkring fremmedlegemet.
+Giv førstehjælp
+Hvis du kan se fremmedlegemet, kan du forsigtigt fjerne
+det med en ren pincet. Sidder det lige under huden, kan du
+rengøre området og sterilisere en nål ved at holde spidsen i
+en flamme i nogle sekunder. Åbn forsigtigt huden over frem-
+medlegemet med nålen, og fjern det derefter med en pincet.
+Lykkes det ikke let at fjerne fremmedlegemet, eller sidder det
+dybt, skal du ikke forsøge yderligere, men søge læge.
+Tilkald hjælp
+Søg læge eller akutmodtagelse, hvis fremmedlegemet sidder
+dybt eller ikke kan fjernes. Mindre splinter kræver ikke læge-
+kontakt.
+115
+--- p116
+FØRSTEHJÆLPENS ABC
+STIK-
+OG SNITSÅR
+Stik- og snitsår er hyppige ska-
+der og skyldes ofte uheld med
+skarpe genstande, splintret glas,
+skarpe metalplader og lignende.
+Der er risiko for infektion. Vær
+opmærksom på, om den til-
+skadekomne er vaccineret mod
+stivkrampe. Vaccinationen bør
+fornyes hvert 10. år.
+Symptomer
+Et stik- eller snitsår giver smerter og blødning. Hvis der er
+infektion i såret, kan der opstå rødme, ømhed, varme og
+hævelse.
+Skab sikkerhed
+Husk på egen sikkerhed. Flyt om muligt den tilskadekomne
+væk fra årsagen, eller fjern de skarpe genstande, hvis det kan
+gøres sikkert.
+Giv førstehjælp
+Bløder det meget, så læg en forbinding eller et plaster. Vask
+med vand og eventuelt sæbe, hvis såret er beskidt. Brug en
+mild sæbe til formålet. Mindre sår kan samles med sterile
+strips.
+Tilkald hjælp
+Søg akutmodtagelsen/skadestue, hvis:
+ Såret er på et led, hånden eller i ansigtet
+ Såret er dybt, gaber eller har synligt fedtvæv,
+muskler eller sener
+ Blødningen fra såret ikke er standset efter en halv time.
+Der opstår rødme, ømhed, varme eller hævelse
+omkring såret.
+116
+--- p117
+FØRSTEHJÆLPENS ABC
+HUDAFSKRAB-
+NINGER
+Hudafskrabninger ses ofte ved
+fald på hårdt underlag, f.eks.
+legeplads, fodboldbane, asfalt,
+beton eller lignende. Hud, der
+ikke er dækket af tøj, er særligt
+udsat. Der er risiko for infektion.
+Vær derfor opmærksom på, om
+den tilskadekomne er vaccineret
+mod stivkrampe. Vaccinationen bør fornyes hvert 10. år.
+Symptomer
+En hudafskrabning kan give smerter og blødning. Hvis der
+er infektion i såret, kan der opstå rødme, ømhed, varme og
+hævelse.
+Giv førstehjælp
+Skyl såret grundigt med vand. Er såret synligt beskidt, kan
+du bruge en mild sæbe og forsigtigt rense såret med en blød
+svamp eller børste. Dæk derefter såret med et plaster eller en
+forbinding, indtil såret er tørt og ikke længere væsker.
+Tilkald hjælp
+Søg læge ved tegn på infektion, større hudafskrabninger i an-
+sigtet, eller hvis snavs eller fremmedlegemer ikke kan fjernes
+helt fra såret.
+117
+--- p118
+FØRSTEHJÆLPENS ABC
+NÆSEBLOD
+Næseblod kan opstå spontant
+eller efter et slag eller fald.
+Blødningen kan løbe ud af næ-
+sen eller bagud i svælget. Næ-
+seblod er sjældent farligt, men
+hos ældre kan blødningen være
+vanskeligere at standse.
+Symptomer
+Næseblod efter slag eller fald giver ofte smerter og ømhed.
+Ved fejlstilling og kraftig hævelse skal du mistænke brud.
+Giv førstehjælp
+Lad den tilskadekomne sidde op og bøje hovedet let frem, så
+blodet løber ud og ikke ned i halsen. Klem næsens bløde del
+sammen med to fingre i 10 minutter. Gentag, hvis blødningen
+fortsætter. Læg evt. en kold klud eller ispose over næse og
+pande, eller lad den tilskadekomne have en isterning/ispind i
+munden – denne presses op mod ganen med tungen.
+Tilkald hjælp
+Søg læge eller akutmodtagelse, hvis blødningen ikke er
+standset efter 20 minutters korrekt tryk, hvis blødningen ven-
+der tilbage gentagne gange, hvis almentilstanden er påvirket
+eller ved mistanke om brud
+118
+--- p119
+FØRSTEHJÆLPENS ABC
+TANDSKADER
+Tandskader opstår ofte efter
+et slag mod ansigt eller mund,
+f.eks. ved kontaktsport eller
+fald. Ved kraftige slag mod tæn-
+derne, kan de blive slået helt ud
+eller sidde løst i munden, men
+de kan også knække eller blive
+slået ind i kæbeknoglen.
+Giv førstehjælp
+Er tanden løs, så lad den sidde. Ved udslåede tænder skal du
+som førstehjælper:
+ Skylle beskidte tænder med koldt rindende vand i højst
+10 sekunder (undgå at gnide eller berøre tandroden,
+da den kan beskadiges)
+ Forsøg så hurtigt som muligt at sætte tanden forsigtigt
+tilbage i tandhullet
+ Hvis tanden ikke kan sættes på plads, skal den opbe-
+vares i mælk (ikke kærnemælk) eller fysiologisk salt-
+vand og medbringes til tandlægen hurtigst muligt.
+Brug ikke postevand eller kontaktlinsevæske til opbe-
+varing af tanden.
+ Sæt ikke en udslået mælketand tilbage i tandhullet,
+da det kan skade den blivende tand.
+ Er en tand knækket?
+Find det knækkede tandstykke, og tag det med til tand-
+lægen. Opbevar tandstykket fugtigt, f.eks. i mælk.
+Tandlægen kan i mange tilfælde sætte tandstykket
+fast igen.
+Tilkald hjælp
+Søg tandlæge hurtigst muligt ved tandskader. Er dette ikke
+muligt, eller er der samtidig alvorlige ansigts- eller kæbeska-
+der, bør personen vurderes på en akutmodtagelse.
+119
+--- p120
+FØRSTEHJÆLPENS ABC
+BJØRNEKLO
+Bjørneklo er en stor vildtvok-
+sende plante, hvis plantesaft
+kan give alvorlige hudskader
+ved udsættelse for sollys.
+Symptomer
+Når huden har været i kontakt
+med bjørneklosaft, giver det
+ofte svie, kløe, rødt udslæt eller
+eksem med væskefyldte blærer.
+Ved svære påvirkninger kan helingen tage flere måneder, og
+huden kan være misfarvet i lang tid efter.
+Skab sikkerhed
+Undgå yderligere kontakt med planten og dens saft.
+Giv førstehjælp
+Skyl huden straks med rigelige mængder vand, fjern forure-
+net tøj og smykker, og vask derefter huden grundigt med
+vand og sæbe. Opstår der blærer eller hudskader, behandles
+de som et overfladisk brandsår. Beskyt huden mod sollys
+mindst en uge. Brug solcreme faktor 50 eller tildækning af
+hudområder med tøj.
+Ved bjørneklosaft i øjet:
+Åbn øjet, og skyl med vand fra næserod og udad.
+Tilkald hjælp
+Søg læge eller akutmodtagelse ved udbredte hudforandringer,
+kraftig blæredannelse, voldsom hævelse, påvirket almentil-
+stand eller vejrtrækningsbesvær
+Søg altid læge, hvis bjørneklosaft kommer i øjet.
+120
+--- p121
+FØRSTEHJÆLPENS ABC
+NOTATER:
+121
+--- p122
+FØRSTEHJÆLPENS ABC
+SYGDOMME
+SyGdomme
+STROKE
+hjerneBlødninG eller Blodprop i hjernen
+En blødning eller blodprop i hjernen (i folkemunde ”et slagtilfælde”) medfører,
+Stroke er en fælles betegnelse for en blodprop eller blødning i
+at blodforsyningen til en del af hjernen nedsættes eller helt ophører, hvorved
+hjernen.
+den berørte del af hjernen bliver skadet eller dør på grund af iltmangel. Det
+Et stroke medfører, at blodforsyningen til en del af hjernen
+er ikke muligt for førstehjælperen at afgøre, om det er en hjerneblødning eller
+nedsættes eller helt ophører, hvorved den berørte del af hjer-
+blodprop, hvilket umiddelbart også er ligegyldigt, da førstehjælpen er ens.
+nen bliver beskadiget eller dør på grund af iltmangel. At have
+Symptomer
+et stroke er med andre ord en livstruende tilstand, med uop-
+Symptomerne afhænger helt af hvilket område i hjernen, der er blevet ramt,
+rettelige skader til følge, men heldigvis overlever rigtig mange
+men vil ofte være halvsidige og kan være lammelser i dele af ansigtet, i
+og kommer sig godt, hvis det opdages i tide.
+arme/ben, talebesvær, synsforstyrrelser og mærkelig adfærd.
+Symptomer
+Skab sikkerhed
+Hold den syge i ro. Vær opmærksom på egen og den syges sikkerhed.
+Symptomerne afhænger helt af, hvilket område i hjernen der
+er blevet ramt. Vær særligt opmærksom på pludseligt opstået
+Giv førstehjælp
+lammelse eller kraftnedsættelse i den ene arm, hængende
+Vurdér ABC og udfør HLR ved en bevidstløs person uden normal vejrtrækning
+mundvig eller talebesvær.
+og stabilt sideleje ved bevidstløs med normal vejrtrækning. Anbring den syge
+siddende eller i aflastende rygleje, afhængigt af ønske (ikke liggende). Løsn
+Skab sikkerhed
+stramtsiddende tøj, sørg for frisk luft.
+Hold den syge i ro.
+Tilkald hjælp
+Ring 1-1-2 ved ovenstående symptomer og før der evt. påbegyndes HLR.
+122
+122
+--- p123
+FØRSTEHJÆLPENS ABC
+Giv førstehjælp
+Hjælp personen til en behagelig stilling – ofte siddende – af-
+hængigt af hvad personen selv finder mest behageligt.
+For finde ud af, om der er tale om et stroke, anvendes rem-
+sen:
+Stræk – kan personen løfte begge arme, eller hænger den
+ene arm ned?
+Snak – bed personen sige en enkel sætning, f.eks. ”Det er et
+dejligt vejr i dag.” Lyt efter utydelig tale eller problemer med
+at finde ordene.
+Smil – bed personen om at smile – hænger den ene mund-
+vig.
+Tilkald hjælp
+Ring straks 1-1-2, hvis personen har ét eller flere symptomer
+på stroke.
+Stræk, snak smil.
+Billedet er venligst udlånt af Dansk Råd for Genoplivning.
+123
+--- p124
+FØRSTEHJÆLPENS ABC
+BRYSTSMERTER/
+HJERTEKRAMPER
+Hjertet er en muskel, som har
+behov for en konstant tilførsel
+af ilt og næringsstoffer. Ilten får
+hjertet igennem sin egen blod-
+forsyning. Hvis blodforsyningen
+til hjertemusklen bliver kraftigt
+nedsat eller helt afbrudt, opstår
+der iltmangel, som kan skade
+hjertet. Dette er en livstruende tilstand. Risikofaktorer omfat-
+ter blandt andet rygning, forhøjet blodtryk, diabetes, forhøjet
+kolesterol og fysisk inaktivitet.
+Symptomer
+Brystsmerter kan opstå både under fysisk aktivitet og i hvile.
+Smerterne vil som oftest:
+ Stråle til hals, kæbe, skuldre eller arme
+– oftest venstre arm
+ Føles som ”tøndebåndssmerter”, som strammer
+omkring kroppen
+ Føles som om, ”der står en elefant på brystet”
+ Nogle oplever smerter i ryg, mave eller højre arm.
+Kvinder kan have mere diffuse symptomer end den
+klassiske trykkende brystsmerte.
+Hvis der er tale om en blodprop, er smerterne stærke og lin-
+dres ikke af hvile eller medicin. Er der tale om en forsnævring
+i hjertets egne blodkar, kan smerterne forsvinde, hvis perso-
+nen holder sig i ro.
+Herudover vil personen kunne opleve: svimmelhed, vejrtræk-
+ningsbesvær, kvalme, angst og nervøsitet. Herudover sympto-
+mer på kredsløbssvigt.
+124
+--- p125
+FØRSTEHJÆLPENS ABC
+Skab sikkerhed
+Hold personen i ro, og hjælp vedkommende til den stilling,
+der føles mest behagelig – ofte siddende.
+Giv førstehjælp
+Løsn stramtsiddende tøj, og sørg for frisk luft. Yd psykisk
+før­stehjælp. Hvis personen har ordineret hjertemedicin, kan
+du hjælpe med at finde den frem og støtte personen i selv at
+tage den. Ved mistanke om blodprop i hjertet kan alarmcen-
+tralen anbefale, at personen tygger 150–300 mg acetylsali-
+cylsyre. Eksempler på præparater er Hjerdyl®, Magnyl® og
+Kodimagnyl®. Tabletterne skal tygges for at sikre en hurti-
+gere optagelse.
+Som førstehjælper må du ikke give medicin uden aftale med
+alarmcentralen. Du kan dog oplyse om muligheden for acetyl-
+salicylsyre, hvis alarmcentralen vurderer, at det er relevant.
+Tilkald hjælp
+Ring straks 1-1-2 ved mistanke om blodprop i hjertet eller
+ved vedvarende brystsmerter. Fortæl alarmcentralen, hvornår
+symptomerne begyndte, og om personen har kendt hjerte-
+sygdom eller har taget hjertemedicin.
+125
+--- p126
+FØRSTEHJÆLPENS ABC
+SYGDOMME I
+LUFTVEJENE
+Der findes mange sygdomme i
+luftvejene. De mest almindelige
+er astma, kronisk bronkitis og
+kronisk obstruktiv lungesygdom
+(KOL). De respektive sygdomme
+har forskellige årsager og
+sammenhænge. Astma kan
+blandt andet udløses af allergi,
+infektioner, kulde eller fysisk anstrengelse. Under et anfald
+trækker musklerne omkring luftvejene sig sammen, slimhin-
+den hæver, og der dannes øget slim, mens kronisk bronkitis
+er kendetegnet ved øget slimproduktion og vedvarende hoste.
+KOL er en kronisk sygdom, hvor luftvejene og ofte også
+lungevævet bliver permanent beskadiget og derfor fungerer
+dårligere. Her vil der også være en øget slimproduktion og en
+sammen­trækning af luftvejene. Som førstehjælper behøver
+du ikke kunne skelne mellem sygdommene – du skal reagere
+på symptomerne og førstehjælpen er ens.
+Følelse af ubehag i brystet
+ Hvæsende eller pibende vejrtrækning og besværet
+udånding (særligt ved astma)
+ Tør hoste (særligt ved astma)
+ Hoste med sejt slim (hyppigst ved KOL
+og kronisk bronkitis)
+ Uro eller angst som følge af vejrtrækningsbesvær
+ Besvær med at tale i hele sætninger på grund af
+åndenød
+ Blåfarvning af læber eller hud kan være tegn på
+alvorlig iltmangel.
+126
+--- p127
+FØRSTEHJÆLPENS ABC
+Skab sikkerhed
+Hold den syge i ro.
+Giv førstehjælp
+Hold den syge i ro, men lad selv personen bestemme hvordan
+denne sidder/står. Løsn stramtsiddende tøj, og sørg for frisk
+luft. Fjern røg og stærke lugte. Hjælp personen med at finde
+sin inhalator og støt vedkommende i selv at tage den ordine-
+rede medicin. Gentag om nødvendigt behandlingen.
+Tilkald hjælp
+Ring 1-1-2 ved alvorlige vejrtrækningsproblemer, hvis perso-
+nen bliver blå omkring læberne, har svært ved at tale, bliver
+sløv eller hvis den ordinerede medicin ikke har tilstrækkelig
+effekt.
+127
+--- p128
+FØRSTEHJÆLPENS ABC
+FALSK
+STRUBEHOSTE
+Falsk strubehoste rammer især
+børn fra 6 måneder til 3-5 år.
+Det er en virusinfektion. Syg-
+dommen rammer især om efter-
+året og vinteren. Infektionen
+får slimhinden omkring struben
+til at hæve, så luftvejene bliver
+smallere og gør det sværere at
+trække vejret.
+Symptomer
+Symptomerne kommer ofte om aftenen eller natten, typisk
+½-2 døgn efter en forkølelse. Barnet får ofte en klassisk
+gøende hoste, som kan lyde som en søløvehoste. Barnet har
+som regel ingen eller kun let feber og er ofte kun let påvirket
+i sin almentilstand.
+Skab sikkerhed
+Bevar roen, og berolig barnet. Lad barnet sidde oprejst, gerne
+på skødet af en voksen.
+Giv førstehjælp
+Berolig barnet, og lad det sidde oprejst, gerne på skødet
+af en voksen. Lad barnet indånde kold, fugtig luft fra fx et
+åbent vindue eller udendørs. Hos nogle børn kan damp virke
+lindrende. Bevar selv roen, da uro hos voksne kan forværre
+barnets symptomer.
+Tilkald hjælp
+Kontakt læge eller lægevagt, hvis barnet er slapt, eller hvis
+vejrtrækningsbesværet fortsætter eller forværres. Ring 1-1-2,
+hvis barnet bliver bevidstløst eller holder op med at trække
+vejret.
+128
+--- p129
+FØRSTEHJÆLPENS ABC
+ALVORLIGE
+ALLERGISKE
+REAKTIONER
+Alvorlige allergiske reaktioner
+(anafylaksi) ses hyppigst hos
+personer med kendte allergier
+over for fx fødevarer, lægemid-
+ler eller insektstik. Reaktionen
+kan udvikle sig hurtigt og være
+livstruende. Mange personer med kendt risiko medbringer en
+adrenalinpen til behandling.
+Symptomer
+Symptomerne udvikler sig ofte hurtigt og kan omfatte:
+• vejrtrækningsbesvær eller hvæsende vejrtrækning
+• hævelse af læber, tunge, svælg eller omkring øjnene
+• kløe i mund, svælg, håndflader, fodsåler eller på huden
+• nældefeber og rødme
+• kvalme, opkast, diarré eller mavesmerter
+• svimmelhed, slaphed eller bevidsthedspåvirkning
+• angst og uro.
+Skab sikkerhed
+Hold personen i ro, og undgå unødig fysisk aktivitet, da dette
+kan forværre reaktionen. Fjern om muligt det stof, der udløste
+den allergiske reaktion.
+Giv førstehjælp
+Forebyg kredsløbssvigt ved at lejre personen liggende og ind-
+pakke personen. Hjælp den syge med at finde sin medicin.
+Tilkald hjælp
+Ring straks 1-1-2 ved mistanke om en alvorlig allergisk reak-
+tion – også selv om personen har anvendt sin adrenalinpen.
+Adrenalin virker kun i en begrænset periode, og personen skal
+altid vurderes på hospital.
+129
+--- p130
+FØRSTEHJÆLPENS ABC
+SUKKERSYGE
+Sukkersyge (diabetes) er en sygdom, hvor kroppen enten
+ikke producerer tilstrækkeligt insulin, eller hvor kroppens cel-
+ler reagerer dårligere på insulin. Insulinen er ”nøglen” til at få
+sukker ind i vores celler, så vi kan opretholde vores livsvigtige
+funktioner (celler kan ikke fungere uden sukker).
+Behandlingen afhænger af typen af diabetes og kan bestå af
+kostomlægning, motion samt medicin i form af tabletter og/
+eller insulin.
+Sukkersyge kan medføre enten for lavt eller for højt blod-
+sukker. For lavt blodsukker udvikler sig ofte hurtigt og kan
+være livstruende, hvis det ikke behandles med det samme.
+For højt blodsukker udvikler sig som regel langsommere og
+er sjældent akut livstruende. Som førstehjælper behøver du
+derfor ikke at afgøre, om personen har for højt eller for lavt
+blodsukker. Førstehjælpen er derfor at give sukker, da det
+normalt kun har begrænset betydning for en person med for
+højt blodsukker, mens manglende behandling af for lavt
+blodsukker er akut livstruende.
+For højt blodsukker
+Kan skyldes manglende insulin, infektion, graviditet, sygdom,
+stress eller utilstrækkelig diabetesbehandling.
+For lavt blodsukker
+Kan skyldes for meget insulin, for lidt mad, hård fysisk aktivi-
+tet eller alkohol.
+130
+--- p131
+FØRSTEHJÆLPENS ABC
+Symptomer
+Mange af symptomerne på for højt og for lavt blodsukker er
+de samme:
+ Sult/Tørst
+ Sløret tale
+ Mærkelig/aggressiv adfærd
+ Kramper
+ Kvalme/opkast
+ Hyppige vandladninger
+ Omtågethed/bevidstpåvirkning
+ Uro, rastløshed, kløe og evt. svedende.
+Skab sikkerhed
+Hold personen i ro, og vær opmærksom på egen og perso-
+nens sikkerhed.
+Giv førstehjælp
+Hvis personen selv kan måle sit blodsukker og administrere
+sin insulin, kan du hjælpe med at finde udstyret frem. Du må
+ALDRIG selv give insulin
+Hvis personen er vågen og kan synke sikkert, gives hurtigt-
+virkende sukker, fx juice, almindelig sodavand eller druesuk-
+ker. Når personen får det bedre, gives langsomt optagelige
+kulhydrater, fx rugbrød.
+Tilkald hjælp
+Ring 1-1-2 hvis personen er bevidsthedspåvirket, ikke kan
+synke sikkert, bliver bevidstløs eller ikke hurtigt får det bedre
+efter behandling med sukker.
+131
+--- p132
+FØRSTEHJÆLPENS ABC
+FEBER
+Feber er i sig selv ikke en syg-
+dom, men et symptom, og oftest
+et symptom på en infektion.
+Kroppen hæver temperaturen
+for bedre at kunne imødegå in-
+fektioner. Den normale legems-
+temperatur er omkring 37°C (fe-
+ber defineres som temperatur på
+min. 38 0C målt rektalt). Oftest
+er feber helt ufarligt, men kommer temperaturen over 42°C,
+er det en livstruende tilstand. Det mest sikre til at afgøre en
+temperatur er et termometer (rektal måling), men man kan
+skaffe sig et indtryk af, om en syg har høj feber, ved at før-
+stehjælperen anvender sin egen hånd som temperaturføler.
+Symptomer
+ Kulderystelser
+ Svedeture
+ Træthed
+ Hovedpine
+ Muskelsmerter
+ Almen utilpashed.
+Giv førstehjælp
+Sørg for, at personen får rigeligt at drikke, og tilpas påklæd-
+ning og omgivelser efter personens behov. Håndkøbsmedicin,
+fx paracetamol eller ibuprofen, kan anvendes efter gældende
+anbefalinger. Hvis personen selv kan tage sin febernedsæt-
+tende medicin, kan du hjælpe med at finde den frem. Som
+førstehjælper må du ikke ordinere eller administrere medicin.
+Tilkald hjælp
+Søg læge ved feber i mere end 3 dage eller ved temperatur
+over 40 °C. Ring 1-1-2, hvis personen har påvirket almen-
+tilstand med forvirring, sløvhed eller bevidsthedspåvirkning,
+eller hvis feberen er ledsaget af nakkestivhed
+132
+--- p133
+FØRSTEHJÆLPENS ABC
+FEBERKRAMPER
+Feberkramper ses hyppigst hos
+børn i alderen 6 måneder til 5 år,
+men kan i sjældne tilfælde fore-
+komme hos børn op til 12-årsal-
+deren. Feberkramper kan opstå
+i forbindelse med en hurtig
+temperaturstigning, ofte til over
+38,5 °C, typisk ved en infektion.
+Den præcise årsag kendes ikke.
+Selvom feberkramper kan være en skræmmende oplevelse for
+barnets forældre, er de som regel ufarlige og ophører oftest
+af sig selv. Tilstanden skal dog altid tages alvorligt, da andre
+sygdomme kan give lignende symptomer og man ikke kan
+udelukke f.eks. epilepsi.
+Symptomer
+Hurtig temperaturstigning, kramper og bevidsthedspåvirkning
+eller kortvarig bevidstløshed.
+Skab sikkerhed
+Beskyt barnets hoved med dine hænder eller en pude under
+krampeanfaldet, og følg barnets bevægelser.
+Giv førstehjælp
+Hold øje med barnets vejrtrækning. Når kramperne er ophørt,
+lægges barnet i stabilt sideleje, hvis det er bevidstløst og
+trækker vejret normalt. Sørg for frisk luft ved at åbne et vin-
+due eller tage barnet med udenfor, hvis det kan gøres sikkert.
+Tilbyd små slurke væske, når barnet igen er vågent.
+Tilkald hjælp
+Ring 1-1-2, hvis det er barnets første feberkrampe, hvis
+kramperne varer mere end 5 minutter, eller hvis barnet ikke
+hurtigt kommer til sig selv efter anfaldet. Barnet bør efterføl-
+gende vurderes af en læge.
+133
+--- p134
+FØRSTEHJÆLPENS ABC
+MAVESMERTER
+Maveinfektioner er meget ud-
+bredte og ofte smitsomme. De
+skyldes typisk virus, men kan
+også forårsages af bakterier eller
+parasitter. Smitten kan blandt
+andet ske via dårlig håndhygi-
+ejne, forurenede fødevarer eller
+forurenet drikkevand. Mange
+tilfælde skyldes madforgiftning.
+De fleste maveinfektioner går over af sig selv efter få dage.
+Den mest effektive forebyggelse er, at hyppigt vaske hænder
+og gerne med efterfølgende brug af håndsprit.
+Symptomer
+Mavesmerter/mavekneb og diarré, smerter forskellige steder i
+maven, oppustethed, feber, kvalme/opkast.
+Skab sikkerhed
+Forebyg smitte ved at opretholde en god håndhygiejne og
+rengøre fælles kontaktflader. Hvis der er mistanke om en
+smitsom maveinfektion, bør personen om muligt opholde sig i
+eget rum og benytte eget toilet.
+Giv førstehjælp
+Sørg for, at personen får rigeligt at drikke. Giv gerne væske
+med sukker og salt, f.eks. elektrolytopløsning. Har du ikke
+dette, kan en hjemmelavet sukker-salt-opløsning anvendes.
+Turistdrik: 1 liter vand, 2 spsk. sukker og ½ tsk. salt.
+Når opkastningerne er ophørt, kan personen begynde med
+letfordøjelig kost i små portioner efter appetit
+Tilkald hjælp
+Søg læge ved høj feber, blodig diarré, tegn på dehydrering el-
+ler påvirket almentilstand.
+134
+--- p135
+FØRSTEHJÆLPENS ABC
+AKUTTE
+MAVESMERTER
+Akutte mavesmerter kan skyldes
+alt fra harmløse til alvorlige
+tilstande, fx luft i tarmene,
+blindtarmsbetændelse eller indre
+blødninger. Hos kvinder i den
+fødedygtige alder kan smerterne
+også skyldes graviditet uden
+for livmoderen. Pludselige eller
+kraftige mavesmerter bør tages alvorligt.
+Symptomer
+ Kraftige eller pludseligt opståede smerter i maven
+ Bleg og koldsvedende hud
+ Hurtig og overfladisk vejrtrækning
+ Bevidsthedspåvirkning
+ Ved blødning fra mavesækken eller spiserøret kan
+der ses friskt rødt eller kaffegrumslignende opkast.
+Skab sikkerhed
+Hold den syge i ro.
+Giv førstehjælp
+Hjælp personen til at finde en stilling, hvor smerterne lindres.
+Mange oplever lindring ved at ligge på ryggen med bøjede
+ben.
+Tilkald hjælp
+Søg læge eller akutmodtagelse ved pludseligt opståede eller
+kraftige mavesmerter. Ring 1-1-2, hvis personen er be-
+vidsthedspåvirket eller har stærke smerter kombineret med
+påvirket almentilstand. Ring 1-1-2, hvis personen er bevidst-
+hedspåvirket.
+135
+--- p136
+FØRSTEHJÆLPENS ABC
+KRAMPER
+OG EPILEPSI
+Kramper kan have mange for-
+skellige årsager. Epilepsi er en af
+de mest kendte, men kramper
+kan også skyldes sygdomme i
+hjernen, fx hjernetumorer, lavt
+blodsukker, forgiftninger eller
+hjertestop. Som førstehjælper
+er det vigtigt ikke at forsøge at
+stille en diagnose, men i stedet reagere på symptomerne og
+yde den nødvendige førstehjælp.
+Symptomer
+Kramper kan komme til udtryk på mange forskellige måder.
+Symptomerne kan blandt andet være:
+ Rykvise kramper, som ofte varer flere minutter
+ Bevidstløshed, evt. vandladning, fråde om munden
+og blå farvning af læber, ører og næsefløje (iltmangel)
+ Ved epilepsi kan kramper også vise sig som absencer,
+hvor personen i få sekunder bliver fjern og ikke reage-
+rer på omgivelserne
+Skab sikkerhed
+Læg personen ned, og beskyt hovedet mod stød og slag
+under krampeanfaldet. Følg personens bevægelser, og fjern
+genstande, som personen kan komme til skade på. Er der
+tilskuere, bør personen så vidt muligt afskærmes for at be-
+skytte vedkommendes værdighed, da epileptiske anfald kan
+være ledsaget af ufrivillig vandladning.
+136
+--- p137
+FØRSTEHJÆLPENS ABC
+Giv førstehjælp
+ Vær rolig
+ Beskyt personens hoved mod stød og slag.
+Læg fx en trøje eller lignende under hovedet
+ Fjern genstande, som personen kan komme til skade på
+ Hold ikke personen fast, og forsøg ikke at stoppe
+kramperne
+ Stik aldrig noget i personens mund
+ Når kramperne er ophørt, kontrolleres vejrtrækningen.
+Hvis personen er bevidstløs og trækker vejret normalt,
+lægges personen i stabilt sideleje
+ Bliv hos personen, indtil bevidstheden er vendt tilbage,
+og vedkommende kan klare sig selv
+Tilkald hjælp, hvis:
+ Ring 1-1-2 ved kramper. Husk, at du som førstehjælper
+ikke kender årsagen til kramperne
+ Pårørende til personer med epilepsi kan være oplært
+i at yde anden førstehjælp, hvor de først ringer 1-1-2,
+hvis anfaldet varer mere end 5 minutter.
+ Der skal dog altid ringes 1-1-2, hvis anfaldet gentager
+sig, sker under badning, eller personen er kommet til
+skade.
+137
+--- p138
+FØRSTEHJÆLPENS ABC
+MENNESKETS ANATOMI OG FYSIOLOGI
+Livsbetingelser
+Alle levende organismer består af vand og en eller flere celler.
+Nogle organismer er så små, at de kun består af en enkelt
+celle, f.eks. en bakterie. Andre organismer består af flere bil-
+lioner celler.
+Mennesket er en flercellet organisme, og man anslår, at vi be-
+står af ca. 75 billioner celler. Celler varetager mange forskel-
+lige funktioner, og generelt udgør flere celler af samme type,
+et væv f.eks. muskelvæv eller nervevæv.
+Mennesket er afhængigt af forskellige livsbetingelser – blandt
+andet vand, føde, varme, ilt og et omgivende atmosfærisk
+tryk. Det grundlæggende for liv er, at der tilgår ilt og næ-
+ringsstoffer til cellerne hvor dette forbrændes, og at der dan-
+nes energi og varme, som cellerne kan bruge.
+Livet er også afhængigt af, at kroppen kan regulere mængden
+af vand, ilt mm. Vi drikker f.eks. når vi er tørstige, og vi træk-
+ker vejret hurtigere, når vi løber.
+På samme måde udskiller vi mere urin, når vi har overskud
+af vand i kroppen, og vi har en rolig vejrtrækning, når vi er i
+hvile. Kroppen holdes på den måde i balance.
+Et normalt fungerende menneske er i øvrigt kendetegnet ved
+to ting. Vi reagerer på omgivelserne f.eks. ved tiltale, berø-
+ring, synsindtryk mm., og vi er i stand til at udføre koordine-
+rede bevægelser.
+138
+--- p139
+FØRSTEHJÆLPENS ABC
+Menneskets organsystemer
+Mennesket er opbygget af forskellige organsystemer, hvoraf
+nedenstående er de 6 vigtigste. De livsvigtige systemer er
+markeret med fed skrift.
+ Nervesystemet:
+centralnervesystemet og det perifere nervesystem
+ Åndedrætssystemet
+ Kredsløbssystemet
+ Fordøjelsessystemet
+ Udskillelsessystemet
+ Bevægeapparatet.
+Centralnerve-, åndedræts-, og kredsløbssystemet kaldes
+livsvigtige systemer, da de kun kan være uden ilt (ude af drift
+i ganske kort tid), før cellerne tager skade og der kan opstå
+uoprettelig celle- og væv­skade.
+Det er derfor vigtigt, at disse systemer fungerer så optimalt
+som muligt, hvilket er førstehjælperens fornemste opgave at
+understøtte i en eventuel førstehjælpssituation.
+139
+--- p140
+FØRSTEHJÆLPENS ABC
+NOTATER:
+140
+--- p141
+Nervesystemet
+Udskillesessystemet
+Bevægeapparatet:
+Muskler
+FØRSTEHJÆLPENS ABC
+Åndedrætssystemet
+Kredsløbssystemet
+Fordøjelsessystemet
+Bevægeapparatet:
+Knogler og led
+141
+--- p142
+FØRSTEHJÆLPENS ABC
+NERVESYSTEMET
+Nervesystemet består af nerveceller, såkaldte neuroner. Disse
+er kendetegnet ved at have lange udløbere fra neuronet, så-
+ledes at neuroner kan kommunikere med hinanden og andre
+celler i kroppen. Nervesystemet har grundlæggende betyd-
+ning for menneskets tilværelse og dets måde at reagere på.
+Nervesystemet er anatomisk opdelt i 2, centralnervesystemet
+(CNS) og det perifere nervesystem (PNS).
+Centralnervesystemet
+Centralnervesystemet består af storhjernen, lillehjernen, den
+forlængede marv og rygmarven. Det ligger godt beskyttet,
+dels af kraniet og dels af hvirvellegemerne i rygsøjlen. CNS er
+omgivet af rygmarvs- og hjernehinder samt væske (cerebro-
+spinalvæske). Områder for sanseindtryk, tale, personlighed
+m.m. er placeret i storhjernen. Centre for åndedræt, kreds-
+løb og bevidsthed er placeret i den forlængede rygmarv lige
+under storhjernen. Lillehjernen koordinerer bl.a. kroppens
+bevægelser.
+142
+--- p143
+FØRSTEHJÆLPENS ABC
+Storhjernen og lillehjernens størrelse hos mennesker har be-
+tydelige variationer, men vejer i reglen fra 1.300-1.500 g.
+CNS styrer alle funktioner i kroppen. CNS modtager primært
+inputs fra PNS (fra de forskellige sanser: føle-, syns-, høre-,
+smags-, og lugtesansen), og på den måde registrerer CNS alt,
+hvad der sker omkring os. F.eks. føler vi med vores storetå ef-
+ter vandets temperatur i swimmingpoolen, inden vi hopper i.
+Dette input sendes via nervebanerne (PNS) op igennem vores
+ben og videre til vores rygmarv (CNS) og videre til hjernen.
+Funktionen kan sammenlignes med et elektrisk system, hvor
+rygmarven er et stort elkabel. I stedet for metaltråde indehol-
+der den nervebaner, der har til opgave at videresende besked
+til og fra hjernen.
+CNS bearbejder disse signaler og videresender herefter
+besked til de forskellige systemer i kroppen om at udføre en
+reaktion – det kunne f.eks. være at hoppe i swimmingpoolen,
+at aktivere spytkirtlerne, hvis vi ser noget lækker mad eller at
+få huden til at svede, hvis vi har det for varmt.
+Centralnervesystemet er meget følsomt over for påvirkninger,
+som f.eks. iltmangel. Manglende iltforsyning til hjernecellerne
+i mere end få minutter kan medføre uoprettelige skader.
+143
+--- p144
+FØRSTEHJÆLPENS ABC
+Det perifere
+nervesystem
+Det perifere nervesystem
+forgrener sig ud fra ryg-
+marven og omfatter alle
+de nervebaner, der ikke er
+i CNS, f.eks. nervebanerne
+i arme og ben. Nerveba-
+nerne udgår fra rygmarven
+gennem de små mellem-
+rum, der findes mellem
+hvirvlerne i rygsøjlen.
+Funktionelt deles nervesy-
+stemet i 2 dele, hhv. det
+ubevidste og det bevidste.
+De ubevidste funktio-
+ner kaldes det autonome
+nervesystem, som igen
+opdeles i to systemer, hvor
+det ene er særligt aktivt i
+”fight or flight” (kæmp el-
+ler flygt)-situationer, hvor
+mennesket bl.a. får øget
+puls, større pupiller eller
+har ufrivillig vandladning,
+hvis vi bliver meget bange,
+mens den anden del af det
+autonome nervesystem er
+aktivt, når vi er i hvile.
+De bevidste funktioner kal-
+des det somatiske nerve-
+system, som vi selv styrer.
+Eksempelvis når du kører
+bil og ser et rødt lys, hvor
+du reagerer ved at flytte
+foden fra speederen til
+bremsen.
+144
+Storhjernen
+Lillehjernen
+Den forlængede
+rygmarv
+Rygmarv
+Det perifere
+nervesystem:
+Nervebanerne
+--- p145
+FØRSTEHJÆLPENS ABC
+NOTATER:
+145
+--- p146
+FØRSTEHJÆLPENS ABC
+ÅNDEDRÆTSSYSTEMET
+Åndedrætssystemets (kaldes også respirationssystemet)
+primære opgave er at optage ilt fra den atmosfæriske luft og
+udskille kuldioxid (CO2) gennem udåndingsluften. Systemet
+medvirker desuden til tale og til stimulering af lugtesansen.
+Respirationsorganerne består af luftveje, lunger og vejrtræk-
+ningsmuskler.
+Luftvejene består af de øvre og de nedre luftveje. De øvre
+luftveje består af næsehule, mundhule og svælget. Svælget
+opdeles yderligere i næsesvælget og mundsvælget. De nedre
+luftveje består af struben, luftrør, luftrørsgrene (hovedbron-
+kier) og lungeblærerne (alveolerne).
+Øvre luftveje
+Vi bruger både munden og næsen til at trække vejret med –
+munden dog mest når vi har behov for meget luft, er for-
+kølede el. lign. Næsehulen har til opgave at rense, fugte og
+opvarme indåndingsluften. Svælget er forbindelsen mellem
+næsehulen og strubehovedet, og det kan, hos de fleste, ses
+som ”det bagerste i munden imellem mandlerne”, når man
+gaber op foran spejlet.
+Munden bruges til transportvej for både mad og luft. Dette
+giver nogle gange konflikter, og vi får maden i ”den gale hals”.
+Normalt tygges maden sammen i en i ”fødebolle“, som af tun-
+gen skubbes bagud mod svælget, når fødebollen skal synkes.
+146
+--- p147
+FØRSTEHJÆLPENS ABC
+Den bløde gane lukker af, så maden ikke kommer op i næ-
+sehulen, og samtidig klapper strubelåget ned over struben,
+så der lukkes for adgang til luftvejene. Maden kan nu kun
+komme én vej, ned i spiserøret.
+Hvis maden kommer i den gale hals, er struben udstyret med
+en form for reflekser, som bl.a. beskytter luftrøret mod frem-
+medlegemer.
+Hvis man eksempelvis får en krumme ned i luftrøret, udløses
+der øjeblikkeligt en kraftig hostereaktion. Denne hostereak-
+tion er udløst af en refleks, som sikrer, at krummen blæses ud
+af svælget.
+Nedre luftveje
+Luftrøret holdes åbent ved hjælp af bruskringe og muskler.
+Indvendigt i luftrøret findes en mængde små fimrehår, der
+tilbageholder partikler (ofte støv), som herefter kan hostes op
+og spyttes ud/sluges. Luftrøret bliver delt inde midt i brystet
+i en højre og venstre hovedforgrening (hovedbronkierne).
+Disse forgrener sig derefter ud i flere og mindre grene (bron-
+kier og bronkioler) og ender i de mindste afsnit af lungerne,
+lungeblærerne (alveolerne). De nedre luftveje kan sammen-
+lignes med et træ, hvor stammen er luftrøret, grenene er
+bronkierne, og bladene er alveolerne.
+147
+--- p148
+FØRSTEHJÆLPENS ABC
+Lungeblærerne er mikroskopiske, og et voksent menneske
+har 3-500 mio. stk., hvilket giver et enormt overfladeareal
+(på størrelse med en tennisbane, hvis man kunne folde dem
+alle ud). Lungeblærerne sidder meget tæt som en klase druer
+for enden af de mindste luftrørsforgreninger. Omkring lun-
+geblærerne er blodkarrene uhyre tynde og gennemtrænge-
+lige for gasarter (f.eks. ilt og kuldioxid), og disse smyger sig
+omkring lungeblærerne. Det er i lungeblærerne, at luftskiftet
+imellem blod og luften finder sted.
+Øvre
+luftveje
+Nedre luftveje
+148
+--- p149
+FØRSTEHJÆLPENS ABC
+Vejrtrækningssmuskulaturen består primært af ribbens- og
+mellemgulvsmusklen.
+Indånding er en aktiv bevægelse og består i, at mellemgulv-
+smusklen sænkes, og musklerne mellem ribbenene sammen-
+trækkes. Derved øges rumfanget i lungerne, og luften suges
+ind igennem de øvre luftveje, ned gennem luftrøret og ud i
+luftrørsgrenene og derefter gennem mindre og mindre grene
+for til sidst at føres til de mindste afsnit, lungeblærerne.
+Udåndingen er en passiv bevægelse og sker ved, at ribbens-
+og mellemgulvsmusklen afslappes. Herved mindskes rumfan-
+get i lungerne, og luften presses ud.
+Efter udånding er mellemgulvs­musklen helt oppe lige under
+brystvorteniveau.
+Vejrtrækningen består af den stadigt skiftende ind- og ud-
+ånding. Ved indånding optager legemet ilt, som bruges ved
+forbrændingsprocessen i alle legemets celler. Ved udånding
+udskilles kuldioxid (CO2), der er et af affaldsstofferne fra for-
+brændingsprocessen i cellerne. Ved besværet åndedræt kan
+det være nødvendigt at bruge kroppens hjælpemuskler, som
+f.eks. hals, ryg- og bugmuskler, for at udføre vejrtrækningen.
+Ilten fra den atmosfæriske luft kommer via en indånding ind
+i lungeblærerne, hvorefter den vil trænge over i blodbanen.
+Ligeledes vil kuldioxiden (CO2) fra blodbanen trænge over i
+alveolerne og herefter blive fjernet med udåndingsluften.
+I hvile trækker et voksent menneske vejret ca. 10-20 gange i
+minuttet. I den atmosfæriske indåndingsluft er der ca. 21 %
+ilt, og i udåndingsluften er der ca. 17 % ilt. Det forholdsvis
+høje indhold af ilt i udåndingsluften er grundlaget for, at kun-
+stigt åndedræt har en virkning.
+149
+--- p150
+FØRSTEHJÆLPENS ABC
+Halsen
+Halsen består af svælget, struben, øvre del af luftrøret, spise-
+røret, halsrygrad samt kar og nerver. Halsen er ved traumer
+meget udsat, og det er af førlighedsårsager vigtigt at være
+fokuseret på symptomer på skader på halsen. Symptomerne
+kan være mangeartede, alt efter hvilke strukturer på halsen,
+der er involveret.
+Hvis det er luftvejene, der rammes, vil man alt efter svær-
+hedsgraden kunne observere hæshed, hoste, smerte, fortyk-
+kelse af halsen på grund af luft under huden og blodigt sekret
+fra halsen.
+Hvis halsrygraden er skadet, vil man (igen afhængig af ska-
+desomfang) kunne se lammelser af arme og ben, eventuelt
+kombineret med vejrtrækningsbesvær.
+150
+--- p151
+FØRSTEHJÆLPENS ABC
+Lungerne
+Hver lunge er omgivet af
+en dobbelt lungehinde, som
+består af bindevæv. Den
+inderste lungehinde er fast-
+vokset til lungevævet, og
+den yderste er fastvokset til
+oversiden af mellemgulvet
+og indersiden af brystkassen.
+Mellem de 2 hinder er der et
+svagt undertryk, som holder
+lungerne udfoldet. Lidt væske
+mellem hinderne forhindrer,
+der opstår gnidningsmodstand
+under ind- og udånding.
+Lungerne er således ”limet“
+til vejrtrækningsmuskulatu-
+ren. Lungerne fylder det me-
+ste af brysthulen. Fortil slutter
+lungerne ved ca. 5.-6. ribben,
+hvor de hviler på mellemgul-
+vet. Bagtil går de ned til ca.
+9.-10. ribben, altså næsten
+ned til ribbensranden.
+Lungerne ligger altså godt
+beskyttet bag ribbenene.
+Vægten af lungerne er i for-
+hold til deres størrelse lav.
+Tilsammen vejer de kun ca.
+1 kg. – derimod er luftindholdet
+stort, ca. 3.000 ml.
+Højre lunge er ca. 20 %
+større end venstre. På grund
+af luftindholdet er vævet så
+let, at et afklippet stykke vil
+flyde ovenpå, hvis det lægges
+i vand.
+Indåndning
+Udåndning
+Mellem-
+gulvs-
+muskel
+151
+--- p152
+FØRSTEHJÆLPENS ABC
+KREDSLØBSSYSTEMET
+Kredsløbet er kroppens indre transportsystem, som trans-
+porterer ilt, næringsstoffer og lignende til organismens celler,
+organer og organsystemers energiomsætning, hvilket er
+en afgørende forudsætning for deres funktioner. Kredsløbet
+transporterer desuden affaldsstoffer bl.a. fra cellernes energi-
+omsætning til f.eks. lunger og nyrer (hvor det kan udskilles).
+Kredsløbet deltager desuden i organismens temperaturregule-
+ring samt i opretholdelse af blodtrykket.
+Kredsløbet består af hjertet, blodkar og blod.
+Iltfattigt blod
+Iltet blod
+152
+--- p153
+FØRSTEHJÆLPENS ABC
+Hjertet
+Hjertet er et muskuløst hulorgan opbygget af hjertemuskel-
+celler. Det er på størrelse med personens egen knyttede hånd.
+Det vejer ca. 300-350 g og er rødbrunt med en glat overflade.
+Hjertet ligger i brysthulen fortil og lidt til venstre for midtlin-
+jen i en hjertesæk. Ca. 2/3 af hjertet ligger godt beskyttet
+bag brystbenet.
+Selve hjertet er delt i en højre og en venstre side med en skil-
+levæg. Hver halvdel består igen af 2 kamre, som benævnes
+forkammer og hjertekammer.
+Mellem for- og hjertekammer findes en klapventil, som kun
+tillader blodet at passere i én retning. Iltforsyningen til hjerte-
+musklen sker gennem hjertets egne blodkar, kranspulsårerne,
+der ligger uden på hjertemusklen.
+Hos voksne personer i hvile pumper hjertet ca. 60-80 gange i
+minuttet, og hver gang pumper det ca. 70 ml ud, dvs. ca. 5-6
+l i minuttet, svarende til den samlede blodmængde i kroppen.
+153
+--- p154
+FØRSTEHJÆLPENS ABC
+Hjertets rytmiske sammen-
+trækninger, der muliggør
+pumpefunktionen, opstår
+via et impulslednings-
+system igennem hjerte-
+muskulaturen. Centrene
+i systemet benævnes
+”knuder“. Impulserne udgår
+fra sinusknuden, der ligger
+ved det store kredsløbs
+returindløb til hjertet øverst
+i højre forkammer.
+Impulserne fra sinusknuden
+sendes dels ud i forkam-
+renes muskulatur og dels
+til AV-knuden (atrioventri-
+kulær-knuden), som ligger
+mellem forkammer og
+hjertekammer. Her forsin-
+kes impulsen ganske lidt,
+før den sendes ud til hjerte-
+kamrenes muskulatur.
+Herved kan forkamrene nå
+af fylde hjertekamrene, før
+hjertekamrene trækker sig
+sammen og pumper blodet
+ud i henholdsvis det store
+og det lille kredsløb.
+Iltfattigt blod
+Iltet blod
+154
+--- p155
+FØRSTEHJÆLPENS ABC
+Blodkarrene
+Transport af blod i kroppen foregår i tre slags blodkar:
+ Arterier (pulsårer).
+ Kapillærer (hårkarnet).
+ Vener (returårer).
+Arterier transporterer iltet blod og næringsstoffer fra hjertet
+(venstre hjertekammer) ud til kroppens celler og organer,
+samt uiltet blod fra hjertet (højre hjertekammer) til lungerne.
+Arterier har en tyk væg af glat muskulatur, der kan trække
+sig sammen og derved øge vores blodtryk. Det er primært de
+mindre arterier (arterioler), der deltager i dette. Arterierne
+repræsenterer et ”højtrykssystem”.
+Kapillærer er mikroskopiske blodkar og udgør forbindelsen
+mellem arterier og vener. Kapillærerne danner et finmasket
+net, der gennemvæver de forskellige væv i kroppen. I kapil-
+lærnettet sker stofudvekslingen (ilt og affaldsstoffer) mellem
+blod og celler.
+Venerne transporterer iltfattigt blod og affaldsstoffer retur
+fra cellerne (til højre forkammer) samt blod fra lungerne til
+hjertet (til venstre forkammer). Venerne repræsenterer et
+”lavtrykssystem”, og det kan derved undre, hvordan vi får
+blod retur til hjertet (højre forkammer). Da der næsten ikke
+er noget tryk i venerne til at presse blodet tilbage til hjertet,
+gøres dette dels ved det undertryk, der opstår i brystkassen
+ved vejrtrækningen, dels ved det tryk, der ydes af de musk-
+ler, der ligger tæt op ad venernes tynde vægge. Dette kaldes
+”venepumpen“. Venerne er desuden indvendigt forsynet med
+”kontraventiler“ (veneklapper), som ensretter blodstrømmen
+tilbage mod hjertet.
+155
+--- p156
+FØRSTEHJÆLPENS ABC
+Blod
+Hos en voksen person på 80 kg er den totale
+blodmængde ca. 5,5 l Blodet er sammensat
+af 2 hovedgrupper: blodplasma og blodceller.
+Blodplasma er den væske, hvori blodcellerne
+transporteres rundt i kroppen og består primært
+at vand. Blodplasma kan transportere kuldioxid
+(CO2), næringsstoffer og salte.
+Blodcellerne deles op i tre undergrupper; røde
+og hvide blodceller samt blodplader. De røde
+blodceller kan transportere ilt (O2) og kuldioxid
+(CO2), mens de hvide blodceller deltager i vores
+immunforsvar ved at bekæmpe f.eks. infektio-
+ner. Blodpladerne hjælper med at få blodet til at
+koagulere (størkne).
+156
+--- p157
+FØRSTEHJÆLPENS ABC
+Det lille og det
+store kredsløb
+Kredsløbet opdeles funk-
+tionsmæssigt i det lille og
+det store kredsløb.
+Det lille kredsløb trans-
+porterer det uiltede blod
+fra højre hjertehalvdel til
+lungerne. Her afgives kul-
+dioxid (CO2) fra
+blodet til luften og ny ilt
+(O2) optages fra luften til
+blodet. Blodet er nu iltet
+og transporteres videre til
+venstre hjertehalvdel.
+Det store kredsløb trans-
+porterer iltet blod fra
+venstre hjertehalvdel ud
+i arterierne i kroppen,
+igennem kapillærnettet og
+tilbage til højre hjertehalv-
+del via venerne.
+Iltfattigt blod
+Iltet blod
+157
+--- p158
+FØRSTEHJÆLPENS ABC
+FORDØJELSESSYSTEMET
+Fordøjelsessystemets opgaver er at bearbejde maden og ned-
+bryde næringsstofferne således, at de kan optages i blodet
+og derefter transporteres rundt i kroppen. Den overskydende
+del af føden (som ikke bliver udnyttet af kroppen) udskilles
+via afføringen. Kroppen har brug for næringsstoffer til vækst,
+reparation og udvikling af energi. Næringsstofferne stammer
+fra de føde- og drikkevarer, der indtages.
+Fordøjelsessystemet består af:
+ Munden: tungen, tænderne og spytkirtlerne.
+ Spiserøret.
+ Mavesækken.
+ Tolvfingertarmen.
+ Bugspytkirtlen.
+ Leveren.
+ Galdeblæren.
+ Tynd- og tyktarmen.
+ Endetarmen.
+Fordøjelsessystemet er ganske langt. Hos normale voksne er
+der fra tænderne til endetarmsåbningen i gennemsnit ca. 9
+m, og det fordeler sig ca. således:
+ Afstanden fra tænderne til mavesækken er ca. 40 cm.
+ Mavesæk og tolvfingertarm er ca. 40 cm.
+ Tyndtarm er ca. 600-800 cm.
+ Tyktarm er ca. 130 cm og endetarm er ca. 20 cm.
+Fordøjelsen starter allerede i munden, hvor tænderne me-
+kanisk gør føden mindre og derved fødens overflade større,
+når vi tygger. Spytkirtlerne aktiveres, og via spyttet tilsættes
+føden enzymer, der starter den kemiske nedbrydning. Tungen
+hjælper ved synkeprocessen.
+158
+--- p159
+FØRSTEHJÆLPENS ABC
+Spiserøret starter ved svæl-
+get og ligger umiddelbart
+bag luftrøret inde i bryst-
+hulen. Når vi ikke indtager
+føde, er spiserøret under
+normale omstændigheder
+klappet sammen (modsat
+luftrøret).
+Spiserørets altoverskyg-
+gende funktion er at trans-
+portere mad fra munden til
+mavesækken. Mavesækken
+ligger til venstre opadtil i
+bughulen, lige under mel-
+lemgulvet. Mavesækken lig-
+ger meget tæt op ad hjertet,
+kun adskilt af mellemgulvet.
+Det kan derfor nogle gange
+været svært at konstatere,
+om smerter stammer fra
+hjertet eller mavesækken.
+Mavesækken producerer
+mavesyre (saltsyre) og
+enzymer til nedbrydelse af
+føden samt til optagelse af
+B12-vitamin. Disse enzymer
+virker bedst i et surt miljø.
+Føden kommer fra mave-
+sækken og ind i tolvfinger-
+tarmen (der har fået sit
+navn, fordi den er ca. 12
+fingre bred og er den første
+del af tyndtarmen) via en
+ringmuskel.
+I tolvfingertarmen starter
+den kemiske nedbrydning af
+159
+--- p160
+FØRSTEHJÆLPENS ABC
+føden for alvor, hvor enzymer, der hjælper med nedbrydelsen
+af proteiner og sukkerstoffer, bliver sprøjtet ind i tarmen fra
+bugspytkirtlen.
+Bugspytkirtlen spiller desuden en altafgørende rolle for krop-
+pens blodsukker­niveau, idet kirtlen producerer hormonet
+insulin, der frigives til blodet (insulin hjælper sukker fra blodet
+ind i cellerne, hvor det bliver brugt som energikilde).
+Leveren og galdeblæren
+Der bliver desuden sprøjtet galdesyre ind i tolvfingertarmen.
+Galdesyren bliver produceret i leveren og opbevaret i gal-
+deblæren, indtil det skal bruges. Galdesyren hjælper med
+at nedbryde fedt. Leveren ligger i den øverste højre del af
+bughulen, umiddelbart under mellemgulvet. Kun en lille del af
+leveren er ikke beskyttet af den nederste højre ribbensrand.
+Leveren kan sammenlignes med en kemisk fabrik, som ned-
+bryder, omdanner og deponerer næringsstofferne for senere
+at kunne bruge dem andre steder i kroppen eller hjælpe med
+at udskille dem.
+Fordøjelsen og optagelsen af næringsstofferne fortsætter i re-
+sten af tyndtarmen. Tyndtarmen er steril (uden bakterier) hos
+raske mennesker. I tyktarmen er der til gengæld rigtig mange
+bakterier – ca. 100 billioner, der vejer ca. 1,5 kg og de kaldes
+”tarmfloraen”. Tyktarmen regulerer vand- og salt-absorptio-
+nen fra føde- og drikkevarer. Endetarmen transporterer den
+overskydende del af føden (der ikke optages i kroppen) samt
+bakterier ud.
+160
+--- p161
+FØRSTEHJÆLPENS ABC
+Udskillelsessystemet
+I kroppen dannes der hele
+tiden forskellige affaldsstoffer,
+der ville være giftige for os,
+hvis vi ikke kunne komme af
+med dem. F.eks. bliver kuldio-
+xid (CO2) udskilt af lungerne,
+men vi har også behov for
+at komme af med forskel-
+lige salte og nitrogenholdige
+affaldsstoffer fra cellernes
+energiproduktion. Den opgave
+udfører nyrerne, sammen med
+flere andre, ved at filtrere
+blodet. Det egentlige udskillel-
+sessystem består af nyrerne,
+urinlederne, urinblæren og
+urinrøret. Urinen dannes i
+nyrerne og ledes fra disse til
+urinblæren med en urinleder.
+Fra urinblæren udskilles uri-
+nen via urinrøret.
+161
+--- p162
+FØRSTEHJÆLPENS ABC
+Nyrerne
+Nyrerne ligger opadtil i bughulen. Bagtil er de placeret op
+mod de 3 nederste ribben på hver side af rygsøjlen. Ca. 2/3
+af nyrerne ligger beskyttet af ribbenene. Hver nyre vejer
+ca. 150 g og måler ca. 3 x 6 x 12 cm. Farven er rødbrun, og
+overfladen er glat og blank. Nyrerne har mange meget vigtige
+funktioner, bl.a. at filtrere og rense blodet for diverse affalds-
+stoffer, sørge for væskebalance i blodbanen, regulere koncen-
+trationen af salte i blodet (calcium/fosfat), regulere blodets
+surhedsgrad (pH), regulere dannelsen af røde blodceller i
+knoglemarven (ved at danne hormonet erythropoetin, EPO),
+aktivering af vitamin D og regulere blodtrykket (ved at danne
+enzymet renin). Ved et normalt væskeindtag danner nyrerne
+tilsammen ca. 1 – 1,5 l urin i døgnet.
+Ved en skade på nyrerne eller urinvejene vil urinen ofte blive
+blodig. Ved mikroskopisk skade på nyrerne vil disse blive
+”utætte”, og specielle prøver ”urinstix” hos lægen vil kunne
+spore bl.a. røde blodlegemer og protein. Hos raske menne-
+sker er urinen steril. Hvis man har en urinvejsinfektion, vil
+man have bakterier i urinen.
+162
+--- p163
+FØRSTEHJÆLPENS ABC
+Milt
+Milten ligger i den øverste venstre del af bughulen helt oppe
+under mellemgulvet og helt tilbage mod den bagerste del af
+ribbenene. Den ligger ca. op mod 9. til 11. ribben. Milten er
+sprød af konsistens. Ved brud på et af disse ribben, kan der
+være risiko for en skade på milten, men da milten er sprød,
+kan den også gå i stykker ved et kraftigt slag mod bughulen
+opadtil til venstre. Milten er rig på blodforsyning, hvorfor den
+kan bløde ganske kraftigt ved en skade.
+Milten har forskellige vigtige funktioner. Bl.a. er milten en del
+af immunforsvaret (sammen med lymfevæsken, lymfeknu-
+derne og thymus) og virker f.eks. som et filter for kapselbæ-
+rende bakterier og antistofdannelse til at imødegå infektioner.
+Desuden er milten både udskillelsessted for syge/gamle røde
+blodceller (røde blodceller har en livscyklus på 120 dage) og
+blodplader samt et depot for røde blodceller.
+163
+--- p164
+FØRSTEHJÆLPENS ABC
+BEVÆGEAPPARATET
+Bevægeapparatet består af knogler, led og muskler.
+Knogler
+Det voksne skelet består af 206 knogler og udgør ca. 20 %
+af legemsvægten. Skelettet er kroppens største mineraldepot
+(primært kalk). Skelettet er det stillads, som giver kroppen
+dens form og udgør den stabile del af bevægeapparatet. Ske-
+lettet har desuden en beskyttende funktion ved at være værn
+for de livsvigtige organer, såsom hjernen, hjertet og lungerne.
+Knoglerne afstiver kroppen og er hæfte for muskler og sener.
+Knoglerne er opbygget af knoglevæv, der virker stift og dødt,
+men som reelt er levende væv. Knoglecellerne holder hele
+tiden knoglen i balance, da de hele tiden foretager enten en
+nedbrydning eller opbygning af knoglevævet. I nogle knogler
+findes den røde knoglemarv, hvori blodets celler dannes (røde
+og hvide blodlegemer samt blodplader).
+Knoglerne er beklædt med benhinde, der er rig på nerver
+(derfor gør det ondt at blive sparket over skinnebenet), og
+indvendigt er knoglen rig på blodkar, som forsyner knoglecel-
+lerne med ilt og næringsstoffer.
+Knogler inddeles efter udseende i 3 typer:
+ Rørknogler (der bl.a. findes i arme og ben).
+ Flade knogler (som f.eks. skulderblad, bækken og
+brystben).
+ Uregelmæssige knogler (som f.eks. ryghvirvler
+og knogler i hånd- og fodrod).
+Knoglerne danner i samarbejde med leddene et system af
+vægtstænger, som overfører muskelsammentrækninger til
+bevægelse af lemmer og krop.
+164
+--- p165
+FØRSTEHJÆLPENS ABC
+Led
+Hvor 2 eller flere knogler mødes, dannes et led, som giver
+mulighed for bevægelse. I kroppen er der 230 forskellige led.
+Led inddeles i ægte led og uægte led.
+165
+--- p166
+FØRSTEHJÆLPENS ABC
+Et ægte led består af 2
+knogleender, der er beklædt
+med ledbrusk og omgivet af
+en ledkapsel, som danner
+en ledhule med ledvæske.
+Ledbrusken sørger for, at
+knogleenderne lettere kan
+glide mod hinanden.
+Ledvæsken smører leddet og
+ernærer ledbruskens cel-
+ler. Over ledkapslen er der
+på kryds og tværs anbragt
+stærke ledbånd, som sta-
+biliserer leddet og bremser
+alt for store bevægelser.
+Uden på ledbåndene sidder
+musklerne, der kan bevæge
+leddet. Leddene i fingrene er
+et godt eksempel på et sim-
+pelt ægte led, mens knæled-
+det er et af de største og
+mest komplicerede ægte led
+i kroppen, hvor der, for at
+fordele trykket fra kroppen
+over en større flade, er ind-
+skudt 2 små bruskhalvmåner
+(menisker) i leddet.
+Uægte led består af 2
+knogleender, der er direkte
+forbundet med brusk el-
+ler bindevæv af forskellig
+tykkelse. Der er kun ringe
+bevægelighed i et uægte led,
+som eksempelvis symfysen
+(mellem skambenene).
+166
+--- p167
+FØRSTEHJÆLPENS ABC
+Rygsøjlen består af ryghvirvler (7 nakkehvirvler, 12 bryst-
+hvirvler, 5 lændehvirvler), korsbenet og halebenet. Det er
+uregelmæssige knogler, som er placeret oven på hinanden.
+Mellem ryghvirvlerne er der bruskskiver (diskus), som giver
+rygsøjlen en vis bevægelighed. Mest i nakken og lænden.
+Muskler
+Musklernes opgave er først og fremmest at gøre os i stand til
+at bevæge os. Muskler og sener er hæftet på knoglerne, og
+det er hhv. sammentrækning og afslapning i musklerne, der
+giver bevægelserne. Dette kan gøres såvel bevidst som ube-
+vidst, som en refleks.
+Der findes 3 forskellige muskeltyper i kroppen:
+ Hjertemuskel
+ Glat muskulatur (kan vi ikke bevidst styre)
+ Skeletmuskel.
+I bevægeapparatet er der kun skeletmuskler.
+Muskelvævet udgør næsten halvdelen af kropsvægten. Musk-
+lerne sørger bl.a. for bevægelse, hjælp til balance, støtte og
+beskyttelse af kroppen og dens organer, peristaltiske be-
+vægelser (bl.a. tarmenes og spiserørets bølgebevægelser),
+regulering af blodstrømmen og hjælper desuden med til at
+regulere legemstemperaturen.
+Skeletmuskler er opbygget af muskelceller holdt sammen i
+bundter af bindevæv. I muskelenderne går bindevævet over i
+sener. Senerne hæfter på knoglerne, så en muskel strækker
+sig over et eller flere led.
+Når musklen ændrer længde, enten ved at trække sig sam-
+men eller afslappes, bevæges leddet. Skeletmuskulaturen
+justerer til stadighed positionen af de forskellige legemsdele,
+så kroppen holdes i balance.
+En muskel, der skal arbejde, kræver energi og ilt. Musklerne
+er deror rigeligt forsynet med blodkar. Inde i musklerne er ka-
+pillærnettet finmasket og omslutter de enkelte muskeltråde.
+167
+--- p168
+FØRSTEHJÆLPENS ABC
+Antallet af åbentstående kapillærer varierer med musklens
+funktionsgrad. Jo højere aktivitet, des flere åbne, fra ca. 100
+åbentstående kapillærer op til 300 pr. mm2 i tværsnit.
+Alle muskler har omkring sig en hinde af bindevæv. Denne og
+senerne binder musklerne ind til skelettet og hindrer for store
+lejeforandringer af de enkelte muskler, når f.eks. et knæ bøjes
+og strækkes.
+Ved stærk og hurtig muskelaktivitet må musklerne bruge af
+egne sukkerdepoter for at danne energi. Herved forbrændes
+sukkerstoffer uden ilt (anaerob), og cellerne danner affalds-
+stoffet mælkesyre. Ophobning af mælkesyre forårsager
+smerte og muskeltræthed.
+Når musklerne arbejder moderat, bruger muskelcellerne ilt
+til at danne energi (aerob), og musklerne bliver ikke nær så
+hurtigt trætte.
+168
+--- p169
+FØRSTEHJÆLPENS ABC
+Musklernes arbejde sty-
+res af nervesystemet. Vi
+bestemmer selv, hvilke
+bevægelser vi vil fore-
+tage, men det ubevidste
+nervesystem sørger for,
+at der til stadighed er en
+vis spændingstilstand i
+musklerne, så de hurtigt
+er i stand til at reagere.
+Når musklerne arbejder,
+produceres der varme,
+som er med til at opret-
+holde normal legems-
+temperatur.
+Når musklerne i arme og
+ben arbejder, presser de
+på venerne. Musklerne i
+arme og ben er således
+en del af venepumpen
+(se Kredsløbssystemet).
+169
+--- p170
+FØRSTEHJÆLPENS ABC
+HUDEN OG HORMONERNE
+Huden
+Legemsoverfladen består af hud og slimhinder og virker
+som kroppens beskyttelse mod ydre påvirkninger. Huden er
+kroppens største organ og omfatter i bredeste forstand også
+hårene, neglene og hudkirtlerne, som samlet vejer ca. 10 kg.
+Tykkelsen er varierende fra ca. 1/3 mm. på øjenlågene til 4
+mm på fodsålen. Overfladen er ca. 1,6 m2 til 1,8 m2
+.
+Hos en voksen udgør forsiden af kroppen 18 %, bagsiden af
+kroppen 18 %, hvert ben 18 % og hver arm 9 %, hovedet og
+hals 9 % og kønsdelene 1 %. Menneskets håndflade udgør ca.
+1 % af hudarealet hos en voksen. Hos mindre børn er forde-
+lingen lidt anderledes, idet hovedet er forholdsmæssigt større.
+Arealberegningen er særlig vigtig i forbindelse med brandsår
+eller forfrysninger.
+Huden deltager i regulering af legemets temperatur, men er
+også rig på følelegemer og smertereceptorer. Desuden er hu-
+den depot for vand og fedt, deltager i dannelsen af D-vitamin
+og indeholder stamceller. Tillige har huden også en social
+funktion, da den bl.a. kan skifte farve ved vrede og frygt.
+Hormoner
+Hormoner er kemiske bestanddele, der dannes i forskellige
+kirtler fordelt i kroppen.
+Hormonerne bliver transporteret med blodet rundt i kroppen
+til de steder, hvor de skal udøve den ønskede virkning. Ek-
+sempelvis producerer kroppen sit eget smertestillende middel
+(endorfin), når den bliver udsat for smerte, og erythropoetin
+(EPO), når der skal stimuleres vækst af flere røde blodlege-
+mer.
+Hvis en kirtel producerer for meget eller for lidt af et hormon,
+vil det som regel give en forstyrrelse i kroppen.
+170
+--- p171
+FØRSTEHJÆLPENS ABC
+HUDENS BETEGNELSER
+A B C
+Overhud Læderhud Underhud
+A
+B
+1
+2
+3
+4
+C
+5
+7
+6
+1
+Talgkirtel
+5
+Hårrod
+2
+Muskler der kan rejse håret
+6
+Nerveende
+3
+Følelegeme
+7
+Blodkar
+4
+Svedkirtel
+171
+--- p172
+FØRSTEHJÆLPENS ABC
+NOTATER:
+172
+--- p173
+LOMMEUDGAVE AF BASAL HLR & HLR MED AED • KAN KLIPPES UD OG FOLDES LANGS DEN PRIKKEDE LINJE
+BASAL HJERTELUNGEREDNING (HLR)
+FØRSTEHJÆLPENS ABC
+
+173
+
+--- p174
+
+174
+
+LOMMEUDGAVE AF BASAL HLR & HLR MED AED • KAN KLIPPES UD OG FOLDES LANGS DEN PRIKKEDE LINJE
+BASAL HLR MED HJERTESTARTER (AED)
+FØRSTEHJÆLPENS ABC
+--- p175
+FØRSTEHJÆLPENS ABC
+175
+--- p176
+FØRSTEHJÆLPENS ABC
+Denne førstehjælpsbog er udarbejdet af Center for Sundheds-
+& Sanitetsuddannelse ved Forsvarets Sanitetskommando,
+og er obligatorisk til brug for førstehjælps­uddannelsen i Forsvaret.
+Bogen stilles til rådighed for tilsvarende undervisning uden
+for Forsvaret.
+Bogen omhandler emnerne:
+Førstehjælpens 3 hovedpunkter, ABC-metoden til livreddende første-
+hjælp, Hjerte-Lunge-Redning (HLR), førstehjælps­situationer, småska-
+der, sygdomme samt en beskrivelse af menneskets anatomi
+og fysiologi.
+UDGIVET AF
+Forsvarets Sanitetskommando.
+Center for Sundheds- & Sanitetsuddannelse
+FORSVARETS
+SANITETSKOMMANDO
+176

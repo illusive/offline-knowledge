@@ -136,6 +136,14 @@ export interface Strings {
   textOriginal: string;
   sourcesHeading: string;
   basedOn: (names: string) => string;
+  firstAid: string;
+  firstAidSubtitle: (n: number) => string;
+  firstAidIntro: string;
+  guideNotFound: string;
+  guideSource: (name: string, from: number, to: number) => string;
+  checkedAgainst: string;
+  ownerNotChecked: string;
+  relatedGuides: string;
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -311,6 +319,14 @@ export const strings: Record<Lang, Strings> = {
     textOriginal: 'Teksten vises med kildernes egne ord.',
     sourcesHeading: 'Kilder',
     basedOn: (names) => `Kilde: ${names}`,
+    firstAid: 'Førstehjælp',
+    firstAidSubtitle: (n) => `${n} vejledninger · livreddende førstehjælp`,
+    firstAidIntro: 'Ordret fra Førstehjælpens ABC. Kun opsætningen er ændret, så trinene er nemme at følge.',
+    guideNotFound: 'Vejledningen blev ikke fundet.',
+    guideSource: (name, from, to) => `Kilde: ${name}, s. ${from === to ? from : `${from}–${to}`}`,
+    checkedAgainst: 'Sammenholdt med',
+    ownerNotChecked: 'Prøveversion: endnu ikke gennemlæst mod håndbogen.',
+    relatedGuides: 'Se også',
   },
   en: {
     appTitle: 'stead',
@@ -484,5 +500,13 @@ export const strings: Record<Lang, Strings> = {
     textOriginal: 'The text is shown in the sources\' own words.',
     sourcesHeading: 'Sources',
     basedOn: (names) => `Source: ${names}`,
+    firstAid: 'First aid',
+    firstAidSubtitle: (n) => `${n} guides · life-saving first aid (in Danish)`,
+    firstAidIntro: 'Word for word from the Danish handbook Førstehjælpens ABC. Only the layout is changed, so the steps are easy to follow.',
+    guideNotFound: 'Guide not found.',
+    guideSource: (name, from, to) => `Source: ${name}, ${from === to ? `p. ${from}` : `pp. ${from}–${to}`}`,
+    checkedAgainst: 'Compared with',
+    ownerNotChecked: 'Trial version: not yet read against the handbook.',
+    relatedGuides: 'See also',
   },
 };

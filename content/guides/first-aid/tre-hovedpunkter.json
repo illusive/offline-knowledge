@@ -1,0 +1,25 @@
+{
+  "id": "tre-hovedpunkter",
+  "category": "first-aid",
+  "order": 1,
+  "title": "Førstehjælpens 3 hovedpunkter",
+  "summary": "Værktøjet bruges til at skabe sig et overblik over situationen.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    { "kind": "steps", "items": ["Punkt 1: Skab sikkerhed", "Punkt 2: Giv førstehjælp", "Punkt 3: Tilkald hjælp"], "page": 8 },
+    { "kind": "text", "text": "Værktøjet bruges til at skabe sig et overblik over situationen. På denne måde bliver indsatsen så effektiv som mulig.", "page": 8 },
+    { "kind": "text", "text": "Situationen kan virke uoverskuelig og kaotisk. Derfor kan det være svært at vide, hvad man skal gøre først.", "page": 8 },
+    { "kind": "text", "text": "Under hele forløbet ydes der samtidigt psykisk førstehjælp, som er beregnet til at berolige den tilskadekomne.", "page": 8 }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Tabel 2, Forventninger til førstehjælperen, s. 6",
+      "quote": "følge disse tre nøgleprincipper: … Kontrollér om skadestedet er sikkert. … Ring 1-1-2 med det samme.",
+      "note": "Both start with making the scene safe. The ERC principles put calling 1-1-2 straight after; the handbook calls 1-1-2 as soon as the person is found unconscious (p. 16)."
+    }
+  ],
+  "ownerChecked": false,
+  "related": ["skab-sikkerhed", "bevidsthed"]
+}

@@ -1,6 +1,6 @@
 // Messages between the app and the database worker.
 
-import type { ItemDetail, ItemRow } from './queries';
+import type { GuideDetail, GuideRow, ItemDetail, ItemRow } from './queries';
 
 export interface PackInfo {
   version: string;
@@ -19,13 +19,17 @@ export type Request =
   | { type: 'init'; packUrl: string; pack: PackInfo }
   | { type: 'list' }
   | { type: 'search'; query: string }
-  | { type: 'detail'; id: string };
+  | { type: 'detail'; id: string }
+  | { type: 'guides'; category: GuideRow['category'] }
+  | { type: 'guide'; id: string };
 
 export interface Responses {
   init: InitResult;
   list: ItemRow[];
   search: ItemRow[];
   detail: ItemDetail | null;
+  guides: GuideRow[];
+  guide: GuideDetail | null;
 }
 
 export type Reply =
