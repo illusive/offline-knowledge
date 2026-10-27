@@ -140,8 +140,11 @@ export interface GuideDetail {
 
 const SOURCE_COLUMNS = 'id, title, short_name, publisher, url, license, attribution, retrieved_at, data_version';
 
+// First aid in the order of an emergency; crops alphabetically by name (owner 2026-10-27), in
+// Danish order (æ, ø, å last), which SQLite's own collation does not know.
 export function listGuides(db: SqlDb, category: GuideRow['category']): GuideRow[] {
-  return guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guides g WHERE g.category = ? ORDER BY g.ord`, [category]);
+  const list = guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guides g WHERE g.category = ? ORDER BY g.ord`, [category]);
+  return category === 'growing' ? list.sort((a, b) => (a.name ?? a.title).localeCompare(b.name ?? b.title, 'da')) : list;
 }
 
 // Full-text search over guide titles and text; title matches first, then emergency order.
