@@ -155,6 +155,8 @@ export interface Strings {
   allGuides: string;
   readMore: string;
   abbreviationsLabel: string;
+  totalTopics: (n: number) => string;
+  foodCount: (n: number) => string;
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -336,7 +338,7 @@ export const strings: Record<Lang, Strings> = {
     sourcesHeading: 'Kilder',
     basedOn: (names) => `Kilde: ${names}`,
     firstAid: 'Førstehjælp',
-    firstAidSubtitle: (n) => `${n} vejledninger · livreddende førstehjælp`,
+    firstAidSubtitle: (n) => `${n} livreddende vejledninger`,
     firstAidIntro: 'Ordret fra Førstehjælpens ABC. Kun opsætningen er ændret, så trinene er nemme at følge.',
     guideNotFound: 'Vejledningen blev ikke fundet.',
     guideSource: (name, from, to) => `Kilde: ${name}, s. ${from === to ? from : `${from}–${to}`}`,
@@ -349,6 +351,8 @@ export const strings: Record<Lang, Strings> = {
     allGuides: 'Alle vejledninger',
     readMore: 'Læs mere',
     abbreviationsLabel: 'Forkortelser',
+    totalTopics: (n) => `${n} emner`,
+    foodCount: (n) => `${n} fødevarer`,
   },
   en: {
     appTitle: 'stead',
@@ -528,7 +532,7 @@ export const strings: Record<Lang, Strings> = {
     sourcesHeading: 'Sources',
     basedOn: (names) => `Source: ${names}`,
     firstAid: 'First aid',
-    firstAidSubtitle: (n) => `${n} guides · life-saving first aid (in Danish)`,
+    firstAidSubtitle: (n) => `${n} life-saving guides (in Danish)`,
     firstAidIntro: 'Word for word from the Danish handbook Førstehjælpens ABC. Only the layout is changed, so the steps are easy to follow.',
     guideNotFound: 'Guide not found.',
     guideSource: (name, from, to) => `Source: ${name}, ${from === to ? `p. ${from}` : `pp. ${from}–${to}`}`,
@@ -541,5 +545,7 @@ export const strings: Record<Lang, Strings> = {
     allGuides: 'All guides',
     readMore: 'Read more',
     abbreviationsLabel: 'Abbreviations',
+    totalTopics: (n) => `${n} topics`,
+    foodCount: (n) => `${n} foods`,
   },
 };
