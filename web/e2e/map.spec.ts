@@ -23,8 +23,8 @@ test('Kort renders the bundled overview offline, using only local files', async 
   await expect(page).toHaveURL(/#\/map$/);
 
   // First visit without a downloaded area: the explanation comes first; skip it to see the map.
-  await expect(page.getByRole('heading', { name: 'Hent kortet, mens du har net' })).toBeVisible({ timeout: 30_000 });
-  await page.getByRole('button', { name: 'Se kortet uden at hente' }).click();
+  await expect(page.getByRole('heading', { name: 'Hent kortet til telefonen' })).toBeVisible({ timeout: 30_000 });
+  await page.getByRole('button', { name: 'Ikke nu – vis kortet' }).click();
 
   const map = page.getByTestId('map');
   await expect(map).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
@@ -35,13 +35,13 @@ test('Kort renders the bundled overview offline, using only local files', async 
 });
 
 test('Kort works again after leaving it for another tab', async ({ app: { page } }) => {
-  // Reported: Kort → "Se kortet uden at hente" → Hjem → Kort gave an empty page.
+  // Reported: Kort → "Ikke nu – vis kortet" → Hjem → Kort gave an empty page.
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('./');
   const nav = page.getByRole('navigation', { name: 'Hovedmenu' });
   await nav.getByRole('link', { name: 'Kort' }).click();
-  await page.getByRole('button', { name: 'Se kortet uden at hente' }).click();
+  await page.getByRole('button', { name: 'Ikke nu – vis kortet' }).click();
   await expect(page.getByTestId('map')).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
   await nav.getByRole('link', { name: 'Hjem' }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Hvad har du brug for?' })).toBeVisible();
@@ -55,7 +55,7 @@ test('Vis min position: switched on, the map moves to the position; switched off
   await context.grantPermissions(['geolocation']);
   await context.setGeolocation({ latitude: 55.6761, longitude: 12.5683, accuracy: 25 }); // Copenhagen
   await page.goto('./#/map');
-  await page.getByRole('button', { name: 'Se kortet uden at hente' }).click();
+  await page.getByRole('button', { name: 'Ikke nu – vis kortet' }).click();
   const map = page.getByTestId('map');
   await expect(map).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
 
@@ -72,7 +72,7 @@ test('Vis min position: switched on, the map moves to the position; switched off
 test('Vis min position refused: the switch turns itself off and says why', async ({ app: { page } }) => {
   // No permission granted: WebKit refuses the request.
   await page.goto('./#/map');
-  await page.getByRole('button', { name: 'Se kortet uden at hente' }).click();
+  await page.getByRole('button', { name: 'Ikke nu – vis kortet' }).click();
   await expect(page.getByTestId('map')).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
   const toggle = page.getByRole('button', { name: 'Vis min position' });
   await toggle.click();

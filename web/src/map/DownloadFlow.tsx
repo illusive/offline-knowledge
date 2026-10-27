@@ -149,6 +149,7 @@ export function DownloadFlow(props: {
       <>
         <p>{t.introBody}</p>
         <p className="font-medium">{t.introWarning}</p>
+        <p className="text-sm text-muted">{t.introSizes}</p>
         {offline ? <p className="text-muted">{t.offlineNow}</p> : null}
       </>
     );
@@ -235,6 +236,7 @@ export function DownloadFlow(props: {
                 <span>
                   <span className="block font-semibold">{t.choices[k]}</span>
                   <span className="block text-sm text-muted">{t.kindHelp[k]}</span>
+                  <span className="mt-1 block text-sm font-medium">{t.kindSize[k]}</span>
                 </span>
               </button>
             </li>

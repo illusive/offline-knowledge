@@ -11,10 +11,12 @@ async function openKort(page: Page) {
 }
 
 async function downloadCountry(page: Page) {
-  await expect(page.getByRole('heading', { name: 'Hent kortet, mens du har net' })).toBeVisible({ timeout: 30_000 });
-  await expect(page.getByText('Kortet virker kun uden internet i de områder, du har hentet', { exact: false })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Hent kortet til telefonen' })).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByText('Hvis internet og mobildata pludselig forsvinder', { exact: false })).toBeVisible();
+  await expect(page.getByText('Hele Danmark fylder omkring 600 MB', { exact: false })).toBeVisible();
   await page.getByRole('button', { name: 'Vælg område' }).click();
-  await expect(page.getByRole('heading', { name: 'Hvad vil du hente?' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Hvilket område vil du hente?' })).toBeVisible();
+  await expect(page.getByText('25 km: ca. 25–45 MB', { exact: false })).toBeVisible();
   await page.getByRole('button', { name: /^Hele landet/ }).click();
   await expect(page.getByRole('heading', { name: 'Klar til at hente' })).toBeVisible();
   await expect(page.getByText(/Det fylder \d+ MB på telefonen/)).toBeVisible({ timeout: 30_000 });
@@ -38,12 +40,12 @@ test('the flow explains, downloads, and the area works offline; delete it again'
   await openKort(page);
   await downloadCountry(page);
   await expect(page.getByRole('heading', { name: 'Færdig' })).toBeVisible({ timeout: 60_000 });
-  await expect(page.getByText('Kortet virker nu uden net i Danmark.')).toBeVisible();
+  await expect(page.getByText('Nu kan du bruge kortet over Danmark – også uden internet.')).toBeVisible();
 
   // Offline: no first-time step any more; the area's detail is drawn from the downloaded tiles.
   await context.setOffline(true);
   await page.reload();
-  await expect(page.getByRole('heading', { name: 'Hent kortet, mens du har net' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Hent kortet til telefonen' })).toHaveCount(0);
   await page.getByRole('button', { name: 'Hent kort' }).click();
   await expect(page.getByRole('heading', { name: 'Dine områder' })).toBeVisible();
   await page.getByRole('button', { name: /^Danmark Klar uden net/ }).click(); // flies to the area
@@ -53,7 +55,7 @@ test('the flow explains, downloads, and the area works offline; delete it again'
 
   // Offline, getting more needs a connection, but areas can still be deleted.
   await page.getByRole('button', { name: 'Hent kort' }).click();
-  await expect(page.getByText('Du skal være på nettet for at hente kort.', { exact: false })).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByText('Du skal have internet for at hente kort.', { exact: false })).toBeVisible({ timeout: 30_000 });
   await page.getByRole('button', { name: 'Slet: Danmark' }).click();
   await page.getByRole('button', { name: 'Tryk igen for at slette' }).click();
   await expect(page.getByRole('button', { name: /^Danmark/ })).toHaveCount(0);
@@ -86,7 +88,7 @@ test('an interrupted download pauses, keeps what it has, and resumes', async ({ 
 
 test('zoomed in outside the downloaded areas, the map says so', async ({ app: { page } }) => {
   await page.goto('./#/map');
-  await page.getByRole('button', { name: 'Se kortet uden at hente' }).click();
+  await page.getByRole('button', { name: 'Ikke nu – vis kortet' }).click();
   const map = page.getByTestId('map');
   await expect(map).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
   // Zoom in past the overview (zoom 9), one animated step at a time as a person would.
@@ -97,7 +99,7 @@ test('zoomed in outside the downloaded areas, the map says so', async ({ app: { 
   await expect.poll(async () => Number(await map.getAttribute('data-zoom')), { timeout: 15_000 }).toBeGreaterThan(9);
   await expect(page.getByText('Kun med net her')).toBeVisible({ timeout: 15_000 });
   await page.getByRole('button', { name: 'Hent', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Hent kortet, mens du har net' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Hent kortet til telefonen' })).toBeVisible();
 });
 
 test('with a home set, Kort opens zoomed in on it (no permission needed)', async ({ app: { page } }) => {
