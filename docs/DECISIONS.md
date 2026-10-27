@@ -275,6 +275,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Verbatim, checked by the build:** every text shown (titles, paragraphs, steps, list items, warnings, captions) must be found word for word in the handbook's text, after joining words broken across lines and removing soft hyphens. Layout and order may change (D-027 as changed). The handbook's illustrations are used where they show a step, cut from its pages; alt text is ours (accessibility).
 - **Second authority (D-027):** each guide records where Dansk Råd for Genoplivning agrees, with quotes checked by the build: the Danish ERC Guidelines 2025 (BLS chapter, BLS algorithm, First Aid chapter 8, translated by DRG and reviewed with Dansk Førstehjælpsråd among others) and DRG's public guide. A point the second authority disagrees with is held back and recorded in OPEN_QUESTIONS.
 - **Owner check:** guides are shown to the owner in the app; each guide records whether the owner has checked it.
+- **Tourniquet (owner decision 2026-10-27):** the handbook's "apply a ready-made tourniquet first on arms and legs, high and tight" (p. 18) is left out of "Massive blødninger", because ERC 2025 starts with direct pressure and uses a tourniquet only when pressure is not enough. No tourniquet advice until a source agrees with ERC's order.
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
