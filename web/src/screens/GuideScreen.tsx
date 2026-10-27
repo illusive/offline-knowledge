@@ -11,6 +11,7 @@ import type { GuideBlock, GuideDetail, GuideImage } from '../db/queries';
 import type { Strings } from '../i18n/strings';
 import { goBack, hrefs } from '../router';
 import { GuideList } from './FirstAidScreen';
+import { SaveButton } from '../bookmarks/BookmarkButton';
 
 export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: Strings }) {
   const [detail, setDetail] = useState<{ id: string; value: GuideDetail | null } | null>(null);
@@ -46,7 +47,10 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
   const firstAid = guide.category === 'first-aid';
   return (
     <Page>
-      {back}
+      <div className="flex items-center justify-between gap-[12px]">
+        {back}
+        <SaveButton kind="guide" id={guide.id} section={guide.category === 'growing' ? 'growing' : 'first-aid'} s={s} />
+      </div>
       <article className="mt-4 flex flex-col gap-3" lang="da">
         <header className="mb-1 px-1">
           <h1 ref={heading} tabIndex={-1} className="text-3xl font-normal tracking-tight outline-none">

@@ -4,7 +4,8 @@
 import { Asterisk, ArrowUpRight, Cross, Package, Sprout } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { EmergencyCard } from '../components/EmergencyCard';
-import { DownloadCard, OFFLINE_DISABLED, OfflineStatus } from '../components/OfflineStatus';
+import { DownloadCard, OFFLINE_DISABLED } from '../components/OfflineStatus';
+import { SavedLink } from '../bookmarks/BookmarkButton';
 import { FoodList } from '../components/FoodList';
 import { Page, SearchField } from '../components/ui';
 import type { DbClient } from '../db/client';
@@ -39,9 +40,13 @@ export function HomeScreen(props: {
       <header className="flex flex-wrap items-center justify-between gap-x-[12px] gap-y-1 py-2">
         <p className="flex items-center gap-1 text-[min(1.875rem,9vw)] font-normal tracking-tight">
           {s.appTitle}
-          <Asterisk aria-hidden="true" className="size-6" />
+          {/* Green when the app works offline (owner 2026-10-27); the state is spoken, not shown as text. */}
+          <Asterisk aria-hidden="true" className={`size-6 transition-colors ${offlineReady ? 'text-ok' : ''}`} strokeWidth={offlineReady ? 2.75 : 2} />
+          <span className="sr-only" role="status">
+            {OFFLINE_DISABLED ? '' : offlineReady ? s.offlineReadyStatus : s.preparingOffline}
+          </span>
         </p>
-        <OfflineStatus ready={offlineReady} s={s} />
+        <SavedLink s={s} />
       </header>
 
       {offlineReady || OFFLINE_DISABLED ? null : <DownloadCard progress={precache} s={s} />}

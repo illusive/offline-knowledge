@@ -8,11 +8,16 @@ export type Route =
   | { name: 'firstAid' }
   | { name: 'growing' }
   | { name: 'guide'; id: string }
+  | { name: 'saved'; section: SavedSection | null }
   | { name: 'map' }
   | { name: 'tools' }
   | { name: 'settings' };
 
 export type Tab = 'home' | 'map' | 'tools' | 'settings';
+
+// Sections of the saved list (D-026), one per category with something to save.
+export const SAVED_SECTIONS = ['first-aid', 'growing', 'storage'] as const;
+export type SavedSection = (typeof SAVED_SECTIONS)[number];
 
 // Sub-pages of a food (D-034). The default (no suffix) is 'storage'.
 export const FOOD_TABS = ['about', 'storage', 'preserving', 'sources'] as const;
@@ -27,6 +32,8 @@ export function parseRoute(hash: string): Route {
   }
   const guide = /^#\/guide\/([^/]+)$/.exec(hash);
   if (guide?.[1]) return { name: 'guide', id: decodeURIComponent(guide[1]) };
+  const saved = /^#\/saved(?:\/([a-z-]+))?$/.exec(hash);
+  if (saved) return { name: 'saved', section: SAVED_SECTIONS.find((x) => x === saved[1]) ?? null };
   if (hash === '#/first-aid') return { name: 'firstAid' };
   if (hash === '#/growing') return { name: 'growing' };
   if (hash === '#/storage') return { name: 'storage' };
@@ -42,6 +49,7 @@ export const hrefs = {
   firstAid: '#/first-aid',
   growing: '#/growing',
   guide: (id: string) => `#/guide/${encodeURIComponent(id)}`,
+  saved: (section?: SavedSection) => (section ? `#/saved/${section}` : '#/saved'),
   map:'#/map',
   tools: '#/tools',
   settings: '#/settings',

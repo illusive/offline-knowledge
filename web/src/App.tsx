@@ -13,6 +13,7 @@ import { FirstAidScreen, useGuides } from './screens/FirstAidScreen';
 import { FoodScreen } from './screens/FoodScreen';
 import { GrowingScreen } from './screens/GrowingScreen';
 import { GuideScreen } from './screens/GuideScreen';
+import { SavedScreen } from './screens/SavedScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { MapScreen } from './screens/MapScreen';
@@ -85,6 +86,7 @@ export function App() {
   else if (status === 'loading') content = <Page><LoadingState s={s} /></Page>;
   else if (route.name === 'food') content = <FoodScreen db={db} id={route.id} tab={route.tab} lang={lang} s={s} />;
   else if (route.name === 'firstAid') content = <FirstAidScreen db={db} guides={guides} s={s} query={firstAidQuery} onQueryChange={setFirstAidQuery} />;
+  else if (route.name === 'saved') content = <SavedScreen section={route.section} guides={guides} crops={crops} foods={foods} lang={lang} s={s} />;
   else if (route.name === 'growing') content = <GrowingScreen db={db} guides={crops} s={s} query={growingQuery} onQueryChange={setGrowingQuery} />;
   else if (route.name === 'guide') content = <GuideScreen db={db} id={route.id} s={s} />;
   else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;

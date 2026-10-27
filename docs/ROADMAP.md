@@ -32,7 +32,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
   - How to work: `content/authoring/README.md`.
 - [ ] Growing food (D-038). **Status 2026-10-27: 19 crops** (radiser, ærter, kartofler, gulerødder, hestebønner, salat, spinat, løg, porrer, rødbeder, jordbær, hvidløg, jordskokker, rabarber, krydderurter, tomater, kål, broccoli, busk- og stangbønner; salat/spinat/løg are short, from Bolius' "10 nemme afgrøder"; hvidløg/jordskokker/rabarber/krydderurter from "5 afgrøder, der er dyre i butikkerne"). Next ideas: grønkål, blomkål, squash (Bolius has no own page), persille, bærbuske, and fuller pages for salat/spinat/løg. How: find the crop's Bolius page, snapshot it to `content/sources/snapshots/dk-bolius-<crop>.html`, register it, write `content/guides/growing/<id>.json`; `npm run build:pack` checks the text. Watch for sentences that are about another crop in the source.
 - [x] Home to the design brief: first aid card, category tiles with counts (2026-10-27).
-- [ ] Bookmarks (D-026): local store separate from the pack; "Saved" on Home.
+- [x] Bookmarks (D-026): "Gem" on guides, crops and foods; saved list by category, opened at the current category; green asterisk for offline ready (2026-10-27).
 - [ ] Settings: offline library card from the pack manifest, language, appearance, text size, about and sources.
 - [ ] Tools: supply checklist (UK Be Ready, progress on the device) and compass (permission, no-sensor and inaccuracy states; test on a real iPhone).
 - [x] Guide reader (D-037): `#/first-aid` list and `#/guide/<id>` with steps, step photos, warnings, the 112 card, source with pages and "Sammenholdt med" line.

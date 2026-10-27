@@ -3,6 +3,7 @@
 // their growing period.
 
 import { useEffect } from 'react';
+import { SavedLink } from '../bookmarks/BookmarkButton';
 import { BackButton, MessageState, Page, SearchField } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { GuideRow } from '../db/queries';
@@ -20,7 +21,10 @@ export function GrowingScreen({ db, guides, s, query, onQueryChange }: { db: DbC
 
   return (
     <Page>
-      <BackButton label={s.back} onClick={() => goBack(hrefs.home)} />
+      <div className="flex items-center justify-between gap-[12px]">
+        <BackButton label={s.back} onClick={() => goBack(hrefs.home)} />
+        <SavedLink section="growing" s={s} />
+      </div>
       <header className="mt-4 mb-4 px-1">
         <h1 className="text-3xl font-normal tracking-tight">{s.growing}</h1>
         <p className="mt-1 text-muted">{s.growingIntro}</p>

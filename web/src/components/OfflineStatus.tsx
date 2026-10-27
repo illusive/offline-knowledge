@@ -1,4 +1,5 @@
-// "Offline ready" status in the Home header, and the download card shown until the app is ready.
+// The download card shown until the app is ready offline (the ready state itself is the green
+// asterisk in the Home header).
 
 import { useEffect, useState } from 'react';
 import type { Strings } from '../i18n/strings';
@@ -6,16 +7,6 @@ import type { PrecacheProgress } from '../pwa/usePrecacheProgress';
 
 // The development server (npm run dev) runs without a service worker, so offline is not available there.
 export const OFFLINE_DISABLED = import.meta.env.DEV;
-
-export function OfflineStatus({ ready, s }: { ready: boolean; s: Strings }) {
-  if (OFFLINE_DISABLED) return <p className="text-sm text-muted">Dev · offline off</p>;
-  return (
-    <p className="flex items-center gap-2 text-sm text-muted">
-      {ready ? <span aria-hidden="true" className="size-2.5 rounded-full bg-ok" /> : <Spinner />}
-      {ready ? s.offlineReadyStatus : s.preparingOffline}
-    </p>
-  );
-}
 
 export function DownloadCard({ progress, s }: { progress: PrecacheProgress | null; s: Strings }) {
   // Only shown if downloading takes noticeable time, so fast connections see no flash.

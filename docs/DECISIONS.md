@@ -179,6 +179,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
 
 - **Date:** 2026-10-25
 - **Decision:** Users can save guides and foods ("Saved"). Bookmarks are the first user data the app keeps: stored locally only (no sync, D-010), kept separate from the knowledge pack so pack updates never touch them, and keyed by stable content IDs so they survive pack updates. A bookmark whose item no longer exists in a new pack is shown as unavailable, not silently dropped.
+- **Built 2026-10-27 (owner):** "Gem" on every guide, crop and food page. The saved list (`#/saved`) is grouped by category (Førstehjælp, Dyrkning, Opbevaring af mad); a bookmark records its category when saved. The bookmark button sits top right on Home (whole list, with a count) and on each category page, where it opens the list at that category (scrolled to and focused). Stored in `localStorage` (`stead.bookmarks.v1`). The Home header's "Klar offline" text is replaced by the asterisk turning green when the app is ready offline (the state is still announced to screen readers).
 
 ## D-027 — High-risk content is published verbatim only
 

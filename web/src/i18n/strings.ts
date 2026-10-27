@@ -164,6 +164,18 @@ export interface Strings {
   storeThisCrop: string;
   growingSearchPlaceholder: string;
   growingSearchLabel: string;
+  save: string;
+  saved: string;
+  saveLabel: string;
+  savedOpenLabel: (n: number) => string;
+  savedTitle: string;
+  savedIntro: string;
+  savedEmptyTitle: string;
+  savedEmptyBody: string;
+  savedNoneHere: string;
+  savedCount: (n: number) => string;
+  savedUnavailable: string;
+  remove: string;
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -367,6 +379,18 @@ export const strings: Record<Lang, Strings> = {
     storeThisCrop: 'Holdbarhed og konservering',
     growingSearchPlaceholder: 'Søg efter en afgrøde',
     growingSearchLabel: 'Søg i dyrkning',
+    save: 'Gem',
+    saved: 'Gemt',
+    saveLabel: 'Gem til senere',
+    savedOpenLabel: (n) => (n === 0 ? 'Gemte' : `Gemte (${n})`),
+    savedTitle: 'Gemte',
+    savedIntro: 'Det, du har gemt, ligger kun på denne enhed.',
+    savedEmptyTitle: 'Du har ikke gemt noget endnu',
+    savedEmptyBody: 'Tryk "Gem" på en vejledning, en afgrøde eller en fødevare, så finder du den her.',
+    savedNoneHere: 'Intet gemt her endnu.',
+    savedCount: (n) => (n === 1 ? '1 gemt' : `${n} gemt`),
+    savedUnavailable: 'Findes ikke længere i appen',
+    remove: 'Fjern',
   },
   en: {
     appTitle: 'stead',
@@ -568,5 +592,17 @@ export const strings: Record<Lang, Strings> = {
     storeThisCrop: 'Storing and preserving',
     growingSearchPlaceholder: 'Search for a crop',
     growingSearchLabel: 'Search growing',
+    save: 'Save',
+    saved: 'Saved',
+    saveLabel: 'Save for later',
+    savedOpenLabel: (n) => (n === 0 ? 'Saved' : `Saved (${n})`),
+    savedTitle: 'Saved',
+    savedIntro: 'What you save stays on this device only.',
+    savedEmptyTitle: 'Nothing saved yet',
+    savedEmptyBody: 'Tap "Save" on a guide, a crop or a food and you will find it here.',
+    savedNoneHere: 'Nothing saved here yet.',
+    savedCount: (n) => `${n} saved`,
+    savedUnavailable: 'No longer in the app',
+    remove: 'Remove',
   },
 };
