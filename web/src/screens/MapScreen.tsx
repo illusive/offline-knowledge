@@ -2,14 +2,15 @@
 // the download flow comes first (once per app session) so it is clear the map needs downloading
 // to work without a connection; the "Hent kort" button opens the same flow.
 
-import { Download } from 'lucide-react';
+import { Download, LocateFixed, LocateOff } from 'lucide-react';
 import type { Map as MapLibreMap, MapMouseEvent } from 'maplibre-gl';
-import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { MessageState, Page } from '../components/ui';
 import type { Lang, Strings } from '../i18n/strings';
 import { mapClient } from '../map/client';
 import { DownloadFlow, type FlowStep } from '../map/DownloadFlow';
 import { showOverlay } from '../map/overlays';
+import { positionSupported, usePosition } from '../map/position';
 import type { AreaInfo, Home } from '../map/protocol';
 
 const MapView = lazy(() => import('../map/MapView'));
@@ -62,6 +63,8 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
   const [radius, setRadius] = useState<number | null>(null);
   const [notCovered, setNotCovered] = useState(false);
   const t = s.mapArea;
+  const position = usePosition();
+  const found = position.state.status === 'found' ? position.state.position : null;
 
   useEffect(() => {
     document.title = `${s.mapTitle} – ${s.appTitle}`;
@@ -121,16 +124,33 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
     };
   }, [map, readyKey]);
 
-  // Home point and radius preview on the map, also after a style change.
+  // Home point, radius preview and position on the map, also after a style change.
   useEffect(() => {
     if (!map) return;
-    const draw = () => showOverlay(map, { home, radiusKm: radius });
+    const draw = () => showOverlay(map, { home, radiusKm: radius, position: found });
     draw();
     map.on('style.load', draw);
     return () => {
       map.off('style.load', draw);
     };
-  }, [map, home, radius]);
+  }, [map, home, radius, found]);
+
+  // Where the map opens: at the user's home when one is set (no permission, works offline);
+  // the first position fix after switching the position on moves the map there instead.
+  const opened = useRef(false);
+  useEffect(() => {
+    if (!map || !home || opened.current || position.on) return;
+    opened.current = true;
+    map.jumpTo({ center: [home.lon, home.lat], zoom: 12 });
+  }, [map, home, position.on]);
+  const followed = useRef(false);
+  useEffect(() => {
+    if (!position.on) followed.current = false;
+    if (!map || !found || followed.current) return;
+    followed.current = true;
+    opened.current = true;
+    map.flyTo({ center: [found.lon, found.lat], zoom: Math.max(map.getZoom(), 15) });
+  }, [map, found, position.on]);
 
   const chooseHome = useCallback((h: Home) => {
     setHome(h);
@@ -182,6 +202,9 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
             <Download aria-hidden="true" className="size-5" />
             {downloading && percent !== null ? `${t.states.downloading} ${percent} %` : t.open}
           </button>
+          {position.on && position.state.status === 'searching' ? <Notice text={t.positionSearching} /> : null}
+          {position.on && position.state.status === 'unavailable' ? <Notice text={t.positionUnavailable} /> : null}
+          {!position.on && position.state.status === 'denied' ? <Notice text={t.positionRefused} /> : null}
           {notCovered ? (
             <div role="status" className="flex items-center gap-[10px] rounded-2xl bg-ink py-2 pr-[6px] pl-[14px] text-sm text-on-ink shadow-lg">
               <span>{online ? t.notCovered : t.notCoveredOffline}</span>
@@ -194,6 +217,30 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
           ) : null}
         </div>
       )}
+
+      {positionSupported && !picking ? (
+        <button
+          type="button"
+          aria-pressed={position.on}
+          aria-label={t.showPosition}
+          onClick={() => {
+            if (position.on && found && map) map.flyTo({ center: [found.lon, found.lat], zoom: Math.max(map.getZoom(), 15) });
+            else position.setOn(!position.on);
+          }}
+          className={`fixed top-[calc(90px+env(safe-area-inset-top))] right-[10px] z-[5] grid size-11 place-items-center rounded-full shadow-lg ${position.on ? 'bg-accent text-on-accent' : 'bg-surface'}`}
+        >
+          {position.on ? <LocateFixed aria-hidden="true" className="size-5" /> : <LocateOff aria-hidden="true" className="size-5" />}
+        </button>
+      ) : null}
+      {position.on ? (
+        <button
+          type="button"
+          onClick={() => position.setOn(false)}
+          className="fixed top-[calc(140px+env(safe-area-inset-top))] right-[10px] z-[5] min-h-9 rounded-full bg-surface px-[10px] text-xs font-semibold shadow-lg"
+        >
+          {t.hidePosition}
+        </button>
+      ) : null}
 
       {flow ? (
         <DownloadFlow
@@ -220,5 +267,13 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
         />
       ) : null}
     </main>
+  );
+}
+
+function Notice({ text }: { text: string }) {
+  return (
+    <p role="status" className="rounded-2xl bg-ink px-[14px] py-2 text-sm text-on-ink shadow-lg">
+      {text}
+    </p>
   );
 }

@@ -100,6 +100,11 @@ export interface Strings {
     notCovered: string;
     notCoveredOffline: string;
     getThisArea: string;
+    showPosition: string;
+    hidePosition: string;
+    positionSearching: string;
+    positionUnavailable: string;
+    positionRefused: string;
   };
   toolsTitle: string;
   settingsTitle: string;
@@ -266,6 +271,11 @@ export const strings: Record<Lang, Strings> = {
       notCovered: 'Kun med net her',
       notCoveredOffline: 'Ikke hentet her',
       getThisArea: 'Hent',
+      showPosition: 'Vis min position',
+      hidePosition: 'Skjul position',
+      positionSearching: 'Finder din position …',
+      positionUnavailable: 'Din position kan ikke findes lige nu. Prøv udendørs.',
+      positionRefused: 'Appen må ikke bruge din position. Det kan ændres i Indstillinger på telefonen.',
     },
     toolsTitle: 'Værktøjer',
     settingsTitle: 'Indstillinger',
@@ -453,6 +463,11 @@ export const strings: Record<Lang, Strings> = {
       notCovered: 'Online only here',
       notCoveredOffline: 'Not downloaded here',
       getThisArea: 'Get',
+      showPosition: 'Show my position',
+      hidePosition: 'Hide position',
+      positionSearching: 'Finding your position …',
+      positionUnavailable: 'Your position cannot be found right now. Try outdoors.',
+      positionRefused: 'The app may not use your position. You can change this in the phone\'s Settings.',
     },
     toolsTitle: 'Tools',
     settingsTitle: 'Settings',

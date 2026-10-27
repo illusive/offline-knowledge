@@ -1,4 +1,5 @@
-// Things drawn on top of the map (D-036): the home point and the radius being considered.
+// Things drawn on top of the map (D-036): the home point, the radius being considered, and the
+// user's position with its accuracy circle (only while "Vis min position" is on).
 // Re-added after every style change (light/dark), since a new style drops sources and layers.
 
 import type { Feature, FeatureCollection } from 'geojson';
@@ -10,9 +11,16 @@ const SOURCE = 'stead-overlay';
 export interface Overlay {
   home: Home | null;
   radiusKm: number | null;
+  position?: Position | null;
 }
 
-function circle(home: Home, radiusKm: number): [number, number][] {
+export interface Position {
+  lon: number;
+  lat: number;
+  accuracyM: number;
+}
+
+function circle(home: Pick<Home, 'lon' | 'lat'>, radiusKm: number): [number, number][] {
   const points: [number, number][] = [];
   const kx = 111.32 * Math.cos((home.lat * Math.PI) / 180);
   for (let i = 0; i <= 64; i++) {
@@ -28,6 +36,11 @@ function data(overlay: Overlay): FeatureCollection {
     features.push({ type: 'Feature', properties: { kind: 'radius' }, geometry: { type: 'Polygon', coordinates: [circle(overlay.home, overlay.radiusKm)] } });
   }
   if (overlay.home) features.push({ type: 'Feature', properties: { kind: 'home' }, geometry: { type: 'Point', coordinates: [overlay.home.lon, overlay.home.lat] } });
+  const p = overlay.position;
+  if (p) {
+    features.push({ type: 'Feature', properties: { kind: 'accuracy' }, geometry: { type: 'Polygon', coordinates: [circle(p, p.accuracyM / 1000)] } });
+    features.push({ type: 'Feature', properties: { kind: 'position' }, geometry: { type: 'Point', coordinates: [p.lon, p.lat] } });
+  }
   return { type: 'FeatureCollection', features };
 }
 
@@ -47,5 +60,13 @@ export function showOverlay(map: MapLibreMap, overlay: Overlay) {
     source: SOURCE,
     filter: ['==', ['get', 'kind'], 'home'],
     paint: { 'circle-radius': 8, 'circle-color': '#c8e64a', 'circle-stroke-color': '#1b1b1a', 'circle-stroke-width': 3 },
+  });
+  map.addLayer({ id: 'stead-accuracy', type: 'fill', source: SOURCE, filter: ['==', ['get', 'kind'], 'accuracy'], paint: { 'fill-color': '#2f7de1', 'fill-opacity': 0.15, 'fill-outline-color': '#2f7de1' } });
+  map.addLayer({
+    id: 'stead-position',
+    type: 'circle',
+    source: SOURCE,
+    filter: ['==', ['get', 'kind'], 'position'],
+    paint: { 'circle-radius': 7, 'circle-color': '#2f7de1', 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 3 },
   });
 }

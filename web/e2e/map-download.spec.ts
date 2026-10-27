@@ -99,3 +99,18 @@ test('zoomed in outside the downloaded areas, the map says so', async ({ app: { 
   await page.getByRole('button', { name: 'Hent', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Hent kortet, mens du har net' })).toBeVisible();
 });
+
+test('with a home set, Kort opens zoomed in on it (no permission needed)', async ({ app: { page } }) => {
+  await page.goto('./#/map');
+  await page.getByRole('button', { name: 'Vælg område' }).click();
+  await page.getByRole('button', { name: /^Omkring mit hjem/ }).click();
+  await page.getByRole('button', { name: 'Tryk på kortet' }).click();
+  const map = page.getByTestId('map');
+  await expect(map).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
+  await map.click();
+  await expect(page.getByText('Dit hjem er valgt.')).toBeVisible();
+
+  await page.reload();
+  await expect(map).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
+  await expect.poll(async () => Number(await map.getAttribute('data-zoom')), { timeout: 15_000 }).toBe(12);
+});

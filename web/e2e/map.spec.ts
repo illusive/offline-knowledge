@@ -50,3 +50,32 @@ test('Kort works again after leaving it for another tab', async ({ app: { page }
   await expect(page.getByRole('button', { name: 'Hent kort' })).toBeVisible();
   expect(errors).toEqual([]);
 });
+
+test('Vis min position: switched on, the map moves to the position; switched off again', async ({ app: { page, context } }) => {
+  await context.grantPermissions(['geolocation']);
+  await context.setGeolocation({ latitude: 55.6761, longitude: 12.5683, accuracy: 25 }); // Copenhagen
+  await page.goto('./#/map');
+  await page.getByRole('button', { name: 'Se kortet uden at hente' }).click();
+  const map = page.getByTestId('map');
+  await expect(map).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
+
+  const toggle = page.getByRole('button', { name: 'Vis min position' });
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+  await expect.poll(async () => Number(await map.getAttribute('data-zoom')), { timeout: 15_000 }).toBeGreaterThanOrEqual(14.9);
+
+  await page.getByRole('button', { name: 'Skjul position' }).click();
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+});
+
+test('Vis min position refused: the switch turns itself off and says why', async ({ app: { page } }) => {
+  // No permission granted: WebKit refuses the request.
+  await page.goto('./#/map');
+  await page.getByRole('button', { name: 'Se kortet uden at hente' }).click();
+  await expect(page.getByTestId('map')).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
+  const toggle = page.getByRole('button', { name: 'Vis min position' });
+  await toggle.click();
+  await expect(page.getByText('Appen må ikke bruge din position.', { exact: false })).toBeVisible({ timeout: 15_000 });
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+});
