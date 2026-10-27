@@ -1,0 +1,165 @@
+{
+  "id": "guleroedder",
+  "category": "growing",
+  "order": 4,
+  "title": "Guide: Sådan dyrker du gulerødder",
+  "summary": "Gulerødder er nemme at dyrke med den rette placering og jord.",
+  "sourceId": "dk-bolius-guleroedder",
+  "risk": "low",
+  "name": "Gulerødder",
+  "season": {
+    "text": "Så april–juni · høst efter knap 2 måneder",
+    "quote": "Gulerødder kan normalt sås på friland fra april og frem til juni. … De tidlige gulerødder kan høstes allerede knap 2 måneder efter, at de er sået"
+  },
+  "foodId": "foodkeeper-279",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Gulerødder kan normalt sås på friland fra april og frem til juni. Men du kan så senere og hurtigtvoksende sorter helt frem i juli. Kig på posen med gulerodsfrø og se, hvornår de kan sås.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "På posen med gulerodsfrø står der en anbefalet plante- og rækkeafstand – typisk 2-6 cm mellem planterne i en række og 20-40 cm mellem rækkerne.",
+      "page": 1
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Spænde gerne en snor ud, hvor du ønsker dine rækker med gulerødder.",
+        "Lav en lille rende (brug skaftet på riven) med en dybde på 1-2 cm langs snoren, og drys forsigtigt de små frø ned i renden.",
+        "Dæk med jord, tryk jorden let og vand forsigtigt."
+      ],
+      "page": 1,
+      "title": "Såning i rækker"
+    },
+    {
+      "kind": "text",
+      "text": "Så gerne lidt ekstra frø, da du kan fjerne de små spirer senere, hvis de står for tæt.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "conditions",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Det bedste sted at så gulerødder er et solrigt sted uden for meget læ.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Gulerødder trives bedst i en god, porøs jord, så rødderne kan vokse frit uden modstand.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Tilsæt IKKE kompost som jordforbedring, da næringen fra komposten kan give en dårlig fremspiring og tendens til forgrenede rødder.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis du dyrker gulerødder i plantekasser, er det en god idé at vælge en sort, der giver korte, runde gulerødder.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Gulerodsspirerne bryder typisk frem efter 3-4 uger.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Når gulerodsplanterne er 5-6 cm høje, skal de overskydende planter luges væk. Lad de største og kraftigste planter stå, og hiv forsigtigt de overskydende planter op med rod, så du får den optimale planteafstand på 2-6 cm, afhængig af sorten.",
+      "page": 1
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Fjern ukrudt løbende.",
+        "Hold jorden let fugtig ved at vande jævnt og kontinuerligt.",
+        "Vær forsigtig med gødning."
+      ],
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis du sår gulerødder i april, er det en god idé hurtigt at overdække dine bede med en fiberdug, da gulerodsfluen lægger sine æg i begyndelsen af maj.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du kan også hive en enkelt gulerod op og se på enden af den. Er den stadig helt spids, er den ikke færdig med at vokse, og du skal derfor vente med at høste de resterende. Er den derimod afrundet – eller begyndende til det – er dine gulerødder klar til at blive høstet.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "I princippet kan du lade dine gulerødder blive i jorden og bare høste løs af dem i løbet af vinteren og helt hen i foråret.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Opbevar dem køligt, men frostfrit, i kasser med fugtigt sand eller i en jordkule.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "seeds",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Frø i frøstande: Frøstand er en gruppe af modne frø for enden af en stængel i form af fx en klase, skærm eller en kolbe (når en mælkebøtte bliver hvid og lodden, er den i frøstand). Gulerod, porre, salat, spinat og de fleste blomster sætter frøstande. Skal som hovedregel tørre godt, før de høstes.",
+      "page": 1,
+      "sourceId": "dk-bolius-froe"
+    },
+    {
+      "kind": "text",
+      "text": "Husk at bruge frøægte sorter, og ikke F1-sorter, når du avler dine egne frø.",
+      "page": 1,
+      "sourceId": "dk-bolius-froe"
+    },
+    {
+      "kind": "section",
+      "key": "neighbours",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du skal ikke dyrke gulerødder et sted, hvor der har stået gulerødder de seneste 3-4 år.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis du ikke overdæller, kan du prøve at plante andre afgrøder mellem rækkerne af gulerødder, så gulerodsfluen forvirres ved ikke at kunne lugte sig frem til rødderne.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Gulerødder er forholdsvis lette at få til at gro, og de fungerer godt sammen med radiser.",
+      "page": 1,
+      "sourceId": "dk-bolius-10-nemme"
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "radiser",
+    "salat"
+  ]
+}

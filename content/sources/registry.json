@@ -1883,6 +1883,54 @@
       "snapshot": "snapshots/dk-bolius-koekkenhave-fif.html",
       "snapshotSha256": "11d25b0bc7e566e965d964471ed3509bdaa7ceddb202203b5b79093eeb66bb59",
       "shortName": "Bolius"
+    },
+    {
+      "id": "dk-bolius-guleroedder",
+      "status": "request-needed",
+      "title": "Guide: Sådan dyrker du gulerødder",
+      "publisher": "Videncentret Bolius (Realdania)",
+      "url": "https://www.bolius.dk/guide-saadan-dyrker-du-guleroedder-92950",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "'© Copyright Bolius - en del af Realdania. Indholdet må ikke gengives uden tilladelse.' Permission needed before wider distribution; set aside while private (D-028). Growing guides (D-038).",
+      "attribution": "",
+      "retrievedAt": "2026-10-27",
+      "snapshot": "snapshots/dk-bolius-guleroedder.html",
+      "snapshotSha256": "7eafdfb8a4f57f4eb4d766c6cd3a783b7d04eb240dca5ba4d2d1249412fb57c0",
+      "shortName": "Bolius"
+    },
+    {
+      "id": "dk-bolius-boenner",
+      "status": "request-needed",
+      "title": "Hvordan dyrker du bønner i haven?",
+      "publisher": "Videncentret Bolius (Realdania)",
+      "url": "https://www.bolius.dk/hvordan-dyrker-du-boenner-i-haven-28177",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "'© Copyright Bolius - en del af Realdania. Indholdet må ikke gengives uden tilladelse.' Permission needed before wider distribution; set aside while private (D-028). Growing guides (D-038).",
+      "attribution": "",
+      "retrievedAt": "2026-10-27",
+      "snapshot": "snapshots/dk-bolius-boenner.html",
+      "snapshotSha256": "398a63b837dc336fb92b8db6b5ff3a0662a1c1798d8e7a115ec6a22eddd9a1f6",
+      "shortName": "Bolius"
+    },
+    {
+      "id": "dk-bolius-10-nemme",
+      "status": "request-needed",
+      "title": "10 nemme afgrøder til køkkenhaven",
+      "publisher": "Videncentret Bolius (Realdania)",
+      "url": "https://www.bolius.dk/10-nemme-afgroeder-til-koekkenhaven-8039",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "'© Copyright Bolius - en del af Realdania. Indholdet må ikke gengives uden tilladelse.' Permission needed before wider distribution; set aside while private (D-028). Growing guides (D-038).",
+      "attribution": "",
+      "retrievedAt": "2026-10-27",
+      "snapshot": "snapshots/dk-bolius-10-nemme.html",
+      "snapshotSha256": "68099b562ee7c99813e0d4fd7ade9f43e0bd4e680c289f24f426cbcfe3df083a",
+      "shortName": "Bolius"
     }
   ]
 }

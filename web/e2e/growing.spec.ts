@@ -12,9 +12,9 @@ test('Dyrkning: tile on Home, crop page with sections and a link to its food pag
 
   await page.getByRole('link', { name: /Dyrkning/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Dyrkning' })).toBeVisible();
-  await expect(page.getByText('3 afgrøder')).toBeVisible();
+  await expect(page.getByText('8 afgrøder')).toBeVisible();
   await page.getByRole('searchbox', { name: 'Søg i dyrkning' }).fill('kartof');
-  await expect(page.getByText('1 afgrøde', { exact: true })).toBeVisible();
+  await expect(page.getByText('2 afgrøder')).toBeVisible();
   await expect(page.getByRole('link', { name: /^Kartofler Læg sidst i marts/ })).toBeVisible();
   await page.getByRole('searchbox', { name: 'Søg i dyrkning' }).fill('');
   await page.getByRole('link', { name: /^Radiser Så april–august/ }).click();

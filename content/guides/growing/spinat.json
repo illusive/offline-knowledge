@@ -1,0 +1,65 @@
+{
+  "id": "spinat",
+  "category": "growing",
+  "order": 7,
+  "title": "10 nemme afgrøder til køkkenhaven",
+  "summary": "Du kan så spinat allerede fra starten af april, og spinat vokser hurtigt, så du kan nå at høste planterne og derefter bruge jorden til en ny afgrøde.",
+  "sourceId": "dk-bolius-10-nemme",
+  "risk": "low",
+  "name": "Spinat",
+  "season": {
+    "text": "Så fra starten af april",
+    "quote": "Du kan så spinat allerede fra starten af april"
+  },
+  "foodId": "foodkeeper-291",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du kan så spinat allerede fra starten af april, og spinat vokser hurtigt, så du kan nå at høste planterne og derefter bruge jorden til en ny afgrøde.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Så spinat i rækker med 25-30 cm afstand, og udtynd planterne, så der er 10-15 cm mellem hver.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "conditions",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Derfor egner spinat sig godt til en køkkenhave, hvor pladsen er knap.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "seeds",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Gulerod, porre, salat, spinat og de fleste blomster sætter frøstande. Skal som hovedregel tørre godt, før de høstes.",
+      "page": 1,
+      "sourceId": "dk-bolius-froe"
+    },
+    {
+      "kind": "text",
+      "text": "Husk at bruge frøægte sorter, og ikke F1-sorter, når du avler dine egne frø.",
+      "page": 1,
+      "sourceId": "dk-bolius-froe"
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "salat",
+    "radiser"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "hestebonner",
+  "category": "growing",
+  "order": 5,
+  "title": "Hestebønner",
+  "summary": "Hestebønnen, som også kaldes valsk bønne, er meget robust og ikke nær så følsom over for kulde, som de andre bønnetyper.",
+  "sourceId": "dk-bolius-boenner",
+  "risk": "low",
+  "name": "Hestebønner",
+  "season": {
+    "text": "Så i starten af april · høst efter 50–70 dage",
+    "quote": "Derfor kan hestebønner sås direkte på friland i starten af april … kan du høste dem efter 50-70 dage"
+  },
+  "foodId": "foodkeeper-273",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Derfor kan hestebønner sås direkte på friland i starten af april, samtidig med at du lægger kartofler.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Så hestebønner i nogle centimeters dybde med 30-50 cm's rækkeafstand og 10 cm afstand i rækken. De spirer i løbet af et par uger, passer næsten sig selv og gror med rivende hast.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "conditions",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Bønner har et forholdsvis lille gødningsbehov, da de er kvælstoffikserende planter, hvilket betyder, at de selv er i stand til at omdanne luftens kvælstof til næring, der kan udnyttes af planterne.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Bønner trives bedst solrigt og varmt i en veldrænet, næringsrig og fugtig jord.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "De høje sorter af hestebønner - der kan blive 1-2 m høje - har brug for opbinding i form af en snor, der bindes til en pæl i hver ende af rækken. De lavere sorter, der bliver omkring 50-60 cm høje, kan bære sig selv.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du skal gennemvande jorden, når den begynder at tørre ud.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Men hestebønner, kan angribes af sorte bladlus. Ifølge et gammelt råd skal du knibe topskuddene af, så snart den første bælg begynder at udvikle sig.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Når frøene er i jorden, skal du blot luge ukrudt væk, indtil planterne er blevet så store, at de selv skygger for ukrudtet.",
+      "page": 1,
+      "sourceId": "dk-bolius-10-nemme"
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Alt efter hvilken slags bønner, du har plantet - og vejrforhold - kan du høste dem efter 50-70 dage.",
+      "page": 1
+    },
+    {
+      "kind": "warning",
+      "text": "På grund af et højt indhold af lektiner, der er giftige, må bønner ikke spises rå, men skal koges.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "seeds",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hestebønner er lette at dyrke til modenhed.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis du ønsker selv at dyrke spiringsdygtige frø, skal havebønner være helt modne. Det bedste resultat får du, når bælgene får lov til at visne på planten, inden du høster dem.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Når bønnefrøene er helt tørre, skal du tage dem ud af bælgene.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Opbevar tørrede bønner et tørt, køligt sted i papirsposer eller i lufttætte beholdere.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "neighbours",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Så bønnerne fra starten af april og dyrk dem gerne sammen med kartofler.",
+      "page": 1,
+      "sourceId": "dk-bolius-10-nemme"
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "kartofler",
+    "aerter"
+  ]
+}

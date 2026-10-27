@@ -1,0 +1,58 @@
+{
+  "id": "loeg",
+  "category": "growing",
+  "order": 8,
+  "title": "10 nemme afgrøder til køkkenhaven",
+  "summary": "Stikløg er lette at sætte i jorden.",
+  "sourceId": "dk-bolius-10-nemme",
+  "risk": "low",
+  "name": "Løg",
+  "season": {
+    "text": "Sæt stikløg i starten af april · høst når toppen vælter",
+    "quote": "du skal helst plante dem i starten af april … Løg er høstmodne, når toppen vælter ned til siden."
+  },
+  "foodId": "foodkeeper-294",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Stikløg er lette at sætte i jorden. De skal stå med spidsen opad, og du skal helst plante dem i starten af april, for de vokser kun i størrelsen, så længe dagene bliver længere, dvs. indtil Sankt Hans.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Så dem i rækker med 8-10 cm afstand til andre løgrækker eller med 25 cm afstand til anden afgrøde.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Jorden må ikke tørre ud, så vand dem, hvis der kommer en tørkeperiode.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Løg er høstmodne, når toppen vælter ned til siden.",
+      "page": 1
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "guleroedder",
+    "radiser"
+  ]
+}
