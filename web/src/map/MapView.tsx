@@ -7,6 +7,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import { useEffect, useRef } from 'react';
 import { mapStyle, OVERVIEW_MAX_ZOOM } from './style';
+import { POI_LAYER_IDS, poiFilter, type PoiGroup } from './pois';
 
 const NO_DETAIL = 'stead: no detail tile';
 import { getTile, type TileSource } from './tiles';
@@ -40,8 +41,9 @@ export default function MapView(props: {
   label: string;
   onError: () => void;
   onReady: (map: MapLibreMap | null) => void;
+  poiGroups: readonly PoiGroup[];
 }) {
-  const { lang, dark, label, onError, onReady } = props;
+  const { lang, dark, label, onError, onReady, poiGroups } = props;
   const container = useRef<HTMLDivElement>(null);
   const map = useRef<MapLibreMap | null>(null);
 
@@ -53,7 +55,7 @@ export default function MapView(props: {
     try {
       instance = new maplibregl.Map({
         container: element,
-        style: mapStyle(BASE, dark, lang, ATTRIBUTION),
+        style: mapStyle(BASE, dark, lang, ATTRIBUTION, poiGroups),
         bounds: DENMARK,
         maxZoom: 18,
         attributionControl: false,
@@ -101,8 +103,17 @@ export default function MapView(props: {
   useEffect(() => {
     if (styled.current.dark === dark && styled.current.lang === lang) return;
     styled.current = { dark, lang };
-    map.current?.setStyle(mapStyle(BASE, dark, lang, ATTRIBUTION));
+    map.current?.setStyle(mapStyle(BASE, dark, lang, ATTRIBUTION, groupsRef.current));
   }, [dark, lang]);
+
+  // Chosen places changed: only the filter changes, the map stays where it is.
+  const groupsRef = useRef(poiGroups);
+  useEffect(() => {
+    groupsRef.current = poiGroups;
+    const m = map.current;
+    if (!m) return;
+    for (const id of POI_LAYER_IDS) if (m.getLayer(id)) m.setFilter(id, poiFilter(poiGroups));
+  }, [poiGroups]);
 
   // MapLibre makes its container position: relative, so the full-screen sizing sits on a wrapper.
   return (

@@ -2,7 +2,7 @@
 // the download flow comes first (once per app session) so it is clear the map needs downloading
 // to work without a connection; the "Hent kort" button opens the same flow.
 
-import { Download, LocateFixed, LocateOff } from 'lucide-react';
+import { Download, LocateFixed, LocateOff, MapPin, X } from 'lucide-react';
 import type { Map as MapLibreMap, MapMouseEvent } from 'maplibre-gl';
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { MessageState, Page } from '../components/ui';
@@ -11,6 +11,7 @@ import { mapClient } from '../map/client';
 import { DownloadFlow, type FlowStep } from '../map/DownloadFlow';
 import { showOverlay } from '../map/overlays';
 import { positionSupported, usePosition } from '../map/position';
+import { groupOf, POI_GROUPS, POI_LAYER_IDS, usePoiGroups, type PoiGroup } from '../map/pois';
 import type { AreaInfo, Home } from '../map/protocol';
 
 const MapView = lazy(() => import('../map/MapView'));
@@ -64,6 +65,9 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
   const [notCovered, setNotCovered] = useState(false);
   const t = s.mapArea;
   const position = usePosition();
+  const { groups: poiGroups, setGroups: setPoiGroups } = usePoiGroups();
+  const [placesOpen, setPlacesOpen] = useState(false);
+  const [place, setPlace] = useState<{ name: string | null; kind: string; group: PoiGroup } | null>(null);
   const found = position.state.status === 'found' ? position.state.position : null;
 
   useEffect(() => {
@@ -152,6 +156,22 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
     map.flyTo({ center: [found.lon, found.lat], zoom: Math.max(map.getZoom(), 15) });
   }, [map, found, position.on]);
 
+  // Tapping a place shows what it is (not while picking a home point).
+  useEffect(() => {
+    if (!map || picking) return;
+    const onClick = (e: MapMouseEvent) => {
+      const layers = POI_LAYER_IDS.filter((id) => map.getLayer(id));
+      const [f] = layers.length ? map.queryRenderedFeatures([[e.point.x - 10, e.point.y - 10], [e.point.x + 10, e.point.y + 10]], { layers: [...layers] }) : [];
+      if (!f) return setPlace(null);
+      const kind = String(f.properties['kind'] ?? '');
+      setPlace({ name: (f.properties[`name:${lang}`] ?? f.properties['name'] ?? null) as string | null, kind, group: groupOf(kind) });
+    };
+    map.on('click', onClick);
+    return () => {
+      map.off('click', onClick);
+    };
+  }, [map, picking, lang]);
+
   const chooseHome = useCallback((h: Home) => {
     setHome(h);
     void mapClient().call({ type: 'setHome', home: h });
@@ -189,7 +209,7 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
     <main className="fixed inset-0 bg-background">
       <h1 className="sr-only">{s.mapTitle}</h1>
       <Suspense fallback={<MessageState title={s.mapLoading} />}>
-        <MapView lang={lang} dark={dark} label={s.mapLabel} onError={() => setFailed(true)} onReady={setMap} />
+        <MapView lang={lang} dark={dark} label={s.mapLabel} onError={() => setFailed(true)} onReady={setMap} poiGroups={poiGroups} />
       </Suspense>
 
       {picking ? (
@@ -231,6 +251,30 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
         >
           {position.on ? <LocateFixed aria-hidden="true" className="size-5" /> : <LocateOff aria-hidden="true" className="size-5" />}
         </button>
+      ) : null}
+      {!picking ? (
+        <button
+          type="button"
+          aria-expanded={placesOpen}
+          aria-label={s.places.open}
+          onClick={() => setPlacesOpen((v) => !v)}
+          className="fixed top-[calc(190px+env(safe-area-inset-top))] right-[10px] z-[5] grid size-11 place-items-center rounded-full bg-surface shadow-lg"
+        >
+          <MapPin aria-hidden="true" className="size-5" />
+        </button>
+      ) : null}
+      {placesOpen ? <PlacesPanel groups={poiGroups} onChange={setPoiGroups} onClose={() => setPlacesOpen(false)} s={s} /> : null}
+      {place && !placesOpen ? (
+        <div role="status" className="fixed inset-x-[12px] bottom-[calc(96px+env(safe-area-inset-bottom))] z-10 mx-auto flex max-w-[420px] items-center gap-[12px] rounded-2xl bg-surface px-[16px] py-3 shadow-lg">
+          <span aria-hidden="true" className="size-3 shrink-0 rounded-full" style={{ background: POI_GROUPS.find((g) => g.key === place.group)?.color }} />
+          <span className="flex-1">
+            <span className="block font-semibold">{place.name ?? s.places.kinds[place.kind] ?? s.places.groups[place.group]}</span>
+            <span className="block text-sm text-muted">{s.places.kinds[place.kind] ?? place.kind.replace(/_/g, ' ')} · {s.places.groups[place.group]}</span>
+          </span>
+          <button type="button" onClick={() => setPlace(null)} aria-label={s.mapArea.close} className="grid size-11 place-items-center rounded-full">
+            <X aria-hidden="true" className="size-5" />
+          </button>
+        </div>
       ) : null}
       {position.on ? (
         <button
@@ -275,5 +319,42 @@ function Notice({ text }: { text: string }) {
     <p role="status" className="rounded-2xl bg-ink px-[14px] py-2 text-sm text-on-ink shadow-lg">
       {text}
     </p>
+  );
+}
+
+// Which places the map shows, by group (pois.ts). Choices are remembered on the device.
+function PlacesPanel({ groups, onChange, onClose, s }: { groups: PoiGroup[]; onChange: (g: PoiGroup[]) => void; onClose: () => void; s: Strings }) {
+  const t = s.places;
+  const toggle = (key: PoiGroup) => onChange(groups.includes(key) ? groups.filter((g) => g !== key) : [...groups, key]);
+  return (
+    <section aria-labelledby="places-title" className="fixed inset-x-0 bottom-0 z-20 mx-auto max-h-[75vh] max-w-2xl overflow-y-auto rounded-t-[28px] bg-background px-[16px] pt-4 pb-[calc(96px+env(safe-area-inset-bottom))] shadow-2xl">
+      <div className="mb-2 flex items-center justify-between gap-[12px] px-1">
+        <h2 id="places-title" className="text-xl font-semibold">
+          {t.title}
+        </h2>
+        <button type="button" onClick={onClose} aria-label={s.mapArea.close} className="grid size-11 place-items-center rounded-full bg-surface">
+          <X aria-hidden="true" className="size-5" />
+        </button>
+      </div>
+      <p className="mb-3 px-1 text-sm text-muted">{t.intro}</p>
+      <ul className="flex flex-col divide-y divide-border overflow-hidden rounded-card bg-surface">
+        {POI_GROUPS.map((g) => {
+          const on = groups.includes(g.key);
+          return (
+            <li key={g.key}>
+              <label className="flex min-h-14 cursor-pointer items-center gap-[12px] px-[16px] py-3">
+                <span aria-hidden="true" className="size-3.5 shrink-0 rounded-full" style={{ background: g.color }} />
+                <span className="flex-1">
+                  <span className="block font-medium">{t.groups[g.key]}</span>
+                  <span className="block text-sm text-muted">{t.examples[g.key]}</span>
+                </span>
+                <input type="checkbox" role="switch" checked={on} onChange={() => toggle(g.key)} className="size-6 shrink-0 accent-[var(--color-accent)]" />
+              </label>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="mt-3 px-1 text-sm text-muted">{t.note}</p>
+    </section>
   );
 }

@@ -4,6 +4,7 @@
 
 import { layers, namedFlavor } from '@protomaps/basemaps';
 import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
+import { poiLayers, type PoiGroup } from './pois';
 
 const UNDERLAY = new Set(['earth', 'landcover', 'water']);
 
@@ -11,9 +12,10 @@ export const OVERVIEW_MAX_ZOOM = 8;
 export const DETAIL_MAX_ZOOM = 15;
 
 // `base` is the app's base URL (ends with '/'); templates must keep their {braces} unencoded.
-export function mapStyle(base: string, dark: boolean, lang: 'da' | 'en', attribution: string): StyleSpecification {
+// The basemap's own place layer is replaced by ours (pois.ts), so the user chooses what is shown.
+export function mapStyle(base: string, dark: boolean, lang: 'da' | 'en', attribution: string, groups: readonly PoiGroup[]): StyleSpecification {
   const flavor = namedFlavor(dark ? 'dark' : 'light');
-  const detail = layers('detail', flavor, { lang }) as LayerSpecification[];
+  const detail = (layers('detail', flavor, { lang }) as LayerSpecification[]).filter((l) => l.id !== 'pois');
   const underlay = (layers('overview', flavor, { lang }) as LayerSpecification[])
     .filter((l) => UNDERLAY.has(l.id))
     .map((l) => ({ ...l, id: `overview_${l.id}` }) as LayerSpecification);
@@ -26,6 +28,6 @@ export function mapStyle(base: string, dark: boolean, lang: 'da' | 'en', attribu
       overview: { type: 'vector', tiles: ['stead://overview/{z}/{x}/{y}'], maxzoom: OVERVIEW_MAX_ZOOM, attribution },
       detail: { type: 'vector', tiles: ['stead://detail/{z}/{x}/{y}'], maxzoom: DETAIL_MAX_ZOOM, attribution },
     },
-    layers: [...(background ? [background] : []), ...underlay, ...rest],
+    layers: [...(background ? [background] : []), ...underlay, ...rest, ...poiLayers(groups, dark)],
   };
 }

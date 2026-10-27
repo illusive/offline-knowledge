@@ -79,3 +79,18 @@ test('Vis min position refused: the switch turns itself off and says why', async
   await expect(page.getByText('Appen må ikke bruge din position.', { exact: false })).toBeVisible({ timeout: 15_000 });
   await expect(toggle).toHaveAttribute('aria-pressed', 'false');
 });
+
+test('Steder på kortet: emergency places on by default; choices are remembered', async ({ app: { page } }) => {
+  await page.goto('./#/map');
+  await page.getByRole('button', { name: 'Ikke nu – vis kortet' }).click();
+  await page.getByRole('button', { name: 'Vælg steder på kortet' }).click();
+  const panel = page.getByRole('region', { name: 'Steder på kortet' });
+  await expect(panel.getByRole('switch', { name: /Nødhjælp og sundhed/ })).toBeChecked();
+  await expect(panel.getByRole('switch', { name: /Mad og drikke/ })).not.toBeChecked();
+  await panel.getByRole('switch', { name: /Mad og drikke/ }).check();
+  await page.reload();
+  // After a reload the first-time step comes back (once per app session); dismiss it again.
+  await page.getByRole('button', { name: 'Ikke nu – vis kortet' }).click();
+  await page.getByRole('button', { name: 'Vælg steder på kortet' }).click();
+  await expect(page.getByRole('region', { name: 'Steder på kortet' }).getByRole('switch', { name: /Mad og drikke/ })).toBeChecked();
+});

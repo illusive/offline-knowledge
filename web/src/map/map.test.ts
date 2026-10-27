@@ -128,3 +128,16 @@ describe('manifest', () => {
     expect(await read(0, 10)).toEqual(Uint8Array.from([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
   });
 });
+
+describe('places on the map (pois.ts)', () => {
+  it('draws only the chosen groups; "other" means every kind not in a group', async () => {
+    const { poiFilter, defaultGroups, groupOf } = await import('./pois');
+    expect(defaultGroups()).toEqual(['emergency', 'water', 'supplies', 'transport']);
+    expect(JSON.stringify(poiFilter(['emergency']))).toContain('"pharmacy"');
+    expect(JSON.stringify(poiFilter(['emergency']))).not.toContain('"supermarket"');
+    expect(JSON.stringify(poiFilter(['other']))).toContain('"!"');
+    expect(JSON.stringify(poiFilter([]))).toContain('false');
+    expect(groupOf('fuel')).toBe('supplies');
+    expect(groupOf('tree')).toBe('other');
+  });
+});

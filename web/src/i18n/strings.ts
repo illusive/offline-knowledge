@@ -157,6 +157,15 @@ export interface Strings {
   allGuides: string;
   readMore: string;
   abbreviationsLabel: string;
+  places: {
+    open: string;
+    title: string;
+    intro: string;
+    note: string;
+    groups: Record<'emergency' | 'water' | 'supplies' | 'transport' | 'public' | 'nature' | 'food' | 'culture' | 'other', string>;
+    examples: Record<'emergency' | 'water' | 'supplies' | 'transport' | 'public' | 'nature' | 'food' | 'culture' | 'other', string>;
+    kinds: Record<string, string>;
+  };
   totalTopics: (n: number) => string;
   foodCount: (n: number) => string;
   growing: string;
@@ -374,6 +383,35 @@ export const strings: Record<Lang, Strings> = {
     allGuides: 'Alle vejledninger',
     readMore: 'Læs mere',
     abbreviationsLabel: 'Forkortelser',
+    places: {
+      open: 'Vælg steder på kortet',
+      title: 'Steder på kortet',
+      intro: 'Vælg, hvilke steder kortet skal vise. Navnene kommer frem, når du zoomer tæt på.',
+      note: 'Stederne kommer fra OpenStreetMap, som frivillige holder ved lige. Der kan mangle steder, især uden for byerne.',
+      groups: { emergency: 'Nødhjælp og sundhed', water: 'Vand og ly', supplies: 'Forsyninger', transport: 'Transport', public: 'Offentlige steder', nature: 'Natur og udsigt', food: 'Mad og drikke', culture: 'Kultur og seværdigheder', other: 'Alt andet' },
+      examples: {
+        emergency: 'Hospital, læge, apotek, politi, brandstation',
+        water: 'Drikkevand, shelter, toilet, lejrplads',
+        supplies: 'Supermarked, købmand, tankstation, hæveautomat',
+        transport: 'Tog, bus, færge, parkering, havn',
+        public: 'Rådhus, posthus, bibliotek, skole, kirke',
+        nature: 'Park, skov, strand, udsigt, legeplads',
+        food: 'Restaurant, café, bar',
+        culture: 'Museum, seværdighed, teater, mindesmærke',
+        other: 'Butikker, bænke, træer og alt det øvrige',
+      },
+      kinds: {
+        hospital: 'Hospital', clinic: 'Klinik', doctors: 'Læge', pharmacy: 'Apotek', dentist: 'Tandlæge', police: 'Politi', fire_station: 'Brandstation', ambulance_station: 'Ambulancestation',
+        emergency_access_point: 'Redningspunkt', defibrillator: 'Hjertestarter', veterinary: 'Dyrlæge', drinking_water: 'Drikkevand', water_point: 'Vandpost', shelter: 'Shelter', toilets: 'Toilet',
+        shower: 'Bruser', camp_site: 'Campingplads', caravan_site: 'Autocamperplads', firepit: 'Bålplads', bbq: 'Grill', spring: 'Kilde', supermarket: 'Supermarked', convenience: 'Købmand',
+        kiosk: 'Kiosk', bakery: 'Bager', butcher: 'Slagter', greengrocer: 'Grønthandler', fuel: 'Tankstation', charging_station: 'Ladestander', atm: 'Hæveautomat', bank: 'Bank',
+        hardware: 'Isenkræmmer', doityourself: 'Byggemarked', outdoor: 'Friluftsbutik', chemist: 'Materialist', station: 'Togstation', halt: 'Trinbræt', bus_station: 'Busstation', bus_stop: 'Busstoppested',
+        ferry_terminal: 'Færgeleje', aerodrome: 'Lufthavn', subway_entrance: 'Metro', taxi: 'Taxi', parking: 'Parkering', marina: 'Lystbådehavn', townhall: 'Rådhus', post_office: 'Posthus',
+        library: 'Bibliotek', school: 'Skole', kindergarten: 'Børnehave', place_of_worship: 'Kirke', community_centre: 'Forsamlingshus', park: 'Park', forest: 'Skov', beach: 'Strand', peak: 'Top',
+        viewpoint: 'Udsigtspunkt', picnic_site: 'Rasteplads', playground: 'Legeplads', restaurant: 'Restaurant', cafe: 'Café', fast_food: 'Fastfood', bar: 'Bar', pub: 'Pub', museum: 'Museum',
+        attraction: 'Seværdighed', theatre: 'Teater', cinema: 'Biograf', artwork: 'Kunstværk', zoo: 'Zoo', memorial: 'Mindesmærke', archaeological_site: 'Fortidsminde', castle: 'Slot',
+      },
+    },
     totalTopics: (n) => `${n} emner`,
     foodCount: (n) => `${n} fødevarer`,
     growing: 'Dyrkning',
@@ -589,6 +627,29 @@ export const strings: Record<Lang, Strings> = {
     allGuides: 'All guides',
     readMore: 'Read more',
     abbreviationsLabel: 'Abbreviations',
+    places: {
+      open: 'Choose places on the map',
+      title: 'Places on the map',
+      intro: 'Choose which places the map shows. Names appear when you zoom in close.',
+      note: 'The places come from OpenStreetMap, kept up by volunteers. Some may be missing, especially outside towns.',
+      groups: { emergency: 'Emergency and health', water: 'Water and shelter', supplies: 'Supplies', transport: 'Transport', public: 'Public places', nature: 'Nature and views', food: 'Food and drink', culture: 'Culture and sights', other: 'Everything else' },
+      examples: {
+        emergency: 'Hospital, doctor, pharmacy, police, fire station',
+        water: 'Drinking water, shelter, toilet, campsite',
+        supplies: 'Supermarket, grocer, fuel station, cash machine',
+        transport: 'Train, bus, ferry, parking, harbour',
+        public: 'Town hall, post office, library, school, church',
+        nature: 'Park, forest, beach, viewpoint, playground',
+        food: 'Restaurant, café, bar',
+        culture: 'Museum, sight, theatre, memorial',
+        other: 'Shops, benches, trees and everything else',
+      },
+      kinds: {
+        hospital: 'Hospital', clinic: 'Clinic', doctors: 'Doctor', pharmacy: 'Pharmacy', dentist: 'Dentist', police: 'Police', fire_station: 'Fire station', drinking_water: 'Drinking water',
+        shelter: 'Shelter', toilets: 'Toilets', supermarket: 'Supermarket', convenience: 'Grocer', fuel: 'Fuel station', atm: 'Cash machine', station: 'Train station', bus_stop: 'Bus stop',
+        ferry_terminal: 'Ferry terminal', defibrillator: 'Defibrillator', camp_site: 'Campsite', place_of_worship: 'Church', viewpoint: 'Viewpoint',
+      },
+    },
     totalTopics: (n) => `${n} topics`,
     foodCount: (n) => `${n} foods`,
     growing: 'Growing food',
