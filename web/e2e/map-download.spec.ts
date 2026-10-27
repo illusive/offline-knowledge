@@ -95,7 +95,7 @@ test('zoomed in outside the downloaded areas, the map says so', async ({ app: { 
     await page.waitForTimeout(500);
   }
   await expect.poll(async () => Number(await map.getAttribute('data-zoom')), { timeout: 15_000 }).toBeGreaterThan(9);
-  await expect(page.getByText('Ikke hentet – virker ikke uden net')).toBeVisible({ timeout: 15_000 });
+  await expect(page.getByText('Kun med net her')).toBeVisible({ timeout: 15_000 });
   await page.getByRole('button', { name: 'Hent', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Hent kortet, mens du har net' })).toBeVisible();
 });
