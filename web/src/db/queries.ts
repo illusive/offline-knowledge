@@ -1,7 +1,7 @@
 // Read-only queries against the pack (schema: content/lib/pack.ts).
 // Takes a minimal database interface so the same code runs in the OPFS worker and in tests.
 
-import type { Location, PeriodRow } from '../storage/format';
+import { longestKeeping, type Location, type PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
 export const SUPPORTED_PACK_SCHEMA_VERSION = 9;
@@ -20,6 +20,7 @@ export interface ItemRow {
   name_en: string;
   subtitle_en: string | null;
   source_id: string;
+  longest?: PeriodRow | null; // where it keeps longest (lists only)
 }
 
 export interface NoteRow {
@@ -221,17 +222,25 @@ export function verifyPack(db: SqlDb): void {
 }
 
 export function listItems(db: SqlDb): ItemRow[] {
-  return rows<ItemRow>(db, `SELECT ${ITEM_COLUMNS} FROM storage_items i`);
+  return withLongest(db, rows<ItemRow>(db, `SELECT ${ITEM_COLUMNS} FROM storage_items i`));
+}
+
+// Adds each item's longest-keeping storage period (shown under its name in lists).
+function withLongest(db: SqlDb, items: ItemRow[]): ItemRow[] {
+  const periods = rows<PeriodRow & { item_id: string }>(db, 'SELECT item_id, location, basis, kind, min_value, max_value, unit FROM storage_periods ORDER BY item_id, ord');
+  const byItem = new Map<string, PeriodRow[]>();
+  for (const p of periods) byItem.set(p.item_id, [...(byItem.get(p.item_id) ?? []), p]);
+  return items.map((i) => ({ ...i, longest: longestKeeping(byItem.get(i.id) ?? []) }));
 }
 
 // Full-text search; only for queries of at least MIN_FTS_QUERY_LENGTH characters.
 export function searchItems(db: SqlDb, query: string): ItemRow[] {
   if (query.trim().length < MIN_FTS_QUERY_LENGTH) throw new Error('Query too short for trigram search');
-  return rows<ItemRow>(
+  return withLongest(db, rows<ItemRow>(
     db,
     `SELECT DISTINCT ${ITEM_COLUMNS} FROM storage_search s JOIN storage_items i ON i.id = s.item_id WHERE storage_search MATCH ?`,
     [ftsPhrase(query)],
-  );
+  ));
 }
 
 export function getItemDetail(db: SqlDb, id: string): ItemDetail | null {

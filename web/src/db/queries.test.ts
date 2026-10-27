@@ -88,3 +88,9 @@ test('growing guides: fixed sections, a link to the food page, and the seed page
   expect(g?.blockSources.map((s) => s.id)).toEqual(['dk-bolius-froe']);
   expect(searchGuides(db, 'jordtemperatur').map((r) => r.id)).toEqual(expect.arrayContaining(['aerter', 'kartofler']));
 });
+
+test('lists show where a food keeps longest (not after opening or thawing)', () => {
+  const potatoes = listItems(db).find((i) => i.id === 'foodkeeper-297');
+  expect(potatoes?.longest).toMatchObject({ location: 'freezer', min_value: 10, max_value: 12, unit: 'months' });
+  expect(searchItems(db, 'kartof').find((i) => i.id === 'foodkeeper-297')?.longest?.location).toBe('freezer');
+});

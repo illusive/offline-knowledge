@@ -52,7 +52,6 @@ export function FoodScreen({ db, id, tab, lang, s }: { db: DbClient; id: string;
 
   const { item, periods, notes, guide, ethylene, sources } = loaded;
   const subtitle = lang === 'da' ? item.subtitle_da : item.subtitle_en;
-  const otherLang: Lang = lang === 'da' ? 'en' : 'da';
   const section = (key: GuideSectionKey) => guide.find((g) => g.section === key);
   const hasBlocks = (keys: GuideSectionKey[]) => keys.some((k) => (section(k)?.blocks.length ?? 0) > 0);
   const translatedNotes = notes.some((n) => n.lang !== 'da' && n.text_da);
@@ -167,9 +166,6 @@ export function FoodScreen({ db, id, tab, lang, s }: { db: DbClient; id: string;
             {name}
           </h1>
           {subtitle ? <p className="text-muted">{subtitle}</p> : null}
-          <p className="text-sm text-muted" lang={otherLang}>
-            {otherLang === 'en' ? item.name_en : item.name_da}
-          </p>
         </header>
 
         <SubNav

@@ -293,6 +293,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
 
 - **Date:** 2026-10-27
 - **Decision (owner):** every category page (Opbevaring af mad, Førstehjælp, Dyrkning and later ones) has a search field at the top that filters that category's content as you type; titles only for one or two letters, full text from three. Lists show a count line ("3 afgrøder") like the food list.
+- **Food list subtitle (owner, same day):** the other-language name under each food is replaced by where it keeps longest, e.g. "Fryser · 10–12 måneder" (the range period with the longest maximum, not counting after opening or thawing). The English name stays searchable; it is no longer shown on the food page either.
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

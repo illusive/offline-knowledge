@@ -1,9 +1,11 @@
-// List of foods with Danish and English names; each row opens the food's storage details.
+// List of foods with where each keeps longest (owner 2026-10-27, replacing the other-language name);
+// each row opens the food's storage details.
 
 import { ChevronRight } from 'lucide-react';
 import type { ItemRow } from '../db/queries';
 import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
+import { formatDuration } from '../storage/format';
 import { displayName } from '../storage/useFoodSearch';
 import { MessageState } from './ui';
 
@@ -19,16 +21,17 @@ export function FoodList({ items, query, lang, s }: { items: ItemRow[] | null; q
         <ul className="divide-y divide-border overflow-hidden rounded-card bg-surface">
           {items.map((item) => {
             const subtitle = lang === 'da' ? item.subtitle_da : item.subtitle_en;
-            const otherName = lang === 'da' ? item.name_en : item.name_da;
             return (
               <li key={item.id}>
                 <a href={hrefs.food(item.id)} className="flex items-center gap-[12px] px-[20px] py-3.5 active:bg-background">
                   <span className="flex-1">
                     <span className="block font-medium">{displayName(item, lang)}</span>
                     {subtitle ? <span className="block text-sm text-muted">{subtitle}</span> : null}
-                    <span className="block text-sm text-muted" lang={lang === 'da' ? 'en' : 'da'}>
-                      {otherName}
-                    </span>
+                    {item.longest ? (
+                      <span className="block text-sm text-muted">
+                        {s.locations[item.longest.location]} · {formatDuration(item.longest, s)}
+                      </span>
+                    ) : null}
                   </span>
                   <ChevronRight aria-hidden="true" className="size-5 shrink-0 text-muted" />
                 </a>

@@ -19,7 +19,7 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await expect(page.getByText('6 fødevarer')).toBeVisible();
   await expect(page.getByRole('listitem').first()).toContainText('Kål');
 
-  await page.getByRole('link', { name: 'Kål Cabbage', exact: true }).click();
+  await page.getByRole('link', { name: /^Kål (Spisekammer|Køleskab|Fryser)/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Kål' })).toBeVisible();
   await expect(page.getByText('1–2 uger')).toBeVisible();
 
@@ -47,7 +47,7 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await page.reload();
   await expect(page.getByRole('heading', { level: 1, name: 'Hvad har du brug for?' })).toBeVisible();
   await page.getByRole('searchbox', { name: 'Søg i indholdet' }).fill('kartof');
-  await page.getByRole('link', { name: 'Kartofler Potatoes', exact: true }).click();
+  await page.getByRole('link', { name: /^Kartofler Fryser · 10–12 måneder/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Kartofler' })).toBeVisible();
   // Guide and notes are shown in Danish; the original wording is one tap away (D-031, D-033).
   await expect(page.getByText('Tiden i fryseren gælder kogte kartofler og kartoffelmos.')).toBeVisible();

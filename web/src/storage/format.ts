@@ -31,3 +31,17 @@ export function formatBasis(p: PeriodRow, s: Strings): string | null {
 }
 
 export const LOCATION_ORDER: Location[] = ['pantry', 'fridge', 'freezer'];
+
+const DAYS: Record<Unit, number> = { hours: 1 / 24, days: 1, weeks: 7, months: 30, years: 365 };
+
+// Where a food keeps longest, for the line under its name: the range period (from purchase or
+// unspecified, not after opening or thawing) with the longest maximum. Null if no range is given.
+export function longestKeeping(periods: PeriodRow[]): PeriodRow | null {
+  let best: PeriodRow | null = null;
+  for (const p of periods) {
+    if (p.kind !== 'range' || p.max_value === null || p.unit === null) continue;
+    if (p.basis === 'afterOpening' || p.basis === 'afterThawing') continue;
+    if (!best || p.max_value * DAYS[p.unit] > (best.max_value ?? 0) * DAYS[best.unit ?? 'days']) best = p;
+  }
+  return best;
+}
