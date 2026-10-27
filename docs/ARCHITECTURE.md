@@ -155,7 +155,7 @@ web/
 - Ranking: plain `bm25` ranks 'Grønkål' above 'Kål' for 'kål'. The app should rank exact and prefix name matches first.
 - **Guides (not built yet):** title, summary, tags and block text. Choose between trigram and `unicode61` when guide text exists; test with real Danish queries.
 
-## 5a. Pack schema (version 6)
+## 5a. Pack schema (version 8)
 
 Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
 
@@ -167,7 +167,7 @@ Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
 - `produce_blocks.recipe`: a step-by-step recipe as JSON (title, intro, facts, ingredients, steps; version 5, D-035).
 - Food guides (version 3, D-033): `produce_sections` (item, order, section, verdict), `produce_blocks` (item, section, order, Danish text, original quote, source id, locator), `produce_ethylene` (item, Handbook 66 storage groups, producer, sensitive) and `produce_relations` (item, other item, `apart` | `with`). Relations are computed at build time from Handbook 66 Table 1: `apart` when one produces significant ethylene and the other is sensitive; `with` when they share a storage group, have no conflict and are both producers or both not.
 
-- Guides (version 6, D-037): `guides` (id, category, order, title, summary, source, risk, owner checked, related ids), `guide_blocks` (guide, order, kind `heading` | `text` | `steps` | `list` | `warning` | `image`, title, text, items JSON, step photos JSON, image, alt, caption, source page), `guide_images` (file name, MIME type, bytes; only images in use) and `guide_checks` (guide, order, second-authority source, locator, quote, note).
+- Guides (version 6, D-037; growing in version 8, D-038: `guides.food_id`, `guide_blocks.source_id`, block kind `section`; `guide_search` FTS5 since version 7): `guides` (id, category, order, title, summary, source, risk, owner checked, related ids), `guide_blocks` (guide, order, kind `heading` | `text` | `steps` | `list` | `warning` | `image`, title, text, items JSON, step photos JSON, image, alt, caption, source page), `guide_images` (file name, MIME type, bytes; only images in use) and `guide_checks` (guide, order, second-authority source, locator, quote, note).
 
 Build: `cd content && npm run build:pack`. Output goes to `content/dist/core/` (not committed). Pack version = `content/package.json` version.
 

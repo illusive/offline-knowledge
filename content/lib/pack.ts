@@ -117,7 +117,8 @@ CREATE TABLE guides (
   risk TEXT NOT NULL,
   owner_checked INTEGER NOT NULL,
   related TEXT NOT NULL, -- JSON array of guide ids
-  abbreviations TEXT NOT NULL -- JSON [{short, long}]
+  abbreviations TEXT NOT NULL, -- JSON [{short, long}]
+  food_id TEXT REFERENCES storage_items(id) -- growing: the food page this crop links to
 );
 
 -- Search over guide titles, summaries and shown text (trigram, like storage_search).
@@ -131,7 +132,7 @@ CREATE VIRTUAL TABLE guide_search USING fts5(
 CREATE TABLE guide_blocks (
   guide_id TEXT NOT NULL REFERENCES guides(id),
   ord INTEGER NOT NULL,
-  kind TEXT NOT NULL CHECK (kind IN ('heading', 'text', 'steps', 'list', 'warning', 'image')),
+  kind TEXT NOT NULL CHECK (kind IN ('heading', 'section', 'text', 'steps', 'list', 'warning', 'image')),
   title TEXT,
   text TEXT,
   items TEXT,        -- JSON array for steps, lists and warnings
@@ -140,6 +141,7 @@ CREATE TABLE guide_blocks (
   alt TEXT,
   caption TEXT,
   page INTEGER NOT NULL,
+  source_id TEXT REFERENCES sources(id), -- when not the guide's own source
   PRIMARY KEY (guide_id, ord)
 );
 
@@ -226,7 +228,7 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     ...input.storage.map((d) => d.sourceId),
     ...(input.guides ?? []).flatMap((g) => g.sections.flatMap((s) => s.blocks.map((b) => b.sourceRef.sourceId))),
     ...(input.extraSourceIds ?? []),
-    ...(input.guideSet?.guides ?? []).flatMap((g) => [g.sourceId, ...g.checks.map((c) => c.sourceId)]),
+    ...(input.guideSet?.guides ?? []).flatMap((g) => [g.sourceId, ...g.checks.map((c) => c.sourceId), ...g.blocks.flatMap((b) => (b.sourceId ? [b.sourceId] : []))]),
   ]);
   const usedSources = input.sources.filter((s) => usedSourceIds.has(s.id));
   const dataVersions = new Map(input.storage.map((d) => [d.sourceId, d.sourceDataVersion]));
@@ -300,22 +302,22 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
         if (!image) throw new Error(`Missing image ${file}`);
         insertImage.run(file, image.mime, image.data);
       }
-      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related, abbreviations) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related, abbreviations, food_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
       const insertGuideSearch = db.prepare('INSERT INTO guide_search (guide_id, title, body) VALUES (?, ?, ?)');
       const insertGuideBlock = db.prepare(
-        'INSERT INTO guide_blocks (guide_id, ord, kind, title, text, items, step_images, image_id, alt, caption, page) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        'INSERT INTO guide_blocks (guide_id, ord, kind, title, text, items, step_images, image_id, alt, caption, page, source_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       );
       const insertCheck = db.prepare('INSERT INTO guide_checks (guide_id, ord, source_id, locator, quote, note) VALUES (?, ?, ?, ?, ?, ?)');
       for (const g of guides) {
-        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []));
+        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []), g.foodId ?? null);
         const body = [g.summary ?? '', ...g.blocks.flatMap((b) => [...('title' in b && b.title ? [b.title] : []), ...shownTexts(b)]), ...(g.abbreviations ?? []).map((a) => a.long)];
         insertGuideSearch.run(g.id, g.title, body.join('\n'));
         g.blocks.forEach((b, ord) => {
           const title = 'title' in b ? (b.title ?? null) : null;
-          const text = 'text' in b ? (b.text ?? null) : null;
+          const text = 'text' in b ? (b.text ?? null) : b.kind === 'section' ? b.key : null;
           const items = 'items' in b && b.items ? JSON.stringify(b.items) : null;
           const stepImages = b.kind === 'steps' && b.images?.length ? JSON.stringify(b.images.map((i) => ({ after: i.after, imageId: i.file, alt: i.alt, page: i.page }))) : null;
-          insertGuideBlock.run(g.id, ord, b.kind, title, text, items, stepImages, b.kind === 'image' ? b.file : null, b.kind === 'image' ? b.alt : null, b.kind === 'image' ? (b.caption ?? null) : null, b.page);
+          insertGuideBlock.run(g.id, ord, b.kind, title, text, items, stepImages, b.kind === 'image' ? b.file : null, b.kind === 'image' ? b.alt : null, b.kind === 'image' ? (b.caption ?? null) : null, b.page, b.sourceId ?? null);
         });
         g.checks.forEach((c, ord) => insertCheck.run(g.id, ord, c.sourceId, c.locator, c.quote, c.note));
       }

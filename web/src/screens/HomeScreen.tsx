@@ -1,7 +1,7 @@
 // Home (design brief, D-025): search everything offline, then the available categories and the
 // emergency card. Only categories with content are shown.
 
-import { Asterisk, ArrowUpRight, Cross, Package } from 'lucide-react';
+import { Asterisk, ArrowUpRight, Cross, Package, Sprout } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { EmergencyCard } from '../components/EmergencyCard';
 import { DownloadCard, OFFLINE_DISABLED, OfflineStatus } from '../components/OfflineStatus';
@@ -23,12 +23,14 @@ export function HomeScreen(props: {
   offlineReady: boolean;
   precache: PrecacheProgress | null;
   guides: GuideRow[] | null;
+  crops: GuideRow[] | null;
   query: string;
   onQueryChange: (q: string) => void;
 }) {
-  const { db, foods, lang, s, offlineReady, precache, guides, query, onQueryChange } = props;
+  const { db, foods, lang, s, offlineReady, precache, guides, crops, query, onQueryChange } = props;
   const results = useFoodSearch(db, foods, query, lang);
   const guideResults = useGuideSearch(db, guides, query);
+  const cropResults = useGuideSearch(db, crops, query);
   const guideCount = guides?.length ?? null;
   const searching = query.trim() !== '';
 
@@ -54,21 +56,15 @@ export function HomeScreen(props: {
 
       {searching ? (
         <div className="mt-6 flex flex-col gap-3">
-          {guideResults.length > 0 ? (
-            <section aria-labelledby="guide-results" className="flex flex-col gap-2">
-              <h2 id="guide-results" className="px-1 text-lg font-semibold">
-                {s.firstAid}
-              </h2>
-              <GuideList guides={guideResults} numbered={false} />
-            </section>
-          ) : null}
+          <GuideResults id="guide-results" title={s.firstAid} guides={guideResults} />
+          <GuideResults id="crop-results" title={s.growing} guides={cropResults} />
           <FoodList items={results} query={query} lang={lang} s={s} />
         </div>
       ) : (
         <div className="mt-8 flex flex-col gap-3">
           <div className="flex items-baseline justify-between gap-[12px] px-1">
             <h2 className="text-xl font-semibold">{s.startHere}</h2>
-            {foods && guideCount !== null ? <p className="text-sm text-muted">{s.totalTopics(foods.length + guideCount)}</p> : null}
+            {foods && guideCount !== null ? <p className="text-sm text-muted">{s.totalTopics(foods.length + guideCount + (crops?.length ?? 0))}</p> : null}
           </div>
           {guideCount ? (
             <a href={hrefs.firstAid} className="flex items-center gap-[16px] rounded-card bg-ink px-[20px] py-6 text-on-ink">
@@ -85,6 +81,7 @@ export function HomeScreen(props: {
           {/* Category tiles; only categories with content are shown (D-025). One tile fills the row. */}
           <div className="grid grid-cols-2 gap-3">
             <CategoryTile href={hrefs.storage} icon={<Package className="size-7" strokeWidth={1.5} />} title={s.storingFood} count={foods ? s.foodCount(foods.length) : null} />
+            {crops?.length ? <CategoryTile href={hrefs.growing} icon={<Sprout className="size-7" strokeWidth={1.5} />} title={s.growing} count={s.growingCount(crops.length)} /> : null}
           </div>
           <div className="mt-3">
             <EmergencyCard s={s} />
@@ -104,5 +101,17 @@ function CategoryTile({ href, icon, title, count }: { href: string; icon: ReactN
       </span>
       <span className="text-xl font-semibold">{title}</span>
     </a>
+  );
+}
+
+function GuideResults({ id, title, guides }: { id: string; title: string; guides: GuideRow[] }) {
+  if (guides.length === 0) return null;
+  return (
+    <section aria-labelledby={id} className="flex flex-col gap-2">
+      <h2 id={id} className="px-1 text-lg font-semibold">
+        {title}
+      </h2>
+      <GuideList guides={guides} numbered={false} />
+    </section>
   );
 }

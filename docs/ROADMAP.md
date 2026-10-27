@@ -30,6 +30,8 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
   - **Then:** shared method guides for drying, pickling and canning; replace the one image-transcribed potato quote with the NCHFP page; e2e check of a guide page.
   - Food pages are split into Om / Holdbarhed / Konservering / Kilder (D-034). When writing drying, pickling and canning, use recipes with numbered steps (`r(...)` in `content/authoring/mk.py`, D-035), look for a Danish pickle recipe first (D-034), and end canned recipes with the "Sådan opbevarer du henkogte glas" recipe. **Æbler is done this way; the other 20 written guides still use paragraphs and need converting.**
   - How to work: `content/authoring/README.md`.
+- [ ] Growing food (D-038). **Status 2026-10-27: 3 crops (radiser, ærter, kartofler), format waiting for the owner's verdict.** Next: salat, spinat, hestebønner, gulerødder, sætteløg (find each crop's Bolius page, snapshot it into `content/sources/snapshots/dk-bolius-<crop>.html`, register it, write `content/guides/growing/<id>.json`; `npm run build:pack` checks the text).
+- [x] Home to the design brief: first aid card, category tiles with counts (2026-10-27).
 - [ ] Bookmarks (D-026): local store separate from the pack; "Saved" on Home.
 - [ ] Settings: offline library card from the pack manifest, language, appearance, text size, about and sources.
 - [ ] Tools: supply checklist (UK Be Ready, progress on the device) and compass (permission, no-sensor and inaccuracy states; test on a real iPhone).

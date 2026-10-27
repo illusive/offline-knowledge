@@ -157,6 +157,11 @@ export interface Strings {
   abbreviationsLabel: string;
   totalTopics: (n: number) => string;
   foodCount: (n: number) => string;
+  growing: string;
+  growingIntro: string;
+  growingCount: (n: number) => string;
+  growingSections: Record<'sowing' | 'conditions' | 'care' | 'harvest' | 'seeds' | 'neighbours', string>;
+  storeThisCrop: string;
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -343,7 +348,7 @@ export const strings: Record<Lang, Strings> = {
     guideNotFound: 'Vejledningen blev ikke fundet.',
     guideSource: (name, from, to) => `Kilde: ${name}, s. ${from === to ? from : `${from}–${to}`}`,
     checkedAgainst: 'Sammenholdt med',
-    ownerNotChecked: 'Prøveversion: endnu ikke gennemlæst mod håndbogen.',
+    ownerNotChecked: 'Prøveversion: endnu ikke gennemlæst mod kilden.',
     relatedGuides: 'Se også',
     firstAidSearchPlaceholder: 'Søg i førstehjælp, fx blødning',
     firstAidSearchLabel: 'Søg i førstehjælp',
@@ -353,6 +358,11 @@ export const strings: Record<Lang, Strings> = {
     abbreviationsLabel: 'Forkortelser',
     totalTopics: (n) => `${n} emner`,
     foodCount: (n) => `${n} fødevarer`,
+    growing: 'Dyrkning',
+    growingIntro: 'Så, pas og høst – og gem frø til næste år. Nemme afgrøder til det danske klima.',
+    growingCount: (n) => `${n} afgrøder`,
+    growingSections: { sowing: 'Såning', conditions: 'Jord og placering', care: 'Pasning', harvest: 'Høst', seeds: 'Frø til næste år', neighbours: 'Naboer og sædskifte' },
+    storeThisCrop: 'Holdbarhed og konservering',
   },
   en: {
     appTitle: 'stead',
@@ -537,7 +547,7 @@ export const strings: Record<Lang, Strings> = {
     guideNotFound: 'Guide not found.',
     guideSource: (name, from, to) => `Source: ${name}, ${from === to ? `p. ${from}` : `pp. ${from}–${to}`}`,
     checkedAgainst: 'Compared with',
-    ownerNotChecked: 'Trial version: not yet read against the handbook.',
+    ownerNotChecked: 'Trial version: not yet read against the source.',
     relatedGuides: 'See also',
     firstAidSearchPlaceholder: 'Search first aid, e.g. blødning',
     firstAidSearchLabel: 'Search first aid',
@@ -547,5 +557,10 @@ export const strings: Record<Lang, Strings> = {
     abbreviationsLabel: 'Abbreviations',
     totalTopics: (n) => `${n} topics`,
     foodCount: (n) => `${n} foods`,
+    growing: 'Growing food',
+    growingIntro: 'Sow, tend and harvest – and save seed for next year. Easy crops for the Danish climate (in Danish).',
+    growingCount: (n) => `${n} crops`,
+    growingSections: { sowing: 'Sowing', conditions: 'Soil and site', care: 'Care', harvest: 'Harvest', seeds: 'Seed for next year', neighbours: 'Neighbours and rotation' },
+    storeThisCrop: 'Storing and preserving',
   },
 };

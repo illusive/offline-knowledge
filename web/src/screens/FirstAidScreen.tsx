@@ -14,22 +14,22 @@ import { MIN_FTS_QUERY_LENGTH } from '../storage/search';
 // The guide shown as the section at the top of Førstehjælp.
 export const MAIN_POINTS_ID = 'tre-hovedpunkter';
 
-export function useGuides(db: DbClient | null) {
+export function useGuides(db: DbClient | null, category: GuideRow['category'] = 'first-aid') {
   const [guides, setGuides] = useState<GuideRow[] | null>(null);
   useEffect(() => {
     if (!db) return;
     let current = true;
-    void db.call({ type: 'guides', category: 'first-aid' }).then((rows) => {
+    void db.call({ type: 'guides', category }).then((rows) => {
       if (current) setGuides(rows);
     });
     return () => {
       current = false;
     };
-  }, [db]);
+  }, [db, category]);
   return guides;
 }
 
-// Guides matching a query: titles only for one or two letters, full text from three.
+// Guides from `guides` matching a query: titles only for one or two letters, full text from three.
 export function useGuideSearch(db: DbClient, guides: GuideRow[] | null, query: string): GuideRow[] {
   const q = query.trim();
   const [found, setFound] = useState<{ query: string; rows: GuideRow[] } | null>(null);
@@ -48,7 +48,8 @@ export function useGuideSearch(db: DbClient, guides: GuideRow[] | null, query: s
     const lower = q.toLocaleLowerCase('da');
     return guides.filter((g) => g.title.toLocaleLowerCase('da').split(/[\s-]+/).some((w) => w.startsWith(lower)));
   }
-  return found?.query === q ? found.rows : [];
+  const ids = new Set(guides.map((g) => g.id));
+  return found?.query === q ? found.rows.filter((g) => ids.has(g.id)) : [];
 }
 
 export function FirstAidScreen({ db, guides, s, query, onQueryChange }: { db: DbClient; guides: GuideRow[] | null; s: Strings; query: string; onQueryChange: (q: string) => void }) {

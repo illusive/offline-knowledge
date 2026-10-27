@@ -50,6 +50,8 @@ export function shownTexts(block: GuideBlock): string[] {
       return [...(block.text ? [block.text] : []), ...(block.items ?? [])];
     case 'image':
       return block.caption ? [block.caption] : [];
+    case 'section':
+      return [];
   }
 }
 
@@ -65,7 +67,9 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
     const at = `guide ${guide.id}`;
     if (ids.has(guide.id)) problems.push(`${at}: duplicate id`);
     ids.add(guide.id);
-    if (guide.risk !== 'high') problems.push(`${at}: first aid guides are risk 'high'`);
+    if (guide.category === 'first-aid' && guide.risk !== 'high') problems.push(`${at}: first aid guides are risk 'high'`);
+    if (guide.category === 'growing' && guide.risk !== 'low') problems.push(`${at}: growing guides are risk 'low'`);
+    if (guide.blocks.some((b) => b.kind === 'section') && guide.category !== 'growing') problems.push(`${at}: section headings are for growing guides`);
     const source = texts.get(guide.sourceId);
     if (!known.has(guide.sourceId)) problems.push(`${at}: source '${guide.sourceId}' not in registry`);
     else if (!source) problems.push(`${at}: no text for source '${guide.sourceId}'`);
@@ -75,25 +79,27 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
       if (source && !source.includes(normalize(c.from))) problems.push(`${at}: correction source text not found: "${c.from}"`);
     }
     // Headings and titles ignore case (the source sets many in capitals); everything else is exact.
-    const lowerSource = source?.toLocaleLowerCase('da');
     // A corrected word may also appear correctly elsewhere in the source, so the text as shown counts too.
-    const check = (where: string, text: string, ignoreCase = false) => {
+    const check = (where: string, text: string, ignoreCase = false, sourceId = guide.sourceId) => {
+      const src = texts.get(sourceId);
       const found = (t: string) => {
         const wanted = normalize(t);
-        return ignoreCase ? (lowerSource ?? '').includes(wanted.toLocaleLowerCase('da')) : (source ?? '').includes(wanted);
+        return ignoreCase ? (src ?? '').toLocaleLowerCase('da').includes(wanted.toLocaleLowerCase('da')) : (src ?? '').includes(wanted);
       };
       if (!text.trim()) problems.push(`${where}: empty text`);
-      else if (source && !found(text) && !found(original(text))) {
-        problems.push(`${where}: not verbatim in ${guide.sourceId}: "${text.slice(0, 70)}"`);
-      }
+      else if (!src) problems.push(`${where}: no text for source '${sourceId}'`);
+      else if (!found(text) && !found(original(text))) problems.push(`${where}: not verbatim in ${sourceId}: "${text.slice(0, 70)}"`);
     };
     check(`${at} title`, guide.title, true);
     if (guide.summary) check(`${at} summary`, guide.summary);
     guide.blocks.forEach((block, i) => {
       const where = `${at} block ${i} (${block.kind})`;
       if (!Number.isInteger(block.page) || block.page < 1) problems.push(`${where}: page missing`);
-      for (const text of shownTexts(block)) check(where, text, block.kind === 'heading');
-      if ('title' in block && block.title) check(`${where} title`, block.title, true);
+      const sid = block.sourceId ?? guide.sourceId;
+      if (block.sourceId && guide.risk === 'high') problems.push(`${where}: high-risk guides take all text from one source`);
+      if (block.sourceId && !known.has(block.sourceId)) problems.push(`${where}: source '${block.sourceId}' not in registry`);
+      for (const text of shownTexts(block)) check(where, text, block.kind === 'heading', sid);
+      if ('title' in block && block.title) check(`${where} title`, block.title, true, sid);
       if ((block.kind === 'steps' || block.kind === 'list') && block.items.length === 0) problems.push(`${where}: no items`);
       const images = block.kind === 'image' ? [block] : block.kind === 'steps' ? (block.images ?? []) : [];
       for (const image of images) {
@@ -116,7 +122,7 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
         problems.push(`${at}: uses ${short} without explaining it (add it to "abbreviations")`);
       }
     }
-    if (guide.checks.length === 0) problems.push(`${at}: no second-authority check (D-027)`);
+    if (guide.risk === 'high' && guide.checks.length === 0) problems.push(`${at}: no second-authority check (D-027)`);
     guide.checks.forEach((c, i) => {
       const where = `${at} check ${i}`;
       if (!known.has(c.sourceId)) problems.push(`${where}: source '${c.sourceId}' not in registry`);

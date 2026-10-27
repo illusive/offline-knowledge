@@ -3,15 +3,23 @@
 // differ from the source (D-027 as changed 2026-10-27).
 // One JSON file per guide in content/guides/<category>/<id>.json; images in content/guides/images/.
 
-export type GuideCategory = 'first-aid';
+export type GuideCategory = 'first-aid' | 'growing';
 
-export type GuideBlock =
+// Fixed section headings for growing guides (the app shows them in its own words, D-038).
+export const GROWING_SECTIONS = ['sowing', 'conditions', 'care', 'harvest', 'seeds', 'neighbours'] as const;
+export type GrowingSection = (typeof GROWING_SECTIONS)[number];
+
+// `page`: the PDF page; 1 for HTML sources. `sourceId`: only in low-risk guides, a block may come
+// from another registered source than the guide's (e.g. a general seed-saving page).
+export type GuideBlock = { sourceId?: string } & (
   | { kind: 'heading'; text: string; page: number }
+  | { kind: 'section'; key: GrowingSection; page: number }   // a fixed heading; no source text
   | { kind: 'text'; text: string; page: number }
   | { kind: 'steps'; title?: string; items: string[]; images?: StepImage[]; page: number }   // numbered
   | { kind: 'list'; title?: string; items: string[]; page: number }    // bullets
   | { kind: 'warning'; title?: string; text?: string; items?: string[]; page: number }
-  | { kind: 'image'; file: string; alt: string; caption?: string; page: number }; // alt is ours (accessibility)
+  | { kind: 'image'; file: string; alt: string; caption?: string; page: number } // alt is ours (accessibility)
+);
 
 // A photo of one step, shown after item `after` (1-based); `page` is where the photo is printed.
 export interface StepImage {
@@ -42,7 +50,7 @@ export interface Guide {
   title: string;            // verbatim from the source
   summary?: string;         // verbatim; shown in lists
   sourceId: string;
-  risk: 'high';
+  risk: 'high' | 'low';    // first aid is 'high' (second authority required); growing is 'low'
   corrections?: Correction[];
   // Abbreviations the guide uses, explained at the top (owner: no unexplained abbreviations).
   // `long` must be found in the source; parts separated by ", " are checked one by one.
@@ -51,4 +59,5 @@ export interface Guide {
   checks: SecondCheck[];
   ownerChecked: boolean;    // the project owner has compared the guide with the source (D-027)
   related?: string[];       // other guide ids
+  foodId?: string;          // the storage item this crop becomes (links to its food page)
 }

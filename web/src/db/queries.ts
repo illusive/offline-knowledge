@@ -4,7 +4,7 @@
 import type { Location, PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
-export const SUPPORTED_PACK_SCHEMA_VERSION = 7;
+export const SUPPORTED_PACK_SCHEMA_VERSION = 8;
 
 type Bind = (string | number | null)[];
 
@@ -93,7 +93,7 @@ export interface ItemDetail {
 // Guides (D-037): verbatim blocks from one source, with images and second-authority checks.
 export interface GuideRow {
   id: string;
-  category: 'first-aid';
+  category: 'first-aid' | 'growing';
   title: string;
   summary: string | null;
   abbreviations: { short: string; long: string }[];
@@ -111,10 +111,13 @@ export interface GuideImage {
 
 export type GuideBlock =
   | { kind: 'heading' | 'text'; text: string; page: number }
+  | { kind: 'section'; key: GrowingSection; page: number }
   | { kind: 'steps'; title: string | null; items: string[]; images: { after: number; imageId: string; alt: string; page: number }[]; page: number }
   | { kind: 'list'; title: string | null; items: string[]; page: number }
   | { kind: 'warning'; title: string | null; text: string | null; items: string[]; page: number }
   | { kind: 'image'; imageId: string; alt: string; caption: string | null; page: number };
+
+export type GrowingSection = 'sowing' | 'conditions' | 'care' | 'harvest' | 'seeds' | 'neighbours';
 
 export interface GuideCheck {
   source: SourceRow & { short_name: string };
@@ -123,8 +126,9 @@ export interface GuideCheck {
 }
 
 export interface GuideDetail {
-  guide: GuideRow & { owner_checked: boolean };
+  guide: GuideRow & { owner_checked: boolean; food_id: string | null };
   blocks: GuideBlock[];
+  blockSources: (SourceRow & { short_name: string })[]; // sources of single blocks, other than the guide's
   images: GuideImage[];
   source: SourceRow & { short_name: string };
   checks: GuideCheck[];
@@ -148,9 +152,9 @@ export function searchGuides(db: SqlDb, query: string): GuideRow[] {
 }
 
 export function getGuide(db: SqlDb, id: string): GuideDetail | null {
-  const [row] = rows<Omit<GuideRow, 'abbreviations'> & { abbreviations: string; owner_checked: number; source_id: string; related: string }>(
+  const [row] = rows<Omit<GuideRow, 'abbreviations'> & { abbreviations: string; owner_checked: number; source_id: string; related: string; food_id: string | null }>(
     db,
-    'SELECT id, category, title, summary, abbreviations, owner_checked, source_id, related FROM guides WHERE id = ?',
+    'SELECT id, category, title, summary, abbreviations, owner_checked, source_id, related, food_id FROM guides WHERE id = ?',
     [id],
   );
   if (!row) return null;
@@ -168,6 +172,8 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
         case 'heading':
         case 'text':
           return { kind: b.kind, text: b.text ?? '', page: b.page };
+        case 'section':
+          return { kind: 'section', key: b.text as GrowingSection, page: b.page };
         case 'steps':
           return { kind: 'steps', title: b.title, items, images: b.step_images ? JSON.parse(b.step_images) : [], page: b.page };
         case 'list':
@@ -187,7 +193,8 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
   const relatedIds = JSON.parse(g.related) as string[];
   const related = relatedIds.flatMap((rid) => guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guides g WHERE g.id = ?`, [rid]));
   return {
-    guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, abbreviations: g.abbreviations, owner_checked: g.owner_checked === 1 },
+    guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, abbreviations: g.abbreviations, owner_checked: g.owner_checked === 1, food_id: g.food_id },
+    blockSources: rows<{ source_id: string }>(db, 'SELECT DISTINCT source_id FROM guide_blocks WHERE guide_id = ? AND source_id IS NOT NULL', [id]).map((r) => source(r.source_id)),
     blocks,
     images,
     source: source(g.source_id),

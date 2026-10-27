@@ -79,3 +79,12 @@ test('guide search finds text inside guides, title matches first; abbreviations 
   expect(listGuides(db, 'first-aid').find((g) => g.id === 'hlr-boern')?.abbreviations).toEqual([{ short: 'HLR', long: 'hjertelungeredning' }]);
   expect(listGuides(db, 'first-aid').some((g) => g.title.includes('<M>'))).toBe(false);
 });
+
+test('growing guides: fixed sections, a link to the food page, and the seed page as a second source', () => {
+  expect(listGuides(db, 'growing').map((g) => g.id)).toEqual(['radiser', 'aerter', 'kartofler']);
+  const g = getGuide(db, 'aerter');
+  expect(g?.guide.food_id).toBe('foodkeeper-273');
+  expect(g?.blocks.filter((b) => b.kind === 'section').map((b) => b.kind === 'section' && b.key)).toEqual(['sowing', 'conditions', 'care', 'harvest', 'seeds', 'neighbours']);
+  expect(g?.blockSources.map((s) => s.id)).toEqual(['dk-bolius-froe']);
+  expect(searchGuides(db, 'jordtemperatur').map((r) => r.id)).toEqual(expect.arrayContaining(['aerter', 'kartofler']));
+});

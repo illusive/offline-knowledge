@@ -44,7 +44,7 @@ const ethylene = ethyleneProfiles(compat.entries, mapping.map);
 // Guides (D-037): every shown text verbatim in the joined-up source text; second-authority quotes too.
 const readingGuides = await loadReadingGuides();
 const guideTexts = new Map<string, string>();
-for (const id of new Set(readingGuides.flatMap((g) => [g.sourceId, ...g.checks.map((c) => c.sourceId)]))) {
+for (const id of new Set(readingGuides.flatMap((g) => [g.sourceId, ...g.checks.map((c) => c.sourceId), ...g.blocks.flatMap((b) => (b.sourceId ? [b.sourceId] : []))]))) {
   const source = sources.find((s) => s.id === id);
   if (!source?.snapshot) continue;
   const bytes = await readSnapshot(source);

@@ -2,7 +2,7 @@
 // handbook's photos next to the steps they show. Ends with the source (and pages) and the second
 // authority it was compared with.
 
-import { TriangleAlert } from 'lucide-react';
+import { ChevronRight, TriangleAlert } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { EmergencyCard } from '../components/EmergencyCard';
 import { BackButton, Card, MessageState, Page } from '../components/ui';
@@ -37,11 +37,13 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
     }
   }, [title, s.appTitle]);
 
-  const back = <BackButton label={s.back} onClick={() => goBack(hrefs.firstAid)} />;
+  const parent = loaded?.guide.category === 'growing' ? hrefs.growing : hrefs.firstAid;
+  const back = <BackButton label={s.back} onClick={() => goBack(parent)} />;
   if (loaded === undefined) return <Page>{back}<MessageState title={s.loading} /></Page>;
   if (loaded === null) return <Page>{back}<MessageState title={s.guideNotFound} /></Page>;
 
-  const { guide, blocks, source, checks, related } = loaded;
+  const { guide, blocks, source, checks, related, blockSources } = loaded;
+  const firstAid = guide.category === 'first-aid';
   return (
     <Page>
       {back}
@@ -64,14 +66,22 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
         ) : null}
         <Card className="flex flex-col gap-4">
           {blocks.map((block, i) => (
-            <Block key={i} block={block} imageUrls={imageUrls} />
+            <Block key={i} block={block} imageUrls={imageUrls} s={s} />
           ))}
         </Card>
       </article>
 
-      <div className="mt-3">
-        <EmergencyCard s={s} />
-      </div>
+      {firstAid ? (
+        <div className="mt-3">
+          <EmergencyCard s={s} />
+        </div>
+      ) : null}
+      {guide.food_id ? (
+        <a href={hrefs.food(guide.food_id)} className="mt-3 flex min-h-14 items-center justify-between gap-[12px] rounded-card bg-surface px-[20px] py-4 font-medium">
+          {s.storeThisCrop}
+          <ChevronRight aria-hidden="true" className="size-5 shrink-0 text-muted" />
+        </a>
+      ) : null}
 
       {related.length > 0 ? (
         <section className="mt-6 flex flex-col gap-2" aria-labelledby="related-heading">
@@ -83,7 +93,10 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
       ) : null}
 
       <footer className="mt-6 flex flex-col gap-1 px-1 text-sm text-muted">
-        <p>{s.guideSource(`${source.title} (${source.publisher})`, ...pageRange(blocks))}</p>
+        <p>{firstAid ? s.guideSource(`${source.title} (${source.publisher})`, ...pageRange(blocks)) : s.basedOn(`${source.publisher}: ${source.title}`)}</p>
+        {blockSources.map((b) => (
+          <p key={b.id}>{s.basedOn(`${b.publisher}: ${b.title}`)}</p>
+        ))}
         {checks.length > 0 ? (
           <p>
             {s.checkedAgainst}: {[...new Set(checks.map((c) => `${c.source.short_name}, ${c.source.title}`))].join('; ')}
@@ -95,10 +108,16 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
   );
 }
 
-function Block({ block, imageUrls }: { block: GuideBlock; imageUrls: Map<string, string> }) {
+function Block({ block, imageUrls, s }: { block: GuideBlock; imageUrls: Map<string, string>; s: Strings }) {
   switch (block.kind) {
     case 'heading':
       return <h2 className="text-lg font-semibold">{block.text}</h2>;
+    case 'section':
+      return (
+        <h2 className="mt-2 border-t border-border pt-4 text-xl font-semibold first:mt-0 first:border-t-0 first:pt-0">
+          {s.growingSections[block.key]}
+        </h2>
+      );
     case 'text':
       return <p>{block.text}</p>;
     case 'list':

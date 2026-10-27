@@ -280,6 +280,14 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Next section, "when no help is coming" (owner decision 2026-10-27):** problem-based guidance (sprain, bleeding, gash, broken arm …) for when emergency services cannot be reached, as a separate section under Førstehjælp with a banner on every page (try 112 first). Each problem starts with the handbook's own section, then adds austere-care steps from public-domain US military field manuals, shown verbatim in English.
 - **Tourniquet (owner decision 2026-10-27):** the handbook's "apply a ready-made tourniquet first on arms and legs, high and tight" (p. 18) is left out of "Massive blødninger", because ERC 2025 starts with direct pressure and uses a tourniquet only when pressure is not enough. No tourniquet advice until a source agrees with ERC's order.
 
+## D-038 — Growing food from Danish sources (Bolius first)
+
+- **Date:** 2026-10-27
+- **Decision:** a "Dyrkning" category (tile on Home next to Opbevaring af mad) with one guide per crop, easy crops for the Danish climate first: radiser, ærter, kartofler (done), then salat, spinat, hestebønner, gulerødder, sætteløg. Danish sources first (owner decision): Videncentret Bolius (Realdania; "Indholdet må ikke gengives uden tilladelse", so a permission case, set aside while private, D-028). Frøsamlerne's material is a paid book; its Nordic plant lexicon (danskekulturplanter.dk) may serve old varieties later.
+- **Format:** the guide model of D-037 at risk `low`: text verbatim from the crop's page (checked by the build), laid out under fixed sections in the app's own words (Såning, Jord og placering, Pasning, Høst, Frø til næste år, Naboer og sædskifte). A block may quote another registered source (e.g. Bolius' general seed-saving page), checked against that source; high-risk guides still take all text from one source. No second authority is required at low risk. A crop links to its food page (Holdbarhed og konservering).
+- **Companion planting:** only what a credible source says. The popular "good/bad neighbours" lists online come from FAQ sites without sources and are not used; crop rotation and plant families (from Bolius) are.
+- **Pack:** schema 8: `guides.food_id`, `guide_blocks.source_id`, block kind `section`. Search covers growing guides; Home search groups hits by category.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24
