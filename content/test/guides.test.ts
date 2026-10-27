@@ -70,14 +70,14 @@ test('validateGuides refuses a second-authority quote that is not in that source
 
 test('growing guides: low risk needs no second authority; a block may quote another source, checked there', () => {
   const g = guide({
-    id: 'radiser', category: 'growing', risk: 'low', checks: [],
+    id: 'radiser', category: 'growing', risk: 'low', checks: [], name: 'Radiser',
     blocks: [
       { kind: 'section', key: 'sowing', page: 1 },
       { kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1, sourceId: 'second' },
     ],
   });
   assert.deepEqual(validateGuides([g], sources, texts, new Set()), []);
-  const wrong = guide({ id: 'x', category: 'growing', risk: 'low', checks: [], blocks: [{ kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1 }] });
+  const wrong = guide({ id: 'x', category: 'growing', risk: 'low', checks: [], name: 'X', blocks: [{ kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1 }] });
   assert.ok(validateGuides([wrong], sources, texts, new Set()).some((p) => p.includes('not verbatim in main')));
   const firstAidMix = guide({ blocks: [{ kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1, sourceId: 'second' }] });
   assert.ok(validateGuides([firstAidMix], sources, texts, new Set()).some((p) => p.includes('one source')));
