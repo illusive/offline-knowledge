@@ -1995,6 +1995,54 @@
       "snapshot": "snapshots/dk-bolius-5-dyre.html",
       "snapshotSha256": "e2b3cafef0f36be6c056028561155e4b3c64145c294cb178bbe1d1f0b5719d80",
       "shortName": "Bolius"
+    },
+    {
+      "id": "dk-bolius-tomater",
+      "status": "request-needed",
+      "title": "Sådan dyrker du dine egne tomatplanter",
+      "publisher": "Videncentret Bolius (Realdania)",
+      "url": "https://www.bolius.dk/saadan-saar-planter-og-dyrker-du-dine-egne-tomater-9074",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "'© Copyright Bolius - en del af Realdania. Indholdet må ikke gengives uden tilladelse.' Permission needed before wider distribution; set aside while private (D-028). Growing guides (D-038).",
+      "attribution": "",
+      "retrievedAt": "2026-10-27",
+      "snapshot": "snapshots/dk-bolius-tomater.html",
+      "snapshotSha256": "74d02ada6980d17de5804938e6b9b634aec968a4a085e6c2e3a9f82cbdaa3b07",
+      "shortName": "Bolius"
+    },
+    {
+      "id": "dk-bolius-kaal",
+      "status": "request-needed",
+      "title": "Sådan dyrker du kål",
+      "publisher": "Videncentret Bolius (Realdania)",
+      "url": "https://www.bolius.dk/saadan-dyrker-du-kaal-97580",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "'© Copyright Bolius - en del af Realdania. Indholdet må ikke gengives uden tilladelse.' Permission needed before wider distribution; set aside while private (D-028). Growing guides (D-038).",
+      "attribution": "",
+      "retrievedAt": "2026-10-27",
+      "snapshot": "snapshots/dk-bolius-kaal.html",
+      "snapshotSha256": "1dd4c9102c4da45f7adf9a93d4df7dd256851582da3dfa5618f0955b89a96717",
+      "shortName": "Bolius"
+    },
+    {
+      "id": "dk-bolius-broccoli",
+      "status": "request-needed",
+      "title": "Sådan dyrker du broccoli",
+      "publisher": "Videncentret Bolius (Realdania)",
+      "url": "https://www.bolius.dk/saadan-dyrker-du-broccoli-98647",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "'© Copyright Bolius - en del af Realdania. Indholdet må ikke gengives uden tilladelse.' Permission needed before wider distribution; set aside while private (D-028). Growing guides (D-038).",
+      "attribution": "",
+      "retrievedAt": "2026-10-27",
+      "snapshot": "snapshots/dk-bolius-broccoli.html",
+      "snapshotSha256": "d912a733e2e606048b104621f9c0df9ad302773277d0d7b4a7ecb3307cfef248",
+      "shortName": "Bolius"
     }
   ]
 }

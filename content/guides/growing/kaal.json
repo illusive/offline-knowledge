@@ -1,0 +1,113 @@
+{
+  "id": "kaal",
+  "category": "growing",
+  "order": 17,
+  "title": "Sådan dyrker du kål",
+  "summary": "Få gode råd og tips om dyrkning, gødning og vanding af kål.",
+  "sourceId": "dk-bolius-kaal",
+  "risk": "low",
+  "name": "Kål (hvidkål, spidskål, rødkål)",
+  "season": {
+    "text": "Forspir fra marts · så ude fra midt i april · plant ud i maj",
+    "quote": "Her kan du gå i gang omkring 1. marts. … Vælger du alligevel at så frøene direkte ud på voksestedet, kan det gøres fra midt i april. … I maj måned kommer de små udplantningsklare kålplanter i handlen"
+  },
+  "foodId": "foodkeeper-278",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "I princippet kan de fleste kålsorter sås direkte på voksestedet, men det skal siges, at det næsten altid er pladsen og tiden værd at forspire kålplanter først.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Det er nemt at forspire kål, og det går tjept. 5-10 dage tager det typisk kålfrø at spire.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Gå efter en sådybde på ca. 2 cm og læg 1-3 frø i samme potte.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Har du et drivhus eller en drivtunnel, kan du begynde spiringen allerede omkring 1. april, hvis frosten ellers er overstået. Vil du endnu tidligere i gang, kan du også forspire i en vindueskarm indenfor. Her kan du gå i gang omkring 1. marts.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Vælger du alligevel at så frøene direkte ud på voksestedet, kan det gøres fra midt i april. Så 2-3 frø på det sted, hvor planten skal stå. Frøene sås i 2-3 cm dybde og med lidt afstand, så du kan fjerne og udtynde samt flytte rundt på planterne, hvis der er steder, hvor der ikke spirer noget frem.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Det kan variere fra 25 x 25 cm for nogle af de mindst pladskrævende broccolisorter til 60 x 60 cm for de største vinterhvidkål og rosenkål.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "conditions",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Kål kan praktisk talt dyrkes i al slags havejord, men da det er en meget stor, hurtigvoksende og nærringskrævende plante, er det helt afgørende, at du tilfører gødning på den ene eller anden måde.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Vand grundigt efter udplantning, så rødderne får godt fast i jorden.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Det er derfor en rigtig god ide at overdække bedet med en eller anden form for insektnet.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Tjek kålene hver eller hver anden dag, og fjern æg og larver fra primært kålsommerfuglen. Hold øje med snegle, og fjern dem.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Tænk også på, at hvis du fx vil høste spidskål, broccoli og blomkål løbende hen over sommeren, skal du så i små portioner flere gange med tre ugers mellemrum.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "neighbours",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Kål bør ikke dyrkes oftere end hvert 5.-6. år på samme sted i køkkenhaven. På den måde kan du modvirke bl.a. kålbrok, som er en svampesygdom, som angriber rødderne på kål.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "For at give jorden den optimale pH værdi til kåldyrkning, kan du også tilføre hvert plantehul en lille håndfuld dolomitkalk inden plantningen.",
+      "page": 1
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "broccoli",
+    "radiser"
+  ]
+}

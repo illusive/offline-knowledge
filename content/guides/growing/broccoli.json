@@ -1,0 +1,107 @@
+{
+  "id": "broccoli",
+  "category": "growing",
+  "order": 18,
+  "title": "Sådan dyrker du broccoli",
+  "summary": "Broccoli er sundt, og du kan nemt dyrke den selv i køkkenhaven.",
+  "sourceId": "dk-bolius-broccoli",
+  "risk": "low",
+  "name": "Broccoli",
+  "season": {
+    "text": "Forspir fra marts eller så ude fra april til sankthans · høst efter 65–70 dage",
+    "quote": "Du kan enten begynde indendørs med forspiring fra marts eller vente til april, hvor det er varmt nok til, at du kan så frøene på friland. Du kan så og udplante broccoli indtil sankthans … Der går 65-70 dage fra såning til høst."
+  },
+  "foodId": "foodkeeper-276",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du kan enten begynde indendørs med forspiring fra marts eller vente til april, hvor det er varmt nok til, at du kan så frøene på friland.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Det kan være en fordel at så over flere omgange, gerne med 1-3 ugers mellemrum, fra maj til sankthans, så du ikke ender med en stor høst, du ikke kan nå at spise.",
+      "page": 1
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Lav en sårille på 1-2 cm dybde.",
+        "Vand grundigt.",
+        "Læg frøene i rillen, når væden er trukket væk, dæk med jord og afslut med vanding."
+      ],
+      "page": 1,
+      "title": "Såning på friland"
+    },
+    {
+      "kind": "text",
+      "text": "Har du forspiret dine broccoli i vindueskarmen, rykker du dem ud på friland i slutningen af april eller begyndelsen af maj.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Vil du kun høste det første hoved, skal planteafstanden være 25 cm, men drømmer du om også at plukke sideskuddene, skal du placere dem med en afstand på 40-50 cm.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Broccoli må ikke mangle vand, så vil du helt i mål med dyrkningen, skal du sørge for, at den aldrig tørrer ud.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Broccoli er nemlig en næringskrævende plante, der har behov for 2-3 liter kompost per plante.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Det er også en god idé at dække med insektnet lige efter udplantning eller såning, så du skærmer afgrøderne mod skadedyr.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du ved, at det er høsttid, når hovederne har en god størrelse, og ligner dem, du køber i supermarkedet. Det er vigtigt, du plukker hovederne eller skærer dem af planten med en skarp kniv, så snart de er modne.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Sideskuddene kan høstes løbende gennem sæsonen.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Efter høst kan grøntsagen holde sig frisk i flere uger, hvis du lægger den på køl.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "neighbours",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Har du tidligere dyrket kål eller broccoli i din køkkenhave, skal der gå otte år, før du igen kan plante kål i den samme jord. Årsagen er, at planterne ellers kan blive ramt af kålbrok, og derfor kan du ikke plante dem på samme plet flere år i træk.",
+      "page": 1
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "kaal"
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "id": "tomater",
+  "category": "growing",
+  "order": 16,
+  "title": "Sådan dyrker du dine egne tomatplanter",
+  "summary": "Du kan dyrke tomatplanter i drivhus, kapillærkasse, krukke og på friland og få masser af velsmagende tomater.",
+  "sourceId": "dk-bolius-tomater",
+  "risk": "low",
+  "name": "Tomater",
+  "season": {
+    "text": "Så marts–juni · plant ud i drivhus i maj, på friland efter grundlovsdag · høst juli–oktober",
+    "quote": "Hvis du vil så tomatfrø, kan du begynde allerede i marts … Afhængig af sort kan du så tomater frem til 1. juni. … det er typisk i begyndelsen af maj. … Ifølge en tommelfingerregel er det efter Grundlovsdag den 5. juni. … Nogle tomatsorter kan du høste tomater fra i juli, og nogle tomatplanter bliver ved med at give tomater til september og oktober."
+  },
+  "foodId": "foodkeeper-306",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis du vil så tomatfrø, kan du begynde allerede i marts, men det er lige så godt at gøre det omkring 1. april. Afhængig af sort kan du så tomater frem til 1. juni.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Når minimumstemperaturen i drivhuset er 15 grader, kan tomatplanterne plantes der – det er typisk i begyndelsen af maj.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis tomatplanterne skal plantes ud på friland i fx krukker eller kapillærkasser på terrassen, skal du vente ind til, der ikke er længere er risiko for nattefrost. Ifølge en tommelfingerregel er det efter Grundlovsdag den 5. juni.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "conditions",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Den bedste jord at plante tomater i er ganske almindelig havejord.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Plant tomaterne et sted med meget læ og sol, fx op ad en mur og/eller under tag af glas eller plast, og i gødet jord. Lav 50-70 cm mellem planterne og 1 meter mellem evt. rækker.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Vælg ikke de største og højeste sorter, da de nemmere kan knække og er sværere at binde op, hvis du ikke har et fast espalier.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Bind planterne op til en stok (fx bambus), et stativ, eller snor eller ståltråd, der sidder fast på væggen, så tomatplanterne får hjælp til at vokse i vejret.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Knib sideskud i bladhjørnerne på hovedstammen af under væksten. Forestil dig et skud, hvorpå der sidder et blad. Mellem bladet og skuddet kommer der et sideskud, der så skal knibes af. Sideskud på busktomater knibes ikke, da de ikke har nogen stamme, men er buskformede.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Som gødning til tomater skal du bruge en mindre kvælstofholdig gødning.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Pas på ikke at vande dine tomatplanter for meget, faktisk bør de vandes så lidt som muligt, uden at jorden bliver knastør. Får de for meget vand, mister tomaterne meget af smagen.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Ryst planterne, når de gule blomster står i fuldt flor, så falder der pollen fra støvdragerne ned på støvfanget, og derved bestøves flere blomster, så du får flere tomater.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Nogle tomatsorter kan du høste tomater fra i juli, og nogle tomatplanter bliver ved med at give tomater til september og oktober.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Midt i oktober er normalt sidste chance for at få røde tomater i drivhus, og da det tager ca. 60 dage for en tomatblomst at blive til en fuldmoden rød tomat, bør du tage toppen af tomatplanten midt i august.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "seeds",
+      "page": 1
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Skær tomaterne ud og fjern alle frøene.",
+        "Læg frøene i et glas sammen med den gele, der omgiver dem.",
+        "Hæld lidt vand i glasset og lad det stå i 2-4 dage.",
+        "Rens tomatfrøene i en sigte under rindende vand, så alt ’snasket’ fjernes.",
+        "Læg frøene til tørre på en avis i et par dage.",
+        "Kom frøene i flere papirsposer, når de er helt tørre, og gem dem på et mørkt og køligt sted, indtil du skal så dem."
+      ],
+      "page": 1,
+      "title": "Gør sådan:"
+    },
+    {
+      "kind": "text",
+      "text": "Tomatfrø kan holde sig i op til 6 år.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Anvender du F1-frø, kan du ikke gemme selvhøstet frø til næste år of forvente samme sort.",
+      "page": 1
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "kartofler"
+  ]
+}
