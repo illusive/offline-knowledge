@@ -1,0 +1,60 @@
+{
+  "id": "krydderurter",
+  "category": "growing",
+  "order": 15,
+  "title": "5 afgrøder, der er dyre i butikkerne, men som du nemt kan dyrke selv",
+  "summary": "Krydderurter som timian, salvie, rosmarin kan tåle de danske vintre og kommer igen året efter, så du ikke behøver at plante nye.",
+  "sourceId": "dk-bolius-5-dyre",
+  "risk": "low",
+  "name": "Krydderurter (timian, salvie, rosmarin)",
+  "season": {
+    "text": "Plant om efteråret · kommer igen hvert år",
+    "quote": "Efteråret er et godt tidspunkt at plante krydderurterne på. … Den første sæson bruger krydderurterne på at etablere sig, men derefter vil de komme igen."
+  },
+  "foodId": "foodkeeper-288",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Det er bedst af købe krydderurter i potter fra planteskolen – ofte er potterne fra supermarkedet drevet så hurtigt frem, at de ikke har et ordentligt rodnet, der kan gro videre i jorden.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Køb sorter af krydderurterne, der kan tåle de danske vintre – så kommer de igen og igen. Det er typisk sorter med en lidt stivere eller grenet vækst, fx salvie, rosmarin og timian (i forhold til krydderurter med bladvækst som basilikum og persille).",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Efteråret er et godt tidspunkt at plante krydderurterne på. Dæk dem til det første år, fordi de eksotiske krydderurter ellers kan få kuldechok.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Planterne er forholdsvist tørketolerante, så sørg for at vande dem i etableringsperioden, og derefter vil de i høj grad passe sig selv. Beskær dog buskene, hvis de bliver for store.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du kan tage af krydderurterne, allerede når du sætter dem. Når du klipper eller nipper af planterne, sætter de flere nye skud.",
+      "page": 1
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": []
+}

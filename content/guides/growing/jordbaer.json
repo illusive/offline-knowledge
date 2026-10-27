@@ -1,0 +1,121 @@
+{
+  "id": "jordbaer",
+  "category": "growing",
+  "order": 11,
+  "title": "Sådan får du de bedste jordbær",
+  "summary": "Jordbær er rimelig nemme at dyrke, men der er nogle simple ting, du kan gøre for at få endnu flere og bedre jordbær.",
+  "sourceId": "dk-bolius-jordbaer",
+  "risk": "low",
+  "name": "Jordbær",
+  "season": {
+    "text": "Plant i august (eller april) · skift planterne efter 3 år",
+    "quote": "August er den optimale måned for plantning af jordbær. … Alternativt kan du anlægge jordbærbedet i foråret omkring april måned … Derfor er det en god idé at skifte dine jordbærplanter ud efter 3 år."
+  },
+  "foodId": "foodkeeper-481",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Auguster det mest optimale tidspunkt at plante jordbær. Jordtemperaturen er høj, og planterne når at gro godt til og danne blomsteranlæg i efteråret, så du allerede den første sommer efter udplantningen kan få en god høst af røde, saftige bær.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Alternativt kan du anlægge jordbærbedet i foråret omkring april måned, hvor jorden ikke er for kold.",
+      "page": 1
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Køb dine jordbærplanter på planteskolen, så du er sikker på, at de er sundhedkontrollerede.",
+        "Sæt planterne et solrigt sted.",
+        "Grav jorden godt igennen og tilfør evt. 5-8 cm mild kompost.",
+        "Plant jordbærplanterne, men ikke for tæt eller dybt. Regn med ca. 25-30 cm mellem hver plante og 50-60 cm mellem rækkerne.",
+        "Læg evt. et lag af halm ud mellem jordbærplanterne.",
+        "Vand grundigt, indtil planterne har sat de første blomster."
+      ],
+      "page": 1,
+      "title": "Anlægning af jordbærbed"
+    },
+    {
+      "kind": "warning",
+      "text": "Hjerteskuddet, der hvor bladene springer ud fra, må ikke dækkes til med jord.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Vand jordbærrene moderat i meget tørre perioder, men endelig ikke for meget. Svømmer bærrene i vand, risikerer du meldug og skimmelsvamp.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Gød planterne moderat og gerne med en organisk gødning i pilleform.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "For at undgå, at fugle spiser dine jordbær, kan du lægge et fintmasket, grønt fuglenet over jordbærplanterne.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis din have er plaget af snegle, skal du etablere jordbærrene i et højbed for at undgå, at sneglene spiser dine bær.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "De fleste bær er modne til at blive plukket i sommermånederne (juni-august), mens brombær først modner hen mod august-september.",
+      "page": 1,
+      "sourceId": "dk-bolius-5-dyre"
+    },
+    {
+      "kind": "section",
+      "key": "seeds",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Indsaml udløbere - også kaldet stiklinger - fra dine gamle planter.",
+      "page": 1
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Tag stiklinger fra de planter, der har givet flest bær – markér evt. planten med en pind, så du kan kende den..",
+        "Har udløberne allerede sat sig fast i jorden, klippes stænglen af et par cm fra det nye rodskud.",
+        "Grav forsigtigt udløberne op, når bærsæsonen er slut.",
+        "Plant stiklingerne på det ønskede sted i juli eller august – gerne et andet sted end de oprindelige."
+      ],
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "neighbours",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Derfor er det en god idé at skifte dine jordbærplanter ud efter 3 år. Du kan fx plante nye jordbærplanter med stiklinger fra den tidligere plante, men gør det helst et nyt sted, så du ikke udpiner jorden.",
+      "page": 1
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "rabarber"
+  ]
+}

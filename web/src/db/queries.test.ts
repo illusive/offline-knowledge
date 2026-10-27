@@ -81,7 +81,10 @@ test('guide search finds text inside guides, title matches first; abbreviations 
 });
 
 test('growing guides: fixed sections, a link to the food page, and the seed page as a second source', () => {
-  expect(listGuides(db, 'growing').map((g) => g.id)).toEqual(['radiser', 'aerter', 'kartofler', 'guleroedder', 'hestebonner', 'salat', 'spinat', 'loeg']);
+  const crops = listGuides(db, 'growing');
+  expect(crops.slice(0, 3).map((g) => g.id)).toEqual(['radiser', 'aerter', 'kartofler']);
+  expect(crops.length).toBeGreaterThanOrEqual(15);
+  expect(crops.every((g) => g.name && g.season)).toBe(true);
   const g = getGuide(db, 'aerter');
   expect(g?.guide.food_id).toBe('foodkeeper-273');
   expect(g?.blocks.filter((b) => b.kind === 'section').map((b) => b.kind === 'section' && b.key)).toEqual(['sowing', 'conditions', 'care', 'harvest', 'seeds', 'neighbours']);

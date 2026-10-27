@@ -1,0 +1,77 @@
+{
+  "id": "rabarber",
+  "category": "growing",
+  "order": 14,
+  "title": "5 afgrøder, der er dyre i butikkerne, men som du nemt kan dyrke selv",
+  "summary": "Men har du tålmodigheden til at lade dine hjemmedyrkede rabarbere udvikle sig godt i jorden over et par år, har du til gengæld en plante, der bare bliver ved med at give afkast.",
+  "sourceId": "dk-bolius-5-dyre",
+  "risk": "low",
+  "name": "Rabarber",
+  "season": {
+    "text": "Plant om efteråret · høst om foråret frem til sankthans",
+    "quote": "Rabarber skal plantes i efteråret. … kan du høste de første rabarber om foråret frem til sankthans"
+  },
+  "foodId": "foodkeeper-300",
+  "blocks": [
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Rabarber skal plantes i efteråret. Det er nemmest at købe rabarberplanter til at plante fra planteskolen – fra frø tager det simpelthen for lang tid – eller få planter fra andre.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Når du planter rabarber, så regn med, at du maksimalt kan have to planter pr. kvadratmeter.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "conditions",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Rabarber skal stå et solrigt sted.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Vand planterne løbende, men de må ikke stå vådt – så rådner de. Fjern blomsterknoppen, når den kommer frem. Derved får planten kraft til at danne flere stilke/skud.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "De første par år skal du ikke høste af dine rabarber – heller ikke, når du deler dem - de skal først udvikle et godt rodnet. Når der er gået et par år, kan du høste de første rabarber om foråret frem til sankthans – lad dem derefter være hen over sommeren, og så kan du høste en mindre mængde igen i sensommeren.",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "seeds",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Del rabarberplanten for at få flere. Hak planten over med en spade, så der er en knop i hver del. Gør det helst i september eller oktober, hvor rabarberplanten er gået i dvale for vinteren.",
+      "page": 1
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "jordbaer"
+  ]
+}
