@@ -14,6 +14,7 @@ import { FoodScreen } from './screens/FoodScreen';
 import { GrowingScreen } from './screens/GrowingScreen';
 import { GuideScreen } from './screens/GuideScreen';
 import { SavedScreen } from './screens/SavedScreen';
+import { PrepareScreen } from './screens/PrepareScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { MapScreen } from './screens/MapScreen';
@@ -32,6 +33,7 @@ export function App() {
   const [storageQuery, setStorageQuery] = useState('');
   const [firstAidQuery, setFirstAidQuery] = useState('');
   const [growingQuery, setGrowingQuery] = useState('');
+  const [prepareQuery, setPrepareQuery] = useState('');
   const offlineReady = useOfflineReady(status === 'ready');
   const precache = usePrecacheProgress();
 
@@ -50,6 +52,7 @@ export function App() {
   const foods = useAllFoods(status === 'ready' ? db : null);
   const guides = useGuides(status === 'ready' ? db : null);
   const crops = useGuides(status === 'ready' ? db : null, 'growing');
+  const prepare = useGuides(status === 'ready' ? db : null, 'preparedness');
 
   // Remember each page's scroll position: going back restores it, new pages start at the top.
   const scrollPositions = useRef(new Map<string, number>());
@@ -86,13 +89,14 @@ export function App() {
   else if (status === 'loading') content = <Page><LoadingState s={s} /></Page>;
   else if (route.name === 'food') content = <FoodScreen db={db} id={route.id} tab={route.tab} lang={lang} s={s} />;
   else if (route.name === 'firstAid') content = <FirstAidScreen db={db} guides={guides} s={s} query={firstAidQuery} onQueryChange={setFirstAidQuery} />;
-  else if (route.name === 'saved') content = <SavedScreen section={route.section} guides={guides} crops={crops} foods={foods} lang={lang} s={s} />;
+  else if (route.name === 'saved') content = <SavedScreen section={route.section} guides={guides} crops={crops} prepare={prepare} foods={foods} lang={lang} s={s} />;
+  else if (route.name === 'prepare') content = <PrepareScreen db={db} guides={prepare} s={s} query={prepareQuery} onQueryChange={setPrepareQuery} />;
   else if (route.name === 'growing') content = <GrowingScreen db={db} guides={crops} s={s} query={growingQuery} onQueryChange={setGrowingQuery} />;
   else if (route.name === 'guide') content = <GuideScreen db={db} id={route.id} s={s} />;
   else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;
   else if (route.name === 'tools') content = <PlaceholderScreen title={s.toolsTitle} s={s} />;
   else if (route.name === 'settings') content = <PlaceholderScreen title={s.settingsTitle} s={s} />;
-  else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guides={guides} crops={crops} query={homeQuery} onQueryChange={setHomeQuery} />;
+  else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guides={guides} crops={crops} prepare={prepare} query={homeQuery} onQueryChange={setHomeQuery} />;
 
   return (
     <>

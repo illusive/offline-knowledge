@@ -18,11 +18,11 @@ interface Row {
   remove: () => void;
 }
 
-export function SavedScreen(props: { section: SavedSection | null; guides: GuideRow[] | null; crops: GuideRow[] | null; foods: ItemRow[] | null; lang: Lang; s: Strings }) {
-  const { section, guides, crops, foods, lang, s } = props;
+export function SavedScreen(props: { section: SavedSection | null; guides: GuideRow[] | null; crops: GuideRow[] | null; prepare: GuideRow[] | null; foods: ItemRow[] | null; lang: Lang; s: Strings }) {
+  const { section, guides, crops, prepare, foods, lang, s } = props;
   const { list, toggle } = useBookmarks();
   const headings = useRef(new Map<SavedSection, HTMLHeadingElement>());
-  const loaded = guides !== null && crops !== null && foods !== null;
+  const loaded = guides !== null && crops !== null && prepare !== null && foods !== null;
 
   useEffect(() => {
     document.title = `${s.savedTitle} – ${s.appTitle}`;
@@ -36,7 +36,7 @@ export function SavedScreen(props: { section: SavedSection | null; guides: Guide
     heading?.focus({ preventScroll: true });
   }, [loaded, section]);
 
-  const all = [...(guides ?? []), ...(crops ?? [])];
+  const all = [...(guides ?? []), ...(crops ?? []), ...(prepare ?? [])];
   const rows = (section: SavedSection): Row[] =>
     list
       .filter((b) => b.section === section)
@@ -50,6 +50,7 @@ export function SavedScreen(props: { section: SavedSection | null; guides: Guide
         return { key: b.id, href: g ? hrefs.guide(g.id) : null, title: g ? (g.name ?? g.title) : b.id, subtitle: g ? (g.season ?? g.summary) : null, remove };
       });
   const sections: Record<SavedSection, { title: string; rows: Row[] }> = {
+    prepare: { title: s.prepare, rows: rows('prepare') },
     'first-aid': { title: s.firstAid, rows: rows('first-aid') },
     growing: { title: s.growing, rows: rows('growing') },
     storage: { title: s.storingFood, rows: rows('storage') },

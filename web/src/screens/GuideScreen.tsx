@@ -2,7 +2,8 @@
 // handbook's photos next to the steps they show. Ends with the source (and pages) and the second
 // authority it was compared with.
 
-import { ChevronRight, TriangleAlert } from 'lucide-react';
+import { Check, ChevronRight, TriangleAlert } from 'lucide-react';
+import { useChecklist } from '../supplies/checklist';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { EmergencyCard } from '../components/EmergencyCard';
 import { BackButton, Card, MessageState, Page } from '../components/ui';
@@ -38,18 +39,22 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
     }
   }, [title, s.appTitle]);
 
-  const parent = loaded?.guide.category === 'growing' ? hrefs.growing : hrefs.firstAid;
+  const category = loaded?.guide.category;
+  const parent = category === 'growing' ? hrefs.growing : category === 'preparedness' ? hrefs.prepare : hrefs.firstAid;
   const back = <BackButton label={s.back} onClick={() => goBack(parent)} />;
   if (loaded === undefined) return <Page>{back}<MessageState title={s.loading} /></Page>;
   if (loaded === null) return <Page>{back}<MessageState title={s.guideNotFound} /></Page>;
 
   const { guide, blocks, source, checks, related, blockSources } = loaded;
   const firstAid = guide.category === 'first-aid';
+  // The 112 card on first aid and on situations (not on stock lists or crops).
+  const showEmergency = firstAid || guide.grp === 'situation';
+  const checklistItems = blocks.flatMap((b) => (b.kind === 'checklist' ? b.items : []));
   return (
     <Page>
       <div className="flex items-center justify-between gap-[12px]">
         {back}
-        <SaveButton kind="guide" id={guide.id} section={guide.category === 'growing' ? 'growing' : 'first-aid'} s={s} />
+        <SaveButton kind="guide" id={guide.id} section={guide.category === 'growing' ? 'growing' : guide.category === 'preparedness' ? 'prepare' : 'first-aid'} s={s} />
       </div>
       <article className="mt-4 flex flex-col gap-3" lang="da">
         <header className="mb-1 px-1">
@@ -58,6 +63,7 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
           </h1>
           {guide.season ? <p className="mt-1 font-medium">{guide.season}</p> : null}
           {guide.summary ? <p className="mt-1 text-muted">{guide.summary}</p> : null}
+          {checklistItems.length > 0 ? <ChecklistProgress ids={checklistItems.map((i) => i.id)} s={s} /> : null}
         </header>
         {guide.abbreviations.length > 0 ? (
           <dl aria-label={s.abbreviationsLabel} className="flex flex-col gap-1 rounded-2xl bg-surface px-[16px] py-3 text-sm">
@@ -76,7 +82,7 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
         </Card>
       </article>
 
-      {firstAid ? (
+      {showEmergency ? (
         <div className="mt-3">
           <EmergencyCard s={s} />
         </div>
@@ -162,6 +168,8 @@ function Block({ block, imageUrls, s }: { block: GuideBlock; imageUrls: Map<stri
           </ol>
         </div>
       );
+    case 'checklist':
+      return <Checklist title={block.title} items={block.items} />;
     case 'warning':
       return (
         <div role="note" className="flex gap-[12px] rounded-2xl bg-note-bg px-[16px] py-3 text-note-text">
@@ -207,4 +215,40 @@ function useImageUrls(images: GuideImage[] | undefined) {
 function pageRange(blocks: GuideBlock[]): [number, number] {
   const pages = blocks.flatMap((b) => [b.page, ...(b.kind === 'steps' ? b.images.map((i) => i.page) : [])]);
   return [Math.min(...pages), Math.max(...pages)];
+}
+
+// A stock list (D-040): each line can be ticked when you have it at home (stored on the device).
+function Checklist({ title, items }: { title: string | null; items: { id: string; text: string }[] }) {
+  const { has, toggle } = useChecklist();
+  return (
+    <div className="flex flex-col gap-2">
+      {title ? <h2 className="font-semibold">{title}</h2> : null}
+      <ul className="flex flex-col gap-2">
+        {items.map((item) => {
+          const on = has(item.id);
+          return (
+            <li key={item.id}>
+              <label className="flex min-h-12 cursor-pointer items-start gap-[12px] rounded-2xl bg-background px-[12px] py-3">
+                <input type="checkbox" checked={on} onChange={() => toggle(item.id)} className="peer sr-only" />
+                <span aria-hidden="true" className={`mt-0.5 grid size-6 shrink-0 place-items-center rounded-md border-2 peer-focus-visible:outline-2 peer-focus-visible:outline-text ${on ? 'border-transparent bg-accent text-on-accent' : 'border-muted'}`}>
+                  {on ? <Check className="size-4" strokeWidth={3} /> : null}
+                </span>
+                <span className={on ? 'text-muted line-through decoration-1' : ''}>{item.text}</span>
+              </label>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+function ChecklistProgress({ ids, s }: { ids: string[]; s: Strings }) {
+  const { has } = useChecklist();
+  const done = ids.filter(has).length;
+  return (
+    <p className="mt-2 text-sm font-semibold" aria-live="polite">
+      {s.checklistProgress(done, ids.length)}
+    </p>
+  );
 }

@@ -95,17 +95,17 @@
     {
       "id": "dk-samsik-forberedt-paa-kriser",
       "status": "request-needed",
-      "title": "Forberedt på kriser",
+      "title": "Forberedt på kriser (pjece)",
       "publisher": "Styrelsen for Samfundssikkerhed",
-      "url": "https://samsik.dk/forberedt/",
+      "url": "https://samsik.dk/wp-content/uploads/2025/04/forberedt-paa-kriser.pdf",
       "lang": "da",
       "region": "DK",
       "license": "unknown",
       "licenseNote": "No reuse or copyright notice on samsik.dk (checked 2026-10-24). Reuse act route (D-012). Request drafted: requests/samsik-videreanvendelse.md (not sent).",
       "attribution": "",
-      "retrievedAt": null,
-      "snapshot": null,
-      "snapshotSha256": null,
+      "retrievedAt": "2026-10-29",
+      "snapshot": "snapshots/dk-samsik-forberedt-paa-kriser.pdf",
+      "snapshotSha256": "fb95a492c801ef8fc19ed77376decd195451e24b6185b3f47e6613a3eb8bc1f4",
       "shortName": "Styrelsen for Samfundssikkerhed"
     },
     {
@@ -2043,6 +2043,54 @@
       "snapshot": "snapshots/dk-bolius-broccoli.html",
       "snapshotSha256": "d912a733e2e606048b104621f9c0df9ad302773277d0d7b4a7ecb3307cfef248",
       "shortName": "Bolius"
+    },
+    {
+      "id": "dk-fvst-forberedt",
+      "status": "request-needed",
+      "title": "Forberedt på kriser",
+      "publisher": "Fødevarestyrelsen",
+      "url": "https://foedevarestyrelsen.dk/kost-og-foedevarer/foedevaresikkerhed/foedevareberedskab/forberedt-paa-kriser",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Danish authority; no published reuse terms. Reuse request route (D-012); set aside while private (D-028). 'Når det sker' (D-040).",
+      "attribution": "",
+      "retrievedAt": "2026-10-29",
+      "snapshot": "snapshots/dk-fvst-forberedt.html",
+      "snapshotSha256": "3c4cb8982fc41e03f3ce12d0c52475fe6bbd970a3d03c180351cd8b1bf77fc07",
+      "shortName": "Fødevarestyrelsen"
+    },
+    {
+      "id": "dk-fvst-stroemafbrydelse",
+      "status": "request-needed",
+      "title": "Køkkenråd ved strømbesparelse og ved strømafbrydelse",
+      "publisher": "Fødevarestyrelsen",
+      "url": "https://foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/god-koekkenhygiejne/saadan-goer-du/spar-paa-stroemmen",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Danish authority; no published reuse terms. Reuse request route (D-012); set aside while private (D-028). 'Når det sker' (D-040).",
+      "attribution": "",
+      "retrievedAt": "2026-10-29",
+      "snapshot": "snapshots/dk-fvst-stroemafbrydelse.html",
+      "snapshotSha256": "66284042439a868513662b01c3cce576ee52c95cfc428225e591c80830c93433",
+      "shortName": "Fødevarestyrelsen"
+    },
+    {
+      "id": "dk-mst-forberedt",
+      "status": "request-needed",
+      "title": "Forberedt på kriser",
+      "publisher": "Miljøstyrelsen",
+      "url": "https://mst.dk/borger/sundhed-og-kemi/forberedt-paa-kriser",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Danish authority; no published reuse terms. Reuse request route (D-012); set aside while private (D-028). 'Når det sker' (D-040).",
+      "attribution": "",
+      "retrievedAt": "2026-10-29",
+      "snapshot": "snapshots/dk-mst-forberedt.html",
+      "snapshotSha256": "3f33220d56ce2c3776dde40290752787c2d1e98954774ea4aa33e0f4751b1fb6",
+      "shortName": "Miljøstyrelsen"
     }
   ]
 }

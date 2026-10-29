@@ -100,3 +100,14 @@ test('lists show where a food keeps longest (not after opening or thawing)', () 
   expect(potatoes?.longest).toMatchObject({ location: 'freezer', min_value: 10, max_value: 12, unit: 'months' });
   expect(searchItems(db, 'kartof').find((i) => i.id === 'foodkeeper-297')?.longest?.location).toBe('freezer');
 });
+
+test('Når det sker: guides by group, checklist lines with stable ids, search finds a checklist line', () => {
+  const all = listGuides(db, 'preparedness');
+  expect(all.find((g) => g.id === 'stroemmen-er-gaaet')?.grp).toBe('situation');
+  expect(all.find((g) => g.id === 'mad-til-tre-doegn')?.grp).toBe('supplies');
+  const food = getGuide(db, 'mad-til-tre-doegn');
+  const items = food?.blocks.flatMap((b) => (b.kind === 'checklist' ? b.items : [])) ?? [];
+  expect(items.map((i) => i.id)).toContain('knaekbroed');
+  expect(food?.blocks.filter((b) => b.kind === 'section').map((b) => b.kind === 'section' && b.key)).toEqual(['noPrep', 'somePrep', 'needsPrep']);
+  expect(searchGuides(db, 'knækbrød').map((g) => g.id)).toContain('mad-til-tre-doegn');
+});

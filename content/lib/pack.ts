@@ -120,7 +120,8 @@ CREATE TABLE guides (
   abbreviations TEXT NOT NULL, -- JSON [{short, long}]
   food_id TEXT REFERENCES storage_items(id), -- growing: the food page this crop links to
   name TEXT,         -- plain name for lists and titles (growing)
-  season TEXT        -- growing period shown as subtitle
+  season TEXT,       -- growing period shown as subtitle
+  grp TEXT           -- preparedness: 'situation' or 'supplies' (D-040)
 );
 
 -- Search over guide titles, summaries and shown text (trigram, like storage_search).
@@ -134,10 +135,10 @@ CREATE VIRTUAL TABLE guide_search USING fts5(
 CREATE TABLE guide_blocks (
   guide_id TEXT NOT NULL REFERENCES guides(id),
   ord INTEGER NOT NULL,
-  kind TEXT NOT NULL CHECK (kind IN ('heading', 'section', 'text', 'steps', 'list', 'warning', 'image')),
+  kind TEXT NOT NULL CHECK (kind IN ('heading', 'section', 'text', 'steps', 'list', 'checklist', 'warning', 'image')),
   title TEXT,
   text TEXT,
-  items TEXT,        -- JSON array for steps, lists and warnings
+  items TEXT,        -- JSON array: strings for steps, lists and warnings; {id, text} for checklists
   step_images TEXT,  -- JSON [{after, imageId, alt, page}] for steps with photos
   image_id TEXT REFERENCES guide_images(id),
   alt TEXT,
@@ -304,14 +305,14 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
         if (!image) throw new Error(`Missing image ${file}`);
         insertImage.run(file, image.mime, image.data);
       }
-      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related, abbreviations, food_id, name, season) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related, abbreviations, food_id, name, season, grp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
       const insertGuideSearch = db.prepare('INSERT INTO guide_search (guide_id, title, body) VALUES (?, ?, ?)');
       const insertGuideBlock = db.prepare(
         'INSERT INTO guide_blocks (guide_id, ord, kind, title, text, items, step_images, image_id, alt, caption, page, source_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       );
       const insertCheck = db.prepare('INSERT INTO guide_checks (guide_id, ord, source_id, locator, quote, note) VALUES (?, ?, ?, ?, ?, ?)');
       for (const g of guides) {
-        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []), g.foodId ?? null, g.name ?? null, g.season?.text ?? null);
+        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []), g.foodId ?? null, g.name ?? null, g.season?.text ?? null, g.group ?? null);
         const body = [g.summary ?? '', ...g.blocks.flatMap((b) => [...('title' in b && b.title ? [b.title] : []), ...shownTexts(b)]), ...(g.abbreviations ?? []).map((a) => a.long)];
         insertGuideSearch.run(g.id, [g.name, g.title].filter(Boolean).join(' '), body.join('\n'));
         g.blocks.forEach((b, ord) => {

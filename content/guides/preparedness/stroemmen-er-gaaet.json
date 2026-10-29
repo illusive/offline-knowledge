@@ -1,0 +1,140 @@
+{
+  "id": "stroemmen-er-gaaet",
+  "category": "preparedness",
+  "group": "situation",
+  "order": 1,
+  "name": "Strømmen er gået",
+  "title": "Hvis strømmen bliver slukket",
+  "summary": "Du kan selv gøre nogle ting for at sikre dine madvarers holdbarhed, hvis strømmen bliver slukket i en periode.",
+  "sourceId": "dk-fvst-stroemafbrydelse",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Mad i køleskab uden strøm",
+      "page": 1,
+      "sourceId": "dk-fvst-forberedt"
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Undlad at åbne køleskabet og fryseren unødigt. Så holder madvarerne sig kolde i længere tid.",
+        "Sæt nyindkøbte madvarer udenfor i kulden.",
+        "Brug et koldt vandbad til at nedkøle maden."
+      ],
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Brug maden i køleskabet først.",
+      "page": 1,
+      "sourceId": "dk-fvst-forberedt"
+    },
+    {
+      "kind": "text",
+      "text": "Letfordærvelige, delvist optøede frostvarer (som kød og fisk) kan tilberedes og spises, så længe temperaturen i maden ikke overstiger 5°C.",
+      "page": 1,
+      "sourceId": "dk-fvst-forberedt"
+    },
+    {
+      "kind": "warning",
+      "text": "Fødevarestyrelsen anbefaler, at temperaturen i køleskabet er maks. 5 grader. Hvis temperaturen er over 5 grader, er der risiko for, at der kan udvikle sig bakterier i maden, som man kan blive syg af at spise.",
+      "page": 1,
+      "title": "Tjek temperaturen i køleskabet efter strømafbrydelsen"
+    },
+    {
+      "kind": "heading",
+      "text": "Tilbered din mad på alternative måder",
+      "page": 1,
+      "sourceId": "dk-fvst-forberedt"
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Stormkøkken",
+        "”Campingkøkken”",
+        "Grill (kun udendørs for at undgå kulilteforgiftning)"
+      ],
+      "page": 1,
+      "sourceId": "dk-fvst-forberedt"
+    },
+    {
+      "kind": "warning",
+      "text": "Brug aldrig grill o.l. indendørs eller i helt eller delvist lukkede rum. Der er risiko for røg- og/eller kulilteforgiftning.",
+      "page": 5,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "heading",
+      "text": "Varme",
+      "page": 6,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "text",
+      "text": "Hvis varmen forsvinder, og det er koldt udenfor, kan du bruge husstandens tæpper, dyner, varmt tøj m.v.",
+      "page": 6,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "text",
+      "text": "Andre nyttige ting at have ved hånden er en lommelygte, stearinlys, tændstikker og batterier.",
+      "page": 6,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "warning",
+      "text": "Hvis du bruger stearinlys eller andre varmekilder, så stil dem på et fast underlag langt fra brændbart materiale som gardiner og tæpper.",
+      "page": 6,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "heading",
+      "text": "Toiletbesøg under en krisesituation",
+      "page": 1,
+      "sourceId": "dk-mst-forberedt"
+    },
+    {
+      "kind": "text",
+      "text": "En strømafbrydelse kan fx forhindre, at spildevandet kan pumpes væk fra din bolig.",
+      "page": 1,
+      "sourceId": "dk-mst-forberedt"
+    },
+    {
+      "kind": "text",
+      "text": "Hvis du ikke kan trække ud i toilettet, skal du opsamle afføringen i en solid affaldspose beregnet til restaffald. Luk posen forsvarligt og smid ud som restaffald.",
+      "page": 1,
+      "sourceId": "dk-mst-forberedt"
+    },
+    {
+      "kind": "heading",
+      "text": "Varsling",
+      "page": 8,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "text",
+      "text": "Skulle andre systemer være nede, bringer DR beredskabsmeddelelser fra myndighederne i radioen. Med en FM-radio, der kører på batterier/håndsving/solceller, kan du holde dig opdateret, hvis andre informationskanaler svigter.",
+      "page": 8,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "uk-be-ready-emergencies",
+      "locator": "Be ready for emergencies, checklist: Light and warmth",
+      "quote": "Torches are safer than candles.",
+      "note": "Agrees with keeping a torch and using candles with care."
+    },
+    {
+      "sourceId": "uk-be-ready-emergencies",
+      "locator": "Be ready for emergencies, checklist: Light and warmth",
+      "quote": "Homes can become cold very quickly when the heating goes off.",
+      "note": "Agrees: blankets and warm clothing when the heating goes."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "mad-til-tre-doegn"
+  ]
+}

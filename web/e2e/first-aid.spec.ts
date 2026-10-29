@@ -34,7 +34,10 @@ test('first aid: list, a guide with steps and photos, related guide; then offlin
   await page.getByRole('button', { name: 'Tilbage' }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Stabilt sideleje' })).toBeVisible();
 
-  // Offline: the guide and its photos come from the pack on the device.
+  // Offline: the guide and its photos come from the pack on the device. Wait until every file is
+  // cached ("Klar offline"), or going offline right after a fresh build can race the precache.
+  await page.goto('./');
+  await expect(page.getByText('Klar offline')).toBeAttached({ timeout: 60_000 });
   await page.evaluate(async () => {
     await navigator.serviceWorker.ready;
   });

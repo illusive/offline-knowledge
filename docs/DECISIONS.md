@@ -299,6 +299,15 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Decision (owner):** every category page (Opbevaring af mad, Førstehjælp, Dyrkning and later ones) has a search field at the top that filters that category's content as you type; titles only for one or two letters, full text from three. Lists show a count line ("3 afgrøder") like the food list.
 - **Food list subtitle (owner, same day):** the other-language name under each food is replaced by where it keeps longest, e.g. "Fryser · 10–12 måneder" (the range period with the longest maximum, not counting after opening or thawing). The English name stays searchable; it is no longer shown on the food page either.
 
+## D-040 — "Når det sker": situations and stock lists
+
+- **Date:** 2026-10-29
+- **Decision (owner):** a searchable section "Når det sker" with two groups: situations ("Hvis det sker": Strømmen er gået, Der er intet vand, Der er ingen varme, Telefon og net er nede …) and stock lists ("Hav det derhjemme": vand, mad, medicin og hygiejne, lys/varme/andre fornødenheder) that the user ticks off; ticks stay on the device (`stead.supplies.v1`, keyed by stable item id).
+- **Sources:** Danish authorities, verbatim: Styrelsen for Samfundssikkerhed's *Forberedt på kriser* (pjece), Fødevarestyrelsen (*Forberedt på kriser*, *Køkkenråd ved strømafbrydelse*), Miljøstyrelsen (*Forberedt på kriser*: drinking water, toilet without water). UK Be Ready (OGL) is the second authority.
+- **Owner's food levels:** "Kræver ingen / lidt / Kræver tilberedning" are fixed headings in the app's words; only items a source names go under them (from Fødevarestyrelsen's list per person for three days). Examples no source names (frugtgrød, tinned ready meals, biscuits) are left out.
+- **Risk:** situation guides that touch carbon monoxide, food safety, electricity or water are `high` (second authority required). Unlike first aid, a situation guide may combine several Danish authorities, each block checked against its own source; first aid still takes all text from one source. Stock lists are `low`. Plain names ("Strømmen er gået") are the app's labels; the guide title stays verbatim.
+- **Pack:** schema 10: `guides.grp`, block kind `checklist` (`items` as `{id, text}`), fixed headings `noPrep`, `somePrep`, `needsPrep`.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

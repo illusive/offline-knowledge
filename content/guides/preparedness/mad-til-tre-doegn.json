@@ -1,0 +1,143 @@
+{
+  "id": "mad-til-tre-doegn",
+  "category": "preparedness",
+  "group": "supplies",
+  "order": 2,
+  "name": "Mad til tre døgn",
+  "title": "Hav mad og vand på lager til tre døgn",
+  "summary": "Fødevarestyrelsen anbefaler, at du indkøber langtidsholdbare fødevarer, som ikke kræver nedkøling, og som kræver ingen eller minimal tilberedning.",
+  "sourceId": "dk-fvst-forberedt",
+  "risk": "low",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Det kan eksempelvis være følgende per person til tre dage:",
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "noPrep",
+      "page": 1
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "knaekbroed",
+          "text": "Knækbrød (ca. 500 g svarende til ca. 2 pakker)"
+        },
+        {
+          "id": "konserves-koed-fisk",
+          "text": "Konserves med spiseklar kød og fisk som makrel i tomat (ca. 300 g svarende til ca. 3 dåser fisk)"
+        },
+        {
+          "id": "konserves-baelgfrugter",
+          "text": "Konserves med spiseklare bælgfrugter som kikærter og kidneybønner (ca. 300 g svarende til 1-2 dåser)"
+        },
+        {
+          "id": "konserves-groentsager",
+          "text": "Konserves med spiseklare grøntsager som tomater og andre grøntsager (ca. 1,5 kg svarende til 3-4 dåser)"
+        },
+        {
+          "id": "noedder",
+          "text": "Nødder (ca. 100 g svarende til en lille pose)"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Vælg gerne madvarer, som ikke kræver tilberedning i ovn eller på komfur (fx konserves, knækbrød).",
+      "page": 5,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "section",
+      "key": "somePrep",
+      "page": 1
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "gryn",
+          "text": "Gryn (ca. 500 g svarende til 1/2 pakke havregryn)"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "kind": "section",
+      "key": "needsPrep",
+      "page": 1
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "pasta-couscous",
+          "text": "Pasta eller couscous (ca.500 g svarende til ca. 1 pakke)"
+        },
+        {
+          "id": "planteolie",
+          "text": "Planteolie"
+        }
+      ],
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis du har mad, der kræver tilberedning (fx ris, pasta), skal du sørge for at have mulighed for at koge vand – også uden adgang til strøm eller bygas. Det kan fx ske på en grill eller stormkøkken.",
+      "page": 5,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "warning",
+      "text": "Brug aldrig grill o.l. indendørs eller i helt eller delvist lukkede rum. Der er risiko for røg- og/eller kulilteforgiftning.",
+      "page": 5,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "text",
+      "text": "Husk at spare på vandet, når du tilbereder din mad. Du kan eksempelvis koge pasta i spiseklar suppe.",
+      "page": 1
+    },
+    {
+      "kind": "heading",
+      "text": "Køb særlige fødevarer ved behov",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis du har børn under et år, kan du have færdigblandet modermælkserstatning, mad på glas og klemposer på lager.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Hvis du er vegetar, kan du i stedet for kød/fisk have ekstra bælgfrugter på lager. Vær opmærksom på eventuelle allergener.",
+      "page": 1
+    },
+    {
+      "kind": "heading",
+      "text": "Holdbarhed",
+      "page": 5,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    },
+    {
+      "kind": "text",
+      "text": "Sørg for at købe mad, som du og din familie kan lide at spise, og som I bruger til dagligt. Brug løbende af dit lager og fyld op med nye varer. Så undgår du madspild.",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Opbevar maden tørt, mørkt og køligt.",
+      "page": 5,
+      "sourceId": "dk-samsik-forberedt-paa-kriser"
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "stroemmen-er-gaaet"
+  ]
+}

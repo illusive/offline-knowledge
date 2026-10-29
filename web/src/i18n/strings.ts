@@ -175,7 +175,15 @@ export interface Strings {
   growing: string;
   growingIntro: string;
   growingCount: (n: number) => string;
-  growingSections: Record<'sowing' | 'conditions' | 'care' | 'harvest' | 'seeds' | 'neighbours', string>;
+  growingSections: Record<'sowing' | 'conditions' | 'care' | 'harvest' | 'seeds' | 'neighbours' | 'noPrep' | 'somePrep' | 'needsPrep', string>;
+  prepare: string;
+  prepareIntro: string;
+  prepareCount: (n: number) => string;
+  prepareSituations: string;
+  prepareSupplies: string;
+  prepareSearchPlaceholder: string;
+  prepareSearchLabel: string;
+  checklistProgress: (done: number, total: number) => string;
   storeThisCrop: string;
   growingSearchPlaceholder: string;
   growingSearchLabel: string;
@@ -425,7 +433,15 @@ export const strings: Record<Lang, Strings> = {
     growing: 'Dyrkning',
     growingIntro: 'Så, pas og høst – og gem frø til næste år. Nemme afgrøder til det danske klima.',
     growingCount: (n) => (n === 1 ? '1 afgrøde' : `${n} afgrøder`),
-    growingSections: { sowing: 'Såning', conditions: 'Jord og placering', care: 'Pasning', harvest: 'Høst', seeds: 'Frø til næste år', neighbours: 'Naboer og sædskifte' },
+    growingSections: { sowing: 'Såning', conditions: 'Jord og placering', care: 'Pasning', harvest: 'Høst', seeds: 'Frø til næste år', neighbours: 'Naboer og sædskifte', noPrep: 'Kræver ingen tilberedning', somePrep: 'Kræver lidt tilberedning', needsPrep: 'Kræver tilberedning' },
+    prepare: 'Når det sker',
+    prepareIntro: 'Hvad du gør, hvis strøm, vand eller varme forsvinder – og hvad du bør have derhjemme. Myndighederne anbefaler, at du kan klare dig selv i tre døgn.',
+    prepareCount: (n) => (n === 1 ? '1 vejledning' : `${n} vejledninger`),
+    prepareSituations: 'Hvis det sker',
+    prepareSupplies: 'Hav det derhjemme',
+    prepareSearchPlaceholder: 'Søg, fx strøm eller vand',
+    prepareSearchLabel: 'Søg i Når det sker',
+    checklistProgress: (done, total) => `Du har ${done} af ${total}`,
     storeThisCrop: 'Holdbarhed og konservering',
     growingSearchPlaceholder: 'Søg efter en afgrøde',
     growingSearchLabel: 'Søg i dyrkning',
@@ -667,7 +683,15 @@ export const strings: Record<Lang, Strings> = {
     growing: 'Growing food',
     growingIntro: 'Sow, tend and harvest – and save seed for next year. Easy crops for the Danish climate (in Danish).',
     growingCount: (n) => (n === 1 ? '1 crop' : `${n} crops`),
-    growingSections: { sowing: 'Sowing', conditions: 'Soil and site', care: 'Care', harvest: 'Harvest', seeds: 'Seed for next year', neighbours: 'Neighbours and rotation' },
+    growingSections: { sowing: 'Sowing', conditions: 'Soil and site', care: 'Care', harvest: 'Harvest', seeds: 'Seed for next year', neighbours: 'Neighbours and rotation', noPrep: 'No preparation needed', somePrep: 'Some preparation', needsPrep: 'Needs preparation' },
+    prepare: 'When it happens',
+    prepareIntro: 'What to do if power, water or heat disappears – and what to keep at home. The authorities recommend being able to manage on your own for three days. (In Danish.)',
+    prepareCount: (n) => (n === 1 ? '1 guide' : `${n} guides`),
+    prepareSituations: 'If it happens',
+    prepareSupplies: 'Keep at home',
+    prepareSearchPlaceholder: 'Search, e.g. power or water',
+    prepareSearchLabel: 'Search When it happens',
+    checklistProgress: (done, total) => `You have ${done} of ${total}`,
     storeThisCrop: 'Storing and preserving',
     growingSearchPlaceholder: 'Search for a crop',
     growingSearchLabel: 'Search growing',

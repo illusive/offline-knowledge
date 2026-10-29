@@ -80,5 +80,23 @@ test('growing guides: low risk needs no second authority; a block may quote anot
   const wrong = guide({ id: 'x', category: 'growing', risk: 'low', checks: [], name: 'X', blocks: [{ kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1 }] });
   assert.ok(validateGuides([wrong], sources, texts, new Set()).some((p) => p.includes('not verbatim in main')));
   const firstAidMix = guide({ blocks: [{ kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1, sourceId: 'second' }] });
-  assert.ok(validateGuides([firstAidMix], sources, texts, new Set()).some((p) => p.includes('one source')));
+  assert.ok(validateGuides([firstAidMix], sources, texts, new Set()).some((p) => p.includes('from one source')));
+});
+
+test('preparedness: a group is required, checklist lines are checked verbatim, checklist ids are unique across guides', () => {
+  const list = (id: string, itemId: string, text: string) =>
+    guide({ id, category: 'preparedness', risk: 'low', checks: [], group: 'supplies', blocks: [{ kind: 'checklist', items: [{ id: itemId, text }], page: 1 }] });
+  assert.deepEqual(validateGuides([list('a', 'knaekbroed', 'Du må aldrig gå på kompromis med din egen sikkerhed.')], sources, texts, new Set()), []);
+  const problems = validateGuides(
+    [list('b', 'same-id', 'Ikke i kilden.'), list('c', 'same-id', 'Du må aldrig gå på kompromis med din egen sikkerhed.'), guide({ id: 'd', category: 'preparedness', risk: 'low', checks: [] })],
+    sources, texts, new Set(),
+  );
+  assert.ok(problems.some((p) => p.includes('not verbatim')));
+  assert.ok(problems.some((p) => p.includes("'same-id' is used twice")));
+  assert.ok(problems.some((p) => p.includes('need a group')));
+});
+
+test('a high-risk preparedness guide still needs a second authority', () => {
+  const g = guide({ id: 'e', category: 'preparedness', risk: 'high', group: 'situation', checks: [] });
+  assert.ok(validateGuides([g], sources, texts, new Set()).some((p) => p.includes('no second-authority check')));
 });

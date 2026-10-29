@@ -6,7 +6,7 @@ import type { Lang } from './storage.ts';
 // Bump when the SQLite schema changes in a way the app must know about.
 // 2: storage_notes gained text_da and text_da_checked (D-031).
 // 3: produce_sections, produce_blocks, produce_ethylene, produce_relations (D-033).
-export const PACK_SCHEMA_VERSION = 9;
+export const PACK_SCHEMA_VERSION = 10;
 
 export interface PackManifest {
   packId: string;                 // e.g. 'core'

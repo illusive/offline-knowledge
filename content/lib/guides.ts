@@ -46,6 +46,8 @@ export function shownTexts(block: GuideBlock): string[] {
     case 'steps':
     case 'list':
       return block.items; // block titles are checked separately, ignoring case
+    case 'checklist':
+      return block.items.map((i) => i.text);
     case 'warning':
       return [...(block.text ? [block.text] : []), ...(block.items ?? [])];
     case 'image':
@@ -63,13 +65,16 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
   const problems: string[] = [];
   const known = new Map(sources.map((s) => [s.id, s]));
   const ids = new Set<string>();
+  const checklistIds = new Set<string>(); // across all guides
   for (const guide of guides) {
     const at = `guide ${guide.id}`;
     if (ids.has(guide.id)) problems.push(`${at}: duplicate id`);
     ids.add(guide.id);
     if (guide.category === 'first-aid' && guide.risk !== 'high') problems.push(`${at}: first aid guides are risk 'high'`);
     if (guide.category === 'growing' && guide.risk !== 'low') problems.push(`${at}: growing guides are risk 'low'`);
-    if (guide.blocks.some((b) => b.kind === 'section') && guide.category !== 'growing') problems.push(`${at}: section headings are for growing guides`);
+    if (guide.blocks.some((b) => b.kind === 'section') && guide.category === 'first-aid') problems.push(`${at}: first aid uses the source's own headings`);
+    if (guide.category === 'preparedness' && guide.group !== 'situation' && guide.group !== 'supplies') problems.push(`${at}: preparedness guides need a group ('situation' or 'supplies')`);
+    if (guide.category !== 'preparedness' && guide.group) problems.push(`${at}: only preparedness guides have a group`);
     const source = texts.get(guide.sourceId);
     if (!known.has(guide.sourceId)) problems.push(`${at}: source '${guide.sourceId}' not in registry`);
     else if (!source) problems.push(`${at}: no text for source '${guide.sourceId}'`);
@@ -96,11 +101,20 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
       const where = `${at} block ${i} (${block.kind})`;
       if (!Number.isInteger(block.page) || block.page < 1) problems.push(`${where}: page missing`);
       const sid = block.sourceId ?? guide.sourceId;
-      if (block.sourceId && guide.risk === 'high') problems.push(`${where}: high-risk guides take all text from one source`);
+      // First aid takes all text from one source (D-037). Situation guides combine several
+      // authorities' advice, each block checked against its own source (D-040).
+      if (block.sourceId && guide.category === 'first-aid') problems.push(`${where}: first aid guides take all text from one source`);
       if (block.sourceId && !known.has(block.sourceId)) problems.push(`${where}: source '${block.sourceId}' not in registry`);
       for (const text of shownTexts(block)) check(where, text, block.kind === 'heading', sid);
       if ('title' in block && block.title) check(`${where} title`, block.title, true, sid);
-      if ((block.kind === 'steps' || block.kind === 'list') && block.items.length === 0) problems.push(`${where}: no items`);
+      if ((block.kind === 'steps' || block.kind === 'list' || block.kind === 'checklist') && block.items.length === 0) problems.push(`${where}: no items`);
+      if (block.kind === 'checklist') {
+        for (const item of block.items) {
+          if (!/^[a-z0-9-]+$/.test(item.id)) problems.push(`${where}: checklist id '${item.id}' must be lower-case letters, digits and dashes`);
+          if (checklistIds.has(item.id)) problems.push(`${where}: checklist id '${item.id}' is used twice (ticks are stored by id)`);
+          checklistIds.add(item.id);
+        }
+      }
       const images = block.kind === 'image' ? [block] : block.kind === 'steps' ? (block.images ?? []) : [];
       for (const image of images) {
         if (!imageFiles.has(image.file)) problems.push(`${where}: image '${image.file}' not found in guides/images`);
