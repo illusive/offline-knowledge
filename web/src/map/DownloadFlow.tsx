@@ -5,6 +5,7 @@
 import { ArrowLeft, Download, House, Map as MapIcon, MapPinned, Pause, Play, Trash2, X, type LucideIcon } from 'lucide-react';
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { Lang, Strings } from '../i18n/strings';
+import { formatMapDate } from './format';
 import { mapClient } from './client.ts';
 import type { AreaInfo, AreaShape, Home, MapSummary } from './protocol.ts';
 
@@ -12,13 +13,6 @@ const RADII = [10, 25, 50] as const;
 type Kind = 'home' | 'region' | 'country';
 // 'start': the list of areas if there are any, otherwise the explanation.
 export type FlowStep = 'start' | 'intro' | 'areas' | 'kind' | 'home' | 'region' | 'confirm' | 'progress';
-
-// Map version (the Protomaps build date, e.g. '20261024') as a date people read.
-export function formatMapDate(version: string, lang: Lang): string {
-  const m = /^(\d{4})(\d{2})(\d{2})/.exec(version);
-  if (!m) return version;
-  return new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]))).toLocaleDateString(lang === 'da' ? 'da-DK' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-}
 
 export function formatBytes(bytes: number, lang: Lang): string {
   const nf = (v: number, digits: number) => new Intl.NumberFormat(lang, { maximumFractionDigits: digits }).format(v);
