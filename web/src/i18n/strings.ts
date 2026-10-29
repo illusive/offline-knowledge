@@ -102,6 +102,10 @@ export interface Strings {
     notCovered: string;
     notCoveredOffline: string;
     getThisArea: string;
+    mapDate: (date: string) => string;
+    newerMap: string;
+    update: string;
+    updating: string;
     showPosition: string;
     hidePosition: string;
     positionSearching: string;
@@ -305,6 +309,10 @@ export const strings: Record<Lang, Strings> = {
       notCovered: 'Kun med net her',
       notCoveredOffline: 'Ikke hentet her',
       getThisArea: 'Hent',
+      mapDate: (date) => `Kort fra ${date}`,
+      newerMap: 'Der er kommet en nyere udgave af kortet. Du kan bruge den gamle, indtil den nye er hentet.',
+      update: 'Hent den nye udgave',
+      updating: 'Ny udgave – erstatter den gamle, når den er hentet',
       showPosition: 'Vis min position',
       hidePosition: 'Skjul position',
       positionSearching: 'Finder din position …',
@@ -549,6 +557,10 @@ export const strings: Record<Lang, Strings> = {
       notCovered: 'Online only here',
       notCoveredOffline: 'Not downloaded here',
       getThisArea: 'Get',
+      mapDate: (date) => `Map from ${date}`,
+      newerMap: 'A newer edition of the map is available. You can use the old one until the new one is downloaded.',
+      update: 'Get the new edition',
+      updating: 'New edition – replaces the old one when downloaded',
       showPosition: 'Show my position',
       hidePosition: 'Hide position',
       positionSearching: 'Finding your position …',

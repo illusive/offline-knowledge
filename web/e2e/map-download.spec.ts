@@ -116,3 +116,27 @@ test('with a home set, Kort opens zoomed in on it (no permission needed)', async
   await expect(map).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
   await expect.poll(async () => Number(await map.getAttribute('data-zoom')), { timeout: 15_000 }).toBe(12);
 });
+
+test('a newer map: the area shows its date, offers the new edition, and the old copy goes only when the new one is ready', async ({ app: { page } }) => {
+  test.setTimeout(120_000);
+  await page.goto('./');
+  await openKort(page);
+  await downloadCountry(page);
+  await expect(page.getByRole('heading', { name: 'Færdig' })).toBeVisible({ timeout: 60_000 });
+
+  await page.request.get('./stead-maps/__version?v=20991231');
+  try {
+    await page.reload();
+    await page.getByRole('button', { name: 'Hent kort' }).click();
+    const area = page.getByRole('listitem').filter({ hasText: 'Danmark' });
+    await expect(area.getByText(/^Kort fra 24\. oktober 2026$/)).toBeVisible();
+    await expect(area.getByText('Der er kommet en nyere udgave af kortet.', { exact: false })).toBeVisible({ timeout: 30_000 });
+    await area.getByRole('button', { name: 'Hent den nye udgave' }).click();
+    // When the new edition is complete, only one area is left, from the new date.
+    await expect(page.getByRole('listitem').filter({ hasText: 'Danmark' })).toHaveCount(1, { timeout: 60_000 });
+    await expect(page.getByText(/^Kort fra 31\. december 2099$/)).toBeVisible({ timeout: 60_000 });
+    await expect(page.getByText('Der er kommet en nyere udgave af kortet.', { exact: false })).toHaveCount(0);
+  } finally {
+    await page.request.get('./stead-maps/__version');
+  }
+});

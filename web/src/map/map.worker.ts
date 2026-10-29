@@ -58,6 +58,8 @@ async function init(url: string) {
       id TEXT PRIMARY KEY, label TEXT NOT NULL, shape TEXT NOT NULL, bounds TEXT NOT NULL, version TEXT NOT NULL,
       planned_tiles INTEGER NOT NULL, planned_bytes INTEGER NOT NULL, done_bytes INTEGER NOT NULL,
       next_range INTEGER NOT NULL, state TEXT NOT NULL, error TEXT, created_at TEXT NOT NULL)`);
+    // Added for updates (slice 5); older installs get the column here.
+    if (!meta.selectObjects('PRAGMA table_info(areas)').some((c) => c.name === 'replaces')) meta.exec('ALTER TABLE areas ADD COLUMN replaces TEXT');
     meta.exec('CREATE TABLE IF NOT EXISTS home (id INTEGER PRIMARY KEY CHECK (id = 1), lon REAL NOT NULL, lat REAL NOT NULL)');
     // A download that was running when the app closed is paused; the user resumes it.
     meta.exec("UPDATE areas SET state = 'paused' WHERE state = 'downloading'");
@@ -84,6 +86,7 @@ function rowToArea(r: Record<string, unknown>): AreaInfo {
     state: r.state as AreaInfo['state'],
     error: (r.error as string | null) ?? null,
     createdAt: String(r.created_at),
+    replaces: (r.replaces as string | null) ?? null,
   };
 }
 
@@ -230,6 +233,12 @@ async function run(id: string): Promise<void> {
     const stored = Number(db.selectValue('SELECT count(*) FROM tiles'));
     if (stored !== tiles.length) throw new Error(`Only ${stored} of ${tiles.length} tiles were stored`);
     meta.exec("UPDATE areas SET state = 'ready', done_bytes = planned_bytes WHERE id = ?", { bind: [id] });
+    // An update is complete and checked: only now is the older copy removed (never before).
+    const replaced = getArea(id).replaces;
+    if (replaced) {
+      meta.exec('UPDATE areas SET replaces = NULL WHERE id = ?', { bind: [id] });
+      if (meta.selectObjects('SELECT id FROM areas WHERE id = ?', [replaced]).length) await remove(replaced);
+    }
   } catch (error) {
     meta.exec("UPDATE areas SET state = 'paused', error = ? WHERE id = ?", { bind: [error instanceof Error ? error.message : String(error), id] });
   } finally {
@@ -245,14 +254,14 @@ function start(id: string): AreaInfo {
   return getArea(id);
 }
 
-async function download(label: string, shape: AreaShape): Promise<AreaInfo> {
+async function download(label: string, shape: AreaShape, replaces?: string): Promise<AreaInfo> {
   const { tiles, ranges, version, bounds } = await plan(shape);
   const id = crypto.randomUUID().slice(0, 8);
   await pool.reserveMinimumCapacity(listAreas().length + 2);
   meta.exec(
-    `INSERT INTO areas (id, label, shape, bounds, version, planned_tiles, planned_bytes, done_bytes, next_range, state, created_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?, 0, 0, 'paused', ?)`,
-    { bind: [id, label, JSON.stringify(shape), JSON.stringify(bounds), version, tiles.length, ranges.reduce((s, r) => s + r.length, 0), new Date().toISOString()] },
+    `INSERT INTO areas (id, label, shape, bounds, version, planned_tiles, planned_bytes, done_bytes, next_range, state, created_at, replaces)
+     VALUES (?, ?, ?, ?, ?, ?, ?, 0, 0, 'paused', ?, ?)`,
+    { bind: [id, label, JSON.stringify(shape), JSON.stringify(bounds), version, tiles.length, ranges.reduce((s, r) => s + r.length, 0), new Date().toISOString(), replaces ?? null] },
   );
   return start(id);
 }
@@ -345,7 +354,7 @@ async function handle(request: MapRequest): Promise<unknown> {
     case 'estimate':
       return estimate(request.shape);
     case 'download':
-      return download(request.label, request.shape);
+      return download(request.label, request.shape, request.replaces);
     case 'resume':
       return start(request.id);
     case 'pause':

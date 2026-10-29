@@ -141,3 +141,12 @@ describe('places on the map (pois.ts)', () => {
     expect(groupOf('tree')).toBe('other');
   });
 });
+
+describe('map date', () => {
+  it('reads the build date at the start of the map version', async () => {
+    const { formatMapDate } = await import('./DownloadFlow');
+    expect(formatMapDate('20261024', 'da')).toBe('24. oktober 2026');
+    expect(formatMapDate('20261024-test', 'en')).toBe('24 October 2026');
+    expect(formatMapDate('latest', 'da')).toBe('latest');
+  });
+});

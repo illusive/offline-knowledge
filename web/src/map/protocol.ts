@@ -19,6 +19,7 @@ export interface AreaInfo {
   state: AreaState;
   error: string | null; // why a download paused, if it did not pause on request
   createdAt: string;
+  replaces: string | null; // an update: the older area it replaces once this one is ready
 }
 
 export interface Home {
@@ -37,7 +38,7 @@ export type MapRequest =
   | { type: 'init'; mapUrl: string }
   | { type: 'summary' }
   | { type: 'estimate'; shape: AreaShape }
-  | { type: 'download'; label: string; shape: AreaShape }
+  | { type: 'download'; label: string; shape: AreaShape; replaces?: string }
   | { type: 'resume'; id: string }
   | { type: 'pause'; id: string }
   | { type: 'delete'; id: string }

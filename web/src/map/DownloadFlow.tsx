@@ -13,6 +13,13 @@ type Kind = 'home' | 'region' | 'country';
 // 'start': the list of areas if there are any, otherwise the explanation.
 export type FlowStep = 'start' | 'intro' | 'areas' | 'kind' | 'home' | 'region' | 'confirm' | 'progress';
 
+// Map version (the Protomaps build date, e.g. '20261024') as a date people read.
+export function formatMapDate(version: string, lang: Lang): string {
+  const m = /^(\d{4})(\d{2})(\d{2})/.exec(version);
+  if (!m) return version;
+  return new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]))).toLocaleDateString(lang === 'da' ? 'da-DK' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+}
+
 export function formatBytes(bytes: number, lang: Lang): string {
   const nf = (v: number, digits: number) => new Intl.NumberFormat(lang, { maximumFractionDigits: digits }).format(v);
   return bytes >= 1e9 ? `${nf(bytes / 1e9, 1)} GB` : `${nf(Math.max(1, bytes / 1e6), 0)} MB`;
@@ -174,6 +181,7 @@ export function DownloadFlow(props: {
                   {t.states[a.state]}
                   {a.state !== 'ready' ? ` · ${t.progress(percentOf(a))}` : ''} · {formatBytes(a.plannedBytes, lang)}
                 </span>
+                <span className="block text-sm text-muted">{a.replaces ? t.updating : t.mapDate(formatMapDate(a.version, lang))}</span>
                 {a.error ? <span className="block text-sm text-muted">{a.error}</span> : null}
               </button>
               <div className="flex shrink-0 gap-[6px]">
@@ -199,6 +207,20 @@ export function DownloadFlow(props: {
               </div>
             </div>
             {a.state !== 'ready' ? <Progress percent={percentOf(a)} label={a.label} /> : null}
+            {/* A newer map is published: download it next to this one; this one is kept until the new one is complete. */}
+            {summary && a.state === 'ready' && summary.version > a.version && !areas.some((b) => b.replaces === a.id) ? (
+              <div className="flex flex-col gap-2 rounded-xl bg-background px-[12px] py-2">
+                <p className="text-sm">{t.newerMap}</p>
+                <button
+                  type="button"
+                  disabled={offline}
+                  onClick={() => void client.call({ type: 'download', label: a.label, shape: a.shape, replaces: a.id })}
+                  className="min-h-11 self-start rounded-full bg-accent px-[16px] text-sm font-semibold text-on-accent disabled:opacity-50"
+                >
+                  {t.update}
+                </button>
+              </div>
+            ) : null}
           </li>
         ))}
       </ul>

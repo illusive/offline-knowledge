@@ -1,7 +1,7 @@
 /// <reference types="vitest/config" />
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { createReadStream, existsSync, statSync } from 'node:fs';
+import { createReadStream, existsSync, readFileSync, statSync } from 'node:fs';
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { join, normalize } from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
@@ -45,8 +45,20 @@ function localMaps(): Plugin {
       // makes that file answer 503, as during an outage; GET /stead-maps/__fail clears it.
       // Playwright cannot intercept requests made by a worker in WebKit, so the server does it.
       const failing = new Set<string>();
+      let versionOverride: string | null = null;
       server.middlewares.use('/stead-maps', (req, res, next) => {
         const url = new URL(req.url ?? '/', 'http://localhost');
+        // Test-only: GET /stead-maps/__version?v=20991231 makes the manifest announce a newer map
+        // (same tiles), so the update flow can be tested; without v it goes back to normal.
+        if (url.pathname === '/__version') {
+          versionOverride = url.searchParams.get('v');
+          return res.end('ok');
+        }
+        if (versionOverride && url.pathname.endsWith('/manifest.json')) {
+          const manifest = JSON.parse(readFileSync(join(__dirname, 'e2e/fixtures/stead-maps', url.pathname), 'utf8')) as { version: string };
+          res.setHeader('Content-Type', 'application/json');
+          return res.end(JSON.stringify({ ...manifest, version: versionOverride }));
+        }
         if (url.pathname === '/__fail') {
           failing.clear();
           const file = url.searchParams.get('file');
