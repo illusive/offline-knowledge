@@ -105,7 +105,8 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
       // authorities' advice, each block checked against its own source (D-040).
       if (block.sourceId && guide.category === 'first-aid') problems.push(`${where}: first aid guides take all text from one source`);
       if (block.sourceId && !known.has(block.sourceId)) problems.push(`${where}: source '${block.sourceId}' not in registry`);
-      for (const text of shownTexts(block)) check(where, text, block.kind === 'heading', sid);
+      // Headings ignore case; so do checklist lines, which often lift a word from a running sentence.
+      for (const text of shownTexts(block)) check(where, text, block.kind === 'heading' || block.kind === 'checklist', sid);
       if ('title' in block && block.title) check(`${where} title`, block.title, true, sid);
       if ((block.kind === 'steps' || block.kind === 'list' || block.kind === 'checklist') && block.items.length === 0) problems.push(`${where}: no items`);
       if (block.kind === 'checklist') {

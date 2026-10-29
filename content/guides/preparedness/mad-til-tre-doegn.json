@@ -46,6 +46,25 @@
       "page": 1
     },
     {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "kiks",
+          "text": "Kiks"
+        },
+        {
+          "id": "toerret-frugt",
+          "text": "Tørret frugt"
+        },
+        {
+          "id": "energibarer",
+          "text": "Energibarer"
+        }
+      ],
+      "page": 1,
+      "sourceId": "dk-hjoerring-kik-folder"
+    },
+    {
       "kind": "text",
       "text": "Vælg gerne madvarer, som ikke kræver tilberedning i ovn eller på komfur (fx konserves, knækbrød).",
       "page": 5,
@@ -84,6 +103,21 @@
         }
       ],
       "page": 1
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "ris",
+          "text": "Ris"
+        },
+        {
+          "id": "kartoffelmos-pulver",
+          "text": "Kartoffelmos i pulverform"
+        }
+      ],
+      "page": 1,
+      "sourceId": "dk-hjoerring-kik-folder"
     },
     {
       "kind": "text",

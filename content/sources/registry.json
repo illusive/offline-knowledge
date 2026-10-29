@@ -2091,6 +2091,22 @@
       "snapshot": "snapshots/dk-mst-forberedt.html",
       "snapshotSha256": "3f33220d56ce2c3776dde40290752787c2d1e98954774ea4aa33e0f4751b1fb6",
       "shortName": "Miljøstyrelsen"
+    },
+    {
+      "id": "dk-hjoerring-kik-folder",
+      "status": "request-needed",
+      "title": "Klar til krise – tjekliste (KIK-folder)",
+      "publisher": "Hjørring Kommune",
+      "url": "https://cdn1.gopublic.dk/hjoerringkommune/Media/639154074194583733/KIK%20Folder%20A4%20til%20download_.pdf",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Municipal leaflet based on the national three-day advice; no published reuse terms. Set aside while private (D-028). Used for food items the national lists do not name (D-040).",
+      "attribution": "",
+      "retrievedAt": "2026-10-29",
+      "snapshot": "snapshots/dk-hjoerring-kik-folder.pdf",
+      "snapshotSha256": "03285573614471e45f91b7c689df980006a9dfc1ce68487b378ef0d5f201ffd8",
+      "shortName": "Hjørring Kommune"
     }
   ]
 }
