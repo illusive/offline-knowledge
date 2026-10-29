@@ -6,7 +6,7 @@
    "key": "about",
    "blocks": [
     {
-     "text": "De færreste bær og stenfrugter holder længe rå. De bør syltes, tørres, fryses eller behandles på anden måde, hvis de skal holde i længere tid.",
+     "text": "De fleste bær og frugter med sten holder ikke længe, når de er rå. Vil du gemme dem, så sylt, tør eller frys dem.",
      "sourceRef": {
       "sourceId": "dk-bolius-udendoers-opbevaring",
       "locator": "Bær- og stenfrugter",
@@ -22,7 +22,7 @@
      }
     },
     {
-     "text": "Litchi har en tynd, læderagtig rød skal; det spiselige, gennemsigtige frugtkød omgiver en stor sort kerne. Skallen bliver hurtigt brun, når frugten taber vand.",
+     "text": "Litchi har en tynd, sej rød skal. Det spiselige, gennemsigtige frugtkød omgiver en stor sort kerne. Skallen bliver hurtigt brun, når frugten taber vand.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Litchi chapter, Scientific Name and Introduction; Physiological Disorders, pp. 392–393",
@@ -59,7 +59,7 @@
      }
     },
     {
-     "text": "Litchi opbevares bedst ved 2–5 °C og 90–95 % luftfugtighed, gerne i en pose eller lukket beholder; ligger de frit i luften, bliver skallen hurtigt brun.",
+     "text": "Litchi opbevares bedst ved 2–5 °C og 90–95 % luftfugtighed, gerne i en pose eller lukket beholder. Ligger de frit i luften, bliver skallen hurtigt brun.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Litchi chapter, Optimum Storage Conditions; Retail Outlet Display Considerations, p. 392",
@@ -72,7 +72,7 @@
    "key": "avoid",
    "blocks": [
     {
-     "text": "Kirsebær har en tynd vokshinde og skrumper let; hurtig nedkøling og fugtig luft mindsker vandtabet. Stød og tryk giver bløde, indsunkne pletter, som ofte først ses senere.",
+     "text": "Kirsebær har en tynd vokshinde og skrumper let. Hurtig nedkøling og fugtig luft mindsker vandtabet. Stød og tryk giver bløde, indsunkne pletter, som ofte først ses senere.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Cherry (Sweet) chapter, Physiological Disorders, p. 283",
@@ -93,7 +93,7 @@
    "key": "together",
    "blocks": [
     {
-     "text": "Kirsebær danner meget lidt ethylen, men ethylen udefra får dem til at ånde hurtigere og miste kvalitet.",
+     "text": "Kirsebær danner meget lidt ethylen (en gas, som frugt og grønt selv afgiver, og som får dem til at modne), men ethylen udefra får dem til at ånde hurtigere og miste kvalitet.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Cherry (Sweet) chapter, Ethylene Production and Sensitivity, p. 283",
@@ -101,7 +101,7 @@
      }
     },
     {
-     "text": "Litchi danner meget lidt ethylen; ethylen udefra kan måske få frugtkødet til at blive dårligt tidligere.",
+     "text": "Litchi danner meget lidt ethylen. Ethylen udefra kan måske få frugtkødet til at blive dårligt tidligere.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Litchi chapter, Ethylene Production and Sensitivity, p. 393",
@@ -144,7 +144,7 @@
    "verdict": "described",
    "blocks": [
     {
-     "text": "Kirsebær: Vælg helt modne kirsebær, vask dem, og fjern stilke og sten. Dyp dem hele 30 sekunder i kogende vand, så skindet revner; de kan også lægges 10 minutter i ascorbinsyre-opløsning. Lad dem dryppe godt af, og tør dem i ét lag, til de er seje, læderagtige og let klæbrige (24–36 timer).",
+     "text": "Kirsebær: Vælg helt modne kirsebær, vask dem, og fjern stilke og sten. Dyp dem hele 30 sekunder i kogende vand, så skindet revner. De kan også lægges 10 minutter i vand med C-vitamin (ascorbinsyre). Lad dem dryppe godt af, og tør dem i ét lag, til de er seje som læder og let klæbrige (24–36 timer).",
      "sourceRef": {
       "sourceId": "csu-drying-fruits",
       "locator": "Table 2, Cherries",
@@ -152,7 +152,7 @@
      }
     },
     {
-     "text": "Bær: Vælg faste, modne bær, vask dem godt, og lad dem være hele eller halver dem. Bær med fast skind dyppes 30 sekunder i kogende vand, så skindet revner; bløde bær (jordbær) lægges 10 minutter i ascorbinsyre-opløsning. Lad dem dryppe godt af, og læg dem højst to lag dybt. Tør dem, til de er hårde og rasler, når bakken rystes (24–36 timer).",
+     "text": "Bær: Vælg faste, modne bær, vask dem godt, og lad dem være hele eller halver dem. Bær med fast skind dyppes 30 sekunder i kogende vand, så skindet revner. Bløde bær (jordbær) lægges 10 minutter i vand med C-vitamin (ascorbinsyre). Lad dem dryppe godt af, og læg dem højst to lag dybt. Tør dem, til de er hårde og rasler, når bakken rystes (24–36 timer).",
      "sourceRef": {
       "sourceId": "csu-drying-fruits",
       "locator": "Table 2, Berries",
@@ -160,7 +160,7 @@
      }
     },
     {
-     "text": "Tør frugten i ét lag ved 60 °C (140 °F) i ovn eller tørreapparat. Vend store stykker hver 3.–4. time. Frugten er tør, når den er læderagtig og bøjelig: Klem en håndfuld afkølede stykker – der må ikke være fugt på hånden, og stykkerne skal springe fra hinanden.",
+     "text": "Tør frugten i ét lag ved 60 °C i ovnen eller i et tørreapparat. Vend store stykker hver 3.–4. time. Frugten er tør, når den er sej og kan bøjes. Test det: Lad et par stykker køle af, og klem en håndfuld. Hånden skal være tør, og stykkerne skal falde fra hinanden, når du slipper.",
      "sourceRef": {
       "sourceId": "csu-drying-fruits",
       "locator": "Drying Methods; Testing for Dryness",
@@ -168,7 +168,7 @@
      }
     },
     {
-     "text": "Lad den tørrede frugt efterbehandle i 4–10 dage i en løst tildækket beholder, og ryst den dagligt. Kommer der fugtperler, skal den tørres mere. Opbevar den derefter tæt lukket, køligt, tørt og mørkt; den holder 6–12 måneder.",
+     "text": "Lad frugten hvile i 4–10 dage i en beholder med et løst låg, og ryst den hver dag. Så fordeles den sidste fugt. Kommer der små dråber på indersiden, skal frugten tørre mere. Opbevar den derefter i en tæt beholder, køligt, tørt og mørkt. Så holder den 6–12 måneder.",
      "sourceRef": {
       "sourceId": "csu-drying-fruits",
       "locator": "Post-Drying Treatment; Packaging and Storage",
@@ -176,7 +176,7 @@
      }
     },
     {
-     "text": "Uden strøm kan frugt tørres udendørs i solen, fordi frugt indeholder meget sukker og syre. Det kræver varme, tørre dage med blæst, mindst 29 °C (85 °F) og helst en luftfugtighed under 60 %, og det tager flere dage. Dæk frugten til eller tag den i læ om natten, så den ikke trækker fugt igen.",
+     "text": "Uden strøm kan du tørre frugt ude i solen. Det kan lade sig gøre, fordi frugt har meget sukker og syre. Det tager flere dage og kræver varmt, tørt vejr med vind: mindst 29 °C og helst ikke for fugtig luft (under 60 % luftfugtighed). Dæk frugten til, eller tag den ind om natten, så den ikke bliver fugtig igen.",
      "sourceRef": {
       "sourceId": "nchfp-sun-drying",
       "locator": "Sun Drying",
@@ -195,7 +195,7 @@
    "verdict": "waterBath",
    "blocks": [
     {
-     "text": "Vælg modne, blanke kirsebær med ensartet farve. Fjern stilke, og vask dem; stenene kan fjernes. Udstenede kirsebær lægges i vand med ascorbinsyre. Kirsebær med sten prikkes med en ren nål på to sider, så de ikke revner. De kan henkoges i vand, æblesaft, hvid druesaft eller sukkerlage, med 1,3 cm (½ tomme) fri plads øverst.",
+     "text": "Vælg modne, blanke kirsebær med ensartet farve. Fjern stilke, og vask dem. Stenene kan fjernes. Udstenede kirsebær lægges i vand med C-vitamin (ascorbinsyre). Kirsebær med sten prikkes med en ren nål på to sider, så de ikke revner. De kan henkoges i vand, æblesaft, hvid druesaft eller sukkerlage, med 1,3 cm fri plads øverst.",
      "sourceRef": {
       "sourceId": "nchfp-cherries-whole",
       "locator": "Cherries-Whole, procedure",
@@ -203,7 +203,7 @@
      }
     },
     {
-     "text": "Henkogningstid for søde eller sure kirsebær i vandbad op til 300 m over havet: varm fyldning – pint-glas 15 minutter, quart-glas 20 minutter; rå fyldning – 25 minutter.",
+     "text": "Henkogningstid for søde eller sure kirsebær i vandbad op til 300 m over havet: varm fyldning (frugten kommer varm i glasset) – pint-glas 15 minutter, quart-glas 20 minutter. Rå fyldning – 25 minutter.",
      "sourceRef": {
       "sourceId": "nchfp-cherries-whole",
       "locator": "Cherries-Whole, Table 1",
@@ -211,7 +211,7 @@
      }
     },
     {
-     "text": "Kirsebærsyltetøj med pektin: 4 cups finthakkede, udstenede kirsebær, 1 pakke pulverpektin og 5 cups sukker; henkoges 5 minutter i vandbad med 6 mm (¼ tomme) fri plads.",
+     "text": "Kirsebærsyltetøj med pektin: 4 cups finthakkede, udstenede kirsebær, 1 pakke pulverpektin og 5 cups sukker. Henkoges 5 minutter i vandbad med 6 mm fri plads.",
      "sourceRef": {
       "sourceId": "nchfp-cherry-jam-pectin",
       "locator": "Cherry Jam Pectin",
@@ -219,7 +219,7 @@
      }
     },
     {
-     "text": "Hele bær (brombær, blåbær, ribs, solbær, stikkelsbær, hindbær m.fl. – kun de bær, opskriften nævner): Vælg modne, søde bær med ensartet farve. Vask dem, og fjern stilke; stikkelsbær klippes i begge ender. Blåbær, ribs og stikkelsbær kan forvarmes 30 sekunder i kogende vand og fyldes på glas med varm saft. Alle bærrene kan også fyldes rå på glas og overhældes med varm sukkerlage, saft eller vand. Lad 1,3 cm (½ tomme) være fri øverst.",
+     "text": "Hele bær (brombær, blåbær, ribs, solbær, stikkelsbær, hindbær m.fl. – kun de bær, opskriften nævner): Vælg modne, søde bær med ensartet farve. Vask dem, og fjern stilke. Stikkelsbær klippes i begge ender. Blåbær, ribs og stikkelsbær kan forvarmes 30 sekunder i kogende vand og fyldes på glas med varm saft. Alle bærrene kan også fyldes rå på glas og overhældes med varm sukkerlage, saft eller vand. Lad 1,3 cm være fri øverst.",
      "sourceRef": {
       "sourceId": "nchfp-berries-whole",
       "locator": "Berries-Whole, procedure",
@@ -227,7 +227,7 @@
      }
     },
     {
-     "text": "Henkogningstid for hele bær i vandbad op til 300 m over havet: varm fyldning 15 minutter (pint- og quart-glas); rå fyldning 15 minutter for pint-glas (ca. 0,5 liter) og 20 minutter for quart-glas (ca. 1 liter).",
+     "text": "Henkogningstid for hele bær i vandbad op til 300 m over havet: varm fyldning 15 minutter (pint- og quart-glas). Rå fyldning 15 minutter for pint-glas (ca. 0,5 liter) og 20 minutter for quart-glas (ca. 1 liter).",
      "sourceRef": {
       "sourceId": "nchfp-berries-whole",
       "locator": "Berries-Whole, Table 1",

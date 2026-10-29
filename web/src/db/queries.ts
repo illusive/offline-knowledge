@@ -4,7 +4,7 @@
 import { longestKeeping, type Location, type PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
-export const SUPPORTED_PACK_SCHEMA_VERSION = 10;
+export const SUPPORTED_PACK_SCHEMA_VERSION = 12;
 
 type Bind = (string | number | null)[];
 
@@ -97,13 +97,14 @@ export interface GuideRow {
   category: 'first-aid' | 'growing' | 'preparedness';
   title: string;
   summary: string | null;
+  summary_original: string | null; // the source's words behind a rewritten summary (D-042)
   abbreviations: { short: string; long: string }[];
   name: string | null;     // growing: plain name, e.g. 'Radiser'
   season: string | null;   // growing: the growing period
   grp: 'situation' | 'supplies' | null; // preparedness (D-040)
 }
 
-const GUIDE_COLUMNS = 'g.id, g.category, g.title, g.summary, g.abbreviations, g.name, g.season, g.grp';
+const GUIDE_COLUMNS = 'g.id, g.category, g.title, g.summary, g.summary_original, g.abbreviations, g.name, g.season, g.grp';
 const guideRows = (db: SqlDb, sql: string, bind?: Bind) =>
   rows<Omit<GuideRow, 'abbreviations'> & { abbreviations: string }>(db, sql, bind).map((g) => ({ ...g, abbreviations: JSON.parse(g.abbreviations) as GuideRow['abbreviations'] }));
 
@@ -113,14 +114,23 @@ export interface GuideImage {
   data: Uint8Array;
 }
 
-export type GuideBlock =
+// A translated (D-041) or rewritten (D-042) block carries the source's own words for each shown field.
+export interface BlockOriginal {
+  lang: 'en' | 'da';
+  title?: string;
+  text?: string;
+  items?: string[];
+}
+
+export type GuideBlock = { original?: BlockOriginal } & (
   | { kind: 'heading' | 'text'; text: string; page: number }
   | { kind: 'section'; key: GrowingSection; page: number }
   | { kind: 'steps'; title: string | null; items: string[]; images: { after: number; imageId: string; alt: string; page: number }[]; page: number }
   | { kind: 'list'; title: string | null; items: string[]; page: number }
   | { kind: 'checklist'; title: string | null; items: { id: string; text: string }[]; page: number }
   | { kind: 'warning'; title: string | null; text: string | null; items: string[]; page: number }
-  | { kind: 'image'; imageId: string; alt: string; caption: string | null; page: number };
+  | { kind: 'image'; imageId: string; alt: string; caption: string | null; page: number }
+);
 
 export type GrowingSection = 'sowing' | 'conditions' | 'care' | 'harvest' | 'seeds' | 'neighbours' | 'noPrep' | 'somePrep' | 'needsPrep';
 
@@ -172,9 +182,11 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
     if (!s) throw new Error(`Pack is missing source ${sid}`);
     return s;
   };
-  type BlockRow = { kind: GuideBlock['kind']; title: string | null; text: string | null; items: string | null; step_images: string | null; image_id: string | null; alt: string | null; caption: string | null; page: number };
-  const blocks = rows<BlockRow>(db, 'SELECT kind, title, text, items, step_images, image_id, alt, caption, page FROM guide_blocks WHERE guide_id = ? ORDER BY ord', [id]).map(
-    (b): GuideBlock => {
+  type BlockRow = { kind: GuideBlock['kind']; title: string | null; text: string | null; items: string | null; step_images: string | null; image_id: string | null; alt: string | null; caption: string | null; page: number; original: string | null };
+  const blocks = rows<BlockRow>(db, 'SELECT kind, title, text, items, step_images, image_id, alt, caption, page, original FROM guide_blocks WHERE guide_id = ? ORDER BY ord', [id]).map(
+    (b): GuideBlock => ({ ...parseBlock(b), ...(b.original ? { original: JSON.parse(b.original) as BlockOriginal } : {}) }),
+  );
+  function parseBlock(b: BlockRow): GuideBlock {
       const items = b.items && b.kind !== 'checklist' ? (JSON.parse(b.items) as string[]) : [];
       switch (b.kind) {
         case 'heading':
@@ -193,8 +205,7 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
         case 'image':
           return { kind: 'image', imageId: b.image_id ?? '', alt: b.alt ?? '', caption: b.caption, page: b.page };
       }
-    },
-  );
+  }
   const imageIds = [...new Set(blocks.flatMap((b) => (b.kind === 'image' ? [b.imageId] : b.kind === 'steps' ? b.images.map((i) => i.imageId) : [])))];
   const images = imageIds.flatMap((imageId) => rows<GuideImage>(db, 'SELECT id, mime, data FROM guide_images WHERE id = ?', [imageId]));
   const checks = rows<{ source_id: string; locator: string; quote: string }>(db, 'SELECT source_id, locator, quote FROM guide_checks WHERE guide_id = ? ORDER BY ord', [id]).map(
@@ -203,7 +214,7 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
   const relatedIds = JSON.parse(g.related) as string[];
   const related = relatedIds.flatMap((rid) => guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guides g WHERE g.id = ?`, [rid]));
   return {
-    guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, abbreviations: g.abbreviations, name: g.name, season: g.season, grp: g.grp, owner_checked: g.owner_checked === 1, food_id: g.food_id },
+    guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, summary_original: g.summary_original, abbreviations: g.abbreviations, name: g.name, season: g.season, grp: g.grp, owner_checked: g.owner_checked === 1, food_id: g.food_id },
     blockSources: rows<{ source_id: string }>(db, 'SELECT DISTINCT source_id FROM guide_blocks WHERE guide_id = ? AND source_id IS NOT NULL', [id]).map((r) => source(r.source_id)),
     blocks,
     images,

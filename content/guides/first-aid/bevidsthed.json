@@ -3,13 +3,49 @@
   "category": "first-aid",
   "order": 3,
   "title": "Kontrol af bevidsthedstilstand",
-  "summary": "Når du yder førstehjælp, skal du først undersøge den tilskadekomnes bevidsthed.",
+  "summary": "Når du giver førstehjælp, skal du først finde ud af, om personen er vågen.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
   "blocks": [
-    { "kind": "steps", "title": "Kontroller bevidstheden på følgende måde:", "items": ["Tal højt, og rusk behersket ved at tage fat i den tilskadekomnes skuldre."], "page": 16 },
-    { "kind": "list", "items": ["Hvis personen reagerer, er personen vågen.", "Hvis personen ikke reagerer, er personen bevidstløs."], "page": 16 },
-    { "kind": "warning", "text": "Hvis den tilskadekomne er bevidstløs, skal du straks ringe 1-1-2 før du fortsætter din førstehjælp!", "page": 16 }
+    {
+      "kind": "steps",
+      "title": "Sådan gør du:",
+      "items": [
+        "Tal højt til personen, og tag fat i skuldrene og ryst forsigtigt."
+      ],
+      "page": 16,
+      "original": {
+        "lang": "da",
+        "title": "Kontroller bevidstheden på følgende måde:",
+        "items": [
+          "Tal højt, og rusk behersket ved at tage fat i den tilskadekomnes skuldre."
+        ]
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Reagerer personen, er personen vågen.",
+        "Reagerer personen ikke, er personen bevidstløs."
+      ],
+      "page": 16,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Hvis personen reagerer, er personen vågen.",
+          "Hvis personen ikke reagerer, er personen bevidstløs."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Er personen bevidstløs, så ring 112 med det samme. Fortsæt derefter førstehjælpen.",
+      "page": 16,
+      "original": {
+        "lang": "da",
+        "text": "Hvis den tilskadekomne er bevidstløs, skal du straks ringe 1-1-2 før du fortsætter din førstehjælp!"
+      }
+    }
   ],
   "checks": [
     {
@@ -26,5 +62,10 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["mabc", "frie-luftveje"]
+  "related": [
+    "mabc",
+    "frie-luftveje"
+  ],
+  "name": "Er personen vågen?",
+  "originalSummary": "Når du yder førstehjælp, skal du først undersøge den tilskadekomnes bevidsthed."
 }

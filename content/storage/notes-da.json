@@ -2,23 +2,23 @@
   "$comment": "Danish translations of the English FoodKeeper notes, keyed by the exact English text (D-031). Drafted 2026-10-25 by an AI assistant and NOT checked, by owner decision; shown labelled as translated, with the English original one tap away. Fahrenheit temperatures keep °F and get the Celsius equivalent in brackets, so they are not misread as Celsius. Revisit (check every entry) before the app is shared beyond the owner.",
   "translations": {
     "1-2 weeks if inappropriately handled.": {
-      "da": "1–2 uger ved forkert håndtering.",
+      "da": "1–2 uger, hvis den ikke opbevares rigtigt.",
       "checked": false
     },
     "Applies to unopened coconut.": {
-      "da": "Gælder uåbnet kokosnød.",
+      "da": "Gælder en kokosnød, der ikke er åbnet.",
       "checked": false
     },
     "Blanch before freezing.": {
-      "da": "Blancher før indfrysning.",
+      "da": "Blancher før du fryser (kog kort, og køl hurtigt ned).",
       "checked": false
     },
     "Free from moisture; chilling injury causes decay, discoloration or loss of texture may occur.": {
-      "da": "Holdes fri for fugt; kuldeskader giver forrådnelse, og misfarvning eller tab af konsistens kan forekomme.",
+      "da": "Hold den tør. For meget kulde kan få den til at rådne, skifte farve eller blive blød.",
       "checked": false
     },
     "Freeze damage will appear.": {
-      "da": "Der opstår frostskader.",
+      "da": "Den tager skade af frost.",
       "checked": false
     },
     "Freezer timeline applies to cooked and mashed potatoes.": {
@@ -26,23 +26,23 @@
       "checked": false
     },
     "Freezing guidance applies to balled melon.": {
-      "da": "Vejledningen for fryseren gælder melon skåret i kugler.",
+      "da": "Tiden i fryseren gælder melon skåret i kugler.",
       "checked": false
     },
     "Freezing guidance applies to cooked product.": {
-      "da": "Vejledningen for fryseren gælder det tilberedte produkt.",
+      "da": "Tiden i fryseren gælder tilberedt mad.",
       "checked": false
     },
     "Freezing guidance applies to product when sliced, with lemon juice and sugar.": {
-      "da": "Vejledningen for fryseren gælder produktet i skiver med citronsaft og sukker.",
+      "da": "Tiden i fryseren gælder skiver med citronsaft og sukker.",
       "checked": false
     },
     "Freezing guidance applies to whole grapes.": {
-      "da": "Vejledningen for fryseren gælder hele vindruer.",
+      "da": "Tiden i fryseren gælder hele vindruer.",
       "checked": false
     },
     "Freezing guidelines apply to just the pulp.": {
-      "da": "Vejledningen for fryseren gælder kun frugtkødet.",
+      "da": "Tiden i fryseren gælder kun frugtkødet.",
       "checked": false
     },
     "Fresh whole peppers will last longer if kept dry.": {
@@ -50,7 +50,7 @@
       "checked": false
     },
     "Highly perishable when stored in the pantry.": {
-      "da": "Meget letfordærvelig i spisekammeret.",
+      "da": "Bliver hurtigt dårlig i køkkenskabet.",
       "checked": false
     },
     "Keep stems in water.": {
@@ -62,35 +62,35 @@
       "checked": false
     },
     "Or until ripe.": {
-      "da": "Eller indtil moden.",
+      "da": "Eller til den er moden.",
       "checked": false
     },
     "Or until ripe. Ripe is when this item is tender, fully developed and ready to eat.": {
-      "da": "Eller indtil moden. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+      "da": "Eller til den er moden – altså blød og klar til at spise.",
       "checked": false
     },
     "Peppers lose their crispness when frozen and thawed.": {
-      "da": "Peberfrugter mister deres sprødhed, når de fryses og tøs op.",
+      "da": "Peberfrugter bliver bløde, når de har været frosset.",
       "checked": false
     },
     "Refrigeration guidelines apply to just the pulp.": {
-      "da": "Vejledningen for køleskabet gælder kun frugtkødet.",
+      "da": "Tiden i køleskabet gælder kun frugtkødet.",
       "checked": false
     },
     "Refrigeration not recommended.": {
-      "da": "Køleskab anbefales ikke.",
+      "da": "Bør ikke i køleskabet.",
       "checked": false
     },
     "Ripe is when this item is tender, fully developed and ready to eat.": {
-      "da": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+      "da": "Moden betyder blød og klar til at spise.",
       "checked": false
     },
     "Ripe is when this item is tender, fully developed and ready to eat. Note, these spoil quickly.": {
-      "da": "Moden betyder, at den er mør, fuldt udviklet og klar til at spise. Bemærk: de bliver hurtigt dårlige.",
+      "da": "Moden betyder blød og klar til at spise. De bliver hurtigt dårlige.",
       "checked": false
     },
     "Storage temperatures below 50 degrees (as in a refrigerator) will cause the squash to spoil more rapidly.": {
-      "da": "Opbevaring under 50 °F (ca. 10 °C), som i et køleskab, får squashen til at blive dårlig hurtigere.",
+      "da": "Under ca. 10 °C (50 °F), fx i køleskabet, bliver squashen hurtigere dårlig.",
       "checked": false
     },
     "Store individual cloves in refrigerator.": {
@@ -98,15 +98,15 @@
       "checked": false
     },
     "Store unbroken bulbs in pantry.": {
-      "da": "Opbevar hele hvidløgshoveder i spisekammeret.",
+      "da": "Opbevar hele hvidløg i køkkenskabet.",
       "checked": false
     },
     "The United States Potato Board notes refrigeration can cause potatoes to darken during cooking and to develop an unpleasantly sweet taste.": {
-      "da": "Ifølge United States Potato Board kan opbevaring i køleskab få kartofler til at blive mørke under tilberedning og give dem en ubehageligt sød smag.",
+      "da": "I køleskabet kan kartofler blive mørke, når de koges, og få en ubehagelig sød smag (ifølge United States Potato Board).",
       "checked": false
     },
     "This is the recommended storage method for whole potatoes.": {
-      "da": "Dette er den anbefalede opbevaring af hele kartofler.",
+      "da": "Sådan bør hele kartofler opbevares.",
       "checked": false
     },
     "Timeline for refrigerator applies to ripe fruit.": {
@@ -114,27 +114,27 @@
       "checked": false
     },
     "Timeline for refrigerator applies to ripe fruit; skin will blacken.": {
-      "da": "Tiden i køleskabet gælder moden frugt; skrællen bliver sort.",
+      "da": "Tiden i køleskabet gælder moden frugt. Skrællen bliver sort.",
       "checked": false
     },
     "Unopened product will last 3 - 5 days after date on bag; after opening it will last 2 days.": {
-      "da": "Uåbnet holder produktet 3–5 dage efter datoen på posen; efter åbning holder det 2 dage.",
+      "da": "Uåbnet holder den 3–5 dage efter datoen på posen. Åbnet holder den 2 dage.",
       "checked": false
     },
     "Until Ripe, then 1-2 days. Ripe is when this item is tender, fully developed and ready to eat.": {
-      "da": "Indtil moden, derefter 1–2 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+      "da": "Til den er moden, derefter 1–2 dage. Moden betyder blød og klar til at spise.",
       "checked": false
     },
     "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat.": {
-      "da": "Indtil moden, derefter 7 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise.",
+      "da": "Til den er moden, derefter 7 dage. Moden betyder blød og klar til at spise.",
       "checked": false
     },
     "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat. Refrigeration may affect flavor; USDA recommends pantry storage.": {
-      "da": "Indtil moden, derefter 7 dage. Moden betyder, at den er mør, fuldt udviklet og klar til at spise. Køleskab kan påvirke smagen; USDA anbefaler opbevaring i spisekammeret.",
+      "da": "Til den er moden, derefter 7 dage. Moden betyder blød og klar til at spise. Køleskabet kan ødelægge smagen. USDA anbefaler at opbevare den i køkkenskabet.",
       "checked": false
     },
     "Will start to discolor.": {
-      "da": "Begynder at blive misfarvet.",
+      "da": "Begynder at skifte farve.",
       "checked": false
     },
     "below 75 °F": {

@@ -56,7 +56,7 @@
    "key": "avoid",
    "blocks": [
     {
-     "text": "Under 15 °C modner avocadoer langsomt; over 25 °C modner de ujævnt, rådner lettere og kan få bismag.",
+     "text": "Under 15 °C modner avocadoer langsomt. Over 25 °C modner de ujævnt, rådner lettere og kan smage forkert.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Avocado chapter, Retail Outlet Display Considerations, p. 219",
@@ -77,7 +77,7 @@
    "key": "together",
    "blocks": [
     {
-     "text": "Umodne avocadoer danner lidt ethylen, men modne danner meget. Opbevar derfor ikke modne avocadoer sammen med frugt og grønt, der er følsomt over for ethylen. Umodne avocadoer er selv meget følsomme og bør ikke ligge ved siden af moden frugt.",
+     "text": "Umodne avocadoer danner lidt ethylen (en gas, som frugt og grønt selv afgiver, og som får dem til at modne), men modne danner meget. Opbevar derfor ikke modne avocadoer sammen med frugt og grønt, der er følsomt over for ethylen. Umodne avocadoer er selv meget følsomme og bør ikke ligge ved siden af moden frugt.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Avocado chapter, Ethylene Production and Sensitivity, p. 220",

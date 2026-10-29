@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 13,
   "title": "5 afgrøder, der er dyre i butikkerne, men som du nemt kan dyrke selv",
-  "summary": "Jordskokker i egen have er dog en af de nemmeste afgrøder med det største udbytte, som du kan komme i nærheden af.",
+  "summary": "Jordskokker er noget af det nemmeste at dyrke – og du får meget ud af dem.",
   "sourceId": "dk-bolius-5-dyre",
   "risk": "low",
   "name": "Jordskokker",
@@ -19,13 +19,21 @@
     },
     {
       "kind": "text",
-      "text": "Jordskokker behøver ikke forspiring – du kan lægge knoldene direkte i jorden i det tidlige forår ca. 10-12 cm nede.",
-      "page": 1
+      "text": "Læg knoldene direkte i jorden tidligt på foråret, ca. 10-12 cm dybt. De skal ikke spire først.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Jordskokker behøver ikke forspiring – du kan lægge knoldene direkte i jorden i det tidlige forår ca. 10-12 cm nede."
+      }
     },
     {
       "kind": "text",
-      "text": "Afgrøden er meget tørketolerant, men sørg for at vande lidt, når du lægger jordskokken. Det er også en god idé at have gødet jorden på forhånd.",
-      "page": 1
+      "text": "Jordskokker klarer tørke godt, men vand lidt, når du lægger dem. Giv gerne jorden gødning først.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Afgrøden er meget tørketolerant, men sørg for at vande lidt, når du lægger jordskokken. Det er også en god idé at have gødet jorden på forhånd."
+      }
     },
     {
       "kind": "section",
@@ -34,13 +42,21 @@
     },
     {
       "kind": "text",
-      "text": "Derefter passer afgrøden stort set sig selv – du skal bare vande lidt, hvis den hænger med bladene.",
-      "page": 1
+      "text": "Derefter passer de stort set sig selv. Vand lidt, hvis bladene hænger.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Derefter passer afgrøden stort set sig selv – du skal bare vande lidt, hvis den hænger med bladene."
+      }
     },
     {
       "kind": "warning",
-      "text": "Vær opmærksom på, at jordskokker nemt kan sprede sig.",
-      "page": 1
+      "text": "Pas på: Jordskokker breder sig let.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vær opmærksom på, at jordskokker nemt kan sprede sig."
+      }
     },
     {
       "kind": "section",
@@ -49,23 +65,36 @@
     },
     {
       "kind": "text",
-      "text": "Når stængel og blade bliver brune, er knoldene klar til at blive spist.",
-      "page": 1
+      "text": "Når stængler og blade bliver brune, er knoldene klar til at spise.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Når stængel og blade bliver brune, er knoldene klar til at blive spist."
+      }
     },
     {
       "kind": "text",
-      "text": "Jordskokker holder ikke så længe, når de først er gravet op, så tag kun de knolde op af jorden, som du kan spise. Resten kan du bare lade ligge i jorden, indtil du har lyst til at spise jordskokker igen.",
-      "page": 1
+      "text": "Jordskokker holder ikke længe, når de er gravet op. Grav kun dem op, du skal spise. Resten kan blive i jorden, til du skal bruge dem.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Jordskokker holder ikke så længe, når de først er gravet op, så tag kun de knolde op af jorden, som du kan spise. Resten kan du bare lade ligge i jorden, indtil du har lyst til at spise jordskokker igen."
+      }
     },
     {
       "kind": "text",
-      "text": "Lægger du en enkel knold i det tidlige forår, kan du i løbet af efterår og vinter grave næsten et kilo jordskokker op af jorden.",
-      "page": 1
+      "text": "Én knold lagt tidligt på foråret kan give næsten et kilo jordskokker i løbet af efteråret og vinteren.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Lægger du en enkel knold i det tidlige forår, kan du i løbet af efterår og vinter grave næsten et kilo jordskokker op af jorden."
+      }
     }
   ],
   "checks": [],
   "ownerChecked": false,
   "related": [
     "kartofler"
-  ]
+  ],
+  "originalSummary": "Jordskokker i egen have er dog en af de nemmeste afgrøder med det største udbytte, som du kan komme i nærheden af."
 }

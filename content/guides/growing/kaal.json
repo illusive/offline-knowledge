@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 17,
   "title": "Sådan dyrker du kål",
-  "summary": "Få gode råd og tips om dyrkning, gødning og vanding af kål.",
+  "summary": "Sådan sår, gøder og vander du kål.",
   "sourceId": "dk-bolius-kaal",
   "risk": "low",
   "name": "Kål (hvidkål, spidskål, rødkål)",
@@ -20,33 +20,57 @@
     },
     {
       "kind": "text",
-      "text": "I princippet kan de fleste kålsorter sås direkte på voksestedet, men det skal siges, at det næsten altid er pladsen og tiden værd at forspire kålplanter først.",
-      "page": 1
+      "text": "De fleste slags kål kan sås direkte i haven. Men det kan næsten altid betale sig at lade dem spire i potter først.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "I princippet kan de fleste kålsorter sås direkte på voksestedet, men det skal siges, at det næsten altid er pladsen og tiden værd at forspire kålplanter først."
+      }
     },
     {
       "kind": "text",
-      "text": "Det er nemt at forspire kål, og det går tjept. 5-10 dage tager det typisk kålfrø at spire.",
-      "page": 1
+      "text": "Det er nemt og går hurtigt. Kålfrø spirer typisk på 5-10 dage.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det er nemt at forspire kål, og det går tjept. 5-10 dage tager det typisk kålfrø at spire."
+      }
     },
     {
       "kind": "text",
-      "text": "Gå efter en sådybde på ca. 2 cm og læg 1-3 frø i samme potte.",
-      "page": 1
+      "text": "Så frøene ca. 2 cm dybt, 1-3 frø i hver potte.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Gå efter en sådybde på ca. 2 cm og læg 1-3 frø i samme potte."
+      }
     },
     {
       "kind": "text",
-      "text": "Har du et drivhus eller en drivtunnel, kan du begynde spiringen allerede omkring 1. april, hvis frosten ellers er overstået. Vil du endnu tidligere i gang, kan du også forspire i en vindueskarm indenfor. Her kan du gå i gang omkring 1. marts.",
-      "page": 1
+      "text": "Har du drivhus eller en plastiktunnel, kan du begynde omkring 1. april, hvis frosten er ovre. I vindueskarmen inden døre kan du begynde omkring 1. marts.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Har du et drivhus eller en drivtunnel, kan du begynde spiringen allerede omkring 1. april, hvis frosten ellers er overstået. Vil du endnu tidligere i gang, kan du også forspire i en vindueskarm indenfor. Her kan du gå i gang omkring 1. marts."
+      }
     },
     {
       "kind": "text",
-      "text": "Vælger du alligevel at så frøene direkte ud på voksestedet, kan det gøres fra midt i april. Så 2-3 frø på det sted, hvor planten skal stå. Frøene sås i 2-3 cm dybde og med lidt afstand, så du kan fjerne og udtynde samt flytte rundt på planterne, hvis der er steder, hvor der ikke spirer noget frem.",
-      "page": 1
+      "text": "Sår du direkte i haven, så vent til midt i april. Så 2-3 frø, 2-3 cm dybt, der hvor planten skal stå. Så kan du fjerne nogle eller flytte dem, hvis der er steder, hvor intet spirer.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vælger du alligevel at så frøene direkte ud på voksestedet, kan det gøres fra midt i april. Så 2-3 frø på det sted, hvor planten skal stå. Frøene sås i 2-3 cm dybde og med lidt afstand, så du kan fjerne og udtynde samt flytte rundt på planterne, hvis der er steder, hvor der ikke spirer noget frem."
+      }
     },
     {
       "kind": "text",
-      "text": "Det kan variere fra 25 x 25 cm for nogle af de mindst pladskrævende broccolisorter til 60 x 60 cm for de største vinterhvidkål og rosenkål.",
-      "page": 1
+      "text": "Pladsen mellem planterne går fra 25 x 25 cm for små broccolisorter til 60 x 60 cm for store hvidkål og rosenkål.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det kan variere fra 25 x 25 cm for nogle af de mindst pladskrævende broccolisorter til 60 x 60 cm for de største vinterhvidkål og rosenkål."
+      }
     },
     {
       "kind": "section",
@@ -55,8 +79,12 @@
     },
     {
       "kind": "text",
-      "text": "Kål kan praktisk talt dyrkes i al slags havejord, men da det er en meget stor, hurtigvoksende og nærringskrævende plante, er det helt afgørende, at du tilfører gødning på den ene eller anden måde.",
-      "page": 1
+      "text": "Kål kan gro i næsten al havejord. Men kål er store planter, der vokser hurtigt og skal have meget næring. Derfor skal du altid gøde.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Kål kan praktisk talt dyrkes i al slags havejord, men da det er en meget stor, hurtigvoksende og nærringskrævende plante, er det helt afgørende, at du tilfører gødning på den ene eller anden måde."
+      }
     },
     {
       "kind": "section",
@@ -65,18 +93,30 @@
     },
     {
       "kind": "text",
-      "text": "Vand grundigt efter udplantning, så rødderne får godt fast i jorden.",
-      "page": 1
+      "text": "Vand grundigt, når du har plantet dem ud, så rødderne får godt fat.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vand grundigt efter udplantning, så rødderne får godt fast i jorden."
+      }
     },
     {
       "kind": "text",
-      "text": "Det er derfor en rigtig god ide at overdække bedet med en eller anden form for insektnet.",
-      "page": 1
+      "text": "Dæk bedet med insektnet, så skadedyr ikke kan komme til.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det er derfor en rigtig god ide at overdække bedet med en eller anden form for insektnet."
+      }
     },
     {
       "kind": "text",
-      "text": "Tjek kålene hver eller hver anden dag, og fjern æg og larver fra primært kålsommerfuglen. Hold øje med snegle, og fjern dem.",
-      "page": 1
+      "text": "Tjek kålene hver eller hver anden dag. Fjern æg og larver – især fra kålsommerfuglen – og fjern snegle.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Tjek kålene hver eller hver anden dag, og fjern æg og larver fra primært kålsommerfuglen. Hold øje med snegle, og fjern dem."
+      }
     },
     {
       "kind": "section",
@@ -85,8 +125,12 @@
     },
     {
       "kind": "text",
-      "text": "Tænk også på, at hvis du fx vil høste spidskål, broccoli og blomkål løbende hen over sommeren, skal du så i små portioner flere gange med tre ugers mellemrum.",
-      "page": 1
+      "text": "Vil du høste fx spidskål, broccoli og blomkål hele sommeren, så så lidt ad gangen med tre ugers mellemrum.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Tænk også på, at hvis du fx vil høste spidskål, broccoli og blomkål løbende hen over sommeren, skal du så i små portioner flere gange med tre ugers mellemrum."
+      }
     },
     {
       "kind": "section",
@@ -95,13 +139,21 @@
     },
     {
       "kind": "text",
-      "text": "Kål bør ikke dyrkes oftere end hvert 5.-6. år på samme sted i køkkenhaven. På den måde kan du modvirke bl.a. kålbrok, som er en svampesygdom, som angriber rødderne på kål.",
-      "page": 1
+      "text": "Dyrk kun kål samme sted hvert 5.-6. år. Så undgår du bl.a. kålbrok, en svampesygdom, der angriber rødderne.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Kål bør ikke dyrkes oftere end hvert 5.-6. år på samme sted i køkkenhaven. På den måde kan du modvirke bl.a. kålbrok, som er en svampesygdom, som angriber rødderne på kål."
+      }
     },
     {
       "kind": "text",
-      "text": "For at give jorden den optimale pH værdi til kåldyrkning, kan du også tilføre hvert plantehul en lille håndfuld dolomitkalk inden plantningen.",
-      "page": 1
+      "text": "Du kan give kålen den rette jord ved at komme en lille håndfuld dolomitkalk i hvert hul, før du planter.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "For at give jorden den optimale pH værdi til kåldyrkning, kan du også tilføre hvert plantehul en lille håndfuld dolomitkalk inden plantningen."
+      }
     }
   ],
   "checks": [],
@@ -109,5 +161,6 @@
   "related": [
     "broccoli",
     "radiser"
-  ]
+  ],
+  "originalSummary": "Få gode råd og tips om dyrkning, gødning og vanding af kål."
 }

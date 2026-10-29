@@ -67,7 +67,7 @@ Do not create additional documents unless they solve a clear organizational prob
 
 When decisions change, update the relevant documentation and remove contradictory instructions.
 
-> **Current state (2026-10-26):** M1 in progress. The app is a PWA in `web/` (React + Vite, D-021–D-023), live on GitHub Pages, with the food storage lookup working offline. Food guides (D-033) are being written: 21 of 101 done; the continuation point is in `docs/ROADMAP.md` (M1, food guides) and the workflow in `content/authoring/README.md`.
+> **Current state (2026-10-29):** M1 in progress. The app is a PWA in `web/` (React + Vite, D-021–D-023), live on GitHub Pages. All texts were rewritten in plain language (D-042); the source words are kept and the rewrites await a manual review (`docs/LANGUAGE_REVIEW.md`). Food guides (D-033): 21 of 101 done; "Når det sker" (D-040) has 4 guides.
 
 ## 4. Engineering principles
 

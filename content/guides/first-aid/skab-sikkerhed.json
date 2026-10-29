@@ -3,32 +3,122 @@
   "category": "first-aid",
   "order": 2,
   "title": "Skab sikkerhed",
-  "summary": "Som førstehjælper skal du sikre, at ulykken ikke udvikler sig.",
+  "summary": "Som førstehjælper skal du sørge for, at ulykken ikke bliver værre.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
-  "abbreviations": [{ "short": "AED", "long": "hjertestarter, Automatisk Ekstern Defibrillator" }],
-  "corrections": [{ "from": "situtionanen", "to": "situationen" }],
+  "abbreviations": [
+    {
+      "short": "AED",
+      "long": "hjertestarter, Automatisk Ekstern Defibrillator"
+    }
+  ],
+  "corrections": [
+    {
+      "from": "situtionanen",
+      "to": "situationen"
+    }
+  ],
   "blocks": [
-    { "kind": "list", "title": "Start med at skabe overblik over situationen:", "items": ["Er der fare for dig eller andre, når du hjælper den/de tilskadekomne?", "Hvilken type skade er der tale om?", "Hvor mange er der kommet til skade?"], "page": 9 },
-    { "kind": "warning", "title": "Husk:", "text": "Du må aldrig gå på kompromis med din egen eller andres sikkerhed for at redde en person. Hvis du kommer til skade, har du forværret situationen og du kan ikke hjælpe den tilskadekomne.", "page": 10 },
-    { "kind": "heading", "text": "Stands ulykken", "page": 9 },
-    { "kind": "text", "text": "Som førstehjælper skal du sikre, at ulykken ikke udvikler sig. Dette kan du gøre ved: At fjerne personen fra ulykken eller fjerne ulykken fra personen.", "page": 9 },
-    { "kind": "heading", "text": "Sikring", "page": 11 },
     {
       "kind": "list",
-      "title": "For at ulykken ikke udvikler sig, skal førstehjælperen:",
+      "title": "Start med at skaffe dig et overblik:",
       "items": [
-        "Standse trafikken eller sætte advarselstrekant op (en advarselstrekant skal placeres 100 m. fra skadesstedet på en motorvej og 50 m. fra skadesstedet på alle øvrige veje)",
-        "Få hjælp til at nødflytte eller ”holde hovedet” på den tilskadekomne, hvis vedkommende sidder i et køretøj.",
-        "Få hentet tæpper, førstehjælpsmidler, hjertestarter (AED) m.m.",
-        "Drukneulykker: Ring 1-1-2 eller få en anden til at gøre det, før du forsøger en redning. Redning i vand kan være farlig, og professionel hjælp skal være på vej hurtigst muligt.",
-        "El-ulykker: Slukke for alt strøm eller fjerne strømkilden",
-        "Brand og kulilteforgiftning: Altid ringe 1-1-2, før du evt. nødflytter personen."
+        "Er der fare for dig eller andre, når du hjælper?",
+        "Hvad er der sket?",
+        "Hvor mange er kommet til skade?"
       ],
-      "page": 11
+      "page": 9,
+      "original": {
+        "lang": "da",
+        "title": "Start med at skabe overblik over situationen:",
+        "items": [
+          "Er der fare for dig eller andre, når du hjælper den/de tilskadekomne?",
+          "Hvilken type skade er der tale om?",
+          "Hvor mange er der kommet til skade?"
+        ]
+      }
     },
-    { "kind": "text", "text": "Det kan i nogle tilfælde vise sig, at der slet ikke bliver brug for yderligere førstehjælp, når ulykken først er standset.", "page": 10 },
-    { "kind": "text", "text": "Ved en ulykke kan tilskuere, forbipasserende eller pårørende hjælpe med mange opgaver – også uden at have førstehjælpsuddannelse. Det kan derfor være nødvendigt, at du tager styringen og fordeler opgaverne.", "page": 10 }
+    {
+      "kind": "warning",
+      "title": "Husk",
+      "text": "Bring aldrig dig selv eller andre i fare for at redde en person. Kommer du selv til skade, bliver det hele værre, og så kan du ikke hjælpe.",
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "text": "Du må aldrig gå på kompromis med din egen eller andres sikkerhed for at redde en person. Hvis du kommer til skade, har du forværret situationen og du kan ikke hjælpe den tilskadekomne.",
+        "title": "Husk:"
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Stop ulykken",
+      "page": 9,
+      "original": {
+        "lang": "da",
+        "text": "Stands ulykken"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Sørg for, at ulykken ikke bliver værre. Flyt personen væk fra faren – eller fjern faren fra personen.",
+      "page": 9,
+      "original": {
+        "lang": "da",
+        "text": "Som førstehjælper skal du sikre, at ulykken ikke udvikler sig. Dette kan du gøre ved: At fjerne personen fra ulykken eller fjerne ulykken fra personen."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Sikr stedet",
+      "page": 11,
+      "original": {
+        "lang": "da",
+        "text": "Sikring"
+      }
+    },
+    {
+      "kind": "list",
+      "title": "For at ulykken ikke bliver værre, skal du:",
+      "items": [
+        "Stoppe trafikken eller stille en advarselstrekant op: 100 meter fra ulykken på motorvej og 50 meter på alle andre veje.",
+        "Få hjælp til at flytte personen i en nødsituation eller til at holde hovedet stille, hvis personen sidder i en bil.",
+        "Få nogen til at hente tæpper, førstehjælpsudstyr, en hjertestarter og andet.",
+        "Drukneulykker: Ring 112, eller få en anden til det, før du prøver at redde personen. Det kan være farligt at redde nogen i vand, og der skal hurtigt være hjælp på vej.",
+        "Ulykker med strøm: Sluk for strømmen, eller fjern det, strømmen kommer fra.",
+        "Brand og kulilteforgiftning: Ring altid 112, før du evt. flytter personen."
+      ],
+      "page": 11,
+      "original": {
+        "lang": "da",
+        "title": "For at ulykken ikke udvikler sig, skal førstehjælperen:",
+        "items": [
+          "Standse trafikken eller sætte advarselstrekant op (en advarselstrekant skal placeres 100 m. fra skadesstedet på en motorvej og 50 m. fra skadesstedet på alle øvrige veje)",
+          "Få hjælp til at nødflytte eller ”holde hovedet” på den tilskadekomne, hvis vedkommende sidder i et køretøj.",
+          "Få hentet tæpper, førstehjælpsmidler, hjertestarter (AED) m.m.",
+          "Drukneulykker: Ring 1-1-2 eller få en anden til at gøre det, før du forsøger en redning. Redning i vand kan være farlig, og professionel hjælp skal være på vej hurtigst muligt.",
+          "El-ulykker: Slukke for alt strøm eller fjerne strømkilden",
+          "Brand og kulilteforgiftning: Altid ringe 1-1-2, før du evt. nødflytter personen."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Nogle gange er der ikke brug for mere førstehjælp, når ulykken først er stoppet.",
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "text": "Det kan i nogle tilfælde vise sig, at der slet ikke bliver brug for yderligere førstehjælp, når ulykken først er standset."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Andre på stedet kan hjælpe med mange ting – også selvom de ikke kan førstehjælp. Du kan derfor få brug for at tage styringen og fordele opgaverne.",
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "text": "Ved en ulykke kan tilskuere, forbipasserende eller pårørende hjælpe med mange opgaver – også uden at have førstehjælpsuddannelse. Det kan derfor være nødvendigt, at du tager styringen og fordeler opgaverne."
+      }
+    }
   ],
   "checks": [
     {
@@ -45,5 +135,10 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["tre-hovedpunkter", "bevidsthed"]
+  "related": [
+    "tre-hovedpunkter",
+    "bevidsthed"
+  ],
+  "name": "Gør stedet sikkert",
+  "originalSummary": "Som førstehjælper skal du sikre, at ulykken ikke udvikler sig."
 }

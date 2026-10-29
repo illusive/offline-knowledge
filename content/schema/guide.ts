@@ -23,7 +23,11 @@ export interface ChecklistItem {
 
 // `page`: the PDF page; 1 for HTML sources. `sourceId`: only in low-risk guides, a block may come
 // from another registered source than the guide's (e.g. a general seed-saving page).
-export type GuideBlock = { sourceId?: string } & (
+// `original`: the shown text is ours and `original` holds the source's words for each shown field
+// (same items, same order); the build checks the original verbatim and the app can show it.
+// lang 'en': a Danish translation of an English source (D-041, "Når det sker" only).
+// lang 'da': a plain-language rewrite of a Danish source (D-042, language pass).
+export type GuideBlock = { sourceId?: string; original?: BlockOriginal } & (
   | { kind: 'heading'; text: string; page: number }
   | { kind: 'section'; key: GrowingSection; page: number }   // a fixed heading; no source text
   | { kind: 'text'; text: string; page: number }
@@ -33,6 +37,13 @@ export type GuideBlock = { sourceId?: string } & (
   | { kind: 'warning'; title?: string; text?: string; items?: string[]; page: number }
   | { kind: 'image'; file: string; alt: string; caption?: string; page: number } // alt is ours (accessibility)
 );
+
+export interface BlockOriginal {
+  lang: 'en' | 'da';
+  title?: string;
+  text?: string;
+  items?: string[];
+}
 
 // A photo of one step, shown after item `after` (1-based); `page` is where the photo is printed.
 export interface StepImage {
@@ -61,7 +72,8 @@ export interface Guide {
   category: GuideCategory;
   order: number;            // position in the category (emergency order)
   title: string;            // verbatim from the source
-  summary?: string;         // verbatim; shown in lists
+  summary?: string;         // verbatim, or ours when `originalSummary` is given (D-042); shown in lists
+  originalSummary?: string; // the source's words behind a rewritten summary (checked verbatim)
   sourceId: string;
   risk: 'high' | 'low';    // first aid is 'high' (second authority required); growing is 'low'
   corrections?: Correction[];

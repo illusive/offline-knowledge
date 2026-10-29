@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 9,
   "title": "Sådan dyrker du porrer",
-  "summary": "Du kan både dyrke sommerporer og vinterporrer i din køkkenhave og få en lang sæson.",
+  "summary": "Dyrker du både sommerporrer og vinterporrer, kan du høste i lang tid.",
   "sourceId": "dk-bolius-porrer",
   "risk": "low",
   "name": "Porrer",
@@ -20,39 +20,69 @@
     },
     {
       "kind": "text",
-      "text": "Uanset, om du dyrker vinter- eller sommerporrer, kan du forspire fra januar til april. Vil du så direkte på friland, kan du normalt først gå i gang i begyndelsen af juni.",
-      "page": 1
+      "text": "Du kan lade porrer spire inden døre fra januar til april. Vil du så direkte i haven, så vent til starten af juni.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Uanset, om du dyrker vinter- eller sommerporrer, kan du forspire fra januar til april. Vil du så direkte på friland, kan du normalt først gå i gang i begyndelsen af juni."
+      }
     },
     {
       "kind": "steps",
       "items": [
-        "Fyld spirebakker eller potter med såjord.",
-        "Læg frøene i jorden med en dybde på 0,5-1 centimeter og dæk dem efterfølgende med et meget tyndt lag jord.",
-        "Vand forsigtigt, så jorden bliver fugtig, men ikke våd.",
-        "Placér spirebakkerne lyst i vindueskarmen eller drivhuset og vand jævnligt, så planterne ikke tørrer ud."
+        "Fyld bakker eller potter med såjord.",
+        "Læg frøene 0,5-1 cm dybt, og dæk dem med et meget tyndt lag jord.",
+        "Vand forsigtigt, så jorden er fugtig, men ikke våd.",
+        "Stil dem lyst i vindueskarmen eller drivhuset, og vand jævnligt, så de ikke tørrer ud."
       ],
       "page": 1,
-      "title": "Sådan sår du porrer"
+      "title": "Sådan sår du porrer",
+      "original": {
+        "lang": "da",
+        "title": "Sådan sår du porrer",
+        "items": [
+          "Fyld spirebakker eller potter med såjord.",
+          "Læg frøene i jorden med en dybde på 0,5-1 centimeter og dæk dem efterfølgende med et meget tyndt lag jord.",
+          "Vand forsigtigt, så jorden bliver fugtig, men ikke våd.",
+          "Placér spirebakkerne lyst i vindueskarmen eller drivhuset og vand jævnligt, så planterne ikke tørrer ud."
+        ]
+      }
     },
     {
       "kind": "text",
-      "text": "Gør det gerne 1-2 uger, før du permanent planter dem ud, så de kan nå at vænne sig til de køligere temperaturer.",
-      "page": 1
+      "text": "Sæt planterne udenfor i 1-2 uger, før du planter dem ud for altid. Så vænner de sig til kulden.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Gør det gerne 1-2 uger, før du permanent planter dem ud, så de kan nå at vænne sig til de køligere temperaturer."
+      }
     },
     {
       "kind": "text",
-      "text": "En gammel tommelfingerregel siger, at risikoen for nattefrost er helt væk efter grundlovsdag, så vent evt. til der med at plante dine porrer.",
-      "page": 1
+      "text": "En gammel regel siger, at der ikke er nattefrost efter grundlovsdag (5. juni). Vent evt. til da.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "En gammel tommelfingerregel siger, at risikoen for nattefrost er helt væk efter grundlovsdag, så vent evt. til der med at plante dine porrer."
+      }
     },
     {
       "kind": "text",
-      "text": "Porrer plantes i en dybde på 10 centimeter, og placerer du planterne i en rille med den dybde, bliver det nemmere at hyppe dem senere, så de hvide skafter fremkommer.",
-      "page": 1
+      "text": "Plant porrerne 10 cm dybt, fx i en rille. Så er det nemmere at hyppe dem senere (skubbe jord op om dem), så de får lange, hvide stængler.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Porrer plantes i en dybde på 10 centimeter, og placerer du planterne i en rille med den dybde, bliver det nemmere at hyppe dem senere, så de hvide skafter fremkommer."
+      }
     },
     {
       "kind": "text",
-      "text": "Vil du høste mindre porrer med en diameter på 2-4 centimeter, skal de udplantes med en afstand på 10 centimeter mellem hver afgrøde, mens store porrer fås ved at holde en planteafstand på 50 centimeter.",
-      "page": 1
+      "text": "Vil du have små porrer (2-4 cm tykke), så hav 10 cm mellem planterne. Vil du have store, så hav 50 cm.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vil du høste mindre porrer med en diameter på 2-4 centimeter, skal de udplantes med en afstand på 10 centimeter mellem hver afgrøde, mens store porrer fås ved at holde en planteafstand på 50 centimeter."
+      }
     },
     {
       "kind": "section",
@@ -61,13 +91,21 @@
     },
     {
       "kind": "text",
-      "text": "Selvom afgrøden oprindeligt kommer fra det varme Sydeuropa, vokser den godt i det nordiske klima, for mange sorter tåler frost og lave temperaturer.",
-      "page": 1
+      "text": "Porrer kommer fra Sydeuropa, men gror godt i Danmark. Mange sorter tåler frost og kulde.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Selvom afgrøden oprindeligt kommer fra det varme Sydeuropa, vokser den godt i det nordiske klima, for mange sorter tåler frost og lave temperaturer."
+      }
     },
     {
       "kind": "text",
-      "text": "Den største forskel på de to sorter er, at sommerporrerne ikke tåler frost i nær så høj grad, som vinterporrerne.",
-      "page": 1
+      "text": "Forskellen er, at sommerporrer ikke tåler frost lige så godt som vinterporrer.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Den største forskel på de to sorter er, at sommerporrerne ikke tåler frost i nær så høj grad, som vinterporrerne."
+      }
     },
     {
       "kind": "section",
@@ -76,23 +114,39 @@
     },
     {
       "kind": "text",
-      "text": "Porrer skal have vand lige efter udplantning, så de ikke udtørrer, men behovet for væde er ikke stort i løbet af sæsonen.",
-      "page": 1
+      "text": "Vand porrerne lige efter, du har plantet dem ud. Resten af sommeren skal de ikke have meget vand.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Porrer skal have vand lige efter udplantning, så de ikke udtørrer, men behovet for væde er ikke stort i løbet af sæsonen."
+      }
     },
     {
       "kind": "text",
-      "text": "Vil du undgå at ligge på knæ eller rense rækkerne med hakkejernet, kan du dække jorden med halm eller græsafklip.",
-      "page": 1
+      "text": "Læg halm eller græsafklip på jorden. Så slipper du for at luge.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vil du undgå at ligge på knæ eller rense rækkerne med hakkejernet, kan du dække jorden med halm eller græsafklip."
+      }
     },
     {
       "kind": "text",
-      "text": "Tidligt udplantede porrer skal have gødning fra juni, mens sent udplantede porrer først skal have kompost eller NPK-gødning fra slutningen af måneden eller i løbet af juli.",
-      "page": 1
+      "text": "Porrer, der er plantet tidligt, skal have gødning fra juni. Porrer, der er plantet sent, skal have kompost eller gødning fra slutningen af juni eller i juli.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Tidligt udplantede porrer skal have gødning fra juni, mens sent udplantede porrer først skal have kompost eller NPK-gødning fra slutningen af måneden eller i løbet af juli."
+      }
     },
     {
       "kind": "text",
-      "text": "Porremøl er den mest almindelige årsag til, at høsten mislykkes. De små dyr lægger første hold æg før 5. juni, så for at mindske angreb kan du vente med at plante porrerne til efter grundlovsdag.",
-      "page": 1
+      "text": "Porremøl er den største grund til, at høsten slår fejl. Mølene lægger de første æg før 5. juni. Vent derfor med at plante til efter grundlovsdag.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Porremøl er den mest almindelige årsag til, at høsten mislykkes. De små dyr lægger første hold æg før 5. juni, så for at mindske angreb kan du vente med at plante porrerne til efter grundlovsdag."
+      }
     },
     {
       "kind": "section",
@@ -101,18 +155,30 @@
     },
     {
       "kind": "text",
-      "text": "Fra slutningen af august og begyndelsen af september kan sommer- og efterårsporrer plukkes ind, men vinterporrerne er først spiseklare fra oktober. Til gengæld kan du høste dem hele vinteren og først fra marts, når det bliver varmere, er sæsonen slut.",
-      "page": 1
+      "text": "Sommer- og efterårsporrer kan høstes fra sidst i august. Vinterporrer er klar fra oktober, og dem kan du høste hele vinteren, til sæsonen slutter i marts.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Fra slutningen af august og begyndelsen af september kan sommer- og efterårsporrer plukkes ind, men vinterporrerne er først spiseklare fra oktober. Til gengæld kan du høste dem hele vinteren og først fra marts, når det bliver varmere, er sæsonen slut."
+      }
     },
     {
       "kind": "text",
-      "text": "Porrer høstes med en greb, som lirkes under planten, så jorden løsnes. Herefter kan du trække afgrøden op.",
-      "page": 1
+      "text": "Stik en greb (en stor gaffel) ned under porren, og løsn jorden. Så kan du trække porren op.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Porrer høstes med en greb, som lirkes under planten, så jorden løsnes. Herefter kan du trække afgrøden op."
+      }
     },
     {
       "kind": "text",
-      "text": "Efter høst opbevares porrerne på køl, hvor de kan holde sig friske i flere uger.",
-      "page": 1
+      "text": "I køleskabet holder porrer sig friske i flere uger.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Efter høst opbevares porrerne på køl, hvor de kan holde sig friske i flere uger."
+      }
     },
     {
       "kind": "section",
@@ -121,14 +187,22 @@
     },
     {
       "kind": "text",
-      "text": "Planten er nemlig toårig, og blomstrer derfor på andet år, hvorefter den sætter frø.",
-      "page": 1
+      "text": "Porrer lever i to år. De blomstrer og sætter frø i det andet år.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Planten er nemlig toårig, og blomstrer derfor på andet år, hvorefter den sætter frø."
+      }
     },
     {
       "kind": "text",
-      "text": "Gulerod, porre, salat, spinat og de fleste blomster sætter frøstande. Skal som hovedregel tørre godt, før de høstes.",
+      "text": "Porrer sætter frø i en frøstand for enden af stænglen. Frøene skal tørre godt, før du høster dem.",
       "page": 1,
-      "sourceId": "dk-bolius-froe"
+      "sourceId": "dk-bolius-froe",
+      "original": {
+        "lang": "da",
+        "text": "Gulerod, porre, salat, spinat og de fleste blomster sætter frøstande. Skal som hovedregel tørre godt, før de høstes."
+      }
     },
     {
       "kind": "section",
@@ -137,13 +211,21 @@
     },
     {
       "kind": "text",
-      "text": "Det er oplagt at så tidlige gulerødder, radiser eller selleri mellem porreplanterne, fordi de høstes sent.",
-      "page": 1
+      "text": "Porrer høstes sent. Derfor kan du så tidlige gulerødder, radiser eller selleri imellem dem.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det er oplagt at så tidlige gulerødder, radiser eller selleri mellem porreplanterne, fordi de høstes sent."
+      }
     },
     {
       "kind": "text",
-      "text": "Når du lader porrerne indgå som blandingskultur, mindsker du risikoen for sygdomme og skadedyr.",
-      "page": 1
+      "text": "Dyrker du porrer blandet med andre planter, er der mindre risiko for sygdomme og skadedyr.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Når du lader porrerne indgå som blandingskultur, mindsker du risikoen for sygdomme og skadedyr."
+      }
     }
   ],
   "checks": [],
@@ -151,5 +233,6 @@
   "related": [
     "loeg",
     "guleroedder"
-  ]
+  ],
+  "originalSummary": "Du kan både dyrke sommerporer og vinterporrer i din køkkenhave og få en lang sæson."
 }

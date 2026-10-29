@@ -6,7 +6,7 @@
    "key": "about",
    "blocks": [
     {
-     "text": "Agurker danner meget lidt ethylen, men er meget følsomme over for det. Ethylen fra anden frugt får dem til at blive gule og rådne hurtigere.",
+     "text": "Agurker danner meget lidt ethylen (en gas, som frugt og grønt selv afgiver, og som får dem til at modne), men er meget følsomme over for det. Ethylen fra anden frugt får dem til at blive gule og rådne hurtigere.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Cucumber chapter, Ethylene Production and Sensitivity, p. 303",
@@ -73,7 +73,7 @@
    "key": "coolStorage",
    "blocks": [
     {
-     "text": "Agurker holder sig generelt under 14 dage; derefter falder kvaliteten hurtigt.",
+     "text": "Agurker holder sig generelt under 14 dage. Derefter falder kvaliteten hurtigt.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Cucumber chapter, Optimum Storage Conditions, p. 303",
@@ -100,7 +100,7 @@
      }
     },
     {
-     "text": "Vælg faste agurker i den rigtige størrelse: ca. 4 cm (1½ tomme) til cornichoner og ca. 10 cm (4 tommer) til dildagurker. Brug skæve og mere modne agurker til relish og søde agurkeskiver.",
+     "text": "Vælg faste agurker i den rigtige størrelse: ca. 4 cm til cornichoner og ca. 10 cm til dildagurker. Brug skæve og mere modne agurker til relish og søde agurkeskiver.",
      "sourceRef": {
       "sourceId": "usda-canning-2015-guide06",
       "locator": "Selection of fresh cucumbers, p. 6-5",
@@ -108,7 +108,7 @@
      }
     },
     {
-     "text": "Skær altid ca. 1,5 mm (1/16 tomme) af blomsterenden, og smid den ud.",
+     "text": "Skær altid ca. 1,5 mm af blomsterenden, og smid den ud.",
      "sourceRef": {
       "sourceId": "usda-canning-2015-guide06",
       "locator": "Dill pickles, procedure, p. 6-7",

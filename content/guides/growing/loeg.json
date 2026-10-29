@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 8,
   "title": "10 nemme afgrøder til køkkenhaven",
-  "summary": "Stikløg er lette at sætte i jorden.",
+  "summary": "Løg er nemme at plante.",
   "sourceId": "dk-bolius-10-nemme",
   "risk": "low",
   "name": "Løg",
@@ -20,13 +20,21 @@
     },
     {
       "kind": "text",
-      "text": "Stikløg er lette at sætte i jorden. De skal stå med spidsen opad, og du skal helst plante dem i starten af april, for de vokser kun i størrelsen, så længe dagene bliver længere, dvs. indtil Sankt Hans.",
-      "page": 1
+      "text": "Sæt de små løg (stikløg) i jorden med spidsen opad. Gør det helst i starten af april. Løgene vokser kun, så længe dagene bliver længere – altså til sankthans.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Stikløg er lette at sætte i jorden. De skal stå med spidsen opad, og du skal helst plante dem i starten af april, for de vokser kun i størrelsen, så længe dagene bliver længere, dvs. indtil Sankt Hans."
+      }
     },
     {
       "kind": "text",
-      "text": "Så dem i rækker med 8-10 cm afstand til andre løgrækker eller med 25 cm afstand til anden afgrøde.",
-      "page": 1
+      "text": "Hav 8-10 cm mellem løgrækkerne og 25 cm til andre planter.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Så dem i rækker med 8-10 cm afstand til andre løgrækker eller med 25 cm afstand til anden afgrøde."
+      }
     },
     {
       "kind": "section",
@@ -35,8 +43,12 @@
     },
     {
       "kind": "text",
-      "text": "Jorden må ikke tørre ud, så vand dem, hvis der kommer en tørkeperiode.",
-      "page": 1
+      "text": "Jorden må ikke tørre ud. Vand, hvis det er tørt længe.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Jorden må ikke tørre ud, så vand dem, hvis der kommer en tørkeperiode."
+      }
     },
     {
       "kind": "section",
@@ -45,8 +57,12 @@
     },
     {
       "kind": "text",
-      "text": "Løg er høstmodne, når toppen vælter ned til siden.",
-      "page": 1
+      "text": "Løgene er klar, når toppen vælter om på siden.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Løg er høstmodne, når toppen vælter ned til siden."
+      }
     }
   ],
   "checks": [],
@@ -54,5 +70,6 @@
   "related": [
     "guleroedder",
     "radiser"
-  ]
+  ],
+  "originalSummary": "Stikløg er lette at sætte i jorden."
 }

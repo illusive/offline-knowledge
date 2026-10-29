@@ -3,25 +3,71 @@
   "category": "first-aid",
   "order": 11,
   "title": "Basal HLR til børn",
-  "summary": "Hvis der ydes HLR til børn, tilpasses kompressioner og indblæsninger barnets størrelse.",
+  "summary": "Giver du HLR til et barn, skal tryk og pust passe til barnets størrelse.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
-  "abbreviations": [{ "short": "HLR", "long": "hjertelungeredning" }],
+  "abbreviations": [
+    {
+      "short": "HLR",
+      "long": "hjertelungeredning"
+    }
+  ],
   "blocks": [
-    { "kind": "text", "text": "Børn er defineret som personer under 18 år! Hvis et barn ligner en voksen, så håndteres personen som en voksen.", "page": 32 },
-    { "kind": "text", "text": "For alle børn er trykhastigheden den samme som til voksne, dvs. minimum 100 tryk og maksimum 120 tryk pr. min.", "page": 32 },
+    {
+      "kind": "text",
+      "text": "Her er et barn en person under 18 år. Ligner barnet en voksen, så gør som ved en voksen.",
+      "page": 32,
+      "original": {
+        "lang": "da",
+        "text": "Børn er defineret som personer under 18 år! Hvis et barn ligner en voksen, så håndteres personen som en voksen."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Tryk lige så hurtigt som hos en voksen: 100–120 tryk i minuttet.",
+      "page": 32,
+      "original": {
+        "lang": "da",
+        "text": "For alle børn er trykhastigheden den samme som til voksne, dvs. minimum 100 tryk og maksimum 120 tryk pr. min."
+      }
+    },
     {
       "kind": "list",
-      "title": "Hvad er anderledes end basal HLR til voksne?",
+      "title": "Det er anderledes end hos en voksen:",
       "items": [
-        "Når der skabes frie luftveje, skal hovedet ikke nær så langt tilbage som til voksne, og spædbørn skal blot have hovedet i neutral stilling.",
-        "Når du laver indblæsninger, skal du tilpasse disse til barnets størrelse (til brystkassen hæver sig synligt) Blæs evt. over næse og mund!",
-        "Når du laver brystkompressioner, skal du mindst trykke en 1/3 af brystkassen (ved spædbørn brug 2 fingre, og ved øvrige kan du bruge én hånd)."
+        "Når du løfter hagen, skal hovedet ikke så langt tilbage. Hos en baby skal hovedet bare ligge lige.",
+        "Når du puster, så pust kun, til brystet hæver sig. Du kan puste over både næse og mund.",
+        "Når du trykker, så tryk brystet mindst en tredjedel ned. Brug to fingre til en baby og én hånd til et større barn."
       ],
-      "page": 32
+      "page": 32,
+      "original": {
+        "lang": "da",
+        "title": "Hvad er anderledes end basal HLR til voksne?",
+        "items": [
+          "Når der skabes frie luftveje, skal hovedet ikke nær så langt tilbage som til voksne, og spædbørn skal blot have hovedet i neutral stilling.",
+          "Når du laver indblæsninger, skal du tilpasse disse til barnets størrelse (til brystkassen hæver sig synligt) Blæs evt. over næse og mund!",
+          "Når du laver brystkompressioner, skal du mindst trykke en 1/3 af brystkassen (ved spædbørn brug 2 fingre, og ved øvrige kan du bruge én hånd)."
+        ]
+      }
     },
-    { "kind": "text", "text": "Forsvaret underviser som udgangspunkt ikke i en særskilt algoritme for hjertestop hos børn.", "page": 32 },
-    { "kind": "text", "text": "Personer med særligt ansvar for børn kan med fordel blive uddannet i en HLR-algoritme tilpasset børn (eksempelvis livreddere og pædagoger).", "page": 32 }
+    {
+      "kind": "text",
+      "text": "Forsvaret underviser normalt ikke i en særlig fremgangsmåde for hjertestop hos børn.",
+      "page": 32,
+      "original": {
+        "lang": "da",
+        "text": "Forsvaret underviser som udgangspunkt ikke i en særskilt algoritme for hjertestop hos børn."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Har du ansvar for børn, fx som livredder eller pædagog, er det en god idé at tage et kursus i hjertestop hos børn.",
+      "page": 32,
+      "original": {
+        "lang": "da",
+        "text": "Personer med særligt ansvar for børn kan med fordel blive uddannet i en HLR-algoritme tilpasset børn (eksempelvis livreddere og pædagoger)."
+      }
+    }
   ],
   "checks": [
     {
@@ -32,5 +78,10 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["hlr-voksne", "hjertestarter"]
+  "related": [
+    "hlr-voksne",
+    "hjertestarter"
+  ],
+  "name": "Hjertemassage til børn",
+  "originalSummary": "Hvis der ydes HLR til børn, tilpasses kompressioner og indblæsninger barnets størrelse."
 }

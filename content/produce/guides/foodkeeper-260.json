@@ -19,7 +19,7 @@
    "key": "prefers",
    "blocks": [
     {
-     "text": "Jo mere fugt og varme, jo hurtigere bliver dadler dårlige. Ved 0 °C kan de holde op til 1 år; modne dadler tåler både kulde og frost.",
+     "text": "Jo mere fugt og varme, jo hurtigere bliver dadler dårlige. Ved 0 °C kan de holde op til 1 år. Modne dadler tåler både kulde og frost.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Date chapter, Optimum Storage Conditions; Chilling Sensitivity, p. 312",
@@ -45,7 +45,7 @@
    "key": "together",
    "blocks": [
     {
-     "text": "Modne dadler danner ingen ethylen og er ikke følsomme over for det.",
+     "text": "Modne dadler danner ingen ethylen (en gas, som frugt og grønt selv afgiver, og som får dem til at modne) og er ikke følsomme over for det.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Date chapter, Ethylene Production and Sensitivity, p. 312",

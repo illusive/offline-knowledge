@@ -3,54 +3,141 @@
   "category": "first-aid",
   "order": 9,
   "title": "Basal hjertelungeredning (HLR)",
-  "summary": "Definitionen på hjertestop er: En bevidstløs person uden normal vejrtrækning.",
+  "summary": "En person har hjertestop, når personen er bevidstløs og ikke trækker vejret normalt.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
-  "abbreviations": [{ "short": "HLR", "long": "hjertelungeredning" }],
-  "corrections": [{ "from": "pegeog tommelfinger", "to": "pege- og tommelfinger" }],
+  "abbreviations": [
+    {
+      "short": "HLR",
+      "long": "hjertelungeredning"
+    }
+  ],
+  "corrections": [
+    {
+      "from": "pegeog tommelfinger",
+      "to": "pege- og tommelfinger"
+    }
+  ],
   "blocks": [
-    { "kind": "list", "title": "Hjertelungeredning består af serier af:", "items": ["30 brystkompressioner (hjertemassage)", "2 indblæsninger (kunstigt åndedræt)"], "page": 28 },
     {
-      "kind": "steps",
-      "title": "HLR – Voksne – Brystkompressioner",
+      "kind": "list",
+      "title": "Du skifter mellem:",
       "items": [
-        "Placér den tilskadekomne på et fast og jævnt underlag.",
-        "Fjern tøj fra overkroppen, så brystet er bart",
-        "Placér den ene håndrod midt på den tilskadekomnes brystkasse med bøjede fingre",
-        "Placér den anden hånd ovenpå. Flet og lås med fingrene",
-        "Læn dig ind over brystkassen, og tryk med håndroden lodret ned med strakte arme",
-        "Trykdybden skal være 5 cm, men ikke over 6 cm"
+        "30 tryk på brystet (hjertemassage)",
+        "2 pust (kunstigt åndedræt)"
       ],
-      "page": 28
+      "page": 28,
+      "original": {
+        "lang": "da",
+        "title": "Hjertelungeredning består af serier af:",
+        "items": [
+          "30 brystkompressioner (hjertemassage)",
+          "2 indblæsninger (kunstigt åndedræt)"
+        ]
+      }
     },
-    { "kind": "image", "file": "hlr-tryksted.jpg", "alt": "En førstehjælper trykker med strakte arme og flettede fingre midt på en liggende persons bare brystkasse.", "caption": "På billedet ses trykstedet, der er midt på brystkassen. Hvis muligt, afdæk brystkassen.", "page": 29 },
-    { "kind": "text", "text": "Trykhastigheden skal være 100-120 tryk pr. minut (30 tryk skal tage mellem 15 og 18 sekunder)", "page": 28 },
-    { "kind": "text", "text": "Kontakten med brystkassen må ikke mistes, men der må ikke hviles på brystkassen.", "page": 28 },
     {
       "kind": "steps",
-      "title": "HLR – Voksne – Indblæsninger (mund-til-mund)",
+      "title": "Sådan trykker du",
       "items": [
-        "Skab frie luftveje med hageløft. Placér den ene hånd på panden og 2 fingre under hagen",
-        "Forsigtigt føres hovedet bagover til naturlig modstand",
-        "Klem den tilskadekomnes næse sammen med pege- og tommelfinger",
-        "Placér din mund omkring tilskadekomnes mund, så den slutter tæt",
-        "Giv en indblæsning på ca. 1 sekund til brystkassen hæver sig synligt",
-        "Drej dit hoved, tag en normal indånding og kontrollér samtidig at brystkassen sænker sig",
-        "Giv en indblæsning mere."
+        "Læg personen på et fast og fladt underlag.",
+        "Tag tøjet væk, så brystet er bart.",
+        "Læg den nederste del af din håndflade midt på brystet. Bøj fingrene op.",
+        "Læg den anden hånd ovenpå, og flet fingrene.",
+        "Læn dig ind over personen. Hold armene strakte, og tryk lige ned.",
+        "Tryk brystet 5 cm ned – men ikke mere end 6 cm."
       ],
+      "page": 28,
+      "original": {
+        "lang": "da",
+        "title": "HLR – Voksne – Brystkompressioner",
+        "items": [
+          "Placér den tilskadekomne på et fast og jævnt underlag.",
+          "Fjern tøj fra overkroppen, så brystet er bart",
+          "Placér den ene håndrod midt på den tilskadekomnes brystkasse med bøjede fingre",
+          "Placér den anden hånd ovenpå. Flet og lås med fingrene",
+          "Læn dig ind over brystkassen, og tryk med håndroden lodret ned med strakte arme",
+          "Trykdybden skal være 5 cm, men ikke over 6 cm"
+        ]
+      }
+    },
+    {
+      "kind": "image",
+      "file": "hlr-tryksted.jpg",
+      "alt": "En førstehjælper trykker med strakte arme og flettede fingre midt på en liggende persons bare brystkasse.",
+      "caption": "På billedet ses trykstedet, der er midt på brystkassen. Hvis muligt, afdæk brystkassen.",
       "page": 29
+    },
+    {
+      "kind": "text",
+      "text": "Tryk 100–120 gange i minuttet. 30 tryk skal tage 15–18 sekunder.",
+      "page": 28,
+      "original": {
+        "lang": "da",
+        "text": "Trykhastigheden skal være 100-120 tryk pr. minut (30 tryk skal tage mellem 15 og 18 sekunder)"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Hold hænderne på brystet hele tiden, men læn dig ikke på det mellem trykkene.",
+      "page": 28,
+      "original": {
+        "lang": "da",
+        "text": "Kontakten med brystkassen må ikke mistes, men der må ikke hviles på brystkassen."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan puster du (mund-til-mund)",
+      "items": [
+        "Løft hagen: Læg den ene hånd på panden og to fingre under hagen.",
+        "Før forsigtigt hovedet bagover, til det ikke vil længere.",
+        "Knib personens næse sammen med tommel- og pegefinger.",
+        "Læg din mund helt tæt om personens mund.",
+        "Pust i ca. 1 sekund, til brystet hæver sig.",
+        "Drej hovedet, træk vejret normalt, og se samtidig, at brystet sænker sig.",
+        "Pust én gang til."
+      ],
+      "page": 29,
+      "original": {
+        "lang": "da",
+        "title": "HLR – Voksne – Indblæsninger (mund-til-mund)",
+        "items": [
+          "Skab frie luftveje med hageløft. Placér den ene hånd på panden og 2 fingre under hagen",
+          "Forsigtigt føres hovedet bagover til naturlig modstand",
+          "Klem den tilskadekomnes næse sammen med pege- og tommelfinger",
+          "Placér din mund omkring tilskadekomnes mund, så den slutter tæt",
+          "Giv en indblæsning på ca. 1 sekund til brystkassen hæver sig synligt",
+          "Drej dit hoved, tag en normal indånding og kontrollér samtidig at brystkassen sænker sig",
+          "Giv en indblæsning mere."
+        ]
+      }
     },
     {
       "kind": "warning",
       "title": "Vigtigt",
       "items": [
-        "Hvis du ikke kan, ikke vil, eller det ikke er muligt at give indblæsninger er det bedre kun at give hjertemassage end ikke at gøre noget",
-        "Giv kun 2 indblæsningsforsøg pr. gang, uanset om brystkassen hæver sig tydeligt eller ej!",
-        "Husk, at HLR fortsættes indtil redningsmandskabet fortæller dig at du skal stoppe eller hvis den tilskadekomne trækker vejret normalt igen."
+        "Kan du ikke, vil du ikke, eller går det ikke at puste, så giv kun hjertemassage. Det er bedre end ingenting.",
+        "Pust kun 2 gange ad gangen – også selvom brystet ikke hæver sig tydeligt.",
+        "Bliv ved, til redderne siger, at du skal stoppe, eller til personen trækker vejret normalt igen."
       ],
-      "page": 29
+      "page": 29,
+      "original": {
+        "lang": "da",
+        "title": "Vigtigt",
+        "items": [
+          "Hvis du ikke kan, ikke vil, eller det ikke er muligt at give indblæsninger er det bedre kun at give hjertemassage end ikke at gøre noget",
+          "Giv kun 2 indblæsningsforsøg pr. gang, uanset om brystkassen hæver sig tydeligt eller ej!",
+          "Husk, at HLR fortsættes indtil redningsmandskabet fortæller dig at du skal stoppe eller hvis den tilskadekomne trækker vejret normalt igen."
+        ]
+      }
     },
-    { "kind": "image", "file": "hlr-flowchart.jpg", "alt": "Rutediagram med fotos: Skab sikkerhed, Bevidsthedskontrol, Ring 1-1-2 (sæt telefonen på højttaler), Skab frie luftveje, Se, lyt og føl. Vejrtrækning? Ja: stabilt sideleje. Nej: blotlæg brystkassen og påbegynd HLR, 30 kompressioner og 2 indblæsninger, igen og igen.", "page": 30 }
+    {
+      "kind": "image",
+      "file": "hlr-flowchart.jpg",
+      "alt": "Rutediagram med fotos: Skab sikkerhed, Bevidsthedskontrol, Ring 1-1-2 (sæt telefonen på højttaler), Skab frie luftveje, Se, lyt og føl. Vejrtrækning? Ja: stabilt sideleje. Nej: blotlæg brystkassen og påbegynd HLR, 30 kompressioner og 2 indblæsninger, igen og igen.",
+      "page": 30
+    }
   ],
   "checks": [
     {
@@ -67,5 +154,11 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["vejrtraekning", "hjertestarter", "hlr-boern"]
+  "related": [
+    "vejrtraekning",
+    "hjertestarter",
+    "hlr-boern"
+  ],
+  "name": "Hjertemassage og kunstigt åndedræt",
+  "originalSummary": "Definitionen på hjertestop er: En bevidstløs person uden normal vejrtrækning."
 }

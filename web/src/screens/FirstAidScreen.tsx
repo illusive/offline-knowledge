@@ -47,7 +47,7 @@ export function useGuideSearch(db: DbClient, guides: GuideRow[] | null, query: s
   if (q === '' || !guides) return [];
   if (q.length < MIN_FTS_QUERY_LENGTH) {
     const lower = q.toLocaleLowerCase('da');
-    return guides.filter((g) => g.title.toLocaleLowerCase('da').split(/[\s-]+/).some((w) => w.startsWith(lower)));
+    return guides.filter((g) => (g.name ?? g.title).toLocaleLowerCase('da').split(/[\s-]+/).some((w) => w.startsWith(lower)));
   }
   const ids = new Set(guides.map((g) => g.id));
   return found?.query === q ? found.rows.filter((g) => ids.has(g.id)) : [];
@@ -113,7 +113,7 @@ function MainPoints({ guide, s }: { guide: GuideDetail; s: Strings }) {
   return (
     <section aria-labelledby="main-points" className="flex flex-col gap-3 rounded-card bg-accent px-[20px] py-5 text-on-accent" lang="da">
       <h2 id="main-points" className="text-xl font-semibold">
-        {guide.guide.title}
+        {guide.guide.name ?? guide.guide.title}
       </h2>
       {steps?.kind === 'steps' ? (
         <ol className="flex flex-col gap-2">

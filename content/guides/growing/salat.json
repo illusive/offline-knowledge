@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 6,
   "title": "10 nemme afgrøder til køkkenhaven",
-  "summary": "Du kan så salat fra april og flere gange i løbet af sommeren, så du sikrer dig en jævn forsyning af frisk salat.",
+  "summary": "Så salat flere gange fra april og hen over sommeren. Så har du frisk salat hele tiden.",
   "sourceId": "dk-bolius-10-nemme",
   "risk": "low",
   "name": "Salat",
@@ -20,8 +20,12 @@
     },
     {
       "kind": "text",
-      "text": "Du kan så salat fra april og flere gange i løbet af sommeren, så du sikrer dig en jævn forsyning af frisk salat. På den måde når du også at høste salaten, før den går i stok.",
-      "page": 1
+      "text": "Så lidt salat ad gangen. Så når du at høste den, før den skyder i vejret og bliver bitter.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan så salat fra april og flere gange i løbet af sommeren, så du sikrer dig en jævn forsyning af frisk salat. På den måde når du også at høste salaten, før den går i stok."
+      }
     },
     {
       "kind": "section",
@@ -30,8 +34,12 @@
     },
     {
       "kind": "text",
-      "text": "Sørg for at vande salaterne, så jorden ikke tørrer ud, ellers stopper salatens vækst.",
-      "page": 1
+      "text": "Vand salaten, så jorden ikke tørrer ud. Ellers holder den op med at vokse.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Sørg for at vande salaterne, så jorden ikke tørrer ud, ellers stopper salatens vækst."
+      }
     },
     {
       "kind": "section",
@@ -40,8 +48,12 @@
     },
     {
       "kind": "text",
-      "text": "Hvis du vælger pluksalat i stedet for hovedsalat, kan du nøjes med at høste netop den portion blade, du har behov for, i stedet for at kappe et helt salathoved hver gang.",
-      "page": 1
+      "text": "Vælger du pluksalat, kan du bare plukke de blade, du skal bruge, i stedet for at skære et helt hoved af.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis du vælger pluksalat i stedet for hovedsalat, kan du nøjes med at høste netop den portion blade, du har behov for, i stedet for at kappe et helt salathoved hver gang."
+      }
     },
     {
       "kind": "section",
@@ -50,26 +62,43 @@
     },
     {
       "kind": "text",
-      "text": "Det er også nemt at få salat til at gå i stok og danne frø.",
+      "text": "Det er nemt at få salat til at skyde i vejret og lave frø.",
       "page": 1,
-      "sourceId": "dk-bolius-froe"
+      "sourceId": "dk-bolius-froe",
+      "original": {
+        "lang": "da",
+        "text": "Det er også nemt at få salat til at gå i stok og danne frø."
+      }
     },
     {
       "kind": "steps",
       "items": [
-        "Ryst de modne frø i en pose.",
-        "Høst evt. hele planten, når ca. halvdelen af frøene er modne.",
+        "Ryst de modne frø af i en pose.",
+        "Eller høst hele planten, når cirka halvdelen af frøene er modne.",
         "Hæng den til tørre et luftigt sted med toppen nedad.",
-        "Faldskærmene skilles fra frøene ved at sigte frøene."
+        "Si frøene, så de små faldskærme (fnug) skilles fra."
       ],
       "page": 1,
-      "sourceId": "dk-bolius-froe"
+      "sourceId": "dk-bolius-froe",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Ryst de modne frø i en pose.",
+          "Høst evt. hele planten, når ca. halvdelen af frøene er modne.",
+          "Hæng den til tørre et luftigt sted med toppen nedad.",
+          "Faldskærmene skilles fra frøene ved at sigte frøene."
+        ]
+      }
     },
     {
       "kind": "text",
-      "text": "Salatplanter i blomst bliver nemt halvanden meter høje og har ofte brug for støtte.",
+      "text": "Salat, der blomstrer, kan blive 1,5 meter høj og skal ofte støttes.",
       "page": 1,
-      "sourceId": "dk-bolius-froe"
+      "sourceId": "dk-bolius-froe",
+      "original": {
+        "lang": "da",
+        "text": "Salatplanter i blomst bliver nemt halvanden meter høje og har ofte brug for støtte."
+      }
     }
   ],
   "checks": [],
@@ -77,5 +106,6 @@
   "related": [
     "spinat",
     "radiser"
-  ]
+  ],
+  "originalSummary": "Du kan så salat fra april og flere gange i løbet af sommeren, så du sikrer dig en jævn forsyning af frisk salat."
 }

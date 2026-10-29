@@ -308,6 +308,25 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Risk:** situation guides that touch carbon monoxide, food safety, electricity or water are `high` (second authority required). Unlike first aid, a situation guide may combine several Danish authorities, each block checked against its own source; first aid still takes all text from one source. Stock lists are `low`. Plain names ("Strømmen er gået") are the app's labels; the guide title stays verbatim.
 - **Pack:** schema 10: `guides.grp`, block kind `checklist` (`items` as `{id, text}`), fixed headings `noPrep`, `somePrep`, `needsPrep`.
 
+## D-041 — Translated English blocks in "Når det sker" (water treatment)
+
+- **Date:** 2026-10-29
+- **Decision (owner):** no Danish authority describes boiling time, filtering cloudy water or other water sources for emergencies, so "Der er intet vand" uses the U.S. CDC (*How to Make Water Safe in an Emergency*, *How to Find Clean Water in an Emergency*; public domain) **translated into Danish**. Each translated block stores the source's English words (`original`); the build checks those verbatim and that the translation has the same items. The app labels translated blocks "Oversat fra engelsk", and "Vis original" shows the English. Only "Når det sker" guides may have translated blocks; first aid stays verbatim Danish.
+- **Deviation:** relaxes D-027 (water treatment is high-risk, verbatim only, no translation) as D-031/D-033 did for food. Translations were drafted by an AI assistant and are **not checked**. Mitigations: the original is one tap away; Fødevarestyrelsen ("Kog vandet!") and Bolius (rainwater can be used for cooking if boiled) are the second authority.
+- **Left out on purpose:** melting snow (no source covers it); makeshift filters on their own (the CDC says portable filters do not remove all germs and filtered water still needs disinfecting); bleach doses (U.S. products and units); hot-water tank water for drinking (Bolius: toilet and cleaning only).
+- **Heat (owner, same day):** "Der er ingen varme" uses Styrelsen for Samfundssikkerhed (one room) and Bolius (closing off rooms, electric heater, firewood, gas and paraffin heaters only in ventilated rooms, never a grill indoors). Candles appear as light with the fire-safety warning only: Bolius finds they barely heat a room.
+- **Must be revisited before:** sharing the app beyond the owner (as D-028/D-031): check every translation.
+- **Pack:** schema 11: `guide_blocks.original` (JSON).
+
+## D-042 — Plain-language rewrite of all texts; source words kept (changes D-027)
+
+- **Date:** 2026-10-29
+- **Decision (owner):** every guide, food guide, storage note and interface text is rewritten in plain, consistent Danish (and the English interface to match), for readers who read slowly or know little of the subject. For guides, the source's exact words are kept with each rewritten block (`original`, lang 'da'; `originalSummary` for summaries). The build still checks those words verbatim, search covers both, and "Vis original" shows them. Rewrites are allowed in every category, first aid included.
+- **Review:** the rewrites were drafted by an AI assistant and are **unchecked**. They are reviewed against the source by a person before publishing beyond the owner; that review is a step in the manual guide (owner, 2026-10-29). `ownerChecked` stays false until then, and the app shows "Prøveversion".
+- **Changes D-027:** high-risk text is no longer shown word for word; the source's words are one tap away instead. The second-authority check is unchanged.
+- **Log:** style rules, suggestions and statements to run again are in `docs/LANGUAGE_REVIEW.md`.
+- **Pack:** schema 12: `guides.summary_original`; `guide_blocks.original` may be Danish.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

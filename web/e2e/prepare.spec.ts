@@ -4,7 +4,7 @@ import { expect, test } from './fixtures.ts';
 
 test('Når det sker: tile, search, tick items in a stock list, bookmark a situation; offline', async ({ app: { page, context } }) => {
   await page.goto('./');
-  await expect(page.getByText('Klar offline')).toBeAttached({ timeout: 60_000 });
+  await expect(page.getByText('Klar uden net')).toBeAttached({ timeout: 60_000 });
   await page.evaluate(async () => {
     await navigator.serviceWorker.ready;
   });
@@ -26,7 +26,7 @@ test('Når det sker: tile, search, tick items in a stock list, bookmark a situat
   await expect(page.getByRole('heading', { level: 2, name: 'Kræver ingen tilberedning' })).toBeVisible();
   await expect(page.getByText(/^Du har 0 af \d+$/)).toBeVisible();
   await page.getByRole('checkbox', { name: /^Knækbrød/ }).check({ force: true });
-  await page.getByRole('checkbox', { name: /^Planteolie/ }).check({ force: true });
+  await page.getByRole('checkbox', { name: /^Olie til madlavning/ }).check({ force: true });
   await expect(page.getByText(/^Du har 2 af \d+$/)).toBeVisible();
   await page.reload();
   await expect(page.getByText(/^Du har 2 af \d+$/)).toBeVisible();

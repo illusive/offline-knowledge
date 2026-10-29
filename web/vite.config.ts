@@ -92,7 +92,7 @@ export default defineConfig({
       injectManifest: {
         // Everything the app needs offline, including the SQLite WebAssembly build, the pack and the
         // map overview with its fonts and icons (D-036). Downloaded map areas are not precached.
-        globPatterns: ['**/*.{html,js,mjs,css,wasm,sqlite,json,png,webmanifest,woff2,txt,pbf,pmtiles}'],
+        globPatterns: ['**/*.{html,js,mjs,css,wasm,sqlite,json,png,svg,webmanifest,woff2,txt,pbf,pmtiles}'],
         maximumFileSizeToCacheInBytes: 20 * 1024 * 1024,
       },
       manifest: {
@@ -108,6 +108,7 @@ export default defineConfig({
         icons: [
           { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: 'icon-512.png', sizes: '512x512', type: 'image/png' },
+          { src: 'icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
     }),

@@ -1,0 +1,154 @@
+{
+  "id": "der-er-ingen-varme",
+  "category": "preparedness",
+  "group": "situation",
+  "order": 3,
+  "name": "Der er ingen varme",
+  "title": "Varme",
+  "summary": "Forsvinder varmen, og er det koldt udenfor, så brug tæpper, dyner og varmt tøj.",
+  "sourceId": "dk-samsik-forberedt-paa-kriser",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Varer kulden længe, så hold jer mest i ét rum. Så er der kun ét rum, der skal holdes varmt.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "Er der koldt i en længere periode, kan I i husstanden holde på varmen ved primært at opholde jer i ét rum."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Hold på varmen nu",
+      "page": 1,
+      "sourceId": "dk-bolius-varmesvigt",
+      "original": {
+        "lang": "da",
+        "text": "Sådan sparer du på varmen her og nu"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Brug tæpper, dyner og ekstra trøjer.",
+        "Er der ikke mere varme i radiatorer eller gulv, så luk nogle rum af, og saml jer i færre rum.",
+        "Luft ud i de lukkede rum en gang imellem. Ellers kan der komme skimmel.",
+        "Stop træk: Læg tæpper eller håndklæder foran utætte døre og vinduer.",
+        "Bor du i hus, er der varmt vand i rør og radiatorer i lang tid. Brug varmen, så længe den er der.",
+        "Brug gardinerne til at holde på varmen.",
+        "Træk gardinerne for, når det er mørkt, og fra, når solen skinner, så solen kan varme.",
+        "Luft stadig ud jævnligt, så den brugte luft kommer ud, og der kommer frisk luft ind. Tør luft er også lettere at varme op."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-varmesvigt",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Brug tæpper, dyner og ekstra trøjer til at holde varmen.",
+          "Hvis der ikke er mere varme tilbage i fx radiatorer eller i gulvet, kan I overveje at lukke nogle rum af og samle jer i færre rum.",
+          "Husk at lufte ud i de aflukkede rum engang imellem. Ellers kan der opstå skimmelsvamp.",
+          "Undgå træk for at holde på varmen. Læg fx tæpper eller håndklæder foran døre og vinduer, der er utætte.",
+          "Hvis du bor i hus, vil der være varmt vand i rørene og radiatoren i lang tid, så brug det så lang tid som muligt.",
+          "Brug gardiner for vinduerne til at holde på varmen.",
+          "Træk dem for i de mørke timer for at holde på varmen og fra, når solen skinner, så der kan komme varme ind i boligen.",
+          "Luft fortsat regelmæssigt ud – den brugte luft skal ud, så CO2-niveauet i boligen ikke er for høj, og der er frisk luft indenfor. Tør luft er også nemmere at varme op."
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Forbered dig, før det sker",
+      "page": 1,
+      "sourceId": "dk-bolius-varmesvigt",
+      "original": {
+        "lang": "da",
+        "text": "Sådan forbereder du dig på en bolig uden varme"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Tjek, at I har nok dyner og tæpper – både til at holde jer varme og til at stoppe træk.",
+        "Overvej at købe en elradiator, fx en med olie. Den kan give varme, hvis der er strøm.",
+        "Har du brændeovn, så hav brænde på lager."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-varmesvigt",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Tjek op på lageret af dyner og tæpper i boligen, som kan bruges til at holde varmen med og tætne utætheder.",
+          "Investér evt. i en el-ovn eller en oliefyldt el-radiator, som kan give varme.",
+          "Har du brændeovn, så sørg for at have brænde på lager."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Brug aldrig grill eller lignende indendørs – heller ikke i rum, der kun er delvist lukkede. Du kan blive forgiftet af røg og kulilte.",
+      "page": 5,
+      "original": {
+        "lang": "da",
+        "text": "Brug aldrig grill o.l. indendørs eller i helt eller delvist lukkede rum. Der er risiko for røg- og/eller kulilteforgiftning."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Bruger du en gasovn, petroleumsovn eller lignende, så tjek først, at den må bruges indendørs. Brug den kun i et rum med god udluftning – og aldrig i soveværelset om natten.",
+      "page": 1,
+      "sourceId": "dk-bolius-varmesvigt",
+      "original": {
+        "lang": "da",
+        "text": "Hvis du bruger gasovn, petroleumsovn eller lignende, skal du være sikker på, at de må benyttes indendøre. Det skal være i velventilerede rum, så brug dem ikke i soveværelse om natten."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Lys",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "Andre fornødenheder"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Det er godt at have en lommelygte, stearinlys, tændstikker og batterier.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "Andre nyttige ting at have ved hånden er en lommelygte, stearinlys, tændstikker og batterier."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Stil stearinlys og andre ting, der bliver varme, på et fast underlag – langt fra gardiner, tæpper og andet, der kan brænde.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "Hvis du bruger stearinlys eller andre varmekilder, så stil dem på et fast underlag langt fra brændbart materiale som gardiner og tæpper."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "uk-be-ready-emergencies",
+      "locator": "Be ready for emergencies, checklist: Light and warmth",
+      "quote": "Homes can become cold very quickly when the heating goes off.",
+      "note": "Agrees: prepare for the home getting cold when the heating goes."
+    },
+    {
+      "sourceId": "uk-be-ready-emergencies",
+      "locator": "Be ready for emergencies, checklist: Light and warmth",
+      "quote": "Torches are safer than candles.",
+      "note": "Agrees with keeping a torch and using candles with care."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "stroemmen-er-gaaet",
+    "der-er-intet-vand"
+  ],
+  "originalSummary": "Hvis varmen forsvinder, og det er koldt udenfor, kan du bruge husstandens tæpper, dyner, varmt tøj m.v."
+}

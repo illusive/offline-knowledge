@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 11,
   "title": "Sådan får du de bedste jordbær",
-  "summary": "Jordbær er rimelig nemme at dyrke, men der er nogle simple ting, du kan gøre for at få endnu flere og bedre jordbær.",
+  "summary": "Jordbær er ret nemme at dyrke. Med et par enkle greb får du flere og bedre bær.",
   "sourceId": "dk-bolius-jordbaer",
   "risk": "low",
   "name": "Jordbær",
@@ -20,31 +20,55 @@
     },
     {
       "kind": "text",
-      "text": "Auguster det mest optimale tidspunkt at plante jordbær. Jordtemperaturen er høj, og planterne når at gro godt til og danne blomsteranlæg i efteråret, så du allerede den første sommer efter udplantningen kan få en god høst af røde, saftige bær.",
-      "page": 1
+      "text": "August er det bedste tidspunkt at plante jordbær. Jorden er varm, og planterne når at gro godt og lave blomsterknopper inden vinteren. Så kan du høste allerede næste sommer.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Auguster det mest optimale tidspunkt at plante jordbær. Jordtemperaturen er høj, og planterne når at gro godt til og danne blomsteranlæg i efteråret, så du allerede den første sommer efter udplantningen kan få en god høst af røde, saftige bær."
+      }
     },
     {
       "kind": "text",
-      "text": "Alternativt kan du anlægge jordbærbedet i foråret omkring april måned, hvor jorden ikke er for kold.",
-      "page": 1
+      "text": "Du kan også plante jordbær i april, når jorden ikke er for kold.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Alternativt kan du anlægge jordbærbedet i foråret omkring april måned, hvor jorden ikke er for kold."
+      }
     },
     {
       "kind": "steps",
       "items": [
-        "Køb dine jordbærplanter på planteskolen, så du er sikker på, at de er sundhedkontrollerede.",
-        "Sæt planterne et solrigt sted.",
-        "Grav jorden godt igennen og tilfør evt. 5-8 cm mild kompost.",
-        "Plant jordbærplanterne, men ikke for tæt eller dybt. Regn med ca. 25-30 cm mellem hver plante og 50-60 cm mellem rækkerne.",
-        "Læg evt. et lag af halm ud mellem jordbærplanterne.",
-        "Vand grundigt, indtil planterne har sat de første blomster."
+        "Køb planterne i en planteskole. Så ved du, at de er sunde.",
+        "Plant dem et sted med sol.",
+        "Grav jorden godt igennem, og kom evt. 5-8 cm kompost i.",
+        "Plant dem ikke for tæt eller for dybt: ca. 25-30 cm mellem planterne og 50-60 cm mellem rækkerne.",
+        "Læg evt. halm mellem planterne.",
+        "Vand godt, til planterne har fået de første blomster."
       ],
       "page": 1,
-      "title": "Anlægning af jordbærbed"
+      "title": "Sådan laver du et jordbærbed",
+      "original": {
+        "lang": "da",
+        "title": "Anlægning af jordbærbed",
+        "items": [
+          "Køb dine jordbærplanter på planteskolen, så du er sikker på, at de er sundhedkontrollerede.",
+          "Sæt planterne et solrigt sted.",
+          "Grav jorden godt igennen og tilfør evt. 5-8 cm mild kompost.",
+          "Plant jordbærplanterne, men ikke for tæt eller dybt. Regn med ca. 25-30 cm mellem hver plante og 50-60 cm mellem rækkerne.",
+          "Læg evt. et lag af halm ud mellem jordbærplanterne.",
+          "Vand grundigt, indtil planterne har sat de første blomster."
+        ]
+      }
     },
     {
       "kind": "warning",
-      "text": "Hjerteskuddet, der hvor bladene springer ud fra, må ikke dækkes til med jord.",
-      "page": 1
+      "text": "Midten af planten, hvor bladene vokser ud, må ikke dækkes af jord.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hjerteskuddet, der hvor bladene springer ud fra, må ikke dækkes til med jord."
+      }
     },
     {
       "kind": "section",
@@ -53,23 +77,39 @@
     },
     {
       "kind": "text",
-      "text": "Vand jordbærrene moderat i meget tørre perioder, men endelig ikke for meget. Svømmer bærrene i vand, risikerer du meldug og skimmelsvamp.",
-      "page": 1
+      "text": "Vand lidt, når det er meget tørt – men ikke for meget. Står bærrene i vand, kan de få skimmel.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vand jordbærrene moderat i meget tørre perioder, men endelig ikke for meget. Svømmer bærrene i vand, risikerer du meldug og skimmelsvamp."
+      }
     },
     {
       "kind": "text",
-      "text": "Gød planterne moderat og gerne med en organisk gødning i pilleform.",
-      "page": 1
+      "text": "Giv lidt gødning, gerne organisk gødning i små kugler.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Gød planterne moderat og gerne med en organisk gødning i pilleform."
+      }
     },
     {
       "kind": "text",
-      "text": "For at undgå, at fugle spiser dine jordbær, kan du lægge et fintmasket, grønt fuglenet over jordbærplanterne.",
-      "page": 1
+      "text": "Læg et fint net over planterne, så fuglene ikke spiser bærrene.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "For at undgå, at fugle spiser dine jordbær, kan du lægge et fintmasket, grønt fuglenet over jordbærplanterne."
+      }
     },
     {
       "kind": "text",
-      "text": "Hvis din have er plaget af snegle, skal du etablere jordbærrene i et højbed for at undgå, at sneglene spiser dine bær.",
-      "page": 1
+      "text": "Har du mange snegle, så plant jordbærrene i et højbed.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis din have er plaget af snegle, skal du etablere jordbærrene i et højbed for at undgå, at sneglene spiser dine bær."
+      }
     },
     {
       "kind": "section",
@@ -78,9 +118,13 @@
     },
     {
       "kind": "text",
-      "text": "De fleste bær er modne til at blive plukket i sommermånederne (juni-august), mens brombær først modner hen mod august-september.",
+      "text": "De fleste bær er klar til at plukke i juni-august. Brombær først i august-september.",
       "page": 1,
-      "sourceId": "dk-bolius-5-dyre"
+      "sourceId": "dk-bolius-5-dyre",
+      "original": {
+        "lang": "da",
+        "text": "De fleste bær er modne til at blive plukket i sommermånederne (juni-august), mens brombær først modner hen mod august-september."
+      }
     },
     {
       "kind": "section",
@@ -89,18 +133,31 @@
     },
     {
       "kind": "text",
-      "text": "Indsaml udløbere - også kaldet stiklinger - fra dine gamle planter.",
-      "page": 1
+      "text": "Du kan få nye planter fra de lange skud (udløbere), som dine gamle planter sender ud.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Indsaml udløbere - også kaldet stiklinger - fra dine gamle planter."
+      }
     },
     {
       "kind": "steps",
       "items": [
-        "Tag stiklinger fra de planter, der har givet flest bær – markér evt. planten med en pind, så du kan kende den..",
-        "Har udløberne allerede sat sig fast i jorden, klippes stænglen af et par cm fra det nye rodskud.",
-        "Grav forsigtigt udløberne op, når bærsæsonen er slut.",
-        "Plant stiklingerne på det ønskede sted i juli eller august – gerne et andet sted end de oprindelige."
+        "Tag skud fra de planter, der har givet flest bær. Sæt evt. en pind ved planten, så du kan finde den igen.",
+        "Har skuddet slået rod i jorden, så klip stænglen over et par cm fra den nye plante.",
+        "Grav forsigtigt de nye planter op, når der ikke kommer flere bær.",
+        "Plant dem i juli eller august – gerne et nyt sted."
       ],
-      "page": 1
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Tag stiklinger fra de planter, der har givet flest bær – markér evt. planten med en pind, så du kan kende den..",
+          "Har udløberne allerede sat sig fast i jorden, klippes stænglen af et par cm fra det nye rodskud.",
+          "Grav forsigtigt udløberne op, når bærsæsonen er slut.",
+          "Plant stiklingerne på det ønskede sted i juli eller august – gerne et andet sted end de oprindelige."
+        ]
+      }
     },
     {
       "kind": "section",
@@ -109,13 +166,18 @@
     },
     {
       "kind": "text",
-      "text": "Derfor er det en god idé at skifte dine jordbærplanter ud efter 3 år. Du kan fx plante nye jordbærplanter med stiklinger fra den tidligere plante, men gør det helst et nyt sted, så du ikke udpiner jorden.",
-      "page": 1
+      "text": "Skift dine jordbærplanter ud efter 3 år. Plant gerne de nye planter fra de gamle et nyt sted, så jorden ikke bliver udpint (mister sin næring).",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Derfor er det en god idé at skifte dine jordbærplanter ud efter 3 år. Du kan fx plante nye jordbærplanter med stiklinger fra den tidligere plante, men gør det helst et nyt sted, så du ikke udpiner jorden."
+      }
     }
   ],
   "checks": [],
   "ownerChecked": false,
   "related": [
     "rabarber"
-  ]
+  ],
+  "originalSummary": "Jordbær er rimelig nemme at dyrke, men der er nogle simple ting, du kan gøre for at få endnu flere og bedre jordbær."
 }

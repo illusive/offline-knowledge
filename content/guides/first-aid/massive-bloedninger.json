@@ -3,16 +3,63 @@
   "category": "first-aid",
   "order": 5,
   "title": "Massive blødninger",
-  "summary": "En massiv blødning er en livstruende blødning, der skal behandles først i algoritmen.",
+  "summary": "En massiv blødning er livsfarlig. Den skal stoppes før alt andet.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
-  "abbreviations": [{ "short": "A-B-C", "long": "Airway – luftveje, Breathing – åndedræt, Circulation – blodcirkulation" }],
+  "abbreviations": [
+    {
+      "short": "A-B-C",
+      "long": "Airway – luftveje, Breathing – åndedræt, Circulation – blodcirkulation"
+    }
+  ],
   "$comment": "The handbook's tourniquet lines (p. 18: apply a ready-made tourniquet first on arms and legs, 'high and tight') are held back: ERC 2025 starts with direct pressure and uses a tourniquet when pressure is not enough (D-037, owner decision 2026-10-27).",
   "blocks": [
-    { "kind": "list", "title": "Der er tale om en livstruende blødning, når:", "items": ["Der ses en blodpøl på jorden", "Tøjet er gennemvædet af blod", "Blodet sprøjter eller strømmer hurtigt"], "page": 18 },
-    { "kind": "warning", "text": "Hvis ét eller flere af disse kriterier er opfyldt, skal du behandle det som det første inden A-B-C!", "page": 18 },
-    { "kind": "text", "text": "En livstruende blødning er sjælden, men når den opstår kræver den øjeblikkelig handling, så den tilskadekomne ikke forbløder.", "page": 18 },
-    { "kind": "text", "text": "Et modtryk mod en blødning er det, der standser en blødning.", "page": 42 }
+    {
+      "kind": "list",
+      "title": "En blødning er livsfarlig, når:",
+      "items": [
+        "Der er en pøl af blod på jorden",
+        "Tøjet er gennemblødt af blod",
+        "Blodet sprøjter eller løber hurtigt"
+      ],
+      "page": 18,
+      "original": {
+        "lang": "da",
+        "title": "Der er tale om en livstruende blødning, når:",
+        "items": [
+          "Der ses en blodpøl på jorden",
+          "Tøjet er gennemvædet af blod",
+          "Blodet sprøjter eller strømmer hurtigt"
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Passer bare én af dem, så stop blødningen først – før du gør noget andet.",
+      "page": 18,
+      "original": {
+        "lang": "da",
+        "text": "Hvis ét eller flere af disse kriterier er opfyldt, skal du behandle det som det første inden A-B-C!"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Livsfarlige blødninger er sjældne. Men sker det, skal du handle med det samme, så personen ikke forbløder.",
+      "page": 18,
+      "original": {
+        "lang": "da",
+        "text": "En livstruende blødning er sjælden, men når den opstår kræver den øjeblikkelig handling, så den tilskadekomne ikke forbløder."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Du stopper en blødning ved at trykke hårdt imod den.",
+      "page": 42,
+      "original": {
+        "lang": "da",
+        "text": "Et modtryk mod en blødning er det, der standser en blødning."
+      }
+    }
   ],
   "checks": [
     {
@@ -29,5 +76,9 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["mabc"]
+  "related": [
+    "mabc"
+  ],
+  "name": "Livsfarlige blødninger",
+  "originalSummary": "En massiv blødning er en livstruende blødning, der skal behandles først i algoritmen."
 }

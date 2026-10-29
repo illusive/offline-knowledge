@@ -19,7 +19,7 @@
    "key": "prefers",
    "blocks": [
     {
-     "text": "Grønne og halvmodne guavaer holdes ved 8–10 °C; modne, bløde guavaer ved 5–8 °C. Luftfugtigheden bør være 90–95 %.",
+     "text": "Grønne og halvmodne guavaer holdes ved 8–10 °C. Modne, bløde guavaer ved 5–8 °C. Luftfugtigheden bør være 90–95 %.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Guava chapter, Optimum Storage Conditions, p. 356",
@@ -53,7 +53,7 @@
    "key": "together",
    "blocks": [
     {
-     "text": "Guava danner en del ethylen, og modningen går hurtigere, når den udsættes for ethylen.",
+     "text": "Guava danner en del ethylen (en gas, som frugt og grønt selv afgiver, og som får dem til at modne), og modningen går hurtigere, når den udsættes for ethylen.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Guava chapter, Ethylene Production and Sensitivity, p. 357",

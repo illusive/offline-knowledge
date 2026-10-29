@@ -113,6 +113,7 @@ CREATE TABLE guides (
   ord INTEGER NOT NULL,
   title TEXT NOT NULL,
   summary TEXT,
+  summary_original TEXT, -- the source's words behind a rewritten summary (D-042)
   source_id TEXT NOT NULL REFERENCES sources(id),
   risk TEXT NOT NULL,
   owner_checked INTEGER NOT NULL,
@@ -145,6 +146,7 @@ CREATE TABLE guide_blocks (
   caption TEXT,
   page INTEGER NOT NULL,
   source_id TEXT REFERENCES sources(id), -- when not the guide's own source
+  original TEXT,     -- JSON {lang, title?, text?, items?}: the source's words of a translated block (D-041)
   PRIMARY KEY (guide_id, ord)
 );
 
@@ -305,22 +307,24 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
         if (!image) throw new Error(`Missing image ${file}`);
         insertImage.run(file, image.mime, image.data);
       }
-      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, source_id, risk, owner_checked, related, abbreviations, food_id, name, season, grp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+      const insertGuide = db.prepare('INSERT INTO guides (id, category, ord, title, summary, summary_original, source_id, risk, owner_checked, related, abbreviations, food_id, name, season, grp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
       const insertGuideSearch = db.prepare('INSERT INTO guide_search (guide_id, title, body) VALUES (?, ?, ?)');
       const insertGuideBlock = db.prepare(
-        'INSERT INTO guide_blocks (guide_id, ord, kind, title, text, items, step_images, image_id, alt, caption, page, source_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        'INSERT INTO guide_blocks (guide_id, ord, kind, title, text, items, step_images, image_id, alt, caption, page, source_id, original) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       );
       const insertCheck = db.prepare('INSERT INTO guide_checks (guide_id, ord, source_id, locator, quote, note) VALUES (?, ?, ?, ?, ?, ?)');
       for (const g of guides) {
-        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []), g.foodId ?? null, g.name ?? null, g.season?.text ?? null, g.group ?? null);
-        const body = [g.summary ?? '', ...g.blocks.flatMap((b) => [...('title' in b && b.title ? [b.title] : []), ...shownTexts(b)]), ...(g.abbreviations ?? []).map((a) => a.long)];
+        insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.originalSummary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []), g.foodId ?? null, g.name ?? null, g.season?.text ?? null, g.group ?? null);
+        // The source's words of rewritten blocks are searchable too (D-042), so a search for the source's term still finds the guide.
+        const originals = g.blocks.flatMap((b) => (b.original ? [b.original.title ?? '', b.original.text ?? '', ...(b.original.items ?? [])] : []));
+        const body = [g.summary ?? '', g.originalSummary ?? '', ...g.blocks.flatMap((b) => [...('title' in b && b.title ? [b.title] : []), ...shownTexts(b)]), ...originals, ...(g.abbreviations ?? []).map((a) => a.long)];
         insertGuideSearch.run(g.id, [g.name, g.title].filter(Boolean).join(' '), body.join('\n'));
         g.blocks.forEach((b, ord) => {
           const title = 'title' in b ? (b.title ?? null) : null;
           const text = 'text' in b ? (b.text ?? null) : b.kind === 'section' ? b.key : null;
           const items = 'items' in b && b.items ? JSON.stringify(b.items) : null;
           const stepImages = b.kind === 'steps' && b.images?.length ? JSON.stringify(b.images.map((i) => ({ after: i.after, imageId: i.file, alt: i.alt, page: i.page }))) : null;
-          insertGuideBlock.run(g.id, ord, b.kind, title, text, items, stepImages, b.kind === 'image' ? b.file : null, b.kind === 'image' ? b.alt : null, b.kind === 'image' ? (b.caption ?? null) : null, b.page, b.sourceId ?? null);
+          insertGuideBlock.run(g.id, ord, b.kind, title, text, items, stepImages, b.kind === 'image' ? b.file : null, b.kind === 'image' ? b.alt : null, b.kind === 'image' ? (b.caption ?? null) : null, b.page, b.sourceId ?? null, b.original ? JSON.stringify(b.original) : null);
         });
         g.checks.forEach((c, ord) => insertCheck.run(g.id, ord, c.sourceId, c.locator, c.quote, c.note));
       }

@@ -3,55 +3,249 @@
   "category": "growing",
   "order": 3,
   "title": "Sådan dyrker du dine egne kartofler",
-  "summary": "Kartofler er nemme at dyrke, da de kan vokse i både køkkenhave, spande og sække.",
+  "summary": "Kartofler er nemme at dyrke – i haven, i spande og i sække.",
   "sourceId": "dk-bolius-kartofler",
   "risk": "low",
   "name": "Kartofler",
-  "season": { "text": "Læg sidst i marts–midt i april · høst juni–september", "quote": "Læg kartoflerne i jorden fra sidst i marts til midt i april … Det er typisk i juni/juli. … Det er bedst, at du høster dine kartofler i begyndelsen af september" },
+  "season": {
+    "text": "Læg sidst i marts–midt i april · høst juni–september",
+    "quote": "Læg kartoflerne i jorden fra sidst i marts til midt i april … Det er typisk i juni/juli. … Det er bedst, at du høster dine kartofler i begyndelsen af september"
+  },
   "foodId": "foodkeeper-297",
   "blocks": [
-    { "kind": "section", "key": "sowing", "page": 1 },
-    { "kind": "text", "text": "Du kan forspire kartoflerne allerede omkring februar måned. Regn med, at der går 4-6 uger, før du kan plante dem ud i haven. Spirerne er klar, når de er 1 cm og grønne.", "page": 1 },
-    { "kind": "text", "text": "Placér kartoflerne i et lyst rum med en temperatur på 15-18 grader.", "page": 1 },
-    { "kind": "text", "text": "Læg kartoflerne i jorden fra sidst i marts til midt i april og læg et stykke klar plastik eller fiberdug over, hvis du vil have ekstra tidlige kartofler. Fjern det igen, når frostrisikoen er ovre.", "page": 1 },
-    { "kind": "text", "text": "Læg kartoflerne i rækker i 6-8 cm's dybde med 30-40 cm's afstand mellem hver kartoffel og med 60-70 cm's afstand mellem hver række, da der også skal være jord nok til senere at kunne hyppe kartoflerne.", "page": 1 },
-    { "kind": "text", "text": "Sørg for, at den side af kartoflen, som har flest spirer, vender opad.", "page": 1 },
-    { "kind": "text", "text": "Har du ikke har nået at forspire dine læggekartofler, kan du godt lægge kartoflerne i jorden uden forspiring. Men jordtemperaturen skal være mindst 8 grader.", "page": 1 },
-
-    { "kind": "section", "key": "conditions", "page": 1 },
-    { "kind": "text", "text": "Du kan dyrke kartofler alle steder i Danmark, hvor jorden ikke er for fugtig.", "page": 1 },
-    { "kind": "text", "text": "Kartofler gror dog bedst i let og porøs jord, da en luftig jord giver planten den bedste mulighed for at gro op mod lyset og suge vand, når det regner.", "page": 1 },
-    { "kind": "text", "text": "Det er bedst at købe godkendte læggekartofler i plantecentre og planteskoler, der kun må sælge certificerede læggekartofler.", "page": 1 },
-
-    { "kind": "section", "key": "care", "page": 1 },
-    { "kind": "text", "text": "Hypning kvæler ukrudtet, beskytter mod kartoffelskimmel på knoldene og giver også flere kartofler, da planten danner flere jordstængler.", "page": 1 },
-    { "kind": "text", "text": "Når planterne er ca. 10 cm høje, skal du forsigtigt lægge jord ind under bladene på planten. Gentag det et par gange, indtil kammen har en højde på ca. 25 cm. Pas på ikke at dække kartoffelplanten med jord.", "page": 1 },
-    { "kind": "text", "text": "Vand kartoffelplanterne, hvis det er for tørt, da kartofler aldrig må mangle vand.", "page": 1 },
-    { "kind": "text", "text": "Gød dine kartofler, når du lægger dem og ikke mere derefter.", "page": 1 },
-    { "kind": "warning", "text": "Spis IKKE kartofler, der er grønne eller beskadiget. De er nemlig giftige, og du kan risikere at få mavekramper, kvalme, opkastning, hovedpine og diarré.", "page": 1 },
-
-    { "kind": "section", "key": "harvest", "page": 1 },
-    { "kind": "text", "text": "To uger efter, at kartoffelplanterne blomstrer kan du begynde at høste. Det er typisk i juni/juli.", "page": 1 },
-    { "kind": "text", "text": "Vil du lagre kartoflerne, skal du først høste, når planten over jorden begynder at visne. På det tidspunkt har knoldene dannet en tyk skræl og kan holde sig længe.", "page": 1 },
-    { "kind": "text", "text": "Tag kartoflerne op, før frosten kommer i efteråret, da frost gør dem uspiselige.", "page": 1 },
-    { "kind": "text", "text": "Læg herefter kartoflerne i lystætte kasser (fx med en avis over) og stil dem et køligt, tørt og frostfrit sted, en temperatur på 5 grader er optimalt.", "page": 1 },
-
-    { "kind": "section", "key": "seeds", "page": 1 },
+    {
+      "kind": "section",
+      "key": "sowing",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du kan lade kartoflerne spire inden døre fra februar. Efter 4-6 uger kan de komme ud i haven. De er klar, når spirerne er 1 cm lange og grønne.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan forspire kartoflerne allerede omkring februar måned. Regn med, at der går 4-6 uger, før du kan plante dem ud i haven. Spirerne er klar, når de er 1 cm og grønne."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Lad dem spire i et lyst rum med 15-18 grader.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Placér kartoflerne i et lyst rum med en temperatur på 15-18 grader."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Læg kartoflerne i jorden fra sidst i marts til midt i april. Vil du have ekstra tidlige kartofler, så læg klar plastik eller fiberdug over. Tag det af, når der ikke længere er risiko for frost.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Læg kartoflerne i jorden fra sidst i marts til midt i april og læg et stykke klar plastik eller fiberdug over, hvis du vil have ekstra tidlige kartofler. Fjern det igen, når frostrisikoen er ovre."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Læg dem 6-8 cm dybt med 30-40 cm mellem kartoflerne og 60-70 cm mellem rækkerne. Der skal være jord nok til at hyppe dem senere (se nedenfor).",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Læg kartoflerne i rækker i 6-8 cm's dybde med 30-40 cm's afstand mellem hver kartoffel og med 60-70 cm's afstand mellem hver række, da der også skal være jord nok til senere at kunne hyppe kartoflerne."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Læg kartoflen, så siden med flest spirer vender op.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Sørg for, at den side af kartoflen, som har flest spirer, vender opad."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Har du ikke nået at lade dem spire, kan du godt lægge dem alligevel. Men jorden skal være mindst 8 grader.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Har du ikke har nået at forspire dine læggekartofler, kan du godt lægge kartoflerne i jorden uden forspiring. Men jordtemperaturen skal være mindst 8 grader."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "conditions",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du kan dyrke kartofler overalt i Danmark, hvor jorden ikke er for våd.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan dyrke kartofler alle steder i Danmark, hvor jorden ikke er for fugtig."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Kartofler gror bedst i let og løs jord. Så kan planten vokse op mod lyset og suge vand, når det regner.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Kartofler gror dog bedst i let og porøs jord, da en luftig jord giver planten den bedste mulighed for at gro op mod lyset og suge vand, når det regner."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Køb godkendte læggekartofler i et plantecenter eller en planteskole.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det er bedst at købe godkendte læggekartofler i plantecentre og planteskoler, der kun må sælge certificerede læggekartofler."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "At hyppe betyder at skubbe jord op omkring planten. Det kvæler ukrudt, beskytter kartoflerne mod skimmel og giver flere kartofler.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hypning kvæler ukrudtet, beskytter mod kartoffelskimmel på knoldene og giver også flere kartofler, da planten danner flere jordstængler."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Når planterne er ca. 10 cm høje, så skub forsigtigt jord ind under bladene. Gør det et par gange, til jordvolden er ca. 25 cm høj. Dæk ikke selve planten med jord.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Når planterne er ca. 10 cm høje, skal du forsigtigt lægge jord ind under bladene på planten. Gentag det et par gange, indtil kammen har en højde på ca. 25 cm. Pas på ikke at dække kartoffelplanten med jord."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Kartofler må aldrig mangle vand. Vand, hvis det er tørt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vand kartoffelplanterne, hvis det er for tørt, da kartofler aldrig må mangle vand."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Giv kun gødning, når du lægger kartoflerne – ikke senere.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Gød dine kartofler, når du lægger dem og ikke mere derefter."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Spis IKKE kartofler, der er grønne eller beskadigede. De er giftige og kan give mavekramper, kvalme, opkast, hovedpine og diarré.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Spis IKKE kartofler, der er grønne eller beskadiget. De er nemlig giftige, og du kan risikere at få mavekramper, kvalme, opkastning, hovedpine og diarré."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Du kan begynde at høste to uger efter, at planterne har blomstret. Det er typisk i juni-juli.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "To uger efter, at kartoffelplanterne blomstrer kan du begynde at høste. Det er typisk i juni/juli."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Vil du gemme kartoflerne, så vent med at høste, til toppen af planten begynder at visne. Så har kartoflerne fået en tyk skræl og holder sig længe.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vil du lagre kartoflerne, skal du først høste, når planten over jorden begynder at visne. På det tidspunkt har knoldene dannet en tyk skræl og kan holde sig længe."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Tag kartoflerne op, før frosten kommer. Frost gør dem uspiselige.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Tag kartoflerne op, før frosten kommer i efteråret, da frost gør dem uspiselige."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Opbevar dem i kasser uden lys (fx med en avis over), et køligt, tørt sted uden frost. Bedst ved 5 grader.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Læg herefter kartoflerne i lystætte kasser (fx med en avis over) og stil dem et køligt, tørt og frostfrit sted, en temperatur på 5 grader er optimalt."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "seeds",
+      "page": 1
+    },
     {
       "kind": "steps",
       "items": [
-        "Reservér nogle få af dine bedste kartoffelplanter, hvis du selv vil avle læggekartofler.",
-        "Ryk toppen af de udvalgte kartoffelplanter i starten af juli måned, uden at kartoflerne følger med, for at undgå angreb fra virus og skimmel.",
-        "Grav de små kartofler op i august og lad dem overvintre mørkt i et rum, der har en temperatur på 5-6 grader."
+        "Vil du selv lave læggekartofler til næste år, så vælg nogle få af dine bedste planter.",
+        "Træk toppen af planterne op i starten af juli – uden kartoflerne. Så undgår du virus og skimmel.",
+        "Grav de små kartofler op i august. Opbevar dem mørkt ved 5-6 grader vinteren over."
       ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Reservér nogle få af dine bedste kartoffelplanter, hvis du selv vil avle læggekartofler.",
+          "Ryk toppen af de udvalgte kartoffelplanter i starten af juli måned, uden at kartoflerne følger med, for at undgå angreb fra virus og skimmel.",
+          "Grav de små kartofler op i august og lad dem overvintre mørkt i et rum, der har en temperatur på 5-6 grader."
+        ]
+      }
+    },
+    {
+      "kind": "section",
+      "key": "neighbours",
       "page": 1
     },
-
-    { "kind": "section", "key": "neighbours", "page": 1 },
-    { "kind": "text", "text": "Hvis du dyrker kartofler i din køkkenhave, skal du gøre det et sted, hvor der ikke har vokset kartofler de sidste 3-4 år for at forebygge sygdomme som kartoffelskurv og skadedyr som nematoder (bl.a. kartoffelål).", "page": 1 },
-    { "kind": "text", "text": "Kartoflen er derfor i familie med både tomater og auberginer.", "page": 1 }
+    {
+      "kind": "text",
+      "text": "Dyrk kartofler, hvor der ikke har stået kartofler de sidste 3-4 år. Så undgår du sygdomme som kartoffelskurv og små orme i jorden (nematoder).",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis du dyrker kartofler i din køkkenhave, skal du gøre det et sted, hvor der ikke har vokset kartofler de sidste 3-4 år for at forebygge sygdomme som kartoffelskurv og skadedyr som nematoder (bl.a. kartoffelål)."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Kartofler er i familie med tomater og auberginer.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Kartoflen er derfor i familie med både tomater og auberginer."
+      }
+    }
   ],
   "checks": [],
   "ownerChecked": false,
-  "related": ["radiser", "aerter"]
+  "related": [
+    "radiser",
+    "aerter"
+  ],
+  "originalSummary": "Kartofler er nemme at dyrke, da de kan vokse i både køkkenhave, spande og sække."
 }

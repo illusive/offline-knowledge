@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 15,
   "title": "5 afgrøder, der er dyre i butikkerne, men som du nemt kan dyrke selv",
-  "summary": "Krydderurter som timian, salvie, rosmarin kan tåle de danske vintre og kommer igen året efter, så du ikke behøver at plante nye.",
+  "summary": "Timian, salvie og rosmarin tåler danske vintre og kommer igen hvert år.",
   "sourceId": "dk-bolius-5-dyre",
   "risk": "low",
   "name": "Krydderurter (timian, salvie, rosmarin)",
@@ -20,18 +20,30 @@
     },
     {
       "kind": "text",
-      "text": "Det er bedst af købe krydderurter i potter fra planteskolen – ofte er potterne fra supermarkedet drevet så hurtigt frem, at de ikke har et ordentligt rodnet, der kan gro videre i jorden.",
-      "page": 1
+      "text": "Køb krydderurter i potter i en planteskole. Potter fra supermarkedet har ofte for få rødder til at gro videre i haven.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det er bedst af købe krydderurter i potter fra planteskolen – ofte er potterne fra supermarkedet drevet så hurtigt frem, at de ikke har et ordentligt rodnet, der kan gro videre i jorden."
+      }
     },
     {
       "kind": "text",
-      "text": "Køb sorter af krydderurterne, der kan tåle de danske vintre – så kommer de igen og igen. Det er typisk sorter med en lidt stivere eller grenet vækst, fx salvie, rosmarin og timian (i forhold til krydderurter med bladvækst som basilikum og persille).",
-      "page": 1
+      "text": "Vælg krydderurter, der tåler vinteren – så kommer de igen år efter år. Det er typisk dem med stive stængler som salvie, rosmarin og timian (ikke bløde som basilikum og persille).",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Køb sorter af krydderurterne, der kan tåle de danske vintre – så kommer de igen og igen. Det er typisk sorter med en lidt stivere eller grenet vækst, fx salvie, rosmarin og timian (i forhold til krydderurter med bladvækst som basilikum og persille)."
+      }
     },
     {
       "kind": "text",
-      "text": "Efteråret er et godt tidspunkt at plante krydderurterne på. Dæk dem til det første år, fordi de eksotiske krydderurter ellers kan få kuldechok.",
-      "page": 1
+      "text": "Plant dem gerne om efteråret. Dæk dem til den første vinter, så de ikke tager skade af kulden.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Efteråret er et godt tidspunkt at plante krydderurterne på. Dæk dem til det første år, fordi de eksotiske krydderurter ellers kan få kuldechok."
+      }
     },
     {
       "kind": "section",
@@ -40,8 +52,12 @@
     },
     {
       "kind": "text",
-      "text": "Planterne er forholdsvist tørketolerante, så sørg for at vande dem i etableringsperioden, og derefter vil de i høj grad passe sig selv. Beskær dog buskene, hvis de bliver for store.",
-      "page": 1
+      "text": "De klarer tørke ret godt. Vand dem, mens de gror fast det første stykke tid. Derefter passer de mest sig selv. Klip dem, hvis de bliver for store.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Planterne er forholdsvist tørketolerante, så sørg for at vande dem i etableringsperioden, og derefter vil de i høj grad passe sig selv. Beskær dog buskene, hvis de bliver for store."
+      }
     },
     {
       "kind": "section",
@@ -50,11 +66,16 @@
     },
     {
       "kind": "text",
-      "text": "Du kan tage af krydderurterne, allerede når du sætter dem. Når du klipper eller nipper af planterne, sætter de flere nye skud.",
-      "page": 1
+      "text": "Du kan plukke af dem fra første dag. Når du klipper af dem, laver de flere nye skud.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan tage af krydderurterne, allerede når du sætter dem. Når du klipper eller nipper af planterne, sætter de flere nye skud."
+      }
     }
   ],
   "checks": [],
   "ownerChecked": false,
-  "related": []
+  "related": [],
+  "originalSummary": "Krydderurter som timian, salvie, rosmarin kan tåle de danske vintre og kommer igen året efter, så du ikke behøver at plante nye."
 }

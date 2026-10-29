@@ -3,74 +3,267 @@
   "category": "growing",
   "order": 2,
   "title": "Sådan dyrker du ærter",
-  "summary": "Det er nemt at dyrke ærter udenfor, men husk at vande og undgå skadedyr.",
+  "summary": "Ærter er nemme at dyrke udenfor. Husk at vande dem og holde skadedyr væk.",
   "sourceId": "dk-bolius-aerter",
   "risk": "low",
   "name": "Ærter",
-  "season": { "text": "Så sidst i april–midt i juni · høst fra sidst i juni", "quote": "Det er den ofte i slutningen af april. … Du kan så ærter frem til midten af juni … typisk er de første ærter klar til at blive plukket og spist i slutningen af juni eller begyndelsen af juli" },
+  "season": {
+    "text": "Så sidst i april–midt i juni · høst fra sidst i juni",
+    "quote": "Det er den ofte i slutningen af april. … Du kan så ærter frem til midten af juni … typisk er de første ærter klar til at blive plukket og spist i slutningen af juni eller begyndelsen af juli"
+  },
   "foodId": "foodkeeper-273",
   "blocks": [
-    { "kind": "section", "key": "sowing", "page": 1 },
-    { "kind": "text", "text": "Ærter skal ikke forspire, men sås direkte på voksestedet. Men da de ikke tåler frost, hverken under eller efter fremspiringen, skal du først så ærter, når jordtemperaturen er omkring 10 grader. Det er den ofte i slutningen af april.", "page": 1 },
-    { "kind": "text", "text": "Du kan så ærter frem til midten af juni og også senere, men det afhænger meget af vejret i sensommeren, om ærterne kan nå at modnes.", "page": 1 },
-    { "kind": "text", "text": "Tag et glas med almindeligt postevand og læg ærterne i blød 12-24 timer.", "page": 1 },
     {
-      "kind": "steps",
-      "title": "Så ærter sådan:",
-      "items": [
-        "Spænd en snor ud der, hvor du vil så dine ærter. Det sikrer en fin, lige række.",
-        "Lav en rille på 3-5 cm dybde, fx med kanten af et hakkejern.",
-        "Læg ærterne i rillen med ca. 5 cm afstand.",
-        "Dæk rillen til med jord og tryk forsigtigt til, så ærterne får god kontakt med jorden.",
-        "Vand jorden igennem."
-      ],
+      "kind": "section",
+      "key": "sowing",
       "page": 1
     },
-    { "kind": "text", "text": "Det er en god idé at dække de små planter med fiberdug, hvis der kommer nattefrost.", "page": 1 },
-
-    { "kind": "section", "key": "conditions", "page": 1 },
+    {
+      "kind": "text",
+      "text": "Ærter skal ikke spire inden døre først. Du sår dem direkte, der hvor de skal gro. De tåler ikke frost, så vent, til jorden er ca. 10 grader varm. Det er den ofte i slutningen af april.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Ærter skal ikke forspire, men sås direkte på voksestedet. Men da de ikke tåler frost, hverken under eller efter fremspiringen, skal du først så ærter, når jordtemperaturen er omkring 10 grader. Det er den ofte i slutningen af april."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Du kan så ærter frem til midten af juni og også senere. Men om de når at blive modne, afhænger af vejret sidst på sommeren.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan så ærter frem til midten af juni og også senere, men det afhænger meget af vejret i sensommeren, om ærterne kan nå at modnes."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Læg ærterne i blød i et glas vand fra hanen i 12-24 timer, før du sår dem.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Tag et glas med almindeligt postevand og læg ærterne i blød 12-24 timer."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan sår du ærter:",
+      "items": [
+        "Spænd en snor ud, hvor ærterne skal stå. Så bliver rækken lige.",
+        "Lav en rille, der er 3-5 cm dyb, fx med kanten af et hakkejern.",
+        "Læg ærterne i rillen med ca. 5 cm mellemrum.",
+        "Dæk rillen med jord, og tryk forsigtigt, så ærterne har god kontakt med jorden.",
+        "Vand jorden grundigt."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "title": "Så ærter sådan:",
+        "items": [
+          "Spænd en snor ud der, hvor du vil så dine ærter. Det sikrer en fin, lige række.",
+          "Lav en rille på 3-5 cm dybde, fx med kanten af et hakkejern.",
+          "Læg ærterne i rillen med ca. 5 cm afstand.",
+          "Dæk rillen til med jord og tryk forsigtigt til, så ærterne får god kontakt med jorden.",
+          "Vand jorden igennem."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Kommer der frost om natten, så dæk de små planter med fiberdug (en tynd, hvid dug, der holder på varmen).",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det er en god idé at dække de små planter med fiberdug, hvis der kommer nattefrost."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "conditions",
+      "page": 1
+    },
     {
       "kind": "list",
       "items": [
-        "Jorden: Vælg et sted, hvor der ikke har groet ærter eller andre bælgfrugter, som fx bønner, de sidste 3-4 år.",
-        "Sol: Ærter har brug for masser af sol, så de skal sås et solrigt sted.",
-        "Plads: Der bør være 30-40 cm mellem rækkerne – for at give lys og luft og gøre det nemt at plukke – så det kræver god plads, hvis du skal have flere rækker."
+        "Jorden: Vælg et sted, hvor der ikke har stået ærter, bønner eller lignende de sidste 3-4 år.",
+        "Sol: Ærter skal have meget sol.",
+        "Plads: Hav 30-40 cm mellem rækkerne. Så får planterne lys og luft, og det er nemt at plukke."
       ],
-      "page": 1
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Jorden: Vælg et sted, hvor der ikke har groet ærter eller andre bælgfrugter, som fx bønner, de sidste 3-4 år.",
+          "Sol: Ærter har brug for masser af sol, så de skal sås et solrigt sted.",
+          "Plads: Der bør være 30-40 cm mellem rækkerne – for at give lys og luft og gøre det nemt at plukke – så det kræver god plads, hvis du skal have flere rækker."
+        ]
+      }
     },
-    { "kind": "text", "text": "Ærter kan gro i de fleste typer af jord, men en god, veldrænet og porøs jord er bedst.", "page": 1 },
+    {
+      "kind": "text",
+      "text": "Ærter kan gro i de fleste slags jord. Bedst er god, løs jord, hvor vandet kan løbe væk.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Ærter kan gro i de fleste typer af jord, men en god, veldrænet og porøs jord er bedst."
+      }
+    },
     {
       "kind": "steps",
-      "title": "Gør jorden klar sådan:",
+      "title": "Sådan gør du jorden klar:",
       "items": [
         "Fjern alt ukrudt.",
-        "Grav jorden godt igennem, og tilsæt eventuelt kompost eller anden næring. Med kompost er der ikke brug for anden gødning.",
-        "Er jorden meget tung og lerholdig, kan du blande sand eller grus i jorden."
+        "Grav jorden godt igennem, og bland evt. kompost i. Med kompost behøver du ikke anden gødning.",
+        "Er jorden tung og leret, så bland sand eller grus i."
       ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "title": "Gør jorden klar sådan:",
+        "items": [
+          "Fjern alt ukrudt.",
+          "Grav jorden godt igennem, og tilsæt eventuelt kompost eller anden næring. Med kompost er der ikke brug for anden gødning.",
+          "Er jorden meget tung og lerholdig, kan du blande sand eller grus i jorden."
+        ]
+      }
+    },
+    {
+      "kind": "section",
+      "key": "care",
       "page": 1
     },
-
-    { "kind": "section", "key": "care", "page": 1 },
-    { "kind": "text", "text": "De fleste ærteplanter har brug for en form for støtte, når de vokser, så deres små fangarme har noget at sno sig rundt om, når de gror opad. Her er fx et espalier løsningen. Det kan fx være snore spændt ud mellem to pinde, eller et gammelt metalhegn, der spændes ud mellem to hegnspæle.", "page": 1 },
-    { "kind": "text", "text": "Får ærterne ikke nok vand under blomstring, falder blomsterne af, og du får en ringere høst.", "page": 1 },
-    { "kind": "text", "text": "Lug løbende ukrudt væk fra jorden omkring ærterne.", "page": 1 },
-    { "kind": "text", "text": "Begræns risikoen for angreb ved enten at vælge tidlige sorter, der blomstrer, før ærtevikleren lægger æg, eller ved at dække de blomstrende ærter til med fiberdug eller insektnet, så ærtevikleren ikke kan komme til blomsterne.", "page": 1 },
-
-    { "kind": "section", "key": "harvest", "page": 1 },
-    { "kind": "text", "text": "Men typisk er de første ærter klar til at blive plukket og spist i slutningen af juni eller begyndelsen af juli.", "page": 1 },
-    { "kind": "text", "text": "Der går ikke mange dage, fra ærter er modne, til de er overmodne, og så bliver de kedelige og melede. Det er derfor en god idé at høste ofte, gerne flere gange om ugen.", "page": 1 },
-    { "kind": "text", "text": "Høster du løbende og ofte, stimuleres ærteplanterne til at sætte flere blomster og efterfølgende ærter.", "page": 1 },
-
-    { "kind": "section", "key": "seeds", "page": 1 },
-    { "kind": "text", "text": "Frø i bælge: Fx bønne, ært og radise. Skal ofte tørre så meget som muligt på planten, inden de høstes.", "page": 1, "sourceId": "dk-bolius-froe" },
-    { "kind": "text", "text": "Når frøene er tørret godt, kan du pille eller ryste frø ud af frøstandene eller bælgene.", "page": 1, "sourceId": "dk-bolius-froe" },
-    { "kind": "text", "text": "Husk at bruge frøægte sorter, og ikke F1-sorter, når du avler dine egne frø.", "page": 1, "sourceId": "dk-bolius-froe" },
-
-    { "kind": "section", "key": "neighbours", "page": 1 },
-    { "kind": "text", "text": "Lav ikke et permanent hegn, da du som nævnt helst bør dyrke ærter et andet sted næste år.", "page": 1 },
-    { "kind": "text", "text": "Ærter kan også skygge for andre afgrøder, hvis de står for tæt.", "page": 1 }
+    {
+      "kind": "text",
+      "text": "De fleste ærter skal have noget at klatre op ad. Det kan være snore mellem to pinde eller et gammelt hegn af metal mellem to pæle.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "De fleste ærteplanter har brug for en form for støtte, når de vokser, så deres små fangarme har noget at sno sig rundt om, når de gror opad. Her er fx et espalier løsningen. Det kan fx være snore spændt ud mellem to pinde, eller et gammelt metalhegn, der spændes ud mellem to hegnspæle."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Får ærterne for lidt vand, mens de blomstrer, falder blomsterne af, og du høster mindre.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Får ærterne ikke nok vand under blomstring, falder blomsterne af, og du får en ringere høst."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Fjern ukrudt omkring ærterne hele tiden.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Lug løbende ukrudt væk fra jorden omkring ærterne."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ærteviklerens larver kan spise ærterne. Undgå det ved at vælge tidlige sorter, der blomstrer, før den lægger æg – eller dæk ærterne med fiberdug eller insektnet, mens de blomstrer.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Begræns risikoen for angreb ved enten at vælge tidlige sorter, der blomstrer, før ærtevikleren lægger æg, eller ved at dække de blomstrende ærter til med fiberdug eller insektnet, så ærtevikleren ikke kan komme til blomsterne."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "De første ærter er som regel klar til at plukke sidst i juni eller først i juli.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Men typisk er de første ærter klar til at blive plukket og spist i slutningen af juni eller begyndelsen af juli."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ærter bliver hurtigt overmodne, og så smager de kedeligt og bliver melede. Pluk derfor ofte, gerne flere gange om ugen.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Der går ikke mange dage, fra ærter er modne, til de er overmodne, og så bliver de kedelige og melede. Det er derfor en god idé at høste ofte, gerne flere gange om ugen."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Plukker du ofte, får planterne flere blomster og dermed flere ærter.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Høster du løbende og ofte, stimuleres ærteplanterne til at sætte flere blomster og efterfølgende ærter."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "seeds",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Frø i bælge, fx fra bønner, ærter og radiser, skal helst tørre godt på planten, før du høster dem.",
+      "page": 1,
+      "sourceId": "dk-bolius-froe",
+      "original": {
+        "lang": "da",
+        "text": "Frø i bælge: Fx bønne, ært og radise. Skal ofte tørre så meget som muligt på planten, inden de høstes."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Når frøene er helt tørre, kan du pille eller ryste dem ud af bælgene.",
+      "page": 1,
+      "sourceId": "dk-bolius-froe",
+      "original": {
+        "lang": "da",
+        "text": "Når frøene er tørret godt, kan du pille eller ryste frø ud af frøstandene eller bælgene."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Vil du gemme dine egne frø, så brug almindelige sorter. Frø fra F1-sorter (står på frøposen) giver ikke de samme planter igen.",
+      "page": 1,
+      "sourceId": "dk-bolius-froe",
+      "original": {
+        "lang": "da",
+        "text": "Husk at bruge frøægte sorter, og ikke F1-sorter, når du avler dine egne frø."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "neighbours",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Byg ikke et fast stativ, for næste år skal ærterne helst gro et andet sted.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Lav ikke et permanent hegn, da du som nævnt helst bør dyrke ærter et andet sted næste år."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Står ærterne for tæt på andre planter, kan de tage lyset fra dem.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Ærter kan også skygge for andre afgrøder, hvis de står for tæt."
+      }
+    }
   ],
   "checks": [],
   "ownerChecked": false,
-  "related": ["radiser", "kartofler"]
+  "related": [
+    "radiser",
+    "kartofler"
+  ],
+  "originalSummary": "Det er nemt at dyrke ærter udenfor, men husk at vande og undgå skadedyr."
 }

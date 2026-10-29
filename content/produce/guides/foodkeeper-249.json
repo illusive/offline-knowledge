@@ -14,7 +14,7 @@
      }
     },
     {
-     "text": "De færreste bær og stenfrugter holder længe rå. De bør syltes, tørres, fryses eller behandles på anden måde, hvis de skal holde i længere tid.",
+     "text": "De fleste bær og frugter med sten holder ikke længe, når de er rå. Vil du gemme dem, så sylt, tør eller frys dem.",
      "sourceRef": {
       "sourceId": "dk-bolius-udendoers-opbevaring",
       "locator": "Bær- og stenfrugter",
@@ -61,7 +61,7 @@
    "key": "together",
    "blocks": [
     {
-     "text": "Ethylen udefra får abrikoser til at modne hurtigere og kan fremme råd.",
+     "text": "Ethylen (en gas, som frugt og grønt selv afgiver, og som får dem til at modne) udefra får abrikoser til at modne hurtigere og kan fremme råd.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Apricot chapter, Ethylene Production and Sensitivity, p. 196",
@@ -88,7 +88,7 @@
    "verdict": "described",
    "blocks": [
     {
-     "text": "Vælg faste, helt modne abrikoser. Vask dem godt, halver dem, og fjern stenen; de skal ikke skrælles. Læg dem i ascorbinsyre-opløsning i 10 minutter, og lad dem dryppe godt af. Læg dem med snitfladen op, og tryk midten op, så mere af kødet kommer i luften. Tør dem, til de er bløde, bøjelige og læderagtige uden fugtigt midte (24–36 timer).",
+     "text": "Vælg faste, helt modne abrikoser. Vask dem godt, halver dem, og fjern stenen. De skal ikke skrælles. Læg dem i vand med C-vitamin (ascorbinsyre) i 10 minutter, og lad dem dryppe godt af. Læg dem med snitfladen op, og tryk midten op, så mere af kødet kommer i luften. Tør dem, til de er bløde, bøjelige og seje som læder uden fugtig midte (24–36 timer).",
      "sourceRef": {
       "sourceId": "csu-drying-fruits",
       "locator": "Table 2, Apricots",
@@ -96,7 +96,7 @@
      }
     },
     {
-     "text": "Forbehandling mod mørkfarvning: Rør 34 g ren ascorbinsyre (C-vitamin) i 1 liter koldt vand, eller bland citronsaft og koldt vand i lige dele. Skær den skrællede frugt direkte ned i opløsningen, lad den ligge i 10 minutter, og lad den dryppe godt af.",
+     "text": "Så frugten ikke bliver brun: Rør 34 g ren ascorbinsyre (C-vitamin som pulver) ud i 1 liter koldt vand – eller bland citronsaft og koldt vand i lige dele. Skær den skrællede frugt direkte ned i vandet. Lad den ligge i 10 minutter, og lad den dryppe godt af.",
      "sourceRef": {
       "sourceId": "csu-drying-fruits",
       "locator": "Ascorbic Acid Pretreatment; Citric Acid or Lemon Juice Pretreatment",
@@ -104,7 +104,7 @@
      }
     },
     {
-     "text": "Tør frugten i ét lag ved 60 °C (140 °F) i ovn eller tørreapparat. Vend store stykker hver 3.–4. time. Frugten er tør, når den er læderagtig og bøjelig: Klem en håndfuld afkølede stykker – der må ikke være fugt på hånden, og stykkerne skal springe fra hinanden.",
+     "text": "Tør frugten i ét lag ved 60 °C i ovnen eller i et tørreapparat. Vend store stykker hver 3.–4. time. Frugten er tør, når den er sej og kan bøjes. Test det: Lad et par stykker køle af, og klem en håndfuld. Hånden skal være tør, og stykkerne skal falde fra hinanden, når du slipper.",
      "sourceRef": {
       "sourceId": "csu-drying-fruits",
       "locator": "Drying Methods; Testing for Dryness",
@@ -112,7 +112,7 @@
      }
     },
     {
-     "text": "Lad den tørrede frugt efterbehandle i 4–10 dage i en løst tildækket beholder, og ryst den dagligt. Kommer der fugtperler, skal den tørres mere. Opbevar den derefter tæt lukket, køligt, tørt og mørkt; den holder 6–12 måneder.",
+     "text": "Lad frugten hvile i 4–10 dage i en beholder med et løst låg, og ryst den hver dag. Så fordeles den sidste fugt. Kommer der små dråber på indersiden, skal frugten tørre mere. Opbevar den derefter i en tæt beholder, køligt, tørt og mørkt. Så holder den 6–12 måneder.",
      "sourceRef": {
       "sourceId": "csu-drying-fruits",
       "locator": "Post-Drying Treatment; Packaging and Storage",
@@ -120,7 +120,7 @@
      }
     },
     {
-     "text": "Uden strøm kan frugt tørres udendørs i solen, fordi frugt indeholder meget sukker og syre. Det kræver varme, tørre dage med blæst, mindst 29 °C (85 °F) og helst en luftfugtighed under 60 %, og det tager flere dage. Dæk frugten til eller tag den i læ om natten, så den ikke trækker fugt igen.",
+     "text": "Uden strøm kan du tørre frugt ude i solen. Det kan lade sig gøre, fordi frugt har meget sukker og syre. Det tager flere dage og kræver varmt, tørt vejr med vind: mindst 29 °C og helst ikke for fugtig luft (under 60 % luftfugtighed). Dæk frugten til, eller tag den ind om natten, så den ikke bliver fugtig igen.",
      "sourceRef": {
       "sourceId": "nchfp-sun-drying",
       "locator": "Sun Drying",
@@ -139,7 +139,7 @@
    "verdict": "waterBath",
    "blocks": [
     {
-     "text": "Vælg faste, velfarvede, modne abrikoser. Vask dem; skindet kan tages af ved at dyppe dem 30–60 sekunder i kogende vand og derefter i koldt vand. Halver dem, fjern stenen, og hold dem i ascorbinsyre-opløsning. Rå abrikoser i glas giver dårlig kvalitet, så kog dem op i tynd sukkerlage, vand eller æble- eller hvid druesaft, og fyld dem varme på glas med snitfladen nedad og 1,3 cm (½ tomme) fri plads.",
+     "text": "Vælg faste, velfarvede, modne abrikoser. Vask dem. Skindet kan tages af ved at dyppe dem 30–60 sekunder i kogende vand og derefter i koldt vand. Halver dem, fjern stenen, og hold dem i vand med C-vitamin (ascorbinsyre). Rå abrikoser i glas giver dårlig kvalitet, så kog dem op i tynd sukkerlage, vand eller æble- eller hvid druesaft, og fyld dem varme på glas med snitfladen nedad og 1,3 cm fri plads.",
      "sourceRef": {
       "sourceId": "nchfp-apricots-halved-or-sliced",
       "locator": "Apricots-Halved or Sliced, procedure",
@@ -147,7 +147,7 @@
      }
     },
     {
-     "text": "Henkogningstid i vandbad (varm fyldning) op til 300 m over havet: pint-glas 20 minutter, quart-glas 25 minutter.",
+     "text": "Henkogningstid i vandbad (varm fyldning (frugten kommer varm i glasset)) op til 300 m over havet: pint-glas 20 minutter, quart-glas 25 minutter.",
      "sourceRef": {
       "sourceId": "nchfp-apricots-halved-or-sliced",
       "locator": "Apricots-Halved or Sliced, Table 1",
@@ -155,7 +155,7 @@
      }
     },
     {
-     "text": "Abrikosmarmelade uden pektin: 2 liter (2 quarts) knuste, skrællede abrikoser, 60 ml (¼ cup) citronsaft og 6 cups sukker koges tykt (ca. 25 minutter), fyldes varm på varme, steriliserede glas med 6 mm (¼ tomme) fri plads og henkoges 5 minutter i vandbad.",
+     "text": "Abrikosmarmelade uden pektin: 2 liter knuste, skrællede abrikoser, 60 ml citronsaft og 6 cups sukker koges tykt (ca. 25 minutter), fyldes varm på varme, steriliserede glas med 6 mm fri plads og henkoges 5 minutter i vandbad.",
      "sourceRef": {
       "sourceId": "nchfp-apricot-jam-without-pectin",
       "locator": "Apricot Jam without Pectin",

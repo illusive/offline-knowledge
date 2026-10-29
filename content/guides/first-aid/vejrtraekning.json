@@ -3,26 +3,82 @@
   "category": "first-aid",
   "order": 7,
   "title": "Er der vejrtrækning?",
-  "summary": "Når du skal kontrollere, om den tilskadekomne har en normal vejrtrækning, skal du udføre se, lyt og føl!",
+  "summary": "Tjek, om personen trækker vejret normalt: Se, lyt og føl.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
-  "abbreviations": [{ "short": "HLR", "long": "hjertelungeredning" }],
+  "abbreviations": [
+    {
+      "short": "HLR",
+      "long": "hjertelungeredning"
+    }
+  ],
   "blocks": [
     {
       "kind": "list",
-      "title": "Samtidig med at fastholder dit hageløft:",
+      "title": "Hold hagen løftet, mens du:",
       "items": [
-        "Se: Om brystkassen og maven hæver og sænker sig",
-        "Lyt: Efter vejrtrækning ved at placere øret meget tæt på den tilskadekomnes mund og næse",
-        "Føl: Efter udåndingsluft på din kind."
+        "Ser: Hæver og sænker brystet og maven sig?",
+        "Lytter: Læg øret helt tæt på personens mund og næse.",
+        "Føler: Kan du mærke ånde på din kind?"
       ],
-      "page": 20
+      "page": 20,
+      "original": {
+        "lang": "da",
+        "title": "Samtidig med at fastholder dit hageløft:",
+        "items": [
+          "Se: Om brystkassen og maven hæver og sænker sig",
+          "Lyt: Efter vejrtrækning ved at placere øret meget tæt på den tilskadekomnes mund og næse",
+          "Føl: Efter udåndingsluft på din kind."
+        ]
+      }
     },
-    { "kind": "heading", "text": "Normal, unormal eller ingen vejrtrækning", "page": 20 },
-    { "kind": "text", "text": "Normal vejrtrækning lyder ubesværet, mens en unormal vejrtrækning kan være enkelte gisp, eller at man trækker vejret langsomt og med hørlig lyd (som en fisk på land).", "page": 20 },
-    { "kind": "text", "text": "Ved ingen vejrtrækning kan du hverken se, høre eller føle vejrtrækning.", "page": 20 },
-    { "kind": "warning", "title": "Vigtigt", "text": "Hjertelungeredning (HLR) påbegyndes ved unormal (agonal), ingen vejrtrækning, eller hvis du er i tvivl.", "page": 21 },
-    { "kind": "text", "text": "Hvis der er normal vejrtrækning, og den tilskadekomne stadig er bevidstløs, placeres personen i et stabilt sideleje!", "page": 22 }
+    {
+      "kind": "heading",
+      "text": "Normal, unormal eller ingen vejrtrækning",
+      "page": 20,
+      "original": {
+        "lang": "da",
+        "text": "Normal, unormal eller ingen vejrtrækning"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Normal vejrtrækning lyder rolig og let. Unormal vejrtrækning kan være enkelte gisp, eller at personen trækker vejret langsomt og med en hørbar lyd – som en fisk på land.",
+      "page": 20,
+      "original": {
+        "lang": "da",
+        "text": "Normal vejrtrækning lyder ubesværet, mens en unormal vejrtrækning kan være enkelte gisp, eller at man trækker vejret langsomt og med hørlig lyd (som en fisk på land)."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ingen vejrtrækning: Du kan hverken se, høre eller mærke, at personen trækker vejret.",
+      "page": 20,
+      "original": {
+        "lang": "da",
+        "text": "Ved ingen vejrtrækning kan du hverken se, høre eller føle vejrtrækning."
+      }
+    },
+    {
+      "kind": "warning",
+      "title": "Vigtigt",
+      "text": "Start hjertemassage og kunstigt åndedræt (HLR), hvis vejrtrækningen er unormal, hvis der ingen vejrtrækning er – eller hvis du er i tvivl.",
+      "page": 21,
+      "original": {
+        "lang": "da",
+        "text": "Hjertelungeredning (HLR) påbegyndes ved unormal (agonal), ingen vejrtrækning, eller hvis du er i tvivl.",
+        "title": "Vigtigt"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Trækker personen vejret normalt, men er stadig bevidstløs? Så læg personen i stabilt sideleje.",
+      "page": 22,
+      "original": {
+        "lang": "da",
+        "text": "Hvis der er normal vejrtrækning, og den tilskadekomne stadig er bevidstløs, placeres personen i et stabilt sideleje!"
+      }
+    }
   ],
   "checks": [
     {
@@ -39,5 +95,11 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["frie-luftveje", "stabilt-sideleje", "hlr-voksne"]
+  "related": [
+    "frie-luftveje",
+    "stabilt-sideleje",
+    "hlr-voksne"
+  ],
+  "name": "Trækker personen vejret?",
+  "originalSummary": "Når du skal kontrollere, om den tilskadekomne har en normal vejrtrækning, skal du udføre se, lyt og føl!"
 }

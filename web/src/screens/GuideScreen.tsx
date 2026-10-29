@@ -17,6 +17,7 @@ import { SaveButton } from '../bookmarks/BookmarkButton';
 export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: Strings }) {
   const [detail, setDetail] = useState<{ id: string; value: GuideDetail | null } | null>(null);
   const heading = useRef<HTMLHeadingElement>(null);
+  const [showOriginal, setShowOriginal] = useState(false);
 
   useEffect(() => {
     let current = true;
@@ -50,6 +51,8 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
   // The 112 card on first aid and on situations (not on stock lists or crops).
   const showEmergency = firstAid || guide.grp === 'situation';
   const checklistItems = blocks.flatMap((b) => (b.kind === 'checklist' ? b.items : []));
+  const translated = blocks.some((b) => b.original?.lang === 'en');
+  const rewritten = !!guide.summary_original || blocks.some((b) => b.original?.lang === 'da');
   return (
     <Page>
       <div className="flex items-center justify-between gap-[12px]">
@@ -62,7 +65,7 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
             {guide.name ?? guide.title}
           </h1>
           {guide.season ? <p className="mt-1 font-medium">{guide.season}</p> : null}
-          {guide.summary ? <p className="mt-1 text-muted">{guide.summary}</p> : null}
+          {guide.summary ? <p className="mt-1 text-muted">{showOriginal && guide.summary_original ? guide.summary_original : guide.summary}</p> : null}
           {checklistItems.length > 0 ? <ChecklistProgress ids={checklistItems.map((i) => i.id)} s={s} /> : null}
         </header>
         {guide.abbreviations.length > 0 ? (
@@ -75,9 +78,21 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
             ))}
           </dl>
         ) : null}
+        {translated || rewritten ? (
+          <div className="flex flex-wrap items-center justify-between gap-x-[12px] gap-y-1 px-1">
+            <p className="text-sm text-muted">{showOriginal ? s.sourceWordsShown : rewritten ? s.plainLanguage : s.partlyTranslated}</p>
+            <button type="button" aria-pressed={showOriginal} onClick={() => setShowOriginal((v) => !v)} className="min-h-11 rounded-full bg-surface px-[16px] text-sm font-medium">
+              {showOriginal ? s.showTranslation : s.showOriginal}
+            </button>
+          </div>
+        ) : null}
         <Card className="flex flex-col gap-4">
           {blocks.map((block, i) => (
-            <Block key={i} block={block} imageUrls={imageUrls} s={s} />
+            // A run of translated blocks (D-041) starts with a label; "Vis original" shows the source's words.
+            <div key={i} className="contents" lang={block.original?.lang === 'en' && showOriginal ? 'en' : undefined}>
+              {block.original?.lang === 'en' && blocks[i - 1]?.original?.lang !== 'en' ? <p className="-mb-2 text-xs font-semibold uppercase tracking-wide text-muted">{showOriginal ? s.originalEnglish : s.translatedFromEnglish}</p> : null}
+              <Block block={showOriginal ? withOriginal(block) : block} imageUrls={imageUrls} s={s} />
+            </div>
           ))}
         </Card>
       </article>
@@ -194,6 +209,24 @@ function Block({ block, imageUrls, s }: { block: GuideBlock; imageUrls: Map<stri
           {block.caption ? <figcaption className="text-sm text-muted">{block.caption}</figcaption> : null}
         </figure>
       );
+  }
+}
+
+// The block with the source's own words in place of the translation.
+function withOriginal(block: GuideBlock): GuideBlock {
+  const o = block.original;
+  if (!o) return block;
+  switch (block.kind) {
+    case 'heading':
+    case 'text':
+      return { ...block, text: o.text ?? block.text };
+    case 'steps':
+    case 'list':
+      return { ...block, title: o.title ?? block.title, items: o.items ?? block.items };
+    case 'warning':
+      return { ...block, title: o.title ?? block.title, text: o.text ?? block.text, items: o.items ?? block.items };
+    default:
+      return block;
   }
 }
 

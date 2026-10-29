@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 12,
   "title": "5 afgrøder, der er dyre i butikkerne, men som du nemt kan dyrke selv",
-  "summary": "Hvidløg er en såkaldt cirkulær afgrøde – det vil sige, at du kan blive ved med at sætte nye fed i jorden fra de planter, du høster, og du behøver på den måde ikke købe nye hver sæson.",
+  "summary": "Plant fed fra dine egne hvidløg igen, så behøver du aldrig købe nye.",
   "sourceId": "dk-bolius-5-dyre",
   "risk": "low",
   "name": "Hvidløg",
@@ -20,13 +20,21 @@
     },
     {
       "kind": "text",
-      "text": "Det mest optimale er at sætte hvidløg i jorden om efteråret, inden frosten kommer. På den måde når rødderne at etablere sig i jorden inden vinteren, og om foråret vil planten spire og sætte hele løg.",
-      "page": 1
+      "text": "Sæt hvidløg i jorden om efteråret, før frosten kommer. Så når rødderne at gro fast inden vinteren, og om foråret vokser der hele hvidløg frem.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det mest optimale er at sætte hvidløg i jorden om efteråret, inden frosten kommer. På den måde når rødderne at etablere sig i jorden inden vinteren, og om foråret vil planten spire og sætte hele løg."
+      }
     },
     {
       "kind": "text",
-      "text": "Start med at købe sætteløg fra planteskolen eller på nettet, og bræk feddene fra hinanden, hvis de ikke allerede er det. Den lidt noprede bund skal stadig være der og også gerne lidt rødder.",
-      "page": 1
+      "text": "Køb hvidløg til at plante (sætteløg) i en planteskole eller på nettet. Del dem i fed. Bunden af feddet skal stadig være der, gerne med lidt rødder.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Start med at købe sætteløg fra planteskolen eller på nettet, og bræk feddene fra hinanden, hvis de ikke allerede er det. Den lidt noprede bund skal stadig være der og også gerne lidt rødder."
+      }
     },
     {
       "kind": "section",
@@ -35,8 +43,12 @@
     },
     {
       "kind": "text",
-      "text": "Hvidløg kræver ikke så meget pasning – du skal bare sørge for at luge ud omkring planten og give den lidt vand, hvis jorden omkring begynder at blive tør og skorpet.",
-      "page": 1
+      "text": "Hvidløg kræver ikke meget. Fjern ukrudt, og vand lidt, hvis jorden bliver tør og hård.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvidløg kræver ikke så meget pasning – du skal bare sørge for at luge ud omkring planten og give den lidt vand, hvis jorden omkring begynder at blive tør og skorpet."
+      }
     },
     {
       "kind": "section",
@@ -45,18 +57,30 @@
     },
     {
       "kind": "text",
-      "text": "Du kan begynde at høste hvidløgene løbende fra midt på sommeren eller henad sensommeren, når toppen begynder at hænge. Det betyder, at hvidløget er klart til at blive høstet. Når hvidløgene er klar, må de ikke blive for længe i jorden, for så kan de rådne.",
-      "page": 1
+      "text": "Du kan høste fra midt på sommeren, når toppen begynder at hænge. Lad dem ikke blive for længe i jorden, når de er klar – så kan de rådne.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan begynde at høste hvidløgene løbende fra midt på sommeren eller henad sensommeren, når toppen begynder at hænge. Det betyder, at hvidløget er klart til at blive høstet. Når hvidløgene er klar, må de ikke blive for længe i jorden, for så kan de rådne."
+      }
     },
     {
       "kind": "text",
-      "text": "Høst hvidløgene og hæng dem op et tørt sted, så skallen bliver tør.",
-      "page": 1
+      "text": "Hæng hvidløgene op et tørt sted, så skallen tørrer.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Høst hvidløgene og hæng dem op et tørt sted, så skallen bliver tør."
+      }
     },
     {
       "kind": "text",
-      "text": "Du kan godt spise af dem, fra du tager dem op ad jorden, men skal de opbevares til senere brug, skal du lade dem hænge og tørre ca. 3-4 uger. Derefter skal de gerne opbevares ved 10-15 grader.",
-      "page": 1
+      "text": "Du kan spise dem med det samme. Skal de gemmes, så lad dem hænge og tørre i 3-4 uger. Opbevar dem derefter ved 10-15 grader.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan godt spise af dem, fra du tager dem op ad jorden, men skal de opbevares til senere brug, skal du lade dem hænge og tørre ca. 3-4 uger. Derefter skal de gerne opbevares ved 10-15 grader."
+      }
     },
     {
       "kind": "section",
@@ -65,13 +89,21 @@
     },
     {
       "kind": "text",
-      "text": "Vil du bruge dem som sætteløg til næste sæson, skal de dog opbevares ved en temperatur på under 8 grader.",
-      "page": 1
+      "text": "Vil du plante dem igen næste år, så opbevar dem under 8 grader.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vil du bruge dem som sætteløg til næste sæson, skal de dog opbevares ved en temperatur på under 8 grader."
+      }
     },
     {
       "kind": "text",
-      "text": "Du kan godt lægge de hvidløg, du køber i butikkerne, men udbyttet er mere usikkert i forhold til deciderede sætteløg, som er særligt dyrket til at blive dyrket videre på.",
-      "page": 1
+      "text": "Du kan godt plante hvidløg fra supermarkedet, men det er mere usikkert, hvor meget du får. Sætteløg er dyrket til at blive plantet.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan godt lægge de hvidløg, du køber i butikkerne, men udbyttet er mere usikkert i forhold til deciderede sætteløg, som er særligt dyrket til at blive dyrket videre på."
+      }
     }
   ],
   "checks": [],
@@ -79,5 +111,6 @@
   "related": [
     "loeg",
     "porrer"
-  ]
+  ],
+  "originalSummary": "Hvidløg er en såkaldt cirkulær afgrøde – det vil sige, at du kan blive ved med at sætte nye fed i jorden fra de planter, du høster, og du behøver på den måde ikke købe nye hver sæson."
 }

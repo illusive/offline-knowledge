@@ -1,11 +1,11 @@
-// Generates the placeholder app icons (an open book on the accent colour) as PNG files
-// in public/, using only Node's zlib. Replace with a designed icon later (OPEN_QUESTIONS).
+// Generates the app icons as PNG files in public/, using only Node's zlib: the asterisk from Home
+// (the offline-ready mark) in dark on the accent colour. favicon.svg is the same drawing by hand.
 
 import { writeFileSync } from 'node:fs';
 import { deflateSync } from 'node:zlib';
 
-const ACCENT = [30, 92, 72];
-const PAGE = [248, 248, 245];
+const ACCENT = [212, 240, 74]; // --c-accent
+const MARK = [20, 20, 20]; // --c-on-accent
 
 function crc32(buf: Buffer): number {
   let c = ~0;
@@ -25,17 +25,20 @@ function chunk(type: string, data: Buffer): Buffer {
   return Buffer.concat([len, body, crc]);
 }
 
-// Open book: two pages slightly tilted toward a spine in the middle.
+// Lucide's asterisk (three strokes through the centre, round caps), scaled into the middle so the
+// icon also survives the circular crop of maskable icons.
+const ARM = 0.25; // half the length of each stroke, as a share of the icon
+const HALF_STROKE = 0.055;
+const STROKES = [90, 30, -30].map((deg) => [Math.cos((deg * Math.PI) / 180), Math.sin((deg * Math.PI) / 180)] as const);
+
 function pixel(x: number, y: number): number[] {
   const u = x - 0.5;
   const v = y - 0.5;
-  const halfWidth = 0.3;
-  const inward = halfWidth - Math.abs(u); // 0 at the outer edge, halfWidth at the spine
-  const top = -0.22 + inward * 0.15; // outer corners sit higher than the spine
-  const bottom = 0.2 + inward * 0.1;
-  const onPage = Math.abs(u) <= halfWidth && v >= top && v <= bottom;
-  const spine = Math.abs(u) < 0.012;
-  return onPage && !spine ? PAGE : ACCENT;
+  const onMark = STROKES.some(([dx, dy]) => {
+    const t = Math.max(-ARM, Math.min(ARM, u * dx + v * dy));
+    return Math.hypot(u - t * dx, v - t * dy) <= HALF_STROKE;
+  });
+  return onMark ? MARK : ACCENT;
 }
 
 function png(size: number): Buffer {
@@ -43,8 +46,8 @@ function png(size: number): Buffer {
   for (let y = 0; y < size; y++) {
     raw[y * (size * 3 + 1)] = 0; // filter: none
     for (let x = 0; x < size; x++) {
-      // 2x2 supersampling for smoother edges
-      const samples = [[0.25, 0.25], [0.75, 0.25], [0.25, 0.75], [0.75, 0.75]].map(([dx, dy]) => pixel((x + dx!) / size, (y + dy!) / size));
+      // 4x4 supersampling for smoother edges
+      const samples = [0.125, 0.375, 0.625, 0.875].flatMap((dx) => [0.125, 0.375, 0.625, 0.875].map((dy) => [dx, dy])).map(([dx, dy]) => pixel((x + dx!) / size, (y + dy!) / size));
       const rgb = [0, 1, 2].map((i) => Math.round(samples.reduce((s, p) => s + p[i]!, 0) / samples.length));
       raw.set(rgb, y * (size * 3 + 1) + 1 + x * 3);
     }
@@ -65,4 +68,4 @@ const out = new URL('../public/', import.meta.url);
 for (const [name, size] of [['icon-192.png', 192], ['icon-512.png', 512], ['apple-touch-icon.png', 180]] as const) {
   writeFileSync(new URL(name, out), png(size));
 }
-console.log('Wrote placeholder icons to public/');
+console.log('Wrote icons to public/');

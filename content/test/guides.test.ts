@@ -100,3 +100,24 @@ test('a high-risk preparedness guide still needs a second authority', () => {
   const g = guide({ id: 'e', category: 'preparedness', risk: 'high', group: 'situation', checks: [] });
   assert.ok(validateGuides([g], sources, texts, new Set()).some((p) => p.includes('no second-authority check')));
 });
+
+test('translated blocks (D-041): the original is checked verbatim, must match the translation in shape, and only in preparedness', () => {
+  const block = (original: object) => ({ kind: 'list' as const, items: ['Sikr dig selv.'], page: 1, sourceId: 'second', original: { lang: 'en' as const, ...original } });
+  const prep = (b: ReturnType<typeof block>) => guide({ id: 'f', category: 'preparedness', risk: 'low', group: 'situation', checks: [], blocks: [b] });
+  assert.deepEqual(validateGuides([prep(block({ items: ['Sikr dig, at der ikke er fare for dig selv.'] }))], sources, texts, new Set()), []);
+  const problems = validateGuides([prep(block({ items: ['Not in the source.'] }))], sources, texts, new Set());
+  assert.ok(problems.some((p) => p.includes('not verbatim')));
+  assert.ok(validateGuides([prep(block({ items: [] }))], sources, texts, new Set()).some((p) => p.includes('the original has 0 items')));
+  const firstAid = guide({ blocks: [{ kind: 'text', text: 'Oversat.', page: 1, original: { lang: 'en', text: 'Du må aldrig gå på kompromis med din egen sikkerhed.' } }] });
+  assert.ok(validateGuides([firstAid], sources, texts, new Set()).some((p) => p.includes("only 'Når det sker'")));
+});
+
+test('plain-language rewrites (D-042): allowed in every category; the Danish source words are checked, also for a rewritten summary', () => {
+  const ok = guide({
+    summary: 'Pas på dig selv.', originalSummary: 'Du må aldrig gå på kompromis med din egen sikkerhed.',
+    blocks: [{ kind: 'text', text: 'Bring aldrig dig selv i fare.', page: 1, original: { lang: 'da', text: 'Du må aldrig gå på kompromis med din egen sikkerhed.' } }],
+  });
+  assert.deepEqual(validateGuides([ok], sources, texts, new Set()), []);
+  const bad = guide({ originalSummary: 'Ikke i kilden.', summary: 'Ny tekst.' });
+  assert.ok(validateGuides([bad], sources, texts, new Set()).some((p) => p.includes('summary original') && p.includes('not verbatim')));
+});

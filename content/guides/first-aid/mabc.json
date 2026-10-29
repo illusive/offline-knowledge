@@ -3,14 +3,53 @@
   "category": "first-aid",
   "order": 4,
   "title": "M-ABC-princippet",
-  "summary": "For at kunne prioritere den mest nødvendige førstehjælp til én eller flere tilskadekomne, anvender vi M-ABC-princippet:",
+  "summary": "Er en eller flere kommet til skade, hjælper M-ABC dig med at gøre det vigtigste først:",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
-  "abbreviations": [{ "short": "M-ABC", "long": "Massive blødninger, Airway – luftveje, Breathing – åndedræt, Circulation – blodcirkulation" }],
+  "abbreviations": [
+    {
+      "short": "M-ABC",
+      "long": "Massive blødninger, Airway – luftveje, Breathing – åndedræt, Circulation – blodcirkulation"
+    }
+  ],
   "blocks": [
-    { "kind": "steps", "items": ["Massive blødninger – livstruende blødninger", "Airway – luftveje", "Breathing – åndedræt", "Circulation – blodcirkulation"], "page": 17 },
-    { "kind": "text", "text": "Alle celler i kroppen har behov for ilt for at kunne opretholde deres funktion.", "page": 17 },
-    { "kind": "text", "text": "Nogle celler kan kun undvære ilt i få minutter, før de tager skade. Hjernens celler er blandt disse.", "page": 17 }
+    {
+      "kind": "steps",
+      "items": [
+        "M: Massive blødninger – stop blødninger, der er livsfarlige",
+        "A: Airway – sørg for frie luftveje",
+        "B: Breathing – tjek vejrtrækningen",
+        "C: Circulation – tjek blodomløbet"
+      ],
+      "page": 17,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Massive blødninger – livstruende blødninger",
+          "Airway – luftveje",
+          "Breathing – åndedræt",
+          "Circulation – blodcirkulation"
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Alle celler i kroppen skal have ilt for at virke.",
+      "page": 17,
+      "original": {
+        "lang": "da",
+        "text": "Alle celler i kroppen har behov for ilt for at kunne opretholde deres funktion."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Nogle celler tager skade efter få minutter uden ilt. Hjernens celler er nogle af dem.",
+      "page": 17,
+      "original": {
+        "lang": "da",
+        "text": "Nogle celler kan kun undvære ilt i få minutter, før de tager skade. Hjernens celler er blandt disse."
+      }
+    }
   ],
   "checks": [
     {
@@ -21,5 +60,11 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["massive-bloedninger", "frie-luftveje", "vejrtraekning"]
+  "related": [
+    "massive-bloedninger",
+    "frie-luftveje",
+    "vejrtraekning"
+  ],
+  "name": "Hvad skal du gøre først?",
+  "originalSummary": "For at kunne prioritere den mest nødvendige førstehjælp til én eller flere tilskadekomne, anvender vi M-ABC-princippet:"
 }

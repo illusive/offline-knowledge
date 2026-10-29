@@ -101,7 +101,7 @@
    "key": "together",
    "blocks": [
     {
-     "text": "Kartofler danner meget lidt ethylen og er ikke særlig følsomme over for ethylen udefra.",
+     "text": "Kartofler danner meget lidt ethylen (en gas, som frugt og grønt selv afgiver, og som får dem til at modne) og er ikke særlig følsomme over for ethylen udefra.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Potato chapter, Ethylene Production and Sensitivity, p. 508",
@@ -136,7 +136,7 @@
    "verdict": "good",
    "blocks": [
     {
-     "text": "Vask og skræl. Skær dem i stave på ca. 6 mm (¼ tomme) eller i skiver på ca. 3 mm (⅛ tomme). Damp-blancher 6–8 minutter, eller blancher 5–6 minutter i kogende vand.",
+     "text": "Vask og skræl. Skær dem i stave på ca. 6 mm eller i skiver på ca. 3 mm. Damp-blancher 6–8 minutter, eller blancher 5–6 minutter i kogende vand.",
      "sourceRef": {
       "sourceId": "msu-montguide-drying-vegetables",
       "locator": "Table 1, Potatoes, p. 3",
@@ -144,7 +144,7 @@
      }
     },
     {
-     "text": "Tør dem 8–12 timer i et tørreapparat ved 60 °C (140 °F), til de er sprøde. I en almindelig ovn kan det tage op til dobbelt så lang tid; hold ovnlågen 5–15 cm (2–6 tommer) på klem.",
+     "text": "Tør dem 8–12 timer i et tørreapparat ved 60 °C, til de er sprøde. I en almindelig ovn kan det tage op til dobbelt så lang tid. Hold ovnlågen 5–15 cm på klem.",
      "sourceRef": {
       "sourceId": "msu-montguide-drying-vegetables",
       "locator": "Methods of Drying; Oven Drying; Table 1, pp. 1–3",
@@ -171,7 +171,7 @@
    "verdict": "pressure",
    "blocks": [
     {
-     "text": "Alle friske grøntsager undtagen de fleste tomater er syrefattige (pH over 4,6), og sporerne af botulismebakterien er meget svære at dræbe ved kogepunktet. Syrefattige fødevarer skal derfor steriliseres ved 116–121 °C (240–250 °F) i en trykkoger.",
+     "text": "Alle friske grøntsager – undtagen de fleste tomater – indeholder for lidt syre (pH over 4,6). Bakterien bag botulisme, en farlig forgiftning, danner sporer, der næsten ikke dør ved almindelig kogning. Grøntsager skal derfor henkoges i en trykkoger ved 116–121 °C.",
      "sourceRef": {
       "sourceId": "usda-canning-2015-guide01",
       "locator": "Food acidity and processing methods, p. 1-8",
@@ -179,7 +179,7 @@
      }
     },
     {
-     "text": "Vælg små til mellemstore, modne kartofler af god kvalitet. Kartofler, der har været opbevaret under 7 °C (45 °F), kan blive misfarvede ved henkogning. Hele kartofler skal være 2,5–5 cm (1–2 tommer) i diameter.",
+     "text": "Vælg små til mellemstore, modne kartofler af god kvalitet. Kartofler, der har været opbevaret under 7 °C, kan blive misfarvede ved henkogning. Hele kartofler skal være 2,5–5 cm i diameter.",
      "sourceRef": {
       "sourceId": "usda-canning-2015-guide04",
       "locator": "Potatoes, white—cubed or whole, p. 4-17",
@@ -187,7 +187,7 @@
      }
     },
     {
-     "text": "Vask og skræl kartoflerne, og læg dem i en opløsning med ascorbinsyre (C-vitamin), så de ikke bliver mørke. Skær dem evt. i tern på ca. 1,3 cm (½ tomme). Lad dem dryppe af, kog dem 2 minutter i kogende vand, og lad dem dryppe af igen; hele kartofler koges 10 minutter. Tilsæt evt. 1 tsk. salt pr. quart-glas (ca. 1 liter). Fyld de varme glas med varme kartofler og frisk, varmt vand, så der er 2,5 cm (1 tomme) fri plads øverst. Fjern luftbobler, juster den frie plads, tør glassenes kant af med et rent, fugtigt stykke køkkenrulle, sæt låg på, og henkog.",
+     "text": "Vask og skræl kartoflerne, og læg dem i en opløsning med ascorbinsyre (C-vitamin), så de ikke bliver mørke. Skær dem evt. i tern på ca. 1,3 cm. Lad dem dryppe af, kog dem 2 minutter i kogende vand, og lad dem dryppe af igen. Hele kartofler koges 10 minutter. Tilsæt evt. 1 tsk. salt pr. quart-glas (ca. 1 liter). Fyld de varme glas med varme kartofler og frisk, varmt vand, så der er 2,5 cm fri plads øverst. Fjern luftbobler, juster den frie plads, tør glassenes kant af med et rent, fugtigt stykke køkkenrulle, sæt låg på, og henkog.",
      "sourceRef": {
       "sourceId": "usda-canning-2015-guide04",
       "locator": "Potatoes, white—cubed or whole, p. 4-17",

@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 10,
   "title": "Dyrk rødbeder i køkkenhaven, højbed eller krukker",
-  "summary": "Rødbeder fås i flere farver og striber – og så er de nemme at dyrke.",
+  "summary": "Rødbeder findes i flere farver og med striber – og de er nemme at dyrke.",
   "sourceId": "dk-bolius-roedbeder",
   "risk": "low",
   "name": "Rødbeder",
@@ -20,18 +20,30 @@
     },
     {
       "kind": "text",
-      "text": "Du kan så rødbeder, når jorden er mindst 6 grader varm – normalt kan frøene sås fra maj til først i juli.",
-      "page": 1
+      "text": "Så rødbeder, når jorden er mindst 6 grader. Normalt kan du så fra maj til først i juli.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan så rødbeder, når jorden er mindst 6 grader varm – normalt kan frøene sås fra maj til først i juli."
+      }
     },
     {
       "kind": "text",
-      "text": "Hvis du vil bruge rødbederne til opbevaring og syltning, skal du først så dem i juni, ellers kan de blive for store og grove.",
-      "page": 1
+      "text": "Vil du gemme eller sylte rødbederne, så vent med at så til juni. Ellers bliver de for store og grove.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis du vil bruge rødbederne til opbevaring og syltning, skal du først så dem i juni, ellers kan de blive for store og grove."
+      }
     },
     {
       "kind": "text",
-      "text": "Gennemarbejd jorden først, så den ikke er for hård, og lav en ca. 2-3 cm dyb rille og vand grundigt. Læg frøene ned med ca. 8 cm mellemrum, dæk med jord og vand igen. Der skal være ca. 25-30 cm afstand mellem rækkerne.",
-      "page": 1
+      "text": "Gør jorden løs først. Lav en rille, ca. 2-3 cm dyb, og vand grundigt. Læg frøene med ca. 8 cm mellemrum, dæk med jord, og vand igen. Hav ca. 25-30 cm mellem rækkerne.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Gennemarbejd jorden først, så den ikke er for hård, og lav en ca. 2-3 cm dyb rille og vand grundigt. Læg frøene ned med ca. 8 cm mellemrum, dæk med jord og vand igen. Der skal være ca. 25-30 cm afstand mellem rækkerne."
+      }
     },
     {
       "kind": "section",
@@ -40,8 +52,12 @@
     },
     {
       "kind": "text",
-      "text": "Fælles er, at jorden skal være næringsrig og fugtig, og at rødbederne skal dyrkes et solrigt sted.",
-      "page": 1
+      "text": "Alle rødbeder skal have jord med meget næring og vand, og et sted med sol.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Fælles er, at jorden skal være næringsrig og fugtig, og at rødbederne skal dyrkes et solrigt sted."
+      }
     },
     {
       "kind": "section",
@@ -50,18 +66,30 @@
     },
     {
       "kind": "text",
-      "text": "Tynd evt. ud i rødbederne kort efter, de er spiret, så der er en afstand mellem planterne på 5-10 cm, når de er omkring 2 cm høje.",
-      "page": 1
+      "text": "Når planterne er ca. 2 cm høje, så træk nogle op, så der er 5-10 cm mellem dem.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Tynd evt. ud i rødbederne kort efter, de er spiret, så der er en afstand mellem planterne på 5-10 cm, når de er omkring 2 cm høje."
+      }
     },
     {
       "kind": "text",
-      "text": "Du kan gøde med 1-2 cm velomsat kompost en gang om måneden fra maj til september.",
-      "page": 1
+      "text": "Giv 1-2 cm godt omsat kompost en gang om måneden fra maj til september.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan gøde med 1-2 cm velomsat kompost en gang om måneden fra maj til september."
+      }
     },
     {
       "kind": "text",
-      "text": "Hold jorden fugtig gennem hele perioden.",
-      "page": 1
+      "text": "Hold jorden fugtig hele tiden.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hold jorden fugtig gennem hele perioden."
+      }
     },
     {
       "kind": "section",
@@ -70,23 +98,39 @@
     },
     {
       "kind": "text",
-      "text": "Du kan normalt høste rødbeder fra august til oktober bl.a. afhængig af, hvornår du har sået dem. Roden skal være mindst 4 cm tyk i toppen – grav jord væk fra toppen, så du kan se, hvor tyk roden er.",
-      "page": 1
+      "text": "Du kan normalt høste fra august til oktober, alt efter hvornår du har sået. Rødbeden skal være mindst 4 cm tyk. Skrab jorden væk fra toppen, så du kan se det.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan normalt høste rødbeder fra august til oktober bl.a. afhængig af, hvornår du har sået dem. Roden skal være mindst 4 cm tyk i toppen – grav jord væk fra toppen, så du kan se, hvor tyk roden er."
+      }
     },
     {
       "kind": "text",
-      "text": "Klip ikke toppen af med en saks. Vrid den i stedet af, så undgår du, at den røde saft siver ud og misfarver.",
-      "page": 1
+      "text": "Klip ikke toppen af med en saks. Drej den af i stedet. Så løber den røde saft ikke ud.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Klip ikke toppen af med en saks. Vrid den i stedet af, så undgår du, at den røde saft siver ud og misfarver."
+      }
     },
     {
       "kind": "warning",
-      "text": "Nej, rødbeder kan ikke tåle frost, så du skal helst høste dem, inden der kommer nattefrost – det er typisk i begyndelsen af oktober.",
-      "page": 1
+      "text": "Rødbeder tåler ikke frost. Høst dem, før der kommer frost om natten – typisk i starten af oktober.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Nej, rødbeder kan ikke tåle frost, så du skal helst høste dem, inden der kommer nattefrost – det er typisk i begyndelsen af oktober."
+      }
     },
     {
       "kind": "text",
-      "text": "Skal de holde længere, kan de lægges ned i sand i fx en spand eller en flamingokasse. De skal stå mørkt, køligt og frostfrit og helst på et sted, hvor der er lidt ventilation. I givet fald bør de kunne holde sig friske et halvt år eller mere.",
-      "page": 1
+      "text": "Vil du gemme dem længe, så læg dem i sand, fx i en spand eller en kasse af flamingo. Stil dem mørkt, køligt og uden frost, gerne hvor der er lidt luft. Så kan de holde sig i et halvt år eller mere.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Skal de holde længere, kan de lægges ned i sand i fx en spand eller en flamingokasse. De skal stå mørkt, køligt og frostfrit og helst på et sted, hvor der er lidt ventilation. I givet fald bør de kunne holde sig friske et halvt år eller mere."
+      }
     }
   ],
   "checks": [],
@@ -94,5 +138,6 @@
   "related": [
     "guleroedder",
     "kartofler"
-  ]
+  ],
+  "originalSummary": "Rødbeder fås i flere farver og striber – og så er de nemme at dyrke."
 }

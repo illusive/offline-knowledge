@@ -5,64 +5,105 @@
   "order": 1,
   "name": "Strømmen er gået",
   "title": "Hvis strømmen bliver slukket",
-  "summary": "Du kan selv gøre nogle ting for at sikre dine madvarers holdbarhed, hvis strømmen bliver slukket i en periode.",
+  "summary": "Her er, hvad du kan gøre for at holde maden god og dig selv varm og orienteret, når strømmen er væk.",
   "sourceId": "dk-fvst-stroemafbrydelse",
   "risk": "high",
   "blocks": [
     {
       "kind": "heading",
-      "text": "Mad i køleskab uden strøm",
+      "text": "Mad i køleskab og fryser",
       "page": 1,
-      "sourceId": "dk-fvst-forberedt"
+      "sourceId": "dk-fvst-forberedt",
+      "original": {
+        "lang": "da",
+        "text": "Mad i køleskab uden strøm"
+      }
     },
     {
       "kind": "list",
       "items": [
-        "Undlad at åbne køleskabet og fryseren unødigt. Så holder madvarerne sig kolde i længere tid.",
-        "Sæt nyindkøbte madvarer udenfor i kulden.",
-        "Brug et koldt vandbad til at nedkøle maden."
+        "Åbn kun køleskab og fryser, når du skal. Så holder maden sig kold længere.",
+        "Er det koldt udenfor, så stil nyindkøbt mad ud i kulden.",
+        "Køl maden ned i en balje med koldt vand."
       ],
-      "page": 1
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Undlad at åbne køleskabet og fryseren unødigt. Så holder madvarerne sig kolde i længere tid.",
+          "Sæt nyindkøbte madvarer udenfor i kulden.",
+          "Brug et koldt vandbad til at nedkøle maden."
+        ]
+      }
     },
     {
       "kind": "text",
-      "text": "Brug maden i køleskabet først.",
+      "text": "Spis maden fra køleskabet først.",
       "page": 1,
-      "sourceId": "dk-fvst-forberedt"
+      "sourceId": "dk-fvst-forberedt",
+      "original": {
+        "lang": "da",
+        "text": "Brug maden i køleskabet først."
+      }
     },
     {
       "kind": "text",
-      "text": "Letfordærvelige, delvist optøede frostvarer (som kød og fisk) kan tilberedes og spises, så længe temperaturen i maden ikke overstiger 5°C.",
+      "text": "Frostvarer som kød og fisk, der er begyndt at tø op, kan du stadig tilberede og spise – så længe maden ikke er blevet varmere end 5 °C.",
       "page": 1,
-      "sourceId": "dk-fvst-forberedt"
+      "sourceId": "dk-fvst-forberedt",
+      "original": {
+        "lang": "da",
+        "text": "Letfordærvelige, delvist optøede frostvarer (som kød og fisk) kan tilberedes og spises, så længe temperaturen i maden ikke overstiger 5°C."
+      }
     },
     {
       "kind": "warning",
-      "text": "Fødevarestyrelsen anbefaler, at temperaturen i køleskabet er maks. 5 grader. Hvis temperaturen er over 5 grader, er der risiko for, at der kan udvikle sig bakterier i maden, som man kan blive syg af at spise.",
+      "text": "Køleskabet må højst være 5 °C. Er det varmere, kan der vokse bakterier i maden, som du kan blive syg af.",
       "page": 1,
-      "title": "Tjek temperaturen i køleskabet efter strømafbrydelsen"
+      "title": "Tjek temperaturen i køleskabet, når strømmen kommer igen",
+      "original": {
+        "lang": "da",
+        "text": "Fødevarestyrelsen anbefaler, at temperaturen i køleskabet er maks. 5 grader. Hvis temperaturen er over 5 grader, er der risiko for, at der kan udvikle sig bakterier i maden, som man kan blive syg af at spise.",
+        "title": "Tjek temperaturen i køleskabet efter strømafbrydelsen"
+      }
     },
     {
       "kind": "heading",
-      "text": "Tilbered din mad på alternative måder",
+      "text": "Lav mad uden strøm",
       "page": 1,
-      "sourceId": "dk-fvst-forberedt"
+      "sourceId": "dk-fvst-forberedt",
+      "original": {
+        "lang": "da",
+        "text": "Tilbered din mad på alternative måder"
+      }
     },
     {
       "kind": "list",
       "items": [
         "Stormkøkken",
-        "”Campingkøkken”",
-        "Grill (kun udendørs for at undgå kulilteforgiftning)"
+        "Campingkøkken",
+        "Grill – kun udendørs, så du ikke får kulilteforgiftning"
       ],
       "page": 1,
-      "sourceId": "dk-fvst-forberedt"
+      "sourceId": "dk-fvst-forberedt",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Stormkøkken",
+          "”Campingkøkken”",
+          "Grill (kun udendørs for at undgå kulilteforgiftning)"
+        ]
+      }
     },
     {
       "kind": "warning",
-      "text": "Brug aldrig grill o.l. indendørs eller i helt eller delvist lukkede rum. Der er risiko for røg- og/eller kulilteforgiftning.",
+      "text": "Brug aldrig grill eller lignende indendørs – heller ikke i rum, der kun er delvist lukkede. Du kan blive forgiftet af røg og kulilte.",
       "page": 5,
-      "sourceId": "dk-samsik-forberedt-paa-kriser"
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Brug aldrig grill o.l. indendørs eller i helt eller delvist lukkede rum. Der er risiko for røg- og/eller kulilteforgiftning."
+      }
     },
     {
       "kind": "heading",
@@ -72,51 +113,83 @@
     },
     {
       "kind": "text",
-      "text": "Hvis varmen forsvinder, og det er koldt udenfor, kan du bruge husstandens tæpper, dyner, varmt tøj m.v.",
+      "text": "Forsvinder varmen, og er det koldt udenfor, så brug tæpper, dyner og varmt tøj.",
       "page": 6,
-      "sourceId": "dk-samsik-forberedt-paa-kriser"
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Hvis varmen forsvinder, og det er koldt udenfor, kan du bruge husstandens tæpper, dyner, varmt tøj m.v."
+      }
     },
     {
       "kind": "text",
-      "text": "Andre nyttige ting at have ved hånden er en lommelygte, stearinlys, tændstikker og batterier.",
+      "text": "Det er også godt at have en lommelygte, stearinlys, tændstikker og batterier.",
       "page": 6,
-      "sourceId": "dk-samsik-forberedt-paa-kriser"
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Andre nyttige ting at have ved hånden er en lommelygte, stearinlys, tændstikker og batterier."
+      }
     },
     {
       "kind": "warning",
-      "text": "Hvis du bruger stearinlys eller andre varmekilder, så stil dem på et fast underlag langt fra brændbart materiale som gardiner og tæpper.",
+      "text": "Stil stearinlys og andre ting, der bliver varme, på et fast underlag – langt fra gardiner, tæpper og andet, der kan brænde.",
       "page": 6,
-      "sourceId": "dk-samsik-forberedt-paa-kriser"
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Hvis du bruger stearinlys eller andre varmekilder, så stil dem på et fast underlag langt fra brændbart materiale som gardiner og tæpper."
+      }
     },
     {
       "kind": "heading",
-      "text": "Toiletbesøg under en krisesituation",
+      "text": "Toilettet",
       "page": 1,
-      "sourceId": "dk-mst-forberedt"
+      "sourceId": "dk-mst-forberedt",
+      "original": {
+        "lang": "da",
+        "text": "Toiletbesøg under en krisesituation"
+      }
     },
     {
       "kind": "text",
-      "text": "En strømafbrydelse kan fx forhindre, at spildevandet kan pumpes væk fra din bolig.",
+      "text": "Uden strøm kan kloakvandet måske ikke pumpes væk fra dit hjem.",
       "page": 1,
-      "sourceId": "dk-mst-forberedt"
+      "sourceId": "dk-mst-forberedt",
+      "original": {
+        "lang": "da",
+        "text": "En strømafbrydelse kan fx forhindre, at spildevandet kan pumpes væk fra din bolig."
+      }
     },
     {
       "kind": "text",
-      "text": "Hvis du ikke kan trække ud i toilettet, skal du opsamle afføringen i en solid affaldspose beregnet til restaffald. Luk posen forsvarligt og smid ud som restaffald.",
+      "text": "Kan du ikke skylle ud, så lav i en solid affaldspose. Luk posen godt, og smid den ud med restaffaldet.",
       "page": 1,
-      "sourceId": "dk-mst-forberedt"
+      "sourceId": "dk-mst-forberedt",
+      "original": {
+        "lang": "da",
+        "text": "Hvis du ikke kan trække ud i toilettet, skal du opsamle afføringen i en solid affaldspose beregnet til restaffald. Luk posen forsvarligt og smid ud som restaffald."
+      }
     },
     {
       "kind": "heading",
-      "text": "Varsling",
+      "text": "Hold dig orienteret",
       "page": 8,
-      "sourceId": "dk-samsik-forberedt-paa-kriser"
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Varsling"
+      }
     },
     {
       "kind": "text",
-      "text": "Skulle andre systemer være nede, bringer DR beredskabsmeddelelser fra myndighederne i radioen. Med en FM-radio, der kører på batterier/håndsving/solceller, kan du holde dig opdateret, hvis andre informationskanaler svigter.",
+      "text": "Virker andet ikke, sender DR beskeder fra myndighederne i radioen. Har du en FM-radio, der kører på batterier, håndsving eller solceller, kan du stadig følge med.",
       "page": 8,
-      "sourceId": "dk-samsik-forberedt-paa-kriser"
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Skulle andre systemer være nede, bringer DR beredskabsmeddelelser fra myndighederne i radioen. Med en FM-radio, der kører på batterier/håndsving/solceller, kan du holde dig opdateret, hvis andre informationskanaler svigter."
+      }
     }
   ],
   "checks": [
@@ -136,5 +209,6 @@
   "ownerChecked": false,
   "related": [
     "mad-til-tre-doegn"
-  ]
+  ],
+  "originalSummary": "Du kan selv gøre nogle ting for at sikre dine madvarers holdbarhed, hvis strømmen bliver slukket i en periode."
 }

@@ -3,34 +3,103 @@
   "category": "first-aid",
   "order": 8,
   "title": "Stabilt sideleje",
-  "summary": "Hvis der er normal vejrtrækning, og den tilskadekomne stadig er bevidstløs, placeres personen i et stabilt sideleje!",
+  "summary": "Trækker personen vejret normalt, men er stadig bevidstløs? Så læg personen i stabilt sideleje.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
   "blocks": [
     {
       "kind": "steps",
-      "title": "Sådan udføres stabilt sideleje:",
+      "title": "Sådan gør du:",
       "items": [
-        "Læg personens nærmeste arm ud fra kroppen",
-        "Tag fjerneste hånd og før denne op mod personens kind (knoerne skal vende ind mod kinden) - bliv ved med at holde hånden under hele drejet",
-        "Bøj fjerneste ben i knæleddet",
-        "Træk i knæet, så den tilskadekomne rulles mod førstehjælperen",
-        "Ret personens knæ i 90 grader, så personen ligger stabilt",
-        "Læg hovedet bagover, så der skabes frie luftveje."
+        "Læg personens arm, der er nærmest dig, ud fra kroppen.",
+        "Tag den anden hånd, og læg den op mod personens kind, med knoerne mod kinden. Hold hånden der, mens du vender personen.",
+        "Bøj personens ben, der er længst væk fra dig.",
+        "Træk i knæet, så personen ruller om på siden mod dig.",
+        "Læg det øverste ben, så knæet er bøjet i en ret vinkel. Så ligger personen stabilt.",
+        "Før hovedet bagover, så luftvejene er frie."
       ],
       "images": [
-        { "after": 2, "file": "sideleje-1-2.jpg", "alt": "Førstehjælper knæler ved siden af en person på ryggen. Den nærmeste arm ligger ud fra kroppen, og den fjerneste hånd holdes mod personens kind.", "page": 23 },
-        { "after": 3, "file": "sideleje-3.jpg", "alt": "Det fjerneste ben er bøjet i knæet.", "page": 23 },
-        { "after": 4, "file": "sideleje-4.jpg", "alt": "Førstehjælperen trækker i knæet, så personen ruller om på siden mod førstehjælperen.", "page": 23 },
-        { "after": 5, "file": "sideleje-5.jpg", "alt": "Personen ligger på siden med det øverste knæ bøjet i 90 grader.", "page": 23 },
-        { "after": 6, "file": "sideleje-6.jpg", "alt": "Førstehjælperen lægger personens hoved bagover og lytter efter vejrtrækning.", "page": 23 }
+        {
+          "after": 2,
+          "file": "sideleje-1-2.jpg",
+          "alt": "Førstehjælper knæler ved siden af en person på ryggen. Den nærmeste arm ligger ud fra kroppen, og den fjerneste hånd holdes mod personens kind.",
+          "page": 23
+        },
+        {
+          "after": 3,
+          "file": "sideleje-3.jpg",
+          "alt": "Det fjerneste ben er bøjet i knæet.",
+          "page": 23
+        },
+        {
+          "after": 4,
+          "file": "sideleje-4.jpg",
+          "alt": "Førstehjælperen trækker i knæet, så personen ruller om på siden mod førstehjælperen.",
+          "page": 23
+        },
+        {
+          "after": 5,
+          "file": "sideleje-5.jpg",
+          "alt": "Personen ligger på siden med det øverste knæ bøjet i 90 grader.",
+          "page": 23
+        },
+        {
+          "after": 6,
+          "file": "sideleje-6.jpg",
+          "alt": "Førstehjælperen lægger personens hoved bagover og lytter efter vejrtrækning.",
+          "page": 23
+        }
       ],
-      "page": 22
+      "page": 22,
+      "original": {
+        "lang": "da",
+        "title": "Sådan udføres stabilt sideleje:",
+        "items": [
+          "Læg personens nærmeste arm ud fra kroppen",
+          "Tag fjerneste hånd og før denne op mod personens kind (knoerne skal vende ind mod kinden) - bliv ved med at holde hånden under hele drejet",
+          "Bøj fjerneste ben i knæleddet",
+          "Træk i knæet, så den tilskadekomne rulles mod førstehjælperen",
+          "Ret personens knæ i 90 grader, så personen ligger stabilt",
+          "Læg hovedet bagover, så der skabes frie luftveje."
+        ]
+      }
     },
-    { "kind": "heading", "text": "Udfør se-lyt-føl", "page": 22 },
-    { "kind": "text", "text": "Undersøg regelmæssigt vejrtrækningen ved at anvende se, lyt og føl.", "page": 22 },
-    { "kind": "text", "text": "Stabilt sideleje medvirker til opretholdelse af frie luftveje, idet tungen, blod og/eller opkast ikke kommer til at spærre luftvejene.", "page": 22 },
-    { "kind": "warning", "text": "Indpak altid den tilskadekomne for at forebygge kredsløbssvigt.", "page": 22 }
+    {
+      "kind": "heading",
+      "text": "Se, lyt og føl",
+      "page": 22,
+      "original": {
+        "lang": "da",
+        "text": "Udfør se-lyt-føl"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Tjek vejrtrækningen igen og igen: Se, lyt og føl.",
+      "page": 22,
+      "original": {
+        "lang": "da",
+        "text": "Undersøg regelmæssigt vejrtrækningen ved at anvende se, lyt og føl."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "I stabilt sideleje kan tungen, blod eller opkast ikke blokere luftvejene.",
+      "page": 22,
+      "original": {
+        "lang": "da",
+        "text": "Stabilt sideleje medvirker til opretholdelse af frie luftveje, idet tungen, blod og/eller opkast ikke kommer til at spærre luftvejene."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Læg altid et tæppe eller tøj om personen, så kroppen ikke bliver kold og går i chok.",
+      "page": 22,
+      "original": {
+        "lang": "da",
+        "text": "Indpak altid den tilskadekomne for at forebygge kredsløbssvigt."
+      }
+    }
   ],
   "checks": [
     {
@@ -41,5 +110,11 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["vejrtraekning", "frie-luftveje", "hlr-voksne"]
+  "related": [
+    "vejrtraekning",
+    "frie-luftveje",
+    "hlr-voksne"
+  ],
+  "name": "Stabilt sideleje",
+  "originalSummary": "Hvis der er normal vejrtrækning, og den tilskadekomne stadig er bevidstløs, placeres personen i et stabilt sideleje!"
 }

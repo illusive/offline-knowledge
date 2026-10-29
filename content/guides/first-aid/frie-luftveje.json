@@ -3,14 +3,52 @@
   "category": "first-aid",
   "order": 6,
   "title": "Skab frie luftveje",
-  "summary": "Når en person er bevidstløs, skal du altid skabe frie luftveje:",
+  "summary": "Er en person bevidstløs, skal du altid sørge for, at luften kan komme frit ned i lungerne.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
   "blocks": [
-    { "kind": "steps", "items": ["Placér den ene hånd på panden, og 2 fingre under hagen", "Forsigtigt føres hovedet bagover til naturlig modstand."], "page": 19 },
-    { "kind": "text", "text": "Der er skabt frie luftveje ved, at tungen er løftet op fra svælget. Så længe grebet holdes, er der skabt frie luftveje.", "page": 19 },
-    { "kind": "text", "text": "Stabilt sideleje sikrer også at personen har frie luftveje.", "page": 19 },
-    { "kind": "text", "text": "Ved et ”A-problem” er der fare for, at ilttransporten ophører, og cellerne dør, fordi luftvejene er blokeret. Udover at tungen kan blokere ved bevidstløshed, kan årsagerne være fremmedlegemer, blod, strangulering, opkast, hævelser eller skader på halsen.", "page": 19 }
+    {
+      "kind": "steps",
+      "items": [
+        "Læg den ene hånd på personens pande og to fingre under hagen.",
+        "Før forsigtigt hovedet bagover, til det ikke vil længere."
+      ],
+      "page": 19,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Placér den ene hånd på panden, og 2 fingre under hagen",
+          "Forsigtigt føres hovedet bagover til naturlig modstand."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Nu er tungen løftet væk fra halsen, og luften kan komme frit ind. Det gælder, så længe du holder grebet.",
+      "page": 19,
+      "original": {
+        "lang": "da",
+        "text": "Der er skabt frie luftveje ved, at tungen er løftet op fra svælget. Så længe grebet holdes, er der skabt frie luftveje."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Når personen ligger i stabilt sideleje, holdes luftvejene også frie.",
+      "page": 19,
+      "original": {
+        "lang": "da",
+        "text": "Stabilt sideleje sikrer også at personen har frie luftveje."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Hvis noget blokerer luftvejene, kan kroppen ikke få ilt, og cellerne dør. Ud over tungen hos en bevidstløs kan det være noget, personen har fået i halsen, blod, opkast, hævelse, skader på halsen eller noget, der strammer om halsen.",
+      "page": 19,
+      "original": {
+        "lang": "da",
+        "text": "Ved et ”A-problem” er der fare for, at ilttransporten ophører, og cellerne dør, fordi luftvejene er blokeret. Udover at tungen kan blokere ved bevidstløshed, kan årsagerne være fremmedlegemer, blod, strangulering, opkast, hævelser eller skader på halsen."
+      }
+    }
   ],
   "checks": [
     {
@@ -21,5 +59,10 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["vejrtraekning", "stabilt-sideleje"]
+  "related": [
+    "vejrtraekning",
+    "stabilt-sideleje"
+  ],
+  "name": "Frie luftveje",
+  "originalSummary": "Når en person er bevidstløs, skal du altid skabe frie luftveje:"
 }

@@ -96,7 +96,10 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
       else if (!found(text) && !found(original(text))) problems.push(`${where}: not verbatim in ${sourceId}: "${text.slice(0, 70)}"`);
     };
     check(`${at} title`, guide.title, true);
-    if (guide.summary) check(`${at} summary`, guide.summary);
+    if (guide.originalSummary) {
+      check(`${at} summary original`, guide.originalSummary);
+      if (!guide.summary?.trim()) problems.push(`${at}: a rewritten summary needs the summary`);
+    } else if (guide.summary) check(`${at} summary`, guide.summary);
     guide.blocks.forEach((block, i) => {
       const where = `${at} block ${i} (${block.kind})`;
       if (!Number.isInteger(block.page) || block.page < 1) problems.push(`${where}: page missing`);
@@ -106,8 +109,22 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
       if (block.sourceId && guide.category === 'first-aid') problems.push(`${where}: first aid guides take all text from one source`);
       if (block.sourceId && !known.has(block.sourceId)) problems.push(`${where}: source '${block.sourceId}' not in registry`);
       // Headings ignore case; so do checklist lines, which often lift a word from a running sentence.
-      for (const text of shownTexts(block)) check(where, text, block.kind === 'heading' || block.kind === 'checklist', sid);
-      if ('title' in block && block.title) check(`${where} title`, block.title, true, sid);
+      if (block.original) {
+        // A translated (D-041) or rewritten (D-042) block: the source's words are checked; ours must match them in shape.
+        const o = block.original;
+        if (o.lang === 'en' && guide.category !== 'preparedness') problems.push(`${where}: only 'Når det sker' guides may show translated blocks`);
+        if (o.lang !== 'en' && o.lang !== 'da') problems.push(`${where}: originals are English or Danish`);
+        const shownItems = 'items' in block ? (block.items ?? []).length : 0;
+        if ((o.items ?? []).length !== shownItems) problems.push(`${where}: the original has ${(o.items ?? []).length} items, the translation ${shownItems}`);
+        if (!!o.text !== !!('text' in block && block.text)) problems.push(`${where}: text and original text must both be given`);
+        if (!!o.title !== !!('title' in block && block.title)) problems.push(`${where}: title and original title must both be given`);
+        for (const text of shownTexts(block)) if (!text.trim()) problems.push(`${where}: empty text`);
+        for (const text of [...(o.text ? [o.text] : []), ...(o.items ?? [])]) check(where, text, block.kind === 'heading' || block.kind === 'checklist', sid);
+        if (o.title) check(`${where} title`, o.title, true, sid);
+      } else {
+        for (const text of shownTexts(block)) check(where, text, block.kind === 'heading' || block.kind === 'checklist', sid);
+        if ('title' in block && block.title) check(`${where} title`, block.title, true, sid);
+      }
       if ((block.kind === 'steps' || block.kind === 'list' || block.kind === 'checklist') && block.items.length === 0) problems.push(`${where}: no items`);
       if (block.kind === 'checklist') {
         for (const item of block.items) {

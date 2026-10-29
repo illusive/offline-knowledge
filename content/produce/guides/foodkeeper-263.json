@@ -6,7 +6,7 @@
    "key": "about",
    "blocks": [
     {
-     "text": "Kiwi er et bær med hundredvis af små, mørke kerner i grønt kød og en behåret, lysebrun skal. Rådene her gælder især den grønne sort Hayward; der vides mindre om gule kiwier.",
+     "text": "Kiwi er et bær med hundredvis af små, mørke kerner i grønt kød og en behåret, lysebrun skal. Rådene her gælder især den grønne sort Hayward. Der vides mindre om gule kiwier.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Kiwifruit chapter, Scientific Name and Introduction, p. 372",
@@ -53,7 +53,7 @@
    "key": "together",
    "blocks": [
     {
-     "text": "Kiwier på lager er ekstremt følsomme over for ethylen og bør ikke opbevares sammen med noget, der danner meget af det. Selv meget små mængder får dem til at blive bløde uden at modne ordentligt. Rådden frugt i nærheden øger også ethylenen.",
+     "text": "Kiwier på lager er ekstremt følsomme over for ethylen (en gas, som frugt og grønt selv afgiver, og som får dem til at modne) og bør ikke opbevares sammen med noget, der danner meget af det. Selv meget små mængder får dem til at blive bløde uden at modne ordentligt. Rådden frugt i nærheden øger også ethylenen.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Kiwifruit chapter, Ethylene Production and Sensitivity; Special Considerations, pp. 374–375",
@@ -90,7 +90,7 @@
    "verdict": "waterBath",
    "blocks": [
     {
-     "text": "Der er ingen testet metode til at henkoge kiwi alene, men der er en testet opskrift på jordbær-kiwi-syltetøj: 3 cups knuste jordbær, 3 skrællede kiwier i tern, 1 spsk. citronsaft, 1 spsk. kandiseret ingefær, 1 æske pulverpektin og 5 cups sukker. Henkog 10 minutter i vandbad med 6 mm (¼ tomme) fri plads (op til 300 m over havet).",
+     "text": "Der er ingen testet metode til at henkoge kiwi alene, men der er en testet opskrift på jordbær-kiwi-syltetøj: 3 cups knuste jordbær, 3 skrællede kiwier i tern, 1 spsk. citronsaft, 1 spsk. kandiseret ingefær, 1 æske pulverpektin og 5 cups sukker. Henkog 10 minutter i vandbad med 6 mm fri plads (op til 300 m over havet).",
      "sourceRef": {
       "sourceId": "nchfp-strawberry-kiwi-jam-pectin",
       "locator": "Strawberry-Kiwi Jam Pectin",

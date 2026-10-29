@@ -61,6 +61,7 @@ test('first aid guides are listed in emergency order; a guide brings its photos,
   const guide = getGuide(db, 'stabilt-sideleje');
   const steps = guide?.blocks.find((b) => b.kind === 'steps');
   expect(steps?.kind === 'steps' && steps.items).toHaveLength(6);
+  expect(steps?.original?.lang).toBe('da'); // plain-language rewrite; the source's words are kept (D-042)
   expect(steps?.kind === 'steps' && steps.images.map((i) => i.after)).toEqual([2, 3, 4, 5, 6]);
   expect(guide?.images).toHaveLength(5);
   expect(guide?.images.every((i) => i.mime === 'image/jpeg' && i.data.byteLength > 1000)).toBe(true);
@@ -110,4 +111,14 @@ test('Når det sker: guides by group, checklist lines with stable ids, search fi
   expect(items.map((i) => i.id)).toContain('knaekbroed');
   expect(food?.blocks.filter((b) => b.kind === 'section').map((b) => b.kind === 'section' && b.key)).toEqual(['noPrep', 'somePrep', 'needsPrep']);
   expect(searchGuides(db, 'knækbrød').map((g) => g.id)).toContain('mad-til-tre-doegn');
+});
+
+test('Der er intet vand: translated blocks carry the source words; search finds the Danish text', () => {
+  const water = getGuide(db, 'der-er-intet-vand');
+  const boil = water?.blocks.find((b) => b.kind === 'steps' && b.original?.lang === 'en');
+  expect(boil?.kind === 'steps' && boil.items[0]).toMatch(/^Kog det klare vand kraftigt i 1 minut/);
+  expect(boil?.original?.items?.[0]).toMatch(/^Bring clear water to a rolling boil for 1 minute/);
+  expect(water?.blocks.find((b) => b.kind === 'heading' && !b.original)?.original).toBeUndefined();
+  expect(searchGuides(db, 'vandlås').map((g) => g.id)).toContain('der-er-intet-vand');
+  expect(searchGuides(db, 'brændeovn').map((g) => g.id)).toContain('der-er-ingen-varme');
 });

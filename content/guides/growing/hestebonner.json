@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 5,
   "title": "Hestebønner",
-  "summary": "Hestebønnen, som også kaldes valsk bønne, er meget robust og ikke nær så følsom over for kulde, som de andre bønnetyper.",
+  "summary": "Hestebønner (også kaldet valske bønner) er meget hårdføre. De tåler kulde langt bedre end andre bønner.",
   "sourceId": "dk-bolius-boenner",
   "risk": "low",
   "name": "Hestebønner",
@@ -20,13 +20,21 @@
     },
     {
       "kind": "text",
-      "text": "Derfor kan hestebønner sås direkte på friland i starten af april, samtidig med at du lægger kartofler.",
-      "page": 1
+      "text": "Fordi de tåler kulde, kan hestebønner sås direkte i haven i starten af april – samtidig med kartoflerne.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Derfor kan hestebønner sås direkte på friland i starten af april, samtidig med at du lægger kartofler."
+      }
     },
     {
       "kind": "text",
-      "text": "Så hestebønner i nogle centimeters dybde med 30-50 cm's rækkeafstand og 10 cm afstand i rækken. De spirer i løbet af et par uger, passer næsten sig selv og gror med rivende hast.",
-      "page": 1
+      "text": "Så dem et par cm dybt med 10 cm mellem bønnerne og 30-50 cm mellem rækkerne. De spirer på et par uger, passer næsten sig selv og vokser meget hurtigt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Så hestebønner i nogle centimeters dybde med 30-50 cm's rækkeafstand og 10 cm afstand i rækken. De spirer i løbet af et par uger, passer næsten sig selv og gror med rivende hast."
+      }
     },
     {
       "kind": "section",
@@ -35,13 +43,21 @@
     },
     {
       "kind": "text",
-      "text": "Bønner har et forholdsvis lille gødningsbehov, da de er kvælstoffikserende planter, hvilket betyder, at de selv er i stand til at omdanne luftens kvælstof til næring, der kan udnyttes af planterne.",
-      "page": 1
+      "text": "Bønner skal ikke have meget gødning. De kan selv hente næring fra luften.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Bønner har et forholdsvis lille gødningsbehov, da de er kvælstoffikserende planter, hvilket betyder, at de selv er i stand til at omdanne luftens kvælstof til næring, der kan udnyttes af planterne."
+      }
     },
     {
       "kind": "text",
-      "text": "Bønner trives bedst solrigt og varmt i en veldrænet, næringsrig og fugtig jord.",
-      "page": 1
+      "text": "Bønner gror bedst et sted med sol og varme, i jord med næring og fugt, hvor vandet kan løbe væk.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Bønner trives bedst solrigt og varmt i en veldrænet, næringsrig og fugtig jord."
+      }
     },
     {
       "kind": "section",
@@ -50,24 +66,40 @@
     },
     {
       "kind": "text",
-      "text": "De høje sorter af hestebønner - der kan blive 1-2 m høje - har brug for opbinding i form af en snor, der bindes til en pæl i hver ende af rækken. De lavere sorter, der bliver omkring 50-60 cm høje, kan bære sig selv.",
-      "page": 1
-    },
-    {
-      "kind": "text",
-      "text": "Du skal gennemvande jorden, når den begynder at tørre ud.",
-      "page": 1
-    },
-    {
-      "kind": "text",
-      "text": "Men hestebønner, kan angribes af sorte bladlus. Ifølge et gammelt råd skal du knibe topskuddene af, så snart den første bælg begynder at udvikle sig.",
-      "page": 1
-    },
-    {
-      "kind": "text",
-      "text": "Når frøene er i jorden, skal du blot luge ukrudt væk, indtil planterne er blevet så store, at de selv skygger for ukrudtet.",
+      "text": "De høje sorter bliver 1-2 meter høje og skal støttes, fx med en snor mellem to pæle for enden af rækken. De lave sorter (50-60 cm) kan stå selv.",
       "page": 1,
-      "sourceId": "dk-bolius-10-nemme"
+      "original": {
+        "lang": "da",
+        "text": "De høje sorter af hestebønner - der kan blive 1-2 m høje - har brug for opbinding i form af en snor, der bindes til en pæl i hver ende af rækken. De lavere sorter, der bliver omkring 50-60 cm høje, kan bære sig selv."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Vand grundigt, når jorden begynder at blive tør.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du skal gennemvande jorden, når den begynder at tørre ud."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Hestebønner kan blive angrebet af sorte bladlus. Et gammelt råd er at knibe toppen af planten af, så snart den første bælg begynder at vokse.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Men hestebønner, kan angribes af sorte bladlus. Ifølge et gammelt råd skal du knibe topskuddene af, så snart den første bælg begynder at udvikle sig."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Fjern ukrudt, til planterne er så store, at de selv skygger ukrudtet væk.",
+      "page": 1,
+      "sourceId": "dk-bolius-10-nemme",
+      "original": {
+        "lang": "da",
+        "text": "Når frøene er i jorden, skal du blot luge ukrudt væk, indtil planterne er blevet så store, at de selv skygger for ukrudtet."
+      }
     },
     {
       "kind": "section",
@@ -76,13 +108,21 @@
     },
     {
       "kind": "text",
-      "text": "Alt efter hvilken slags bønner, du har plantet - og vejrforhold - kan du høste dem efter 50-70 dage.",
-      "page": 1
+      "text": "Du kan høste efter 50-70 dage. Det afhænger af sorten og vejret.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Alt efter hvilken slags bønner, du har plantet - og vejrforhold - kan du høste dem efter 50-70 dage."
+      }
     },
     {
       "kind": "warning",
-      "text": "På grund af et højt indhold af lektiner, der er giftige, må bønner ikke spises rå, men skal koges.",
-      "page": 1
+      "text": "Spis aldrig bønner rå. De indeholder et giftigt stof (lektin), som først forsvinder, når de koges.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "På grund af et højt indhold af lektiner, der er giftige, må bønner ikke spises rå, men skal koges."
+      }
     },
     {
       "kind": "section",
@@ -91,23 +131,39 @@
     },
     {
       "kind": "text",
-      "text": "Hestebønner er lette at dyrke til modenhed.",
-      "page": 1
+      "text": "Hestebønner bliver let helt modne.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hestebønner er lette at dyrke til modenhed."
+      }
     },
     {
       "kind": "text",
-      "text": "Hvis du ønsker selv at dyrke spiringsdygtige frø, skal havebønner være helt modne. Det bedste resultat får du, når bælgene får lov til at visne på planten, inden du høster dem.",
-      "page": 1
+      "text": "Vil du gemme frø, der kan spire, så lad bønnerne blive helt modne. Lad bælgene visne på planten, før du høster dem.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis du ønsker selv at dyrke spiringsdygtige frø, skal havebønner være helt modne. Det bedste resultat får du, når bælgene får lov til at visne på planten, inden du høster dem."
+      }
     },
     {
       "kind": "text",
-      "text": "Når bønnefrøene er helt tørre, skal du tage dem ud af bælgene.",
-      "page": 1
+      "text": "Når bønnerne er helt tørre, så tag dem ud af bælgene.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Når bønnefrøene er helt tørre, skal du tage dem ud af bælgene."
+      }
     },
     {
       "kind": "text",
-      "text": "Opbevar tørrede bønner et tørt, køligt sted i papirsposer eller i lufttætte beholdere.",
-      "page": 1
+      "text": "Opbevar de tørre bønner tørt og køligt, i papirposer eller i beholdere med låg, der slutter tæt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Opbevar tørrede bønner et tørt, køligt sted i papirsposer eller i lufttætte beholdere."
+      }
     },
     {
       "kind": "section",
@@ -116,9 +172,13 @@
     },
     {
       "kind": "text",
-      "text": "Så bønnerne fra starten af april og dyrk dem gerne sammen med kartofler.",
+      "text": "Så bønnerne fra starten af april, gerne sammen med kartofler.",
       "page": 1,
-      "sourceId": "dk-bolius-10-nemme"
+      "sourceId": "dk-bolius-10-nemme",
+      "original": {
+        "lang": "da",
+        "text": "Så bønnerne fra starten af april og dyrk dem gerne sammen med kartofler."
+      }
     }
   ],
   "checks": [],
@@ -126,5 +186,6 @@
   "related": [
     "kartofler",
     "aerter"
-  ]
+  ],
+  "originalSummary": "Hestebønnen, som også kaldes valsk bønne, er meget robust og ikke nær så følsom over for kulde, som de andre bønnetyper."
 }

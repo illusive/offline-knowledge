@@ -19,7 +19,7 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await expect(page.getByText('6 fødevarer')).toBeVisible();
   await expect(page.getByRole('listitem').first()).toContainText('Kål');
 
-  await page.getByRole('link', { name: /^Kål (Spisekammer|Køleskab|Fryser)/ }).click();
+  await page.getByRole('link', { name: /^Kål (Køkkenskab|Køleskab|Fryser)/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Kål' })).toBeVisible();
   await expect(page.getByText('1–2 uger')).toBeVisible();
 
@@ -34,7 +34,7 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await expect(page.getByRole('heading', { level: 1, name: 'Værktøjer' })).toBeVisible();
   await expect(nav.getByRole('link', { name: 'Værktøjer' })).toHaveAttribute('aria-current', 'page');
   await nav.getByRole('link', { name: 'Hjem' }).click();
-  await expect(page.getByText('Klar offline')).toBeVisible();
+  await expect(page.getByText('Klar uden net')).toBeVisible();
 
   // Offline: reload and use the app with the network switched off.
   await page.evaluate(async () => {
@@ -51,7 +51,7 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await expect(page.getByRole('heading', { level: 1, name: 'Kartofler' })).toBeVisible();
   // Guide and notes are shown in Danish; the original wording is one tap away (D-031, D-033).
   await expect(page.getByText('Tiden i fryseren gælder kogte kartofler og kartoffelmos.')).toBeVisible();
-  await expect(page.getByText('Teksten er skrevet på dansk ud fra kilderne.')).toBeVisible();
+  await expect(page.getByText('Teksten er skrevet i et enkelt sprog ud fra kilderne.')).toBeVisible();
   await page.getByRole('button', { name: 'Vis original' }).click();
   await expect(page.getByText('Freezer timeline applies to cooked and mashed potatoes.')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Vis på dansk' })).toHaveAttribute('aria-pressed', 'true');

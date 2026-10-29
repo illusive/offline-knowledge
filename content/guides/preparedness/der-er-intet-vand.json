@@ -1,0 +1,345 @@
+{
+  "id": "der-er-intet-vand",
+  "category": "preparedness",
+  "group": "situation",
+  "order": 2,
+  "name": "Der er intet vand",
+  "title": "Toiletbesøg under en krisesituation",
+  "summary": "Her er, hvordan du finder og sparer på vand, gør vand drikkeligt og klarer toiletbesøg, når der ikke kommer vand ud af hanen.",
+  "sourceId": "dk-mst-forberedt",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Når vandet forsvinder",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Sådan sparer du på vandet her og nu"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Brug kun vand til det allermest nødvendige.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Hvis der opstår en akut krisesituation, hvor forsyningen af vand svigter i en periode, gælder det om kun at bruge vand til det allermest nødvendige."
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Tap først det vand, der stadig er i rørene. Fyld det på rene flasker og beholdere. Det kan du drikke og lave mad med, til vandet kommer igen.",
+        "Bor du i hus, er der også meget vand i varmtvandsbeholderen. Det må du ikke drikke, men du kan vaske dig og skylle ud med det.",
+        "Sluk derefter for varmtvandsbeholderen, så den ikke varmer, når der ikke er vand i den.",
+        "Brug så lidt vand som muligt."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "items": [
+          "I første omgang gælder det om at opsamle det vand, der allerede er i boligen. Selvom forsyningen svigter, vil der stadig være noget vand tilbage i rørene, så start med at tappe alt vand ud af vandhanen og fyld det på rene flasker og beholdere – det kan bruges til drikkevand og til at lave mad med, indtil vandet kommer igen.",
+          "Hvis du bor i hus, er der sandsynligvis også en masse vand i varmtvandsbeholderen, som du kan tappe ud. Det kan ikke bruges til drikkevand, men du kan bruge det til etagevask og toiletskyl.",
+          "Slå dernæst varmtvandsbeholderen fra, så den ikke står og varmer noget vand, som ikke er der.",
+          "Når du skal bruge vand, så brug så lidt som muligt."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Regn med 3 liter vand pr. person pr. døgn til at drikke og lave mad.",
+      "page": 4,
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Beregn 3 liter vand pr. person pr. døgn til at drikke og evt. tilberedning af mad."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Hold tre slags vand adskilt",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Tænk i tre forskellige former for vand, som du skal sørge for at holde adskilt."
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Drikkevand: rent vand fra hanen eller vand på flaske.",
+        "Vand til madlavning: vand, der bliver kogt, fx regnvand. Kogningen dræber bakterier.",
+        "Vand til toilet og vask: fx regnvand eller vand fra varmtvandsbeholderen."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Drikkevand er rent postevand fra hanen eller kildevand fra flaske.",
+          "Så er der vand, du kan bruge til madlavning, fordi det bliver kogt. Det er fx regnvand, hvor eventuelle bakterier bliver kogt væk under madlavning.",
+          "Endelig er der vand, som kun kan anvendes til fx toiletskyl og etagevask."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Regnvand kan du bruge til at skylle ud og vaske dig med. Du kan også lave mad med det, hvis du koger det.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Regnvandet kan bruges til toiletskyl eller til at bade i – det kan også anvendes til madlavning, hvis det bliver kogt."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Find vand",
+      "original": {
+        "lang": "en",
+        "text": "Inside the home"
+      },
+      "page": 1,
+      "sourceId": "us-cdc-find-clean-water"
+    },
+    {
+      "kind": "list",
+      "title": "Andet rent vand, du kan finde i hjemmet:",
+      "items": [
+        "Smeltede isterninger – hvis vandet var rent, da de blev lavet",
+        "Vand fra toilettets cisterne (ikke fra kummen), hvis det er klart og uden toiletrens, fx rens der farver vandet",
+        "Saften fra dåser med frugt og grøntsager"
+      ],
+      "original": {
+        "lang": "en",
+        "title": "other sources of clean and safe water that can be found inside your home include:",
+        "items": [
+          "Melted ice cubes made with water that was not contaminated",
+          "Water from your home's toilet tank (not from the bowl), if it is clear and has not been chemically treated with toilet cleaners such as those that change the color of the water",
+          "Liquid from canned fruit and vegetables"
+        ]
+      },
+      "page": 1,
+      "sourceId": "us-cdc-find-clean-water"
+    },
+    {
+      "kind": "list",
+      "title": "Vand, som kan gøres drikkeligt, hvis du behandler det:",
+      "items": [
+        "Regnvand",
+        "Åer og andet vand, der løber",
+        "Søer og damme",
+        "Kilder"
+      ],
+      "original": {
+        "lang": "en",
+        "title": "Possible sources of water that could be made safe by treatment include:",
+        "items": [
+          "Rainwater",
+          "Streams, rivers, and other moving bodies of water",
+          "Ponds and lakes",
+          "Natural springs"
+        ]
+      },
+      "page": 1,
+      "sourceId": "us-cdc-find-clean-water"
+    },
+    {
+      "kind": "text",
+      "text": "Vand, du henter udenfor, skal altid behandles, så bakterier og andre smitstoffer bliver dræbt.",
+      "original": {
+        "lang": "en",
+        "text": "Water from sources outside the home must be treated to kill harmful germs"
+      },
+      "page": 1,
+      "sourceId": "us-cdc-find-clean-water"
+    },
+    {
+      "kind": "heading",
+      "text": "Sådan gør du vand drikkeligt",
+      "original": {
+        "lang": "en",
+        "text": "Steps for boiling water"
+      },
+      "page": 1,
+      "sourceId": "us-cdc-make-water-safe"
+    },
+    {
+      "kind": "text",
+      "text": "At koge vandet er den bedste måde at dræbe bakterier og andre smitstoffer på.",
+      "original": {
+        "lang": "en",
+        "text": "Boiling is the best way to kill germs in water."
+      },
+      "page": 1,
+      "sourceId": "us-cdc-make-water-safe"
+    },
+    {
+      "kind": "text",
+      "text": "Er vandet grumset, så si det først gennem et rent klæde, køkkenrulle eller et kaffefilter. Du kan også lade det stå, til snavset har lagt sig på bunden. Hæld så det klare vand fra, og kog det.",
+      "original": {
+        "lang": "en",
+        "text": "If the water is cloudy, first filter it through a clean cloth, paper towel, or coffee filter. Another option is to let it settle. Then, draw off the clear water and follow the steps below."
+      },
+      "page": 1,
+      "sourceId": "us-cdc-make-water-safe"
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Kog det klare vand kraftigt i 1 minut. (Højt oppe i bjergene, over ca. 2.000 meter: kog i 3 minutter.)",
+        "Lad vandet køle af.",
+        "Hæld vandet på rene beholdere med låg, der slutter tæt."
+      ],
+      "original": {
+        "lang": "en",
+        "items": [
+          "Bring clear water to a rolling boil for 1 minute (at elevations above 6,500 feet, boil for 3 minutes).",
+          "Let the boiled water cool.",
+          "Store the boiled water in clean, sanitized containers with tight covers."
+        ]
+      },
+      "page": 1,
+      "sourceId": "us-cdc-make-water-safe"
+    },
+    {
+      "kind": "warning",
+      "text": "Vand med brændstof, gift eller andre kemikalier kan ikke gøres drikkeligt – heller ikke ved at koge det.",
+      "original": {
+        "lang": "en",
+        "text": "You cannot make water containing fuel, toxic chemicals, or radioactive materials safe by boiling or disinfecting it."
+      },
+      "page": 1,
+      "sourceId": "us-cdc-make-water-safe"
+    },
+    {
+      "kind": "warning",
+      "text": "Drik aldrig vand fra radiatorer eller fyr, og brug det ikke til mad eller til at vaske dig. Du kan blive syg af det.",
+      "original": {
+        "lang": "en",
+        "text": "Never use water from radiators or boilers that are part of your home heating system for drinking, cooking, or hygiene. This water could make you sick."
+      },
+      "page": 1,
+      "sourceId": "us-cdc-make-water-safe"
+    },
+    {
+      "kind": "text",
+      "text": "Et vandfilter fra fx en friluftsbutik fjerner ikke alle bakterier og smitstoffer.",
+      "original": {
+        "lang": "en",
+        "text": "Portable water filters do not remove all types of germs from water."
+      },
+      "page": 1,
+      "sourceId": "us-cdc-make-water-safe"
+    },
+    {
+      "kind": "heading",
+      "text": "Toilettet",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Toiletbesøg under en krisesituation"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Uden strøm kan kloakvandet måske ikke pumpes væk fra dit hjem. Hold øje med, hvad din kommune eller dit vandværk siger, du skal gøre.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "En strømafbrydelse kan fx forhindre, at spildevandet kan pumpes væk fra din bolig. Derfor er det vigtigt, at du holder dig orienteret om retningslinjer fra din kommune eller dit lokale vand- eller spildevandselskab."
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Kan du ikke skylle ud, så lav i en solid affaldspose. Luk posen godt, og smid den ud med restaffaldet.",
+        "Bor du i lejlighed med affaldsskakt, så brug ikke skakten. Bær posen ned i containeren.",
+        "Forbered dig: Hav solide affaldsposer, som du kan sætte i en spand eller i toilettet. Læg evt. et bind eller toiletpapir i bunden af posen, så det suger væske.",
+        "Du kan godt tisse i toilettet uden at skylle ud. Men smid ikke toiletpapir i. Læg toiletpapir, bind og bleer i en spand med låg og en affaldspose i. Smid posen ud med restaffaldet."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Hvis du ikke kan trække ud i toilettet, skal du opsamle afføringen i en solid affaldspose beregnet til restaffald. Luk posen forsvarligt og smid ud som restaffald.",
+          "Bor du i en opgang med affaldsskakt, anbefales det, at du ikke anvender affaldsskakten, men i stedet bærer posen ned i containeren.",
+          "Du kan forberede dig ved at have affaldsposer, som kan sættes i en spand eller i toiletkummen, før du besørger i posen, og som du lukker forsvarligt bagefter. Læg evt. først et hygiejnebind eller toiletpapir i posen for at opsuge væde.",
+          "Du kan godt tisse i toilettet uden at trække ud, men undgå at smide toiletpapir i. Toiletpapir skal, i lighed med bind eller bleer, i en beholder med låg, du har foret med en affaldspose. Posen smides ud som restaffald."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Der skal altid være vand i bunden af toilettet (vandlåsen), så det ikke lugter, og rotter ikke kommer op. Du kan hælde opsamlet regnvand i.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Der bør altid være vand i vandlåsen til toilettet for at hindre lugt og rottebesøg - også selv om toilettet ikke kan benyttes som normalt. Opsamlet regnvand kan evt. bruges til at fylde vandlåsen op."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Har du en regnvandstønde, kan du skylle ud ved at hælde vandet i toilettet efter brug.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Hvis du har en regnvandsbeholder, så brug vandet derfra til toiletskyl ved at hælde vandet ned i kummen efter toiletbesøg."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Men: Er strømmen også gået, så hæld ikke vand i toilet og afløb. Kloakken virker måske heller ikke.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Husk, hvis der ikke er strøm, påvirker det også spildevandsanlæggene, så undlad at hælde vand i kloakken, hvis der også er strømsvigt."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Hold hænderne rene",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Fødevarestyrelsens anbefalinger"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Er der ikke vand, kan du bruge håndsprit. Det dræber mange bakterier fra afføring, men ikke alle – fx ikke roskildesyge (norovirus) og nogle parasitter, der giver diarré.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hånddesinfektion med fx håndsprit kan være et alternativ, hvis der ikke er adgang til vand. Håndsprit virker mod mange afføringsbakterier, men er dog ikke effektivt mod visse vira og parasitter, herunder norovirus (roskildesyge) og cryptosporidier (som kan give diarré)."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-fvst-drikkevand",
+      "locator": "Kog vandet, hvis det kan være forurenet med bakterier",
+      "quote": "Kog vandet! - Det vand, du bruger til madlavning, og det vand, du drikker, skal være kogt.",
+      "note": "Agrees with the CDC: boil water that may be contaminated before drinking or cooking with it."
+    },
+    {
+      "sourceId": "dk-bolius-vandsvigt",
+      "locator": "Sådan forbereder du dig",
+      "quote": "Regnvandet kan bruges til toiletskyl eller til at bade i – det kan også anvendes til madlavning, hvis det bliver kogt.",
+      "note": "Agrees with the CDC: rainwater can be made safe by boiling."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "stroemmen-er-gaaet",
+    "der-er-ingen-varme"
+  ],
+  "originalSummary": "I tilfælde af en krise kan du risikere, at toilettet ikke virker."
+}

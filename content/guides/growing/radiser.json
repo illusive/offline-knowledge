@@ -3,63 +3,230 @@
   "category": "growing",
   "order": 1,
   "title": "Sådan dyrker du radiser",
-  "summary": "Det er nemt og tager ingen tid at dyrke radiser, og du kan dyrke dem i både krukker, altankasser og på friland.",
+  "summary": "Radiser er nemme og hurtige at dyrke – i krukker, altankasser og i haven.",
   "sourceId": "dk-bolius-radiser",
   "risk": "low",
   "name": "Radiser",
-  "season": { "text": "Så april–august · høst efter 2–6 uger", "quote": "Dyrker du radiser på friland, må du vente med at så til april … først slutte i august, hvor du kan så årets sidste radiser … I højsæsonen tager det to uger fra frø til høst, men er det koldere, kan der gå op til seks uger" },
+  "season": {
+    "text": "Så april–august · høst efter 2–6 uger",
+    "quote": "Dyrker du radiser på friland, må du vente med at så til april … først slutte i august, hvor du kan så årets sidste radiser … I højsæsonen tager det to uger fra frø til høst, men er det koldere, kan der gå op til seks uger"
+  },
   "foodId": "foodkeeper-299",
   "blocks": [
-    { "kind": "section", "key": "sowing", "page": 1 },
-    { "kind": "text", "text": "Radiser trives bedst ved kølige temperaturer, og det er derfor en grøntsag, som egner sig godt til dyrkning i det danske klima.", "page": 1 },
-    { "kind": "text", "text": "Dyrker du radiser på friland, må du vente med at så til april, for selvom frøene ikke har brug for mere end tre graders varme for at gro, må frosten have sluppet sit tag i jorden først.", "page": 1 },
-    { "kind": "text", "text": "Lægger du radisefrø i jorden med to ugers mellemrum, kan du få en lang sæson.", "page": 1 },
     {
-      "kind": "steps",
-      "title": "Gør sådan:",
-      "items": [
-        "Lav en sårille på 1-1,5 centimeters dybde.",
-        "Vand grundigt og lad væden trænge helt ned i jorden, før frøene lægges i rillen med 2 centimeters mellemrum.",
-        "Dæk frøene med jord og vand afslutningsvist",
-        "Der skal være 15 centimeter mellem hver række, så planterne har de bedste vilkår at udvikle sig under.",
-        "Efter spiring kan det blive aktuelt at udtynde i rækkerne, hvis nogle af planterne står for tæt."
-      ],
+      "kind": "section",
+      "key": "sowing",
       "page": 1
     },
-    { "kind": "warning", "text": "Sår du radiser i juni, juli eller august, skal det være et sted, hvor temperaturen ikke bliver for høj. Får planterne det for varmt, sætter de blomster i stedet for at udvikle de røde og hvide stængler.", "page": 1 },
-
-    { "kind": "section", "key": "conditions", "page": 1 },
-    { "kind": "text", "text": "De har heller ikke behov for gødning, og trives i almindelig, veldrænet havejord.", "page": 1 },
-    { "kind": "text", "text": "Radiser skal gro under åben himmel, men uanset hvilket sted du foretrækker at dyrke dem, er det samme fremgangsmøde, du skal følge.", "page": 1 },
-
-    { "kind": "section", "key": "care", "page": 1 },
-    { "kind": "text", "text": "Efter såning må du være flittig med vandkanden, for radiser tåler ikke udtørring. I varme perioder må du vande dagligt, og det samme gælder, hvis du dyrker i drivhuset, hvor temperaturen hurtigt kan blive meget høj.", "page": 1 },
-    { "kind": "text", "text": "Orm og snegle er en hyppig årsag til huller i de røde stængler, ligesom jordlopper også kan give udfordringer. Oplever du angreb, tømmer du straks rækken, og flytter den til et nyt sted i haven.", "page": 1 },
-
-    { "kind": "section", "key": "harvest", "page": 1 },
-    { "kind": "text", "text": "I højsæsonen tager det to uger fra frø til høst, men er det koldere, kan der gå op til seks uger, før de er spiseklare.", "page": 1 },
-    { "kind": "text", "text": "Du kan se, radiserne er klar til at blive høstet, når de har en god tykkelse, og det øverste af afgrøden titter op af den mørke jord.", "page": 1 },
-    { "kind": "text", "text": "De første, små radiser har den mildeste smag, så høst gerne tidligt.", "page": 1 },
-    { "kind": "text", "text": "Efter høst opbevares de på køl, hvor de holder sig friske 3-4 dage.", "page": 1 },
-
-    { "kind": "section", "key": "seeds", "page": 1 },
+    {
+      "kind": "text",
+      "text": "Radiser kan lide køligt vejr. Derfor er de gode at dyrke i Danmark.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Radiser trives bedst ved kølige temperaturer, og det er derfor en grøntsag, som egner sig godt til dyrkning i det danske klima."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Sår du i haven, så vent til april. Frøene kan spire ved bare 3 grader, men frosten skal være ude af jorden.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Dyrker du radiser på friland, må du vente med at så til april, for selvom frøene ikke har brug for mere end tre graders varme for at gro, må frosten have sluppet sit tag i jorden først."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Så nye frø hver anden uge, så kan du høste radiser hele sæsonen.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Lægger du radisefrø i jorden med to ugers mellemrum, kan du få en lang sæson."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan gør du:",
+      "items": [
+        "Lav en rille, der er 1-1,5 cm dyb.",
+        "Vand grundigt, og lad vandet synke helt ned. Læg så frøene med 2 cm mellemrum.",
+        "Dæk frøene med jord, og vand igen.",
+        "Hav 15 cm mellem rækkerne, så planterne har plads.",
+        "Står nogle for tæt, når de er spiret, så træk nogle op."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "title": "Gør sådan:",
+        "items": [
+          "Lav en sårille på 1-1,5 centimeters dybde.",
+          "Vand grundigt og lad væden trænge helt ned i jorden, før frøene lægges i rillen med 2 centimeters mellemrum.",
+          "Dæk frøene med jord og vand afslutningsvist",
+          "Der skal være 15 centimeter mellem hver række, så planterne har de bedste vilkår at udvikle sig under.",
+          "Efter spiring kan det blive aktuelt at udtynde i rækkerne, hvis nogle af planterne står for tæt."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Sår du i juni, juli eller august, så vælg et sted, hvor det ikke bliver for varmt. Bliver det for varmt, blomstrer radiserne i stedet for at lave de røde knolde.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Sår du radiser i juni, juli eller august, skal det være et sted, hvor temperaturen ikke bliver for høj. Får planterne det for varmt, sætter de blomster i stedet for at udvikle de røde og hvide stængler."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "conditions",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Radiser skal ikke have gødning. De gror godt i almindelig havejord, hvor vandet kan løbe væk.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "De har heller ikke behov for gødning, og trives i almindelig, veldrænet havejord."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Radiser skal gro under åben himmel. Du gør det samme, uanset hvor du dyrker dem.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Radiser skal gro under åben himmel, men uanset hvilket sted du foretrækker at dyrke dem, er det samme fremgangsmøde, du skal følge."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "care",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Vand meget, når du har sået. Radiser tåler ikke at tørre ud. Når det er varmt, så vand hver dag – det gælder også i drivhuset, hvor det hurtigt bliver meget varmt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Efter såning må du være flittig med vandkanden, for radiser tåler ikke udtørring. I varme perioder må du vande dagligt, og det samme gælder, hvis du dyrker i drivhuset, hvor temperaturen hurtigt kan blive meget høj."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Orme og snegle laver ofte huller i radiserne, og jordlopper kan også gøre skade. Ser du skader, så tag alle radiserne op, og så nye et andet sted i haven.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Orm og snegle er en hyppig årsag til huller i de røde stængler, ligesom jordlopper også kan give udfordringer. Oplever du angreb, tømmer du straks rækken, og flytter den til et nyt sted i haven."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "harvest",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Om sommeren tager det to uger fra frø til høst. Er det koldere, kan det tage op til seks uger.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "I højsæsonen tager det to uger fra frø til høst, men er det koldere, kan der gå op til seks uger, før de er spiseklare."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Radiserne er klar, når de er tykke nok, og toppen af dem stikker op af jorden.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan se, radiserne er klar til at blive høstet, når de har en god tykkelse, og det øverste af afgrøden titter op af den mørke jord."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "De små radiser smager mildest, så høst gerne tidligt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "De første, små radiser har den mildeste smag, så høst gerne tidligt."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "I køleskabet holder radiser sig friske i 3-4 dage.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Efter høst opbevares de på køl, hvor de holder sig friske 3-4 dage."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "seeds",
+      "page": 1
+    },
     {
       "kind": "steps",
       "items": [
-        "I stedet for at høste alle radiserne i bedet, skal du lade nogle af dem blive stående, så de kan sætte blomster.",
-        "Efter blomstringen dannes frøstande, skulpe, som efter modning, kan plukkes ind til eftertørring.",
-        "For at være helt sikker på, frøene er tørre nok til at blive gemt, kan du lægge dem på en tallerken et luftigt, skyggefuldt sted.",
-        "Efter et par dage lægges de i avispapir, konvolutter eller kaffefiltre, hvorefter de opbevares mørkt og tørt, til det bliver forår."
+        "Lad nogle radiser stå i bedet, så de kan blomstre.",
+        "Efter blomsterne kommer der små bælge med frø (skulper). Pluk dem, når de er modne, og lad dem tørre.",
+        "Læg dem på en tallerken et luftigt sted i skygge, så du er sikker på, at de er tørre.",
+        "Efter et par dage kan du lægge dem i avispapir, konvolutter eller kaffefiltre. Opbevar dem mørkt og tørt, til det bliver forår."
       ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "I stedet for at høste alle radiserne i bedet, skal du lade nogle af dem blive stående, så de kan sætte blomster.",
+          "Efter blomstringen dannes frøstande, skulpe, som efter modning, kan plukkes ind til eftertørring.",
+          "For at være helt sikker på, frøene er tørre nok til at blive gemt, kan du lægge dem på en tallerken et luftigt, skyggefuldt sted.",
+          "Efter et par dage lægges de i avispapir, konvolutter eller kaffefiltre, hvorefter de opbevares mørkt og tørt, til det bliver forår."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Vil du gemme dine egne frø, så brug almindelige sorter. Frø fra F1-sorter (står på frøposen) giver ikke de samme planter igen.",
+      "page": 1,
+      "sourceId": "dk-bolius-froe",
+      "original": {
+        "lang": "da",
+        "text": "Husk at bruge frøægte sorter, og ikke F1-sorter, når du avler dine egne frø."
+      }
+    },
+    {
+      "kind": "section",
+      "key": "neighbours",
       "page": 1
     },
-    { "kind": "text", "text": "Husk at bruge frøægte sorter, og ikke F1-sorter, når du avler dine egne frø.", "page": 1, "sourceId": "dk-bolius-froe" },
-
-    { "kind": "section", "key": "neighbours", "page": 1 },
-    { "kind": "text", "text": "Har du dyrket kål i køkkenhaven inden for det sidste år, skal du ikke lægge radisefrø i jorden i det bed, hvor hoved- eller bladkål netop har vokset. Radiser hører nemlig til kålfamilien, og derfor skal der gå en rum tid, før jorden igen er klar til at håndtere medlemmer fra den familie.", "page": 1 },
-    { "kind": "text", "text": "Sår du radiser mellem selleri, persille, rødbeder, gulerødder, pastinakker og persillerødder, kan du høste dem længe før, det bliver tid til at trække de andre afgrøder op af jorden, og på den måde udnytter du jorden fuldt ud.", "page": 1 }
+    {
+      "kind": "text",
+      "text": "Har der stået kål i bedet inden for det sidste år, så så ikke radiser der. Radiser er i familie med kål, og jorden skal hvile fra kål et stykke tid.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Har du dyrket kål i køkkenhaven inden for det sidste år, skal du ikke lægge radisefrø i jorden i det bed, hvor hoved- eller bladkål netop har vokset. Radiser hører nemlig til kålfamilien, og derfor skal der gå en rum tid, før jorden igen er klar til at håndtere medlemmer fra den familie."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Så radiser mellem selleri, persille, rødbeder, gulerødder og pastinakker. Radiserne er høstet længe før de andre, så du udnytter pladsen godt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Sår du radiser mellem selleri, persille, rødbeder, gulerødder, pastinakker og persillerødder, kan du høste dem længe før, det bliver tid til at trække de andre afgrøder op af jorden, og på den måde udnytter du jorden fuldt ud."
+      }
+    }
   ],
   "checks": [],
   "ownerChecked": false,
-  "related": ["aerter", "kartofler"]
+  "related": [
+    "aerter",
+    "kartofler"
+  ],
+  "originalSummary": "Det er nemt og tager ingen tid at dyrke radiser, og du kan dyrke dem i både krukker, altankasser og på friland."
 }

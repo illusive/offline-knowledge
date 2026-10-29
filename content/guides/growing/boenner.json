@@ -3,7 +3,7 @@
   "category": "growing",
   "order": 19,
   "title": "Hvordan dyrker du bønner i haven?",
-  "summary": "Du kan nemt dyrke dine egne bønner i haven.",
+  "summary": "Det er nemt at dyrke sine egne bønner i haven.",
   "sourceId": "dk-bolius-boenner",
   "risk": "low",
   "name": "Bønner (busk- og stangbønner)",
@@ -20,23 +20,39 @@
     },
     {
       "kind": "text",
-      "text": "Forudsætningen for at få bønnerne til at spire er, at de skal sås i en jord med en minimumstemperatur på 14° hele døgnet. Den temperatur findes først, når nætterne er lune, hvilket ofte først er engang i juni. Brug et jordtermometer.",
-      "page": 1
+      "text": "Bønner spirer kun, når jorden er mindst 14 grader hele døgnet. Det er den først, når nætterne er lune – ofte i juni. Brug et jordtermometer.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Forudsætningen for at få bønnerne til at spire er, at de skal sås i en jord med en minimumstemperatur på 14° hele døgnet. Den temperatur findes først, når nætterne er lune, hvilket ofte først er engang i juni. Brug et jordtermometer."
+      }
     },
     {
       "kind": "text",
-      "text": "Du kan også så dine bønner i potter i drivhuset og plante dem ud i første halvdel af juni.",
-      "page": 1
+      "text": "Du kan også så bønnerne i potter i drivhuset og plante dem ud i første halvdel af juni.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du kan også så dine bønner i potter i drivhuset og plante dem ud i første halvdel af juni."
+      }
     },
     {
       "kind": "text",
-      "text": "Buskbønner - som er mange forskellige slags bønner, hvis planter bliver omkring 50 cm i højden - sås i en dybde på ca. 5 cm med en afstand på 15 cm og 50 cm mellem hver række. Der vandes godt i rillen inden såning, men aldrig under spiringen, da frøene kan rådne.",
-      "page": 1
+      "text": "Buskbønner bliver ca. 50 cm høje. Så dem 5 cm dybt med 15 cm mellem hver bønne og 50 cm mellem rækkerne. Vand godt i rillen, før du sår – men ikke mens de spirer, for så kan de rådne.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Buskbønner - som er mange forskellige slags bønner, hvis planter bliver omkring 50 cm i højden - sås i en dybde på ca. 5 cm med en afstand på 15 cm og 50 cm mellem hver række. Der vandes godt i rillen inden såning, men aldrig under spiringen, da frøene kan rådne."
+      }
     },
     {
       "kind": "text",
-      "text": "Stangbønner bliver, som navnet antyder, høje, og dyrkes på samme måde som buskbønner bortset fra, at de kræver et stativ på mindst 2 meter at slynge sig op ad.",
-      "page": 1
+      "text": "Stangbønner bliver høje. Du dyrker dem som buskbønner, men de skal have et stativ på mindst 2 meter at klatre op ad.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Stangbønner bliver, som navnet antyder, høje, og dyrkes på samme måde som buskbønner bortset fra, at de kræver et stativ på mindst 2 meter at slynge sig op ad."
+      }
     },
     {
       "kind": "section",
@@ -45,13 +61,21 @@
     },
     {
       "kind": "text",
-      "text": "Bønner har et forholdsvis lille gødningsbehov, da de er kvælstoffikserende planter, hvilket betyder, at de selv er i stand til at omdanne luftens kvælstof til næring, der kan udnyttes af planterne.",
-      "page": 1
+      "text": "Bønner skal ikke have meget gødning. De kan selv hente næring fra luften.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Bønner har et forholdsvis lille gødningsbehov, da de er kvælstoffikserende planter, hvilket betyder, at de selv er i stand til at omdanne luftens kvælstof til næring, der kan udnyttes af planterne."
+      }
     },
     {
       "kind": "text",
-      "text": "Bønner vokser bedst i en løs, muldet jord. Hvis sommeren er fugtig, kan der komme problemer med skimmelangreb på både blade og bønner, hvorfor du ikke skal så dem alt for tæt.",
-      "page": 1
+      "text": "Bønner gror bedst i løs, muldet jord. Er sommeren fugtig, kan de få skimmel. Så dem derfor ikke for tæt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Bønner vokser bedst i en løs, muldet jord. Hvis sommeren er fugtig, kan der komme problemer med skimmelangreb på både blade og bønner, hvorfor du ikke skal så dem alt for tæt."
+      }
     },
     {
       "kind": "section",
@@ -60,8 +84,12 @@
     },
     {
       "kind": "text",
-      "text": "Bønner tåler ikke at mangle vand, og de skal vandes inden, de begynder at hænge med bladene. I en normal dansk sommer er det kun nødvendigt at vande bønnerne i tørkeperioder.",
-      "page": 1
+      "text": "Bønner tåler ikke at mangle vand. Vand dem, før bladene begynder at hænge. I en normal dansk sommer skal du kun vande, når det er tørt i længere tid.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Bønner tåler ikke at mangle vand, og de skal vandes inden, de begynder at hænge med bladene. I en normal dansk sommer er det kun nødvendigt at vande bønnerne i tørkeperioder."
+      }
     },
     {
       "kind": "section",
@@ -70,18 +98,30 @@
     },
     {
       "kind": "text",
-      "text": "Alt efter hvilken slags bønner, du har plantet - og vejrforhold - kan du høste dem efter 50-70 dage.",
-      "page": 1
+      "text": "Du kan høste efter 50-70 dage. Det afhænger af sorten og vejret.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Alt efter hvilken slags bønner, du har plantet - og vejrforhold - kan du høste dem efter 50-70 dage."
+      }
     },
     {
       "kind": "text",
-      "text": "Det er afgørende for at opnå et stort udbytte, at bønnerne plukkes mindst hver 3-5 dag i den passende størrelse.",
-      "page": 1
+      "text": "Pluk bønnerne mindst hver 3.-5. dag, når de har den rigtige størrelse. Så får du flest.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det er afgørende for at opnå et stort udbytte, at bønnerne plukkes mindst hver 3-5 dag i den passende størrelse."
+      }
     },
     {
       "kind": "warning",
-      "text": "På grund af et højt indhold af lektiner, der er giftige, må bønner ikke spises rå, men skal koges.",
-      "page": 1
+      "text": "Spis aldrig bønner rå. De indeholder et giftigt stof (lektin), som først forsvinder, når de koges.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "På grund af et højt indhold af lektiner, der er giftige, må bønner ikke spises rå, men skal koges."
+      }
     },
     {
       "kind": "section",
@@ -90,18 +130,30 @@
     },
     {
       "kind": "text",
-      "text": "Hvis du ønsker selv at dyrke spiringsdygtige frø, skal havebønner være helt modne. Det bedste resultat får du, når bælgene får lov til at visne på planten, inden du høster dem.",
-      "page": 1
+      "text": "Vil du gemme frø, der kan spire, så lad bønnerne blive helt modne. Lad bælgene visne på planten, før du høster dem.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis du ønsker selv at dyrke spiringsdygtige frø, skal havebønner være helt modne. Det bedste resultat får du, når bælgene får lov til at visne på planten, inden du høster dem."
+      }
     },
     {
       "kind": "text",
-      "text": "Dels kan bønner i dansk klima ikke altid nå at udvikle frø, som kan nå at tørre på planterne til en god kvalitet.",
-      "page": 1
+      "text": "I Danmark når bønnerne ikke altid at lave frø, der kan tørre godt nok på planten.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Dels kan bønner i dansk klima ikke altid nå at udvikle frø, som kan nå at tørre på planterne til en god kvalitet."
+      }
     },
     {
       "kind": "text",
-      "text": "Havebønner bevarer spireevnen i mindst 3 år ved normal opbevaring.",
-      "page": 1
+      "text": "Bønnefrø kan spire i mindst 3 år, hvis de opbevares normalt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Havebønner bevarer spireevnen i mindst 3 år ved normal opbevaring."
+      }
     }
   ],
   "checks": [],
@@ -109,5 +161,6 @@
   "related": [
     "hestebonner",
     "aerter"
-  ]
+  ],
+  "originalSummary": "Du kan nemt dyrke dine egne bønner i haven."
 }

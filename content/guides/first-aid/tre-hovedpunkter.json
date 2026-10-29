@@ -3,14 +3,54 @@
   "category": "first-aid",
   "order": 1,
   "title": "Førstehjælpens 3 hovedpunkter",
-  "summary": "Værktøjet bruges til at skabe sig et overblik over situationen.",
+  "summary": "De tre trin hjælper dig med at få overblik.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
   "blocks": [
-    { "kind": "steps", "items": ["Punkt 1: Skab sikkerhed", "Punkt 2: Giv førstehjælp", "Punkt 3: Tilkald hjælp"], "page": 8 },
-    { "kind": "text", "text": "Værktøjet bruges til at skabe sig et overblik over situationen. På denne måde bliver indsatsen så effektiv som mulig.", "page": 8 },
-    { "kind": "text", "text": "Situationen kan virke uoverskuelig og kaotisk. Derfor kan det være svært at vide, hvad man skal gøre først.", "page": 8 },
-    { "kind": "text", "text": "Under hele forløbet ydes der samtidigt psykisk førstehjælp, som er beregnet til at berolige den tilskadekomne.", "page": 8 }
+    {
+      "kind": "steps",
+      "items": [
+        "Trin 1: Gør stedet sikkert",
+        "Trin 2: Giv førstehjælp",
+        "Trin 3: Tilkald hjælp"
+      ],
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Punkt 1: Skab sikkerhed",
+          "Punkt 2: Giv førstehjælp",
+          "Punkt 3: Tilkald hjælp"
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Trinene hjælper dig med at få overblik, så din hjælp virker bedst muligt.",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Værktøjet bruges til at skabe sig et overblik over situationen. På denne måde bliver indsatsen så effektiv som mulig."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ved en ulykke kan alt virke kaotisk. Så kan det være svært at vide, hvad man skal gøre først.",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Situationen kan virke uoverskuelig og kaotisk. Derfor kan det være svært at vide, hvad man skal gøre først."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Hele vejen igennem skal du også berolige personen. Det kaldes psykisk førstehjælp.",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Under hele forløbet ydes der samtidigt psykisk førstehjælp, som er beregnet til at berolige den tilskadekomne."
+      }
+    }
   ],
   "checks": [
     {
@@ -21,5 +61,10 @@
     }
   ],
   "ownerChecked": false,
-  "related": ["skab-sikkerhed", "bevidsthed"]
+  "related": [
+    "skab-sikkerhed",
+    "bevidsthed"
+  ],
+  "name": "Førstehjælpens 3 trin",
+  "originalSummary": "Værktøjet bruges til at skabe sig et overblik over situationen."
 }

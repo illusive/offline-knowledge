@@ -6,7 +6,7 @@
    "key": "about",
    "blocks": [
     {
-     "text": "Hvordan æbler bedst opbevares, afhænger af sorten. Tidlige sorter som Guldborg, Ananasæble og Discovery spises, efterhånden som de plukkes; sene sorter som Filippa, Rød Ingrid Marie, Aroma og Rød Elstar kan gemmes i flere måneder.",
+     "text": "Hvordan æbler bedst opbevares, afhænger af sorten. Tidlige sorter som Guldborg, Ananasæble og Discovery spises, efterhånden som de plukkes. Sene sorter som Filippa, Rød Ingrid Marie, Aroma og Rød Elstar kan gemmes i flere måneder.",
      "sourceRef": {
       "sourceId": "dk-bolius-udendoers-opbevaring",
       "locator": "Æbler og pærer",
@@ -14,7 +14,7 @@
      }
     },
     {
-     "text": "Tidlige sorter danner meget ethylen og modner hurtigt, mens sene sorter danner lidt og modner langsomt.",
+     "text": "Tidlige sorter danner meget ethylen (en gas, som frugt og grønt selv afgiver, og som får dem til at modne) og modner hurtigt, mens sene sorter danner lidt og modner langsomt.",
      "sourceRef": {
       "sourceId": "us-ars-ah66-2016",
       "locator": "Apple chapter, Ethylene Production and Sensitivity, p. 177",
@@ -43,7 +43,7 @@
      }
     },
     {
-     "text": "Plukker du selv, så pluk sene sorter, når æblet let slipper ved stilken, og lad dem tørre en dags tid, før de lægges i kasse. Gem kun æbler helt uden pletter og stød, i et eller to lag i en flad kasse. Udendørs kan de stå løst tildækket med et tæppe; står de tørt, tåler de let frost, men tag dem ind, når frosten bliver varig.",
+     "text": "Plukker du selv, så pluk sene sorter, når æblet let slipper ved stilken, og lad dem tørre en dags tid, før de lægges i kasse. Gem kun æbler helt uden pletter og stød, i et eller to lag i en flad kasse. Udendørs kan de stå løst tildækket med et tæppe. Står de tørt, tåler de let frost, men tag dem ind, når frosten bliver varig.",
      "sourceRef": {
       "sourceId": "dk-bolius-udendoers-opbevaring",
       "locator": "Æbler og pærer",
@@ -114,11 +114,11 @@
       "steps": [
        "Rør ascorbinsyren ud i det kolde vand (eller bland citronsaft og vand).",
        "Vask æblerne, skræl dem, og fjern kernehuset.",
-       "Skær dem i ringe eller skiver på 3–6 mm (⅛–¼ tomme) – eller i kvarte eller ottendedele.",
+       "Skær dem i ringe eller skiver på 3–6 mm – eller i kvarte eller ottendedele.",
        "Læg stykkerne i opløsningen i 10 minutter, og lad dem dryppe godt af.",
-       "Læg dem i ét lag på bakkerne, og tør dem ved 60 °C (140 °F). Vend store stykker hver 3.–4. time.",
-       "Tjek efter 6–24 timer: Lad et par stykker køle af. De skal være bløde, bøjelige og læderagtige uden fugtig midte. Klem en håndfuld – der må ikke komme fugt på hånden, og stykkerne skal springe fra hinanden.",
-       "Efterbehandl: Kom de afkølede stykker løst i en beholder, ca. ⅔ fuld, læg et løst låg på, og stil den varmt, tørt og luftigt i 4–10 dage. Ryst den hver dag. Kommer der fugtperler, så tør dem igen.",
+       "Læg dem i ét lag på bakkerne, og tør dem ved 60 °C. Vend store stykker hver 3.–4. time.",
+       "Tjek efter 6–24 timer: Lad et par stykker køle af. De skal være bløde, bøjelige og seje som læder uden fugtig midte. Klem en håndfuld – der må ikke komme fugt på hånden, og stykkerne skal springe fra hinanden.",
+       "Lad dem hvile: Kom de afkølede stykker løst i en beholder, så den er ca. ⅔ fuld. Læg et løst låg på, og stil den et varmt, tørt og luftigt sted i 4–10 dage. Ryst den hver dag. Kommer der små dråber på indersiden, så tør stykkerne igen.",
        "Opbevar dem køligt, tørt og mørkt, i køleskabet eller i fryseren."
       ]
      }
@@ -140,7 +140,7 @@
        "To net eller riste af rustfrit stål eller plast (ikke galvaniseret metal) – eller et net og et ostelærred"
       ],
       "steps": [
-       "Vent på varme, tørre dage med blæst: mindst 29 °C (85 °F) og helst under 60 % luftfugtighed.",
+       "Vent på varme, tørre dage med blæst: mindst 29 °C og helst under 60 % luftfugtighed.",
        "Stil nettet på klodser, så luften kan komme rundt – gerne på beton eller over en metalplade, som kaster solen tilbage.",
        "Læg frugten i ét lag, og dæk den med det andet net eller ostelærredet mod fugle og insekter.",
        "Dæk frugten til eller tag den i læ om natten, så den ikke trækker fugt igen."
@@ -227,7 +227,7 @@
        "yield": "8–9 pint-glas (ca. 4 liter)"
       },
       "ingredients": [
-       "5,4 kg (12 lb) faste, syrlige æbler, højst 6 cm (2½ tomme) i diameter",
+       "5,4 kg faste, syrlige æbler, højst 6 cm i diameter",
        "12 cups sukker",
        "6 cups vand",
        "1¼ cups hvid eddike (5 %)",
@@ -236,10 +236,10 @@
        "Evt. 1 tsk. rød frugtfarve"
       ],
       "steps": [
-       "Vask æblerne. Skræl og skær ét æble ad gangen, så de ikke bliver brune: skær det på tværs i skiver på 1,3 cm (½ tomme), fjern kernehuset, og læg skiverne i ascorbinsyre-opløsning.",
+       "Vask æblerne. Skræl og skær ét æble ad gangen, så de ikke bliver brune: skær det på tværs i skiver på 1,3 cm, fjern kernehuset, og læg skiverne i vand med C-vitamin (ascorbinsyre).",
        "Kog sukker, vand, eddike og krydderier op i en stor gryde, og lad lagen simre 3 minutter.",
        "Lad æbleskiverne dryppe af, kom dem i den varme lage, og kog dem 5 minutter.",
-       "Fyld glassene (helst med bred åbning) med æbleringe og varm lage, så der er 1,3 cm (½ tomme) fri plads øverst.",
+       "Fyld glassene (helst med bred åbning) med æbleringe og varm lage, så der er 1,3 cm fri plads øverst.",
        "Sæt låg på, og henkog 10 minutter i vandbad (halv-pint- eller pint-glas, op til 300 m over havet)."
       ]
      }
@@ -257,9 +257,9 @@
       },
       "steps": [
        "Mærk glassene med indhold og dato.",
-       "Stil dem rent, køligt, mørkt og tørt – helst ved 10–21 °C (50–70 °F).",
+       "Stil dem rent, køligt, mørkt og tørt – helst ved 10–21 °C.",
        "Henkog ikke mere, end du bruger inden for et år.",
-       "Undgå over 35 °C (95 °F), varme rør, komfur og direkte sol – så forringes indholdet på uger eller måneder og kan blive fordærvet."
+       "Undgå over 35 °C, varme rør, komfur og direkte sol – så forringes indholdet på uger eller måneder og kan blive fordærvet."
       ]
      }
     }
@@ -283,14 +283,14 @@
       },
       "ingredients": [
        "Æbler",
-       "Vand med ascorbinsyre",
-       "Vand eller tynd sukkerlage: ca. ½ liter (1 pint) pr. 2,3 kg (5 lb) skårne æbler"
+       "Vand med C-vitamin (ascorbinsyre)",
+       "Vand eller tynd sukkerlage: ca. ½ liter pr. 2,3 kg skårne æbler"
       ],
       "steps": [
-       "Vask, skræl og fjern kernehuset. Skær æblerne i skiver direkte ned i vand med ascorbinsyre.",
+       "Vask, skræl og fjern kernehuset. Skær æblerne i skiver direkte ned i vand med C-vitamin (ascorbinsyre).",
        "Lad skiverne dryppe af, og kom dem i en stor gryde med vand eller sukkerlage.",
        "Kog dem 5 minutter, og rør af og til, så de ikke brænder på.",
-       "Fyld de varme glas med skiver og lage, så der er 1,3 cm (½ tomme) fri plads øverst.",
+       "Fyld de varme glas med skiver og lage, så der er 1,3 cm fri plads øverst.",
        "Sæt låg på, og henkog 20 minutter i vandbad – både pint- (ca. 0,5 liter) og quart-glas (ca. 1 liter), op til 300 m over havet."
       ]
      }
@@ -309,15 +309,15 @@
       },
       "ingredients": [
        "Æbler",
-       "1,2 dl (½ cup) vand",
-       "Evt. sukker: ca. 30 ml (⅛ cup) pr. liter mos"
+       "1,2 dl vand",
+       "Evt. sukker: ca. 30 ml pr. liter mos"
       ],
       "steps": [
-       "Vask, skræl og fjern kernehuset. Skær evt. æblerne ned i vand med ascorbinsyre, så de ikke bliver brune.",
+       "Vask, skræl og fjern kernehuset. Skær evt. æblerne ned i vand med C-vitamin (ascorbinsyre), så de ikke bliver brune.",
        "Kom de afdryppede skiver i en stor gryde med vandet.",
        "Varm dem hurtigt op, og kog dem møre (5–20 minutter). Rør af og til.",
        "Pres dem gennem en sigte – eller lad mosen være grov. Smag til med sukker, hvis du vil.",
-       "Bring mosen i kog igen, og fyld den varm på glas, så der er 1,3 cm (½ tomme) fri plads øverst.",
+       "Bring mosen i kog igen, og fyld den varm på glas, så der er 1,3 cm fri plads øverst.",
        "Sæt låg på, og henkog i vandbad: pint-glas 15 minutter, quart-glas 20 minutter (op til 300 m over havet)."
       ]
      }
@@ -335,9 +335,9 @@
       },
       "steps": [
        "Mærk glassene med indhold og dato.",
-       "Stil dem rent, køligt, mørkt og tørt – helst ved 10–21 °C (50–70 °F).",
+       "Stil dem rent, køligt, mørkt og tørt – helst ved 10–21 °C.",
        "Henkog ikke mere, end du bruger inden for et år.",
-       "Undgå over 35 °C (95 °F), varme rør, komfur og direkte sol – så forringes indholdet på uger eller måneder og kan blive fordærvet."
+       "Undgå over 35 °C, varme rør, komfur og direkte sol – så forringes indholdet på uger eller måneder og kan blive fordærvet."
       ]
      }
     }

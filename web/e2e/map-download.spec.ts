@@ -32,7 +32,7 @@ test('the flow explains, downloads, and the area works offline; delete it again'
   });
 
   await page.goto('./');
-  await expect(page.getByText('Klar offline')).toBeVisible({ timeout: 60_000 });
+  await expect(page.getByText('Klar uden net')).toBeVisible({ timeout: 60_000 });
   await page.evaluate(async () => {
     await navigator.serviceWorker.ready;
   });
