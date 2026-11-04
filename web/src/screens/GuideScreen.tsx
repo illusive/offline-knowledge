@@ -49,7 +49,7 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
   const { guide, blocks, source, checks, related, blockSources } = loaded;
   const firstAid = guide.category === 'first-aid';
   // The 112 card on first aid and on situations (not on stock lists or crops).
-  const showEmergency = firstAid || guide.grp === 'situation';
+  const showEmergency = firstAid || guide.grp === 'situation' || guide.grp === 'weather';
   const checklistItems = blocks.flatMap((b) => (b.kind === 'checklist' ? b.items : []));
   const translated = blocks.some((b) => b.original?.lang === 'en');
   const rewritten = !!guide.summary_original || blocks.some((b) => b.original?.lang === 'da');

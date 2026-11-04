@@ -101,7 +101,7 @@ export interface GuideRow {
   abbreviations: { short: string; long: string }[];
   name: string | null;     // growing: plain name, e.g. 'Radiser'
   season: string | null;   // growing: the growing period
-  grp: 'situation' | 'supplies' | null; // preparedness (D-040)
+  grp: 'weather' | 'situation' | 'supplies' | null; // preparedness (D-040, D-043)
 }
 
 const GUIDE_COLUMNS = 'g.id, g.category, g.title, g.summary, g.summary_original, g.abbreviations, g.name, g.season, g.grp';
@@ -215,7 +215,7 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
   const related = relatedIds.flatMap((rid) => guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guides g WHERE g.id = ?`, [rid]));
   return {
     guide: { id: g.id, category: g.category, title: g.title, summary: g.summary, summary_original: g.summary_original, abbreviations: g.abbreviations, name: g.name, season: g.season, grp: g.grp, owner_checked: g.owner_checked === 1, food_id: g.food_id },
-    blockSources: rows<{ source_id: string }>(db, 'SELECT DISTINCT source_id FROM guide_blocks WHERE guide_id = ? AND source_id IS NOT NULL', [id]).map((r) => source(r.source_id)),
+    blockSources: rows<{ source_id: string }>(db, 'SELECT DISTINCT source_id FROM guide_blocks WHERE guide_id = ? AND source_id IS NOT NULL AND source_id != ?', [id, g.source_id]).map((r) => source(r.source_id)),
     blocks,
     images,
     source: source(g.source_id),

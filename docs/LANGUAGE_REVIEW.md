@@ -8,6 +8,8 @@ The language pass (D-042, 2026-10-29) rewrote every guide, food guide, storage n
 
 The rewrites are unchecked. Before the app is shared, someone reviews them against the source (manual review step, owner decision). In the app, "Vis original" shows the source's own words for every rewritten block.
 
+**2026-11-02:** an external reviewer reworded 102 texts (interface, guides, food guide, storage notes), applied as given. Among them: the hjertestarter steps are imperatives again with the shouted commands kept, "går i chok" is gone from Stabilt sideleje, and "Klar uden net" is now "Klar uden internet". The doubts below still need checking against the sources, and the guides still show "Prøveversion".
+
 ## 1. Style rules
 
 - **Who we write for:** someone who is stressed, reads slowly or knows nothing about the subject. The text should never feel condescending.
@@ -19,6 +21,7 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
   - "kog", not "bring i kog"
   - "køkkenskab", not "spisekammer"
   - "uden net", not "offline"
+  - "guide" (pl. "guides"), not "vejledning", for the app's own guides. "Vejledning" is kept only where it means instructions in general.
 - **Explaining necessary terms:** give the explanation in brackets the first time the word appears, e.g. "ethylen (en gas, som frugt og grønt selv afgiver …)", "pacemaker (en lille dims under huden)", "fiberdug (en tynd, hvid dug …)".
 - **Numbers and units:**
   - 112 is always written "112", never "1-1-2".
@@ -94,3 +97,15 @@ Statements where the plain wording may differ from the source's meaning, or wher
 | Storage notes | "Free from moisture; chilling injury …" | Rewritten freely: "For meget kulde kan få den til at rådne, skifte farve eller blive blød." |
 | Kartofler (crop) | care | "Hypning" explained as "skubbe jord op omkring planten". |
 | Bønner, Hestebønner | conditions | "kvælstoffikserende" → "kan selv hente næring fra luften". Simplified, but true? |
+| Snestorm | bilen | Translated from UK Be Ready (unchecked, D-041). "high-visibility clothing" → "Refleksvest", "jump leads" → "Startkabler". |
+| Stormflod | text 4 | "stormflodsordning" → "den statslige stormflodsordning". Bolius does not say "statslige". Check. |
+| Der kommer storm | under, list item 2 | Bolius' advice on a powerbank and radio apps is left out; only lamp, candles and a battery radio are shown. |
+| Der kommer storm | under, text | The insurance hotline sentence is left out; 112 and the damage service firm are kept. |
+| Der er vand i kælderen | warning (kloakvand) | Lists three of the five diseases Bolius names (salmonellosis and Weil's disease left out). Keep all five? |
+| Der er vand i kælderen | text 1 | "Det er begrænset, hvad du kan nå" → "kan du ikke nå så meget. Men gør det, du kan:" Added encouragement. |
+| Der er vand i kælderen | warning (strøm) | Bolius does not say how to cut the power safely when water is already present; GOV.UK adds "if it's safe to do so" and "do not touch an electrical switch if you're standing in water". Add that as a translated block (D-041)? |
+| Der kommer storm | haven, item 4 | Bolius' extra trampoline advice (storm kit with ground anchors, or turn it over and weigh it down) sits in a separate paragraph and is not included. Add it as its own block? |
+| Der kommer storm | huset, item 2 | "vindskeder, sternbrædder" → "brædderne langs taget". Clear enough? |
+| Medicin, førstehjælp og hygiejne | text 4 | "nukleare ulykker" → "atomulykke", and "opholde sig indendørs" → "blive inde". The source's pointer to Sundhedsstyrelsen is left out. Check the wording. |
+| Telefon og net er nede | text 1 | "Du skal kun ringe 1-1-2 …" → "Ellers kan du optage linjen for andre, der ringer om liv og død." Same meaning? |
+| Lys, varme og andre ting | checklist | "Fysiske betalingskort" → "Betalingskort af plastik". Is "af plastik" right for all cards? |

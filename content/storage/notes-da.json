@@ -2,15 +2,15 @@
   "$comment": "Danish translations of the English FoodKeeper notes, keyed by the exact English text (D-031). Drafted 2026-10-25 by an AI assistant and NOT checked, by owner decision; shown labelled as translated, with the English original one tap away. Fahrenheit temperatures keep °F and get the Celsius equivalent in brackets, so they are not misread as Celsius. Revisit (check every entry) before the app is shared beyond the owner.",
   "translations": {
     "1-2 weeks if inappropriately handled.": {
-      "da": "1–2 uger, hvis den ikke opbevares rigtigt.",
+      "da": "1–2 uger ved forkert opbevaring.",
       "checked": false
     },
     "Applies to unopened coconut.": {
-      "da": "Gælder en kokosnød, der ikke er åbnet.",
+      "da": "Gælder en uåbnet kokosnød.",
       "checked": false
     },
     "Blanch before freezing.": {
-      "da": "Blancher før du fryser (kog kort, og køl hurtigt ned).",
+      "da": "Blanchér før nedfrysning (kog kort, og køl hurtigt ned).",
       "checked": false
     },
     "Free from moisture; chilling injury causes decay, discoloration or loss of texture may occur.": {
@@ -46,7 +46,7 @@
       "checked": false
     },
     "Fresh whole peppers will last longer if kept dry.": {
-      "da": "Friske, hele peberfrugter holder længere, hvis de holdes tørre.",
+      "da": "Friske, hele peberfrugter holder længere, hvis de opbevares tørt.",
       "checked": false
     },
     "Highly perishable when stored in the pantry.": {
@@ -58,15 +58,15 @@
       "checked": false
     },
     "Keep them in a plastic bag to retain moisture.": {
-      "da": "Opbevar dem i en plastpose, så de bevarer fugten.",
+      "da": "Opbevar dem i en plastpose, så de ikke tørrer ud.",
       "checked": false
     },
     "Or until ripe.": {
-      "da": "Eller til den er moden.",
+      "da": "Eller indtil den er moden.",
       "checked": false
     },
     "Or until ripe. Ripe is when this item is tender, fully developed and ready to eat.": {
-      "da": "Eller til den er moden – altså blød og klar til at spise.",
+      "da": "Eller indtil den er moden – altså blød og klar til at spise.",
       "checked": false
     },
     "Peppers lose their crispness when frozen and thawed.": {
@@ -78,19 +78,19 @@
       "checked": false
     },
     "Refrigeration not recommended.": {
-      "da": "Bør ikke i køleskabet.",
+      "da": "Bør ikke opbevares i køleskab.",
       "checked": false
     },
     "Ripe is when this item is tender, fully developed and ready to eat.": {
-      "da": "Moden betyder blød og klar til at spise.",
+      "da": "Moden betyder, at frugten er blød, fuldt udviklet og klar til at spise.",
       "checked": false
     },
     "Ripe is when this item is tender, fully developed and ready to eat. Note, these spoil quickly.": {
-      "da": "Moden betyder blød og klar til at spise. De bliver hurtigt dårlige.",
+      "da": "Moden betyder, at frugten er blød, fuldt udviklet og klar til at spise. Den bliver hurtigt dårlig.",
       "checked": false
     },
     "Storage temperatures below 50 degrees (as in a refrigerator) will cause the squash to spoil more rapidly.": {
-      "da": "Under ca. 10 °C (50 °F), fx i køleskabet, bliver squashen hurtigere dårlig.",
+      "da": "Under ca. 10 °C, fx i køleskabet, bliver squashen hurtigere dårlig.",
       "checked": false
     },
     "Store individual cloves in refrigerator.": {
@@ -122,11 +122,11 @@
       "checked": false
     },
     "Until Ripe, then 1-2 days. Ripe is when this item is tender, fully developed and ready to eat.": {
-      "da": "Til den er moden, derefter 1–2 dage. Moden betyder blød og klar til at spise.",
+      "da": "Indtil den er moden, derefter 1–2 dage. Moden betyder, at frugten er blød, fuldt udviklet og klar til at spise.",
       "checked": false
     },
     "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat.": {
-      "da": "Til den er moden, derefter 7 dage. Moden betyder blød og klar til at spise.",
+      "da": "Indtil den er moden, derefter 7 dage. Moden betyder, at frugten er blød, fuldt udviklet og klar til at spise.",
       "checked": false
     },
     "Until Ripe, then 7 days. Ripe is when this item is tender, fully developed and ready to eat. Refrigeration may affect flavor; USDA recommends pantry storage.": {
@@ -134,7 +134,7 @@
       "checked": false
     },
     "Will start to discolor.": {
-      "da": "Begynder at skifte farve.",
+      "da": "Begynder at misfarves.",
       "checked": false
     },
     "below 75 °F": {

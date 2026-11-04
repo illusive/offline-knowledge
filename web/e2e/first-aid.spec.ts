@@ -4,11 +4,11 @@ test('first aid: list, a guide with steps and photos, related guide; then offlin
   await page.goto('./');
   await page.getByRole('link', { name: /Førstehjælp/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Førstehjælp' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Ring 112, alarmcentralen' })).toHaveAttribute('href', 'tel:112');
+  await expect(page.getByRole('link', { name: 'Ring 112', exact: true })).toHaveAttribute('href', 'tel:112');
   // The three main points as their own section, the rest underneath.
   const mainPoints = page.getByRole('region', { name: 'Førstehjælpens 3 trin' });
   await expect(mainPoints.getByText('Trin 1: Gør stedet sikkert')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Alle vejledninger' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Alle guides' })).toBeVisible();
   await expect(page.getByText('HLR: hjertelungeredning').first()).toBeVisible();
 
   // Search inside the guides' text.
@@ -16,7 +16,7 @@ test('first aid: list, a guide with steps and photos, related guide; then offlin
   await search.fill('blodpøl');
   await expect(page.getByRole('link', { name: /^Livsfarlige blødninger/ })).toBeVisible();
   await search.fill('zzzz');
-  await expect(page.getByText('Ingen vejledninger matcher "zzzz".')).toBeVisible();
+  await expect(page.getByText('Ingen guides matcher "zzzz".')).toBeVisible();
   await search.fill('');
 
   await page.getByRole('link', { name: /^Stabilt sideleje/ }).click();
@@ -35,9 +35,9 @@ test('first aid: list, a guide with steps and photos, related guide; then offlin
   await expect(page.getByRole('heading', { level: 1, name: 'Stabilt sideleje' })).toBeVisible();
 
   // Offline: the guide and its photos come from the pack on the device. Wait until every file is
-  // cached ("Klar uden net"), or going offline right after a fresh build can race the precache.
+  // cached ("Klar uden internet"), or going offline right after a fresh build can race the precache.
   await page.goto('./');
-  await expect(page.getByText('Klar uden net')).toBeAttached({ timeout: 60_000 });
+  await expect(page.getByText('Klar uden internet')).toBeAttached({ timeout: 60_000 });
   await page.evaluate(async () => {
     await navigator.serviceWorker.ready;
   });

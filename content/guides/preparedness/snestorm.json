@@ -1,0 +1,137 @@
+{
+  "id": "snestorm",
+  "category": "preparedness",
+  "group": "weather",
+  "order": 3,
+  "name": "Snestorm",
+  "title": "7 gode råd før snestorm",
+  "summary": "Sådan gør du huset klar, før snestormen kommer – og hvad du bør have i bilen, hvis du sidder fast i sneen.",
+  "originalSummary": "Hvordan skal du sikre boligen, inden snestormen kommer?",
+  "sourceId": "dk-bolius-snestorm",
+  "risk": "low",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Før snestormen: huset",
+      "page": 1,
+      "sourceId": "dk-bolius-snestorm",
+      "original": {
+        "lang": "da",
+        "text": "Hvordan skal du sikre boligen, inden snestormen kommer?"
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Følg med i vejrudsigten på dmi.dk, i en vejrapp eller i radio og tv, så du ved, hvornår snestormen kommer.",
+        "Stil kost og sneskovl klar tæt ved døren. Køb grus eller salt, og læg det, hvor du kan nå det.",
+        "Luk alle døre og vinduer helt – også tagvinduer og kældervinduer. Sne kan blæse ind gennem selv små åbninger.",
+        "Fjern løse ting i haven, så de ikke blæser ind i huset. Luk døren til skur og garage.",
+        "Har du en udestue, carport eller et skur med let tag, så sæt et par ekstra stolper under taget. Så kan det bære vægten af sneen.",
+        "Rens tagrender og nedløb, så smeltevandet kan løbe væk fra huset."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-snestorm",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Følg med i vejrudsigten på dmi.dk, på vejrapps og/eller i radio og tv.",
+          "Stil kost og sneskovl klar tæt på døren og køb og læg grus, salt eller andre tømidler inden for rækkevidde.",
+          "Husk at lukke alle vinduer og døre - også tagvinduer og kældervinduer. Der kan trænge sne ind gennem de mindste åbninger, når vinden står på.",
+          "Fjern løse ting i haven og på grunden, så de ikke gør skade i stormen.",
+          "Hvis du har en udestue, carport, skur eller andet med et let tag, så sæt et par 'hjælpestolper' under taget for at understøtte vægten, så tager ikke braser sammen af al den sne, som snestormen bringer med sig.",
+          "Fjern blade og alt andet skidt og snavs fra dine tagrender og nedløb. Så kan smeltevand fra sneen løbe væk fra huset"
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Kan du risikere at sne inde, så fyld køleskabet op i forvejen.",
+      "page": 1,
+      "sourceId": "dk-bolius-snestorm",
+      "original": {
+        "lang": "da",
+        "text": "Hvis der er risiko for at sne inde - som på fotoet her - er det en god ide at fylde køleskabet op på forhånd."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Hav det i bilen",
+      "page": 1,
+      "sourceId": "uk-be-ready-emergencies",
+      "original": {
+        "lang": "en",
+        "text": "Pack a few essential items in your car boot"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Kører du i sne og frost, så hav nogle ting i bagagerummet, hvis du sidder fast:",
+      "page": 1,
+      "sourceId": "uk-be-ready-emergencies",
+      "original": {
+        "lang": "en",
+        "text": "Pack a few essential items in your car boot to make sure you’re ready in case of getting stuck in wintry weather"
+      }
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "bil-lommelygte",
+          "text": "Lommelygte"
+        },
+        {
+          "id": "bil-oplader",
+          "text": "Oplader til telefonen, der virker i bilen"
+        },
+        {
+          "id": "bil-varmt-toej",
+          "text": "Varmt tøj og tæpper"
+        },
+        {
+          "id": "bil-refleksvest",
+          "text": "Refleksvest"
+        },
+        {
+          "id": "bil-startkabler",
+          "text": "Startkabler"
+        },
+        {
+          "id": "bil-mad-drikke",
+          "text": "Mad og drikke"
+        },
+        {
+          "id": "bil-sneskovl",
+          "text": "Sneskovl"
+        },
+        {
+          "id": "bil-foerstehjaelp",
+          "text": "Førstehjælpskasse"
+        }
+      ],
+      "page": 1,
+      "sourceId": "uk-be-ready-emergencies",
+      "original": {
+        "lang": "en",
+        "items": [
+          "a torch",
+          "in-car phone charger",
+          "warm clothes and blankets",
+          "high-visibility clothing",
+          "jump leads",
+          "food and drink",
+          "a shovel for snow",
+          "keep a first aid kit in your car"
+        ]
+      }
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "der-kommer-storm",
+    "andet-hav-derhjemme",
+    "der-er-ingen-varme"
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "id": "der-kommer-storm",
+  "category": "preparedness",
+  "group": "weather",
+  "order": 1,
+  "name": "Storm",
+  "title": "Gør hus og have klar til storm",
+  "summary": "Sådan gør du hus og have klar, før stormen kommer – og hvad du gør, mens den raser, og når den er ovre.",
+  "originalSummary": "Er der varslet storm, bør du både tjekke tag og sikre trampolin, hegn og drivhus.",
+  "sourceId": "dk-bolius-storm-foer",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Før stormen: huset",
+      "original": {
+        "lang": "da",
+        "text": "Gør hus og have klar til storm"
+      },
+      "page": 1
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Luk alle døre og vinduer helt – også i skuret og vinduer, der står på klem. Åbne vinduer kan smække i og gå i stykker.",
+        "Se på taget: Ligger alle tagsten eller plader på linje? Sidder antenne, parabol og brædderne langs taget godt fast? Skæve sten eller plader er sikkert løse. En tømrer eller murer kan se på taget og gøre dem fast.",
+        "Tjek, at nedløbsrørene sidder fast, og fjern blade og skidt fra tagrender og afløb, så regnvandet kan løbe væk.",
+        "Hav en presenning og et par spande klar. Så kan du dække af, hvis stormen river hul i taget."
+      ],
+      "original": {
+        "lang": "da",
+        "items": [
+          "Stormen kan let få åbne vinduer til at smække voldsomt eller fange vinden. Det kan smadre dem og forårsage skader på andre bygningsdele. Husk også at få lukket vinduer, som står på klem med hasper på.",
+          "Tjek, at antenne, parabol, vindskeder, sternbrædder og tagsten sidder ordentligt fast. Kig på taget og se, om alle sten eller plader ligger på linje. Er det ikke tilfældet, er de skæve plader eller sten sikkert gået løs og skal skiftes eller gøres fast. En tømrer eller en murer kan hjælpe dig med at tilse taget og skifte løse plader og tagsten.",
+          "Kontrollér, at alle nedløbsrør sidder ordentlig fast. Fjern blade og skidt fra tagrender og nedløbsbrønde, så evt. ekstra nedbør kan komme væk fra huset.",
+          "Hav en presenning og et par spande klar, så du kan dække af og mindske skaden inde i loftrummet, hvis stormen skulle rive hul i taget."
+        ]
+      },
+      "page": 1
+    },
+    {
+      "kind": "heading",
+      "text": "Før stormen: haven",
+      "original": {
+        "lang": "da",
+        "text": "Stil løse ting i læ"
+      },
+      "page": 1
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Sæt grill, havemøbler, haveredskaber, tomme regnvandstønder og andre løse ting ind i skuret eller et andet sikkert sted. Rul markisen ind.",
+        "Fjern grene, der kan gøre skade, hvis de knækker. Står et træ helt op ad huset og er råddent, så overvej at fælde det.",
+        "Skil trampolinen ad, og stil den ind i skuret eller i kælderen. Står den ude, kan den flyve.",
+        "Støt et løst hegn med skrå brædder, der er skruet fast i stolperne og banket ned i jorden. Spænd eller søm hegnet bedre fast.",
+        "Tag flagstangen ned, før et kraftigt vindstød gør det. Flagstænger giver mange stormskader.",
+        "Luk drivhusets dør og vinduer, og pak det evt. ind i plastik eller presenninger."
+      ],
+      "original": {
+        "lang": "da",
+        "items": [
+          "Sæt grill, haveredskaber, havemøbler, tomme regnvandstønder, fritstående fuglefoderhuse og andre løse ting ind i skuret eller et andet sikkert sted. Rul markiser ind.",
+          "Gennemgå træer nær boligen og fjern grene, der kan gøre skade, hvis de knækker. Fæld evt. enkelte træer, hvis de står ret op ad huset – især, hvis der er råddenskab at spore i stammen.",
+          "Skil trampolinen ad og stil den ind i skuret eller ned i kælderen. Hvis du lader trampolinen stå udenfor, når stormen kommer, er der risiko for, at den flyver.",
+          "Skru 2 skråstivere – store brædder eller lignende – fast i stolperne, placér dem skråt fra stolpen og bank dem ned mod jorden. Spænd eller søm selve hegnet bedre fast eller afmontér evt. det, der ikke sidder ordentligt fast.",
+          "Flagstænger er skyld i mange stormskader, derfor er det en god idé at tage den ned, inden et kraftigt vindstød gør det for dig.",
+          "Forstærk drivhusets konstruktion, pak det ind i industrifilm eller brug billige presenninger til at lave en 'tehætte' til at pakke drivhuset ind i. Luk desuden drivhusets dør og vinduer"
+        ]
+      },
+      "page": 1
+    },
+    {
+      "kind": "warning",
+      "text": "Hav afspærringsbånd eller store spande med sand klar. Så kan du advare folk, der går forbi, hvis der kan falde tagsten ned.",
+      "original": {
+        "lang": "da",
+        "text": "Hav afspærringsbånd, store spande med sand eller andre redskaber klar, så du kan lave en sikker afspærring, hvis du før eller under stormen bliver nødt til at advare forbipasserende om risikoen for nedfaldne tagsten."
+      },
+      "page": 1
+    },
+    {
+      "kind": "heading",
+      "text": "Under stormen",
+      "page": 1,
+      "sourceId": "dk-bolius-storm-under",
+      "original": {
+        "lang": "da",
+        "text": "8 gode råd når stormen raser"
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Bliv inde under stormen – også selvom huset eller haven bliver skadet. Du kan blive ramt af tagsten eller andet, der flyver.",
+      "page": 1,
+      "sourceId": "dk-bolius-storm-under",
+      "original": {
+        "lang": "da",
+        "text": "Bliv i din bolig under stormen – også selvom der sker skader på hus eller omgivelser. Det kan være farligt at bevæge sig ud i en alvorlig storm. Du risikerer at blive ramt af flyvende tagsten eller andre genstande."
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Lyt til nyhederne, og følg de råd, der bliver givet.",
+        "Hav en lygte og stearinlys klar, hvis strømmen går. Find også en radio frem, der kan køre på batterier.",
+        "Går en rude i stykker, så dæk hullet med en plade eller kraftig plastik – indefra, aldrig udefra.",
+        "Vælter et træ ind i huset, så dæk af indefra. Vent med at fjerne træet, til stormen er ovre."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-storm-under",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Lyt til nyhedsudsendelserne under stormen Følg den vejledning, der bliver udsendt.",
+          "Hvis strømmen forsvinder under stormen, er det en god idé at have en lygte og stearinlys på lager. Hvis du har du en gammel transistorradio, en clockradio eller en DAB-radio, som kan køre på batteri, bør du også finde den frem.",
+          "Er det muligt, kan du dække vindueshullet til med en plade, der kan tåle vand, eller noget kraftigt plast. Gør det IKKE udefra.",
+          "Dæk af indendørs, hvor regn, sne og vind kan slippe ind, hvis et træ vælter ind i huset. Fjern først træet, eller få et firma til at gøre det, efter stormen."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Får taget et hul, så flyt tingene væk fra stedet nedenunder, og stil spande eller læg plastik ud. Gå ikke op og dæk taget af, mens det stormer – det er alt for farligt.",
+      "page": 1,
+      "sourceId": "dk-bolius-storm-under",
+      "original": {
+        "lang": "da",
+        "text": "Hvis dit tag får skader under stormen, bør så vidt muligt fjerne alt indbo under hullet. Indboet kan gå i stykker, hvis det begynder at regne eller sne. Stil evt. spande eller spred plastik ud under hullet i taget. Afdæk IKKE det skadede tag, mens det stormer. Det er alt for risikabelt."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Er skaderne alvorlige, kan du ringe til et skadeservicefirma. Har du akut brug for hjælp, så ring 112.",
+      "page": 1,
+      "sourceId": "dk-bolius-storm-under",
+      "original": {
+        "lang": "da",
+        "text": "Hvis skaderne er alvorlige, eller der er risiko for, at fx taget blæser af, kan du ringe til et skadeservicefirma. I tilfælde af akut behov for hjælp, bør du ringe til det lokale beredskab (112)."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Efter stormen",
+      "page": 1,
+      "sourceId": "dk-bolius-storm-efter",
+      "original": {
+        "lang": "da",
+        "text": "Tjek dit hus for skader efter stormen"
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Dæk knuste vinduer og huller i taget med træplader, presenning eller plastik. Flyt møbler væk fra steder, hvor regn kan komme ind.",
+        "Se efter skader på taget: løse eller manglende tagsten, løse sten på skorstenen og en antenne, der har revet sig løs.",
+        "Fjern blade og grene fra tagrenderne.",
+        "Beskær træer med grene, der næsten er knækket af. Træer, der vakler, skal fældes.",
+        "Har strømmen været væk, så tjek maden i fryseren.",
+        "Tag mange billeder af skaderne til forsikringen. Smid ikke ødelagte ting ud, før du har talt med forsikringen.",
+        "Gem kvitteringer for nødreparationer. Forsikringen dækker dem typisk."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-storm-efter",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Dæk fx ituslåede vinduer eller huller i taget med træplader, presenning eller plastik. Flyt møbler og andet indbo fra steder, hvor nedbør kan trænge ind i huset.",
+          "Se bl.a. efter løse eller manglende tagsten, tagmaterialer, som er blæst af, løse mursten på husets skorsten, indikationer på, at antennen har revet sig løs, eller andre tegn på skader.",
+          "Fjern blade, grene og andet skidt fra husets tagrender og skotrender",
+          "Træer bør beskæres, hvis der er grene, som næsten er brækket af. Og vakkelvorne træer skal fældes.",
+          "Tjek, om dine madvarer i fryseren har taget skade, hvis huset har været ramt af strømsvigt under stormen.",
+          "Tag masser af billeder eller film, hvis der er sket stormskader - så du har dokumentationen i orden, når du skal melde skaderne til din forsikring. Kassér ikke beskadiget indbo, før du har talt med forsikringsselskabet.",
+          "Forsikringen dækker typisk udgifter til nødreparationer, så husk at gemme dem, så du kan sende dem til dit forsikringsselskab."
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "uk-edinburgh-storms",
+      "locator": "High winds, gales and storms: During the storm",
+      "quote": "stay indoors - do not go outside to repair damage",
+      "note": "Agrees: stay inside, and do not repair damage during the storm."
+    },
+    {
+      "sourceId": "uk-edinburgh-storms",
+      "locator": "High winds, gales and storms: How to prepare for a storm",
+      "quote": "secure loose objects that could be blown away",
+      "note": "Agrees: put loose things away before the storm."
+    },
+    {
+      "sourceId": "uk-edinburgh-storms",
+      "locator": "High winds, gales and storms: How to prepare for a storm",
+      "quote": "lock doors and windows",
+      "note": "Agrees: close doors and windows."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "stroemmen-er-gaaet",
+    "andet-hav-derhjemme"
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "id": "andet-hav-derhjemme",
+  "category": "preparedness",
+  "group": "supplies",
+  "order": 4,
+  "name": "Lys, varme og andre ting",
+  "title": "Andre fornødenheder",
+  "summary": "Lommelygte, batterier, powerbank, radio og varmt tøj gør det lettere at klare sig uden strøm.",
+  "sourceId": "dk-samsik-forberedt-paa-kriser",
+  "risk": "low",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Varme",
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "text": "Varme"
+      }
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "taepper-dyner",
+          "text": "Tæpper, dyner og varmt tøj"
+        }
+      ],
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Tæpper, dyner, varmt tøj"
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Lys, strøm og betaling",
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "text": "Andre fornødenheder"
+      }
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "powerbank",
+          "text": "Powerbank (opladet batteri) til fx mobilen"
+        },
+        {
+          "id": "lommelygte",
+          "text": "Lommelygte"
+        },
+        {
+          "id": "batterier",
+          "text": "Batterier"
+        },
+        {
+          "id": "betalingskort-kontanter",
+          "text": "Betalingskort af plastik (husk pinkoden) og evt. kontanter i mønter og små sedler"
+        },
+        {
+          "id": "stearinlys-taendstikker",
+          "text": "Evt. stearinlys og tændstikker"
+        }
+      ],
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Powerbank eller batteripakke til fx din mobiltelefon",
+          "Lommelygte",
+          "Batterier",
+          "Fysiske betalingskort (husk pinkode) og evt. kontanter i mønter og små sedler",
+          "Evt. stearinlys og tændstikker"
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Radio",
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "text": "Kommunikation"
+      }
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "fm-radio",
+          "text": "FM-radio, der kører på batterier, håndsving eller solceller (eller bilradioen)"
+        }
+      ],
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "items": [
+          "FM-radio, der kører på batterier/håndsving/solceller (eller evt. din bilradio)."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Stil stearinlys og andre ting, der bliver varme, på et fast underlag – langt fra gardiner, tæpper og andet, der kan brænde.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "Hvis du bruger stearinlys eller andre varmekilder, så stil dem på et fast underlag langt fra brændbart materiale som gardiner og tæpper."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "uk-be-ready-checklist",
+      "locator": "Be ready checklist: Light and warmth",
+      "quote": "Torch (and spare batteries).",
+      "note": "Agrees: a torch and spare batteries."
+    },
+    {
+      "sourceId": "uk-be-ready-checklist",
+      "locator": "Be ready checklist: Light and warmth",
+      "quote": "Blankets, sleeping bags and warm clothing.",
+      "note": "Agrees: blankets and warm clothing."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "der-er-ingen-varme",
+    "telefon-og-net-er-nede"
+  ],
+  "originalSummary": "Andre nyttige ting at have ved hånden er en lommelygte, stearinlys, tændstikker og batterier."
+}

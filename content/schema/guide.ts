@@ -11,8 +11,9 @@ export const GROWING_SECTIONS = ['sowing', 'conditions', 'care', 'harvest', 'see
 export const SUPPLY_SECTIONS = ['noPrep', 'somePrep', 'needsPrep'] as const;
 export type GrowingSection = (typeof GROWING_SECTIONS)[number] | (typeof SUPPLY_SECTIONS)[number];
 
-// "Når det sker" (D-040): situations ("Strømmen er gået") and stock lists ("Mad til tre døgn").
-export type PreparednessGroup = 'situation' | 'supplies';
+// "Når det sker" (D-040, D-043): one card per kind of weather ("Storm"), situations ("Strømmen er
+// gået") and stock lists ("Mad til tre døgn").
+export type PreparednessGroup = 'weather' | 'situation' | 'supplies';
 
 // A line in a stock list that can be ticked off; `id` is stable across pack versions (ticks are
 // stored on the device by id).

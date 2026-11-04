@@ -1,5 +1,6 @@
-// "Når det sker" (D-040): situations (what to do when power, water or heat disappears) and stock
-// lists (what to keep at home, ticked off on the device). Search at the top (D-039).
+// "Når det sker" (D-040, D-043): one card per kind of weather (before, during and after), situations
+// (what to do when power, water or heat disappears) and stock lists (what to keep at home, ticked off
+// on the device). Search at the top (D-039).
 
 import { useEffect } from 'react';
 import { SavedLink } from '../bookmarks/BookmarkButton';
@@ -10,6 +11,9 @@ import type { Strings } from '../i18n/strings';
 import { goBack, hrefs } from '../router';
 import { GuideList, useGuideSearch } from './FirstAidScreen';
 
+const PREPARE_GROUPS = ['weather', 'situation', 'supplies'] as const;
+type PrepareGroup = (typeof PREPARE_GROUPS)[number];
+
 export function PrepareScreen({ db, guides, s, query, onQueryChange }: { db: DbClient; guides: GuideRow[] | null; s: Strings; query: string; onQueryChange: (q: string) => void }) {
   const results = useGuideSearch(db, guides, query);
   const searching = query.trim() !== '';
@@ -18,7 +22,8 @@ export function PrepareScreen({ db, guides, s, query, onQueryChange }: { db: DbC
     document.title = `${s.prepare} – ${s.appTitle}`;
   }, [s]);
 
-  const group = (grp: 'situation' | 'supplies') => (guides ?? []).filter((g) => g.grp === grp);
+  const group = (grp: PrepareGroup) => (guides ?? []).filter((g) => g.grp === grp);
+  const heading: Record<PrepareGroup, string> = { weather: s.prepareWeather, situation: s.prepareSituations, supplies: s.prepareSupplies };
   return (
     <Page>
       <div className="flex items-center justify-between gap-[12px]">
@@ -38,10 +43,10 @@ export function PrepareScreen({ db, guides, s, query, onQueryChange }: { db: DbC
         results.length > 0 ? <GuideList guides={results} numbered={false} /> : <MessageState title={s.noGuideResults(query.trim())} />
       ) : (
         <div className="flex flex-col gap-6">
-          {(['situation', 'supplies'] as const).map((grp) => (
+          {PREPARE_GROUPS.filter((grp) => group(grp).length > 0).map((grp) => (
             <section key={grp} aria-labelledby={`prepare-${grp}`} className="flex flex-col gap-2">
               <h2 id={`prepare-${grp}`} className="px-1 text-xl font-semibold">
-                {grp === 'situation' ? s.prepareSituations : s.prepareSupplies}
+                {heading[grp]}
               </h2>
               <GuideList guides={group(grp)} numbered={false} />
             </section>

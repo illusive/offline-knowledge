@@ -327,6 +327,14 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Log:** style rules, suggestions and statements to run again are in `docs/LANGUAGE_REVIEW.md`.
 - **Pack:** schema 12: `guides.summary_original`; `guide_blocks.original` may be Danish.
 
+## D-043 — "Før det sker": one card per kind of weather; "Hjemmeberedskab"
+
+- **Date:** 2026-11-02
+- **Decision (owner):** "Når det sker" gets three groups of cards on one page, in this order: **Før det sker** (group `weather`: one card per kind of weather, holding before, during and after together), **Hvis det sker** (situations) and **Hjemmeberedskab** (stock lists, was "Hav det derhjemme"). One entry from Home and one search for all three. A group with no cards is not shown.
+- **Cards:** Storm (was "Der kommer storm"; Bolius before/during/after, checked against Edinburgh City Council), Stormflod og forhøjet vandstand (Bolius; one card, because a DMI warning of high water levels is what precedes a storm surge, and Bolius' page on rising groundwater could not be fetched), Snestorm (Bolius for the house; the car list is translated from UK Be Ready, D-041). "Der er vand i kælderen" stays a situation, since it is what to do once the water is in.
+- **Alternatives:** a separate Home tile "Vær forberedt" (two entries and two searches; rejected); splitting storm into a "before" card and a "during and after" situation (storm in two places; rejected).
+- **Pack:** no schema change; `guides.grp` may now be `'weather'`.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

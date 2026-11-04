@@ -25,7 +25,7 @@
   "blocks": [
     {
       "kind": "text",
-      "text": "En hjertestarter er et apparat, der kan få et hjerte til at slå normalt igen, når en person har hjertestop.",
+      "text": "En hjertestarter kan give et elektrisk stød, der kan hjælpe hjertet tilbage til en normal rytme.",
       "page": 33,
       "original": {
         "lang": "da",
@@ -52,7 +52,7 @@
     },
     {
       "kind": "text",
-      "text": "Elektroderne er de to klæbepuder. Der er en tegning på dem – følg den altid. Den ene skal sidde under højre kraveben, ved siden af brystbenet. Den anden skal sidde under venstre armhule, nederst på brystkassen.",
+      "text": "Elektroderne er de to klæbepuder. Følg altid tegningen på dem. Den ene elektrode skal sidde under højre kraveben, ved siden af brystbenet. Den anden skal sidde under venstre armhule, nederst på brystkassen.",
       "page": 34,
       "original": {
         "lang": "da",
@@ -87,10 +87,10 @@
       "kind": "steps",
       "title": "Før hjertestarteren giver stød, skal du:",
       "items": [
-        "Tænde hjertestarteren, hvis den ikke allerede er tændt.",
-        "Se op og sige højt: ”Alle væk, den måler!”",
-        "Tjekke, at ingen rører ved personen eller ved det, personen ligger på, fx en seng.",
-        "Sige højt: ”Der kommer stød!”, før der gives stød."
+        "Tænd hjertestarteren, hvis den ikke allerede er tændt.",
+        "Se op, og sig højt: ”Alle væk – den måler!”",
+        "Tjek, at ingen rører ved personen eller det, personen ligger på, fx en seng.",
+        "Sig højt: ”Der kommer stød!”, før hjertestarteren giver stød."
       ],
       "page": 36,
       "original": {

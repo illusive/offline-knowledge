@@ -1,0 +1,187 @@
+{
+  "id": "der-er-vand-i-kaelderen",
+  "category": "preparedness",
+  "group": "situation",
+  "order": 6,
+  "name": "Der er vand i kælderen",
+  "title": "Tjekliste: Sådan gør du, når vandet kommer udefra",
+  "summary": "Her er, hvad du kan gøre, når der er varslet skybrud eller stormflod – og når vandet er kommet ind.",
+  "originalSummary": "Du får også gode råd til, hvad du kan gøre, hvis der et skybrud eller en stormflod på vej.",
+  "sourceId": "dk-bolius-vand-udefra",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Når der er varslet skybrud eller stormflod",
+      "page": 1,
+      "sourceId": "dk-bolius-vand-udefra",
+      "original": {
+        "lang": "da",
+        "text": "Sådan gør du, hvis der er varslet skybrud eller stormflod"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Når DMI har varslet skybrud eller stormflod, kan du ikke nå så meget. Men gør det, du kan:",
+      "page": 1,
+      "sourceId": "dk-bolius-vand-udefra",
+      "original": {
+        "lang": "da",
+        "text": "Det er begrænset, hvad du kan nå at gøre, når DMI har varslet skybrud eller stormflod."
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Luk alle vinduer og døre – især i kælderen.",
+        "Læg sandsække foran utætte steder, døre og vinduer, hvor vandet er på vej ind.",
+        "Luk huller i ydermuren tæt ved jorden, fx med en krydsfinerplade. Fjern den igen bagefter, så der ikke kommer skimmel.",
+        "Rens tagrender og tagbrønde for blade og skidt, så vandet kan løbe væk."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-vand-udefra",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Ved skybrud kan vandet komme ind af både tagvinduer, vinduer i facaden og især vinduer og døre i kælderen. Luk derfor alle vinduer og døre, når der er varsel om skybrud eller stormflod.",
+          "Hvis vandet er på vej ind gennem utætheder eller vinduer og døre, kan du lægge sandsække ud, som vil dæmme op for vandet.",
+          "Er der huller i ydervæggen, som er placeret tæt på terræn, bør du lukke dem. Du kan skrue krydsfinerplader over åbningerne. Husk at fjerne dem igen, når der ikke længere er fare for vand — så undgår du skimmelsvamp.",
+          "Undersøg, om tagrenderne er fri for blade og andet, der kan hindre vandet i at løbe frit. Gå tagbrøndene igennem og rens dem, hvis de er fyldt med blade og snavs."
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Når vandet er kommet ind",
+      "page": 1,
+      "sourceId": "dk-bolius-efter-skybrud",
+      "original": {
+        "lang": "da",
+        "text": "Akut tjekliste: Mindsk skader efter skybrud"
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Står vandet så højt, at det kan nå el-installationerne, så slå strømmen fra. Ellers kan du få stød.",
+      "page": 1,
+      "sourceId": "dk-bolius-efter-skybrud",
+      "original": {
+        "lang": "da",
+        "text": "Hvis vandet står så højt, at det kan trænge ind i dine elinstallationer, bør du afbryde strømmen. Ellers risikerer du kortslutning og stød."
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Red først det, der ikke kan erstattes, fx billeder, vigtige papirer og ting, der betyder meget for dig.",
+        "Tag gummistøvler og gummihandsker på. Vandet kan indeholde kloakvand, som kan gøre dig syg – fx gennem en rift i huden.",
+        "Er der under ca. 5 cm vand, så sug det op med en vådsuger. Er der mere, så pump det væk med en dykpumpe, og før slangen væk fra huset.",
+        "Tag billeder af alle skader. Smid ikke ødelagte ting ud, før forsikringens skadesmand (taksator) har været der.",
+        "Gem alle kvitteringer. Forsikringen dækker ofte udgifter til at begrænse skaden.",
+        "Når vandet er væk, så tør rummet grundigt: luft godt ud, og brug gerne en affugter. Luk vinduerne, mens affugteren kører."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-efter-skybrud",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Prioritére indsatsen, så du først sikrer genstande, der ikke kan erstattes – fx fotos, vigtige papirer og kunst og genstande med affektionsværdi.",
+          "Husk at beskytte dig, når du bevæger dig i vandet. Ved skybrud blandes overfladevand (regnvand) ofte med fækalie- og bakterieholdigt spildevand fra kloakken. Det kan gøre dig syg, hvis vandet fx kommer i kontakt med en rift på huden.",
+          "Sug vandet væk med en vandstøvsuger eller vådsuger, hvis der er under ca. 5 cm vand på gulvet, eller pump vandet væk med en dykpumpe, hvis der er ca. 5 cm vand eller mere. Sæt en slange på dykpumpen og før den væk fra huset.",
+          "Tag billeder af alle skader undervejs i forløbet Smid ikke skadet indbo ud, før du har haft besøg af en taksator.",
+          "Derimod vil forsikringen oftest dække alle dokumenterede udgifter efterfølgende – også til håndværkere og materiel – der har at gøre med en decideret skadebegrænsende indsats. Så gem alle kvitteringer for evt. materielindkøb og håndværkerassistance.",
+          "Når vandet er væk, er det vigtigt at tørre kælderen eller rummet i videst muligt omfang. Lav grundigt gennemtræk og brug gerne en affugter. Husk at lukke vinduerne, når affugteren kører."
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Kloakvand i kælderen",
+      "page": 1,
+      "sourceId": "dk-bolius-kaelder-rengoering",
+      "original": {
+        "lang": "da",
+        "text": "Så farligt er kloakvand"
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Kommer vandet op gennem gulvafløb eller toilet, er det kloakvand. Det kan give alvorlige sygdomme, fx leverbetændelse, roskildesyge og stivkrampe. Overvej at få professionelle til at hjælpe.",
+      "page": 1,
+      "sourceId": "dk-bolius-kaelder-rengoering",
+      "original": {
+        "lang": "da",
+        "text": "Hvis vandet i din kælder indeholder spildevand, kan det medføre sygdomme som: Smitsom leverbetændelse (hepatitis) Roskildesyge Stivkrampe Salmonellose (sygdom forårsaget af salmonellabakterier) Weils syge, som i værste fald kan være dødelig. Kommer vandet op fra gulvafløb eller fra toilet er det kloakvand, og du bør overveje at lade professionelle hjælpe dig."
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Hold dig væk, hvis vandet når højere end dine gummistøvler. Vent på, at professionelle pumper det væk.",
+        "Brug tøj, der dækker hele kroppen og ikke suger vand, og beskyt øjne og luftveje.",
+        "Vask dig hurtigst muligt, hvis du får kloakvand på dig – især hvis du har sår.",
+        "Fjern alt synligt snavs, før du desinficerer.",
+        "Rens gulv, vægge og møbler med desinfektionsmiddel. Smid det ud, der ikke kan gøres rent.",
+        "Gå i bad, når du er færdig. Vask tøj, sko og andet stof, du har brugt, ved mindst 60 grader."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-kaelder-rengoering",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Hold dig væk, hvis vandet er højere end dine gummistøvler og vent i stedet på, at professionelle kan pumpe vandet væk.",
+          "Brug arbejdstøj, der ikke suger vand, og som dækker hele kroppen, samt øjenværn og åndedrætsværn.",
+          "Vask dig hurtigst muligt, hvis du kommer i berøring med spildevand, og vær især påpasselig ved sår på huden.",
+          "Du bør fjerne alt synligt snavs, før du begynder at desinficere kælderen.",
+          "Afrens gulv, vægge og alle ting/møbler, der kan aftørres, med desinficerende midler. Smid alt, der ikke kan afrenses, ud.",
+          "Vask og desinficér dine hænder og gå i bad, når du er færdig. Rens dit tøj Vask tøj, sko og andre tekstiler, du har brugt, ved mindst 60 grader."
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Forebyg næste gang",
+      "page": 1,
+      "sourceId": "dk-bolius-kaelder-rengoering",
+      "original": {
+        "lang": "da",
+        "text": "Forebyg nye oversvømmelser med en højvandslukke"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Et højvandslukke er en slags ventil i kloakrøret. Den lader vandet løbe ud af huset, men lukker, hvis kloakvandet presser på udefra.",
+      "page": 1,
+      "sourceId": "dk-bolius-kaelder-rengoering",
+      "original": {
+        "lang": "da",
+        "text": "Højvandslukket er en stump kloakrør med to indbyggede klapper, der fungerer som en slags sluse. Den åbner, når spildevandet løber ud af huset, og lukker hvis kloakvandet presser på udefra."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "uk-govuk-help-during-flood",
+      "locator": "What to do before or during a flood: If you get a flood warning",
+      "quote": "turn off your gas, electricity and water supplies if it",
+      "note": "Agrees: turn off the electricity when it is safe."
+    },
+    {
+      "sourceId": "uk-govuk-help-during-flood",
+      "locator": "What to do before or during a flood: If you get a flood warning",
+      "quote": "do not touch an electrical switch if you",
+      "note": "Agrees with the danger of electricity in flood water."
+    },
+    {
+      "sourceId": "uk-govuk-help-during-flood",
+      "locator": "What to do before or during a flood: If you get a flood warning",
+      "quote": "move your family, pets and important items to safety",
+      "note": "Agrees: save important things first."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "der-kommer-storm",
+    "der-er-intet-vand"
+  ]
+}

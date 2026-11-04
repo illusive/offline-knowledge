@@ -1,0 +1,138 @@
+{
+  "id": "telefon-og-net-er-nede",
+  "category": "preparedness",
+  "group": "situation",
+  "order": 4,
+  "name": "Telefon og net er nede",
+  "title": "Andre fornødenheder",
+  "summary": "Mobilen er vigtig i en krise. Men ved store eller lange strømafbrydelser kan telefonnet og internet gå ned.",
+  "sourceId": "dk-samsik-forberedt-paa-kriser",
+  "risk": "low",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Mobilen er vigtig i de fleste kriser. Med den kan du fx kontakte din familie og finde information om det, der er sket.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "I de fleste krisesituationer er en mobiltelefon et vigtigt værktøj. Du kan komme i kontakt med fx familiemedlemmer, og du kan finde information om hændelsen."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Med en powerbank (et opladet batteri) kan du lade mobilen op, hvis strømmen går i dit område.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "Med en powerbank/batteripakke kan du holde strøm på bl.a. mobilen i tilfælde af lokale strømafbrydelser."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Hav et eller flere betalingskort af plastik, hvis internettet er nede, eller du ikke kan betale med telefonen. Sørg for, at du kan huske pinkoderne. Hav også gerne lidt kontanter i mønter og små sedler.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "Hav et eller flere fysiske betalingskort til brug, hvis internettet er nede, eller du ikke kan betale med din telefon. Sørg for, at du kan huske pinkoderne. Overvej derudover at have et mindre beløb i mønter og små sedler."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Skriv vigtige telefonnumre på en seddel, fx på køleskabet. Hold også øje med, om naboer, venner eller familie har brug for hjælp.",
+      "page": 7,
+      "original": {
+        "lang": "da",
+        "text": "Vær opmærksom på, om mennesker i dit nabolag eller omgangskreds har behov for hjælp. Overvej at skrive vigtige telefonnumre ned på en seddel, som du fx kan hænge på køleskabet."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Hold dig orienteret",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Varsling"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Hører du en varslingssirene, så gå indenfor, og følg med på DR eller TV 2.",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Hvis du hører en varslingssirene, skal du gå indenfor og opsøge information fra myndighederne gennem DR eller TV 2."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Virker andet ikke, sender DR beskeder fra myndighederne i radioen. Med en FM-radio, der kører på batterier, håndsving eller solceller, kan du stadig følge med. Mange har også en FM-radio i bilen.",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Skulle andre systemer være nede, bringer DR beredskabsmeddelelser fra myndighederne i radioen. Med en FM-radio, der kører på batterier/håndsving/solceller, kan du holde dig opdateret, hvis andre informationskanaler svigter. Mange har en FM-radio i deres bil."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Ring 112",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Alarmering"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ring kun 112, hvis det er en akut nødsituation. Ellers kan du optage linjen for andre, der ringer om liv og død. Virker 112 ikke, melder myndighederne et andet nummer ud.",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Du skal kun ringe 1-1-2, hvis det er en akut nødsituation. Ellers kan du blokere telefonlinjen for livsvigtige opkald. Hvis der er problemer med 1-1-2, vil myndighederne melde alternativ kontaktinformation ud."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Tænk, før du deler",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Tænk, før du deler"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Del kun oplysninger, du ved er rigtige. Tjek en ekstra gang, om kilden er troværdig, før du deler noget. Så undgår du at sprede rygter og falske oplysninger.",
+      "page": 8,
+      "original": {
+        "lang": "da",
+        "text": "Det er en stor hjælp, hvis du deler bekræftede oplysninger under en krise og er opmærksom på at forhindre rygtespredning og desinformation eller misinformation. Undersøg derfor altid en ekstra gang, om kilden er troværdig, inden du deler oplysninger i dit netværk."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "uk-be-ready-checklist",
+      "locator": "Be ready checklist: Communication and information",
+      "quote": "Charged power bank.",
+      "note": "Agrees: keep a charged power bank."
+    },
+    {
+      "sourceId": "uk-be-ready-checklist",
+      "locator": "Be ready checklist: Communication and information",
+      "quote": "FM radio (battery/ wind-up).",
+      "note": "Agrees: an FM radio on batteries or a wind-up handle."
+    },
+    {
+      "sourceId": "uk-be-ready-checklist",
+      "locator": "Be ready checklist: Money and documents",
+      "quote": "Cash (mix of coins and notes) and cards.",
+      "note": "Agrees: cash in coins and notes, and cards."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "stroemmen-er-gaaet",
+    "andet-hav-derhjemme"
+  ],
+  "originalSummary": "Ved større eller længerevarende strømafbrydelser kan telefonnetværk og internet blive påvirket eller gå ned."
+}

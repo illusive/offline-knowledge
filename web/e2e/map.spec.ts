@@ -11,7 +11,7 @@ test('Kort renders the bundled overview offline, using only local files', async 
   });
 
   await page.goto('./');
-  await expect(page.getByText('Klar uden net')).toBeVisible({ timeout: 60_000 });
+  await expect(page.getByText('Klar uden internet')).toBeVisible({ timeout: 60_000 });
   await page.evaluate(async () => {
     await navigator.serviceWorker.ready;
   });
@@ -76,7 +76,7 @@ test('Vis min position refused: the switch turns itself off and says why', async
   await expect(page.getByTestId('map')).toHaveAttribute('data-ready', 'true', { timeout: 30_000 });
   const toggle = page.getByRole('button', { name: 'Vis min position' });
   await toggle.click();
-  await expect(page.getByText('Appen må ikke bruge din position.', { exact: false })).toBeVisible({ timeout: 15_000 });
+  await expect(page.getByText('Appen har ikke tilladelse til at bruge din position.', { exact: false })).toBeVisible({ timeout: 15_000 });
   await expect(toggle).toHaveAttribute('aria-pressed', 'false');
 });
 

@@ -32,7 +32,7 @@
     {
       "kind": "steps",
       "items": [
-        "Tap først det vand, der stadig er i rørene. Fyld det på rene flasker og beholdere. Det kan du drikke og lave mad med, til vandet kommer igen.",
+        "Tap først det vand, der stadig er i rørene, af. Fyld det på rene flasker og beholdere. Brug det til at drikke og lave mad, indtil vandet kommer igen.",
         "Bor du i hus, er der også meget vand i varmtvandsbeholderen. Det må du ikke drikke, men du kan vaske dig og skylle ud med det.",
         "Sluk derefter for varmtvandsbeholderen, så den ikke varmer, når der ikke er vand i den.",
         "Brug så lidt vand som muligt."
@@ -73,7 +73,7 @@
       "kind": "list",
       "items": [
         "Drikkevand: rent vand fra hanen eller vand på flaske.",
-        "Vand til madlavning: vand, der bliver kogt, fx regnvand. Kogningen dræber bakterier.",
+        "Vand til madlavning: vand, som du først koger, fx regnvand. Kogningen dræber bakterier.",
         "Vand til toilet og vask: fx regnvand eller vand fra varmtvandsbeholderen."
       ],
       "page": 1,
@@ -171,7 +171,7 @@
     },
     {
       "kind": "text",
-      "text": "At koge vandet er den bedste måde at dræbe bakterier og andre smitstoffer på.",
+      "text": "Kogning er den bedste måde at dræbe bakterier og andre smitstoffer i vandet på.",
       "original": {
         "lang": "en",
         "text": "Boiling is the best way to kill germs in water."
@@ -248,7 +248,7 @@
     },
     {
       "kind": "text",
-      "text": "Uden strøm kan kloakvandet måske ikke pumpes væk fra dit hjem. Hold øje med, hvad din kommune eller dit vandværk siger, du skal gøre.",
+      "text": "Uden strøm kan spildevandet måske ikke pumpes væk fra dit hjem. Følg anvisningerne fra kommunen eller dit vandværk.",
       "page": 1,
       "original": {
         "lang": "da",
@@ -258,7 +258,7 @@
     {
       "kind": "list",
       "items": [
-        "Kan du ikke skylle ud, så lav i en solid affaldspose. Luk posen godt, og smid den ud med restaffaldet.",
+        "Kan du ikke skylle ud, så brug en solid affaldspose. Luk posen godt, og smid den ud med restaffaldet.",
         "Bor du i lejlighed med affaldsskakt, så brug ikke skakten. Bær posen ned i containeren.",
         "Forbered dig: Hav solide affaldsposer, som du kan sætte i en spand eller i toilettet. Læg evt. et bind eller toiletpapir i bunden af posen, så det suger væske.",
         "Du kan godt tisse i toilettet uden at skylle ud. Men smid ikke toiletpapir i. Læg toiletpapir, bind og bleer i en spand med låg og en affaldspose i. Smid posen ud med restaffaldet."
@@ -295,7 +295,7 @@
     },
     {
       "kind": "warning",
-      "text": "Men: Er strømmen også gået, så hæld ikke vand i toilet og afløb. Kloakken virker måske heller ikke.",
+      "text": "Hvis strømmen også er gået, så hæld ikke vand i toilettet eller afløbet. Kloakken virker måske heller ikke.",
       "page": 1,
       "sourceId": "dk-bolius-vandsvigt",
       "original": {
@@ -314,7 +314,7 @@
     },
     {
       "kind": "text",
-      "text": "Er der ikke vand, kan du bruge håndsprit. Det dræber mange bakterier fra afføring, men ikke alle – fx ikke roskildesyge (norovirus) og nogle parasitter, der giver diarré.",
+      "text": "Hvis der ikke er adgang til vand, kan du bruge håndsprit. Det dræber mange bakterier fra afføring, men ikke alle smitstoffer. Det virker fx ikke mod roskildesyge (norovirus) og nogle parasitter, der giver diarré.",
       "page": 1,
       "original": {
         "lang": "da",

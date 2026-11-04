@@ -32,7 +32,7 @@ test('the flow explains, downloads, and the area works offline; delete it again'
   });
 
   await page.goto('./');
-  await expect(page.getByText('Klar uden net')).toBeVisible({ timeout: 60_000 });
+  await expect(page.getByText('Klar uden internet')).toBeVisible({ timeout: 60_000 });
   await page.evaluate(async () => {
     await navigator.serviceWorker.ready;
   });
@@ -48,7 +48,7 @@ test('the flow explains, downloads, and the area works offline; delete it again'
   await expect(page.getByRole('heading', { name: 'Hent kortet til telefonen' })).toHaveCount(0);
   await page.getByRole('button', { name: 'Hent kort' }).click();
   await expect(page.getByRole('heading', { name: 'Dine områder' })).toBeVisible();
-  await page.getByRole('button', { name: /^Danmark Klar uden net/ }).click(); // flies to the area
+  await page.getByRole('button', { name: /^Danmark Klar uden internet/ }).click(); // flies to the area
   const map = page.getByTestId('map');
   await expect.poll(async () => Number(await map.getAttribute('data-zoom')), { timeout: 30_000 }).toBeGreaterThan(10);
   await expect.poll(async () => Number(await map.getAttribute('data-detail-features')), { timeout: 30_000 }).toBeGreaterThan(50);

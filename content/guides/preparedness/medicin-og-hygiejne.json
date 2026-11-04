@@ -1,0 +1,126 @@
+{
+  "id": "medicin-og-hygiejne",
+  "category": "preparedness",
+  "group": "supplies",
+  "order": 3,
+  "name": "Medicin, førstehjælp og hygiejne",
+  "title": "Medicin og førstehjælp",
+  "summary": "Hav den medicin, du har brug for, til mindst tre døgn – og en førstehjælpskasse.",
+  "sourceId": "dk-samsik-forberedt-paa-kriser",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Hav den medicin, du har brug for, til mindst tre døgn. Hav også en førstehjælpskasse.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "Sørg for at have nødvendig medicin til mindst tre døgn og en førstehjælpskasse."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "En førstehjælpskasse kan fx have plastre, forbindinger (kompresser, elastikbind og gazebind) og noget til at rense og desinficere sår.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "En førstehjælpskasse kan fx indeholde plastre, forbindinger (kompresser, elastikbind og gazebind m.v.) og produkter til sårrens og desinfektion."
+      }
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "medicin",
+          "text": "Den medicin, I har brug for"
+        },
+        {
+          "id": "foerstehjaelpskasse",
+          "text": "Førstehjælpskasse"
+        },
+        {
+          "id": "jodtabletter",
+          "text": "Evt. jodtabletter til personer under 40 år og til gravide og ammende"
+        }
+      ],
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Nødvendig medicin for husstanden",
+          "Førstehjælpskasse",
+          "Evt. jodtabletter for personer under 40 år samt gravide og ammende"
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ved en atomulykke er det vigtigste råd at blive inde. Jodtabletter anbefales til personer under 40 år og til gravide og ammende. Følg altid myndighedernes råd, hvis en atomulykke sker.",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "I tilfælde af nukleare ulykker er det vigtigste råd at opholde sig indendørs. Det anbefales, at jodtabletter er til rådighed for personer under 40 år samt gravide og ammende. Læs mere på Sundhedsstyrelsens hjemmeside. I tilfælde af en nuklear ulykke skal du følge myndighedernes anbefalinger."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Hygiejne",
+      "page": 6,
+      "original": {
+        "lang": "da",
+        "text": "Hygiejne"
+      }
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "toiletpapir",
+          "text": "Toiletpapir"
+        },
+        {
+          "id": "haanddesinfektion",
+          "text": "Håndsprit"
+        },
+        {
+          "id": "bleer-bind",
+          "text": "Bleer, bind, tamponer eller andet, I har brug for"
+        }
+      ],
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Toiletpapir",
+          "Hånddesinfektion",
+          "Bleer, bind/tamponer eller andet relevant for din husstand"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "uk-be-ready-checklist",
+      "locator": "Be ready checklist: Medical and health",
+      "quote": "Essential medication and medical supplies.",
+      "note": "Agrees: keep essential medication."
+    },
+    {
+      "sourceId": "uk-be-ready-checklist",
+      "locator": "Be ready checklist: Medical and health",
+      "quote": "First aid kit / first aid items.",
+      "note": "Agrees: a first aid kit."
+    },
+    {
+      "sourceId": "uk-be-ready-checklist",
+      "locator": "Be ready checklist: Hygiene",
+      "quote": "Hand sanitiser, wet wipes, hygiene and bathroom products.",
+      "note": "Agrees: hand sanitiser and hygiene products."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "andet-hav-derhjemme"
+  ],
+  "originalSummary": "Sørg for at have nødvendig medicin til mindst tre døgn og en førstehjælpskasse."
+}

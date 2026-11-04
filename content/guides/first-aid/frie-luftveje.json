@@ -3,7 +3,7 @@
   "category": "first-aid",
   "order": 6,
   "title": "Skab frie luftveje",
-  "summary": "Er en person bevidstløs, skal du altid sørge for, at luften kan komme frit ned i lungerne.",
+  "summary": "Hvis en person er bevidstløs, skal du sørge for, at luftvejene er frie.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
   "blocks": [
@@ -11,7 +11,7 @@
       "kind": "steps",
       "items": [
         "Læg den ene hånd på personens pande og to fingre under hagen.",
-        "Før forsigtigt hovedet bagover, til det ikke vil længere."
+        "Før forsigtigt hovedet bagover, til du møder modstand."
       ],
       "page": 19,
       "original": {
@@ -24,7 +24,7 @@
     },
     {
       "kind": "text",
-      "text": "Nu er tungen løftet væk fra halsen, og luften kan komme frit ind. Det gælder, så længe du holder grebet.",
+      "text": "Så løftes tungen væk fra svælget, og luften kan passere frit. Luftvejene holdes frie, så længe du holder hovedet i denne stilling.",
       "page": 19,
       "original": {
         "lang": "da",

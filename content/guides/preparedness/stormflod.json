@@ -1,0 +1,86 @@
+{
+  "id": "stormflod",
+  "category": "preparedness",
+  "group": "weather",
+  "order": 2,
+  "name": "Stormflod og forhøjet vandstand",
+  "title": "Varsel om stormflod: Sådan undgår du oversvømmelser ved stormflod",
+  "summary": "Når DMI har varslet stormflod, kan du ikke nå så meget. Her er, hvad du kan gøre, hvis du bor, hvor havet kan komme ind.",
+  "originalSummary": "Når DMI udsender varsel om stormflod, er det begrænset, hvad du kan nå at gøre for at forebygge oversvømmelse af din bolig, hvis den ligger i et risikoområde.",
+  "sourceId": "dk-bolius-stormflod-varsel",
+  "risk": "low",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Stormflod er, når havet stiger så meget, at det oversvømmer land. Det sker oftest fra oktober til april.",
+      "page": 1,
+      "sourceId": "dk-bolius-stormflod-saeson",
+      "original": {
+        "lang": "da",
+        "text": "En typisk stormflod finder sted, når kraftig vind presser store vandmasser fra havet ind over land. Og i Danmark forekommer vejrfænomenet oftest mellem oktober og april og kan variere meget i styrke."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Når DMI har varslet stormflod, kan du ikke nå så meget, hvis du bor i et område, hvor havet kan komme ind. Gør det, du kan:",
+      "page": 1,
+      "sourceId": "dk-bolius-stormflod-varsel",
+      "original": {
+        "lang": "da",
+        "text": "Når DMI udsender varsel om stormflod, er det begrænset, hvad du kan nå at gøre for at forebygge oversvømmelse af din bolig, hvis den ligger i et risikoområde."
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Dæk huller i ydermuren og andre åbninger med træplader eller presenninger.",
+        "Hav sandsække klar.",
+        "Læg ting, der betyder meget for dig, i plastkasser, og flyt dem op fra kælderen.",
+        "Sørg for, at kloakvand ikke kan stige op i huset.",
+        "Følg med i, hvad myndighederne siger – på nettet, i radio og tv."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-stormflod-varsel",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Afblænd ventilationshuller i ydervægge og udsatte åbninger med træplader eller presenninger",
+          "Hav sandsække parat",
+          "Put dyrebare ejendele i plastbokse og flyt dem væk fra kælderen",
+          "Begræns opstigende kloakvand",
+          "Hold dig orienteret og følg myndighedernes udmeldinger på sociale medier, hjemmesider og via pressen"
+        ]
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Flyt møbler, haveredskaber og lignende op fra gulve og jord."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-stormflod-saeson",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Flyt inventar, haveværktøj og lignende fra gulve og terræn"
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Din almindelige hus- og indboforsikring dækker ikke skader fra stormflod. Men du kan være dækket af den statslige stormflodsordning.",
+      "page": 1,
+      "sourceId": "dk-bolius-stormflod-saeson",
+      "original": {
+        "lang": "da",
+        "text": "Vær opmærksom på, at skader forårsaget af stormflod ikke er dækket af din private hus- eller indboforsikring – til gengæld kan du være dækket af den såkaldte stormflodsordning i Danmark"
+      }
+    }
+  ],
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "der-er-vand-i-kaelderen",
+    "der-kommer-storm"
+  ]
+}

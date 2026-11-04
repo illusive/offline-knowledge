@@ -48,7 +48,7 @@
     },
     {
       "kind": "text",
-      "text": "Frostvarer som kød og fisk, der er begyndt at tø op, kan du stadig tilberede og spise – så længe maden ikke er blevet varmere end 5 °C.",
+      "text": "Frostvarer som kød og fisk, der er begyndt at tø op, kan du stadig tilberede og spise, så længe temperaturen i maden ikke har været over 5 °C.",
       "page": 1,
       "sourceId": "dk-fvst-forberedt",
       "original": {
@@ -58,7 +58,7 @@
     },
     {
       "kind": "warning",
-      "text": "Køleskabet må højst være 5 °C. Er det varmere, kan der vokse bakterier i maden, som du kan blive syg af.",
+      "text": "Køleskabet skal være højst 5 °C. Er temperaturen højere, kan bakterier vokse i maden og gøre dig syg.",
       "page": 1,
       "title": "Tjek temperaturen i køleskabet, når strømmen kommer igen",
       "original": {
@@ -163,7 +163,7 @@
     },
     {
       "kind": "text",
-      "text": "Kan du ikke skylle ud, så lav i en solid affaldspose. Luk posen godt, og smid den ud med restaffaldet.",
+      "text": "Kan du ikke skylle ud, så brug en solid affaldspose. Luk posen godt, og smid den ud med restaffaldet.",
       "page": 1,
       "sourceId": "dk-mst-forberedt",
       "original": {
@@ -183,7 +183,7 @@
     },
     {
       "kind": "text",
-      "text": "Virker andet ikke, sender DR beskeder fra myndighederne i radioen. Har du en FM-radio, der kører på batterier, håndsving eller solceller, kan du stadig følge med.",
+      "text": "Hvis andre informationskanaler ikke virker, sender DR myndighedernes beredskabsmeddelelser i radioen. Med en FM-radio, der bruger batterier, håndsving eller solceller, kan du stadig følge med.",
       "page": 8,
       "sourceId": "dk-samsik-forberedt-paa-kriser",
       "original": {

@@ -1,0 +1,83 @@
+{
+  "id": "vand-til-tre-doegn",
+  "category": "preparedness",
+  "group": "supplies",
+  "order": 1,
+  "name": "Vand til tre døgn",
+  "title": "Drikkevand",
+  "summary": "Regn med 3 liter vand pr. person pr. døgn. Til tre døgn er det 9 liter pr. person.",
+  "sourceId": "dk-samsik-forberedt-paa-kriser",
+  "risk": "low",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Regn med 3 liter vand pr. person pr. døgn til at drikke og lave mad. Til tre døgn skal hver person altså have 9 liter. Husk vand til alle i husstanden – også dyr.",
+      "page": 4,
+      "original": {
+        "lang": "da",
+        "text": "Beregn 3 liter vand pr. person pr. døgn til at drikke og evt. tilberedning af mad. Skal du have vand til tre døgn, skal du altså have 9 liter vand pr. person. Sørg for at have vand til alle i husstanden – også evt. husdyr."
+      }
+    },
+    {
+      "kind": "checklist",
+      "items": [
+        {
+          "id": "vand-3-liter",
+          "text": "3 liter vand pr. person pr. døgn"
+        },
+        {
+          "id": "vand-husdyr",
+          "text": "Vand til dyr, hvis I har dyr"
+        }
+      ],
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "items": [
+          "3 liter pr. person pr. døgn",
+          "Evt. vand til husdyr"
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Sådan opbevarer du vandet",
+      "page": 4,
+      "original": {
+        "lang": "da",
+        "text": "Sådan opbevarer du vand i længere tid"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Køb vand på flaske. Opbevar det køligt og mørkt, og kun til datoen på flasken. Skift det ud løbende.",
+        "Vand fra hanen skal helst være frisk. Men i en lukket flaske eller beholder kan det holde i flere måneder, hvis det står køligt og mørkt.",
+        "Brug kun beholdere, der er godkendt til madvarer. Gør dem rene, som der står på beholderen, før du bruger dem."
+      ],
+      "page": 4,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Køb drikkevand på flaske, opbevar det køligt og mørkt og kun så længe, som det fremgår af holdbarhedsdatoen på flasken. Udskift det løbende.",
+          "Drikkevand fra vandhanen bør være så frisk som muligt, men kan opbevares i flere måneder i lukket flaske/beholder, hvis vandet opbevares køligt og mørkt.",
+          "Brug kun beholdere til drikkevand, som er godkendt til fødevarer, og rengør dem efter producentens vejledning før brug."
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "uk-be-ready-checklist",
+      "locator": "Be ready checklist: Water",
+      "quote": "3 litres per person per day for drinking.",
+      "note": "Agrees: 3 litres per person per day."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "der-er-intet-vand",
+    "mad-til-tre-doegn"
+  ],
+  "originalSummary": "Beregn 3 liter vand pr. person pr. døgn til at drikke og evt. tilberedning af mad."
+}
