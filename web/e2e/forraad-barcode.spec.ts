@@ -69,7 +69,7 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
   // Online: the scan fills in the name from the lookup; it counts as its stock-list line.
   const addFood = async () => {
     await page.goto('./#/forraad');
-    await page.getByRole('region', { name: 'Mad' }).getByRole('link', { name: 'Tilføj til mad' }).click();
+    await page.getByRole('link', { name: 'Tilføj til forrådet' }).click();
   };
   await addFood();
   await page.getByRole('button', { name: 'Scan stregkode' }).click();

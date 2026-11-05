@@ -44,7 +44,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] Forråd (D-046, D-047, 2026-11-05): a tab replacing Settings, which moved to a gear at the top right. It holds:
   - Water as one figure (litres and the month last checked) against 3 litres per person per day for 3/7/14 days, checked again after six months.
   - The household, including water for animals in the user's own figure.
-  - Expiry dates, the four categories with "Overvej også" from the stock lists, scaled.
+  - Expiry by month, and three categories, each linking to its stock list (the "Overvej også" lists were removed for a shorter overview). Household, water unit and backup are in Settings.
   - Quick adding (simplified the same day): a name, a count and a best-before month; category guessed; "Gem og tilføj en til"; suggestions and automatic links to the stock-list lines.
   - Barcode scanning with the bundled reader, plus an optional Open Food Facts lookup; the barcode is remembered offline.
   - Litres or US gallons, and a backup file.

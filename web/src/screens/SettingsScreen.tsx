@@ -12,7 +12,8 @@ import { mapClient } from '../map/client';
 import { formatBytes } from '../map/format';
 import type { AreaInfo } from '../map/protocol';
 import { goBack, hrefs } from '../router';
-import { setPreference, usePreferences, type LangPref, type ThemePref, type WaterUnitPref } from '../settings/preferences';
+import { setPreference, usePreferences, type LangPref, type ThemePref } from '../settings/preferences';
+import { HouseholdSettings } from '../forraad/HouseholdSettings';
 
 type Source = SourceRow & { short_name: string };
 
@@ -57,21 +58,13 @@ export function SettingsScreen({ db, pack, lang, s, offlineReady }: { db: DbClie
               { value: 'dark', label: t.dark },
             ]}
           />
-          <Choice<WaterUnitPref>
-            name="waterUnit"
-            legend={t.waterUnit}
-            value={prefs.waterUnit}
-            onChange={(v) => setPreference('waterUnit', v)}
-            options={[
-              { value: 'litres', label: t.litres },
-              { value: 'gallons', label: t.gallons },
-            ]}
-          />
           <div>
             <h3 className="font-semibold">{t.textSize}</h3>
             <p className="mt-1 text-muted">{t.textSizeBody}</p>
           </div>
         </Card>
+
+        <HouseholdSettings lang={lang} s={s} />
 
         <Sources db={db} s={s} />
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addMonths, expiring, formatMonth, formatVolume, missing, monthsUntil, nextCheck, scaleAmount, waterNeeded, type Recommendation } from './calc';
+import { addMonths, expiring, formatMonth, formatVolume, monthsUntil, nextCheck, waterNeeded, type Recommendation } from './calc';
 import { makeBackup, readBackup } from './backupFile';
 import { parseProduct } from './barcode';
 import { matchRecommendation, suggest } from './recommendations';
@@ -57,15 +57,6 @@ describe('Forråd recommendations', () => {
     rec('foerstehjaelpskasse', 'medicine', 'Førstehjælpskasse', ['plaster', 'forbinding']),
     rec('batterier', 'other', 'Batterier', ['aa', 'batterier']),
   ];
-
-  it('scales a stock-list amount for one person for three days', () => {
-    expect(scaleAmount({ value: 500, unit: 'g', per: 'person3Days' }, { people: 2, petLitresPerDay: 0, targetDays: 7 })).toBeCloseTo(2333.33, 1);
-  });
-
-  it('recommends what no thing covers, leaving water to the water card', () => {
-    const left = missing(recs, [item({ recommendationId: 'ris' })]);
-    expect(left.map((r) => r.id)).toEqual(['konserves-koed-fisk', 'foerstehjaelpskasse', 'batterier']);
-  });
 
   it('suggests stock-list lines by keyword and names used before, never water', () => {
     const own = [item({ id: 'o', name: 'Makrel i tomat' })];

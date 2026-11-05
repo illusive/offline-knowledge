@@ -1,5 +1,5 @@
 // Forråd (D-046) arithmetic, kept pure for tests: the water target, months to the next check and
-// to expiry, what the stock lists recommend that is not in the stores yet, and the unit shown.
+// to expiry, and the unit shown.
 
 import type { Category, Household, StoreItem } from './store';
 
@@ -49,12 +49,6 @@ export function waterNeeded(household: Household, litresPerPersonDay: number | n
   return (household.people * litresPerPersonDay + household.petLitresPerDay) * household.targetDays;
 }
 
-// An amount for one person scaled to the household and the chosen number of days.
-export function scaleAmount(amount: Amount, household: Household): number {
-  const perDay = amount.per === 'personDay' ? amount.value : amount.value / 3;
-  return perDay * household.people * household.targetDays;
-}
-
 // Months from one yyyy-mm to another (negative when it is earlier).
 export function monthsUntil(month: string, fromMonth: string): number {
   const [y1, m1] = month.split('-').map(Number);
@@ -92,12 +86,6 @@ export function formatMonth(month: string, locale: string): string {
   return new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(new Date(y!, m! - 1, 1));
 }
 
-// Stock-list lines that no thing in the stores covers yet (water is shown in the water card).
-export function missing(recommendations: Recommendation[], items: StoreItem[]): Recommendation[] {
-  const covered = new Set(items.map((i) => i.recommendationId).filter(Boolean));
-  return recommendations.filter((r) => r.category !== 'water' && !covered.has(r.id));
-}
-
 export type WaterUnit = 'litres' | 'gallons';
 
 export function toUnit(litres: number, unit: WaterUnit): number {
@@ -114,7 +102,3 @@ export function formatVolume(litres: number, unit: WaterUnit, locale: string): s
   return `${n} ${unit === 'gallons' ? 'gal' : 'L'}`;
 }
 
-export function formatGrams(grams: number, locale: string): string {
-  if (grams >= 1000) return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(grams / 1000)} kg`;
-  return `${Math.round(grams / 10) * 10} g`;
-}

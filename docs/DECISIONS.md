@@ -370,6 +370,12 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - **Adding:** a name (suggestions or a barcode), a count and an optional best-before month. The category is guessed from the name through the stock-list keywords; unknown names go to Mad, and one tap changes it. An optional free-text size sits under "Mere". There are no other units, and the main button is "Tilføj til forrådet". "Gem og tilføj en til" keeps the form open with the same month.
   - **Month and year, not dates:** stores are long-life goods, where a few weeks either way do not matter. For several of the same thing, the user picks the one that expires first.
   - "Holdbarhed" lists what passed its month and what reaches it this month or next.
+- **Changed again 2026-11-05 (owner): an overview, not a form.** Forråd shows what the household has and little else:
+  - The water card is first. It holds the figure, the bar, one line on the last and next check, and a pencil at the top right to edit. "Tjekket i dag" appears only when a check is due.
+  - Next comes "Tilføj til forrådet", then Holdbarhed and the categories.
+  - An empty store shows one line and a link to the stock lists. An empty category shows "Intet her endnu".
+  - The "Overvej også" lists are replaced by one link per category to its stock list ("Se anbefalingerne: …").
+  - The household (people, days, water for animals), the water unit and the backup moved to Settings, under "Forråd": they are set once.
 
 ## D-047 — Barcode scanning with an optional online lookup
 

@@ -134,16 +134,10 @@ export interface Strings {
   };
   forraad: {
     title: string;
-    subtitle: string;
-    emptyTitle: string;
-    emptyBody: string;
     loading: string;
     water: string;
     waterOf: (have: string, need: string) => string;
     waterHave: (have: string) => string;
-    waterTarget: (days: number, perPerson: string) => string;
-    waterPetsNote: string;
-    waterNone: string;
     lastChecked: (date: string) => string;
     neverChecked: string;
     checkAgain: (date: string) => string;
@@ -151,28 +145,22 @@ export interface Strings {
     checkedToday: string;
     checkSource: string;
     waterEdit: string;
+    emptyStore: string;
+    seeAllRecommendations: string;
+    seeRecommendations: (title: string) => string;
     waterLitres: (unit: string) => string;
     waterCheckedLabel: string;
-    household: string;
-    householdSummary: (people: number, days: number, petLitres: string | null) => string;
-    editHousehold: string;
     people: string;
     petLitres: string;
     petLitresHelp: string;
     targetDays: string;
     days: (n: number) => string;
     targetHelp: string;
-    done: string;
     expiringTitle: string;
     expired: (date: string) => string;
     expires: (date: string) => string;
     categories: Record<'food' | 'medicine' | 'other', string>;
     categoryEmpty: string;
-    consider: string;
-    showAll: (n: number) => string;
-    showFewer: string;
-    forHousehold: (amount: string) => string;
-    readStockList: (title: string) => string;
     add: string;
     addIn: (category: string) => string;
     editTitle: string;
@@ -492,45 +480,33 @@ export const strings: Record<Lang, Strings> = {
     },
     forraad: {
       title: 'Forråd',
-      subtitle: 'Hvad I har på lager derhjemme – og hvad der mangler.',
-      emptyTitle: 'Dit forråd er tomt',
-      emptyBody: 'Skriv det ind, I har på lager. Så holder appen styr på datoerne og viser, hvad myndighederne anbefaler, at I også har.',
       loading: 'Henter forrådet …',
       water: 'Drikkevand',
       waterOf: (have, need) => `${have} af ${need}`,
       waterHave: (have) => `${have} på lager`,
-      waterTarget: (days, perPerson) => `Anbefalet til ${days} døgn: ${perPerson} pr. person pr. døgn.`,
-      waterPetsNote: 'Husk også vand til dyr. Skriv selv, hvor meget de drikker, under husstanden.',
-      waterNone: 'Ingen vand på lager endnu.',
       lastChecked: (date) => `Sidst tjekket ${date}`,
       neverChecked: 'Ikke tjekket endnu',
       checkAgain: (date) => `Tjek igen i ${date}`,
       checkDue: (date) => `Tid til at tjekke vandet (siden ${date})`,
       checkedToday: 'Tjekket i dag',
       checkSource: 'Tjek forrådet hvert halve år: se datoerne, og skift det ud, der skal skiftes.',
-      waterEdit: 'Ret',
+      waterEdit: 'Ret vand',
+      emptyStore: 'Der er intet i forrådet endnu.',
+      seeAllRecommendations: 'Se, hvad myndighederne anbefaler',
+      seeRecommendations: (title) => `Se anbefalingerne: ${title}`,
       waterLitres: (unit) => `${unit === 'gal' ? 'Gallon' : 'Liter'} på lager`,
       waterCheckedLabel: 'Sidst tjekket',
-      household: 'Husstand',
-      householdSummary: (people, days, petLitres) => `${people === 1 ? '1 person' : `${people} personer`}${petLitres ? `, dyr ${petLitres} pr. døgn` : ''} · ${days} døgn`,
-      editHousehold: 'Ret husstand',
       people: 'Personer',
       petLitres: 'Vand til dyr pr. døgn',
       petLitresHelp: 'Kilderne siger ikke, hvor meget dyr skal have. Skriv det, dine dyr drikker på et døgn.',
       targetDays: 'Forråd til',
       days: (n) => `${n} døgn`,
       targetHelp: 'Myndighederne anbefaler mindst 3 døgn.',
-      done: 'Færdig',
       expiringTitle: 'Holdbarhed',
       expired: (date) => `Udløbet ${date}`,
       expires: (date) => `Bedst før ${date}`,
       categories: { food: 'Mad', medicine: 'Medicin og hygiejne', other: 'Lys, varme og andet' },
       categoryEmpty: 'Intet her endnu.',
-      consider: 'Overvej også',
-      showAll: (n) => `Vis alle ${n}`,
-      showFewer: 'Vis færre',
-      forHousehold: (amount) => `ca. ${amount} til jer`,
-      readStockList: (title) => `Se listen: ${title}`,
       add: 'Tilføj',
       addIn: (category) => `Tilføj til ${category.toLowerCase()}`,
       editTitle: 'Ret',
@@ -896,45 +872,33 @@ export const strings: Record<Lang, Strings> = {
     },
     forraad: {
       title: 'Supplies',
-      subtitle: 'What you have stored at home – and what is missing.',
-      emptyTitle: 'Your supplies are empty',
-      emptyBody: 'Add what you have stored. The app keeps track of the dates and shows what the authorities recommend that you also have.',
       loading: 'Loading your supplies …',
       water: 'Drinking water',
       waterOf: (have, need) => `${have} of ${need}`,
       waterHave: (have) => `${have} stored`,
-      waterTarget: (days, perPerson) => `Recommended for ${days} days: ${perPerson} per person per day.`,
-      waterPetsNote: 'Remember water for animals too. Enter how much they drink under household.',
-      waterNone: 'No water stored yet.',
       lastChecked: (date) => `Last checked ${date}`,
       neverChecked: 'Not checked yet',
       checkAgain: (date) => `Check again in ${date}`,
       checkDue: (date) => `Time to check the water (since ${date})`,
       checkedToday: 'Checked today',
       checkSource: 'Check your supplies every six months: look at the dates and replace what needs replacing.',
-      waterEdit: 'Edit',
+      waterEdit: 'Edit water',
+      emptyStore: 'There is nothing in your supplies yet.',
+      seeAllRecommendations: 'See what the authorities recommend',
+      seeRecommendations: (title) => `See the recommendations: ${title}`,
       waterLitres: (unit) => `${unit === 'gal' ? 'Gallons' : 'Litres'} stored`,
       waterCheckedLabel: 'Last checked',
-      household: 'Household',
-      householdSummary: (people, days, petLitres) => `${people === 1 ? '1 person' : `${people} people`}${petLitres ? `, animals ${petLitres} a day` : ''} · ${days} days`,
-      editHousehold: 'Edit household',
       people: 'People',
       petLitres: 'Water for animals per day',
       petLitresHelp: 'The sources do not say how much animals need. Enter what your animals drink in a day.',
       targetDays: 'Supplies for',
       days: (n) => `${n} days`,
       targetHelp: 'The authorities recommend at least 3 days.',
-      done: 'Done',
       expiringTitle: 'Dates',
       expired: (date) => `Expired ${date}`,
       expires: (date) => `Best before ${date}`,
       categories: { food: 'Food', medicine: 'Medicine and hygiene', other: 'Light, heat and other' },
       categoryEmpty: 'Nothing here yet.',
-      consider: 'Also consider',
-      showAll: (n) => `Show all ${n}`,
-      showFewer: 'Show fewer',
-      forHousehold: (amount) => `about ${amount} for your household`,
-      readStockList: (title) => `See the list: ${title}`,
       add: 'Add',
       addIn: (category) => `Add to ${category.toLowerCase()}`,
       editTitle: 'Edit',

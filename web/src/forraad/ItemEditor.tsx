@@ -5,12 +5,11 @@
 
 import { ScanBarcode, X } from 'lucide-react';
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { BackButton, Choice, MessageState, Page } from '../components/ui';
+import { BackButton, Choice, MessageState, Page, Stepper } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { goBack, hrefs, type Route } from '../router';
 import { lookUp, OFF_ATTRIBUTION } from './barcode';
-import { Stepper } from './ForraadScreen';
 import { MonthYear } from './MonthYear';
 import { matchRecommendation, suggest, useStockLists, type Suggestion } from './recommendations';
 import { CATEGORIES, forraad, useForraad, type Category, type Product, type StoreItem } from './store';

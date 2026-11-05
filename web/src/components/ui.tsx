@@ -170,3 +170,25 @@ export function TabHeader({ title, settingsLabel, children }: { title: string; s
     </header>
   );
 }
+
+// A whole number with − and + buttons (44 pt each), e.g. how many people or how many of a thing.
+export function Stepper({ label, value, min, max, onChange }: { label: string; value: number; min: number; max: number; onChange: (n: number) => void }) {
+  return (
+    <div className="flex items-center justify-between gap-[12px]">
+      <span className="font-semibold" id={`stepper-${label}`}>
+        {label}
+      </span>
+      <span className="flex items-center gap-[4px]" role="group" aria-labelledby={`stepper-${label}`}>
+        <button type="button" onClick={() => onChange(Math.max(min, value - 1))} disabled={value <= min} aria-label={`${label} −1`} className="grid size-11 place-items-center rounded-full bg-background text-xl disabled:opacity-40">
+          −
+        </button>
+        <output className="min-w-10 text-center text-lg tabular-nums" aria-live="polite">
+          {value}
+        </output>
+        <button type="button" onClick={() => onChange(Math.min(max, value + 1))} disabled={value >= max} aria-label={`${label} +1`} className="grid size-11 place-items-center rounded-full bg-background text-xl disabled:opacity-40">
+          +
+        </button>
+      </span>
+    </div>
+  );
+}
