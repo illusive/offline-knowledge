@@ -1,9 +1,9 @@
 // Forråd (D-046): household and water against the stock list, water as one figure with the month
 // it was checked, quick adding (guessed category, linked stock-list line, month dates, "Gem og
-// tilføj en til"), editing and deleting, kept after a reload, and a copy saved and restored as a
-// file; offline. Settings opens from the gear.
+// tilføj en til"), the sheet on each thing (D-049: take out, add more, edit, delete), kept after a
+// reload, and a copy saved and restored as a file; offline. Settings opens from the gear.
 
-import type { BrowserContext, Page } from '@playwright/test';
+import type { BrowserContext, Locator, Page } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 import { expect, test } from './fixtures.ts';
 
@@ -28,11 +28,14 @@ const monthIn = (months: number) => {
   return { name: new Intl.DateTimeFormat('da-DK', { month: 'long', year: 'numeric' }).format(d), month: String(d.getMonth() + 1), year: String(d.getFullYear()) };
 };
 
-async function pickMonth(page: Page, months: number) {
+async function pickMonth(page: Page | Locator, months: number) {
   const m = monthIn(months);
   await page.getByRole('combobox', { name: 'Måned' }).selectOption(m.month);
   await page.getByRole('combobox', { name: 'År' }).selectOption(m.year);
 }
+
+// A thing's row in a category: a button that opens its sheet (D-049), named by the thing first.
+const row = (scope: Page | Locator, name: string) => scope.getByRole('button', { name: new RegExp(`^${name}`) });
 
 test('Forråd: water as one figure; quick adding with guessed categories and month dates; kept after reload; offline', async ({ app: { page, context } }) => {
   await openOffline(page, context);
@@ -96,11 +99,12 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
 
   await expect(page.getByRole('heading', { level: 1, name: 'Forråd' })).toBeVisible();
   const food = page.getByRole('region', { name: 'Mad' });
-  await expect(food.getByRole('link', { name: 'Ret Makrel i tomat' })).toContainText(`2 stk. · Bedst før ${monthIn(1).name}`);
+  await expect(row(food, 'Makrel i tomat')).toContainText(`2 stk. · Bedst før ${monthIn(1).name}`);
   await expect(food.getByRole('link', { name: /^Dåser med fisk eller kød/ })).toBeHidden();
-  await expect(food.getByRole('link', { name: 'Ret Kiks' })).toContainText(`Udløbet ${monthIn(-1).name}`);
-  await expect(page.getByRole('region', { name: 'Medicin og hygiejne' }).getByRole('link', { name: 'Ret Plaster' })).toContainText(`Bedst før ${monthIn(1).name}`);
-  await expect(page.getByRole('region', { name: 'Lys, varme og andet' }).getByRole('link', { name: 'Ret Paraply' })).toContainText('1 stk. · Stor');
+  await expect(row(food, 'Kiks')).toContainText(`Udløbet ${monthIn(-1).name}`);
+  await expect(row(page.getByRole('region', { name: 'Medicin og hygiejne' }), 'Plaster')).toContainText(`Bedst før ${monthIn(1).name}`);
+  const other = page.getByRole('region', { name: 'Lys, varme og andet' });
+  await expect(row(other, 'Paraply')).toContainText('1 stk. · Stor');
   await expect(food.getByRole('link', { name: 'Se anbefalingerne: Mad til tre døgn' })).toBeVisible();
   const dates = page.getByRole('region', { name: 'Holdbarhed' });
   await expect(dates.getByText('Kiks')).toBeVisible();
@@ -108,13 +112,53 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
 
   await page.reload();
   await expect(water.getByText(/^12\sL af 42\sL$/)).toBeVisible();
-  await expect(food.getByRole('link', { name: 'Ret Makrel i tomat' })).toBeVisible();
+  await expect(row(food, 'Makrel i tomat')).toBeVisible();
 
-  await food.getByRole('link', { name: 'Ret Kiks' }).click();
+  // The sheet: take one out and say when the next one expires.
+  const sheet = page.getByRole('dialog', { name: 'Makrel i tomat' });
+  await row(food, 'Makrel i tomat').click();
+  await expect(sheet.getByText(`2 stk. · Bedst før ${monthIn(1).name}`)).toBeVisible();
+  await sheet.getByRole('button', { name: 'Tag ud' }).click();
+  await pickMonth(sheet, 4);
+  await sheet.getByRole('button', { name: 'Tag 1 ud' }).click();
+  await expect(sheet).toBeHidden();
+  await expect(page.getByText('Makrel i tomat: 1 stk. taget ud, 1 stk. tilbage.')).toBeVisible();
+  await expect(row(food, 'Makrel i tomat')).toContainText(`1 stk. · Bedst før ${monthIn(4).name}`);
+
+  // Add more: the earlier month is the one kept.
+  await row(food, 'Makrel i tomat').click();
+  await sheet.getByRole('button', { name: 'Læg flere til' }).click();
+  await sheet.getByRole('button', { name: 'Antal +1' }).click();
+  await pickMonth(sheet, 2);
+  await sheet.getByRole('button', { name: 'Læg 2 til' }).click();
+  await expect(row(food, 'Makrel i tomat')).toContainText(`3 stk. · Bedst før ${monthIn(2).name}`);
+
+  // Escape closes the sheet; nothing changes.
+  await row(food, 'Makrel i tomat').click();
+  await expect(sheet).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(sheet).toBeHidden();
+  await expect(row(food, 'Makrel i tomat')).toContainText('3 stk.');
+
+  // Taking out the last ones asks, then deletes.
+  await row(food, 'Makrel i tomat').click();
+  await sheet.getByRole('button', { name: 'Tag ud' }).click();
+  for (let i = 0; i < 2; i++) await sheet.getByRole('button', { name: 'Antal +1' }).click();
   page.once('dialog', (dialog) => void dialog.accept());
-  await page.getByRole('button', { name: 'Slet' }).click();
+  await sheet.getByRole('button', { name: 'Tag alle ud' }).click();
+  await expect(row(food, 'Makrel i tomat')).toBeHidden();
+  await expect(page.getByText('Makrel i tomat er taget ud af forrådet.')).toBeVisible();
+
+  // The editor is one tap away; "Slet alt" asks, then deletes.
+  await row(other, 'Paraply').click();
+  await page.getByRole('dialog', { name: 'Paraply' }).getByRole('link', { name: 'Ret navn, kategori og størrelse' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Ret' })).toBeVisible();
+  await page.getByRole('button', { name: 'Tilbage' }).click();
+  await row(food, 'Kiks').click();
+  page.once('dialog', (dialog) => void dialog.accept());
+  await page.getByRole('dialog', { name: 'Kiks' }).getByRole('button', { name: 'Slet alt' }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Forråd' })).toBeVisible();
-  await expect(food.getByRole('link', { name: 'Ret Kiks' })).toBeHidden();
+  await expect(row(food, 'Kiks')).toBeHidden();
 
   // Settings is the gear at the top right; the water can be shown in US gallons.
   await page.getByRole('link', { name: 'Indstillinger' }).click();
@@ -143,9 +187,9 @@ test('Forråd: a copy saved as a file brings the supplies back; offline', async 
   expect(JSON.parse(await readFile(file, 'utf8'))).toMatchObject({ app: 'stead', kind: 'backup' });
 
   await page.getByRole('button', { name: 'Tilbage' }).click();
-  await page.getByRole('link', { name: 'Ret Knækbrød' }).click();
+  await row(page.getByRole('region', { name: 'Mad' }), 'Knækbrød').click();
   page.once('dialog', (dialog) => void dialog.accept());
-  await page.getByRole('button', { name: 'Slet' }).click();
+  await page.getByRole('button', { name: 'Slet alt' }).click();
   await expect(page.getByText('Der er intet i forrådet endnu.')).toBeVisible();
   await page.getByRole('link', { name: 'Indstillinger' }).click();
 
@@ -156,7 +200,7 @@ test('Forråd: a copy saved as a file brings the supplies back; offline', async 
   await page.locator('input[type="file"]').setInputFiles(file);
   await expect(page.getByText('Forrådet er hentet fra kopien.')).toBeVisible();
   await page.getByRole('navigation', { name: 'Hovedmenu' }).getByRole('link', { name: 'Forråd' }).click();
-  await expect(page.getByRole('link', { name: 'Ret Knækbrød' })).toBeVisible();
+  await expect(row(page.getByRole('region', { name: 'Mad' }), 'Knækbrød')).toBeVisible();
   await page.getByRole('link', { name: 'Indstillinger' }).click();
 
   await page.locator('input[type="file"]').setInputFiles({ name: 'x.json', mimeType: 'application/json', buffer: Buffer.from('{"nope":1}') });

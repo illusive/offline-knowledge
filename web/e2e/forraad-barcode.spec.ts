@@ -80,7 +80,7 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
   expect(await lookups()).toHaveLength(1);
   expect((await lookups())[0]).toContain(`/product/${CODE}.json`);
   await page.getByRole('button', { name: 'Gem', exact: true }).click();
-  await expect(page.getByRole('link', { name: 'Ret Makrel i tomat' })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Mad' }).getByRole('button', { name: /^Makrel i tomat/ })).toBeVisible();
 
   // Offline, a known barcode is filled in from the device, without a lookup.
   await context.setOffline(true);
@@ -104,7 +104,7 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
   await page.getByRole('button', { name: 'Gem', exact: true }).click();
   const products = await page.evaluate(() => JSON.parse(localStorage.getItem('stead.forraad.v1')!).products);
   expect(products).toEqual({ [CODE]: { name: 'Makrel, egen' } });
-  await expect(page.getByRole('region', { name: 'Mad' }).getByRole('link', { name: 'Ret Makrel, egen' })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Mad' }).getByRole('button', { name: /^Makrel, egen/ })).toBeVisible();
 
   expect(foreign).toEqual([]);
 });

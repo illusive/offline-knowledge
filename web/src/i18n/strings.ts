@@ -186,8 +186,25 @@ export interface Strings {
     cancel: string;
     remove: string;
     removeConfirm: (name: string) => string;
+    takeOut: string;
+    stockMore: string;
+    editDetails: string;
+    removeAll: string;
+    takeN: (n: number) => string;
+    takeAll: string;
+    addN: (n: number) => string;
+    bestBeforeNow: string;
+    bestBeforeNowHelp: string;
+    bestBeforeNew: string;
+    bestBeforeNewHelp: string;
+    takeLastConfirm: (name: string) => string;
+    takeLastNote: string;
+    tookOut: (name: string, n: number, left: number) => string;
+    tookAll: (name: string) => string;
+    stocked: (name: string, n: number, total: number) => string;
+    deleted: (name: string) => string;
+    close: string;
     countLabel: (n: number) => string;
-    edit: (name: string) => string;
     countsAs: (name: string) => string;
     unlink: string;
     notFound: string;
@@ -538,8 +555,25 @@ export const strings: Record<Lang, Strings> = {
       cancel: 'Annuller',
       remove: 'Slet',
       removeConfirm: (name) => `Vil du slette ${name}?`,
+      takeOut: 'Tag ud',
+      stockMore: 'Læg flere til',
+      editDetails: 'Ret navn, kategori og størrelse',
+      removeAll: 'Slet alt',
+      takeN: (n) => `Tag ${n} ud`,
+      takeAll: 'Tag alle ud',
+      addN: (n) => `Læg ${n} til`,
+      bestBeforeNow: 'Bedst før nu',
+      bestBeforeNowHelp: 'Tog du den, der udløber først? Så vælg datoen på den næste.',
+      bestBeforeNew: 'Bedst før på de nye',
+      bestBeforeNewHelp: 'Valgfrit. Udløber de nye før dem, du har, gemmes deres dato.',
+      takeLastConfirm: (name) => `Det er de sidste. Vil du slette ${name} fra forrådet?`,
+      takeLastNote: 'Det er de sidste, så tingen slettes fra forrådet.',
+      tookOut: (name, n, left) => `${name}: ${n} stk. taget ud, ${left} stk. tilbage.`,
+      tookAll: (name) => `${name} er taget ud af forrådet.`,
+      stocked: (name, n, total) => `${name}: ${n} stk. lagt til, nu ${total} stk.`,
+      deleted: (name) => `${name} er slettet.`,
+      close: 'Luk',
       countLabel: (n) => `${n} stk.`,
-      edit: (name) => `Ret ${name}`,
       countsAs: (name) => `Tæller som: ${name}`,
       unlink: 'Tæller ikke med på listen',
       notFound: 'Den ting findes ikke længere i forrådet.',
@@ -936,8 +970,25 @@ export const strings: Record<Lang, Strings> = {
       cancel: 'Cancel',
       remove: 'Delete',
       removeConfirm: (name) => `Delete ${name}?`,
+      takeOut: 'Take out',
+      stockMore: 'Add more',
+      editDetails: 'Edit name, category and size',
+      removeAll: 'Delete all',
+      takeN: (n) => `Take out ${n}`,
+      takeAll: 'Take out all',
+      addN: (n) => `Add ${n}`,
+      bestBeforeNow: 'Best before now',
+      bestBeforeNowHelp: 'Did you take the one that expires first? Then choose the date on the next one.',
+      bestBeforeNew: 'Best before on the new ones',
+      bestBeforeNewHelp: 'Optional. If the new ones expire before the ones you have, their date is kept.',
+      takeLastConfirm: (name) => `Those are the last ones. Delete ${name} from your supplies?`,
+      takeLastNote: 'Those are the last ones, so the item is deleted from your supplies.',
+      tookOut: (name, n, left) => `${name}: took out ${n}, ${left} left.`,
+      tookAll: (name) => `${name} is out of your supplies.`,
+      stocked: (name, n, total) => `${name}: added ${n}, now ${total}.`,
+      deleted: (name) => `${name} deleted.`,
+      close: 'Close',
       countLabel: (n) => `${n}×`,
-      edit: (name) => `Edit ${name}`,
       countsAs: (name) => `Counts as: ${name}`,
       unlink: 'Does not count on the list',
       notFound: 'That item is no longer in your supplies.',

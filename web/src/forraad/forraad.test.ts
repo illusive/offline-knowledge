@@ -4,7 +4,7 @@ import { addMonths, expiring, monthsUntil, nextCheck, waterNeeded, type Recommen
 import { applyBackup, makeBackup, readBackup } from './backupFile';
 import { parseProduct } from './barcode';
 import { matchRecommendation, suggest } from './recommendations';
-import { EMPTY, parse, type StoreItem } from './store';
+import { EMPTY, parse, stockMore, takeOut, type StoreItem } from './store';
 
 const item = (over: Partial<StoreItem>): StoreItem => ({ id: 'x', name: 'Pasta', category: 'food', count: 1, added: '2026-11-01', ...over });
 const rec = (id: string, category: Recommendation['category'], name: string, keywords: string[]): Recommendation => ({ id, guideId: 'g', category, name, text: name, keywords });
@@ -113,6 +113,31 @@ describe('Forråd data on the device', () => {
     expect(data.water).toEqual({ litres: 19, lastChecked: '2026-05' });
     expect(data.items.map((i) => i.id)).toEqual(['f']);
     expect(data.items[0]!.expires).toBe('2027-02');
+  });
+});
+
+describe('Forråd taking out and stocking more', () => {
+  it('takes some out, and deletes the thing when all are taken', () => {
+    const tins = item({ count: 3, expires: '2027-05' });
+    expect(takeOut(tins, 1)).toMatchObject({ count: 2, expires: '2027-05' });
+    expect(takeOut(tins, 3)).toBeNull();
+    expect(takeOut(tins, 5)).toBeNull();
+  });
+
+  it('keeps, changes or clears the month when taking out', () => {
+    const tins = item({ count: 3, expires: '2027-05' });
+    expect(takeOut(tins, 1, '2027-09')?.expires).toBe('2027-09');
+    expect(takeOut(tins, 1, null)).not.toHaveProperty('expires');
+    expect(takeOut(tins, 1, undefined)?.expires).toBe('2027-05');
+  });
+
+  it('stocks more, keeping the earlier month, up to the limit', () => {
+    const tins = item({ count: 2, expires: '2027-05' });
+    expect(stockMore(tins, 2)).toMatchObject({ count: 4, expires: '2027-05' });
+    expect(stockMore(tins, 1, '2027-09').expires).toBe('2027-05');
+    expect(stockMore(tins, 1, '2027-02').expires).toBe('2027-02');
+    expect(stockMore(item({ count: 1 }), 1, '2028-01').expires).toBe('2028-01');
+    expect(stockMore(item({ count: 9998 }), 5).count).toBe(9999);
   });
 });
 

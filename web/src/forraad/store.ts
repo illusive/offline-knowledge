@@ -10,6 +10,7 @@ export const CATEGORIES = ['food', 'medicine', 'other'] as const;
 export type Category = (typeof CATEGORIES)[number];
 export const TARGET_DAYS = [3, 7, 14] as const;
 export type TargetDays = (typeof TARGET_DAYS)[number];
+const MAX_COUNT = 9999;
 
 export interface StoreItem {
   id: string;
@@ -73,7 +74,7 @@ function parseItem(x: unknown): StoreItem | null {
   const name = str(x.name);
   const category = CATEGORIES.find((c) => c === x.category);
   if (!id || !name || !category) return null;
-  const item: StoreItem = { id, name, category, count: Math.round(num(x.count, 1, 9999) ?? 1), added: isDay(x.added) ? x.added : today() };
+  const item: StoreItem = { id, name, category, count: Math.round(num(x.count, 1, MAX_COUNT) ?? 1), added: isDay(x.added) ? x.added : today() };
   const size = str(x.size, 40);
   if (size) item.size = size;
   const expires = toMonth(x.expires);
@@ -116,6 +117,24 @@ export function parse(raw: unknown): ForraadData {
   return { version: 2, household, water, items, products };
 }
 
+// Taking some out (D-049). Taking all of them out deletes the thing (null). `expires`: undefined
+// keeps the month, null clears it, a month sets it (the next one may expire later).
+export function takeOut(item: StoreItem, n: number, expires?: string | null): StoreItem | null {
+  if (n >= item.count) return null;
+  const next: StoreItem = { ...item, count: item.count - Math.max(1, Math.round(n)) };
+  if (expires === null) delete next.expires;
+  else if (expires !== undefined) next.expires = expires;
+  return next;
+}
+
+// Stocking more of a thing (D-049). The month kept is the earlier one: the user tracks the one
+// that expires first (D-046). A month fills a thing that had none.
+export function stockMore(item: StoreItem, n: number, expires?: string): StoreItem {
+  const next: StoreItem = { ...item, count: Math.min(MAX_COUNT, item.count + Math.max(1, Math.round(n))) };
+  if (expires && (!item.expires || expires < item.expires)) next.expires = expires;
+  return next;
+}
+
 const store = createLocalStore<ForraadData>({ key: KEY, parse });
 
 export const useForraad = store.use;
@@ -134,5 +153,8 @@ export const forraad = {
       return { ...d, items: exists ? d.items.map((i) => (i.id === saved.id ? saved : i)) : [...d.items, saved] };
     }),
   removeItem: (id: string) => update((d) => ({ ...d, items: d.items.filter((i) => i.id !== id) })),
+  take: (id: string, n: number, expires?: string | null) =>
+    update((d) => ({ ...d, items: d.items.flatMap((i) => (i.id === id ? (takeOut(i, n, expires) ?? []) : [i])) })),
+  stock: (id: string, n: number, expires?: string) => update((d) => ({ ...d, items: d.items.map((i) => (i.id === id ? stockMore(i, n, expires) : i)) })),
   rememberProduct: (barcode: string, product: Product) => update((d) => ({ ...d, products: { ...d.products, [barcode]: product } })),
 };

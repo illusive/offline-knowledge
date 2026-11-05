@@ -368,7 +368,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Changed 2026-11-05 (owner, after trying it): less friction.** Adding to the stores must be quick, or it does not get done.
   - **Water is one figure:** litres stored plus the month it was last checked, edited in the water card. There are no water containers; data saved earlier is converted.
   - **Adding:** a name (suggestions or a barcode), a count and an optional best-before month. The category is guessed from the name through the stock-list keywords; unknown names go to Mad, and one tap changes it. An optional free-text size sits under "Mere". There are no other units, and the main button is "Tilføj til forrådet". "Gem og tilføj en til" keeps the form open with the same month.
-  - **Month and year, not dates:** stores are long-life goods, where a few weeks either way do not matter. For several of the same thing, the user picks the one that expires first.
+  - **Month and year, not dates:** stores are long-life goods, where a few weeks either way do not matter. For several of the same thing, the user picks the one that expires first. The two pickers always sit in one row (owner, 2026-11-05), also at large text sizes.
   - "Holdbarhed" lists what passed its month and what reaches it this month or next.
 - **Changed again 2026-11-05 (owner): an overview, not a form.** Forråd shows what the household has and little else:
   - The water card is first. It holds the figure, the bar, one line on the last and next check, and a pencil at the top right to edit. "Tjekket i dag" appears only when a check is due.
@@ -400,6 +400,20 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - **Værktøjer stays a tab** with room for more tools.
 - **Rationale:** growing applies to the fewest people. Two records of "I have this" that did not know about each other would disagree.
 - **Alternatives:** removing the ticks from the stock lists (owner chose to keep them, driven by Forråd); moving the compass into Kort and dropping the tab.
+
+## D-049 — Forråd: a sheet on each thing (take out, add more)
+
+- **Date:** 2026-11-05
+- **Decision (owner):** tapping a thing in Forråd (in its category or in Holdbarhed) opens a sheet from the bottom of the screen, instead of the editor. It offers:
+  - **Tag ud:** an amount (1 up to the count). When some are left, "Bedst før nu" is filled with the saved month and can be changed, because the one taken out is usually the one that expired first. Taking out all of them asks, then deletes the thing, as "Slet" does. The data model is unchanged (the count stays at 1 or more).
+  - **Læg flere til:** an amount and an optional month for the new ones. The earlier of the two months is kept, following the D-046 rule that the user tracks the one that expires first; a month fills a thing that had none.
+  - **Ret navn, kategori og størrelse:** the existing editor page.
+  - **Slet alt:** asks, then deletes.
+  - After an action, the sheet closes and one line under "Tilføj til forrådet" says what happened (`role="status"`).
+- **Stock-list ticks (D-048)** follow by themselves: they are derived from the things, so deleting the last one unticks its line.
+- **Sheet:** a shared `Sheet` primitive (`components/ui.tsx`) on the native modal `<dialog>` (Safari 15.4+): focus stays inside, the page behind is inert, Escape or a tap above it closes it, and it sits above the tab bar.
+- **Rationale:** taking things out was three steps (open, lower the count, save), and D-046 says it must be quick or it does not get done.
+- **Alternatives:** a − button on each row (fastest, but no way to change the month and easy to tap by mistake); a "Brug en" button in the editor (still two taps); keeping used-up things at 0 as a shopping reminder (needs a new state and a rule for the ticks; not now).
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

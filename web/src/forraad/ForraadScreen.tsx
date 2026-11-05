@@ -5,13 +5,14 @@
 
 import { ChevronRight, Pencil, Plus } from 'lucide-react';
 import { useState } from 'react';
-import { Button, ButtonLink, Card, IconButton, inputClass, MessageState, Page, TabHeader } from '../components/ui';
+import { Button, ButtonLink, Card, IconButton, inputClass, MessageState, Page, Sheet, TabHeader } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
 import { usePreferences } from '../settings/preferences';
 import { decimalForInput, localeOf, formatMonth, formatVolume, fromUnit, parseDecimal, thisMonth, toUnit, unitLabel } from '../i18n/format';
-import { expiring, monthsUntil, nextCheck, waterNeeded } from './calc';
+import { expiring, nextCheck, waterNeeded } from './calc';
+import { ItemSheet, itemSummary, SHEET_TITLE_ID } from './ItemSheet';
 import { MonthYear } from './MonthYear';
 import { useStockLists, type StockLists } from './recommendations';
 import { CATEGORIES, forraad, useForraad, type Category, type ForraadData, type StoreItem, type Water } from './store';
@@ -22,6 +23,14 @@ export function ForraadScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: St
   const data = useForraad();
   const lists = useStockLists(db);
   const empty = data.items.length === 0;
+  // The thing whose sheet is open (D-049), and what was last done to one.
+  const [openId, setOpenId] = useState<string | null>(null);
+  const [status, setStatus] = useState<string | null>(null);
+  const openItem = data.items.find((i) => i.id === openId);
+  const onOpen = (id: string) => {
+    setStatus(null);
+    setOpenId(id);
+  };
 
   usePageTitle(t.title, s.appTitle);
 
@@ -34,6 +43,9 @@ export function ForraadScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: St
           <Plus aria-hidden="true" className="size-5" />
           {t.addTitle}
         </ButtonLink>
+        <p role="status" className={status ? 'rounded-2xl bg-surface px-[16px] py-3 font-medium' : 'sr-only'}>
+          {status}
+        </p>
         {empty ? (
           <>
             <p className="px-1 text-center text-muted">{t.emptyStore}</p>
@@ -43,11 +55,26 @@ export function ForraadScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: St
           </>
         ) : (
           <>
-            <Expiring items={data.items} lang={lang} s={s} />
-            {lists ? CATEGORIES.map((c) => <CategoryCard key={c} category={c} items={data.items} lists={lists} lang={lang} s={s} />) : <MessageState title={t.loading} />}
+            <Expiring items={data.items} lang={lang} s={s} onOpen={onOpen} />
+            {lists ? CATEGORIES.map((c) => <CategoryCard key={c} category={c} items={data.items} lists={lists} lang={lang} s={s} onOpen={onOpen} />) : <MessageState title={t.loading} />}
           </>
         )}
       </div>
+      <Sheet open={Boolean(openItem)} onClose={() => setOpenId(null)} labelledBy={SHEET_TITLE_ID}>
+        {openItem ? (
+          <ItemSheet
+            key={openItem.id}
+            item={openItem}
+            lang={lang}
+            s={s}
+            onClose={() => setOpenId(null)}
+            onDone={(message) => {
+              setStatus(message);
+              setOpenId(null);
+            }}
+          />
+        ) : null}
+      </Sheet>
     </Page>
   );
 }
@@ -148,7 +175,7 @@ function WaterEditor({ water, unit, lang, s, onDone }: { water: Water; unit: 'li
   );
 }
 
-function Expiring({ items, lang, s }: { items: StoreItem[]; lang: Lang; s: Strings }) {
+function Expiring({ items, lang, s, onOpen }: { items: StoreItem[]; lang: Lang; s: Strings; onOpen: (id: string) => void }) {
   const t = s.forraad;
   const { expired, soon } = expiring(items, thisMonth());
   const month = (m: string) => formatMonth(m, lang);
@@ -161,12 +188,12 @@ function Expiring({ items, lang, s }: { items: StoreItem[]; lang: Lang; s: Strin
       <ul className="mt-1 flex flex-col">
         {[...expired, ...soon].map((item) => (
           <li key={item.id}>
-            <a href={hrefs.forraadItem(item.id)} className="flex min-h-11 items-center justify-between gap-[12px]">
+            <button type="button" aria-haspopup="dialog" onClick={() => onOpen(item.id)} className="flex min-h-11 w-full items-center justify-between gap-[12px] text-left">
               <span className="font-medium">{item.name}</span>
               <span className={`shrink-0 text-sm ${expired.includes(item) ? 'font-semibold' : ''}`}>
                 {expired.includes(item) ? t.expired(month(item.expires!)) : t.expires(month(item.expires!))}
               </span>
-            </a>
+            </button>
           </li>
         ))}
       </ul>
@@ -174,7 +201,7 @@ function Expiring({ items, lang, s }: { items: StoreItem[]; lang: Lang; s: Strin
   );
 }
 
-function CategoryCard({ category, items: all, lists, lang, s }: { category: Category; items: StoreItem[]; lists: StockLists; lang: Lang; s: Strings }) {
+function CategoryCard({ category, items: all, lists, lang, s, onOpen }: { category: Category; items: StoreItem[]; lists: StockLists; lang: Lang; s: Strings; onOpen: (id: string) => void }) {
   const t = s.forraad;
   const items = all.filter((i) => i.category === category).sort((a, b) => a.name.localeCompare(b.name, localeOf(lang)));
   const guideId = lists.recommendations.find((r) => r.category === category)?.guideId;
@@ -196,21 +223,13 @@ function CategoryCard({ category, items: all, lists, lang, s }: { category: Cate
         <ul className="flex flex-col divide-y divide-border">
           {items.map((item) => (
             <li key={item.id}>
-              <a href={hrefs.forraadItem(item.id)} aria-label={t.edit(item.name)} className="flex min-h-12 items-center gap-[12px] py-2">
+              <button type="button" aria-haspopup="dialog" onClick={() => onOpen(item.id)} className="flex min-h-12 w-full items-center gap-[12px] py-2 text-left">
                 <span className="flex-1">
                   <span className="block font-medium">{item.name}</span>
-                  <span className="block text-sm text-muted">
-                    {[
-                      t.countLabel(item.count),
-                      item.size ?? null,
-                      item.expires ? (monthsUntil(item.expires, thisMonth()) < 0 ? t.expired : t.expires)(formatMonth(item.expires, lang)) : null,
-                    ]
-                      .filter(Boolean)
-                      .join(' · ')}
-                  </span>
+                  <span className="block text-sm text-muted">{itemSummary(item, lang, t)}</span>
                 </span>
                 <ChevronRight aria-hidden="true" className="size-5 shrink-0 text-muted" />
-              </a>
+              </button>
             </li>
           ))}
         </ul>

@@ -4,7 +4,7 @@
 
 import { ArrowLeft, ChevronRight, Search, Settings, X, type LucideIcon } from 'lucide-react';
 import { goBack, hrefs } from '../router';
-import type { ButtonHTMLAttributes, ElementType, HTMLAttributes, MouseEvent, ReactNode, Ref } from 'react';
+import { useEffect, useRef, type ButtonHTMLAttributes, type ElementType, type HTMLAttributes, type MouseEvent, type ReactNode, type Ref } from 'react';
 
 // A rounded surface. A <section> unless `as` says otherwise (a form, a div).
 export function Card({ children, className = '', as: Tag = 'section', ...rest }: { children: ReactNode; className?: string; as?: ElementType } & HTMLAttributes<HTMLElement>) {
@@ -279,6 +279,32 @@ export function TabHeader({ title, settingsLabel, children }: { title: string; s
         <SettingsButton label={settingsLabel} />
       </div>
     </header>
+  );
+}
+
+// A sheet from the bottom of the screen (D-049): a native modal <dialog>, so focus stays inside,
+// the page behind is inert, Escape closes it and focus goes back to what opened it. A tap on the
+// dimmed page above it closes it too. It sits above the tab bar (the top layer).
+export function Sheet({ open, onClose, labelledBy, children }: { open: boolean; onClose: () => void; labelledBy: string; children: ReactNode }) {
+  const ref = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    const dialog = ref.current;
+    if (!dialog) return;
+    if (open && !dialog.open) dialog.showModal();
+    else if (!open && dialog.open) dialog.close();
+  }, [open]);
+  return (
+    <dialog
+      ref={ref}
+      aria-labelledby={labelledBy}
+      onClose={onClose}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose(); // the backdrop, not the content
+      }}
+      className="inset-x-0 top-auto bottom-0 m-0 mx-auto max-h-[85dvh] w-full max-w-2xl overflow-y-auto rounded-t-[28px] border-t border-border bg-background p-0 text-text shadow-2xl backdrop:bg-black/50"
+    >
+      <div className="px-[16px] pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">{open ? children : null}</div>
+    </dialog>
   );
 }
 

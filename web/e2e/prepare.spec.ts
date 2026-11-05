@@ -52,8 +52,8 @@ test('Når det sker: tile, search, tick items in a stock list, bookmark a situat
 
   await page.getByRole('navigation', { name: 'Hovedmenu' }).getByRole('link', { name: 'Forråd' }).click();
   const food = page.getByRole('region', { name: 'Mad' });
-  await expect(food.getByRole('link', { name: 'Ret Knækbrød' })).toBeVisible();
-  await expect(food.getByRole('link', { name: 'Ret Olie til madlavning' })).toBeVisible();
+  await expect(food.getByRole('button', { name: /^Knækbrød/ })).toBeVisible();
+  await expect(food.getByRole('button', { name: /^Olie til madlavning/ })).toBeVisible();
   await page.getByRole('link', { name: 'Tilføj til forrådet' }).click();
   await page.getByLabel('Hvad er det?').fill('Makrel i tomat');
   await page.getByRole('button', { name: 'Gem', exact: true }).click();
@@ -85,7 +85,7 @@ test('Ticks kept before Forråd drove the stock lists become Forråd entries onc
   await context.setOffline(true);
   await page.reload();
   await page.getByRole('navigation', { name: 'Hovedmenu' }).getByRole('link', { name: 'Forråd' }).click();
-  await expect(page.getByRole('region', { name: 'Mad' }).getByRole('link', { name: 'Ret Nødder' })).toBeVisible();
-  await expect(page.getByRole('region', { name: 'Lys, varme og andet' }).getByRole('link', { name: 'Ret Powerbank' })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Mad' }).getByRole('button', { name: /^Nødder/ })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Lys, varme og andet' }).getByRole('button', { name: /^Powerbank/ })).toBeVisible();
   expect(await page.evaluate(() => localStorage.getItem('stead.supplies.v1'))).toBeNull();
 });

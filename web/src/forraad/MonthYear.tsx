@@ -32,8 +32,9 @@ export function MonthYear(props: { id: string; label: string; help?: string; val
           {help}
         </p>
       ) : null}
-      <div className="mt-1 flex flex-wrap gap-[8px]">
-        <select id={`${id}-month`} aria-label={monthLabel} value={m ?? ''} onChange={(e) => setMonth(e.target.value ? Number(e.target.value) : null)} className={`${select} flex-1`}>
+      {/* Always one row: the month takes the room, the year is as wide as its numbers. */}
+      <div className="mt-1 flex gap-[8px]">
+        <select id={`${id}-month`} aria-label={monthLabel} value={m ?? ''} onChange={(e) => setMonth(e.target.value ? Number(e.target.value) : null)} className={`${select} min-w-0 flex-1`}>
           <option value="">{noDate ?? monthLabel}</option>
           {Array.from({ length: 12 }, (_, i) => (
             <option key={i} value={i + 1}>
@@ -41,7 +42,7 @@ export function MonthYear(props: { id: string; label: string; help?: string; val
             </option>
           ))}
         </select>
-        <select id={`${id}-year`} aria-label={yearLabel} value={y ?? ''} onChange={(e) => setYear(e.target.value ? Number(e.target.value) : null)} className={`${select} w-28`}>
+        <select id={`${id}-year`} aria-label={yearLabel} value={y ?? ''} onChange={(e) => setYear(e.target.value ? Number(e.target.value) : null)} className={`${select} shrink-0`}>
           <option value="">{yearLabel}</option>
           {years.map((year) => (
             <option key={year} value={year}>
