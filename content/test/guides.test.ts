@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { validateGuides, verbatimText } from '../lib/guides.ts';
+import { amountInText, validateGuides, verbatimText } from '../lib/guides.ts';
 import type { RegistrySource } from '../lib/registry.ts';
 import type { Guide } from '../schema/guide.ts';
 
@@ -94,6 +94,21 @@ test('preparedness: a group is required, checklist lines are checked verbatim, c
   assert.ok(problems.some((p) => p.includes('not verbatim')));
   assert.ok(problems.some((p) => p.includes("'same-id' is used twice")));
   assert.ok(problems.some((p) => p.includes('need a group')));
+});
+
+test('Forråd (D-046): a stock-list amount must be the one in the line\'s own text', () => {
+  assert.ok(amountInText({ value: 500, unit: 'g' }, 'Knækbrød (ca. 500 g – omkring 2 pakker)'));
+  assert.ok(amountInText({ value: 1500, unit: 'g' }, 'Dåser med tomater (ca. 1,5 kg – 3-4 dåser)'));
+  assert.ok(amountInText({ value: 3, unit: 'L' }, '3 liter vand pr. person pr. døgn'));
+  assert.ok(!amountInText({ value: 400, unit: 'g' }, 'Knækbrød (ca. 500 g – omkring 2 pakker)'));
+  const text = 'Du må aldrig gå på kompromis med din egen sikkerhed.';
+  const problems = validateGuides(
+    [guide({ id: 'e', category: 'preparedness', risk: 'low', checks: [], group: 'supplies', blocks: [{ kind: 'checklist', items: [{ id: 'x', text, name: ' ', amount: { value: 500, unit: 'g', per: 'person3Days' }, keywords: ['Makrel'] }], page: 1 }] })],
+    sources, texts, new Set(),
+  );
+  assert.ok(problems.some((p) => p.includes("amount of 'x'")));
+  assert.ok(problems.some((p) => p.includes("keywords of 'x'")));
+  assert.ok(problems.some((p) => p.includes("name of 'x'")));
 });
 
 test('a high-risk preparedness guide still needs a second authority', () => {

@@ -57,6 +57,13 @@ export function shownTexts(block: GuideBlock): string[] {
   }
 }
 
+// The amount of a stock-list line must be the one its text gives: "500 g", "1,5 kg", "3 liter".
+export function amountInText(amount: { value: number; unit: 'g' | 'L' }, text: string): boolean {
+  const da = (n: number) => String(n).replace('.', ',');
+  const forms = amount.unit === 'g' ? [`${da(amount.value)} g`, `${da(amount.value / 1000)} kg`] : [`${da(amount.value)} liter`, `${da(amount.value)} l`];
+  return forms.some((f) => text.includes(f));
+}
+
 // Abbreviations the handbook uses that a reader may not know.
 const KNOWN_ABBREVIATIONS = ['HLR', 'AED', 'A-B-C', 'M-ABC'];
 
@@ -131,6 +138,9 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
           if (!/^[a-z0-9-]+$/.test(item.id)) problems.push(`${where}: checklist id '${item.id}' must be lower-case letters, digits and dashes`);
           if (checklistIds.has(item.id)) problems.push(`${where}: checklist id '${item.id}' is used twice (ticks are stored by id)`);
           checklistIds.add(item.id);
+          if (item.amount && !amountInText(item.amount, item.text)) problems.push(`${where}: amount of '${item.id}' (${item.amount.value} ${item.amount.unit}) is not in its text`);
+          if (item.keywords?.some((k) => !k.trim() || k !== k.toLowerCase())) problems.push(`${where}: keywords of '${item.id}' must be lower-case and not empty`);
+          if (item.name !== undefined && !item.name.trim()) problems.push(`${where}: name of '${item.id}' is empty`);
         }
       }
       const images = block.kind === 'image' ? [block] : block.kind === 'steps' ? (block.images ?? []) : [];

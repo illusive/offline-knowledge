@@ -39,7 +39,8 @@ export interface Strings {
   offlineReadyStatus: string;
   preparingOffline: string;
   navLabel: string;
-  tabs: Record<'home' | 'map' | 'tools' | 'settings', string>;
+  tabs: Record<'home' | 'map' | 'forraad' | 'tools', string>;
+  settingsOpen: string;
   mapTitle: string;
   mapLabel: string;
   mapLoading: string;
@@ -131,6 +132,89 @@ export interface Strings {
     turnLeft: (deg: number) => string;
     howTo: string;
   };
+  forraad: {
+    title: string;
+    subtitle: string;
+    emptyTitle: string;
+    emptyBody: string;
+    loading: string;
+    water: string;
+    waterOf: (have: string, need: string) => string;
+    waterHave: (have: string) => string;
+    waterTarget: (days: number, perPerson: string) => string;
+    waterPetsNote: string;
+    waterNone: string;
+    lastChecked: (date: string) => string;
+    neverChecked: string;
+    checkAgain: (date: string) => string;
+    checkDue: (date: string) => string;
+    checkedToday: string;
+    checkSource: string;
+    addWater: string;
+    household: string;
+    householdSummary: (people: number, days: number, petLitres: string | null) => string;
+    editHousehold: string;
+    people: string;
+    petLitres: string;
+    petLitresHelp: string;
+    targetDays: string;
+    days: (n: number) => string;
+    targetHelp: string;
+    done: string;
+    expiringTitle: string;
+    expired: (date: string) => string;
+    expires: (date: string) => string;
+    categories: Record<'water' | 'food' | 'medicine' | 'other', string>;
+    categoryEmpty: string;
+    consider: string;
+    showAll: (n: number) => string;
+    showFewer: string;
+    forHousehold: (amount: string) => string;
+    readStockList: (title: string) => string;
+    add: string;
+    addIn: (category: string) => string;
+    editTitle: string;
+    addTitle: string;
+    name: string;
+    namePlaceholder: string;
+    suggestionsLabel: string;
+    fromStockList: string;
+    usedBefore: string;
+    category: string;
+    count: string;
+    litresEach: (unit: string) => string;
+    expiry: string;
+    expiryHelp: string;
+    clearExpiry: string;
+    save: string;
+    cancel: string;
+    remove: string;
+    removeConfirm: (name: string) => string;
+    countLabel: (n: number) => string;
+    edit: (name: string) => string;
+    countsAs: (name: string) => string;
+    unlink: string;
+    notFound: string;
+    nameMissing: string;
+    scan: string;
+    scanTitle: string;
+    scanHelp: string;
+    scanStarting: string;
+    scanDenied: string;
+    scanUnavailable: string;
+    lookingUp: string;
+    lookupNotFound: string;
+    lookupOffline: string;
+    productFrom: (source: string) => string;
+    scanPrivacy: string;
+    backup: string;
+    backupBody: string;
+    saveCopy: string;
+    restoreCopy: string;
+    restoreConfirm: (items: number) => string;
+    restoreDone: string;
+    restoreFailed: string;
+  };
   settingsTitle: string;
   settings: {
     library: string;
@@ -151,6 +235,9 @@ export interface Strings {
     dark: string;
     textSize: string;
     textSizeBody: string;
+    waterUnit: string;
+    litres: string;
+    gallons: string;
     sourcesIntro: string;
     about: string;
     aboutBody: string[];
@@ -296,7 +383,8 @@ export const strings: Record<Lang, Strings> = {
     offlineReadyStatus: 'Klar uden internet',
     preparingOffline: 'Gør klar til brug uden net …',
     navLabel: 'Hovedmenu',
-    tabs: { home: 'Hjem', map: 'Kort', tools: 'Værktøjer', settings: 'Indstillinger' },
+    tabs: { home: 'Hjem', map: 'Kort', forraad: 'Forråd', tools: 'Værktøjer' },
+    settingsOpen: 'Indstillinger',
     mapTitle: 'Kort',
     mapLabel: 'Kort over Danmark',
     mapLoading: 'Åbner kortet …',
@@ -392,6 +480,89 @@ export const strings: Record<Lang, Strings> = {
       turnLeft: (deg) => `Drej ${deg}° til venstre`,
       howTo: 'Hold telefonen fladt foran dig, så toppen peger frem. Vend dig, til retningen passer, og tryk på Hold denne kurs. Så viser appen, hvis du kommer ud af kurs.',
     },
+    forraad: {
+      title: 'Forråd',
+      subtitle: 'Hvad I har på lager derhjemme – og hvad der mangler.',
+      emptyTitle: 'Dit forråd er tomt',
+      emptyBody: 'Skriv det ind, I har på lager. Så holder appen styr på datoerne og viser, hvad myndighederne anbefaler, at I også har.',
+      loading: 'Henter forrådet …',
+      water: 'Drikkevand',
+      waterOf: (have, need) => `${have} af ${need}`,
+      waterHave: (have) => `${have} på lager`,
+      waterTarget: (days, perPerson) => `Anbefalet til ${days} døgn: ${perPerson} pr. person pr. døgn.`,
+      waterPetsNote: 'Husk også vand til dyr. Skriv selv, hvor meget de drikker, under husstanden.',
+      waterNone: 'Ingen vand på lager endnu.',
+      lastChecked: (date) => `Sidst tjekket ${date}`,
+      neverChecked: 'Ikke tjekket endnu',
+      checkAgain: (date) => `Tjek igen omkring ${date}`,
+      checkDue: (date) => `Tid til at tjekke vandet (siden ${date})`,
+      checkedToday: 'Tjekket i dag',
+      checkSource: 'Tjek forrådet hvert halve år: se datoerne, og skift det ud, der skal skiftes.',
+      addWater: 'Tilføj vand',
+      household: 'Husstand',
+      householdSummary: (people, days, petLitres) => `${people === 1 ? '1 person' : `${people} personer`}${petLitres ? `, dyr ${petLitres} pr. døgn` : ''} · ${days} døgn`,
+      editHousehold: 'Ret husstand',
+      people: 'Personer',
+      petLitres: 'Vand til dyr pr. døgn',
+      petLitresHelp: 'Kilderne siger ikke, hvor meget dyr skal have. Skriv det, dine dyr drikker på et døgn.',
+      targetDays: 'Forråd til',
+      days: (n) => `${n} døgn`,
+      targetHelp: 'Myndighederne anbefaler mindst 3 døgn.',
+      done: 'Færdig',
+      expiringTitle: 'Holdbarhed',
+      expired: (date) => `Udløbet ${date}`,
+      expires: (date) => `Udløber ${date}`,
+      categories: { water: 'Vand', food: 'Mad', medicine: 'Medicin og hygiejne', other: 'Lys, varme og andet' },
+      categoryEmpty: 'Intet her endnu.',
+      consider: 'Overvej også',
+      showAll: (n) => `Vis alle ${n}`,
+      showFewer: 'Vis færre',
+      forHousehold: (amount) => `ca. ${amount} til jer`,
+      readStockList: (title) => `Se listen: ${title}`,
+      add: 'Tilføj',
+      addIn: (category) => `Tilføj til ${category.toLowerCase()}`,
+      editTitle: 'Ret',
+      addTitle: 'Tilføj til forrådet',
+      name: 'Hvad er det?',
+      namePlaceholder: 'Fx makrel i tomat',
+      suggestionsLabel: 'Forslag',
+      fromStockList: 'Fra listen',
+      usedBefore: 'Brugt før',
+      category: 'Kategori',
+      count: 'Antal',
+      litresEach: (unit) => `Hver rummer (${unit})`,
+      expiry: 'Holdbar til',
+      expiryHelp: 'Valgfrit. Se datoen på pakken.',
+      clearExpiry: 'Ingen dato',
+      save: 'Gem',
+      cancel: 'Annuller',
+      remove: 'Slet',
+      removeConfirm: (name) => `Vil du slette ${name}?`,
+      countLabel: (n) => `${n} stk.`,
+      edit: (name) => `Ret ${name}`,
+      countsAs: (name) => `Tæller som: ${name}`,
+      unlink: 'Tæller ikke med på listen',
+      notFound: 'Den ting findes ikke længere i forrådet.',
+      nameMissing: 'Skriv, hvad det er.',
+      scan: 'Scan stregkode',
+      scanTitle: 'Scan stregkoden',
+      scanHelp: 'Hold stregkoden inden for rammen.',
+      scanStarting: 'Starter kameraet …',
+      scanDenied: 'Appen fik ikke lov til at bruge kameraet. Du kan give lov i telefonens indstillinger – eller skrive navnet i stedet.',
+      scanUnavailable: 'Kameraet kan ikke bruges her. Skriv navnet i stedet.',
+      lookingUp: 'Slår varen op …',
+      lookupNotFound: 'Varen blev ikke fundet. Skriv navnet – så husker appen stregkoden næste gang.',
+      lookupOffline: 'Varen kan ikke slås op uden internet. Skriv navnet – så husker appen stregkoden næste gang.',
+      productFrom: (source) => `Varens navn er fra ${source}.`,
+      scanPrivacy: 'Med internet sender appen kun stregkoden til Open Food Facts for at finde varens navn.',
+      backup: 'Kopi af forrådet',
+      backupBody: 'Det, du gemmer i appen, ligger kun på telefonen. Sletter du appen, forsvinder det. Gem en kopi i Filer, så du kan hente det igen.',
+      saveCopy: 'Gem en kopi',
+      restoreCopy: 'Hent fra kopi',
+      restoreConfirm: (items) => `Kopien har ${items === 1 ? '1 ting' : `${items} ting`} i forrådet. Vil du erstatte det, der er i appen nu?`,
+      restoreDone: 'Forrådet er hentet fra kopien.',
+      restoreFailed: 'Filen kunne ikke læses. Vælg en kopi, der er gemt fra stead.',
+    },
     settingsTitle: 'Indstillinger',
     settings: {
       library: 'På telefonen',
@@ -412,13 +583,16 @@ export const strings: Record<Lang, Strings> = {
       dark: 'Mørk',
       textSize: 'Tekststørrelse',
       textSizeBody: 'Teksten følger telefonens tekststørrelse. Du ændrer den i Indstillinger > Skærm og lysstyrke > Tekststørrelse.',
+      waterUnit: 'Vand i',
+      litres: 'Liter',
+      gallons: 'Gallon (US)',
       sourcesIntro: 'Alt indhold kommer fra disse kilder. Hver guide viser sine egne kilder nederst.',
       about: 'Om stead',
       aboutBody: [
         'stead samler råd fra myndigheder og andre pålidelige kilder, så du har dem – også uden internet. Vi skriver ikke selv rådene.',
         'Teksterne er skrevet om til et enkelt sprog. Med "Vis original" kan du altid se kildens egne ord.',
         'Står der "Prøveversion" på en guide, er den endnu ikke gennemlæst mod kilden.',
-        'Alt, hvad du gemmer og vælger, bliver på din telefon. Appen har ingen konto og sender ingen data.',
+        'Alt, hvad du gemmer og vælger, bliver på din telefon. Appen har ingen konto og sender ingen data – bortset fra stregkoden, når du scanner en vare med internet. Den går til Open Food Facts, så appen kan finde varens navn.',
       ],
     },
     showOriginal: 'Vis original',
@@ -603,7 +777,8 @@ export const strings: Record<Lang, Strings> = {
     offlineReadyStatus: 'Ready without internet',
     preparingOffline: 'Getting ready for use without internet …',
     navLabel: 'Main menu',
-    tabs: { home: 'Home', map: 'Map', tools: 'Tools', settings: 'Settings' },
+    tabs: { home: 'Home', map: 'Map', forraad: 'Supplies', tools: 'Tools' },
+    settingsOpen: 'Settings',
     mapTitle: 'Map',
     mapLabel: 'Map of Denmark',
     mapLoading: 'Opening the map …',
@@ -699,6 +874,89 @@ export const strings: Record<Lang, Strings> = {
       turnLeft: (deg) => `Turn ${deg}° left`,
       howTo: 'Hold the phone flat in front of you with the top pointing ahead. Turn until the direction is right and tap Hold this course. The app then shows when you drift off course.',
     },
+    forraad: {
+      title: 'Supplies',
+      subtitle: 'What you have stored at home – and what is missing.',
+      emptyTitle: 'Your supplies are empty',
+      emptyBody: 'Add what you have stored. The app keeps track of the dates and shows what the authorities recommend that you also have.',
+      loading: 'Loading your supplies …',
+      water: 'Drinking water',
+      waterOf: (have, need) => `${have} of ${need}`,
+      waterHave: (have) => `${have} stored`,
+      waterTarget: (days, perPerson) => `Recommended for ${days} days: ${perPerson} per person per day.`,
+      waterPetsNote: 'Remember water for animals too. Enter how much they drink under household.',
+      waterNone: 'No water stored yet.',
+      lastChecked: (date) => `Last checked ${date}`,
+      neverChecked: 'Not checked yet',
+      checkAgain: (date) => `Check again around ${date}`,
+      checkDue: (date) => `Time to check the water (since ${date})`,
+      checkedToday: 'Checked today',
+      checkSource: 'Check your supplies every six months: look at the dates and replace what needs replacing.',
+      addWater: 'Add water',
+      household: 'Household',
+      householdSummary: (people, days, petLitres) => `${people === 1 ? '1 person' : `${people} people`}${petLitres ? `, animals ${petLitres} a day` : ''} · ${days} days`,
+      editHousehold: 'Edit household',
+      people: 'People',
+      petLitres: 'Water for animals per day',
+      petLitresHelp: 'The sources do not say how much animals need. Enter what your animals drink in a day.',
+      targetDays: 'Supplies for',
+      days: (n) => `${n} days`,
+      targetHelp: 'The authorities recommend at least 3 days.',
+      done: 'Done',
+      expiringTitle: 'Dates',
+      expired: (date) => `Expired ${date}`,
+      expires: (date) => `Expires ${date}`,
+      categories: { water: 'Water', food: 'Food', medicine: 'Medicine and hygiene', other: 'Light, heat and other' },
+      categoryEmpty: 'Nothing here yet.',
+      consider: 'Also consider',
+      showAll: (n) => `Show all ${n}`,
+      showFewer: 'Show fewer',
+      forHousehold: (amount) => `about ${amount} for your household`,
+      readStockList: (title) => `See the list: ${title}`,
+      add: 'Add',
+      addIn: (category) => `Add to ${category.toLowerCase()}`,
+      editTitle: 'Edit',
+      addTitle: 'Add to your supplies',
+      name: 'What is it?',
+      namePlaceholder: 'E.g. canned mackerel',
+      suggestionsLabel: 'Suggestions',
+      fromStockList: 'From the list',
+      usedBefore: 'Used before',
+      category: 'Category',
+      count: 'Number',
+      litresEach: (unit) => `Each holds (${unit})`,
+      expiry: 'Best before',
+      expiryHelp: 'Optional. See the date on the pack.',
+      clearExpiry: 'No date',
+      save: 'Save',
+      cancel: 'Cancel',
+      remove: 'Delete',
+      removeConfirm: (name) => `Delete ${name}?`,
+      countLabel: (n) => `${n}×`,
+      edit: (name) => `Edit ${name}`,
+      countsAs: (name) => `Counts as: ${name}`,
+      unlink: 'Does not count on the list',
+      notFound: 'That item is no longer in your supplies.',
+      nameMissing: 'Enter what it is.',
+      scan: 'Scan barcode',
+      scanTitle: 'Scan the barcode',
+      scanHelp: 'Hold the barcode inside the frame.',
+      scanStarting: 'Starting the camera …',
+      scanDenied: 'The app was not allowed to use the camera. You can allow it in the phone settings – or type the name instead.',
+      scanUnavailable: 'The camera cannot be used here. Type the name instead.',
+      lookingUp: 'Looking up the product …',
+      lookupNotFound: 'The product was not found. Type the name – the app remembers the barcode next time.',
+      lookupOffline: 'The product cannot be looked up without internet. Type the name – the app remembers the barcode next time.',
+      productFrom: (source) => `Product name from ${source}.`,
+      scanPrivacy: 'With internet, the app sends only the barcode to Open Food Facts to find the product name.',
+      backup: 'Copy of your supplies',
+      backupBody: 'What you save in the app is only on this phone. If you delete the app, it is gone. Save a copy in Files so you can get it back.',
+      saveCopy: 'Save a copy',
+      restoreCopy: 'Restore from a copy',
+      restoreConfirm: (items) => `The copy has ${items === 1 ? '1 item' : `${items} items`} in your supplies. Replace what is in the app now?`,
+      restoreDone: 'Your supplies were restored from the copy.',
+      restoreFailed: 'The file could not be read. Choose a copy saved from stead.',
+    },
     settingsTitle: 'Settings',
     settings: {
       library: 'On this phone',
@@ -719,13 +977,16 @@ export const strings: Record<Lang, Strings> = {
       dark: 'Dark',
       textSize: 'Text size',
       textSizeBody: "Text follows your phone's text size. Change it in Settings > Display & Brightness > Text Size.",
+      waterUnit: 'Water in',
+      litres: 'Litres',
+      gallons: 'Gallons (US)',
       sourcesIntro: 'All content comes from these sources. Each guide lists its own sources at the bottom.',
       about: 'About stead',
       aboutBody: [
         'stead collects advice from authorities and other trusted sources, so you have it – even without internet. We do not write the advice ourselves.',
         "The texts are rewritten in plain Danish. With \"Show original\" you can always see the source's own words.",
         'A guide marked "Preview version" has not yet been checked against its source.',
-        'Everything you save and choose stays on your phone. The app has no account and sends no data.',
+        'Everything you save and choose stays on your phone. The app has no account and sends no data – except the barcode, when you scan a product with internet. It goes to Open Food Facts so the app can find the product name.',
       ],
     },
     showOriginal: 'Show original',

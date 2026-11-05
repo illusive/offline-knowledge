@@ -23,11 +23,32 @@
       "items": [
         {
           "id": "vand-3-liter",
-          "text": "3 liter vand pr. person pr. døgn"
+          "text": "3 liter vand pr. person pr. døgn",
+          "name": "Drikkevand",
+          "amount": {
+            "value": 3,
+            "unit": "L",
+            "per": "personDay"
+          },
+          "keywords": [
+            "vand",
+            "flaskevand",
+            "kildevand",
+            "dunk",
+            "vanddunk",
+            "drikkevand"
+          ]
         },
         {
           "id": "vand-husdyr",
-          "text": "Vand til dyr, hvis I har dyr"
+          "text": "Vand til dyr, hvis I har dyr",
+          "name": "Vand til dyr",
+          "keywords": [
+            "dyr",
+            "hund",
+            "kat",
+            "husdyr"
+          ]
         }
       ],
       "page": 10,

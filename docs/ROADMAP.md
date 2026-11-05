@@ -15,7 +15,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] Food storage import (D-014, D-017): the 101 fresh fruits and vegetables from FoodKeeper (version 128, 2018-09-06) are imported into `content/storage/foodkeeper-produce.json`; tested and cross-checked against the source.
 - [x] Danish names checked: all 101 approved by the project owner (2026-10-24).
 - [x] Guide file format: JSON per guide in `content/guides/<category>/`, typed by `content/schema/guide.ts` and validated by `content/lib/guides.ts` (pipeline D-016, guide model D-037).
-- [x] Pack build (D-018): `npm run build:pack` validates, then writes `pack.sqlite` + `manifest.json`. **2026-11-05:** schema 12, 101 storage items, 21 food guides, 43 guides, 75 sources; about 2.6 MB.
+- [x] Pack build (D-018): `npm run build:pack` validates, then writes `pack.sqlite` + `manifest.json`. **2026-11-05:** schema 13 (stock-list amounts and keywords, D-046), 101 storage items, 21 food guides, 43 guides, 75 sources; about 2.6 MB.
 - [x] Guides in the pack: first aid, growing and "Når det sker", with blocks, checks, sources per block and search.
 - [x] ~~Minimal Expo app (D-019)~~: built and tested in the Simulator, then replaced by the PWA (D-021). Code in Git history (`f301841`).
 - [x] iOS PWA storage test (`pwa-spike/`): persistent storage, 4 GB, airplane mode verified on a real iPhone; reboot and multi-day use since confirmed by the owner's regular use.
@@ -41,6 +41,15 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] Bookmarks (D-026): "Gem" on guides, crops and foods; saved list by category, opened at the current category; green asterisk for offline ready (2026-10-27).
 - [x] Settings (D-044, 2026-11-05): "På telefonen" card (content version and date, counts, size, downloaded maps with a link to Kort, space used), Sprog and Udseende (Følg telefonen / fixed; kept on the device; the theme is set before the first paint), text size follows the phone (Dynamic Type, explained), all pack sources by publisher with links, About. Offline e2e test.
 - [x] Tools: compass with "Hold kursen" (D-045, 2026-11-05): turning dial, direction as text (magnetic north), course kept on the device with "Drej N° til højre/venstre"; states for permission (asked after a tap, remembered), refused, uncertain (iOS accuracy) and no compass. Offline e2e tests with a simulated sensor. **Still to check on the iPhone:** real readings, accuracy messages, landscape. The planned supply checklist is covered by the "Hjemmeberedskab" stock lists (D-040, D-043).
+- [x] Forråd (D-046, D-047, 2026-11-05): a tab replacing Settings, which moved to a gear at the top right. It holds:
+  - Water against 3 litres per person per day for 3/7/14 days, with "Tjekket i dag" and check again in six months.
+  - The household, including water for animals in the user's own figure.
+  - Expiry dates, the four categories with "Overvej også" from the stock lists, scaled.
+  - Adding by typing with suggestions and automatic links to the stock-list lines.
+  - Barcode scanning with the bundled reader, plus an optional Open Food Facts lookup; the barcode is remembered offline.
+  - Litres or US gallons, and a backup file.
+
+  Tested by offline e2e tests, including a real EAN-13 decoded from a canvas "camera". **Still to check on the iPhone:** scanning with the real camera (permission prompt, focus, speed), saving the copy to Filer and restoring it, and the date picker.
 - [x] Guide reader (D-037): `#/first-aid` list and `#/guide/<id>` with steps, step photos, warnings, the 112 card, source with pages and "Sammenholdt med" line.
 
 Acceptance: a fresh install with no network shows the pilot guides, search finds them (in both languages if a Danish guide is cleared), and each guide shows its sources and licenses.

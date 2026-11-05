@@ -85,7 +85,7 @@ test('English interface for an English-language browser', async () => {
   try {
     await page.goto('./');
     await expect(page.getByRole('heading', { level: 1, name: 'What do you need?' })).toBeVisible();
-    await expect(page.getByRole('navigation', { name: 'Main menu' }).getByRole('link', { name: 'Settings' })).toBeVisible();
+    await expect(page.getByRole('navigation', { name: 'Main menu' }).getByRole('link', { name: 'Supplies' })).toBeVisible();
     await page.getByRole('searchbox', { name: 'Search the content' }).fill('kal');
     await expect(page.getByRole('link', { name: /^Kale/ }).first()).toBeVisible();
   } finally {

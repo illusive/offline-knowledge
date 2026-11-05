@@ -50,19 +50,26 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 9. **Mixed-language browsing.** Are all guides shown regardless of language, or filtered by language with an option to show all? Working assumption: show all, labeled by language.
 10. **Bookmarks.** Resolved: in v1, on the device only (D-026). Personal notes remain out of scope.
 
+## Forråd (D-046, D-047)
+
+31. **Water for animals.** No source gives an amount, so the user enters their own figure per day. Look for an authority figure (e.g. Dyrenes Beskyttelse or a vet source) before suggesting one.
+32. **English names of the stock-list lines.** The lines and their short names are Danish only, like the guides. The English interface shows them in Danish.
+33. **A downloadable product list.** Barcodes are looked up online only (D-047). An offline list of Danish products from Open Food Facts is possible later if lookups without a connection matter.
+34. **Reminders.** The app cannot notify (no push without a server). Due checks and expiry show only when Forråd is opened; the Home screen could show a short note later.
+
 ## Design (D-025)
 
 27. **Unchecked translations (D-031).** The Danish storage notes are unchecked AI translations; check all 35 before sharing the app with anyone.
 
 24. **Typeface.** Resolved: Inter, bundled (D-029).
 25. **Tab bar at large text sizes.** Resolved: fixed pixel size and capped labels, as iOS does (`web/src/components/TabBar.tsx`). Check on a real iPhone with VoiceOver.
-26. **Brand mark.** The brief shows "stead" with an asterisk mark; the placeholder app icon (open book) should be replaced to match.
+26. **Brand mark.** Resolved: the icons are the asterisk from Home, dark on the accent colour (`web/scripts/make-icons.ts`).
 
 ## Technical
 
 19. **Old pack copies.** Each new pack version is imported as a new database file in OPFS; old files stay until a cleanup step is added (needed before M4 at the latest).
 21. **Linting.** No linter yet in `web/`; add ESLint (React and TypeScript rules) or decide against it.
-22. **App icon.** `web/public/icon-*.png` are generated placeholders (open book on the accent colour). Needs a designed icon.
+22. **App icon.** Resolved: generated from the Home asterisk (see 26). A designer's version can replace it later.
 23. **Unused SQLite worker files.** The build also emits SQLite's own worker helpers (`sqlite3-worker1`, `sqlite3-opfs-async-proxy`), about 40 KB, which the app does not use but caches. Harmless; remove if a clean way appears.
 
 11. **Danish search quality.** Storage names use a trigram index (D-018), which handles compound words. Still open: guide text search (trigram or `unicode61`), and inflection (e.g. 'gulerod' does not match 'gulerødder').

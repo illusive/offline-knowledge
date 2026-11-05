@@ -50,6 +50,7 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
 - **Water and the drain:** in "Der er intet vand", the advice to pour rainwater into the toilet (Bolius) and the advice not to pour water into the drain when the power is out (Bolius) sit next to each other. Both are now shown, joined by "Men:". Better: one rule with its condition ("Kun hvis strømmen virker …").
 - **Order in Der er intet vand:** the guide could open with three short steps ("1. Tap vand fra rørene 2. Spar på vandet 3. Kog vand, du ikke ved er rent"), with the details below.
 - **The stock list "Vand"** (planned) should reuse "3 liter pr. person pr. døgn" exactly as written here.
+- **Short names of the stock-list lines (Forråd, D-046):** our own labels, e.g. "Dåser med tomater eller grøntsager", "Bleer, bind og tamponer", "Betalingskort og kontanter". Check that they read naturally in the "Overvej også" lists. The keywords that match typed names, e.g. "makrel" for canned fish, are also ours; check for wrong matches.
 
 ### Growing
 - **Dangling first words:** some blocks still begin with "Derfor", "Men" or "Dels" because the sentence before was not taken in (e.g. Spinat "Spinat er derfor …", Bønner "I Danmark når …"). Read each crop once more, and take in the missing sentence or drop the block.
@@ -67,6 +68,11 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
 - **The "Vis original" button** now has two meanings: the source's Danish words (rewrites) and the English original (translations). Consider "Vis kildens ord" for clarity.
 - **Search placeholders** in the English interface now say "Search in Danish, e.g. …", because the content is Danish. Consider a note on Home that the content is in Danish.
 - **"Konservering"** as a tab name may be unfamiliar. Consider "Tør, sylt og henkog".
+- **Forråd:**
+  - "Forråd" as the tab name, and "Supplies" in English.
+  - "Overvej også".
+  - "Tæller som: …" for an item that covers a stock-list line.
+  - "Tjek forrådet hvert halve år" (from the UK checklist's "every six months").
 
 ## 3. Doubts (run again)
 

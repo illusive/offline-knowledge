@@ -8,7 +8,8 @@ import type { Lang } from './storage.ts';
 // 3: produce_sections, produce_blocks, produce_ethylene, produce_relations (D-033).
 // 11: guide_blocks.original for translated blocks (D-041).
 // 12: guides.summary_original; Danish originals of rewritten blocks (D-042).
-export const PACK_SCHEMA_VERSION = 12;
+// 13: stock-list checklist items carry name, amount and keywords for Forråd (D-046).
+export const PACK_SCHEMA_VERSION = 13;
 
 export interface PackManifest {
   packId: string;                 // e.g. 'core'

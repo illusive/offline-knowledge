@@ -13,9 +13,12 @@ export type Route =
   | { name: 'map' }
   | { name: 'tools' }
   | { name: 'compass' }
+  | { name: 'forraad' }
+  | { name: 'forraadEdit'; id: string | null; category: string | null; recommendationId: string | null }
   | { name: 'settings' };
 
-export type Tab = 'home' | 'map' | 'tools' | 'settings';
+// Settings is not a tab (D-046): it opens from the gear at the top right.
+export type Tab = 'home' | 'map' | 'forraad' | 'tools';
 
 // Sections of the saved list (D-026), one per category with something to save.
 export const SAVED_SECTIONS = ['prepare', 'first-aid', 'growing', 'storage'] as const;
@@ -43,6 +46,12 @@ export function parseRoute(hash: string): Route {
   if (hash === '#/map') return { name: 'map' };
   if (hash === '#/tools') return { name: 'tools' };
   if (hash === '#/tools/compass') return { name: 'compass' };
+  if (hash === '#/forraad') return { name: 'forraad' };
+  // Forråd editor (D-046): a new item, optionally in a category or for a stock-list line, or an existing item.
+  const forraadNew = /^#\/forraad\/new(?:\/([a-z]+)(?:\/([a-z0-9-]+))?)?$/.exec(hash);
+  if (forraadNew) return { name: 'forraadEdit', id: null, category: forraadNew[1] ?? null, recommendationId: forraadNew[2] ?? null };
+  const forraadItem = /^#\/forraad\/item\/([^/]+)$/.exec(hash);
+  if (forraadItem?.[1]) return { name: 'forraadEdit', id: decodeURIComponent(forraadItem[1]), category: null, recommendationId: null };
   if (hash === '#/settings') return { name: 'settings' };
   return { name: 'home' };
 }
@@ -55,7 +64,11 @@ export const hrefs = {
   prepare: '#/prepare',
   guide: (id: string) => `#/guide/${encodeURIComponent(id)}`,
   saved: (section?: SavedSection) => (section ? `#/saved/${section}` : '#/saved'),
-  map:'#/map',
+  map: '#/map',
+  forraad: '#/forraad',
+  forraadNew: (category?: string, recommendationId?: string) =>
+    `#/forraad/new${category ? `/${category}${recommendationId ? `/${recommendationId}` : ''}` : ''}`,
+  forraadItem: (id: string) => `#/forraad/item/${encodeURIComponent(id)}`,
   tools: '#/tools',
   compass: '#/tools/compass',
   settings: '#/settings',
@@ -63,10 +76,13 @@ export const hrefs = {
     `#/food/${encodeURIComponent(id)}${tab === DEFAULT_FOOD_TAB ? '' : `/${tab}`}`,
 };
 
-// Which tab a route belongs to (content pages sit under Home).
-export function tabOf(route: Route): Tab {
+// Which tab a route belongs to (content pages sit under Home). Settings belongs to none: the tab
+// bar keeps showing the tab it was opened from.
+export function tabOf(route: Route): Tab | null {
+  if (route.name === 'settings') return null;
   if (route.name === 'compass') return 'tools';
-  return route.name === 'map' || route.name === 'tools' || route.name === 'settings' ? route.name : 'home';
+  if (route.name === 'forraadEdit') return 'forraad';
+  return route.name === 'map' || route.name === 'tools' || route.name === 'forraad' ? route.name : 'home';
 }
 
 // The pages visited in this session, so "back" can tell whether there is an in-app page to
@@ -98,14 +114,17 @@ export function goBack(fallback: string) {
 }
 
 export function useRoute(): Route {
-  const [route, setRoute] = useState(() => parseRoute(location.hash));
+  const [start] = useState(() => location.hash);
+  const [route, setRoute] = useState(() => parseRoute(start));
   useEffect(() => {
     const update = () => {
       track(location.hash || hrefs.home);
       setRoute(parseRoute(location.hash));
     };
     window.addEventListener('hashchange', update);
+    // The address may have changed while the app was starting, before this listener existed.
+    if (location.hash !== start) update();
     return () => window.removeEventListener('hashchange', update);
-  }, []);
+  }, [start]);
   return route;
 }

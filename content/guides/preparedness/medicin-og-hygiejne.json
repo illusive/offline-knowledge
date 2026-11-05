@@ -32,15 +32,36 @@
       "items": [
         {
           "id": "medicin",
-          "text": "Den medicin, I har brug for"
+          "text": "Den medicin, I har brug for",
+          "name": "Medicin",
+          "keywords": [
+            "medicin",
+            "piller",
+            "tabletter",
+            "recept"
+          ]
         },
         {
           "id": "foerstehjaelpskasse",
-          "text": "Førstehjælpskasse"
+          "text": "Førstehjælpskasse",
+          "name": "Førstehjælpskasse",
+          "keywords": [
+            "førstehjælp",
+            "plaster",
+            "forbinding",
+            "bandage",
+            "kompres"
+          ]
         },
         {
           "id": "jodtabletter",
-          "text": "Evt. jodtabletter til personer under 40 år og til gravide og ammende"
+          "text": "Evt. jodtabletter til personer under 40 år og til gravide og ammende",
+          "name": "Jodtabletter",
+          "keywords": [
+            "jod",
+            "jodtabletter",
+            "kaliumjodid"
+          ]
         }
       ],
       "page": 10,
@@ -76,15 +97,36 @@
       "items": [
         {
           "id": "toiletpapir",
-          "text": "Toiletpapir"
+          "text": "Toiletpapir",
+          "name": "Toiletpapir",
+          "keywords": [
+            "toiletpapir",
+            "toiletruller",
+            "wc-papir"
+          ]
         },
         {
           "id": "haanddesinfektion",
-          "text": "Håndsprit"
+          "text": "Håndsprit",
+          "name": "Håndsprit",
+          "keywords": [
+            "håndsprit",
+            "sprit",
+            "desinfektion",
+            "hånddesinfektion"
+          ]
         },
         {
           "id": "bleer-bind",
-          "text": "Bleer, bind, tamponer eller andet, I har brug for"
+          "text": "Bleer, bind, tamponer eller andet, I har brug for",
+          "name": "Bleer, bind og tamponer",
+          "keywords": [
+            "bleer",
+            "bind",
+            "tamponer",
+            "menstruationskop",
+            "trusseindlæg"
+          ]
         }
       ],
       "page": 10,

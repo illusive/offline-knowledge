@@ -5,15 +5,17 @@ import { useEffect, useState, useSyncExternalStore } from 'react';
 
 export type LangPref = 'system' | 'da' | 'en';
 export type ThemePref = 'system' | 'light' | 'dark';
+export type WaterUnitPref = 'litres' | 'gallons'; // Forråd (D-046)
 
 export interface Preferences {
   lang: LangPref;
   theme: ThemePref;
+  waterUnit: WaterUnitPref;
 }
 
 const KEY = 'stead.preferences.v1';
 const CHANGED = 'stead-preferences-changed';
-const DEFAULTS: Preferences = { lang: 'system', theme: 'system' };
+const DEFAULTS: Preferences = { lang: 'system', theme: 'system', waterUnit: 'litres' };
 
 function read(): Preferences {
   try {
@@ -22,6 +24,7 @@ function read(): Preferences {
     return {
       lang: p.lang === 'da' || p.lang === 'en' ? p.lang : DEFAULTS.lang,
       theme: p.theme === 'light' || p.theme === 'dark' ? p.theme : DEFAULTS.theme,
+      waterUnit: p.waterUnit === 'gallons' ? 'gallons' : DEFAULTS.waterUnit,
     };
   } catch {
     return DEFAULTS;

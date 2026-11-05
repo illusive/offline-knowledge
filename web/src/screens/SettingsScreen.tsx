@@ -3,7 +3,7 @@
 
 import { ArrowUpRight, Check } from 'lucide-react';
 import { useEffect, useState, type ReactNode } from 'react';
-import { Card, MessageState, Page } from '../components/ui';
+import { BackButton, Card, Choice, MessageState, Page } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { PackInfo } from '../db/protocol';
 import type { SourceRow } from '../db/queries';
@@ -11,8 +11,8 @@ import type { Lang, Strings } from '../i18n/strings';
 import { mapClient } from '../map/client';
 import { formatBytes } from '../map/format';
 import type { AreaInfo } from '../map/protocol';
-import { hrefs } from '../router';
-import { setPreference, usePreferences, type LangPref, type ThemePref } from '../settings/preferences';
+import { goBack, hrefs } from '../router';
+import { setPreference, usePreferences, type LangPref, type ThemePref, type WaterUnitPref } from '../settings/preferences';
 
 type Source = SourceRow & { short_name: string };
 
@@ -26,7 +26,8 @@ export function SettingsScreen({ db, pack, lang, s, offlineReady }: { db: DbClie
 
   return (
     <Page>
-      <h1 className="mt-2 mb-4 px-1 text-3xl font-normal tracking-tight">{s.settingsTitle}</h1>
+      <BackButton label={s.back} onClick={() => goBack(hrefs.home)} />
+      <h1 className="mt-4 mb-4 px-1 text-3xl font-normal tracking-tight">{s.settingsTitle}</h1>
       <div className="flex flex-col gap-4">
         <Library pack={pack} lang={lang} s={s} offlineReady={offlineReady} />
 
@@ -54,6 +55,16 @@ export function SettingsScreen({ db, pack, lang, s, offlineReady }: { db: DbClie
               { value: 'system', label: t.followPhone },
               { value: 'light', label: t.light },
               { value: 'dark', label: t.dark },
+            ]}
+          />
+          <Choice<WaterUnitPref>
+            name="waterUnit"
+            legend={t.waterUnit}
+            value={prefs.waterUnit}
+            onChange={(v) => setPreference('waterUnit', v)}
+            options={[
+              { value: 'litres', label: t.litres },
+              { value: 'gallons', label: t.gallons },
             ]}
           />
           <div>
@@ -156,29 +167,6 @@ function Row({ label, value }: { label: string; value: ReactNode }) {
 }
 
 // One choice as a radio group shaped like the sub-page pills (SubNav): wraps at large text sizes.
-function Choice<T extends string>(props: { name: string; legend: string; value: T; onChange: (value: T) => void; options: { value: T; label: string; lang?: string }[] }) {
-  const { name, legend, value, onChange, options } = props;
-  return (
-    <fieldset>
-      <legend className="mb-2 font-semibold">{legend}</legend>
-      <div className="flex flex-wrap gap-[2px] rounded-[24px] bg-background p-[4px]">
-        {options.map((o) => (
-          <label
-            key={o.value}
-            lang={o.lang}
-            className={`flex min-h-11 flex-auto cursor-pointer items-center justify-center rounded-full px-[12px] text-sm font-medium has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-text ${
-              o.value === value ? 'bg-accent text-on-accent' : 'text-muted'
-            }`}
-          >
-            <input type="radio" name={name} value={o.value} checked={o.value === value} onChange={() => onChange(o.value)} className="sr-only" />
-            {o.label}
-          </label>
-        ))}
-      </div>
-    </fieldset>
-  );
-}
-
 function Sources({ db, s }: { db: DbClient; s: Strings }) {
   const t = s.settings;
   const [sources, setSources] = useState<Source[] | null>(null);

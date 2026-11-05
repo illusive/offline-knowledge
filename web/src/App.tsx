@@ -10,7 +10,9 @@ import { UpdateBanner } from './pwa/UpdateBanner';
 import { useOfflineReady } from './pwa/useOfflineReady';
 import { useApplyTheme } from './settings/preferences';
 import { usePrecacheProgress } from './pwa/usePrecacheProgress';
-import { tabOf, useRoute } from './router';
+import { tabOf, useRoute, type Tab } from './router';
+import { ForraadScreen } from './forraad/ForraadScreen';
+import { ItemEditor } from './forraad/ItemEditor';
 import { FirstAidScreen, useGuides } from './screens/FirstAidScreen';
 import { FoodScreen } from './screens/FoodScreen';
 import { GrowingScreen } from './screens/GrowingScreen';
@@ -41,6 +43,10 @@ export function App() {
   const [growingQuery, setGrowingQuery] = useState('');
   const [prepareQuery, setPrepareQuery] = useState('');
   const offlineReady = useOfflineReady(status === 'ready');
+  // Settings is not a tab (D-046): the tab bar keeps the tab it was opened from.
+  const lastTab = useRef<Tab>('home');
+  const activeTab = tabOf(route) ?? lastTab.current;
+  lastTab.current = activeTab;
   const precache = usePrecacheProgress();
 
   useEffect(() => {
@@ -105,6 +111,8 @@ export function App() {
   else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;
   else if (route.name === 'tools') content = <ToolsScreen s={s} />;
   else if (route.name === 'compass') content = <CompassScreen lang={lang} s={s} />;
+  else if (route.name === 'forraad') content = <ForraadScreen db={db} lang={lang} s={s} />;
+  else if (route.name === 'forraadEdit') content = <ItemEditor key={location.hash} db={db} route={route} lang={lang} s={s} />;
   else if (route.name === 'settings') content = <SettingsScreen db={db} pack={pack} lang={lang} s={s} offlineReady={offlineReady} />;
   else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guides={guides} crops={crops} prepare={prepare} query={homeQuery} onQueryChange={setHomeQuery} />;
 
@@ -112,7 +120,7 @@ export function App() {
     <>
       {content}
       <UpdateBanner s={s} />
-      <TabBar active={tabOf(route)} s={s} />
+      <TabBar active={activeTab} s={s} />
     </>
   );
 }

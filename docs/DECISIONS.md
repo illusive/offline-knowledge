@@ -355,6 +355,31 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Alternatives:** a plain compass (owner chose the course too); pointing toward the home point (needs GPS; later); a heading cone on the map instead (left for the map).
 - **Supersedes:** the supply checklist in Tools (PROJECT.md, D-025), covered by the "Hjemmeberedskab" stock lists (D-040, D-043).
 
+## D-046 — Forråd: the household's own stores; Settings moves to a gear
+
+- **Date:** 2026-11-05
+- **Decision (owner):** a tracker for what the household has stored, as a tab of its own ("Forråd"; English "Supplies"), replacing the Settings tab. Settings opens from a gear at the top right of Hjem, Forråd and Værktøjer (not on the map, which has its own controls), and the tab bar keeps the tab it came from.
+- **What it shows:** drinking water against the stock list's 3 litres per person per day for the chosen number of days, when the water was last checked and when to check again (six months, from the UK *Be ready* checklist: "Set a reminder every six months"). It also shows the household (people, water for animals, 3/7/14 days), what expires within 30 days or has expired, and the four categories with their items and "Overvej også": the stock-list lines not yet covered, with amounts scaled to the household.
+- **Recommendations come from the stock lists (D-040):** each checklist line in the four "Hjemmeberedskab" guides may carry a short `name`, a structured `amount` (one person per day or for three days), and `keywords` for matching (pack schema 13). The build checks that the amount is the number in the line's own text. No new pack table: the app reads the four guides and matches in memory (about 30 lines). There is no amount for animals in the sources, so the user enters their own; the app does not invent one.
+- **Adding:** free text, with suggestions from the stock lists and from names used before. A typed name that matches a line ("Makrel i tomat" matches the canned fish line) counts as that line unless the user unlinks it. The expiry date is optional. Water containers have a count and litres each. Litres or US gallons is a setting (litres by default).
+- **Data:** on the device only (localStorage `stead.forraad.v1`, one versioned object, validated on every read so damaged data never breaks the screen).
+- **Backup:** "Gem en kopi" writes every `stead.*` key to a JSON file through the share sheet (Filer on iPhone) or a download. "Hent fra kopi" checks the file, says how many items it holds and asks before replacing. This is because deleting the home screen app deletes its data.
+- **Alternatives:** a separate pack table with FTS (unnecessary for ~30 lines); a fixed 3-day target (owner chose adjustable); IndexedDB (localStorage is enough for hundreds of items); sync (D-010).
+
+## D-047 — Barcode scanning with an optional online lookup
+
+- **Date:** 2026-11-05
+- **Decision (owner):** Forråd can scan a product's barcode (EAN-13/8, UPC-A/E) to fill in the name.
+  - The reader is `barcode-detector` 3.2.3 (a ponyfill on `zxing-wasm` 3.1.6, both MIT), because Safari has no native `BarcodeDetector`.
+  - Its `.wasm` file is bundled, precached and loaded from the app. Its default CDN location is overridden, so scanning works offline.
+  - The scanner code is loaded only when the user taps "Scan".
+  - The camera is asked for only then and stops as soon as a code is read.
+- **The first optional online request (exception to "no runtime network" in AGENTS.md §4):** when there is a connection, the barcode, and nothing else, is sent to Open Food Facts (`world.openfoodfacts.org/api/v2/product/<code>.json`, no cookies, no referrer, 6-second timeout) to get the product's name, brand and size.
+  - Offline, on a timeout, or for an unknown product, the user types the name, and the barcode is remembered on the device with it. A barcode seen once is filled in from the device from then on, without a request.
+  - The app works fully without the lookup. Settings > Om stead and the editor say what is sent.
+- **Licence:** Open Food Facts data is ODbL. The editor credits it when a name comes from there. Reuse terms are deferred while the app is private (D-028).
+- **Alternatives:** a downloadable Danish product list (offline, but a few MB, patchy and ageing; possible later); no barcode (owner wanted it).
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

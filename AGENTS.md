@@ -67,7 +67,7 @@ Do not create additional documents unless they solve a clear organizational prob
 
 When decisions change, update the relevant documentation and remove contradictory instructions.
 
-> **Current state (2026-11-05):** M1 in progress. The app is a PWA in `web/` (React + Vite, D-021–D-023), live on GitHub Pages and tested regularly by the owner on an iPhone. All texts are in plain language with the source words kept (D-042); the rewrites await a manual review (`docs/LANGUAGE_REVIEW.md`). Content: 11 first aid guides, 19 crops, 21 of 101 food guides, 13 "Når det sker" guides in three groups (D-043). M1 app features are built (Settings D-044, compass D-045); the compass still needs a check on the iPhone. See `docs/ROADMAP.md`.
+> **Current state (2026-11-05):** M1 in progress. The app is a PWA in `web/` (React + Vite, D-021–D-023), live on GitHub Pages and tested regularly by the owner on an iPhone. All texts are in plain language with the source words kept (D-042); the rewrites await a manual review (`docs/LANGUAGE_REVIEW.md`). Content: 11 first aid guides, 19 crops, 21 of 101 food guides, 13 "Når det sker" guides in three groups (D-043). M1 app features are built (Settings D-044, now behind a gear; compass D-045; Forråd tracker with barcode scanning D-046, D-047). The compass and the Forråd camera and backup still need a check on the iPhone. See `docs/ROADMAP.md`.
 
 ## 4. Engineering principles
 
@@ -78,6 +78,8 @@ All core functionality must operate using local resources.
 Never introduce mandatory runtime dependencies on external APIs, remote authentication, cloud databases, network-hosted fonts, external images, remote configuration or online search.
 
 Optional connectivity may support downloading or updating content, but its absence must never prevent users from accessing locally available functionality.
+
+The only optional runtime request so far is the Forråd barcode lookup (D-047): the barcode alone goes to Open Food Facts after the user scans, with a typed name as the offline path. Any further such request needs its own decision record.
 
 Avoid hidden internet dependencies in third-party libraries.
 

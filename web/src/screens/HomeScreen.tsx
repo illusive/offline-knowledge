@@ -7,7 +7,7 @@ import { EmergencyCard } from '../components/EmergencyCard';
 import { DownloadCard, OFFLINE_DISABLED } from '../components/OfflineStatus';
 import { SavedLink } from '../bookmarks/BookmarkButton';
 import { FoodList } from '../components/FoodList';
-import { Page, SearchField } from '../components/ui';
+import { Page, SearchField, SettingsButton } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { GuideRow, ItemRow } from '../db/queries';
 import { GuideList, useGuideSearch } from './FirstAidScreen';
@@ -48,7 +48,10 @@ export function HomeScreen(props: {
             {OFFLINE_DISABLED ? '' : offlineReady ? s.offlineReadyStatus : s.preparingOffline}
           </span>
         </p>
-        <SavedLink s={s} />
+        <div className="flex items-center gap-[8px]">
+          <SavedLink s={s} />
+          <SettingsButton label={s.settingsOpen} />
+        </div>
       </header>
 
       {offlineReady || OFFLINE_DISABLED ? null : <DownloadCard progress={precache} s={s} />}

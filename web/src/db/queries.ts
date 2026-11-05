@@ -4,7 +4,7 @@
 import { longestKeeping, type Location, type PeriodRow } from '../storage/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
 
-export const SUPPORTED_PACK_SCHEMA_VERSION = 12;
+export const SUPPORTED_PACK_SCHEMA_VERSION = 13;
 
 type Bind = (string | number | null)[];
 
@@ -122,12 +122,21 @@ export interface BlockOriginal {
   items?: string[];
 }
 
+// A stock-list line; name, amount and keywords are given for Forråd (D-046, pack schema 13).
+export interface ChecklistItem {
+  id: string;
+  text: string;
+  name?: string;
+  amount?: { value: number; unit: 'g' | 'L'; per: 'personDay' | 'person3Days' };
+  keywords?: string[];
+}
+
 export type GuideBlock = { original?: BlockOriginal } & (
   | { kind: 'heading' | 'text'; text: string; page: number }
   | { kind: 'section'; key: GrowingSection; page: number }
   | { kind: 'steps'; title: string | null; items: string[]; images: { after: number; imageId: string; alt: string; page: number }[]; page: number }
   | { kind: 'list'; title: string | null; items: string[]; page: number }
-  | { kind: 'checklist'; title: string | null; items: { id: string; text: string }[]; page: number }
+  | { kind: 'checklist'; title: string | null; items: ChecklistItem[]; page: number }
   | { kind: 'warning'; title: string | null; text: string | null; items: string[]; page: number }
   | { kind: 'image'; imageId: string; alt: string; caption: string | null; page: number }
 );
@@ -199,7 +208,7 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
         case 'list':
           return { kind: 'list', title: b.title, items, page: b.page };
         case 'checklist':
-          return { kind: 'checklist', title: b.title, items: b.items ? (JSON.parse(b.items) as { id: string; text: string }[]) : [], page: b.page };
+          return { kind: 'checklist', title: b.title, items: b.items ? (JSON.parse(b.items) as ChecklistItem[]) : [], page: b.page };
         case 'warning':
           return { kind: 'warning', title: b.title, text: b.text, items, page: b.page };
         case 'image':

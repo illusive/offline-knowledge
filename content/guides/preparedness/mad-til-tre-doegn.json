@@ -28,23 +28,100 @@
       "items": [
         {
           "id": "knaekbroed",
-          "text": "Knækbrød (ca. 500 g – omkring 2 pakker)"
+          "text": "Knækbrød (ca. 500 g – omkring 2 pakker)",
+          "name": "Knækbrød",
+          "amount": {
+            "value": 500,
+            "unit": "g",
+            "per": "person3Days"
+          },
+          "keywords": [
+            "knækbrød",
+            "sprødt brød",
+            "riskager",
+            "skorper"
+          ]
         },
         {
           "id": "konserves-koed-fisk",
-          "text": "Dåser med fisk eller kød, der kan spises som de er, fx makrel i tomat (ca. 300 g – omkring 3 dåser)"
+          "text": "Dåser med fisk eller kød, der kan spises som de er, fx makrel i tomat (ca. 300 g – omkring 3 dåser)",
+          "name": "Dåser med fisk eller kød",
+          "amount": {
+            "value": 300,
+            "unit": "g",
+            "per": "person3Days"
+          },
+          "keywords": [
+            "makrel",
+            "tun",
+            "sardiner",
+            "laks",
+            "sild",
+            "kødboller",
+            "skinke",
+            "corned beef",
+            "dåsemad",
+            "konserves"
+          ]
         },
         {
           "id": "konserves-baelgfrugter",
-          "text": "Dåser med bønner eller kikærter, der kan spises som de er (ca. 300 g – 1-2 dåser)"
+          "text": "Dåser med bønner eller kikærter, der kan spises som de er (ca. 300 g – 1-2 dåser)",
+          "name": "Dåser med bønner eller kikærter",
+          "amount": {
+            "value": 300,
+            "unit": "g",
+            "per": "person3Days"
+          },
+          "keywords": [
+            "bønner",
+            "kikærter",
+            "kidneybønner",
+            "hvide bønner",
+            "linser",
+            "baked beans",
+            "bælgfrugter"
+          ]
         },
         {
           "id": "konserves-groentsager",
-          "text": "Dåser med tomater eller andre grøntsager (ca. 1,5 kg – 3-4 dåser)"
+          "text": "Dåser med tomater eller andre grøntsager (ca. 1,5 kg – 3-4 dåser)",
+          "name": "Dåser med tomater eller grøntsager",
+          "amount": {
+            "value": 1500,
+            "unit": "g",
+            "per": "person3Days"
+          },
+          "keywords": [
+            "hakkede tomater",
+            "flåede tomater",
+            "tomater",
+            "majs",
+            "ærter",
+            "gulerødder",
+            "rødbeder",
+            "champignon",
+            "grøntsager"
+          ]
         },
         {
           "id": "noedder",
-          "text": "Nødder (ca. 100 g – en lille pose)"
+          "text": "Nødder (ca. 100 g – en lille pose)",
+          "name": "Nødder",
+          "amount": {
+            "value": 100,
+            "unit": "g",
+            "per": "person3Days"
+          },
+          "keywords": [
+            "mandler",
+            "cashewnødder",
+            "peanuts",
+            "jordnødder",
+            "hasselnødder",
+            "valnødder",
+            "studenterhavre"
+          ]
         }
       ],
       "page": 1,
@@ -64,15 +141,38 @@
       "items": [
         {
           "id": "kiks",
-          "text": "Kiks"
+          "text": "Kiks",
+          "name": "Kiks",
+          "keywords": [
+            "kiks",
+            "tvebakker",
+            "mariekiks",
+            "digestive"
+          ]
         },
         {
           "id": "toerret-frugt",
-          "text": "Tørret frugt"
+          "text": "Tørret frugt",
+          "name": "Tørret frugt",
+          "keywords": [
+            "rosiner",
+            "abrikoser",
+            "dadler",
+            "figner",
+            "svesker",
+            "tranebær"
+          ]
         },
         {
           "id": "energibarer",
-          "text": "Energibarer"
+          "text": "Energibarer",
+          "name": "Energibarer",
+          "keywords": [
+            "energibar",
+            "proteinbar",
+            "müslibar",
+            "bar"
+          ]
         }
       ],
       "page": 1,
@@ -98,7 +198,20 @@
       "items": [
         {
           "id": "gryn",
-          "text": "Gryn (ca. 500 g – en halv pakke havregryn)"
+          "text": "Gryn (ca. 500 g – en halv pakke havregryn)",
+          "name": "Gryn",
+          "amount": {
+            "value": 500,
+            "unit": "g",
+            "per": "person3Days"
+          },
+          "keywords": [
+            "havregryn",
+            "gryn",
+            "müsli",
+            "mysli",
+            "grød"
+          ]
         }
       ],
       "page": 1,
@@ -119,11 +232,33 @@
       "items": [
         {
           "id": "pasta-couscous",
-          "text": "Pasta eller couscous (ca. 500 g – omkring 1 pakke)"
+          "text": "Pasta eller couscous (ca. 500 g – omkring 1 pakke)",
+          "name": "Pasta eller couscous",
+          "amount": {
+            "value": 500,
+            "unit": "g",
+            "per": "person3Days"
+          },
+          "keywords": [
+            "pasta",
+            "spaghetti",
+            "makaroni",
+            "penne",
+            "nudler",
+            "couscous",
+            "bulgur"
+          ]
         },
         {
           "id": "planteolie",
-          "text": "Olie til madlavning"
+          "text": "Olie til madlavning",
+          "name": "Olie til madlavning",
+          "keywords": [
+            "olie",
+            "rapsolie",
+            "olivenolie",
+            "solsikkeolie"
+          ]
         }
       ],
       "page": 1,
@@ -140,11 +275,24 @@
       "items": [
         {
           "id": "ris",
-          "text": "Ris"
+          "text": "Ris",
+          "name": "Ris",
+          "keywords": [
+            "ris",
+            "jasminris",
+            "basmatiris",
+            "grødris"
+          ]
         },
         {
           "id": "kartoffelmos-pulver",
-          "text": "Kartoffelmos i pulverform"
+          "text": "Kartoffelmos i pulverform",
+          "name": "Kartoffelmos i pulverform",
+          "keywords": [
+            "kartoffelmos",
+            "mospulver",
+            "kartoffelpulver"
+          ]
         }
       ],
       "page": 1,

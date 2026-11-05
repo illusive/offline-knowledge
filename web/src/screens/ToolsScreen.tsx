@@ -2,7 +2,7 @@
 
 import { ChevronRight, Compass } from 'lucide-react';
 import { useEffect } from 'react';
-import { Page } from '../components/ui';
+import { Page, TabHeader } from '../components/ui';
 import type { Strings } from '../i18n/strings';
 import { hrefs } from '../router';
 
@@ -12,7 +12,7 @@ export function ToolsScreen({ s }: { s: Strings }) {
   }, [s]);
   return (
     <Page>
-      <h1 className="mt-2 mb-4 px-1 text-3xl font-normal tracking-tight">{s.toolsTitle}</h1>
+      <TabHeader title={s.toolsTitle} settingsLabel={s.settingsOpen} />
       <ul className="flex flex-col divide-y divide-border rounded-card bg-surface">
         <li>
           <a href={hrefs.compass} className="flex min-h-14 items-center gap-[12px] px-[20px] py-3">

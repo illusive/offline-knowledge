@@ -16,10 +16,21 @@ export type GrowingSection = (typeof GROWING_SECTIONS)[number] | (typeof SUPPLY_
 export type PreparednessGroup = 'weather' | 'situation' | 'supplies';
 
 // A line in a stock list that can be ticked off; `id` is stable across pack versions (ticks are
-// stored on the device by id).
+// stored on the device by id). For Forråd (D-046, pack schema 13): `name` is a short label,
+// `amount` the quantity the line gives for one person (the build checks that the number is in the
+// line's own text), and `keywords` the everyday words that should find it (e.g. "makrel").
 export interface ChecklistItem {
   id: string;
   text: string;
+  name?: string;
+  amount?: ChecklistAmount;
+  keywords?: string[];
+}
+
+export interface ChecklistAmount {
+  value: number;
+  unit: 'g' | 'L';
+  per: 'personDay' | 'person3Days';
 }
 
 // `page`: the PDF page; 1 for HTML sources. `sourceId`: only in low-risk guides, a block may come

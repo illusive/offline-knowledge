@@ -23,7 +23,16 @@
       "items": [
         {
           "id": "taepper-dyner",
-          "text": "Tæpper, dyner og varmt tøj"
+          "text": "Tæpper, dyner og varmt tøj",
+          "name": "Tæpper, dyner og varmt tøj",
+          "keywords": [
+            "tæppe",
+            "dyne",
+            "sovepose",
+            "uldtøj",
+            "varmt tøj",
+            "termotøj"
+          ]
         }
       ],
       "page": 10,
@@ -48,23 +57,59 @@
       "items": [
         {
           "id": "powerbank",
-          "text": "Powerbank (opladet batteri) til fx mobilen"
+          "text": "Powerbank (opladet batteri) til fx mobilen",
+          "name": "Powerbank",
+          "keywords": [
+            "powerbank",
+            "batteripakke",
+            "oplader"
+          ]
         },
         {
           "id": "lommelygte",
-          "text": "Lommelygte"
+          "text": "Lommelygte",
+          "name": "Lommelygte",
+          "keywords": [
+            "lygte",
+            "lommelygte",
+            "pandelampe",
+            "hovedlygte"
+          ]
         },
         {
           "id": "batterier",
-          "text": "Batterier"
+          "text": "Batterier",
+          "name": "Batterier",
+          "keywords": [
+            "batterier",
+            "aa",
+            "aaa",
+            "genopladelige batterier"
+          ]
         },
         {
           "id": "betalingskort-kontanter",
-          "text": "Betalingskort af plastik (husk pinkoden) og evt. kontanter i mønter og små sedler"
+          "text": "Betalingskort af plastik (husk pinkoden) og evt. kontanter i mønter og små sedler",
+          "name": "Betalingskort og kontanter",
+          "keywords": [
+            "kontanter",
+            "mønter",
+            "sedler",
+            "betalingskort",
+            "dankort"
+          ]
         },
         {
           "id": "stearinlys-taendstikker",
-          "text": "Evt. stearinlys og tændstikker"
+          "text": "Evt. stearinlys og tændstikker",
+          "name": "Stearinlys og tændstikker",
+          "keywords": [
+            "stearinlys",
+            "lys",
+            "fyrfadslys",
+            "tændstikker",
+            "lighter"
+          ]
         }
       ],
       "page": 10,
@@ -93,7 +138,14 @@
       "items": [
         {
           "id": "fm-radio",
-          "text": "FM-radio, der kører på batterier, håndsving eller solceller (eller bilradioen)"
+          "text": "FM-radio, der kører på batterier, håndsving eller solceller (eller bilradioen)",
+          "name": "FM-radio",
+          "keywords": [
+            "radio",
+            "fm-radio",
+            "håndsvingsradio",
+            "batteriradio"
+          ]
         }
       ],
       "page": 10,

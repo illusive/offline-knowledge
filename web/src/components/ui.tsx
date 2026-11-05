@@ -2,7 +2,8 @@
 // vertical spacing are rem-based so they follow the system text size on iOS; horizontal padding is
 // in px so large text does not squeeze the content column.
 
-import { ArrowLeft, Search, X } from 'lucide-react';
+import { ArrowLeft, Search, Settings, X } from 'lucide-react';
+import { hrefs } from '../router';
 import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
 
 export function Card({ children, className = '', ...rest }: { children: ReactNode; className?: string } & HTMLAttributes<HTMLElement>) {
@@ -121,5 +122,51 @@ export function SubNav<T extends string>(props: {
         })}
       </ul>
     </nav>
+  );
+}
+
+// A choice between a few options, shown as a segmented pill row (radio buttons underneath).
+export function Choice<T extends string>(props: { name: string; legend: string; value: T; onChange: (value: T) => void; options: { value: T; label: string; lang?: string }[] }) {
+  const { name, legend, value, onChange, options } = props;
+  return (
+    <fieldset>
+      <legend className="mb-2 font-semibold">{legend}</legend>
+      <div className="flex flex-wrap gap-[2px] rounded-[24px] bg-background p-[4px]">
+        {options.map((o) => (
+          <label
+            key={o.value}
+            lang={o.lang}
+            className={`relative flex min-h-11 flex-auto cursor-pointer items-center justify-center rounded-full px-[12px] text-sm font-medium has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-text ${
+              o.value === value ? 'bg-accent text-on-accent' : 'text-muted'
+            }`}
+          >
+            <input type="radio" name={name} value={o.value} checked={o.value === value} onChange={() => onChange(o.value)} className="sr-only" />
+            {o.label}
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  );
+}
+
+// The gear at the top right of the tab pages (D-046): Settings is no longer a tab.
+export function SettingsButton({ label }: { label: string }) {
+  return (
+    <a href={hrefs.settings} aria-label={label} className="grid size-11 shrink-0 place-items-center rounded-full bg-surface">
+      <Settings aria-hidden="true" className="size-5" />
+    </a>
+  );
+}
+
+// The title row of a tab page: the title on the left, the settings gear on the right.
+export function TabHeader({ title, settingsLabel, children }: { title: string; settingsLabel: string; children?: ReactNode }) {
+  return (
+    <header className="mt-2 mb-4 flex items-center justify-between gap-[12px] px-1">
+      <h1 className="text-3xl font-normal tracking-tight">{title}</h1>
+      <div className="flex items-center gap-[8px]">
+        {children}
+        <SettingsButton label={settingsLabel} />
+      </div>
+    </header>
   );
 }
