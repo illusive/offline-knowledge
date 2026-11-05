@@ -1,4 +1,4 @@
-// Tools and Settings until their own build steps (ROADMAP M1).
+// Tools until its own build step (ROADMAP M1).
 
 import { useEffect } from 'react';
 import { MessageState, Page } from '../components/ui';

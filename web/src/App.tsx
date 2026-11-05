@@ -2,11 +2,13 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { TabBar } from './components/TabBar';
 import { Spinner } from './components/OfflineStatus';
 import { MessageState, Page } from './components/ui';
+import type { PackInfo } from './db/protocol';
 import type { Strings } from './i18n/strings';
 import { createDbClient, openPack } from './db/client';
 import { useStrings } from './i18n/lang';
 import { UpdateBanner } from './pwa/UpdateBanner';
 import { useOfflineReady } from './pwa/useOfflineReady';
+import { useApplyTheme } from './settings/preferences';
 import { usePrecacheProgress } from './pwa/usePrecacheProgress';
 import { tabOf, useRoute } from './router';
 import { FirstAidScreen, useGuides } from './screens/FirstAidScreen';
@@ -18,6 +20,7 @@ import { PrepareScreen } from './screens/PrepareScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { MapScreen } from './screens/MapScreen';
+import { SettingsScreen } from './screens/SettingsScreen';
 import { PlaceholderScreen } from './screens/PlaceholderScreen';
 import { StorageScreen } from './screens/StorageScreen';
 import { useAllFoods } from './storage/useFoodSearch';
@@ -28,6 +31,8 @@ const packReady = openPack(db);
 export function App() {
   const { lang, s } = useStrings();
   const route = useRoute();
+  useApplyTheme();
+  const [pack, setPack] = useState<PackInfo | null>(null);
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   const [homeQuery, setHomeQuery] = useState('');
   const [storageQuery, setStorageQuery] = useState('');
@@ -39,7 +44,10 @@ export function App() {
 
   useEffect(() => {
     packReady.then(
-      () => setStatus('ready'),
+      (opened) => {
+        setPack(opened.pack);
+        setStatus('ready');
+      },
       (error: unknown) => {
         console.error('Could not open the knowledge pack', error);
         setStatus('error');
@@ -95,7 +103,7 @@ export function App() {
   else if (route.name === 'guide') content = <GuideScreen db={db} id={route.id} s={s} />;
   else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;
   else if (route.name === 'tools') content = <PlaceholderScreen title={s.toolsTitle} s={s} />;
-  else if (route.name === 'settings') content = <PlaceholderScreen title={s.settingsTitle} s={s} />;
+  else if (route.name === 'settings') content = <SettingsScreen db={db} pack={pack} lang={lang} s={s} offlineReady={offlineReady} />;
   else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guides={guides} crops={crops} prepare={prepare} query={homeQuery} onQueryChange={setHomeQuery} />;
 
   return (

@@ -13,6 +13,7 @@ import { showOverlay } from '../map/overlays';
 import { positionSupported, usePosition } from '../map/position';
 import { groupOf, POI_GROUPS, POI_LAYER_IDS, usePoiGroups, type PoiGroup } from '../map/pois';
 import type { AreaInfo, Home } from '../map/protocol';
+import { useDarkMode } from '../settings/preferences';
 
 const MapView = lazy(() => import('../map/MapView'));
 
@@ -24,18 +25,6 @@ function refreshDetail(map: MapLibreMap) {
 
 // The first-time step is shown once per app session (again after a restart, until an area exists).
 let introShownThisSession = false;
-
-function useDarkMode(): boolean {
-  const query = '(prefers-color-scheme: dark)';
-  const [dark, setDark] = useState(() => matchMedia(query).matches);
-  useEffect(() => {
-    const list = matchMedia(query);
-    const update = () => setDark(list.matches);
-    list.addEventListener('change', update);
-    return () => list.removeEventListener('change', update);
-  }, []);
-  return dark;
-}
 
 function useOnline(): boolean {
   const [online, setOnline] = useState(() => navigator.onLine);

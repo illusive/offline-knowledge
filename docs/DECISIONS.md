@@ -335,6 +335,16 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Alternatives:** a separate Home tile "Vær forberedt" (two entries and two searches; rejected); splitting storm into a "before" card and a "during and after" situation (storm in two places; rejected).
 - **Pack:** no schema change; `guides.grp` may now be `'weather'`.
 
+## D-044 — Settings: library, language, appearance, sources
+
+- **Date:** 2026-11-05
+- **Decision (owner):** Settings holds, top to bottom: the offline library (content version and date, counts, size, downloaded map areas with a link to Kort, space the app uses), **Sprog** and **Udseende** (each: Følg telefonen (default), or a fixed choice: Dansk/English, Lys/Mørk), text size, the source list, and About.
+- **Text size:** follows the phone's own setting (iOS Dynamic Type, already in place via `font: -apple-system-body`). No control in the app; Settings says where to change it on the iPhone.
+- **Sources:** every registered source, grouped by publisher, with title and link. No licence lines while the app is private (D-028); they are added before the app is shared.
+- **Storage:** choices are kept on the device (localStorage), like bookmarks; nothing leaves the phone.
+- **Alternatives:** an own text size control, or both (rejected: the user would set it twice); follow the phone only for language and appearance (rejected: no way to read in English on a Danish phone or keep dark mode at night); licence status shown now (deferred).
+- **Closes:** OPEN_QUESTIONS 8 (UI language: follow the device, with a manual override).
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

@@ -8,3 +8,9 @@ export function formatMapDate(version: string, lang: Lang): string {
   if (!m) return version;
   return new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]))).toLocaleDateString(lang === 'da' ? 'da-DK' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 }
+
+export function formatBytes(bytes: number, lang: Lang): string {
+  const nf = (v: number, digits: number) => new Intl.NumberFormat(lang, { maximumFractionDigits: digits }).format(v);
+  // Non-breaking space: the number and its unit stay on one line.
+  return bytes >= 1e9 ? `${nf(bytes / 1e9, 1)}\u00a0GB` : `${nf(Math.max(1, bytes / 1e6), 0)}\u00a0MB`;
+}

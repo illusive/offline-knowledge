@@ -5,7 +5,7 @@
 import { ArrowLeft, Download, House, Map as MapIcon, MapPinned, Pause, Play, Trash2, X, type LucideIcon } from 'lucide-react';
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { Lang, Strings } from '../i18n/strings';
-import { formatMapDate } from './format';
+import { formatBytes, formatMapDate } from './format';
 import { mapClient } from './client.ts';
 import type { AreaInfo, AreaShape, Home, MapSummary } from './protocol.ts';
 
@@ -13,11 +13,6 @@ const RADII = [10, 25, 50] as const;
 type Kind = 'home' | 'region' | 'country';
 // 'start': the list of areas if there are any, otherwise the explanation.
 export type FlowStep = 'start' | 'intro' | 'areas' | 'kind' | 'home' | 'region' | 'confirm' | 'progress';
-
-export function formatBytes(bytes: number, lang: Lang): string {
-  const nf = (v: number, digits: number) => new Intl.NumberFormat(lang, { maximumFractionDigits: digits }).format(v);
-  return bytes >= 1e9 ? `${nf(bytes / 1e9, 1)} GB` : `${nf(Math.max(1, bytes / 1e6), 0)} MB`;
-}
 
 interface Choice {
   key: string;

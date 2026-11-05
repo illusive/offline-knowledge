@@ -40,5 +40,6 @@ export function createDbClient(): DbClient {
 export async function openPack(client: DbClient) {
   const base = new URL('pack/', document.baseURI);
   const pack = (await (await fetch(new URL('manifest.json', base))).json()) as PackInfo;
-  return client.call({ type: 'init', packUrl: new URL('core.sqlite', base).href, pack });
+  const init = await client.call({ type: 'init', packUrl: new URL('core.sqlite', base).href, pack });
+  return { pack, init };
 }

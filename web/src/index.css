@@ -4,7 +4,7 @@
 /* Design tokens (AGENTS.md §4, §9; design brief D-025). Contrast checked against WCAG AA.
    Lime is only a fill behind dark text: on the light background it has 1.15:1 contrast. */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --c-background: #f3f3ef;
   --c-surface: #ffffff;
   --c-ink: #1b1b1a;
@@ -20,22 +20,23 @@
   --c-ok: #1f7a3d;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --c-background: #0f0f0e;
-    --c-surface: #1c1c1a;
-    --c-ink: #262624;
-    --c-on-ink: #f1f1ec;
-    --c-ink-muted: #a8a8a0;
-    --c-text: #f1f1ec;
-    --c-muted: #a8a8a0;
-    --c-border: #34342f;
-    --c-accent: #d4f04a;
-    --c-on-accent: #141414;
-    --c-note-bg: #3a2c12;
-    --c-note-text: #f4cc94;
-    --c-ok: #5ccf86;
-  }
+/* Dark: chosen in Settings, or the phone's setting (D-044). data-theme is set before the first paint
+   (index.html) and kept up to date by useApplyTheme. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --c-background: #0f0f0e;
+  --c-surface: #1c1c1a;
+  --c-ink: #262624;
+  --c-on-ink: #f1f1ec;
+  --c-ink-muted: #a8a8a0;
+  --c-text: #f1f1ec;
+  --c-muted: #a8a8a0;
+  --c-border: #34342f;
+  --c-accent: #d4f04a;
+  --c-on-accent: #141414;
+  --c-note-bg: #3a2c12;
+  --c-note-text: #f4cc94;
+  --c-ok: #5ccf86;
 }
 
 @theme inline {

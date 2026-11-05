@@ -19,8 +19,8 @@ async function downloadCountry(page: Page) {
   await expect(page.getByText('25 km: ca. 25–45 MB', { exact: false })).toBeVisible();
   await page.getByRole('button', { name: /^Hele landet/ }).click();
   await expect(page.getByRole('heading', { name: 'Klar til at hente' })).toBeVisible();
-  await expect(page.getByText(/Det fylder \d+ MB på telefonen/)).toBeVisible({ timeout: 30_000 });
-  await page.getByRole('button', { name: /^Hent nu \(\d+ MB\)$/ }).click();
+  await expect(page.getByText(/Det fylder \d+\sMB på telefonen/)).toBeVisible({ timeout: 30_000 });
+  await page.getByRole('button', { name: /^Hent nu \(\d+\sMB\)$/ }).click();
 }
 
 test('the flow explains, downloads, and the area works offline; delete it again', async ({ app: { page, context } }) => {

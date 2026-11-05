@@ -46,7 +46,7 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 ## Product
 
 7. **App name.** Resolved: "stead" (D-024). Trademark and domain not checked.
-8. **UI language.** Does the interface follow the device language, or is it a setting? Working assumption: follow the device, with a manual override.
+8. **UI language.** Does the interface follow the device language, or is it a setting? **Resolved (D-044):** follows the device, with a manual override in Settings.
 9. **Mixed-language browsing.** Are all guides shown regardless of language, or filtered by language with an option to show all? Working assumption: show all, labeled by language.
 10. **Bookmarks.** Resolved: in v1, on the device only (D-026). Personal notes remain out of scope.
 

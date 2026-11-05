@@ -67,7 +67,7 @@ Do not create additional documents unless they solve a clear organizational prob
 
 When decisions change, update the relevant documentation and remove contradictory instructions.
 
-> **Current state (2026-10-29):** M1 in progress. The app is a PWA in `web/` (React + Vite, D-021–D-023), live on GitHub Pages. All texts were rewritten in plain language (D-042); the source words are kept and the rewrites await a manual review (`docs/LANGUAGE_REVIEW.md`). Food guides (D-033): 21 of 101 done; "Når det sker" (D-040) has 4 guides.
+> **Current state (2026-11-05):** M1 in progress. The app is a PWA in `web/` (React + Vite, D-021–D-023), live on GitHub Pages and tested regularly by the owner on an iPhone. All texts are in plain language with the source words kept (D-042); the rewrites await a manual review (`docs/LANGUAGE_REVIEW.md`). Content: 11 first aid guides, 19 crops, 21 of 101 food guides, 13 "Når det sker" guides in three groups (D-043). Left in M1: the compass in Tools (Settings done, D-044). See `docs/ROADMAP.md`.
 
 ## 4. Engineering principles
 

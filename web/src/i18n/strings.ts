@@ -114,6 +114,29 @@ export interface Strings {
   };
   toolsTitle: string;
   settingsTitle: string;
+  settings: {
+    library: string;
+    content: (version: string, date: string) => string;
+    guides: string;
+    foodGuides: string;
+    foods: string;
+    sources: string;
+    maps: string;
+    mapsNone: string;
+    mapsSummary: (areas: number, size: string) => string;
+    openMap: string;
+    used: string;
+    language: string;
+    appearance: string;
+    followPhone: string;
+    light: string;
+    dark: string;
+    textSize: string;
+    textSizeBody: string;
+    sourcesIntro: string;
+    about: string;
+    aboutBody: string[];
+  };
   comingLater: string;
   showOriginal: string;
   showTranslation: string;
@@ -335,6 +358,34 @@ export const strings: Record<Lang, Strings> = {
     },
     toolsTitle: 'Værktøjer',
     settingsTitle: 'Indstillinger',
+    settings: {
+      library: 'På telefonen',
+      content: (version, date) => `Indhold ${version} fra ${date}`,
+      guides: 'Guides',
+      foodGuides: 'Madguides',
+      foods: 'Fødevarer',
+      sources: 'Kilder',
+      maps: 'Kort',
+      mapsNone: 'Ingen kort hentet',
+      mapsSummary: (areas, size) => `${areas === 1 ? '1 område' : `${areas} områder`}, ${size}`,
+      openMap: 'Gå til Kort',
+      used: 'Appen bruger',
+      language: 'Sprog',
+      appearance: 'Udseende',
+      followPhone: 'Følg telefonen',
+      light: 'Lys',
+      dark: 'Mørk',
+      textSize: 'Tekststørrelse',
+      textSizeBody: 'Teksten følger telefonens tekststørrelse. Du ændrer den i Indstillinger > Skærm og lysstyrke > Tekststørrelse.',
+      sourcesIntro: 'Alt indhold kommer fra disse kilder. Hver guide viser sine egne kilder nederst.',
+      about: 'Om stead',
+      aboutBody: [
+        'stead samler råd fra myndigheder og andre pålidelige kilder, så du har dem – også uden internet. Vi skriver ikke selv rådene.',
+        'Teksterne er skrevet om til et enkelt sprog. Med "Vis original" kan du altid se kildens egne ord.',
+        'Står der "Prøveversion" på en guide, er den endnu ikke gennemlæst mod kilden.',
+        'Alt, hvad du gemmer og vælger, bliver på din telefon. Appen har ingen konto og sender ingen data.',
+      ],
+    },
     comingLater: 'Kommer senere.',
     showOriginal: 'Vis original',
     showTranslation: 'Vis på dansk',
@@ -597,6 +648,34 @@ export const strings: Record<Lang, Strings> = {
     },
     toolsTitle: 'Tools',
     settingsTitle: 'Settings',
+    settings: {
+      library: 'On this phone',
+      content: (version, date) => `Content ${version} from ${date}`,
+      guides: 'Guides',
+      foodGuides: 'Food guides',
+      foods: 'Foods',
+      sources: 'Sources',
+      maps: 'Maps',
+      mapsNone: 'No maps downloaded',
+      mapsSummary: (areas, size) => `${areas === 1 ? '1 area' : `${areas} areas`}, ${size}`,
+      openMap: 'Go to Map',
+      used: 'The app uses',
+      language: 'Language',
+      appearance: 'Appearance',
+      followPhone: 'Follow phone',
+      light: 'Light',
+      dark: 'Dark',
+      textSize: 'Text size',
+      textSizeBody: "Text follows your phone's text size. Change it in Settings > Display & Brightness > Text Size.",
+      sourcesIntro: 'All content comes from these sources. Each guide lists its own sources at the bottom.',
+      about: 'About stead',
+      aboutBody: [
+        'stead collects advice from authorities and other trusted sources, so you have it – even without internet. We do not write the advice ourselves.',
+        "The texts are rewritten in plain Danish. With \"Show original\" you can always see the source's own words.",
+        'A guide marked "Preview version" has not yet been checked against its source.',
+        'Everything you save and choose stays on your phone. The app has no account and sends no data.',
+      ],
+    },
     comingLater: 'Coming in a later step.',
     showOriginal: 'Show original',
     showTranslation: 'Show translation',

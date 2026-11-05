@@ -11,6 +11,16 @@
     <link rel="icon" type="image/png" href="icon-192.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <title>stead</title>
+    <script>
+      // Appearance before the first paint (D-044): the user's choice in Settings, else the phone's.
+      try {
+        var t = JSON.parse(localStorage.getItem('stead.preferences.v1') || '{}').theme;
+        var dark = t === 'dark' || (t !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      } catch (e) {
+        document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

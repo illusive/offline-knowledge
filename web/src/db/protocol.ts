@@ -1,11 +1,15 @@
 // Messages between the app and the database worker.
 
-import type { GuideDetail, GuideRow, ItemDetail, ItemRow } from './queries';
+import type { GuideDetail, GuideRow, ItemDetail, ItemRow, SourceRow } from './queries';
 
+// The pack's manifest.json (content/lib/pack.ts); the extra fields are shown in Settings (D-044).
 export interface PackInfo {
   version: string;
   sha256: string;
   file: string;
+  createdAt?: string;
+  sizeBytes?: number;
+  counts?: { guides: number; produceGuides: number; storageItems: number; sources: number };
 }
 
 export interface InitResult {
@@ -22,7 +26,8 @@ export type Request =
   | { type: 'detail'; id: string }
   | { type: 'guides'; category: GuideRow['category'] }
   | { type: 'guide'; id: string }
-  | { type: 'searchGuides'; query: string };
+  | { type: 'searchGuides'; query: string }
+  | { type: 'sources' };
 
 export interface Responses {
   init: InitResult;
@@ -32,6 +37,7 @@ export interface Responses {
   guides: GuideRow[];
   guide: GuideDetail | null;
   searchGuides: GuideRow[];
+  sources: (SourceRow & { short_name: string })[];
 }
 
 export type Reply =

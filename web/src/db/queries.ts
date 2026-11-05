@@ -224,6 +224,13 @@ export function getGuide(db: SqlDb, id: string): GuideDetail | null {
   };
 }
 
+// Every source in the pack for Settings (D-044), by publisher, then title.
+export function listSources(db: SqlDb): (SourceRow & { short_name: string })[] {
+  return rows<SourceRow & { short_name: string }>(db, `SELECT ${SOURCE_COLUMNS} FROM sources`).sort(
+    (a, b) => a.publisher.localeCompare(b.publisher, 'da') || a.title.localeCompare(b.title, 'da'),
+  );
+}
+
 const ITEM_COLUMNS ='i.id, i.category, i.name_da, i.subtitle_da, i.name_en, i.subtitle_en, i.source_id';
 
 function rows<T>(db: SqlDb, sql: string, bind?: Bind): T[] {
