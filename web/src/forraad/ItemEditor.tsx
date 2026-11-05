@@ -302,7 +302,7 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
 
         <Stepper label={t.count} value={count} min={1} max={999} onChange={setCount} />
 
-        <MonthYear id="forraad-expires" label={t.bestBefore} help={t.bestBeforeHelp} value={expires} onChange={setExpires} lang={lang} noDate={t.noDate} monthLabel={t.month} yearLabel={t.year} />
+        <MonthYear id="forraad-expires" label={t.bestBefore} help={t.bestBeforeHelp} value={expires} onChange={setExpires} lang={lang} noDate={t.noDate} clearLabel={t.clearDate} monthLabel={t.month} yearLabel={t.year} />
 
         {showMore ? (
           <fieldset className="min-w-0">
@@ -310,11 +310,11 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
             {/* One row: the number (or a text, for "Andet") and the unit. */}
             <div className="flex gap-[8px]">
               {unit === 'other' ? (
-                <input value={sizeOther} onChange={(e) => setSizeOther(e.target.value)} aria-label={t.sizeText} placeholder={t.sizePlaceholder} autoComplete="off" className={`${inputClass} min-w-0 flex-1`} />
+                <input value={sizeOther} onChange={(e) => setSizeOther(e.target.value)} aria-label={t.sizeText} placeholder={t.sizePlaceholder} autoComplete="off" className={`${inputClass} min-h-12 min-w-0 flex-1 text-lg`} />
               ) : (
-                <input value={amount} onChange={(e) => setAmount(e.target.value)} aria-label={t.sizeAmount} inputMode="decimal" placeholder="0" autoComplete="off" className={`${inputClass} min-w-0 flex-1`} />
+                <input value={amount} onChange={(e) => setAmount(e.target.value)} aria-label={t.sizeAmount} inputMode="decimal" placeholder="0" autoComplete="off" className={`${inputClass} min-h-12 min-w-0 flex-1 text-lg`} />
               )}
-              <select value={unit} onChange={(e) => setUnit(e.target.value as UnitChoice)} aria-label={t.sizeUnit} className={`${inputClass} shrink-0 text-base`}>
+              <select value={unit} onChange={(e) => setUnit(e.target.value as UnitChoice)} aria-label={t.sizeUnit} className={`${inputClass} min-h-12 shrink-0 text-lg`}>
                 {SIZE_UNITS.map((u) => (
                   <option key={u} value={u}>
                     {t.units[u]}

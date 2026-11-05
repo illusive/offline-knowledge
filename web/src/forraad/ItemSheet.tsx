@@ -120,11 +120,11 @@ export function ItemSheet({ item, lang, s, onClose, onDone }: { item: StoreItem;
           >
             {view === 'stock' || item.count > 1 ? <Stepper label={t.count} value={n} min={1} max={view === 'take' ? item.count : 999} onChange={setN} /> : null}
             {view === 'take' && !all ? (
-              <MonthYear id="forraad-take-month" label={t.bestBeforeNow} help={t.bestBeforeNowHelp} value={month} onChange={setMonth} lang={lang} noDate={t.noDate} monthLabel={t.month} yearLabel={t.year} />
+              <MonthYear id="forraad-take-month" label={t.bestBeforeNow} help={t.bestBeforeNowHelp} value={month} onChange={setMonth} lang={lang} noDate={t.noDate} clearLabel={t.clearDate} monthLabel={t.month} yearLabel={t.year} />
             ) : null}
             {view === 'take' && all ? <p className="text-sm text-muted">{t.takeLastNote}</p> : null}
             {view === 'stock' ? (
-              <MonthYear id="forraad-stock-month" label={t.bestBeforeNew} help={t.bestBeforeNewHelp} value={month} onChange={setMonth} lang={lang} noDate={t.noDate} monthLabel={t.month} yearLabel={t.year} />
+              <MonthYear id="forraad-stock-month" label={t.bestBeforeNew} help={t.bestBeforeNewHelp} value={month} onChange={setMonth} lang={lang} noDate={t.noDate} clearLabel={t.clearDate} monthLabel={t.month} yearLabel={t.year} />
             ) : null}
             <div className="flex flex-wrap gap-[8px]">
               <Button type="submit" variant="primary" className="flex-1">

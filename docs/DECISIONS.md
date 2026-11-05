@@ -427,6 +427,18 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Rationale:** a scanned size was text the app could not use, and typing "400 g" by hand varied ("400g", "400 gr"). A number and a unit read the same everywhere and leave the door open to totals later.
 - **Alternatives:** totals per category (owner chose entry only for now; the stock lists have no weights to compare against); a multipack as one thing of 9 l (taking out one bottle would mean changing the size); number and unit only (odd sizes could not be entered, and old text sizes would be lost).
 
+## D-051 — Months on the phone's own roller; taller fields
+
+- **Date:** 2026-11-05
+- **Decision (owner):** a month (best before, water checked) is one month field (`<input type="month">`). On the iPhone it opens the phone's own roller, with month and year side by side. The value is yyyy-mm, as stored before, so no data changes.
+  - An optional date has a button next to it ("Fjern dato"), since the roller's own reset is easy to miss. A required date (water last checked) ignores a reset.
+  - Browsers without a month field (desktop Safari and Firefox) keep the two selects (month, year) in one row.
+  - The month is shown as the phone writes it, in the phone's language, not always the app's.
+  - The month, year and unit fields, and the size number, are as tall as the name field (48 pt, larger text), for readability.
+- **Rationale:** one roller is quicker than two wheels and familiar on the phone. Larger fields are easier to read and hit.
+- **Alternatives:** keeping the two selects everywhere (two wheels on the iPhone); a full date field (days are not wanted, D-046).
+- **Still to check on the iPhone:** the roller itself, whether it respects the year range, and how an empty field looks.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

@@ -28,10 +28,30 @@ const monthIn = (months: number) => {
   return { name: new Intl.DateTimeFormat('da-DK', { month: 'long', year: 'numeric' }).format(d), month: String(d.getMonth() + 1), year: String(d.getFullYear()) };
 };
 
-async function pickMonth(page: Page | Locator, months: number) {
+// The month is one month field (the phone's roller, D-051) where the browser has one, otherwise a
+// month and a year select. These helpers drive whichever the browser shows.
+const monthValue = (months: number) => {
   const m = monthIn(months);
-  await page.getByRole('combobox', { name: 'Måned' }).selectOption(m.month);
-  await page.getByRole('combobox', { name: 'År' }).selectOption(m.year);
+  return `${m.year}-${m.month.padStart(2, '0')}`;
+};
+
+async function pickMonth(scope: Page | Locator, months: number) {
+  const field = scope.locator('input[type="month"]');
+  if (await field.count()) return field.fill(monthValue(months));
+  const m = monthIn(months);
+  await scope.getByRole('combobox', { name: 'Måned' }).selectOption(m.month);
+  await scope.getByRole('combobox', { name: 'År' }).selectOption(m.year);
+}
+
+async function clearMonth(scope: Page | Locator) {
+  if (await scope.locator('input[type="month"]').count()) return scope.getByRole('button', { name: 'Fjern dato' }).click();
+  await scope.getByRole('combobox', { name: 'Måned' }).selectOption('');
+}
+
+async function expectMonth(scope: Page | Locator, months: number) {
+  const field = scope.locator('input[type="month"]');
+  if (await field.count()) return expect(field).toHaveValue(monthValue(months));
+  await expect(scope.getByRole('combobox', { name: 'Måned' })).toHaveValue(monthIn(months).month);
 }
 
 // A thing's row in a category: a button that opens its sheet (D-049), named by the thing first.
@@ -77,7 +97,7 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   // The next one starts empty, with the same month.
   await expect(page.getByText('Makrel i tomat er gemt.')).toBeVisible();
   await expect(name).toHaveValue('');
-  await expect(page.getByRole('combobox', { name: 'Måned' })).toHaveValue(monthIn(1).month);
+  await expectMonth(page, 1);
   await name.fill('Plaster');
   await expect(page.getByText('Medicin og hygiejne · Tæller som: Førstehjælpskasse')).toBeVisible();
   await page.getByRole('button', { name: 'Gem og tilføj en til' }).click();
@@ -88,7 +108,7 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   await expect(page.getByText('Mad', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Skift kategori (nu mad)' }).click();
   await page.locator('label', { hasText: 'Lys, varme og andet' }).click();
-  await page.getByRole('combobox', { name: 'Måned' }).selectOption('');
+  await clearMonth(page);
   await page.getByRole('button', { name: 'Mere' }).click();
   await page.getByLabel('Enhed').selectOption('other');
   await page.getByLabel('Beskriv størrelsen').fill('Stor');

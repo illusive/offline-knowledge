@@ -173,6 +173,7 @@ export interface Strings {
     bestBefore: string;
     bestBeforeHelp: string;
     noDate: string;
+    clearDate: string;
     month: string;
     year: string;
     more: string;
@@ -547,6 +548,7 @@ export const strings: Record<Lang, Strings> = {
       bestBefore: 'Bedst før',
       bestBeforeHelp: 'Valgfrit. Måned og år er nok. Har du flere, så vælg den, der udløber først.',
       noDate: 'Ingen dato',
+      clearDate: 'Fjern dato',
       month: 'Måned',
       year: 'År',
       more: 'Mere',
@@ -967,6 +969,7 @@ export const strings: Record<Lang, Strings> = {
       bestBefore: 'Best before',
       bestBeforeHelp: 'Optional. Month and year are enough. If you have several, choose the one that expires first.',
       noDate: 'No date',
+      clearDate: 'Remove date',
       month: 'Month',
       year: 'Year',
       more: 'More',
