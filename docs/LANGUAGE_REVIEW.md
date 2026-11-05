@@ -53,6 +53,7 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
 - **Short names of the stock-list lines (Forråd, D-046):** our own labels, e.g. "Dåser med tomater eller grøntsager", "Bleer, bind og tamponer", "Betalingskort og kontanter". Check that they read naturally in the suggestions and in "Tæller som: …". The keywords that match typed names, e.g. "makrel" for canned fish, are also ours; check for wrong matches.
 - **The sheet on each thing (Forråd, D-049):** "Tag ud", "Læg flere til", "Ret navn, kategori og størrelse", "Slet alt", "Bedst før nu" with "Tog du den, der udløber først? Så vælg datoen på den næste.", "Bedst før på de nye", and the line after an action ("Makrel i tomat: 1 stk. taget ud, 1 stk. tilbage."). Check that they read naturally.
 - **Sizes (Forråd, D-050):** "Størrelse" with "Mængde", "Enhed" and "Andet" (with "Beskriv størrelsen", "Fx familiepakke"), and the unit "stk.".
+- **Products under the stock-list lines (Forråd, D-052): to review.** 220 of our own product names in the three Hjemmeberedskab guides (`products` next to each line's keywords), e.g. "Makrel i tomat", "Kikærter på dåse", "Fast medicin", "Hue og vanter". Check the names, which line each is on (it decides the tick), and what is missing. Also "Scannet før".
 - **Months (Forråd, D-051):** the button "Fjern dato" next to an optional month.
 
 ### Growing

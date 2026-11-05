@@ -168,6 +168,7 @@ export interface Strings {
     suggestionsLabel: string;
     fromStockList: string;
     usedBefore: string;
+    scannedBefore: string;
     category: string;
     count: string;
     bestBefore: string;
@@ -543,6 +544,7 @@ export const strings: Record<Lang, Strings> = {
       suggestionsLabel: 'Forslag',
       fromStockList: 'Fra listen',
       usedBefore: 'Brugt før',
+      scannedBefore: 'Scannet før',
       category: 'Kategori',
       count: 'Antal',
       bestBefore: 'Bedst før',
@@ -964,6 +966,7 @@ export const strings: Record<Lang, Strings> = {
       suggestionsLabel: 'Suggestions',
       fromStockList: 'From the list',
       usedBefore: 'Used before',
+      scannedBefore: 'Scanned before',
       category: 'Category',
       count: 'Number',
       bestBefore: 'Best before',

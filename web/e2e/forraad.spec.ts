@@ -86,9 +86,14 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   // Adding: a name and a month. The category is guessed; the stock-list line is linked.
   await page.getByRole('link', { name: 'Tilføj til forrådet' }).click();
   const name = page.getByLabel('Hvad er det?');
+  // The suggestions are products first, with their line under them, and the line itself last
+  // (D-052); a picked product keeps its own name.
   await name.fill('makr');
-  await expect(page.getByRole('list', { name: 'Forslag' }).getByRole('button', { name: /Dåser med fisk eller kød/ })).toBeVisible();
-  await name.fill('Makrel i tomat');
+  const suggestions = page.getByRole('list', { name: 'Forslag' });
+  await expect(suggestions.getByRole('button').first()).toHaveAccessibleName(/^Makrel i tomat/);
+  await expect(suggestions.getByRole('button', { name: /^Dåser med fisk eller kød/ })).toBeVisible();
+  await suggestions.getByRole('button', { name: /^Makrel i tomat/ }).click();
+  await expect(name).toHaveValue('Makrel i tomat');
   await expect(page.getByText('Mad · Tæller som: Dåser med fisk eller kød')).toBeVisible();
   await page.getByRole('button', { name: 'Antal +1' }).click();
   await pickMonth(page, 1);

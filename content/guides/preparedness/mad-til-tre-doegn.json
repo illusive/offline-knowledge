@@ -40,6 +40,16 @@
             "sprødt brød",
             "riskager",
             "skorper"
+          ],
+          "products": [
+            "Rugknækbrød",
+            "Fuldkornsknækbrød",
+            "Knækbrød med frø",
+            "Riskager",
+            "Majskager",
+            "Skorper",
+            "Sprødt brød",
+            "Pumpernikkel"
           ]
         },
         {
@@ -62,6 +72,30 @@
             "corned beef",
             "dåsemad",
             "konserves"
+          ],
+          "products": [
+            "Makrel i tomat",
+            "Makrel i olie",
+            "Tun i vand",
+            "Tun i olie",
+            "Sardiner i olie",
+            "Sardiner i tomat",
+            "Laks på dåse",
+            "Sild i tomat",
+            "Fiskefrikadeller på dåse",
+            "Torskerogn på dåse",
+            "Rejer på dåse",
+            "Muslinger på dåse",
+            "Kødboller i karry",
+            "Kødboller i tomat",
+            "Frikadeller på dåse",
+            "Skinke på dåse",
+            "Corned beef",
+            "Leverpostej på dåse",
+            "Pølser på dåse",
+            "Kylling på dåse",
+            "Chili con carne på dåse",
+            "Lapskovs på dåse"
           ]
         },
         {
@@ -81,6 +115,21 @@
             "linser",
             "baked beans",
             "bælgfrugter"
+          ],
+          "products": [
+            "Kikærter på dåse",
+            "Tørrede kikærter",
+            "Kidneybønner",
+            "Hvide bønner",
+            "Sorte bønner",
+            "Brune bønner",
+            "Smørbønner",
+            "Baked beans",
+            "Bønner i tomat",
+            "Linser på dåse",
+            "Røde linser",
+            "Grønne linser",
+            "Gule ærter"
           ]
         },
         {
@@ -102,6 +151,27 @@
             "rødbeder",
             "champignon",
             "grøntsager"
+          ],
+          "products": [
+            "Hakkede tomater",
+            "Flåede tomater",
+            "Passata",
+            "Tomatpuré",
+            "Majs på dåse",
+            "Ærter på dåse",
+            "Ærter og gulerødder",
+            "Gulerødder på dåse",
+            "Grønne bønner på dåse",
+            "Champignon på dåse",
+            "Asparges på dåse",
+            "Rødbeder på glas",
+            "Rødkål på glas",
+            "Surkål",
+            "Syltede agurker",
+            "Agurkesalat på glas",
+            "Oliven på glas",
+            "Tomatsuppe på dåse",
+            "Grøntsagssuppe på dåse"
           ]
         },
         {
@@ -121,6 +191,21 @@
             "hasselnødder",
             "valnødder",
             "studenterhavre"
+          ],
+          "products": [
+            "Mandler",
+            "Cashewnødder",
+            "Peanuts",
+            "Saltede peanuts",
+            "Hasselnødder",
+            "Valnødder",
+            "Paranødder",
+            "Pistacienødder",
+            "Nøddeblanding",
+            "Studenterhavre",
+            "Peanutbutter",
+            "Solsikkekerner",
+            "Græskarkerner"
           ]
         }
       ],
@@ -148,6 +233,17 @@
             "tvebakker",
             "mariekiks",
             "digestive"
+          ],
+          "products": [
+            "Mariekiks",
+            "Digestive",
+            "Tvebakker",
+            "Havrekiks",
+            "Saltkiks",
+            "Ostekiks",
+            "Chokoladekiks",
+            "Småkager",
+            "Vafler"
           ]
         },
         {
@@ -161,6 +257,19 @@
             "figner",
             "svesker",
             "tranebær"
+          ],
+          "products": [
+            "Rosiner",
+            "Tørrede abrikoser",
+            "Dadler",
+            "Figner",
+            "Svesker",
+            "Tørrede tranebær",
+            "Tørrede blåbær",
+            "Tørrede æbleringe",
+            "Tørret mango",
+            "Bananchips",
+            "Frugtstænger"
           ]
         },
         {
@@ -172,6 +281,14 @@
             "proteinbar",
             "müslibar",
             "bar"
+          ],
+          "products": [
+            "Proteinbar",
+            "Müslibar",
+            "Nøddebar",
+            "Havrebar",
+            "Frugtbar",
+            "Dadelbar"
           ]
         }
       ],
@@ -211,6 +328,19 @@
             "müsli",
             "mysli",
             "grød"
+          ],
+          "products": [
+            "Havregryn",
+            "Grovvalsede havregryn",
+            "Finvalsede havregryn",
+            "Havregrød i pose",
+            "Müsli",
+            "Granola",
+            "Cornflakes",
+            "Byggryn",
+            "Boghvedegryn",
+            "Semuljegryn",
+            "Hirse"
           ]
         }
       ],
@@ -247,6 +377,19 @@
             "nudler",
             "couscous",
             "bulgur"
+          ],
+          "products": [
+            "Spaghetti",
+            "Makaroni",
+            "Penne",
+            "Fusilli",
+            "Lasagneplader",
+            "Fuldkornspasta",
+            "Nudler",
+            "Nudler i pose",
+            "Couscous",
+            "Bulgur",
+            "Quinoa"
           ]
         },
         {
@@ -258,6 +401,14 @@
             "rapsolie",
             "olivenolie",
             "solsikkeolie"
+          ],
+          "products": [
+            "Rapsolie",
+            "Olivenolie",
+            "Solsikkeolie",
+            "Kokosolie",
+            "Vindruekerneolie",
+            "Ghee"
           ]
         }
       ],
@@ -282,6 +433,17 @@
             "jasminris",
             "basmatiris",
             "grødris"
+          ],
+          "products": [
+            "Jasminris",
+            "Basmatiris",
+            "Grødris",
+            "Fuldkornsris",
+            "Brune ris",
+            "Risottoris",
+            "Parboiled ris",
+            "Ris i kogepose",
+            "Vilde ris"
           ]
         },
         {
@@ -292,6 +454,11 @@
             "kartoffelmos",
             "mospulver",
             "kartoffelpulver"
+          ],
+          "products": [
+            "Kartoffelmos i pose",
+            "Kartoffelmospulver",
+            "Kartoffelflager"
           ]
         }
       ],

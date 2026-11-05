@@ -54,6 +54,7 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
   const known = new Map(sources.map((s) => [s.id, s]));
   const ids = new Set<string>();
   const checklistIds = new Set<string>(); // across all guides
+  const productLines = new Map<string, string>(); // product (lower case) → its line, across all guides (D-052)
   for (const guide of guides) {
     const at = `guide ${guide.id}`;
     if (ids.has(guide.id)) problems.push(`${at}: duplicate id`);
@@ -122,6 +123,13 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
           if (item.amount && !amountInText(item.amount, item.text)) problems.push(`${where}: amount of '${item.id}' (${item.amount.value} ${item.amount.unit}) is not in its text`);
           if (item.keywords?.some((k) => !k.trim() || k !== k.toLowerCase())) problems.push(`${where}: keywords of '${item.id}' must be lower-case and not empty`);
           if (item.name !== undefined && !item.name.trim()) problems.push(`${where}: name of '${item.id}' is empty`);
+          for (const product of item.products ?? []) {
+            const key = product.toLocaleLowerCase('da');
+            if (!product.trim() || product !== product.trim() || product.length > 60) problems.push(`${where}: product '${product}' of '${item.id}' must be trimmed, not empty and at most 60 characters`);
+            else if (key === (item.name ?? '').toLocaleLowerCase('da')) problems.push(`${where}: product '${product}' of '${item.id}' is the line's own name`);
+            else if (productLines.has(key)) problems.push(`${where}: product '${product}' is on both '${productLines.get(key)}' and '${item.id}'`);
+            else productLines.set(key, item.id);
+          }
         }
       }
       const images = block.kind === 'image' ? [block] : block.kind === 'steps' ? (block.images ?? []) : [];

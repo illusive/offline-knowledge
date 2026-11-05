@@ -112,6 +112,18 @@ test('Forråd (D-046): a stock-list amount must be the one in the line\'s own te
   assert.ok(problems.some((p) => p.includes("name of 'x'")));
 });
 
+test('preparedness: products under a stock-list line are trimmed, not the line name, and on one line only', () => {
+  const text = 'Du må aldrig gå på kompromis med din egen sikkerhed.';
+  const line = (id: string, products: string[]) => ({ id, text, name: 'Knækbrød', products });
+  const list = (id: string, itemId: string, products: string[]) =>
+    guide({ id, category: 'preparedness', risk: 'low', checks: [], group: 'supplies', blocks: [{ kind: 'checklist', items: [line(itemId, products)], page: 1 }] });
+  assert.deepEqual(validateGuides([list('ok', 'a', ['Rugknækbrød', 'Riskager'])], sources, texts, new Set()), []);
+  const problems = validateGuides([list('p1', 'a', ['Rugknækbrød', ' Riskager', 'knækbrød']), list('p2', 'b', ['rugknækbrød'])], sources, texts, new Set());
+  assert.ok(problems.some((p) => p.includes("' Riskager'")));
+  assert.ok(problems.some((p) => p.includes("'knækbrød' of 'a' is the line's own name")));
+  assert.ok(problems.some((p) => p.includes("'rugknækbrød' is on both 'a' and 'b'")));
+});
+
 test('a high-risk preparedness guide still needs a second authority', () => {
   const g = guide({ id: 'e', category: 'preparedness', risk: 'high', group: 'situation', checks: [] });
   assert.ok(validateGuides([g], sources, texts, new Set()).some((p) => p.includes('no second-authority check')));

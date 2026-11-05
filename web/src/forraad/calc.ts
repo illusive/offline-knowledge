@@ -22,6 +22,7 @@ export interface Recommendation {
   text: string;
   amount?: Amount;
   keywords: string[];
+  products: string[]; // common goods that count as the line, offered while typing (D-052)
 }
 
 // The stock lists, one per category of the stores.

@@ -439,6 +439,26 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Alternatives:** keeping the two selects everywhere (two wheels on the iPhone); a full date field (days are not wanted, D-046).
 - **Still to check on the iPhone:** the roller itself, whether it respects the year range, and how an empty field looks.
 
+## D-052 — Products under the stock-list lines, for finer suggestions
+
+- **Date:** 2026-11-05
+- **Problem (owner):** typing "makr" offered only the stock-list line "Dåser med fisk eller kød". Picking it replaced the typed name with that generic one, so the suggestions were too coarse.
+- **Decision (owner):** each stock-list line may list `products`: common goods that count as it ("Makrel i tomat", "Tun i vand", "Hakkede tomater").
+  - The lists sit in the Hjemmeberedskab guide JSON, next to the line's `name` and `keywords`.
+  - The build checks that each product is trimmed and at most 60 characters, is not the line's own name, and belongs to one line only.
+  - The first list has 220 products on 26 lines, drafted by Claude and awaiting the owner's review (`docs/LANGUAGE_REVIEW.md`). Water is left out: it is one figure (D-046).
+- **Suggestions while typing, most specific first:**
+  1. Names used before ("Brugt før").
+  2. Products scanned before ("Scannet før"), with their barcode and size.
+  3. Listed products, with their line under them.
+  4. The stock-list lines themselves ("Fra listen").
+  - Each name is offered once, at most six in all.
+  - A picked product keeps its own name; its line and category follow, so the stock-list ticks (D-048) still work.
+- **Matching a typed name:** a name that is a listed product links to that product's line before the keyword guess, so "Makrel i tomat" is canned fish, not tomatoes.
+- **No size:** a product fills in only its name. Sizes vary by brand; a scan or the user gives the size (D-050).
+- **Pack:** the field is optional JSON in the checklist items, which older apps ignore. The pack schema stays at 13, because the app accepts only its own schema version and a bump would make a new app refuse a pack already on the phone. Content version 0.14.0.
+- **Alternatives:** showing the matched keyword as a suggestion (keywords such as "aa" are matching terms, not names); a list in the app code (content belongs in the pack, AGENTS §6); a separate pack table (unnecessary for about 200 names).
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

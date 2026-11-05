@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import type { DbClient } from '../db/client';
 import { fold } from '../food/search';
 import { GUIDE_CATEGORY, WATER_PER_PERSON_ID, type Recommendation } from './calc';
-import type { Category, StoreItem } from './store';
+import type { Category, Product, StoreItem } from './store';
 import { migrateLegacyTicks } from '../supplies/checklist';
 
 export interface StockLists {
@@ -26,7 +26,7 @@ async function load(db: DbClient): Promise<StockLists> {
     for (const block of detail.blocks) {
       if (block.kind !== 'checklist') continue;
       for (const item of block.items) {
-        recommendations.push({ id: item.id, guideId, category, name: item.name ?? item.text, text: item.text, amount: item.amount, keywords: item.keywords ?? [] });
+        recommendations.push({ id: item.id, guideId, category, name: item.name ?? item.text, text: item.text, amount: item.amount, keywords: item.keywords ?? [], products: item.products ?? [] });
       }
     }
   }
@@ -56,31 +56,48 @@ export function useStockLists(db: DbClient | null): StockLists | null {
   return lists;
 }
 
-export type Suggestion =
-  | { kind: 'recommendation'; name: string; category: Category; recommendation: Recommendation }
-  | { kind: 'own'; name: string; category: Category; item: StoreItem };
+type Line = Recommendation & { category: Category };
 
-// Suggestions for the name field: stock-list lines whose name or keywords start a word with the
-// query, then names the user has used before. Free text is always allowed; this only helps.
-export function suggest(query: string, recommendations: Recommendation[], items: StoreItem[], limit = 6): Suggestion[] {
+export type Suggestion =
+  | { kind: 'own'; name: string; category: Category; item: StoreItem }
+  | { kind: 'scanned'; name: string; barcode: string; product: Product }
+  | { kind: 'product'; name: string; category: Category; recommendation: Line }
+  | { kind: 'recommendation'; name: string; category: Category; recommendation: Line };
+
+// Suggestions for the name field (D-052), most specific first: names the user has used before,
+// products they have scanned, common goods from the stock lists ("Makrel i tomat"), and last the
+// stock-list lines themselves ("Dåser med fisk eller kød"). A suggestion matches when a word of it
+// starts with the query; each name is offered once. Free text is always allowed; this only helps.
+export function suggest(query: string, recommendations: Recommendation[], items: StoreItem[], products: Record<string, Product> = {}, limit = 6): Suggestion[] {
   const q = fold(query.trim());
   if (q.length < 2) return [];
   const startsWord = (text: string) => fold(text).split(/[\s,()–-]+/).some((w) => w.startsWith(q)) || fold(text).startsWith(q);
-  const own = new Map<string, StoreItem>();
-  for (const item of [...items].reverse()) if (startsWord(item.name) && !own.has(fold(item.name))) own.set(fold(item.name), item);
-  const recs = recommendations.filter((r): r is Recommendation & { category: Category } => r.category !== 'water' && (startsWord(r.name) || r.keywords.some(startsWord)));
-  return [
-    ...[...own.values()].map((item): Suggestion => ({ kind: 'own', name: item.name, category: item.category, item })),
-    ...recs.map((r): Suggestion => ({ kind: 'recommendation', name: r.name, category: r.category, recommendation: r })),
-  ].slice(0, limit);
+  const lines = recommendations.filter((r): r is Line => r.category !== 'water');
+  const found: Suggestion[] = [];
+  const seen = new Set<string>();
+  const add = (s: Suggestion) => {
+    const key = fold(s.name);
+    if (seen.has(key)) return;
+    seen.add(key);
+    found.push(s);
+  };
+  for (const item of [...items].reverse()) if (startsWord(item.name)) add({ kind: 'own', name: item.name, category: item.category, item });
+  for (const [barcode, product] of Object.entries(products)) if (startsWord(product.name)) add({ kind: 'scanned', name: product.name, barcode, product });
+  for (const r of lines) for (const p of r.products) if (startsWord(p)) add({ kind: 'product', name: p, category: r.category, recommendation: r });
+  for (const r of lines) if (startsWord(r.name) || r.keywords.some(startsWord)) add({ kind: 'recommendation', name: r.name, category: r.category, recommendation: r });
+  return found.slice(0, limit);
 }
 
-// The stock-list line a typed name belongs to, if a keyword or the line's name starts one of its
-// words ("Makrel i tomat" → canned fish or meat). Within a category when one is given, else in any
+// The stock-list line a typed name belongs to: a listed product of the line, or else a keyword or
+// the line's name that starts one of its words ("Makrel i tomat" → canned fish or meat). Within a category when one is given, else in any
 // (which also guesses the category of a new thing). Water lines are left to the water card.
 export function matchRecommendation(name: string, category: Category | null, recommendations: Recommendation[]): (Recommendation & { category: Category }) | undefined {
   const folded = fold(name.trim());
   if (folded.length < 3) return undefined;
+  // A listed product names its line exactly (D-052): "Kikærter på dåse" is the bean line.
+  const fits = (r: Recommendation): r is Line => r.category !== 'water' && (category === null || r.category === category);
+  const listed = recommendations.find((r) => fits(r) && r.products.some((p) => fold(p) === folded));
+  if (listed && fits(listed)) return listed;
   const words = folded.split(/[\s,()–-]+/).filter(Boolean);
   const hits = (term: string) => {
     const k = fold(term);

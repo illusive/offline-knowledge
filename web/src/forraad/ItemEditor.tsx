@@ -83,7 +83,7 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
   const linked = picked ?? (unlinked ? undefined : matchRecommendation(name, chosen, recommendations));
   const category: Category = chosen ?? (linked && linked.category !== 'water' ? linked.category : 'food');
   const counts = linked && linked.category === category ? linked : undefined;
-  const suggestions = useMemo(() => (typing ? suggest(name, recommendations, items) : []), [typing, name, recommendations, items]);
+  const suggestions = useMemo(() => (typing ? suggest(name, recommendations, items, products) : []), [typing, name, recommendations, items, products]);
 
   // A size text from a scan or a remembered product: a number and a unit when it reads as one,
   // with a multipack's count ("6 x 1,5 l" is 6 of 1,5 l); otherwise kept as text.
@@ -107,15 +107,26 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
     setSizeOther('');
   };
 
+  // A picked name keeps its own words; the stock-list line and the category follow from it.
   const pick = (sug: Suggestion) => {
     setName(sug.name);
-    setChosen(sug.category);
     setUnlinked(false);
-    setRecId(sug.kind === 'recommendation' ? sug.recommendation.id : sug.item.recommendationId);
-    if (sug.kind === 'own' && sug.item.amount && sug.item.unit) fillSize(sizeText({ amount: sug.item.amount, unit: sug.item.unit }), false);
-    else if (sug.kind === 'own' && sug.item.size) fillSize(sug.item.size, false);
+    if (sug.kind === 'scanned') {
+      // A product scanned before: its barcode and size; the line and category are guessed from the name.
+      setChosen(start.category);
+      setRecId(undefined);
+      setBarcode(sug.barcode);
+      if (sug.product.quantity) fillSize(sug.product.quantity, false);
+    } else {
+      setChosen(sug.category);
+      setRecId(sug.kind === 'own' ? sug.item.recommendationId : sug.recommendation.id);
+      if (sug.kind === 'own' && sug.item.amount && sug.item.unit) fillSize(sizeText({ amount: sug.item.amount, unit: sug.item.unit }), false);
+      else if (sug.kind === 'own' && sug.item.size) fillSize(sug.item.size, false);
+    }
     setTyping(false);
   };
+  const hint = (sug: Suggestion) =>
+    sug.kind === 'own' ? t.usedBefore : sug.kind === 'scanned' ? t.scannedBefore : sug.kind === 'product' ? sug.recommendation.name : t.fromStockList;
 
   const onCode = useCallback(
     async (code: string) => {
@@ -252,9 +263,9 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
             <ul aria-label={t.suggestionsLabel} className="mt-2 flex flex-col divide-y divide-border overflow-hidden rounded-xl border border-border bg-background">
               {suggestions.map((sug) => (
                 <li key={`${sug.kind}-${sug.name}`}>
-                  <button type="button" onClick={() => pick(sug)} className="flex min-h-11 w-full items-center justify-between gap-[12px] px-[14px] py-2 text-left">
+                  <button type="button" onClick={() => pick(sug)} className="flex min-h-11 w-full flex-col justify-center px-[14px] py-2 text-left">
                     <span>{sug.name}</span>
-                    <span className="shrink-0 text-xs text-muted">{sug.kind === 'recommendation' ? t.fromStockList : t.usedBefore}</span>
+                    <span className="text-xs text-muted">{hint(sug)}</span>
                   </button>
                 </li>
               ))}

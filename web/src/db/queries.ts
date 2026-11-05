@@ -129,6 +129,7 @@ export interface ChecklistItem {
   name?: string;
   amount?: { value: number; unit: 'g' | 'L'; per: 'personDay' | 'person3Days' };
   keywords?: string[];
+  products?: string[]; // common goods that count as the line (D-052)
 }
 
 export type GuideBlock = { original?: BlockOriginal } & (

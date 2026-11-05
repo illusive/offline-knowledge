@@ -32,6 +32,18 @@
             "uldtøj",
             "varmt tøj",
             "termotøj"
+          ],
+          "products": [
+            "Uldtæppe",
+            "Fleecetæppe",
+            "Dyne",
+            "Sovepose",
+            "Uldsokker",
+            "Uldundertøj",
+            "Uldtrøje",
+            "Termotøj",
+            "Hue og vanter",
+            "Varmedunk"
           ]
         }
       ],
@@ -63,6 +75,12 @@
             "powerbank",
             "batteripakke",
             "oplader"
+          ],
+          "products": [
+            "Batteripakke",
+            "Solcelleoplader",
+            "Opladerkabel",
+            "Biloplader"
           ]
         },
         {
@@ -74,6 +92,14 @@
             "lommelygte",
             "pandelampe",
             "hovedlygte"
+          ],
+          "products": [
+            "Pandelampe",
+            "Hovedlygte",
+            "LED-lygte",
+            "Dynamolygte",
+            "Campinglygte",
+            "Lanterne"
           ]
         },
         {
@@ -85,6 +111,16 @@
             "aa",
             "aaa",
             "genopladelige batterier"
+          ],
+          "products": [
+            "AA-batterier",
+            "AAA-batterier",
+            "C-batterier",
+            "D-batterier",
+            "9V-batteri",
+            "Knapcellebatterier",
+            "Genopladelige batterier",
+            "Batterioplader"
           ]
         },
         {
@@ -97,6 +133,11 @@
             "sedler",
             "betalingskort",
             "dankort"
+          ],
+          "products": [
+            "Kontanter",
+            "Mønter",
+            "Sedler"
           ]
         },
         {
@@ -109,6 +150,16 @@
             "fyrfadslys",
             "tændstikker",
             "lighter"
+          ],
+          "products": [
+            "Stearinlys",
+            "Fyrfadslys",
+            "Bloklys",
+            "Kronelys",
+            "Tændstikker",
+            "Stormtændstikker",
+            "Lighter",
+            "Stormlighter"
           ]
         }
       ],
@@ -145,6 +196,12 @@
             "fm-radio",
             "håndsvingsradio",
             "batteriradio"
+          ],
+          "products": [
+            "Batteriradio",
+            "Håndsvingsradio",
+            "Solcelleradio",
+            "Lommeradio"
           ]
         }
       ],

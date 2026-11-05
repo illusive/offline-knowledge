@@ -15,7 +15,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] Food storage import (D-014, D-017): the 101 fresh fruits and vegetables from FoodKeeper (version 128, 2018-09-06) are imported into `content/storage/foodkeeper-produce.json`; tested and cross-checked against the source.
 - [x] Danish names checked: all 101 approved by the project owner (2026-10-24).
 - [x] Guide file format: JSON per guide in `content/guides/<category>/`, typed by `content/schema/guide.ts` and validated by `content/lib/guides.ts` (pipeline D-016, guide model D-037).
-- [x] Pack build (D-018): `npm run build:pack` validates, then writes `pack.sqlite` + `manifest.json`. **2026-11-05:** schema 13 (stock-list amounts and keywords, D-046), 101 storage items, 21 food guides, 43 guides, 75 sources; about 2.6 MB.
+- [x] Pack build (D-018): `npm run build:pack` validates, then writes `pack.sqlite` + `manifest.json`. **2026-11-05:** schema 13 (stock-list amounts and keywords, D-046; products as optional JSON, D-052), content 0.14.0, 101 storage items, 21 food guides, 43 guides, 75 sources; about 2.6 MB.
 - [x] Guides in the pack: first aid, growing and "Når det sker", with blocks, checks, sources per block and search.
 - [x] ~~Minimal Expo app (D-019)~~: built and tested in the Simulator, then replaced by the PWA (D-021). Code in Git history (`f301841`).
 - [x] iOS PWA storage test (`pwa-spike/`): persistent storage, 4 GB, airplane mode verified on a real iPhone; reboot and multi-day use since confirmed by the owner's regular use.
@@ -50,6 +50,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
   - Litres or US gallons, and a backup file.
   - A sheet on each thing (D-049, 2026-11-05): take some out (with the next best-before month), add more (the earlier month is kept), edit, delete all. The last one asks, then deletes.
   - Sizes as a number and a unit (D-050, 2026-11-05): read from a scan, including multipacks ("6 x 1,5 l" is 6 of 1,5 l); anything else as text under "Andet".
+  - Products under the stock-list lines (D-052, 2026-11-05): 220 common goods offered while typing, after names used before and scanned products, with the lines last. **Awaiting the owner's review of the list.**
   - Months on the phone's own roller, with "Fjern dato" for optional dates; taller fields (D-051, 2026-11-05). **Still to check on the iPhone:** the roller.
 
   Tested by offline e2e tests, including a real EAN-13 decoded from a canvas "camera". **Still to check on the iPhone:** scanning with the real camera (permission prompt, focus, speed), saving the copy to Filer and restoring it, and the month/year wheels.

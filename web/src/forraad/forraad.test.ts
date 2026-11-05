@@ -7,7 +7,7 @@ import { matchRecommendation, suggest } from './recommendations';
 import { EMPTY, parse, stockMore, takeOut, type StoreItem } from './store';
 
 const item = (over: Partial<StoreItem>): StoreItem => ({ id: 'x', name: 'Pasta', category: 'food', count: 1, added: '2026-11-01', ...over });
-const rec = (id: string, category: Recommendation['category'], name: string, keywords: string[]): Recommendation => ({ id, guideId: 'g', category, name, text: name, keywords });
+const rec = (id: string, category: Recommendation['category'], name: string, keywords: string[], products: string[] = []): Recommendation => ({ id, guideId: 'g', category, name, text: name, keywords, products });
 
 describe('Forråd water', () => {
   it('scales the target by people, animals and days', () => {
@@ -64,6 +64,35 @@ describe('Forråd recommendations', () => {
     expect(suggest('makr', recs, own).map((x) => `${x.kind}:${x.name}`)).toEqual(['own:Makrel i tomat', 'recommendation:Dåser med fisk eller kød']);
     expect(suggest('flaske', recs, own)).toEqual([]);
     expect(suggest('m', recs, own)).toEqual([]);
+  });
+
+  it('offers the most specific names first: used before, scanned, listed products, then lines (D-052)', () => {
+    const lines = [
+      rec('konserves-koed-fisk', 'food', 'Dåser med fisk eller kød', ['makrel', 'tun'], ['Makrel i tomat', 'Makrel i olie', 'Tun i vand']),
+      rec('konserves-baelgfrugter', 'food', 'Dåser med bønner eller kikærter', ['kikærter'], ['Kikærter på dåse']),
+      rec('vand-3-liter', 'water', 'Drikkevand', ['vand'], ['Vand på flaske']),
+    ];
+    const own = [item({ id: 'o', name: 'Makrel i olie', recommendationId: 'konserves-koed-fisk' })];
+    const scanned = { '5701234567890': { name: 'Makrel, Amanda', quantity: '125 g' } };
+    expect(suggest('makr', lines, own, scanned).map((x) => `${x.kind}:${x.name}`)).toEqual([
+      'own:Makrel i olie',
+      'scanned:Makrel, Amanda',
+      'product:Makrel i tomat',
+      'recommendation:Dåser med fisk eller kød',
+    ]);
+    expect(suggest('kik', lines, []).map((x) => x.name)).toEqual(['Kikærter på dåse', 'Dåser med bønner eller kikærter']);
+    expect(suggest('vand', lines, []).map((x) => x.name)).toEqual(['Tun i vand']); // not 'Vand på flaske': water is the water card's
+    expect(suggest('tun', lines, [], {}, 1).map((x) => x.name)).toEqual(['Tun i vand']);
+  });
+
+  it('links a listed product to its own line first', () => {
+    const lines = [
+      rec('konserves-groentsager', 'food', 'Dåser med tomater eller grøntsager', ['tomater'], ['Tomatsuppe på dåse']),
+      rec('konserves-koed-fisk', 'food', 'Dåser med fisk eller kød', ['makrel'], ['Makrel i tomat']),
+    ];
+    expect(matchRecommendation('Makrel i tomat', null, lines)?.id).toBe('konserves-koed-fisk'); // not the tomato line
+    expect(matchRecommendation('makrel i TOMAT', 'food', lines)?.id).toBe('konserves-koed-fisk');
+    expect(matchRecommendation('Makrel i tomat', 'other', lines)).toBeUndefined();
   });
 
   it('guesses the line, and so the category, from a typed name', () => {

@@ -39,6 +39,17 @@
             "piller",
             "tabletter",
             "recept"
+          ],
+          "products": [
+            "Fast medicin",
+            "Paracetamol",
+            "Ibuprofen",
+            "Allergitabletter",
+            "Næsespray",
+            "Hostesaft",
+            "Halspastiller",
+            "Væskeerstatning",
+            "Multivitamin"
           ]
         },
         {
@@ -51,6 +62,21 @@
             "forbinding",
             "bandage",
             "kompres"
+          ],
+          "products": [
+            "Plaster",
+            "Blisterplaster",
+            "Kompresser",
+            "Gazebind",
+            "Elastikbind",
+            "Trekantstørklæde",
+            "Sportstape",
+            "Sårrens",
+            "Engangshandsker",
+            "Saks",
+            "Pincet",
+            "Termometer",
+            "Redningstæppe"
           ]
         },
         {
@@ -61,6 +87,9 @@
             "jod",
             "jodtabletter",
             "kaliumjodid"
+          ],
+          "products": [
+            "Kaliumjodidtabletter"
           ]
         }
       ],
@@ -103,6 +132,10 @@
             "toiletpapir",
             "toiletruller",
             "wc-papir"
+          ],
+          "products": [
+            "Toiletruller",
+            "Fugtigt toiletpapir"
           ]
         },
         {
@@ -114,6 +147,11 @@
             "sprit",
             "desinfektion",
             "hånddesinfektion"
+          ],
+          "products": [
+            "Hånddesinfektion",
+            "Håndsprit i lommeformat",
+            "Desinfektionsservietter"
           ]
         },
         {
@@ -126,6 +164,16 @@
             "tamponer",
             "menstruationskop",
             "trusseindlæg"
+          ],
+          "products": [
+            "Bleer",
+            "Buksebleer",
+            "Bind",
+            "Natbind",
+            "Trusseindlæg",
+            "Tamponer",
+            "Menstruationskop",
+            "Inkontinensbind"
           ]
         }
       ],

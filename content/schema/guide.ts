@@ -19,12 +19,16 @@ export type PreparednessGroup = 'weather' | 'situation' | 'supplies';
 // stored on the device by id). For Forråd (D-046, pack schema 13): `name` is a short label,
 // `amount` the quantity the line gives for one person (the build checks that the number is in the
 // line's own text), and `keywords` the everyday words that should find it (e.g. "makrel").
+// `products` (D-052): common goods that count as the line ("Makrel i tomat"), offered as names
+// while typing in Forråd. Our own labels, not source text; each product belongs to one line. An
+// optional field the app reads from the checklist JSON, so the pack schema is unchanged.
 export interface ChecklistItem {
   id: string;
   text: string;
   name?: string;
   amount?: ChecklistAmount;
   keywords?: string[];
+  products?: string[];
 }
 
 export interface ChecklistAmount {
