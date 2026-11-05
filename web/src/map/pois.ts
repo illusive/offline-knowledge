@@ -3,7 +3,7 @@
 // default; everything else in the data stays available under the other groups, including "Alt andet".
 // Drawn by our own layers (a coloured dot per group, the name from zoom 15), not the basemap's.
 
-import { useState } from 'react';
+import { createLocalStore } from '../lib/localStore';
 import type { ExpressionSpecification, FilterSpecification, LayerSpecification } from 'maplibre-gl';
 
 export const POI_GROUPS = [
@@ -27,25 +27,13 @@ export function defaultGroups(): PoiGroup[] {
   return POI_GROUPS.filter((g) => g.on).map((g) => g.key);
 }
 
+const groupsStore = createLocalStore<PoiGroup[]>({
+  key: KEY,
+  parse: (stored) => (Array.isArray(stored) ? stored.filter((k): k is PoiGroup => POI_GROUPS.some((g) => g.key === k)) : defaultGroups()),
+});
+
 export function usePoiGroups() {
-  const [groups, setGroupsState] = useState<PoiGroup[]>(() => {
-    try {
-      const raw = localStorage.getItem(KEY);
-      if (raw) return (JSON.parse(raw) as string[]).filter((k): k is PoiGroup => POI_GROUPS.some((g) => g.key === k));
-    } catch {
-      // fall through to the defaults
-    }
-    return defaultGroups();
-  });
-  const setGroups = (next: PoiGroup[]) => {
-    setGroupsState(next);
-    try {
-      localStorage.setItem(KEY, JSON.stringify(next));
-    } catch {
-      // private mode: not remembered
-    }
-  };
-  return { groups, setGroups };
+  return { groups: groupsStore.use(), setGroups: groupsStore.set };
 }
 
 // Which places to draw: the selected groups' kinds (for "other", every kind not in a group), each

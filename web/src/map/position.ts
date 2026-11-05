@@ -3,9 +3,16 @@
 // the phone's GPS needs no network, only a first fix can take longer.
 
 import { useEffect, useState } from 'react';
+import { createLocalStore } from '../lib/localStore';
 import type { Position } from './overlays.ts';
 
-const KEY = 'stead.map.showPosition';
+// Remembered as "1" or "0" (as before the shared store).
+const showPosition = createLocalStore<boolean>({
+  key: 'stead.map.showPosition',
+  parse: (stored) => stored === true,
+  serialize: (on) => (on ? '1' : '0'),
+  deserialize: (raw) => raw === '1',
+});
 
 export type PositionState =
   | { status: 'off' }
@@ -16,26 +23,10 @@ export type PositionState =
 
 export const positionSupported = typeof navigator !== 'undefined' && 'geolocation' in navigator;
 
-function storedOn(): boolean {
-  try {
-    return localStorage.getItem(KEY) === '1';
-  } catch {
-    return false;
-  }
-}
-
 export function usePosition() {
-  const [on, setOnState] = useState(() => positionSupported && storedOn());
+  const on = showPosition.use() && positionSupported;
   const [state, setState] = useState<PositionState>({ status: 'off' });
-
-  const setOn = (value: boolean) => {
-    setOnState(value);
-    try {
-      localStorage.setItem(KEY, value ? '1' : '0');
-    } catch {
-      // Private mode: the switch just isn't remembered.
-    }
-  };
+  const setOn = showPosition.set;
 
   useEffect(() => {
     if (!on || !positionSupported) {
@@ -48,12 +39,7 @@ export function usePosition() {
       (error) => {
         if (error.code === error.PERMISSION_DENIED) {
           setState({ status: 'denied' });
-          setOnState(false);
-          try {
-            localStorage.setItem(KEY, '0');
-          } catch {
-            // ignore
-          }
+          showPosition.set(false);
         } else setState((s) => (s.status === 'found' ? s : { status: 'unavailable' }));
       },
       { enableHighAccuracy: true, maximumAge: 10_000, timeout: 60_000 },

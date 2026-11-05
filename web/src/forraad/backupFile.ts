@@ -49,3 +49,25 @@ export function readBackup(text: string): { data: Record<string, string>; itemCo
   }
   return { data, itemCount };
 }
+
+// Puts a backup's values in place of the app's own, all or nothing: every value is written first,
+// then keys the backup does not have are removed. If a write fails (e.g. full storage), the values
+// from before are put back and false is returned, so a failed restore never loses data.
+export function applyBackup(storage: Pick<Storage, 'length' | 'key' | 'getItem' | 'setItem' | 'removeItem'>, data: Record<string, string>): boolean {
+  const before = makeBackup(storage).data;
+  try {
+    for (const [key, value] of Object.entries(data)) storage.setItem(key, value);
+    for (const key of Object.keys(before)) if (!(key in data)) storage.removeItem(key);
+    return true;
+  } catch {
+    for (const key of Object.keys(data)) if (!(key in before)) storage.removeItem(key);
+    for (const [key, value] of Object.entries(before)) {
+      try {
+        storage.setItem(key, value);
+      } catch {
+        // nothing more to do; the earlier value was there before, so the space should be too
+      }
+    }
+    return false;
+  }
+}

@@ -25,13 +25,11 @@ export interface Strings {
   updateReady: string;
   updateAction: string;
   dismiss: string;
-  languageName: Record<Lang, string>;
   homeTitle: string;
   homeSearchPlaceholder: string;
   homeSearchLabel: string;
   startHere: string;
   storingFood: string;
-  storingFoodSubtitle: (n: number) => string;
   storageIntro: string;
   emergencyTitle: string;
   emergencySubtitle: string;
@@ -42,6 +40,7 @@ export interface Strings {
   tabs: Record<'home' | 'map' | 'forraad' | 'tools', string>;
   settingsOpen: string;
   mapTitle: string;
+  mapTileNote: string;
   mapLabel: string;
   mapLoading: string;
   mapErrorTitle: string;
@@ -52,7 +51,6 @@ export interface Strings {
     close: string;
     title: string;
     yourAreas: string;
-    getArea: string;
     choices: Record<'home' | 'region' | 'country', string>;
     noHome: string;
     pickOnMap: string;
@@ -74,8 +72,8 @@ export interface Strings {
     resume: string;
     remove: string;
     confirmRemove: string;
-    noAreasYet: string;
     downloadFailed: string;
+    areaErrors: Record<'changed' | 'network' | 'incomplete' | 'unknown', string>;
     back: string;
     introTitle: string;
     introBody: string;
@@ -224,7 +222,6 @@ export interface Strings {
     maps: string;
     mapsNone: string;
     mapsSummary: (areas: number, size: string) => string;
-    openMap: string;
     used: string;
     language: string;
     appearance: string;
@@ -315,6 +312,10 @@ export interface Strings {
   prepareSearchPlaceholder: string;
   prepareSearchLabel: string;
   checklistProgress: (done: number, total: number) => string;
+  checklistInForraad: (names: string) => string;
+  checklistWaterInForraad: string;
+  checklistHave: string;
+  checklistMissing: string;
   storeThisCrop: string;
   growingSearchPlaceholder: string;
   growingSearchLabel: string;
@@ -367,13 +368,11 @@ export const strings: Record<Lang, Strings> = {
     updateReady: 'En ny version er klar.',
     updateAction: 'Opdater',
     dismiss: 'Luk',
-    languageName: { da: 'dansk', en: 'engelsk' },
     homeTitle: 'Hvad har du brug for?',
     homeSearchPlaceholder: 'Søg',
     homeSearchLabel: 'Søg i indholdet',
     startHere: 'Start her',
     storingFood: 'Opbevaring af mad',
-    storingFoodSubtitle: (n) => `${n} fødevarer · holdbarhed`,
     storageIntro: 'Hvor længe holder maden i køkkenskab, køleskab og fryser?',
     emergencyTitle: 'Livstruende nødsituation?',
     emergencySubtitle: 'Ring til alarmcentralen',
@@ -383,6 +382,7 @@ export const strings: Record<Lang, Strings> = {
     navLabel: 'Hovedmenu',
     tabs: { home: 'Hjem', map: 'Kort', forraad: 'Forråd', tools: 'Værktøjer' },
     settingsOpen: 'Indstillinger',
+    mapTileNote: 'Uden internet',
     mapTitle: 'Kort',
     mapLabel: 'Kort over Danmark',
     mapLoading: 'Åbner kortet …',
@@ -394,7 +394,6 @@ export const strings: Record<Lang, Strings> = {
       close: 'Luk',
       title: 'Kort uden net',
       yourAreas: 'Dine områder',
-      getArea: 'Hent et område',
       choices: { home: 'Omkring mit hjem', region: 'Region', country: 'Hele landet' },
       noHome: 'Vælg først, hvor du bor.',
       pickOnMap: 'Tryk på kortet',
@@ -416,8 +415,13 @@ export const strings: Record<Lang, Strings> = {
       resume: 'Fortsæt',
       remove: 'Slet',
       confirmRemove: 'Tryk igen for at slette',
-      noAreasYet: 'Du har ikke hentet noget kort endnu. Uden internet viser kortet derfor kun et groft overblik.',
-      downloadFailed: 'Kortet kunne ikke hentes:',
+      downloadFailed: 'Kortet kunne ikke hentes. Prøv igen, når du har internet.',
+      areaErrors: {
+        changed: 'Kortet er blevet opdateret, siden hentningen startede. Slet området, og hent det igen.',
+        network: 'Forbindelsen blev afbrudt. Tryk Fortsæt, når du har internet.',
+        incomplete: 'Ikke hele området blev gemt. Tryk Fortsæt for at prøve igen.',
+        unknown: 'Hentningen stoppede. Tryk Fortsæt for at prøve igen.',
+      },
       back: 'Tilbage',
       introTitle: 'Hent kortet til telefonen',
       introBody: 'Kortet henter veje, stier og stednavne fra internettet, mens du bruger det. Hvis internet og mobildata pludselig forsvinder i dit område, kan du kun bruge kortet de steder, du har hentet til telefonen på forhånd.',
@@ -570,7 +574,6 @@ export const strings: Record<Lang, Strings> = {
       maps: 'Kort',
       mapsNone: 'Ingen kort hentet',
       mapsSummary: (areas, size) => `${areas === 1 ? '1 område' : `${areas} områder`}, ${size}`,
-      openMap: 'Gå til Kort',
       used: 'Appen bruger',
       language: 'Sprog',
       appearance: 'Udseende',
@@ -709,6 +712,10 @@ export const strings: Record<Lang, Strings> = {
     prepareSearchPlaceholder: 'Søg, fx strøm eller vand',
     prepareSearchLabel: 'Søg i Når det sker',
     checklistProgress: (done, total) => `Du har ${done} af ${total}`,
+    checklistInForraad: (names) => `I forrådet: ${names}`,
+    checklistWaterInForraad: 'Ret vandet i Forråd',
+    checklistHave: 'Du har det',
+    checklistMissing: 'Mangler',
     storeThisCrop: 'Holdbarhed og konservering',
     growingSearchPlaceholder: 'Søg efter en afgrøde',
     growingSearchLabel: 'Søg i dyrkning',
@@ -759,13 +766,11 @@ export const strings: Record<Lang, Strings> = {
     updateReady: 'A new version is ready.',
     updateAction: 'Update',
     dismiss: 'Dismiss',
-    languageName: { da: 'Danish', en: 'English' },
     homeTitle: 'What do you need?',
     homeSearchPlaceholder: 'Search',
     homeSearchLabel: 'Search the content',
     startHere: 'Start here',
     storingFood: 'Storing food',
-    storingFoodSubtitle: (n) => `${n} foods · storage times`,
     storageIntro: 'How long does food keep in the cupboard, refrigerator and freezer?',
     emergencyTitle: 'Life-threatening emergency?',
     emergencySubtitle: 'Call the emergency number (Denmark)',
@@ -775,6 +780,7 @@ export const strings: Record<Lang, Strings> = {
     navLabel: 'Main menu',
     tabs: { home: 'Home', map: 'Map', forraad: 'Supplies', tools: 'Tools' },
     settingsOpen: 'Settings',
+    mapTileNote: 'Works offline',
     mapTitle: 'Map',
     mapLabel: 'Map of Denmark',
     mapLoading: 'Opening the map …',
@@ -786,7 +792,6 @@ export const strings: Record<Lang, Strings> = {
       close: 'Close',
       title: 'Offline maps',
       yourAreas: 'Your areas',
-      getArea: 'Download an area',
       choices: { home: 'Around my home', region: 'Region', country: 'Whole country' },
       noHome: 'First choose where you live.',
       pickOnMap: 'Tap the map',
@@ -808,8 +813,13 @@ export const strings: Record<Lang, Strings> = {
       resume: 'Resume',
       remove: 'Delete',
       confirmRemove: 'Tap again to delete',
-      noAreasYet: 'You have not downloaded a map yet, so without internet the map only shows a rough overview.',
-      downloadFailed: 'The map could not be downloaded:',
+      downloadFailed: 'The map could not be downloaded. Try again when you have internet.',
+      areaErrors: {
+        changed: 'The map was updated after the download started. Delete the area and download it again.',
+        network: 'The connection was lost. Tap Resume when you have internet.',
+        incomplete: 'Not all of the area was stored. Tap Resume to try again.',
+        unknown: 'The download stopped. Tap Resume to try again.',
+      },
       back: 'Back',
       introTitle: 'Download the map to your phone',
       introBody: 'The map fetches roads, paths and place names from the internet while you use it. If internet and mobile data suddenly disappear where you are, you can only use the map in places you downloaded to your phone beforehand.',
@@ -962,7 +972,6 @@ export const strings: Record<Lang, Strings> = {
       maps: 'Maps',
       mapsNone: 'No maps downloaded',
       mapsSummary: (areas, size) => `${areas === 1 ? '1 area' : `${areas} areas`}, ${size}`,
-      openMap: 'Go to Map',
       used: 'The app uses',
       language: 'Language',
       appearance: 'Appearance',
@@ -1095,6 +1104,10 @@ export const strings: Record<Lang, Strings> = {
     prepareSearchPlaceholder: 'Search in Danish, e.g. strøm or vand',
     prepareSearchLabel: 'Search emergency guides',
     checklistProgress: (done, total) => `You have ${done} of ${total}`,
+    checklistInForraad: (names) => `In your supplies: ${names}`,
+    checklistWaterInForraad: 'Change the water in Supplies',
+    checklistHave: 'You have it',
+    checklistMissing: 'Missing',
     storeThisCrop: 'Storing and preserving',
     growingSearchPlaceholder: 'Search for a crop',
     growingSearchLabel: 'Search growing guides',

@@ -4,7 +4,7 @@
 
 Trusted, freely available practical knowledge, packaged so it is easy to read, easy to find and fully available on an iPhone when there is no network, no power grid or no time to search.
 
-The project does not write its own guidance. It collects material from authorities and other trusted sources, restructures it into clear steps, warnings and checklists while keeping the original wording (high-risk content such as first aid is reproduced verbatim, D-027), and makes every statement traceable to its source. See `docs/CONTENT_POLICY.md`.
+The project does not write its own guidance. It collects material from authorities and other trusted sources, restructures it into clear steps, warnings and checklists in plain Danish while keeping the source's own words one tap away (D-042), and makes every statement traceable to its source. See `docs/CONTENT_POLICY.md`.
 
 ## Users and situations
 
@@ -31,22 +31,23 @@ Practical preparedness for the northern hemisphere, with Denmark as the primary 
 - Shelter, heating and staying warm.
 - Basic repairs.
 
-High-risk areas (first aid, water treatment, food safety, electricity) follow a stricter publishing process and are introduced after the low-risk pilot (see `docs/ROADMAP.md`).
+High-risk areas (first aid, water treatment, food safety, electricity) follow a stricter publishing process: a second authority for every guide, and owner review before "Prøveversion" is removed (D-027, D-037).
 
 ### Languages
 
 - The interface is available in Danish and English.
-- Each guide is shown in the language of its source and labeled with that language. Guides are not translated in v1 (D-003).
+- Guides are in Danish. English sources are translated only in "Når det sker", with the original one tap away (D-041).
 
 ### v1 requirements
 
 - A bundled, versioned core knowledge pack is available on first launch without any network access (D-007).
-- Browse guides by category.
+- Browse by category, in order of how many people need them (D-048): Førstehjælp, Når det sker, Opbevaring af mad, Kort, Dyrkning.
 - Read a guide: summary, steps, warnings, checklists, source attribution and license.
 - Full-text local search across all guides.
 - Food storage lookup: search a food and see how long it keeps in the pantry, fridge and freezer, in Danish and English, with its source (D-014, D-015).
 - Emergency card that calls 112, reachable from Home and every high-risk guide.
-- Tools: compass with "hold a course" (D-045). The supply checklist became the "Hjemmeberedskab" stock lists (D-040, D-043).
+- Kort tab: offline maps of chosen areas, places and your position (D-036).
+- Tools: compass with "hold a course" (D-045). The supply checklist became the "Hjemmeberedskab" stock lists (D-040, D-043), whose ticks are what Forråd holds (D-048).
 - Bookmarks ("Saved") for guides and foods, kept on the device only (D-026).
 - Forråd tab: the household's own stores. Water against the stock list for the household, when it was last checked, expiry dates, each category with a link to its stock list, and barcode scanning. The household and a backup file are in Settings. Kept on the device (D-046, D-047).
 - Settings (the gear at the top right): offline library (pack size, version, date), language, appearance, water unit, text size, about and sources.
@@ -55,12 +56,10 @@ High-risk areas (first aid, water treatment, food safety, electricity) follow a 
 
 ### Non-goals for v1
 
-- Offline maps and the Kort tab: being trialled (D-036).
 - Flashlight, SOS signal, emergency contacts, Wi-Fi-only and low-power settings (D-025).
-- High-risk guides (e.g. first aid) until a source that allows verbatim reuse is cleared (D-027).
 - Downloadable or updatable content packs inside the app (format designed now, delivery later).
 - Android.
-- Translation of guides.
+- Translation of guides beyond the English sources in "Når det sker".
 - Runtime AI, accounts, cloud sync, social features, telemetry (D-010).
 - Original, self-authored guidance.
 

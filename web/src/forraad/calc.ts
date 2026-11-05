@@ -41,8 +41,6 @@ export const CHECK_EVERY_MONTHS = 6;
 // Things with a best-before month this many months ahead (or earlier) are shown at the top.
 export const EXPIRING_WITHIN_MONTHS = 1;
 
-export const LITRES_PER_US_GALLON = 3.785411784;
-
 // Litres for the household for the chosen number of days, or null without the stock list's figure.
 export function waterNeeded(household: Household, litresPerPersonDay: number | null): number | null {
   if (litresPerPersonDay === null) return null;
@@ -80,25 +78,3 @@ export function expiring(items: StoreItem[], currentMonth: string, withinMonths 
     }),
   };
 }
-
-export function formatMonth(month: string, locale: string): string {
-  const [y, m] = month.split('-').map(Number);
-  return new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(new Date(y!, m! - 1, 1));
-}
-
-export type WaterUnit = 'litres' | 'gallons';
-
-export function toUnit(litres: number, unit: WaterUnit): number {
-  return unit === 'gallons' ? litres / LITRES_PER_US_GALLON : litres;
-}
-
-export function fromUnit(value: number, unit: WaterUnit): number {
-  return unit === 'gallons' ? value * LITRES_PER_US_GALLON : value;
-}
-
-export function formatVolume(litres: number, unit: WaterUnit, locale: string): string {
-  const value = toUnit(litres, unit);
-  const n = new Intl.NumberFormat(locale, { maximumFractionDigits: value < 10 && value % 1 !== 0 ? 1 : 0 }).format(value);
-  return `${n} ${unit === 'gallons' ? 'gal' : 'L'}`;
-}
-

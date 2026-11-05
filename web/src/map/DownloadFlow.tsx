@@ -5,7 +5,8 @@
 import { ArrowLeft, Download, House, Map as MapIcon, MapPinned, Pause, Play, Trash2, X, type LucideIcon } from 'lucide-react';
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { Lang, Strings } from '../i18n/strings';
-import { formatBytes, formatMapDate } from './format';
+import { formatBytes, formatMapDate } from '../i18n/format';
+import { Button, IconButton } from '../components/ui';
 import { mapClient } from './client.ts';
 import type { AreaInfo, AreaShape, Home, MapSummary } from './protocol.ts';
 
@@ -49,7 +50,7 @@ export function DownloadFlow(props: {
   const [positionError, setPositionError] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
   const [startedId, setStartedId] = useState<string | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(false);
   const [busy, setBusy] = useState(false);
   const [history, setHistory] = useState<FlowStep[]>([]);
 
@@ -116,14 +117,15 @@ export function DownloadFlow(props: {
   const download = async () => {
     if (!choice) return;
     setBusy(true);
-    setError(null);
+    setError(false);
     try {
       await navigator.storage?.persist?.(); // keep downloaded maps when storage runs low
       const area = await client.call({ type: 'download', label: choice.label, shape: choice.shape });
       setStartedId(area.id);
       go('progress');
     } catch (e) {
-      setError(e instanceof Error ? e.message : String(e));
+      console.error('Map download could not start', e);
+      setError(true);
     } finally {
       setBusy(false);
     }
@@ -151,10 +153,10 @@ export function DownloadFlow(props: {
     );
     actions = (
       <>
-        <PrimaryButton disabled={offline || !summary} onClick={() => go('kind')}>
+        <Button variant="primary" disabled={offline || !summary} onClick={() => go('kind')}>
           {t.chooseArea}
-        </PrimaryButton>
-        <SecondaryButton onClick={onClose}>{firstTime ? t.skipForNow : t.close}</SecondaryButton>
+        </Button>
+        <Button variant="onPage" onClick={onClose}>{firstTime ? t.skipForNow : t.close}</Button>
       </>
     );
   } else if (step === 'areas') {
@@ -171,7 +173,7 @@ export function DownloadFlow(props: {
                   {a.state !== 'ready' ? ` · ${t.progress(percentOf(a))}` : ''} · {formatBytes(a.plannedBytes, lang)}
                 </span>
                 <span className="block text-sm text-muted">{a.replaces ? t.updating : t.mapDate(formatMapDate(a.version, lang))}</span>
-                {a.error ? <span className="block text-sm text-muted">{a.error}</span> : null}
+                {a.error ? <span className="block text-sm text-muted">{t.areaErrors[a.error]}</span> : null}
               </button>
               <div className="flex shrink-0 gap-[6px]">
                 {a.state === 'downloading' ? (
@@ -217,9 +219,9 @@ export function DownloadFlow(props: {
     actions = (
       <>
         {offline ? <p className="text-sm text-muted">{t.needsNetwork}</p> : null}
-        <PrimaryButton disabled={offline || !summary} onClick={() => go('kind')}>
+        <Button variant="primary" disabled={offline || !summary} onClick={() => go('kind')}>
           {t.addArea}
-        </PrimaryButton>
+        </Button>
       </>
     );
   } else if (step === 'kind') {
@@ -262,24 +264,24 @@ export function DownloadFlow(props: {
         <p className="text-muted">{home ? t.homeSet : t.noHome}</p>
         {positionError ? <p className="text-sm text-muted">{t.positionDenied}</p> : null}
         <div className="flex flex-wrap gap-[8px]">
-          <SecondaryButton onClick={onPickHome}>{home ? `${t.changeHome}: ${t.pickOnMap.toLowerCase()}` : t.pickOnMap}</SecondaryButton>
-          {'geolocation' in navigator ? <SecondaryButton onClick={useMyPosition}>{t.useMyPosition}</SecondaryButton> : null}
+          <Button variant="onPage" onClick={onPickHome}>{home ? `${t.changeHome}: ${t.pickOnMap.toLowerCase()}` : t.pickOnMap}</Button>
+          {'geolocation' in navigator ? <Button variant="onPage" onClick={useMyPosition}>{t.useMyPosition}</Button> : null}
         </div>
         <Options options={options} sizes={sizes} selected={choice?.key ?? null} onSelect={setChoice} lang={lang} t={t} />
       </>
     );
     actions = (
-      <PrimaryButton disabled={!choice} onClick={() => go('confirm')}>
+      <Button variant="primary" disabled={!choice} onClick={() => go('confirm')}>
         {t.chooseArea}
-      </PrimaryButton>
+      </Button>
     );
   } else if (step === 'region') {
     title = t.regionTitle;
     body = <Options options={options} sizes={sizes} selected={choice?.key ?? null} onSelect={setChoice} lang={lang} t={t} />;
     actions = (
-      <PrimaryButton disabled={!choice} onClick={() => go('confirm')}>
+      <Button variant="primary" disabled={!choice} onClick={() => go('confirm')}>
         {t.chooseArea}
-      </PrimaryButton>
+      </Button>
     );
   } else if (step === 'confirm' && choice) {
     title = t.confirmTitle;
@@ -292,16 +294,16 @@ export function DownloadFlow(props: {
         <p className="text-sm text-muted">{t.confirmKeepOpen}</p>
         {error ? (
           <p role="alert" className="font-medium">
-            {t.downloadFailed} {error}
+            {t.downloadFailed}
           </p>
         ) : null}
       </>
     );
     actions = (
-      <PrimaryButton disabled={choiceSize === undefined || tooBig || busy} onClick={() => void download()}>
+      <Button variant="primary" disabled={choiceSize === undefined || tooBig || busy} onClick={() => void download()}>
         <Download aria-hidden="true" className="size-5" />
         {choiceSize === undefined ? t.startDownload : `${t.startDownload} (${formatBytes(choiceSize, lang)})`}
-      </PrimaryButton>
+      </Button>
     );
   } else if (step === 'progress' && started) {
     const done = started.state === 'ready';
@@ -314,19 +316,19 @@ export function DownloadFlow(props: {
         <p className="text-sm text-muted">
           {t.states[started.state]} · {t.progress(percentOf(started))} · {formatBytes(started.plannedBytes, lang)}
         </p>
-        {started.error ? <p className="font-medium">{started.error}</p> : null}
+        {started.error ? <p className="font-medium">{t.areaErrors[started.error]}</p> : null}
         <p className="text-sm text-muted">{t.keepUsing}</p>
       </>
     );
     actions = done ? (
       <>
-        <PrimaryButton onClick={() => onShowArea(started)}>{t.showOnMap}</PrimaryButton>
-        <SecondaryButton onClick={onClose}>{t.close}</SecondaryButton>
+        <Button variant="primary" onClick={() => onShowArea(started)}>{t.showOnMap}</Button>
+        <Button variant="onPage" onClick={onClose}>{t.close}</Button>
       </>
     ) : (
       <>
-        {started.state === 'paused' ? <PrimaryButton onClick={() => void client.call({ type: 'resume', id: started.id })}>{t.tryAgain}</PrimaryButton> : null}
-        <SecondaryButton onClick={onClose}>{t.close}</SecondaryButton>
+        {started.state === 'paused' ? <Button variant="primary" onClick={() => void client.call({ type: 'resume', id: started.id })}>{t.tryAgain}</Button> : null}
+        <Button variant="onPage" onClick={onClose}>{t.close}</Button>
       </>
     );
   }
@@ -391,26 +393,3 @@ function Progress({ percent, label }: { percent: number; label: string }) {
   );
 }
 
-function PrimaryButton({ children, onClick, disabled }: { children: ReactNode; onClick: () => void; disabled?: boolean }) {
-  return (
-    <button type="button" disabled={disabled} onClick={onClick} className="flex min-h-12 items-center justify-center gap-[8px] rounded-full bg-accent px-[20px] font-semibold text-on-accent disabled:opacity-40">
-      {children}
-    </button>
-  );
-}
-
-function SecondaryButton({ children, onClick }: { children: ReactNode; onClick: () => void }) {
-  return (
-    <button type="button" onClick={onClick} className="flex min-h-11 items-center justify-center rounded-full bg-surface px-[18px] text-sm font-medium">
-      {children}
-    </button>
-  );
-}
-
-function IconButton({ label, Icon, onClick }: { label: string; Icon: LucideIcon; onClick: () => void }) {
-  return (
-    <button type="button" onClick={onClick} aria-label={label} className="grid size-11 place-items-center rounded-full bg-surface">
-      <Icon aria-hidden="true" className="size-5" />
-    </button>
-  );
-}

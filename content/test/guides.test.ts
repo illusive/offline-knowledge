@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { amountInText, validateGuides, verbatimText } from '../lib/guides.ts';
+import { amountInText, validateGuides } from '../lib/guides.ts';
+import { verbatimText } from '../lib/text.ts';
 import type { RegistrySource } from '../lib/registry.ts';
 import type { Guide } from '../schema/guide.ts';
 

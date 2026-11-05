@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { ethyleneProfiles, htmlToText, pdfText, relations, validateGuides } from '../lib/produce.ts';
+import { ethyleneProfiles, htmlToText, relations, validateProduceGuides as validateGuides } from '../lib/produce.ts';
+import { pdfText } from '../lib/text.ts';
 import type { RegistrySource } from '../lib/registry.ts';
 import type { ProduceGuide } from '../schema/produce.ts';
 

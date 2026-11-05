@@ -2,7 +2,8 @@
 // with SQLite's "opfs-sahpool" VFS (D-021) and answers queries from the app.
 
 import sqlite3InitModule from '@sqlite.org/sqlite-wasm';
-import type { InitResult, PackInfo, Reply, Request } from './protocol';
+import { serveRpc } from '../lib/rpc';
+import type { InitResult, PackInfo, Request, Responses } from './protocol';
 import { getGuide, getItemDetail, listGuides, listItems, listSources, searchGuides, searchItems, verifyPack, type SqlDb } from './queries';
 
 let db: SqlDb | undefined;
@@ -44,34 +45,13 @@ function requireDb(): SqlDb {
   return db;
 }
 
-async function handle(request: Request) {
-  switch (request.type) {
-    case 'init':
-      return init(request.packUrl, request.pack);
-    case 'list':
-      return listItems(requireDb());
-    case 'search':
-      return searchItems(requireDb(), request.query);
-    case 'detail':
-      return getItemDetail(requireDb(), request.id);
-    case 'guides':
-      return listGuides(requireDb(), request.category);
-    case 'guide':
-      return getGuide(requireDb(), request.id);
-    case 'searchGuides':
-      return searchGuides(requireDb(), request.query);
-    case 'sources':
-      return listSources(requireDb());
-  }
-}
-
-self.onmessage = async (event: MessageEvent<{ id: number; request: Request }>) => {
-  const { id, request } = event.data;
-  let reply: Reply;
-  try {
-    reply = { id, ok: true, result: await handle(request) };
-  } catch (error) {
-    reply = { id, ok: false, error: error instanceof Error ? error.message : String(error) };
-  }
-  self.postMessage(reply);
-};
+serveRpc<Request, Responses>({
+  init: (r) => init(r.packUrl, r.pack),
+  list: () => listItems(requireDb()),
+  search: (r) => searchItems(requireDb(), r.query),
+  detail: (r) => getItemDetail(requireDb(), r.id),
+  guides: (r) => listGuides(requireDb(), r.category),
+  guide: (r) => getGuide(requireDb(), r.id),
+  searchGuides: (r) => searchGuides(requireDb(), r.query),
+  sources: () => listSources(requireDb()),
+});

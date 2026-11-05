@@ -4,7 +4,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { Guide, GuideBlock } from '../schema/guide.ts';
-import { normalize } from './produce.ts';
+import { missingQuoteParts, normalize } from './text.ts';
 import type { RegistrySource } from './registry.ts';
 
 export const GUIDES_DIR = new URL('../guides/', import.meta.url).pathname;
@@ -17,25 +17,6 @@ export async function loadGuides(dir = GUIDES_DIR): Promise<Guide[]> {
     }
   }
   return guides.sort((a, b) => a.category.localeCompare(b.category) || a.order - b.order);
-}
-
-// Text of a PDF source for the verbatim check: page markers and printed page numbers dropped,
-// words broken across lines joined ("Situa-\ntionen" → "Situationen"), soft hyphens removed,
-// bullet glyphs and replacement characters turned into spaces. `raw` is sources/text/<id>.txt
-// without its first (checksum) line.
-export function verbatimText(raw: string): string {
-  const lines = raw.split('\n');
-  const kept = lines.filter((line, i) => {
-    if (/^--- p\d+$/.test(line)) return false;
-    const pageNumber = /^\d{1,3}$/.test(line) && (/^--- p\d+$/.test(lines[i - 1] ?? '') || /^--- p\d+$/.test(lines[i + 1] ?? '') || i === lines.length - 1);
-    return !pageNumber;
-  });
-  const joined = kept
-    .join('\n')
-    .replace(/­/g, '')
-    .replace(/-\n(?=[a-zæøå])/g, '')
-    .replace(/[•�￼]/g, ' ');
-  return normalize(joined);
 }
 
 export function shownTexts(block: GuideBlock): string[] {
@@ -167,9 +148,7 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
     if (guide.category === 'growing' && !guide.name?.trim()) problems.push(`${at}: growing guides need a plain name`);
     if (guide.season) {
       if (guide.risk === 'high') problems.push(`${at}: high-risk guides show no text of ours`);
-      for (const part of guide.season.quote.split(' … ')) {
-        if (!(texts.get(guide.sourceId) ?? '').includes(normalize(part))) problems.push(`${at} season: quote not found in ${guide.sourceId}: "${part.slice(0, 60)}"`);
-      }
+      for (const part of missingQuoteParts(texts.get(guide.sourceId) ?? '', guide.season.quote)) problems.push(`${at} season: quote not found in ${guide.sourceId}: "${part.slice(0, 60)}"`);
     }
     if (guide.risk === 'high' && guide.checks.length === 0) problems.push(`${at}: no second-authority check (D-027)`);
     guide.checks.forEach((c, i) => {
@@ -178,9 +157,7 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
       if (c.sourceId === guide.sourceId) problems.push(`${where}: the second authority must be another source`);
       const text = texts.get(c.sourceId);
       if (!text) problems.push(`${where}: no text for source '${c.sourceId}'`);
-      else for (const part of c.quote.split(' … ')) {
-        if (!text.includes(normalize(part.replace(/\[[^\]]*\]/g, ' ')))) problems.push(`${where}: quote not found in ${c.sourceId}: "${part.slice(0, 60)}"`);
-      }
+      else for (const part of missingQuoteParts(text, c.quote)) problems.push(`${where}: quote not found in ${c.sourceId}: "${part.slice(0, 60)}"`);
       if (!c.note.trim()) problems.push(`${where}: say what agrees`);
     });
   }

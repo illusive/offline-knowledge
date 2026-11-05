@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { addMonths, expiring, formatMonth, formatVolume, monthsUntil, nextCheck, waterNeeded, type Recommendation } from './calc';
-import { makeBackup, readBackup } from './backupFile';
+import { formatMonth, formatVolume } from '../i18n/format';
+import { addMonths, expiring, monthsUntil, nextCheck, waterNeeded, type Recommendation } from './calc';
+import { applyBackup, makeBackup, readBackup } from './backupFile';
 import { parseProduct } from './barcode';
 import { matchRecommendation, suggest } from './recommendations';
 import { EMPTY, parse, type StoreItem } from './store';
@@ -24,9 +25,9 @@ describe('Forråd water', () => {
   });
 
   it('shows litres or US gallons', () => {
-    expect(formatVolume(27, 'litres', 'da-DK')).toBe('27 L');
-    expect(formatVolume(1.5, 'litres', 'da-DK')).toBe('1,5 L');
-    expect(formatVolume(27, 'gallons', 'en-US')).toBe('7.1 gal');
+    expect(formatVolume(27, 'litres', 'da')).toBe('27 L');
+    expect(formatVolume(1.5, 'litres', 'da')).toBe('1,5 L');
+    expect(formatVolume(27, 'gallons', 'en')).toBe('7.1 gal');
   });
 });
 
@@ -44,8 +45,8 @@ describe('Forråd months', () => {
   });
 
   it('names a month', () => {
-    expect(formatMonth('2027-05', 'da-DK')).toBe('maj 2027');
-    expect(formatMonth('2027-05', 'en-GB')).toBe('May 2027');
+    expect(formatMonth('2027-05', 'da')).toBe('maj 2027');
+    expect(formatMonth('2027-05', 'en')).toBe('May 2027');
   });
 });
 
@@ -129,6 +130,34 @@ describe('Forråd backup file', () => {
     const read = readBackup(JSON.stringify(file));
     expect(read?.itemCount).toBe(2);
     expect(read?.data['stead.bookmarks.v1']).toBe('["x"]');
+  });
+
+  // A storage that holds strings and can be told to fail on a key, like a full localStorage.
+  const memory = (entries: Record<string, string>, failOn?: string) => {
+    const map = new Map(Object.entries(entries));
+    return {
+      map,
+      get length() {
+        return map.size;
+      },
+      key: (i: number) => [...map.keys()][i] ?? null,
+      getItem: (k: string) => map.get(k) ?? null,
+      setItem: (k: string, v: string) => {
+        if (k === failOn) throw new Error('QuotaExceededError');
+        map.set(k, v);
+      },
+      removeItem: (k: string) => void map.delete(k),
+    };
+  };
+
+  it('restores all or nothing: a failed write puts the earlier data back', () => {
+    const ok = memory({ 'stead.a': 'old', 'stead.gone': 'x', other: 'kept' });
+    expect(applyBackup(ok, { 'stead.a': 'new', 'stead.b': 'b' })).toBe(true);
+    expect(Object.fromEntries(ok.map)).toEqual({ 'stead.a': 'new', 'stead.b': 'b', other: 'kept' });
+
+    const full = memory({ 'stead.a': 'old', 'stead.gone': 'x' }, 'stead.c');
+    expect(applyBackup(full, { 'stead.a': 'new', 'stead.b': 'b', 'stead.c': 'c' })).toBe(false);
+    expect(Object.fromEntries(full.map)).toEqual({ 'stead.a': 'old', 'stead.gone': 'x' });
   });
 
   it('refuses files that are not a stead backup', () => {

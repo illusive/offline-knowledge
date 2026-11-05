@@ -67,7 +67,7 @@ Do not create additional documents unless they solve a clear organizational prob
 
 When decisions change, update the relevant documentation and remove contradictory instructions.
 
-> **Current state (2026-11-05):** M1 in progress. The app is a PWA in `web/` (React + Vite, D-021–D-023), live on GitHub Pages and tested regularly by the owner on an iPhone. All texts are in plain language with the source words kept (D-042); the rewrites await a manual review (`docs/LANGUAGE_REVIEW.md`). Content: 11 first aid guides, 19 crops, 21 of 101 food guides, 13 "Når det sker" guides in three groups (D-043). M1 app features are built (Settings D-044, now behind a gear; compass D-045; Forråd tracker with barcode scanning D-046, D-047). The compass and the Forråd camera and backup still need a check on the iPhone. See `docs/ROADMAP.md`.
+> **Current state (2026-11-05):** M1 in progress. The app is a PWA in `web/` (React + Vite, D-021–D-023), live on GitHub Pages and tested regularly by the owner on an iPhone. All texts are in plain language with the source words kept (D-042); the rewrites await a manual review (`docs/LANGUAGE_REVIEW.md`). Content: 11 first aid guides, 19 crops, 21 of 101 food guides, 13 "Når det sker" guides in three groups (D-043). M1 app features are built (Settings D-044, now behind a gear; compass D-045; Forråd tracker with barcode scanning D-046, D-047; one category order and Forråd driving the stock-list ticks D-048). A clean-up on 2026-11-05 put repeated code into shared helpers (`docs/ARCHITECTURE.md` §4: localStore, rpc, useDbQuery, format, ui primitives). The compass and the Forråd camera and backup still need a check on the iPhone. See `docs/ROADMAP.md`.
 
 ## 4. Engineering principles
 
@@ -123,21 +123,11 @@ Keep dependencies and imports predictable.
 
 Evaluate existing libraries before building complex functionality.
 
-Potential candidates include:
-
-- Expo and maintained Expo modules for platform integration.
-- Expo Router or another established navigation solution.
-- Expo SQLite for persistent data and full-text search.
-- MapLibre React Native for offline maps.
-- NativeWind for styling, using a stable, compatible version.
-- Lucide React Native for iconography.
-
-> Update (D-021): the app is a PWA, so the Expo and React Native candidates above no longer apply. Their web counterparts (e.g. `@sqlite.org/sqlite-wasm` instead of Expo SQLite, MapLibre GL JS instead of MapLibre React Native) take their place. Check compatibility with the browsers we support instead of Expo versions.
-- Proven bottom-sheet, gesture and animation libraries.
+The app is a PWA (D-021). Its stack: React with Vite and `vite-plugin-pwa`, Tailwind CSS, `@sqlite.org/sqlite-wasm` (pack and search in OPFS), MapLibre GL JS with Protomaps (D-036), `lucide-react` icons, `barcode-detector`/`zxing-wasm` (D-047). Before adding to it, check whether these or the shared helpers in `web/src/lib/` already cover the need (`docs/ARCHITECTURE.md` §4).
 
 Before introducing a dependency, verify:
 
-1. Compatibility with the selected Expo and React Native versions.
+1. Support in the browsers we target (Safari on iPhone first).
 2. Maintenance status and community adoption.
 3. Native configuration and build requirements.
 4. License compatibility and distribution restrictions.

@@ -1,8 +1,8 @@
 // Read-only queries against the pack (schema: content/lib/pack.ts).
 // Takes a minimal database interface so the same code runs in the OPFS worker and in tests.
 
-import { longestKeeping, type Location, type PeriodRow } from '../storage/format';
-import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../storage/search';
+import { longestKeeping, type Location, type PeriodRow } from '../food/format';
+import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../food/search';
 
 export const SUPPORTED_PACK_SCHEMA_VERSION = 13;
 

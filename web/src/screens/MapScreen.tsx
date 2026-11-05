@@ -14,6 +14,7 @@ import { positionSupported, usePosition } from '../map/position';
 import { groupOf, POI_GROUPS, POI_LAYER_IDS, usePoiGroups, type PoiGroup } from '../map/pois';
 import type { AreaInfo, Home } from '../map/protocol';
 import { useDarkMode } from '../settings/preferences';
+import { usePageTitle } from '../lib/usePageTitle';
 
 const MapView = lazy(() => import('../map/MapView'));
 
@@ -59,9 +60,7 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
   const [place, setPlace] = useState<{ name: string | null; kind: string; group: PoiGroup } | null>(null);
   const found = position.state.status === 'found' ? position.state.position : null;
 
-  useEffect(() => {
-    document.title = `${s.mapTitle} – ${s.appTitle}`;
-  }, [s]);
+  usePageTitle(s.mapTitle, s.appTitle);
 
   // Areas and home from the map worker; every change sends the full list.
   useEffect(() => {

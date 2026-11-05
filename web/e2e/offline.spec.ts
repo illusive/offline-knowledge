@@ -92,3 +92,14 @@ test('English interface for an English-language browser', async () => {
     await close();
   }
 });
+
+test('Home lists the categories by how many people need them, growing last, with the map (D-048)', async ({ app: { page } }) => {
+  await page.goto('./');
+  await expect(page.getByRole('link', { name: /Dyrkning$/ })).toBeVisible({ timeout: 60_000 });
+  const names = await page.locator('main a').evaluateAll((links) => links.map((a) => a.textContent ?? ''));
+  const order = ['Førstehjælp', 'Når det sker', 'Opbevaring af mad', 'Kort', 'Dyrkning'].map((name) => names.findIndex((t) => t.includes(name)));
+  expect(order.every((i) => i >= 0)).toBe(true);
+  expect([...order].sort((a, b) => a - b)).toEqual(order);
+  await page.getByRole('main').getByRole('link', { name: /Kort$/ }).click();
+  await expect(page).toHaveURL(/#\/map$/);
+});

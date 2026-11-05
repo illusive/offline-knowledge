@@ -1,6 +1,8 @@
 // A month and a year (D-046): precise enough for long-life stores, and quick on an iPhone, where the
 // two native selects open as wheels without a keyboard. The value is yyyy-mm, or '' for no date.
 
+import { inputClass } from '../components/ui';
+import { monthName } from '../i18n/format';
 import type { Lang } from '../i18n/strings';
 
 export function MonthYear(props: { id: string; label: string; help?: string; value: string; onChange: (value: string) => void; lang: Lang; noDate?: string; monthLabel: string; yearLabel: string; firstYear?: number; years?: number }) {
@@ -9,7 +11,6 @@ export function MonthYear(props: { id: string; label: string; help?: string; val
   const firstYear = props.firstYear ?? now.getFullYear() - 1;
   const years = Array.from({ length: props.years ?? 12 }, (_, i) => firstYear + i);
   const [y, m] = value ? value.split('-').map(Number) : [null, null];
-  const monthName = (i: number) => new Intl.DateTimeFormat(lang === 'da' ? 'da-DK' : 'en-GB', { month: 'long' }).format(new Date(2000, i, 1));
   const pad = (n: number) => String(n).padStart(2, '0');
   // Choosing a month first takes this year (or next, if the month has passed); a year first takes January.
   const setMonth = (month: number | null) => {
@@ -21,7 +22,7 @@ export function MonthYear(props: { id: string; label: string; help?: string; val
     if (year === null) return onChange('');
     onChange(`${year}-${pad(m ?? 1)}`);
   };
-  const select = 'min-h-11 rounded-xl border border-border bg-background px-[12px] text-base';
+  const select = `${inputClass} text-base`;
 
   return (
     <fieldset aria-describedby={help ? `${id}-help` : undefined}>
@@ -36,7 +37,7 @@ export function MonthYear(props: { id: string; label: string; help?: string; val
           <option value="">{noDate ?? monthLabel}</option>
           {Array.from({ length: 12 }, (_, i) => (
             <option key={i} value={i + 1}>
-              {monthName(i)}
+              {monthName(i, lang)}
             </option>
           ))}
         </select>

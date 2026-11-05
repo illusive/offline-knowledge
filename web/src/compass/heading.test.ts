@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cardinal, isUncertain, normalize, readingFrom, signedDelta, smooth } from './heading';
+import { cardinal, cardinalLetters, isUncertain, normalize, readingFrom, signedDelta, smooth } from './heading';
 
 describe('compass maths', () => {
   it('normalizes to [0, 360)', () => {
@@ -21,6 +21,8 @@ describe('compass maths', () => {
     expect(cardinal(359, 'da')).toBe('N');
     expect(cardinal(200, 'da')).toBe('S');
     expect(cardinal(250, 'da')).toBe('V');
+    expect(cardinalLetters('da')).toEqual(['N', 'Ø', 'S', 'V']);
+    expect(cardinalLetters('en')).toEqual(['N', 'E', 'S', 'W']);
   });
 
   it('smooths across north without swinging round', () => {

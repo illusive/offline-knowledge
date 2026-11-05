@@ -3,7 +3,8 @@
 // breaks the screen; unknown fields are dropped. Version 2 (owner, 2026-11-05): water is one figure
 // with the month it was last checked; things have an optional size and a month/year date.
 
-import { useSyncExternalStore } from 'react';
+import { thisMonth, today } from '../i18n/format';
+import { createLocalStore } from '../lib/localStore';
 
 export const CATEGORIES = ['food', 'medicine', 'other'] as const;
 export type Category = (typeof CATEGORIES)[number];
@@ -18,6 +19,7 @@ export interface StoreItem {
   size?: string; // free text, e.g. "400 g"
   expires?: string; // best before, month precision: yyyy-mm
   recommendationId?: string; // the stock-list item it covers (D-040 checklist id)
+  viaChecklist?: true; // added by ticking the stock list (D-048); unticking removes only these
   barcode?: string;
   added: string; // yyyy-mm-dd
 }
@@ -48,7 +50,6 @@ export interface ForraadData {
 }
 
 export const KEY = 'stead.forraad.v1';
-const CHANGED = 'stead-forraad-changed';
 
 export const EMPTY: ForraadData = {
   version: 2,
@@ -81,6 +82,7 @@ function parseItem(x: unknown): StoreItem | null {
   if (rec) item.recommendationId = rec;
   const barcode = str(x.barcode, 32);
   if (barcode) item.barcode = barcode;
+  if (x.viaChecklist === true && item.recommendationId) item.viaChecklist = true;
   return item;
 }
 
@@ -114,62 +116,14 @@ export function parse(raw: unknown): ForraadData {
   return { version: 2, household, water, items, products };
 }
 
-const pad = (n: number) => String(n).padStart(2, '0');
+const store = createLocalStore<ForraadData>({ key: KEY, parse });
 
-// Today's date on the device, as yyyy-mm-dd (local time, not UTC).
-export function today(now = new Date()): string {
-  return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
-}
+export const useForraad = store.use;
 
-// This month on the device, as yyyy-mm.
-export function thisMonth(now = new Date()): string {
-  return today(now).slice(0, 7);
-}
-
-function read(): ForraadData {
-  try {
-    const raw = localStorage.getItem(KEY);
-    return raw === null ? structuredClone(EMPTY) : parse(JSON.parse(raw));
-  } catch {
-    return structuredClone(EMPTY);
-  }
-}
-
-let cache: ForraadData | null = null;
-const snapshot = () => (cache ??= read());
-
-function subscribe(onChange: () => void) {
-  const update = () => {
-    cache = read();
-    onChange();
-  };
-  window.addEventListener(CHANGED, onChange);
-  window.addEventListener('storage', update);
-  return () => {
-    window.removeEventListener(CHANGED, onChange);
-    window.removeEventListener('storage', update);
-  };
-}
-
-function write(next: ForraadData) {
-  try {
-    localStorage.setItem(KEY, JSON.stringify(next));
-  } catch {
-    // Private mode or full storage: kept until the app closes.
-  }
-  cache = next;
-  window.dispatchEvent(new Event(CHANGED));
-}
-
-function update(change: (data: ForraadData) => ForraadData) {
-  write(change(snapshot()));
-}
-
-export function useForraad(): ForraadData {
-  return useSyncExternalStore(subscribe, snapshot);
-}
+const update = store.update;
 
 export const forraad = {
+  get: store.get,
   setHousehold: (household: Household) => update((d) => ({ ...d, household })),
   setWater: (water: Water) => update((d) => ({ ...d, water })),
   checkWater: (month = thisMonth()) => update((d) => ({ ...d, water: { ...d.water, lastChecked: month } })),

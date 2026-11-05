@@ -1,7 +1,7 @@
-// Home (design brief, D-025): search everything offline, then the available categories and the
-// emergency card. Only categories with content are shown.
+// Home (design brief, D-025): search everything offline, then the categories in order of how many
+// people need them (D-048) and the emergency card.
 
-import { Asterisk, ArrowUpRight, Cross, Package, Sprout, Zap } from 'lucide-react';
+import { Asterisk, ArrowUpRight, Cross, Map as MapIcon, Package, Sprout, Zap } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { EmergencyCard } from '../components/EmergencyCard';
 import { DownloadCard, OFFLINE_DISABLED } from '../components/OfflineStatus';
@@ -10,11 +10,13 @@ import { FoodList } from '../components/FoodList';
 import { Page, SearchField, SettingsButton } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { GuideRow, ItemRow } from '../db/queries';
-import { GuideList, useGuideSearch } from './FirstAidScreen';
+import { GuideList } from '../components/GuideList';
+import { useGuideSearch } from '../guides/useGuides';
 import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
 import type { PrecacheProgress } from '../pwa/usePrecacheProgress';
-import { useFoodSearch } from '../storage/useFoodSearch';
+import { useFoodSearch } from '../food/useFoodSearch';
+import { usePageTitle } from '../lib/usePageTitle';
 
 export function HomeScreen(props: {
   db: DbClient;
@@ -36,6 +38,7 @@ export function HomeScreen(props: {
   const prepareResults = useGuideSearch(db, prepare, query);
   const guideCount = guides?.length ?? null;
   const searching = query.trim() !== '';
+  usePageTitle('', s.appTitle);
 
   return (
     <Page>
@@ -66,10 +69,11 @@ export function HomeScreen(props: {
 
       {searching ? (
         <div className="mt-6 flex flex-col gap-3">
-          <GuideResults id="prepare-results" title={s.prepare} guides={prepareResults} />
+          {/* Same order as the tiles (D-048): first aid, Når det sker, food, growing last. */}
           <GuideResults id="guide-results" title={s.firstAid} guides={guideResults} />
-          <GuideResults id="crop-results" title={s.growing} guides={cropResults} />
+          <GuideResults id="prepare-results" title={s.prepare} guides={prepareResults} />
           <FoodList items={results} query={query} lang={lang} s={s} />
+          <GuideResults id="crop-results" title={s.growing} guides={cropResults} />
         </div>
       ) : (
         <div className="mt-8 flex flex-col gap-3">
@@ -89,10 +93,12 @@ export function HomeScreen(props: {
               <ArrowUpRight aria-hidden="true" className="size-6 shrink-0" />
             </a>
           ) : null}
-          {/* Category tiles; only categories with content are shown (D-025). One tile fills the row. */}
+          {/* Category tiles in order of how many people need them (D-048): Når det sker, food, the map,
+              growing last. Guide categories without content are left out (D-025). */}
           <div className="grid grid-cols-2 gap-3">
-            <CategoryTile href={hrefs.storage} icon={<Package className="size-7" strokeWidth={1.5} />} title={s.storingFood} count={foods ? s.foodCount(foods.length) : null} />
             {prepare?.length ? <CategoryTile href={hrefs.prepare} icon={<Zap className="size-7" strokeWidth={1.5} />} title={s.prepare} count={s.prepareCount(prepare.length)} /> : null}
+            <CategoryTile href={hrefs.storage} icon={<Package className="size-7" strokeWidth={1.5} />} title={s.storingFood} count={foods ? s.foodCount(foods.length) : null} />
+            <CategoryTile href={hrefs.map} icon={<MapIcon className="size-7" strokeWidth={1.5} />} title={s.mapTitle} count={s.mapTileNote} />
             {crops?.length ? <CategoryTile href={hrefs.growing} icon={<Sprout className="size-7" strokeWidth={1.5} />} title={s.growing} count={s.growingCount(crops.length)} /> : null}
           </div>
           <div className="mt-3">
@@ -116,8 +122,8 @@ function CategoryTile({ href, icon, title, count }: { href: string; icon: ReactN
   );
 }
 
-function GuideResults({ id, title, guides }: { id: string; title: string; guides: GuideRow[] }) {
-  if (guides.length === 0) return null;
+function GuideResults({ id, title, guides }: { id: string; title: string; guides: GuideRow[] | null }) {
+  if (!guides || guides.length === 0) return null;
   return (
     <section aria-labelledby={id} className="flex flex-col gap-2">
       <h2 id={id} className="px-1 text-lg font-semibold">

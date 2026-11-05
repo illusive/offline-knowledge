@@ -2,15 +2,126 @@
 // vertical spacing are rem-based so they follow the system text size on iOS; horizontal padding is
 // in px so large text does not squeeze the content column.
 
-import { ArrowLeft, Search, Settings, X } from 'lucide-react';
-import { hrefs } from '../router';
-import type { HTMLAttributes, MouseEvent, ReactNode } from 'react';
+import { ArrowLeft, ChevronRight, Search, Settings, X, type LucideIcon } from 'lucide-react';
+import { goBack, hrefs } from '../router';
+import type { ButtonHTMLAttributes, ElementType, HTMLAttributes, MouseEvent, ReactNode, Ref } from 'react';
 
-export function Card({ children, className = '', ...rest }: { children: ReactNode; className?: string } & HTMLAttributes<HTMLElement>) {
+// A rounded surface. A <section> unless `as` says otherwise (a form, a div).
+export function Card({ children, className = '', as: Tag = 'section', ...rest }: { children: ReactNode; className?: string; as?: ElementType } & HTMLAttributes<HTMLElement>) {
   return (
-    <section className={`rounded-card bg-surface px-[20px] py-5 ${className}`} {...rest}>
+    <Tag className={`rounded-card bg-surface px-[20px] py-5 ${className}`} {...rest}>
+      {children}
+    </Tag>
+  );
+}
+
+// Buttons: one shape, a few looks. `primary` is the page's main action (lime), `ink` a strong
+// second action, `secondary` everything else on a card, `onPage` the same on the page background.
+// ButtonLink is a link that looks the same.
+type ButtonVariant = 'primary' | 'ink' | 'secondary' | 'onPage';
+const BUTTON: Record<ButtonVariant, string> = {
+  primary: 'min-h-12 bg-accent px-[24px] font-semibold text-on-accent',
+  ink: 'min-h-12 bg-ink px-[24px] font-medium text-on-ink',
+  secondary: 'min-h-11 bg-background px-[18px] font-medium',
+  onPage: 'min-h-11 bg-surface px-[18px] text-sm font-medium',
+};
+export const buttonClass = (variant: ButtonVariant = 'secondary', className = '') =>
+  `flex items-center justify-center gap-[8px] rounded-full text-center disabled:opacity-40 ${BUTTON[variant]} ${className}`;
+
+export function Button({ variant = 'secondary', className, type = 'button', ...rest }: { variant?: ButtonVariant } & ButtonHTMLAttributes<HTMLButtonElement>) {
+  return <button type={type} className={buttonClass(variant, className)} {...rest} />;
+}
+
+export function ButtonLink({ variant = 'secondary', className, href, children }: { variant?: ButtonVariant; className?: string; href: string; children: ReactNode }) {
+  return (
+    <a href={href} className={buttonClass(variant, className)}>
+      {children}
+    </a>
+  );
+}
+
+// A round 44 pt button with only an icon; the label is for screen readers.
+export function IconButton({ label, Icon, onClick, className = 'bg-surface', ...rest }: { label: string; Icon: LucideIcon; onClick: () => void; className?: string } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>) {
+  return (
+    <button type="button" onClick={onClick} aria-label={label} className={`grid size-11 shrink-0 place-items-center rounded-full ${className}`} {...rest}>
+      <Icon aria-hidden="true" className="size-5" />
+    </button>
+  );
+}
+
+// Text fields and selects.
+export const inputClass = 'min-h-11 rounded-xl border border-border bg-background px-[12px]';
+
+// A list of links on one surface, and its rows: title, optional line under it, a chevron.
+export function RowList({ children, ordered = false, lang }: { children: ReactNode; ordered?: boolean; lang?: string }) {
+  const Tag = ordered ? 'ol' : 'ul';
+  return (
+    <Tag className="flex flex-col divide-y divide-border rounded-card bg-surface" lang={lang}>
+      {children}
+    </Tag>
+  );
+}
+
+export function LinkRow({ href, title, subtitle, leading, label }: { href: string; title: ReactNode; subtitle?: ReactNode; leading?: ReactNode; label?: string }) {
+  return (
+    <li>
+      <a href={href} aria-label={label} className="flex min-h-14 items-center gap-[12px] px-[20px] py-3">
+        {leading}
+        <span className="flex-1">
+          <span className="block font-medium">{title}</span>
+          {subtitle}
+        </span>
+        <ChevronRight aria-hidden="true" className="size-5 shrink-0 text-muted" />
+      </a>
+    </li>
+  );
+}
+
+// A titled part of a page (one heading size everywhere).
+export function Section({ id, title, aside, children, className = '' }: { id: string; title: ReactNode; aside?: ReactNode; children: ReactNode; className?: string }) {
+  return (
+    <section aria-labelledby={id} className={`flex flex-col gap-2 ${className}`}>
+      <div className="flex items-baseline justify-between gap-[12px] px-1">
+        <h2 id={id} className="text-xl font-semibold">
+          {title}
+        </h2>
+        {aside}
+      </div>
       {children}
     </section>
+  );
+}
+
+// The top of a page below a tab: back, an optional action on the right, the title and a line
+// under it. `headingRef` lets a page move focus to its title once it has loaded.
+export function SubPageHeader(props: { backLabel: string; backTo: string; title: ReactNode; subtitle?: ReactNode; action?: ReactNode; headingRef?: Ref<HTMLHeadingElement>; children?: ReactNode }) {
+  const { backLabel, backTo, title, subtitle, action, headingRef, children } = props;
+  return (
+    <>
+      <div className="flex items-center justify-between gap-[12px]">
+        <BackButton label={backLabel} onClick={() => goBack(backTo)} />
+        {action}
+      </div>
+      <header className="mt-4 mb-4 px-1">
+        <h1 ref={headingRef} tabIndex={headingRef ? -1 : undefined} className="text-3xl font-normal tracking-tight outline-none">
+          {title}
+        </h1>
+        {subtitle ? <p className="mt-1 text-muted">{subtitle}</p> : null}
+        {children}
+      </header>
+    </>
+  );
+}
+
+// "Vis original" (D-031, D-042): switches between our plain words and the source's own.
+export function OriginalToggle({ showOriginal, onToggle, status, showLabel, hideLabel }: { showOriginal: boolean; onToggle: () => void; status: string; showLabel: string; hideLabel: string }) {
+  return (
+    <div className="flex flex-wrap items-center justify-between gap-x-[12px] gap-y-1 px-1">
+      <p className="text-sm text-muted">{status}</p>
+      <button type="button" aria-pressed={showOriginal} onClick={onToggle} className="min-h-11 rounded-full bg-surface px-[16px] text-sm font-medium">
+        {showOriginal ? hideLabel : showLabel}
+      </button>
+    </div>
   );
 }
 

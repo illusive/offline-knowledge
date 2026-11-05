@@ -2,6 +2,7 @@
 // later visits start by themselves. The sensor is only listened to while the compass is open.
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { createLocalStore } from '../lib/localStore';
 import { readingFrom, smooth, type OrientationLike } from './heading';
 
 export type CompassState =
@@ -29,21 +30,8 @@ function screenAngle(): number {
   return typeof legacy === 'number' ? legacy : (screen.orientation?.angle ?? 0);
 }
 
-function grantedBefore(): boolean {
-  try {
-    return localStorage.getItem(GRANTED_KEY) === '1';
-  } catch {
-    return false;
-  }
-}
-
-function rememberGranted() {
-  try {
-    localStorage.setItem(GRANTED_KEY, '1');
-  } catch {
-    // Storage blocked: the tap is needed again next time.
-  }
-}
+// Permission given once: later visits start by themselves.
+const granted = createLocalStore<boolean>({ key: GRANTED_KEY, parse: (stored) => stored === true, serialize: (v) => (v ? '1' : '0'), deserialize: (raw) => raw === '1' });
 
 export function useCompass(): { state: CompassState; start: () => void } {
   const [state, setState] = useState<CompassState>({ kind: 'idle' });
@@ -86,7 +74,7 @@ export function useCompass(): { state: CompassState; start: () => void } {
     ask().then(
       (answer) => {
         if (answer === 'granted') {
-          rememberGranted();
+          granted.set(true);
           listen();
         } else setState({ kind: 'denied' });
       },
@@ -99,7 +87,7 @@ export function useCompass(): { state: CompassState; start: () => void } {
     // iOS refuses a request that does not follow a tap; then the button is shown.
     const ask = permissionFn();
     if (!ask) start();
-    else if (grantedBefore()) {
+    else if (granted.get()) {
       setState({ kind: 'starting' });
       ask().then(
         (answer) => (answer === 'granted' ? listen() : setState({ kind: 'idle' })),

@@ -114,26 +114,41 @@ The model is designed so that a later translation is another `Guide` record with
 web/
   index.html, vite.config.ts      Vite + React; PWA plugin in "inject manifest" mode; base './'
   scripts/sync-pack.ts            Copies and verifies the pack from ../content/dist into public/pack/
-  scripts/make-icons.ts           Generates the placeholder icons
+  scripts/make-icons.ts           Generates the icons (the Home asterisk)
   src/
-    main.tsx, App.tsx             Opens the pack, routes, tab bar, search state, per-page scroll positions
-    router.ts                     Hash routes: #/ (Home), #/storage, #/food/<id>, #/first-aid, #/guide/<id>, #/map, #/tools, #/settings;
-                                  "back" falls back to the parent page after a direct launch
+    main.tsx, App.tsx             Opens the pack, routes (one switch, every route handled), tab bar,
+                                  each page's search text, per-page scroll positions
+    router.ts                     Hash routes (D-023): Home, first aid, Når det sker, food storage, growing,
+                                  guides, foods, saved, map, Forråd and its editor, tools, compass, settings;
+                                  SAVED_SECTIONS holds the category order (D-048)
     sw.ts                         Service worker: caches every built file; updates wait for "Update"
-    db/db.worker.ts               SQLite WebAssembly in a worker; pack in OPFS ("opfs-sahpool")
-    db/queries.ts                 All SQL; runs in the worker and in tests against the real pack
-    db/client.ts, protocol.ts     Typed messages between app and worker
-    screens/                      Home, Storage ("Storing food"), Food, FirstAid (guide list), Guide (reader;
-                                  photos from the pack as blob URLs), Map, Placeholder (Tools, Settings)
-    components/                   ui.tsx (Card, SourceNote, SearchField, BackButton, MessageState, Page),
-                                  TabBar, EmergencyCard (112), FoodList
-    storage/useFoodSearch.ts      Food search shared by Home and Storing food
-    i18n/                         Strings (da, en) and browser-language selection
-    storage/                      Formatting and search ranking (pure, unit tested)
-    pwa/UpdateBanner.tsx          "Works offline now" and "New version ready" messages
-    pwa/useOfflineReady.ts        "Offline ready" = pack open and a service worker in control
-  e2e/                            Playwright tests in WebKit
+    lib/                          Shared helpers, used everywhere instead of hand-written copies:
+      localStore.ts                 every value the user keeps on the device (validated, shared, synced)
+      rpc.ts                        typed requests to a worker and one handler per request type
+      usePageTitle.ts               the page title (and focus on the heading after loading)
+    db/                           Knowledge pack: SQLite WebAssembly in a worker, pack in OPFS;
+      queries.ts                    all SQL (runs in the worker and in tests against the real pack)
+      useDbQuery.ts                 one request for a component: answer per request, error instead of
+                                    loading forever
+    i18n/strings.ts, format.ts    Strings (da, en; a test keeps them in step) and every date, number and unit
+    components/ui.tsx             Primitives: Card, Button/ButtonLink/IconButton, inputClass, RowList/LinkRow,
+                                  Section, SubPageHeader, TabHeader, SettingsButton, OriginalToggle, Choice,
+                                  Stepper, SearchField, MessageState, Page, SubNav
+    components/                   TabBar, EmergencyCard (112), FoodList, GuideList, food guide parts
+    guides/                       useGuides/useGuideSearch and GuideCategoryScreen, the frame the three guide
+                                  categories share (header, search, results)
+    food/                         Food keeping times: search ranking, formatting, useFoodSearch (pure parts tested)
+    forraad/                      Forråd (D-046–D-048): store, month and water arithmetic, stock-list
+                                  recommendations, item editor, barcode scanner and lookup, backup file
+    supplies/checklist.ts         Stock-list ticks driven by Forråd (D-048)
+    map/                          Offline maps (D-036): map worker, downloads, places, position
+    compass/                      Compass sensor and maths (D-045)
+    bookmarks/, settings/, pwa/   Saved items, preferences and theme, offline status and updates
+    screens/                      One file per page
+  e2e/                            Playwright tests in WebKit, offline
 ```
+
+**When writing new code:** keep values on the device with `createLocalStore`; ask the pack with `useDbQuery`; format with `i18n/format.ts`; build pages from the primitives in `components/ui.tsx`; give every user-facing text a key in both languages. `tsc` refuses unused imports and variables.
 
 - **Pack lifecycle:** the worker reads `pack/manifest.json`, imports `core.sqlite` into OPFS only after checking its SHA-256 against the manifest, opens it, runs the launch check (schema version, trigram search), and only then deletes older pack copies. The database file name includes version and checksum.
 - **Offline and updates:** the service worker downloads every file into a new cache during install; if any download fails, the install fails and the current version keeps working. A new version waits until the user taps "Update". Navigations are answered with the cached `index.html`; everything else is cache-first.
@@ -153,9 +168,9 @@ web/
 - **Storage names (implemented, D-018):** table `storage_search`, one row per item per language (name, subtitle, English keywords), tokenizer `trigram remove_diacritics 1`. Verified: 'kål' finds Grønkål/Blomkål/Rosenkål/Kålrabi, 'kal' finds 'kål', 'potato' finds Kartofler. 'ø' and 'æ' are separate letters and are not folded.
 - Queries under 3 characters return nothing from a trigram index; the app falls back to a prefix match on names.
 - Ranking: plain `bm25` ranks 'Grønkål' above 'Kål' for 'kål'. The app should rank exact and prefix name matches first.
-- **Guides (not built yet):** title, summary, tags and block text. Choose between trigram and `unicode61` when guide text exists; test with real Danish queries.
+- **Guides (D-039):** `guide_search` (FTS5) over title, name and all shown text plus the source's words; titles only for one or two letters.
 
-## 5a. Pack schema (version 8)
+## 5a. Pack schema (version 13)
 
 Defined in `content/lib/pack.ts`; manifest type in `content/schema/pack.ts`.
 

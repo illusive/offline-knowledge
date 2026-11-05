@@ -3,32 +3,30 @@
 
 import { ArrowUpRight, Check } from 'lucide-react';
 import { useEffect, useState, type ReactNode } from 'react';
-import { BackButton, Card, Choice, MessageState, Page } from '../components/ui';
+import { Card, Choice, MessageState, Page, SubPageHeader } from '../components/ui';
 import type { DbClient } from '../db/client';
-import type { PackInfo } from '../db/protocol';
-import type { SourceRow } from '../db/queries';
+import type { PackInfo, Responses } from '../db/protocol';
+import { useDbQuery } from '../db/useDbQuery';
 import type { Lang, Strings } from '../i18n/strings';
 import { mapClient } from '../map/client';
-import { formatBytes } from '../map/format';
+import { formatBytes, formatDate } from '../i18n/format';
 import type { AreaInfo } from '../map/protocol';
-import { goBack, hrefs } from '../router';
+import { hrefs } from '../router';
 import { setPreference, usePreferences, type LangPref, type ThemePref } from '../settings/preferences';
 import { HouseholdSettings } from '../forraad/HouseholdSettings';
+import { usePageTitle } from '../lib/usePageTitle';
 
-type Source = SourceRow & { short_name: string };
+type Source = Responses['sources'][number];
 
 export function SettingsScreen({ db, pack, lang, s, offlineReady }: { db: DbClient; pack: PackInfo | null; lang: Lang; s: Strings; offlineReady: boolean }) {
   const prefs = usePreferences();
   const t = s.settings;
 
-  useEffect(() => {
-    document.title = `${s.settingsTitle} – ${s.appTitle}`;
-  }, [s]);
+  usePageTitle(s.settingsTitle, s.appTitle);
 
   return (
     <Page>
-      <BackButton label={s.back} onClick={() => goBack(hrefs.home)} />
-      <h1 className="mt-4 mb-4 px-1 text-3xl font-normal tracking-tight">{s.settingsTitle}</h1>
+      <SubPageHeader backLabel={s.back} backTo={hrefs.home} title={s.settingsTitle} />
       <div className="flex flex-col gap-4">
         <Library pack={pack} lang={lang} s={s} offlineReady={offlineReady} />
 
@@ -103,7 +101,7 @@ function Library({ pack, lang, s, offlineReady }: { pack: PackInfo | null; lang:
     };
   }, []);
 
-  const date = pack?.createdAt ? new Date(pack.createdAt).toLocaleDateString(lang === 'da' ? 'da-DK' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
+  const date = pack?.createdAt ? formatDate(new Date(pack.createdAt), lang) : null;
   const ready = (areas ?? []).filter((a) => a.state === 'ready');
   const mapBytes = ready.reduce((sum, a) => sum + a.doneBytes, 0);
   const counts = pack?.counts;
@@ -159,20 +157,10 @@ function Row({ label, value }: { label: string; value: ReactNode }) {
   );
 }
 
-// One choice as a radio group shaped like the sub-page pills (SubNav): wraps at large text sizes.
 function Sources({ db, s }: { db: DbClient; s: Strings }) {
   const t = s.settings;
-  const [sources, setSources] = useState<Source[] | null>(null);
-  useEffect(() => {
-    let live = true;
-    db.call({ type: 'sources' }).then(
-      (list) => live && setSources(list),
-      () => live && setSources([]),
-    );
-    return () => {
-      live = false;
-    };
-  }, [db]);
+  const { data, error } = useDbQuery(db, { type: 'sources' });
+  const sources = error ? [] : (data ?? null);
 
   const byPublisher = new Map<string, Source[]>();
   for (const src of sources ?? []) byPublisher.set(src.publisher, [...(byPublisher.get(src.publisher) ?? []), src]);

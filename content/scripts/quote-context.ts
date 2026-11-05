@@ -2,7 +2,8 @@
 // Usage: node scripts/quote-context.ts <source id> "<start of the passage>" [chars]
 
 import { readFile } from 'node:fs/promises';
-import { htmlToText, normalize, pdfText } from '../lib/produce.ts';
+import { htmlToText } from '../lib/produce.ts';
+import { normalize, pdfText } from '../lib/text.ts';
 import { loadSource, readSnapshot, SOURCES_DIR } from '../lib/registry.ts';
 
 const [id = '', needle = '', length = '600'] = process.argv.slice(2);

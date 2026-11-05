@@ -1,4 +1,4 @@
-// Search helpers for the storage table. Pure; no React Native imports.
+// Search helpers for the food table (keeping times, D-014). Pure.
 // The pack's FTS5 index uses the trigram tokenizer (docs/DECISIONS.md D-018).
 
 import type { Lang } from '../i18n/strings';

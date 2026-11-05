@@ -1,47 +1,27 @@
 // Compass (D-045): a turning dial with a fixed mark at the top, the direction as text, and
 // "hold a course": the locked direction is kept on the device until cleared.
 
-import { useEffect, useState } from 'react';
-import { BackButton, MessageState, Page } from '../components/ui';
-import { cardinal, isUncertain, ON_COURSE_WITHIN, signedDelta } from '../compass/heading';
+import { createLocalStore } from '../lib/localStore';
+import { Button, MessageState, Page, SubPageHeader } from '../components/ui';
+import { cardinal, cardinalLetters, isUncertain, ON_COURSE_WITHIN, signedDelta } from '../compass/heading';
 import { useCompass } from '../compass/useCompass';
 import type { Lang, Strings } from '../i18n/strings';
-import { goBack, hrefs } from '../router';
+import { hrefs } from '../router';
+import { usePageTitle } from '../lib/usePageTitle';
 
-const COURSE_KEY = 'stead.compass.course.v1';
-
-function readCourse(): number | null {
-  try {
-    const raw = localStorage.getItem(COURSE_KEY);
-    const n = raw === null ? NaN : Number(raw);
-    return Number.isFinite(n) ? n : null;
-  } catch {
-    return null;
-  }
-}
-
-function useCourse(): [number | null, (deg: number | null) => void] {
-  const [course, setCourse] = useState<number | null>(readCourse);
-  const set = (deg: number | null) => {
-    try {
-      if (deg === null) localStorage.removeItem(COURSE_KEY);
-      else localStorage.setItem(COURSE_KEY, String(deg));
-    } catch {
-      // Storage blocked: the course lasts until the app closes.
-    }
-    setCourse(deg);
-  };
-  return [course, set];
-}
+// The locked course, kept on the device until cleared (D-045).
+const courseStore = createLocalStore<number | null>({
+  key: 'stead.compass.course.v1',
+  parse: (stored) => (typeof stored === 'number' && Number.isFinite(stored) ? stored : null),
+});
 
 export function CompassScreen({ lang, s }: { lang: Lang; s: Strings }) {
   const t = s.compass;
   const { state, start } = useCompass();
-  const [course, setCourse] = useCourse();
+  const course = courseStore.use();
+  const setCourse = (deg: number | null) => courseStore.set(deg);
 
-  useEffect(() => {
-    document.title = `${t.title} – ${s.appTitle}`;
-  }, [t, s]);
+  usePageTitle(t.title, s.appTitle);
 
   const heading = state.kind === 'active' ? Math.round(state.heading) % 360 : null;
   const uncertain = state.kind === 'active' && isUncertain(state.accuracy);
@@ -49,20 +29,16 @@ export function CompassScreen({ lang, s }: { lang: Lang; s: Strings }) {
 
   return (
     <Page>
-      <BackButton label={s.back} onClick={() => goBack(hrefs.tools)} />
-      <header className="mt-4 mb-4 px-1">
-        <h1 className="text-3xl font-normal tracking-tight">{t.title}</h1>
-        <p className="mt-1 text-muted">{t.subtitle}</p>
-      </header>
+      <SubPageHeader backLabel={s.back} backTo={hrefs.tools} title={t.title} subtitle={t.subtitle} />
 
       {state.kind === 'unsupported' ? (
         <MessageState title={t.unsupported} />
       ) : state.kind === 'idle' || state.kind === 'denied' ? (
         <div className="flex flex-col items-center gap-4 rounded-card bg-surface px-[20px] py-8 text-center">
           {state.kind === 'denied' ? <p role="alert">{t.denied}</p> : <p className="text-muted">{t.howTo}</p>}
-          <button type="button" onClick={start} className="min-h-12 rounded-full bg-accent px-[24px] font-semibold text-on-accent">
+          <Button onClick={start} variant="primary">
             {state.kind === 'denied' ? t.tryAgain : t.start}
-          </button>
+          </Button>
         </div>
       ) : state.kind === 'starting' ? (
         <MessageState title={t.starting} />
@@ -87,14 +63,14 @@ export function CompassScreen({ lang, s }: { lang: Lang; s: Strings }) {
                 <p className="text-xl font-semibold" role="status">
                   {Math.abs(delta) <= ON_COURSE_WITHIN ? t.onCourse : delta > 0 ? t.turnRight(delta) : t.turnLeft(-delta)}
                 </p>
-                <button type="button" onClick={() => setCourse(null)} className="min-h-11 rounded-full bg-background px-[20px] font-medium">
+                <Button onClick={() => setCourse(null)} variant="secondary">
                   {t.clearCourse}
-                </button>
+                </Button>
               </>
             ) : (
-              <button type="button" onClick={() => setCourse(heading)} className="min-h-12 rounded-full bg-accent px-[24px] font-semibold text-on-accent">
+              <Button onClick={() => setCourse(heading)} variant="primary">
                 {t.holdCourse}
-              </button>
+              </Button>
             )}
           </div>
           {course === null ? <p className="px-1 text-sm text-muted">{t.howTo}</p> : null}
@@ -107,7 +83,7 @@ export function CompassScreen({ lang, s }: { lang: Lang; s: Strings }) {
 // The dial turns so that north on the dial points to magnetic north; the mark at the top is the
 // direction the phone points. Decorative: the direction is also given as text.
 function Dial({ heading, course, lang }: { heading: number; course: number | null; lang: Lang }) {
-  const letters = lang === 'da' ? ['N', 'Ø', 'S', 'V'] : ['N', 'E', 'S', 'W'];
+  const letters = cardinalLetters(lang);
   return (
     <svg viewBox="0 0 200 200" className="w-[min(18rem,80vw)]" aria-hidden="true">
       <polygon points="100,2 92,16 108,16" className="fill-text" />

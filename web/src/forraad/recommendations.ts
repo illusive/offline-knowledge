@@ -3,9 +3,10 @@
 
 import { useEffect, useState } from 'react';
 import type { DbClient } from '../db/client';
-import { fold } from '../storage/search';
+import { fold } from '../food/search';
 import { GUIDE_CATEGORY, WATER_PER_PERSON_ID, type Recommendation } from './calc';
 import type { Category, StoreItem } from './store';
+import { migrateLegacyTicks } from '../supplies/checklist';
 
 export interface StockLists {
   recommendations: Recommendation[];
@@ -38,7 +39,10 @@ export function useStockLists(db: DbClient | null): StockLists | null {
   useEffect(() => {
     if (!db) return;
     let live = true;
-    loading ??= load(db);
+    loading ??= load(db).then((lists) => {
+      migrateLegacyTicks(lists.recommendations);
+      return lists;
+    });
     loading.then(
       (l) => live && setLists(l),
       () => {

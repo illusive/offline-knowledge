@@ -4,11 +4,12 @@
 import { ChevronRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import { useBookmarks } from '../bookmarks/bookmarks';
-import { BackButton, Card, MessageState, Page } from '../components/ui';
+import { Card, MessageState, Page, SubPageHeader } from '../components/ui';
 import type { GuideRow, ItemRow } from '../db/queries';
 import type { Lang, Strings } from '../i18n/strings';
-import { goBack, hrefs, SAVED_SECTIONS, type SavedSection } from '../router';
-import { displayName } from '../storage/useFoodSearch';
+import { hrefs, SAVED_SECTIONS, type SavedSection } from '../router';
+import { displayName } from '../food/useFoodSearch';
+import { usePageTitle } from '../lib/usePageTitle';
 
 interface Row {
   key: string;
@@ -24,9 +25,7 @@ export function SavedScreen(props: { section: SavedSection | null; guides: Guide
   const headings = useRef(new Map<SavedSection, HTMLHeadingElement>());
   const loaded = guides !== null && crops !== null && prepare !== null && foods !== null;
 
-  useEffect(() => {
-    document.title = `${s.savedTitle} – ${s.appTitle}`;
-  }, [s]);
+  usePageTitle(s.savedTitle, s.appTitle);
 
   // Start at the category the list was opened from.
   useEffect(() => {
@@ -58,11 +57,7 @@ export function SavedScreen(props: { section: SavedSection | null; guides: Guide
 
   return (
     <Page>
-      <BackButton label={s.back} onClick={() => goBack(hrefs.home)} />
-      <header className="mt-4 mb-4 px-1">
-        <h1 className="text-3xl font-normal tracking-tight">{s.savedTitle}</h1>
-        <p className="mt-1 text-muted">{s.savedIntro}</p>
-      </header>
+      <SubPageHeader backLabel={s.back} backTo={hrefs.home} title={s.savedTitle} subtitle={s.savedIntro} />
       {!loaded ? (
         <MessageState title={s.loading} />
       ) : list.length === 0 ? (

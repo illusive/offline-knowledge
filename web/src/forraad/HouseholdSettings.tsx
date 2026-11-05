@@ -1,11 +1,11 @@
 // Forråd in Settings (D-046): the household the water target is worked out for, the water unit, and
 // a copy of the stores as a file. Set once, so it lives here rather than on the Forråd page.
 
-import { Card, Choice, Stepper } from '../components/ui';
+import { Card, Choice, inputClass, Stepper } from '../components/ui';
 import type { Lang, Strings } from '../i18n/strings';
 import { setPreference, usePreferences, type WaterUnitPref } from '../settings/preferences';
 import { Backup } from './Backup';
-import { fromUnit, toUnit } from './calc';
+import { decimalForInput, fromUnit, parseDecimal, toUnit, unitLabel } from '../i18n/format';
 import { forraad, TARGET_DAYS, useForraad, type TargetDays } from './store';
 
 export function HouseholdSettings({ lang, s }: { lang: Lang; s: Strings }) {
@@ -36,16 +36,16 @@ export function HouseholdSettings({ lang, s }: { lang: Lang; s: Strings }) {
             <input
               type="text"
               inputMode="decimal"
-              defaultValue={h.petLitresPerDay ? String(Math.round(toUnit(h.petLitresPerDay, unit) * 10) / 10).replace('.', lang === 'da' ? ',' : '.') : ''}
+              defaultValue={h.petLitresPerDay ? decimalForInput(toUnit(h.petLitresPerDay, unit), lang) : ''}
               key={unit}
               placeholder="0"
               onChange={(e) => {
-                const v = Number(e.target.value.replace(',', '.'));
-                forraad.setHousehold({ ...h, petLitresPerDay: Number.isFinite(v) && v > 0 ? fromUnit(v, unit) : 0 });
+                const v = parseDecimal(e.target.value);
+                forraad.setHousehold({ ...h, petLitresPerDay: v !== null && v > 0 ? fromUnit(v, unit) : 0 });
               }}
-              className="min-h-11 w-28 rounded-xl border border-border bg-background px-[12px]"
+              className={`${inputClass} w-28`}
             />
-            <span>{unit === 'gallons' ? 'gal' : 'L'}</span>
+            <span>{unitLabel(unit)}</span>
           </span>
         </label>
         <Choice<WaterUnitPref>
@@ -60,7 +60,7 @@ export function HouseholdSettings({ lang, s }: { lang: Lang; s: Strings }) {
         />
         <p className="text-sm text-muted">{t.checkSource}</p>
       </Card>
-      <Backup lang={lang} s={s} />
+      <Backup s={s} />
     </>
   );
 }

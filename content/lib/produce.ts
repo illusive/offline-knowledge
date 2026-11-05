@@ -5,10 +5,11 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { RECIPE_FACTS, SECTION_ORDER, VERDICTS, type ProduceGuide } from '../schema/produce.ts';
 import type { RegistrySource } from './registry.ts';
+import { missingQuoteParts, normalize } from './text.ts';
 
 export const PRODUCE_DIR = new URL('../produce/', import.meta.url).pathname;
 
-export async function loadGuides(dir = join(PRODUCE_DIR, 'guides')): Promise<ProduceGuide[]> {
+export async function loadProduceGuides(dir = join(PRODUCE_DIR, 'guides')): Promise<ProduceGuide[]> {
   const files = (await readdir(dir)).filter((f) => f.endsWith('.json')).sort();
   return Promise.all(files.map(async (f) => JSON.parse(await readFile(join(dir, f), 'utf8')) as ProduceGuide));
 }
@@ -40,23 +41,8 @@ export function htmlToText(html: string): string {
   );
 }
 
-// Text layer of a PDF snapshot (sources/text/<id>.txt, made by scripts/extract-pdf-text.swift),
-// normalised, after checking that it was extracted from the snapshot the registry names.
-export function pdfText(raw: string, sourceId: string, snapshotSha256: string): string {
-  const [header = '', ...rest] = raw.split('\n');
-  if (header !== `# ${sourceId} sha256 ${snapshotSha256}`) throw new Error(`Text of ${sourceId} was extracted from another snapshot; rerun extract-pdf-text.swift`);
-  // Drop page markers and the printed page number that starts each page.
-  const lines = rest.filter((line, i) => !/^--- p\d+$/.test(line) && !(/^\d+$/.test(line) && /^--- p\d+$/.test(rest[i - 1] ?? '')));
-  // PDFKit gives U+FFFD for some table spaces and U+FFFC for embedded objects.
-  return normalize(lines.join('\n').replace(/\uFFFD/g, ' ').replace(/\uFFFC/g, ''));
-}
-
-export function normalize(text: string): string {
-  return text.replace(/[​‌‍﻿]/g, '').replace(/\s+/g, ' ').trim();
-}
-
 // Problems that block publishing. snapshotText maps source id -> normalised text of HTML snapshots.
-export function validateGuides(
+export function validateProduceGuides(
   guides: ProduceGuide[],
   itemIds: Set<string>,
   sources: RegistrySource[],
@@ -95,10 +81,7 @@ export function validateGuides(
         if (!ref.quote.trim()) problems.push(`${where}: no quote`);
         const text = snapshotText.get(ref.sourceId);
         if (text && !ref.visualOnly) {
-          for (const part of ref.quote.split(' … ')) {
-            // [Bracketed] words are editorial (e.g. table column names) and are not matched.
-            if (!text.includes(normalize(part.replace(/\[[^\]]*\]/g, ' ')))) problems.push(`${where}: quote not found in the ${ref.sourceId} snapshot: "${part.slice(0, 60)}…"`);
-          }
+          for (const part of missingQuoteParts(text, ref.quote)) problems.push(`${where}: quote not found in the ${ref.sourceId} snapshot: "${part.slice(0, 60)}…"`);
         }
       });
     }

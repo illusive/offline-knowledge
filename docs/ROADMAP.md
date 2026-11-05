@@ -22,7 +22,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] PWA app (D-021–D-023, `web/`): food storage lookup (search + detail, Danish/English, light/dark), installable, offline. Unit tests and WebKit offline tests pass.
 - [x] Published on GitHub Pages via GitHub Actions (D-030): https://illusive.github.io/offline-knowledge/ — all cached files served; online and offline search verified in WebKit against the live site (2026-10-25).
 - [x] Live app tested on the iPhone from the Home Screen, including airplane mode; the owner tests on the phone regularly (confirmed 2026-11-05). VoiceOver belongs to the M2 accessibility pass.
-- [x] App shell to the design brief (D-024, D-025): name "stead", Inter, tokens (lime/ink/paper, light and dark), tab bar (Home, Tools, Settings), Home with search, the "Storing food" category and the 112 emergency card. Tools and Settings are placeholders until their steps.
+- [x] App shell to the design brief (D-024, D-025): name "stead", Inter, tokens (lime/ink/paper, light and dark), tab bar (then Home, Tools, Settings; now Hjem, Kort, Forråd, Værktøjer, D-046), Home with search, the "Storing food" category and the 112 emergency card. Tools and Settings are placeholders until their steps.
 - [x] Feedback round (2026-10-25): search placeholder "Søg", green "Klar offline" status, first-launch download progress, Danish translation of storage notes with a switch to the original (D-031), "Brug dine sanser" pill (D-032).
 - [ ] Food guides for all 101 foods (D-033). **Status 2026-10-26: 21 of 101 written and checked by the build.** Format agreed on Kartofler and Agurker. Done: 248 æbler, 249 abrikoser, 250 avocadoer, 251 bananer, 252 kirsebær/stikkelsbær/litchi, 253 brombær/boysenbær/ribs, 254 blåbær, 256 citrusfrugter, 258 kokosnødder, 259 tranebær, 260 dadler, 261 vindruer, 262 guava, 263 kiwi, 268 madbananer, 283 agurker, 297 kartofler, 414 kumquats (verdicts only), 481 jordbær, 482 hindbær, 483 kirsebær.
   - **Continue from here (batch 4, fruit):** 264 meloner, 495 vandmelon, 496 cantaloupe, 497 honningmelon, 265 papaya/mango/feijoa/passionsfrugt, 266 ferskner/nektariner/blommer/pærer/sapote, 267 ananas, 269 granatæble, 255 cherimoya, 478 stjernefrugt, 479 kaktusfigen, 480 dragefrugt. The Handbook 66 chapters and NCHFP recipe pages for these are already registered and were read; nothing was written for them yet.
@@ -50,6 +50,19 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
   - Litres or US gallons, and a backup file.
 
   Tested by offline e2e tests, including a real EAN-13 decoded from a canvas "camera". **Still to check on the iPhone:** scanning with the real camera (permission prompt, focus, speed), saving the copy to Filer and restoring it, and the month/year wheels.
+- [x] Whole-app review and clean-up (2026-11-05, D-048):
+  - **Concept:** one category order (growing last, a Kort tile on Home), and Forråd now drives the stock-list ticks.
+  - **Fixes:**
+    - screens no longer stay on "loading" when a query fails
+    - a backup restore that fails puts the earlier data back
+    - map errors are shown in the user's language
+    - the router catches an address change made while the app starts
+  - **Shared code:**
+    - helpers for stored values, worker requests, pack queries, formatting and page titles
+    - UI primitives and one frame for the guide categories
+    - `storage/` renamed `food/`
+    - the content pipeline's text cleaning and quote checks moved into `content/lib/text.ts`
+  - **Tests added:** router, stored values, strings in both languages, backup rollback, registry snapshots and the Home order. `tsc` now refuses unused code.
 - [x] Guide reader (D-037): `#/first-aid` list and `#/guide/<id>` with steps, step photos, warnings, the 112 card, source with pages and "Sammenholdt med" line.
 
 Acceptance: a fresh install with no network shows the pilot guides, search finds them (in both languages if a Danish guide is cleared), and each guide shows its sources and licenses.

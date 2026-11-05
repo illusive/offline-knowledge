@@ -4,18 +4,18 @@
 // are in Settings; the page itself stays short.
 
 import { ChevronRight, Pencil, Plus } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { Card, MessageState, Page, TabHeader } from '../components/ui';
+import { useState } from 'react';
+import { Button, ButtonLink, Card, IconButton, inputClass, MessageState, Page, TabHeader } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
 import { usePreferences } from '../settings/preferences';
-import { expiring, formatMonth, formatVolume, fromUnit, monthsUntil, nextCheck, toUnit, waterNeeded } from './calc';
+import { decimalForInput, localeOf, formatMonth, formatVolume, fromUnit, parseDecimal, thisMonth, toUnit, unitLabel } from '../i18n/format';
+import { expiring, monthsUntil, nextCheck, waterNeeded } from './calc';
 import { MonthYear } from './MonthYear';
 import { useStockLists, type StockLists } from './recommendations';
-import { CATEGORIES, forraad, thisMonth, useForraad, type Category, type ForraadData, type StoreItem, type Water } from './store';
-
-export const locale = (lang: Lang) => (lang === 'da' ? 'da-DK' : 'en-GB');
+import { CATEGORIES, forraad, useForraad, type Category, type ForraadData, type StoreItem, type Water } from './store';
+import { usePageTitle } from '../lib/usePageTitle';
 
 export function ForraadScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: Strings }) {
   const t = s.forraad;
@@ -23,19 +23,17 @@ export function ForraadScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: St
   const lists = useStockLists(db);
   const empty = data.items.length === 0;
 
-  useEffect(() => {
-    document.title = `${t.title} – ${s.appTitle}`;
-  }, [t, s]);
+  usePageTitle(t.title, s.appTitle);
 
   return (
     <Page>
       <TabHeader title={t.title} settingsLabel={s.settingsOpen} />
       <div className="flex flex-col gap-4">
         <WaterCard data={data} lists={lists} lang={lang} s={s} />
-        <a href={hrefs.forraadNew()} className="flex min-h-12 items-center justify-center gap-[8px] rounded-full bg-accent px-[24px] font-semibold text-on-accent">
+        <ButtonLink variant="primary" href={hrefs.forraadNew()}>
           <Plus aria-hidden="true" className="size-5" />
           {t.addTitle}
-        </a>
+        </ButtonLink>
         {empty ? (
           <>
             <p className="px-1 text-center text-muted">{t.emptyStore}</p>
@@ -62,8 +60,8 @@ function WaterCard({ data, lists, lang, s }: { data: ForraadData; lists: StockLi
   const need = waterNeeded(data.household, lists?.litresPerPersonDay ?? null);
   const share = need ? Math.min(1, have / need) : 0;
   const check = nextCheck(data.water.lastChecked, thisMonth());
-  const vol = (l: number) => formatVolume(l, unit, locale(lang));
-  const month = (m: string) => formatMonth(m, locale(lang));
+  const vol = (l: number) => formatVolume(l, unit, lang);
+  const month = (m: string) => formatMonth(m, lang);
   const needsCheck = !data.water.lastChecked || check?.due;
 
   return (
@@ -73,9 +71,7 @@ function WaterCard({ data, lists, lang, s }: { data: ForraadData; lists: StockLi
           {t.water}
         </h2>
         {editing ? null : (
-          <button type="button" onClick={() => setEditing(true)} aria-label={t.waterEdit} className="grid size-11 place-items-center rounded-full">
-            <Pencil aria-hidden="true" className="size-5" />
-          </button>
+          <IconButton label={t.waterEdit} Icon={Pencil} onClick={() => setEditing(true)} className="" />
         )}
       </div>
       <p className="mt-1 text-[min(2.25rem,10vw)] leading-tight tracking-tight tabular-nums">{need ? t.waterOf(vol(have), vol(need)) : t.waterHave(vol(have))}</p>
@@ -109,12 +105,11 @@ function WaterCard({ data, lists, lang, s }: { data: ForraadData; lists: StockLi
 // How much water there is and when it was last checked: the only two things to enter for water.
 function WaterEditor({ water, unit, lang, s, onDone }: { water: Water; unit: 'litres' | 'gallons'; lang: Lang; s: Strings; onDone: () => void }) {
   const t = s.forraad;
-  const [amount, setAmount] = useState(water.litres ? String(Math.round(toUnit(water.litres, unit) * 10) / 10).replace('.', lang === 'da' ? ',' : '.') : '');
+  const [amount, setAmount] = useState(water.litres ? decimalForInput(toUnit(water.litres, unit), lang) : '');
   const [checked, setChecked] = useState(water.lastChecked ?? thisMonth());
-  const unitLabel = unit === 'gallons' ? 'gal' : 'L';
   const save = () => {
-    const value = Number(amount.replace(',', '.'));
-    forraad.setWater({ litres: Number.isFinite(value) && value > 0 ? Math.round(fromUnit(value, unit) * 100) / 100 : 0, lastChecked: checked || null });
+    const value = parseDecimal(amount);
+    forraad.setWater({ litres: value !== null && value > 0 ? Math.round(fromUnit(value, unit) * 100) / 100 : 0, lastChecked: checked || null });
     onDone();
   };
   return (
@@ -126,7 +121,7 @@ function WaterEditor({ water, unit, lang, s, onDone }: { water: Water; unit: 'li
       }}
     >
       <label className="flex flex-col gap-1">
-        <span className="font-semibold">{t.waterLitres(unitLabel)}</span>
+        <span className="font-semibold">{t.waterLitres(unitLabel(unit))}</span>
         <span className="flex items-center gap-[8px]">
           <input
             type="text"
@@ -135,19 +130,19 @@ function WaterEditor({ water, unit, lang, s, onDone }: { water: Water; unit: 'li
             onChange={(e) => setAmount(e.target.value)}
             placeholder="0"
             autoFocus
-            className="min-h-12 w-32 rounded-xl border border-border bg-background px-[14px] text-lg"
+            className={`${inputClass} min-h-12 w-32 text-lg`}
           />
-          <span>{unitLabel}</span>
+          <span>{unitLabel(unit)}</span>
         </span>
       </label>
       <MonthYear id="water-checked" label={t.waterCheckedLabel} value={checked} onChange={setChecked} lang={lang} monthLabel={t.month} yearLabel={t.year} firstYear={new Date().getFullYear() - 5} years={6} />
       <div className="flex flex-wrap gap-[8px]">
-        <button type="submit" className="min-h-12 flex-1 rounded-full bg-accent px-[24px] font-semibold text-on-accent">
+        <Button type="submit" variant="primary" className="flex-1">
           {t.save}
-        </button>
-        <button type="button" onClick={onDone} className="min-h-12 rounded-full bg-background px-[20px] font-medium">
+        </Button>
+        <Button onClick={onDone} variant="secondary">
           {t.cancel}
-        </button>
+        </Button>
       </div>
     </form>
   );
@@ -156,7 +151,7 @@ function WaterEditor({ water, unit, lang, s, onDone }: { water: Water; unit: 'li
 function Expiring({ items, lang, s }: { items: StoreItem[]; lang: Lang; s: Strings }) {
   const t = s.forraad;
   const { expired, soon } = expiring(items, thisMonth());
-  const month = (m: string) => formatMonth(m, locale(lang));
+  const month = (m: string) => formatMonth(m, lang);
   if (expired.length + soon.length === 0) return null;
   return (
     <Card aria-labelledby="forraad-expiring" className="bg-note-bg text-note-text">
@@ -181,7 +176,7 @@ function Expiring({ items, lang, s }: { items: StoreItem[]; lang: Lang; s: Strin
 
 function CategoryCard({ category, items: all, lists, lang, s }: { category: Category; items: StoreItem[]; lists: StockLists; lang: Lang; s: Strings }) {
   const t = s.forraad;
-  const items = all.filter((i) => i.category === category).sort((a, b) => a.name.localeCompare(b.name, 'da'));
+  const items = all.filter((i) => i.category === category).sort((a, b) => a.name.localeCompare(b.name, localeOf(lang)));
   const guideId = lists.recommendations.find((r) => r.category === category)?.guideId;
   const id = `forraad-${category}`;
 
@@ -208,7 +203,7 @@ function CategoryCard({ category, items: all, lists, lang, s }: { category: Cate
                     {[
                       t.countLabel(item.count),
                       item.size ?? null,
-                      item.expires ? (monthsUntil(item.expires, thisMonth()) < 0 ? t.expired : t.expires)(formatMonth(item.expires, locale(lang))) : null,
+                      item.expires ? (monthsUntil(item.expires, thisMonth()) < 0 ? t.expired : t.expires)(formatMonth(item.expires, lang)) : null,
                     ]
                       .filter(Boolean)
                       .join(' · ')}

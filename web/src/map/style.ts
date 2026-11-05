@@ -5,6 +5,7 @@
 import { layers, namedFlavor } from '@protomaps/basemaps';
 import type { LayerSpecification, StyleSpecification } from 'maplibre-gl';
 import { poiLayers, type PoiGroup } from './pois';
+import type { Lang } from '../i18n/strings';
 
 const UNDERLAY = new Set(['earth', 'landcover', 'water']);
 
@@ -13,7 +14,7 @@ export const DETAIL_MAX_ZOOM = 15;
 
 // `base` is the app's base URL (ends with '/'); templates must keep their {braces} unencoded.
 // The basemap's own place layer is replaced by ours (pois.ts), so the user chooses what is shown.
-export function mapStyle(base: string, dark: boolean, lang: 'da' | 'en', attribution: string, groups: readonly PoiGroup[]): StyleSpecification {
+export function mapStyle(base: string, dark: boolean, lang: Lang, attribution: string, groups: readonly PoiGroup[]): StyleSpecification {
   const flavor = namedFlavor(dark ? 'dark' : 'light');
   const detail = (layers('detail', flavor, { lang }) as LayerSpecification[]).filter((l) => l.id !== 'pois');
   const underlay = (layers('overview', flavor, { lang }) as LayerSpecification[])

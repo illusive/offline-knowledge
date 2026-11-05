@@ -20,8 +20,9 @@ export type Route =
 // Settings is not a tab (D-046): it opens from the gear at the top right.
 export type Tab = 'home' | 'map' | 'forraad' | 'tools';
 
-// Sections of the saved list (D-026), one per category with something to save.
-export const SAVED_SECTIONS = ['prepare', 'first-aid', 'growing', 'storage'] as const;
+// Sections of the saved list (D-026), one per category with something to save, in the app's
+// category order (D-048): first aid, Når det sker, food, growing last.
+export const SAVED_SECTIONS = ['first-aid', 'prepare', 'storage', 'growing'] as const;
 export type SavedSection = (typeof SAVED_SECTIONS)[number];
 
 // Sub-pages of a food (D-034). The default (no suffix) is 'storage'.
@@ -88,7 +89,7 @@ export function tabOf(route: Route): Tab | null {
 // The pages visited in this session, so "back" can tell whether there is an in-app page to
 // return to. If the app was opened directly on a deep link, "back" goes to the parent page
 // (replacing the history entry) instead of leaving the app or looping.
-const visited: string[] = [location.hash || hrefs.home];
+const visited: string[] = [(typeof location === 'undefined' ? '' : location.hash) || hrefs.home];
 
 // Food sub-pages replace each other in history, so "back" leaves the food, not the last tab.
 const foodOf = (hash: string) => /^#\/food\/[^/]+/.exec(hash)?.[0] ?? null;

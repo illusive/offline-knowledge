@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { TabBar } from './components/TabBar';
 import { Spinner } from './components/OfflineStatus';
 import { MessageState, Page } from './components/ui';
@@ -13,7 +13,9 @@ import { usePrecacheProgress } from './pwa/usePrecacheProgress';
 import { tabOf, useRoute, type Tab } from './router';
 import { ForraadScreen } from './forraad/ForraadScreen';
 import { ItemEditor } from './forraad/ItemEditor';
-import { FirstAidScreen, useGuides } from './screens/FirstAidScreen';
+import { useStockLists } from './forraad/recommendations';
+import { FirstAidScreen } from './screens/FirstAidScreen';
+import { useGuides } from './guides/useGuides';
 import { FoodScreen } from './screens/FoodScreen';
 import { GrowingScreen } from './screens/GrowingScreen';
 import { GuideScreen } from './screens/GuideScreen';
@@ -26,7 +28,14 @@ import { SettingsScreen } from './screens/SettingsScreen';
 import { CompassScreen } from './screens/CompassScreen';
 import { ToolsScreen } from './screens/ToolsScreen';
 import { StorageScreen } from './screens/StorageScreen';
-import { useAllFoods } from './storage/useFoodSearch';
+import { useAllFoods } from './food/useFoodSearch';
+
+type SearchPage = 'home' | 'storage' | 'firstAid' | 'growing' | 'prepare';
+
+// Every route has a page: the compiler stops a new route that is not handled here.
+function unreachable(route: never): never {
+  throw new Error(`No page for route ${JSON.stringify(route)}`);
+}
 
 const db = createDbClient();
 const packReady = openPack(db);
@@ -37,11 +46,9 @@ export function App() {
   useApplyTheme();
   const [pack, setPack] = useState<PackInfo | null>(null);
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
-  const [homeQuery, setHomeQuery] = useState('');
-  const [storageQuery, setStorageQuery] = useState('');
-  const [firstAidQuery, setFirstAidQuery] = useState('');
-  const [growingQuery, setGrowingQuery] = useState('');
-  const [prepareQuery, setPrepareQuery] = useState('');
+  // What was typed in each page's search, kept while moving around the app.
+  const [queries, setQueries] = useState<Record<SearchPage, string>>({ home: '', storage: '', firstAid: '', growing: '', prepare: '' });
+  const search = (page: SearchPage) => ({ query: queries[page], onQueryChange: (q: string) => setQueries((all) => ({ ...all, [page]: q })) });
   const offlineReady = useOfflineReady(status === 'ready');
   // Settings is not a tab (D-046): the tab bar keeps the tab it was opened from.
   const lastTab = useRef<Tab>('home');
@@ -68,6 +75,8 @@ export function App() {
   const guides = useGuides(status === 'ready' ? db : null);
   const crops = useGuides(status === 'ready' ? db : null, 'growing');
   const prepare = useGuides(status === 'ready' ? db : null, 'preparedness');
+  // Loads the stock lists once; also turns ticks kept before D-048 into Forråd entries.
+  useStockLists(status === 'ready' ? db : null);
 
   // Remember each page's scroll position: going back restores it, new pages start at the top.
   const scrollPositions = useRef(new Map<string, number>());
@@ -82,11 +91,7 @@ export function App() {
     window.scrollTo(0, scrollPositions.current.get(location.hash) ?? 0);
   }, [route]);
 
-  useEffect(() => {
-    if (route.name === 'home') document.title = s.appTitle;
-  }, [route.name, s]);
-
-  let content;
+  let content: ReactNode;
   // The map does not use the knowledge pack (D-036): it opens even while the pack loads or fails.
   if (route.name === 'map')
     content = (
@@ -102,19 +107,52 @@ export function App() {
     );
   else if (status === 'error') content = <Page><MessageState title={s.packErrorTitle} body={s.packErrorBody} /></Page>;
   else if (status === 'loading') content = <Page><LoadingState s={s} /></Page>;
-  else if (route.name === 'food') content = <FoodScreen db={db} id={route.id} tab={route.tab} lang={lang} s={s} />;
-  else if (route.name === 'firstAid') content = <FirstAidScreen db={db} guides={guides} s={s} query={firstAidQuery} onQueryChange={setFirstAidQuery} />;
-  else if (route.name === 'saved') content = <SavedScreen section={route.section} guides={guides} crops={crops} prepare={prepare} foods={foods} lang={lang} s={s} />;
-  else if (route.name === 'prepare') content = <PrepareScreen db={db} guides={prepare} s={s} query={prepareQuery} onQueryChange={setPrepareQuery} />;
-  else if (route.name === 'growing') content = <GrowingScreen db={db} guides={crops} s={s} query={growingQuery} onQueryChange={setGrowingQuery} />;
-  else if (route.name === 'guide') content = <GuideScreen db={db} id={route.id} s={s} />;
-  else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;
-  else if (route.name === 'tools') content = <ToolsScreen s={s} />;
-  else if (route.name === 'compass') content = <CompassScreen lang={lang} s={s} />;
-  else if (route.name === 'forraad') content = <ForraadScreen db={db} lang={lang} s={s} />;
-  else if (route.name === 'forraadEdit') content = <ItemEditor key={location.hash} db={db} route={route} lang={lang} s={s} />;
-  else if (route.name === 'settings') content = <SettingsScreen db={db} pack={pack} lang={lang} s={s} offlineReady={offlineReady} />;
-  else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guides={guides} crops={crops} prepare={prepare} query={homeQuery} onQueryChange={setHomeQuery} />;
+  else {
+    switch (route.name) {
+      case 'home':
+        content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guides={guides} crops={crops} prepare={prepare} {...search('home')} />;
+        break;
+      case 'firstAid':
+        content = <FirstAidScreen db={db} guides={guides} s={s} {...search('firstAid')} />;
+        break;
+      case 'prepare':
+        content = <PrepareScreen db={db} guides={prepare} s={s} {...search('prepare')} />;
+        break;
+      case 'storage':
+        content = <StorageScreen db={db} foods={foods} lang={lang} s={s} {...search('storage')} />;
+        break;
+      case 'growing':
+        content = <GrowingScreen db={db} guides={crops} s={s} {...search('growing')} />;
+        break;
+      case 'guide':
+        content = <GuideScreen db={db} id={route.id} s={s} />;
+        break;
+      case 'food':
+        content = <FoodScreen db={db} id={route.id} tab={route.tab} lang={lang} s={s} />;
+        break;
+      case 'saved':
+        content = <SavedScreen section={route.section} guides={guides} crops={crops} prepare={prepare} foods={foods} lang={lang} s={s} />;
+        break;
+      case 'forraad':
+        content = <ForraadScreen db={db} lang={lang} s={s} />;
+        break;
+      case 'forraadEdit':
+        // A fresh form for each item or new-item link.
+        content = <ItemEditor key={`${route.id}/${route.category}/${route.recommendationId}`} db={db} route={route} lang={lang} s={s} />;
+        break;
+      case 'tools':
+        content = <ToolsScreen s={s} />;
+        break;
+      case 'compass':
+        content = <CompassScreen lang={lang} s={s} />;
+        break;
+      case 'settings':
+        content = <SettingsScreen db={db} pack={pack} lang={lang} s={s} offlineReady={offlineReady} />;
+        break;
+      default:
+        content = unreachable(route);
+    }
+  }
 
   return (
     <>

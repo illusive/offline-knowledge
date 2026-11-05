@@ -53,7 +53,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Rationale:** Avoids hosting, download recovery and atomic-swap complexity until the core reading experience is proven.
 - **Alternatives:** Bundled + downloadable packs in v1. Deferred to M4.
 
-## D-008 — Offline maps deferred
+## D-008 — Offline maps deferred (superseded by D-036)
 
 - **Date:** 2026-10-24
 - **Decision:** Offline maps are not part of v1. They start as a separate proof of concept (MapLibre React Native was the candidate; with D-021 it is MapLibre GL JS) rendering fully offline on an iPhone, after the core app is stable.
@@ -390,6 +390,16 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - The app works fully without the lookup. Settings > Om stead and the editor say what is sent.
 - **Licence:** Open Food Facts data is ODbL. The editor credits it when a name comes from there. Reuse terms are deferred while the app is private (D-028).
 - **Alternatives:** a downloadable Danish product list (offline, but a few MB, patchy and ageing; possible later); no barcode (owner wanted it).
+
+## D-048 — One category order; Forråd drives the stock lists
+
+- **Date:** 2026-11-05
+- **Decision (owner):**
+  - **Order:** categories follow how many people need them: Førstehjælp, Når det sker, Opbevaring af mad, Kort (offline maps, now also a tile on Home), Dyrkning last. The Home tiles, the Home search results and the saved list follow this order.
+  - **One record of what the household has:** Forråd. A stock-list line in "Hjemmeberedskab" is ticked when something in Forråd counts as it. Ticking a line adds a plain entry to Forråd (marked as added from the list); unticking removes only such entries, so things the user entered are never deleted from the list, and the line says "I forrådet: …". The water lines follow the water figure in Forråd and link there. Ticks kept before this are converted once.
+  - **Værktøjer stays a tab** with room for more tools.
+- **Rationale:** growing applies to the fewest people. Two records of "I have this" that did not know about each other would disagree.
+- **Alternatives:** removing the ticks from the stock lists (owner chose to keep them, driven by Forråd); moving the compass into Kort and dropping the tab.
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

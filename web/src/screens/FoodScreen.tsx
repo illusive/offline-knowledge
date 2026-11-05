@@ -2,16 +2,18 @@
 // Konservering (drying, pickling, canning) and Kilder (sources). Every sub-page ends with the
 // "use your senses" pill.
 
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useRef, useState, type ReactNode } from 'react';
 import { EthyleneLists, GuideCard } from '../components/FoodGuide';
 import { SensesPill } from '../components/SensesPill';
 import { SaveButton } from '../bookmarks/BookmarkButton';
-import { BackButton, Card, MessageState, Page, SourceNote, SubNav } from '../components/ui';
+import { BackButton, Card, MessageState, OriginalToggle, Page, SourceNote, SubNav } from '../components/ui';
 import type { DbClient } from '../db/client';
-import type { GuideSectionKey, ItemDetail } from '../db/queries';
+import { useDbQuery } from '../db/useDbQuery';
+import type { GuideSectionKey } from '../db/queries';
 import type { Lang, Strings } from '../i18n/strings';
 import { FOOD_TABS, goBack, hrefs, replaceRoute, type FoodTab } from '../router';
-import { formatBasis, formatDuration, LOCATION_ORDER } from '../storage/format';
+import { formatBasis, formatDuration, LOCATION_ORDER } from '../food/format';
+import { usePageTitle } from '../lib/usePageTitle';
 
 const TAB_SECTIONS: Record<FoodTab, GuideSectionKey[]> = {
   about: ['about', 'prefers', 'avoid'],
@@ -21,33 +23,18 @@ const TAB_SECTIONS: Record<FoodTab, GuideSectionKey[]> = {
 };
 
 export function FoodScreen({ db, id, tab, lang, s }: { db: DbClient; id: string; tab: FoodTab; lang: Lang; s: Strings }) {
-  const [detail, setDetail] = useState<{ id: string; value: ItemDetail | null } | null>(null);
+  const { data: loaded, error } = useDbQuery(db, { type: 'detail', id });
   const [showOriginal, setShowOriginal] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
-    let current = true;
-    void db.call({ type: 'detail', id }).then((value) => {
-      if (current) setDetail({ id, value });
-    });
-    return () => {
-      current = false;
-    };
-  }, [db, id]);
-
-  const loaded = detail?.id === id ? detail.value : undefined;
   const name = loaded ? (lang === 'da' ? loaded.item.name_da : loaded.item.name_en) : null;
 
   // Move focus to the new page's heading so screen readers announce it (not on sub-page switches).
-  useEffect(() => {
-    if (name) {
-      document.title = `${name} – ${s.appTitle}`;
-      heading.current?.focus();
-    }
-  }, [name, s.appTitle]);
+  usePageTitle(name, s.appTitle, heading);
 
   const back = <BackButton label={s.back} onClick={() => goBack(hrefs.storage)} />;
 
+  if (error) return <Page>{back}<MessageState title={s.packErrorTitle} body={s.packErrorBody} /></Page>;
   if (loaded === undefined) return <Page>{back}<MessageState title={s.loading} /></Page>;
   if (loaded === null) return <Page>{back}<MessageState title={s.notFound} /></Page>;
 
@@ -180,17 +167,7 @@ export function FoodScreen({ db, id, tab, lang, s }: { db: DbClient; id: string;
         />
 
         {translatable ? (
-          <div className="flex flex-wrap items-center justify-between gap-x-[12px] gap-y-1 px-1">
-            <p className="text-sm text-muted">{showOriginal ? s.textOriginal : s.textTranslated}</p>
-            <button
-              type="button"
-              aria-pressed={showOriginal}
-              onClick={() => setShowOriginal((v) => !v)}
-              className="min-h-11 rounded-full bg-surface px-[16px] text-sm font-medium"
-            >
-              {showOriginal ? s.showTranslation : s.showOriginal}
-            </button>
-          </div>
+          <OriginalToggle showOriginal={showOriginal} onToggle={() => setShowOriginal((v) => !v)} status={showOriginal ? s.textOriginal : s.textTranslated} showLabel={s.showOriginal} hideLabel={s.showTranslation} />
         ) : null}
 
         {content}

@@ -1,50 +1,77 @@
-// Ticks in the stock lists of "Når det sker" (D-040): which items the user has at home. Stored on
-// the device only (localStorage), keyed by the item's stable id, so they survive pack updates; an
-// id no longer in the pack is simply not shown.
+// The stock lists' ticks (D-040), driven by Forråd (D-048): Forråd is the one record of what the
+// household has. A line is ticked when something in Forråd counts as it. Ticking a line adds a
+// plain entry for it to Forråd (marked as added from the list); unticking removes only such entries,
+// so things the user entered themselves are never deleted from here. The water lines follow the
+// water in Forråd and are changed there.
 
-import { useCallback, useSyncExternalStore } from 'react';
+import { useCallback } from 'react';
+import type { ChecklistItem } from '../db/queries';
+import { GUIDE_CATEGORY, waterNeeded, WATER_PER_PERSON_ID, type Recommendation } from '../forraad/calc';
+import { forraad, useForraad, type Category, type ForraadData, type StoreItem } from '../forraad/store';
 
-const KEY = 'stead.supplies.v1';
-const CHANGED = 'stead-supplies-changed';
+export const PET_WATER_ID = 'vand-husdyr';
+const WATER_LINES = new Set([WATER_PER_PERSON_ID, PET_WATER_ID]);
 
-function read(): string[] {
-  try {
-    const parsed: unknown = JSON.parse(localStorage.getItem(KEY) ?? '[]');
-    return Array.isArray(parsed) ? parsed.filter((x): x is string => typeof x === 'string') : [];
-  } catch {
-    return [];
+export type LineState =
+  | { kind: 'water'; on: boolean } // shown from the water figure; changed in Forråd
+  | { kind: 'item'; on: boolean; own: StoreItem[] }; // own: things the user entered that count as it
+
+export function lineState(item: ChecklistItem, data: ForraadData): LineState {
+  if (WATER_LINES.has(item.id)) {
+    if (item.id === PET_WATER_ID) return { kind: 'water', on: data.household.petLitresPerDay > 0 };
+    const need = item.amount?.unit === 'L' && item.amount.per === 'personDay' ? waterNeeded(data.household, item.amount.value) : null;
+    return { kind: 'water', on: need !== null && need > 0 && data.water.litres >= need };
   }
+  const covering = data.items.filter((i) => i.recommendationId === item.id);
+  return { kind: 'item', on: covering.length > 0, own: covering.filter((i) => !i.viaChecklist) };
 }
 
-let cache: string[] | null = null;
-const snapshot = () => (cache ??= read());
-
-function subscribe(onChange: () => void) {
-  const update = () => {
-    cache = read();
-    onChange();
-  };
-  window.addEventListener(CHANGED, onChange);
-  window.addEventListener('storage', update);
-  return () => {
-    window.removeEventListener(CHANGED, onChange);
-    window.removeEventListener('storage', update);
-  };
+// The category a stock list's things go under in Forråd, or null for the water list.
+export function categoryOfList(guideId: string): Category | null {
+  const c = GUIDE_CATEGORY[guideId];
+  return c && c !== 'water' ? c : null;
 }
 
-export function useChecklist() {
-  const ticked = useSyncExternalStore(subscribe, snapshot);
-  const toggle = useCallback((id: string) => {
-    const current = snapshot();
-    const next = current.includes(id) ? current.filter((x) => x !== id) : [...current, id];
-    try {
-      localStorage.setItem(KEY, JSON.stringify(next));
-    } catch {
-      // private mode: kept until the app closes
-    }
-    cache = next;
-    window.dispatchEvent(new Event(CHANGED));
-  }, []);
-  const has = useCallback((id: string) => ticked.includes(id), [ticked]);
-  return { ticked, has, toggle };
+export function useChecklist(guideId: string) {
+  const data = useForraad();
+  const category = categoryOfList(guideId);
+  const state = useCallback((item: ChecklistItem) => lineState(item, data), [data]);
+  const toggle = useCallback(
+    (item: ChecklistItem) => {
+      if (!category || WATER_LINES.has(item.id)) return;
+      const added = data.items.filter((i) => i.recommendationId === item.id && i.viaChecklist);
+      if (added.length > 0) for (const i of added) forraad.removeItem(i.id);
+      else if (!data.items.some((i) => i.recommendationId === item.id)) {
+        forraad.saveItem({ name: item.name ?? item.text, category, count: 1, recommendationId: item.id, viaChecklist: true });
+      }
+    },
+    [data, category],
+  );
+  return { state, toggle };
+}
+
+// Ticks kept before D-048 (a list of line ids) become Forråd entries once, then the old key goes.
+const LEGACY_KEY = 'stead.supplies.v1';
+
+export function migrateLegacyTicks(recommendations: Recommendation[]) {
+  let ids: unknown;
+  try {
+    const raw = localStorage.getItem(LEGACY_KEY);
+    if (raw === null) return;
+    ids = JSON.parse(raw);
+  } catch {
+    return;
+  }
+  const covered = new Set(forraad.get().items.map((i) => i.recommendationId));
+  for (const id of Array.isArray(ids) ? ids : []) {
+    const rec = recommendations.find((r) => r.id === id);
+    if (!rec || rec.category === 'water' || covered.has(rec.id)) continue;
+    forraad.saveItem({ name: rec.name, category: rec.category, count: 1, recommendationId: rec.id, viaChecklist: true });
+    covered.add(rec.id);
+  }
+  try {
+    localStorage.removeItem(LEGACY_KEY);
+  } catch {
+    // Storage blocked: tried again next time; already-covered lines are skipped.
+  }
 }

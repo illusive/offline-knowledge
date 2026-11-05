@@ -1,4 +1,4 @@
-// Formats storage periods for display. Pure; no React Native imports.
+// Formats how long a food keeps (D-014) for display. Pure.
 
 import type { Strings } from '../i18n/strings';
 

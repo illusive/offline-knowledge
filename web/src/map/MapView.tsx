@@ -11,6 +11,7 @@ import { POI_LAYER_IDS, poiFilter, type PoiGroup } from './pois';
 
 const NO_DETAIL = 'stead: no detail tile';
 import { getTile, type TileSource } from './tiles';
+import type { Lang } from '../i18n/strings';
 
 const ATTRIBUTION = '© OpenStreetMap contributors';
 const DENMARK: [number, number, number, number] = [8.0, 54.5, 15.2, 57.8];
@@ -36,7 +37,7 @@ function addProtocol() {
 }
 
 export default function MapView(props: {
-  lang: 'da' | 'en';
+  lang: Lang;
   dark: boolean;
   label: string;
   onError: () => void;

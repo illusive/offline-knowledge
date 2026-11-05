@@ -1,7 +1,8 @@
 // Settings (D-044): language and appearance either follow the phone or are fixed by the user.
 // Stored on the device only (localStorage), like bookmarks. Text size always follows the phone.
 
-import { useEffect, useState, useSyncExternalStore } from 'react';
+import { useEffect, useState } from 'react';
+import { createLocalStore } from '../lib/localStore';
 
 export type LangPref = 'system' | 'da' | 'en';
 export type ThemePref = 'system' | 'light' | 'dark';
@@ -13,53 +14,24 @@ export interface Preferences {
   waterUnit: WaterUnitPref;
 }
 
-const KEY = 'stead.preferences.v1';
-const CHANGED = 'stead-preferences-changed';
 const DEFAULTS: Preferences = { lang: 'system', theme: 'system', waterUnit: 'litres' };
 
-function read(): Preferences {
-  try {
-    const parsed: unknown = JSON.parse(localStorage.getItem(KEY) ?? '{}');
-    const p = (parsed ?? {}) as Partial<Record<keyof Preferences, unknown>>;
+const store = createLocalStore<Preferences>({
+  key: 'stead.preferences.v1',
+  parse: (stored) => {
+    const p = (stored ?? {}) as Partial<Record<keyof Preferences, unknown>>;
     return {
       lang: p.lang === 'da' || p.lang === 'en' ? p.lang : DEFAULTS.lang,
       theme: p.theme === 'light' || p.theme === 'dark' ? p.theme : DEFAULTS.theme,
       waterUnit: p.waterUnit === 'gallons' ? 'gallons' : DEFAULTS.waterUnit,
     };
-  } catch {
-    return DEFAULTS;
-  }
-}
+  },
+});
 
-let cache: Preferences | null = null;
-const snapshot = () => (cache ??= read());
-
-function subscribe(onChange: () => void) {
-  const update = () => {
-    cache = read();
-    onChange();
-  };
-  window.addEventListener(CHANGED, onChange);
-  window.addEventListener('storage', update); // another tab or window
-  return () => {
-    window.removeEventListener(CHANGED, onChange);
-    window.removeEventListener('storage', update);
-  };
-}
-
-export function usePreferences(): Preferences {
-  return useSyncExternalStore(subscribe, snapshot);
-}
+export const usePreferences = store.use;
 
 export function setPreference<K extends keyof Preferences>(key: K, value: Preferences[K]) {
-  const next = { ...snapshot(), [key]: value };
-  try {
-    localStorage.setItem(KEY, JSON.stringify(next));
-  } catch {
-    // Storage blocked (private mode): the choice lasts until the app closes.
-  }
-  cache = next;
-  window.dispatchEvent(new Event(CHANGED));
+  store.update((current) => ({ ...current, [key]: value }));
 }
 
 const DARK_QUERY = '(prefers-color-scheme: dark)';

@@ -4,12 +4,12 @@
 // it holds and asks before replacing anything. Nothing leaves the device unless the user sends it.
 
 import { useRef, useState } from 'react';
-import { Card } from '../components/ui';
-import type { Lang, Strings } from '../i18n/strings';
-import { today } from './store';
-import { readBackup, makeBackup } from './backupFile';
+import { Button, Card } from '../components/ui';
+import type { Strings } from '../i18n/strings';
+import { today } from '../i18n/format';
+import { applyBackup, makeBackup, readBackup } from './backupFile';
 
-export function Backup({ s }: { lang: Lang; s: Strings }) {
+export function Backup({ s }: { s: Strings }) {
   const t = s.forraad;
   const input = useRef<HTMLInputElement>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -42,10 +42,7 @@ export function Backup({ s }: { lang: Lang; s: Strings }) {
       return;
     }
     if (!window.confirm(t.restoreConfirm(backup.itemCount))) return;
-    try {
-      for (const key of Object.keys(localStorage).filter((k) => k.startsWith('stead.'))) localStorage.removeItem(key);
-      for (const [key, value] of Object.entries(backup.data)) localStorage.setItem(key, value);
-    } catch {
+    if (!applyBackup(localStorage, backup.data)) {
       setMessage(t.restoreFailed);
       return;
     }
@@ -71,12 +68,12 @@ export function Backup({ s }: { lang: Lang; s: Strings }) {
       </h2>
       <p className="mt-1 text-muted">{t.backupBody}</p>
       <div className="mt-4 flex flex-wrap gap-[8px]">
-        <button type="button" onClick={() => void save()} className="min-h-11 rounded-full bg-ink px-[18px] font-medium text-on-ink">
+        <Button onClick={() => void save()} variant="ink">
           {t.saveCopy}
-        </button>
-        <button type="button" onClick={() => input.current?.click()} className="min-h-11 rounded-full bg-background px-[18px] font-medium">
+        </Button>
+        <Button onClick={() => input.current?.click()} variant="secondary">
           {t.restoreCopy}
-        </button>
+        </Button>
         <input
           ref={input}
           type="file"

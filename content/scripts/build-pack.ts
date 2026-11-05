@@ -2,9 +2,10 @@
 // Pack version = content/package.json "version".
 
 import { readdir, readFile } from 'node:fs/promises';
-import { GUIDES_DIR, loadGuides as loadReadingGuides, validateGuides as validateReadingGuides, verbatimText } from '../lib/guides.ts';
+import { GUIDES_DIR, loadGuides as loadReadingGuides, validateGuides as validateReadingGuides } from '../lib/guides.ts';
+import { pdfText, snapshotBody, verbatimText } from '../lib/text.ts';
 import { buildPack } from '../lib/pack.ts';
-import { ethyleneProfiles, htmlToText, loadGuides, pdfText, PRODUCE_DIR, relations, validateGuides, type CompatibilityEntry } from '../lib/produce.ts';
+import { ethyleneProfiles, htmlToText, loadProduceGuides, PRODUCE_DIR, relations, validateProduceGuides, type CompatibilityEntry } from '../lib/produce.ts';
 import { loadRegistry, readSnapshot, SOURCES_DIR } from '../lib/registry.ts';
 import type { StorageDataset } from '../schema/storage.ts';
 
@@ -21,7 +22,7 @@ for (const dataset of storage) {
 
 // Food guides (D-033): validate against the registry, and check quotes against the snapshots
 // (HTML directly; PDF through the extracted text in sources/text/).
-const guides = await loadGuides();
+const guides = await loadProduceGuides();
 const guideSourceIds = new Set(guides.flatMap((g) => g.sections.flatMap((s) => s.blocks.map((b) => b.sourceRef.sourceId))));
 const snapshotText = new Map<string, string>();
 for (const id of [...guideSourceIds, 'us-ars-ah66-2016']) {
@@ -32,7 +33,7 @@ for (const id of [...guideSourceIds, 'us-ars-ah66-2016']) {
   if (source.snapshot?.endsWith('.pdf')) snapshotText.set(id, pdfText(await readFile(`${SOURCES_DIR}text/${id}.txt`, 'utf8'), id, source.snapshotSha256 ?? ''));
 }
 const itemIds = new Set(storage.flatMap((d) => d.items.map((i) => i.id)));
-const guideProblems = validateGuides(guides, itemIds, sources, snapshotText);
+const guideProblems = validateProduceGuides(guides, itemIds, sources, snapshotText);
 if (guideProblems.length > 0) throw new Error(`Food guide validation failed:\n- ${guideProblems.join('\n- ')}`);
 const byEye = guides.flatMap((g) => g.sections.flatMap((s) => s.blocks.filter((b) => b.sourceRef.visualOnly).map(() => g.id)));
 if (byEye.length > 0) console.log(`${byEye.length} quote(s) transcribed from images, not checked automatically: ${[...new Set(byEye)].join(', ')}`);
@@ -51,8 +52,8 @@ for (const id of new Set(readingGuides.flatMap((g) => [g.sourceId, ...g.checks.m
   if (source.snapshot.endsWith('.html')) guideTexts.set(id, htmlToText(bytes.toString('utf8')));
   if (source.snapshot.endsWith('.pdf')) {
     const raw = await readFile(`${SOURCES_DIR}text/${id}.txt`, 'utf8');
-    pdfText(raw, id, source.snapshotSha256 ?? ''); // refuses text extracted from another snapshot
-    guideTexts.set(id, verbatimText(raw.split('\n').slice(1).join('\n')));
+    // snapshotBody refuses text extracted from another snapshot.
+    guideTexts.set(id, verbatimText(snapshotBody(raw, id, source.snapshotSha256 ?? '')));
   }
 }
 const imageDir = `${GUIDES_DIR}images/`;

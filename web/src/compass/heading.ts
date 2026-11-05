@@ -23,6 +23,11 @@ export function cardinal(deg: number, lang: Lang): string {
   return POINTS[lang][Math.round(normalize(deg) / 45) % 8]!;
 }
 
+// The four main points, north first and clockwise (N, Ø, S, V in Danish), for the dial.
+export function cardinalLetters(lang: Lang): string[] {
+  return [0, 2, 4, 6].map((i) => POINTS[lang][i]!);
+}
+
 // Smooths a jittery reading without swinging the long way round through north.
 export function smooth(previous: number | null, next: number, factor = 0.25): number {
   if (previous === null) return normalize(next);

@@ -40,6 +40,3 @@ export interface Responses {
   sources: (SourceRow & { short_name: string })[];
 }
 
-export type Reply =
-  | { id: number; ok: true; result: Responses[keyof Responses] }
-  | { id: number; ok: false; error: string };

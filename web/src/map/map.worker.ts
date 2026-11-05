@@ -10,7 +10,8 @@ import sqlite3InitModule from '@sqlite.org/sqlite-wasm';
 import { coverTiles, mergeRanges, type ByteRange, type Shape } from './area.ts';
 import { partReader, validateManifest, type MapManifest } from './manifest.ts';
 import { Archive, type Located } from './pmtiles.ts';
-import type { AreaInfo, AreaShape, Home, MapProgress, MapReply, MapRequest, MapSummary } from './protocol.ts';
+import { serveRpc } from '../lib/rpc';
+import { asAreaError, type AreaError, type AreaInfo, type AreaShape, type Home, type MapProgress, type MapRequest, type MapResponses, type MapSummary } from './protocol.ts';
 
 // The small part of the sqlite-wasm API used here.
 interface Stmt {
@@ -84,7 +85,7 @@ function rowToArea(r: Record<string, unknown>): AreaInfo {
     plannedBytes: Number(r.planned_bytes),
     doneBytes: Number(r.done_bytes),
     state: r.state as AreaInfo['state'],
-    error: (r.error as string | null) ?? null,
+    error: asAreaError(r.error), // codes; text from before the codes reads as 'unknown'
     createdAt: String(r.created_at),
     replaces: (r.replaces as string | null) ?? null,
   };
@@ -105,6 +106,15 @@ function report() {
   self.postMessage(message);
 }
 
+// A download failure with the reason the user is shown (AreaError); the message is for the console.
+class AreaFailure extends Error {
+  readonly code: AreaError;
+  constructor(code: AreaError, message: string) {
+    super(message);
+    this.code = code;
+  }
+}
+
 // The hosted archive: manifest, then directories read by range requests across the part files.
 let remote: Promise<{ manifest: MapManifest; archive: Archive; read: (o: number, l: number) => Promise<Uint8Array> }> | null = null;
 
@@ -112,12 +122,12 @@ async function fetchRange(url: string, start: number, end: number): Promise<Uint
   for (let attempt = 1; ; attempt++) {
     try {
       const response = await fetch(url, { headers: { Range: `bytes=${start}-${end}` }, cache: 'no-store' });
-      if (response.status !== 206) throw new Error(`HTTP ${response.status}`);
+      if (response.status !== 206) throw new AreaFailure('network', `HTTP ${response.status}`);
       const bytes = new Uint8Array(await response.arrayBuffer());
-      if (bytes.length !== end - start + 1) throw new Error('Short read');
+      if (bytes.length !== end - start + 1) throw new AreaFailure('network', 'Short read');
       return bytes;
     } catch (error) {
-      if (attempt >= 3) throw error;
+      if (attempt >= 3) throw error instanceof AreaFailure ? error : new AreaFailure('network', String(error));
       await new Promise((r) => setTimeout(r, 1000 * attempt));
     }
   }
@@ -199,7 +209,7 @@ async function run(id: string): Promise<void> {
   report();
   try {
     const { tiles, ranges, version } = await plan(area.shape);
-    if (version !== area.version) throw new Error('Kortet er blevet opdateret siden download startede. Slet området, og hent det igen.');
+    if (version !== area.version) throw new AreaFailure('changed', 'The map was updated after the download started');
     const { read } = await openRemote();
     const { db } = areaDb(id);
     const insert = db.prepare('INSERT OR REPLACE INTO tiles (z, x, y, data) VALUES (?, ?, ?, ?)');
@@ -231,7 +241,7 @@ async function run(id: string): Promise<void> {
     }
     // Check before the area counts as ready: every planned tile is stored.
     const stored = Number(db.selectValue('SELECT count(*) FROM tiles'));
-    if (stored !== tiles.length) throw new Error(`Only ${stored} of ${tiles.length} tiles were stored`);
+    if (stored !== tiles.length) throw new AreaFailure('incomplete', `Only ${stored} of ${tiles.length} tiles were stored`);
     meta.exec("UPDATE areas SET state = 'ready', done_bytes = planned_bytes WHERE id = ?", { bind: [id] });
     // An update is complete and checked: only now is the older copy removed (never before).
     const replaced = getArea(id).replaces;
@@ -240,7 +250,8 @@ async function run(id: string): Promise<void> {
       if (meta.selectObjects('SELECT id FROM areas WHERE id = ?', [replaced]).length) await remove(replaced);
     }
   } catch (error) {
-    meta.exec("UPDATE areas SET state = 'paused', error = ? WHERE id = ?", { bind: [error instanceof Error ? error.message : String(error), id] });
+    console.error('Map download paused', id, error);
+    meta.exec("UPDATE areas SET state = 'paused', error = ? WHERE id = ?", { bind: [error instanceof AreaFailure ? error.code : 'unknown', id] });
   } finally {
     report();
   }
@@ -338,49 +349,34 @@ function covered(lon: number, lat: number): boolean {
 }
 
 // Requests are handled concurrently, so everything else waits until init has set up the pool.
-let initialised: Promise<unknown> | null = null;
+let initialised: Promise<MapResponses['init']> | null = null;
 
-async function handle(request: MapRequest): Promise<unknown> {
-  if (request.type !== 'init') {
-    if (!initialised) throw new Error('Map worker not initialised');
-    await initialised;
-  }
-  switch (request.type) {
-    case 'init':
-      initialised = init(request.mapUrl);
-      return initialised;
-    case 'summary':
-      return summary();
-    case 'estimate':
-      return estimate(request.shape);
-    case 'download':
-      return download(request.label, request.shape, request.replaces);
-    case 'resume':
-      return start(request.id);
-    case 'pause':
-      pauseRequested.add(request.id);
+serveRpc<MapRequest, MapResponses>(
+  {
+    init: (r) => (initialised = init(r.mapUrl)),
+    summary: () => summary(),
+    estimate: (r) => estimate(r.shape),
+    download: (r) => download(r.label, r.shape, r.replaces),
+    resume: (r) => start(r.id),
+    pause: (r) => {
+      pauseRequested.add(r.id);
       return null;
-    case 'delete':
-      await remove(request.id);
+    },
+    delete: async (r) => {
+      await remove(r.id);
       return null;
-    case 'tile':
-      return tile(request.z, request.x, request.y);
-    case 'covered':
-      return covered(request.lon, request.lat);
-    case 'setHome':
-      if (request.home) meta.exec('INSERT OR REPLACE INTO home (id, lon, lat) VALUES (1, ?, ?)', { bind: [request.home.lon, request.home.lat] });
+    },
+    tile: (r) => tile(r.z, r.x, r.y),
+    covered: (r) => covered(r.lon, r.lat),
+    setHome: (r) => {
+      if (r.home) meta.exec('INSERT OR REPLACE INTO home (id, lon, lat) VALUES (1, ?, ?)', { bind: [r.home.lon, r.home.lat] });
       else meta.exec('DELETE FROM home');
       return null;
-  }
-}
-
-self.onmessage = async (event: MessageEvent<{ id: number; request: MapRequest }>) => {
-  const { id, request } = event.data;
-  let reply: MapReply;
-  try {
-    reply = { id, ok: true, result: await handle(request) };
-  } catch (error) {
-    reply = { id, ok: false, error: error instanceof Error ? error.message : String(error) };
-  }
-  self.postMessage(reply);
-};
+    },
+  },
+  async (request) => {
+    if (request.type === 'init') return;
+    if (!initialised) throw new Error('Map worker not initialised');
+    await initialised;
+  },
+);

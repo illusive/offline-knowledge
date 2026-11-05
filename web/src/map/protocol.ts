@@ -17,7 +17,7 @@ export interface AreaInfo {
   plannedBytes: number;
   doneBytes: number;
   state: AreaState;
-  error: string | null; // why a download paused, if it did not pause on request
+  error: AreaError | null; // why a download paused, if it did not pause on request
   createdAt: string;
   replaces: string | null; // an update: the older area it replaces once this one is ready
 }
@@ -59,9 +59,14 @@ export interface MapResponses {
   setHome: null;
 }
 
-export type MapReply = { id: number; ok: true; result: unknown } | { id: number; ok: false; error: string };
 // Sent after every change to any area (progress, state, delete): the full list.
 export interface MapProgress {
   event: 'areas';
   areas: AreaInfo[];
 }
+
+// Why a download stopped, as a code the app turns into words in the user's language.
+export const AREA_ERRORS = ['changed', 'network', 'incomplete', 'unknown'] as const;
+export type AreaError = (typeof AREA_ERRORS)[number];
+export const asAreaError = (value: unknown): AreaError | null =>
+  value === null || value === undefined ? null : (AREA_ERRORS.find((e) => e === value) ?? 'unknown');

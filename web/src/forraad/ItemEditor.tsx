@@ -4,8 +4,8 @@
 // added under "Mere". "Gem og tilføj en til" keeps the form open for the next thing, same month.
 
 import { ScanBarcode, X } from 'lucide-react';
-import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { BackButton, Choice, MessageState, Page, Stepper } from '../components/ui';
+import { lazy, Suspense, useCallback, useMemo, useRef, useState } from 'react';
+import { BackButton, Button, Card, Choice, inputClass, MessageState, Page, Stepper, SubPageHeader } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { goBack, hrefs, type Route } from '../router';
@@ -13,6 +13,7 @@ import { lookUp, OFF_ATTRIBUTION } from './barcode';
 import { MonthYear } from './MonthYear';
 import { matchRecommendation, suggest, useStockLists, type Suggestion } from './recommendations';
 import { CATEGORIES, forraad, useForraad, type Category, type Product, type StoreItem } from './store';
+import { usePageTitle } from '../lib/usePageTitle';
 
 const BarcodeScanner = lazy(() => import('./BarcodeScanner'));
 
@@ -25,9 +26,7 @@ export function ItemEditor({ db, route, lang, s }: { db: DbClient; route: EditRo
   const lists = useStockLists(db);
   const existing = route.id ? data.items.find((i) => i.id === route.id) : undefined;
 
-  useEffect(() => {
-    document.title = `${existing ? existing.name : t.addTitle} – ${s.appTitle}`;
-  }, [existing, t, s]);
+  usePageTitle(existing ? existing.name : t.addTitle, s.appTitle);
 
   if (route.id && !existing) {
     return (
@@ -171,15 +170,15 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
 
   return (
     <Page>
-      <BackButton label={s.back} onClick={() => goBack(hrefs.forraad)} />
-      <h1 className="mt-4 mb-4 px-1 text-3xl font-normal tracking-tight">{isNew ? t.addTitle : t.editTitle}</h1>
+      <SubPageHeader backLabel={s.back} backTo={hrefs.forraad} title={isNew ? t.addTitle : t.editTitle} />
       {savedName ? (
         <p className="mb-3 rounded-2xl bg-surface px-[16px] py-3 font-medium" role="status">
           {t.saved(savedName)}
         </p>
       ) : null}
-      <form
-        className="flex flex-col gap-5 rounded-card bg-surface px-[20px] py-5"
+      <Card
+        as="form"
+        className="flex flex-col gap-5"
         onSubmit={(e) => {
           e.preventDefault();
           save(false);
@@ -210,7 +209,7 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
             enterKeyHint="done"
             aria-invalid={error || undefined}
             aria-describedby={error ? 'forraad-name-error' : undefined}
-            className="min-h-12 w-full rounded-xl border border-border bg-background px-[14px] text-lg"
+            className={`${inputClass} min-h-12 w-full text-lg`}
           />
           {error ? (
             <p id="forraad-name-error" className="mt-1 font-medium" role="alert">
@@ -281,7 +280,7 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
         {showMore ? (
           <label className="flex flex-col gap-1">
             <span className="font-semibold">{t.size}</span>
-            <input value={size} onChange={(e) => setSize(e.target.value)} placeholder={t.sizePlaceholder} autoComplete="off" className="min-h-11 rounded-xl border border-border bg-background px-[12px]" />
+            <input value={size} onChange={(e) => setSize(e.target.value)} placeholder={t.sizePlaceholder} autoComplete="off" className={inputClass} />
           </label>
         ) : (
           <button type="button" onClick={() => setShowMore(true)} className="min-h-11 self-start font-medium underline underline-offset-4">
@@ -290,13 +289,13 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
         )}
 
         <div className="flex flex-col gap-[8px] pt-1">
-          <button type="submit" className="min-h-12 rounded-full bg-accent px-[24px] font-semibold text-on-accent">
+          <Button type="submit" variant="primary">
             {t.save}
-          </button>
+          </Button>
           {isNew ? (
-            <button type="button" onClick={() => save(true)} className="min-h-12 rounded-full bg-ink px-[24px] font-medium text-on-ink">
+            <Button onClick={() => save(true)} variant="ink">
               {t.saveAndAddAnother}
-            </button>
+            </Button>
           ) : null}
         </div>
         {!isNew ? (
@@ -304,7 +303,7 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
             {t.remove}
           </button>
         ) : null}
-      </form>
+      </Card>
       <p className="mt-3 px-1 text-sm text-muted">{t.scanPrivacy}</p>
       {scanning ? (
         <Suspense fallback={null}>
