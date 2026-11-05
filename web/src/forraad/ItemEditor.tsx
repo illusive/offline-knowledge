@@ -1,17 +1,19 @@
 // Add or edit one thing in Forråd (D-046), with as little to do as possible: a name (suggestions
 // while typing, or a scanned barcode, D-047), a count, and an optional best-before month. The
 // category is guessed from the name (unknown names go to Mad) and can be changed; a size can be
-// added under "Mere". "Gem og tilføj en til" keeps the form open for the next thing, same month.
+// added under "Mere" as a number and a unit (filled in from a scan, D-050), or as text. "Gem og tilføj en til" keeps the form open for the next thing, same month.
 
 import { ScanBarcode, X } from 'lucide-react';
 import { lazy, Suspense, useCallback, useMemo, useRef, useState } from 'react';
 import { BackButton, Button, Card, Choice, inputClass, MessageState, Page, Stepper, SubPageHeader } from '../components/ui';
+import { decimalForInput, parseDecimal } from '../i18n/format';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { goBack, hrefs, type Route } from '../router';
 import { lookUp, OFF_ATTRIBUTION } from './barcode';
 import { MonthYear } from './MonthYear';
 import { matchRecommendation, suggest, useStockLists, type Suggestion } from './recommendations';
+import { parseSize, SIZE_UNITS, sizeText, type SizeUnit } from './size';
 import { CATEGORIES, forraad, useForraad, type Category, type Product, type StoreItem } from './store';
 import { usePageTitle } from '../lib/usePageTitle';
 
@@ -19,6 +21,7 @@ const BarcodeScanner = lazy(() => import('./BarcodeScanner'));
 
 type EditRoute = Extract<Route, { name: 'forraadEdit' }>;
 type Start = Omit<StoreItem, 'id' | 'added' | 'category'> & { id?: string; added?: string; category: Category | null };
+type UnitChoice = SizeUnit | 'other'; // 'other': the size is written as text
 
 export function ItemEditor({ db, route, lang, s }: { db: DbClient; route: EditRoute; lang: Lang; s: Strings }) {
   const t = s.forraad;
@@ -59,8 +62,11 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
   const [showCategories, setShowCategories] = useState(false);
   const [count, setCount] = useState(start.count);
   const [expires, setExpires] = useState(start.expires ?? '');
-  const [size, setSize] = useState(start.size ?? '');
-  const [showMore, setShowMore] = useState(Boolean(start.size));
+  // The size: a number and a unit, or a text ("Andet") for anything else.
+  const [amount, setAmount] = useState(start.amount ? decimalForInput(start.amount, lang, 2) : '');
+  const [unit, setUnit] = useState<UnitChoice>(start.unit ?? (start.size ? 'other' : 'g'));
+  const [sizeOther, setSizeOther] = useState(start.size ?? '');
+  const [showMore, setShowMore] = useState(Boolean(start.amount || start.size));
   const [recId, setRecId] = useState<string | undefined>(start.recommendationId);
   // A new thing whose name matches a stock-list line counts as it, unless the user says no; an
   // existing thing keeps what it was saved with.
@@ -79,15 +85,35 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
   const counts = linked && linked.category === category ? linked : undefined;
   const suggestions = useMemo(() => (typing ? suggest(name, recommendations, items) : []), [typing, name, recommendations, items]);
 
+  // A size text from a scan or a remembered product: a number and a unit when it reads as one,
+  // with a multipack's count ("6 x 1,5 l" is 6 of 1,5 l); otherwise kept as text.
+  const fillSize = (text: string, withCount: boolean) => {
+    const read = parseSize(text);
+    if (read) {
+      setAmount(decimalForInput(read.amount, lang, 2));
+      setUnit(read.unit);
+      setSizeOther('');
+      if (withCount && read.count) setCount(read.count);
+    } else {
+      setAmount('');
+      setUnit('other');
+      setSizeOther(text);
+    }
+    setShowMore(true);
+  };
+  const clearSize = () => {
+    setAmount('');
+    setUnit('g');
+    setSizeOther('');
+  };
+
   const pick = (sug: Suggestion) => {
     setName(sug.name);
     setChosen(sug.category);
     setUnlinked(false);
     setRecId(sug.kind === 'recommendation' ? sug.recommendation.id : sug.item.recommendationId);
-    if (sug.kind === 'own' && sug.item.size) {
-      setSize(sug.item.size);
-      setShowMore(true);
-    }
+    if (sug.kind === 'own' && sug.item.amount && sug.item.unit) fillSize(sizeText({ amount: sug.item.amount, unit: sug.item.unit }), false);
+    else if (sug.kind === 'own' && sug.item.size) fillSize(sug.item.size, false);
     setTyping(false);
   };
 
@@ -99,10 +125,7 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
       setSavedName(null);
       const fill = (p: Product) => {
         setName(p.name);
-        if (p.quantity) {
-          setSize(p.quantity);
-          setShowMore(true);
-        }
+        if (p.quantity) fillSize(p.quantity, true);
       };
       const known = products[code];
       if (known) {
@@ -129,18 +152,22 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
       nameField.current?.focus();
       return;
     }
+    const value = parseDecimal(amount);
+    const sized = unit !== 'other' && value !== null && value > 0 ? { amount: Math.min(100_000, value), unit } : null;
+    const text = unit === 'other' ? sizeOther.trim() : '';
     forraad.saveItem({
       ...(start.id ? { id: start.id, added: start.added } : {}),
       name: name.trim(),
       category,
       count,
-      ...(size.trim() ? { size: size.trim() } : {}),
+      ...(sized ?? (text ? { size: text } : {})),
       ...(expires ? { expires } : {}),
       ...(counts ? { recommendationId: counts.id } : {}),
       ...(barcode ? { barcode } : {}),
     });
     // A barcode the lookup did not know is remembered with the name the user typed.
-    if (barcode && !products[barcode]) forraad.rememberProduct(barcode, { name: name.trim(), ...(size.trim() ? { quantity: size.trim() } : {}) });
+    const quantity = sized ? sizeText(sized) : text;
+    if (barcode && !products[barcode]) forraad.rememberProduct(barcode, { name: name.trim(), ...(quantity ? { quantity } : {}) });
     if (!another) {
       goBack(hrefs.forraad);
       return;
@@ -149,7 +176,7 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
     setSavedName(name.trim());
     setName('');
     setCount(1);
-    setSize('');
+    clearSize();
     setShowMore(false);
     setRecId(undefined);
     setUnlinked(false);
@@ -278,10 +305,25 @@ function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof us
         <MonthYear id="forraad-expires" label={t.bestBefore} help={t.bestBeforeHelp} value={expires} onChange={setExpires} lang={lang} noDate={t.noDate} monthLabel={t.month} yearLabel={t.year} />
 
         {showMore ? (
-          <label className="flex flex-col gap-1">
-            <span className="font-semibold">{t.size}</span>
-            <input value={size} onChange={(e) => setSize(e.target.value)} placeholder={t.sizePlaceholder} autoComplete="off" className={inputClass} />
-          </label>
+          <fieldset className="min-w-0">
+            <legend className="mb-1 font-semibold">{t.size}</legend>
+            {/* One row: the number (or a text, for "Andet") and the unit. */}
+            <div className="flex gap-[8px]">
+              {unit === 'other' ? (
+                <input value={sizeOther} onChange={(e) => setSizeOther(e.target.value)} aria-label={t.sizeText} placeholder={t.sizePlaceholder} autoComplete="off" className={`${inputClass} min-w-0 flex-1`} />
+              ) : (
+                <input value={amount} onChange={(e) => setAmount(e.target.value)} aria-label={t.sizeAmount} inputMode="decimal" placeholder="0" autoComplete="off" className={`${inputClass} min-w-0 flex-1`} />
+              )}
+              <select value={unit} onChange={(e) => setUnit(e.target.value as UnitChoice)} aria-label={t.sizeUnit} className={`${inputClass} shrink-0 text-base`}>
+                {SIZE_UNITS.map((u) => (
+                  <option key={u} value={u}>
+                    {t.units[u]}
+                  </option>
+                ))}
+                <option value="other">{t.sizeOther}</option>
+              </select>
+            </div>
+          </fieldset>
         ) : (
           <button type="button" onClick={() => setShowMore(true)} className="min-h-11 self-start font-medium underline underline-offset-4">
             {t.more}

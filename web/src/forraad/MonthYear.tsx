@@ -25,7 +25,7 @@ export function MonthYear(props: { id: string; label: string; help?: string; val
   const select = `${inputClass} text-base`;
 
   return (
-    <fieldset aria-describedby={help ? `${id}-help` : undefined}>
+    <fieldset className="min-w-0" aria-describedby={help ? `${id}-help` : undefined}>
       <legend className="font-semibold">{label}</legend>
       {help ? (
         <p id={`${id}-help`} className="text-sm text-muted">

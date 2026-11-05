@@ -52,6 +52,7 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
 - **The stock list "Vand"** (planned) should reuse "3 liter pr. person pr. døgn" exactly as written here.
 - **Short names of the stock-list lines (Forråd, D-046):** our own labels, e.g. "Dåser med tomater eller grøntsager", "Bleer, bind og tamponer", "Betalingskort og kontanter". Check that they read naturally in the suggestions and in "Tæller som: …". The keywords that match typed names, e.g. "makrel" for canned fish, are also ours; check for wrong matches.
 - **The sheet on each thing (Forråd, D-049):** "Tag ud", "Læg flere til", "Ret navn, kategori og størrelse", "Slet alt", "Bedst før nu" with "Tog du den, der udløber først? Så vælg datoen på den næste.", "Bedst før på de nye", and the line after an action ("Makrel i tomat: 1 stk. taget ud, 1 stk. tilbage."). Check that they read naturally.
+- **Sizes (Forråd, D-050):** "Størrelse" with "Mængde", "Enhed" and "Andet" (with "Beskriv størrelsen", "Fx familiepakke"), and the unit "stk.".
 
 ### Growing
 - **Dangling first words:** some blocks still begin with "Derfor", "Men" or "Dels" because the sentence before was not taken in (e.g. Spinat "Spinat er derfor …", Bønner "I Danmark når …"). Read each crop once more, and take in the missing sentence or drop the block.

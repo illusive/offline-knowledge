@@ -94,7 +94,8 @@ describe('Forråd data on the device', () => {
     expect(data.household).toEqual({ people: 3, petLitresPerDay: 0, targetDays: 3 });
     expect(data.water).toEqual({ litres: 12.5, lastChecked: null });
     expect(data.items).toHaveLength(1);
-    expect(data.items[0]).toMatchObject({ name: 'Knækbrød', count: 2, expires: '2027-01', size: '250 g' });
+    expect(data.items[0]).toMatchObject({ name: 'Knækbrød', count: 2, expires: '2027-01', amount: 250, unit: 'g' });
+    expect(data.items[0]).not.toHaveProperty('size');
     expect(Object.keys(data.products)).toEqual(['5701234567890']);
   });
 
@@ -113,6 +114,27 @@ describe('Forråd data on the device', () => {
     expect(data.water).toEqual({ litres: 19, lastChecked: '2026-05' });
     expect(data.items.map((i) => i.id)).toEqual(['f']);
     expect(data.items[0]!.expires).toBe('2027-02');
+  });
+});
+
+describe('Forråd sizes on the device', () => {
+  it('keeps a number and a unit, turns readable text into one and leaves the rest as text', () => {
+    const items = parse({
+      version: 2,
+      items: [
+        { id: '1', name: 'Mel', category: 'food', amount: 2, unit: 'kg' },
+        { id: '2', name: 'Vand', category: 'food', size: '1,5 l' },
+        { id: '3', name: 'Sodavand', category: 'food', size: '6 x 1,5 l' },
+        { id: '4', name: 'Kiks', category: 'food', size: 'Familiepakke' },
+        { id: '5', name: 'Ris', category: 'food', amount: 1, unit: 'sacks' },
+      ],
+    }).items;
+    expect(items[0]).toMatchObject({ amount: 2, unit: 'kg' });
+    expect(items[1]).toMatchObject({ amount: 1.5, unit: 'l' });
+    expect(items[2]).toMatchObject({ size: '6 x 1,5 l' });
+    expect(items[2]).not.toHaveProperty('unit');
+    expect(items[3]).toMatchObject({ size: 'Familiepakke' });
+    expect(items[4]).not.toHaveProperty('amount');
   });
 });
 
@@ -199,6 +221,9 @@ describe('Forråd barcode lookup', () => {
       brand: 'Amanda',
       quantity: '125 g',
     });
+    expect(parseProduct({ status: 1, product: { product_name: 'Ris', quantity: '1 pose', product_quantity: '500', product_quantity_unit: 'g' } })?.quantity).toBe('500 g');
+    expect(parseProduct({ status: 1, product: { product_name: 'Vand', quantity: '6 x 1,5 l', product_quantity: 9000, product_quantity_unit: 'ml' } })?.quantity).toBe('6 x 1,5 l');
+    expect(parseProduct({ status: 1, product: { product_name: 'Ting', quantity: 'stor' } })?.quantity).toBe('stor');
     expect(parseProduct({ status: 0 })).toBeNull();
     expect(parseProduct({ status: 1, product: { product_name: ' ' } })).toBeNull();
   });

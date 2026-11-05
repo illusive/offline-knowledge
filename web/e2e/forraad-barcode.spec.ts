@@ -76,7 +76,8 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
   await expect(page.getByLabel('Hvad er det?')).toHaveValue('Makrel i tomat', { timeout: 15_000 });
   await expect(page.getByText('Varens navn er fra Open Food Facts.')).toBeVisible();
   await expect(page.getByText('Mad · Tæller som: Dåser med fisk eller kød')).toBeVisible();
-  await expect(page.getByLabel('Størrelse')).toHaveValue('125 g');
+  await expect(page.getByLabel('Mængde')).toHaveValue('125');
+  await expect(page.getByLabel('Enhed')).toHaveValue('g');
   expect(await lookups()).toHaveLength(1);
   expect((await lookups())[0]).toContain(`/product/${CODE}.json`);
   await page.getByRole('button', { name: 'Gem', exact: true }).click();

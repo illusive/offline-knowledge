@@ -3,6 +3,7 @@
 // connection, or if the product is unknown, the user types the name and the barcode is remembered
 // on the device with it. Parsing is pure, for tests.
 
+import { parseSize, SIZE_UNITS, sizeText } from './size';
 import type { Product } from './store';
 
 export const OFF_ATTRIBUTION = 'Open Food Facts';
@@ -23,7 +24,12 @@ export function parseProduct(json: unknown): FoundProduct | null {
   const name = text(product.product_name_da) ?? text(product.product_name);
   if (!name) return null;
   const brand = text(product.brands)?.split(',')[0]?.trim();
-  const quantity = text(product.quantity, 40);
+  // The size text ("6 x 1,5 l") keeps a multipack; Open Food Facts' own number and unit are the
+  // fallback when the text cannot be read (D-050).
+  const given = text(product.quantity, 40);
+  const n = typeof product.product_quantity === 'string' ? Number(product.product_quantity) : product.product_quantity;
+  const unit = SIZE_UNITS.find((u) => u === text(product.product_quantity_unit)?.toLowerCase());
+  const quantity = given && parseSize(given) ? given : typeof n === 'number' && n > 0 && unit ? sizeText({ amount: n, unit }) : given;
   return { name, ...(brand ? { brand } : {}), ...(quantity ? { quantity } : {}) };
 }
 
@@ -35,7 +41,7 @@ export async function lookUp(code: string): Promise<Lookup> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const url = `${OFF_URL}/api/v2/product/${code}.json?fields=product_name,product_name_da,brands,quantity`;
+    const url = `${OFF_URL}/api/v2/product/${code}.json?fields=product_name,product_name_da,brands,quantity,product_quantity,product_quantity_unit`;
     const response = await fetch(url, { signal: controller.signal, credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store' });
     if (response.status === 404) return { kind: 'notFound' };
     if (!response.ok) return { kind: 'offline' };

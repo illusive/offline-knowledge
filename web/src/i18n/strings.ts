@@ -178,6 +178,11 @@ export interface Strings {
     more: string;
     size: string;
     sizePlaceholder: string;
+    sizeAmount: string;
+    sizeUnit: string;
+    sizeText: string;
+    sizeOther: string;
+    units: Record<'g' | 'kg' | 'ml' | 'cl' | 'dl' | 'l' | 'stk', string>;
     change: (category: string) => string;
     changeShort: string;
     saveAndAddAnother: string;
@@ -546,7 +551,12 @@ export const strings: Record<Lang, Strings> = {
       year: 'År',
       more: 'Mere',
       size: 'Størrelse',
-      sizePlaceholder: 'Fx 400 g',
+      sizePlaceholder: 'Fx familiepakke',
+      sizeAmount: 'Mængde',
+      sizeUnit: 'Enhed',
+      sizeText: 'Beskriv størrelsen',
+      sizeOther: 'Andet',
+      units: { g: 'g', kg: 'kg', ml: 'ml', cl: 'cl', dl: 'dl', l: 'l', stk: 'stk.' },
       change: (category) => `Skift kategori (nu ${category.toLowerCase()})`,
       changeShort: 'Skift',
       saveAndAddAnother: 'Gem og tilføj en til',
@@ -961,7 +971,12 @@ export const strings: Record<Lang, Strings> = {
       year: 'Year',
       more: 'More',
       size: 'Size',
-      sizePlaceholder: 'E.g. 400 g',
+      sizePlaceholder: 'E.g. family pack',
+      sizeAmount: 'Amount',
+      sizeUnit: 'Unit',
+      sizeText: 'Describe the size',
+      sizeOther: 'Other',
+      units: { g: 'g', kg: 'kg', ml: 'ml', cl: 'cl', dl: 'dl', l: 'l', stk: 'pcs' },
       change: (category) => `Change category (now ${category.toLowerCase()})`,
       changeShort: 'Change',
       saveAndAddAnother: 'Save and add another',

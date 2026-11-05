@@ -415,6 +415,18 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Rationale:** taking things out was three steps (open, lower the count, save), and D-046 says it must be quick or it does not get done.
 - **Alternatives:** a − button on each row (fastest, but no way to change the month and easy to tap by mistake); a "Brug en" button in the editor (still two taps); keeping used-up things at 0 as a shopping reminder (needs a new state and a rule for the ticks; not now).
 
+## D-050 — Sizes as a number and a unit, read from the scan
+
+- **Date:** 2026-11-05
+- **Decision (owner):** a thing's size is a number and a unit, for neater entry. There are no totals yet.
+  - **Units:** g, kg, ml, cl, dl, l and stk. A parser (`forraad/size.ts`) reads the ways packs and Open Food Facts write them: "400g", "1,5 l", "1.5L", "33 cl ℮", "1.000 g", "12 stk.", "10 pcs".
+  - **A scan fills them in.** The lookup also asks Open Food Facts for `product_quantity` and `product_quantity_unit`. Its size text comes first because it keeps a multipack; the number and unit are the fallback when the text cannot be read. Only the barcode is still sent (D-047).
+  - **Multipacks:** "6 x 1,5 l" is saved as a count of 6 and a size of 1,5 l each, so "Tag ud" takes out one bottle at a time.
+  - **Anything else stays as text** under "Andet" ("familiepakke"). Sizes saved as text before this that read as one number and a unit are converted when read; the rest stay as text.
+  - In the editor, the number and the unit sit in one row, like month and year.
+- **Rationale:** a scanned size was text the app could not use, and typing "400 g" by hand varied ("400g", "400 gr"). A number and a unit read the same everywhere and leave the door open to totals later.
+- **Alternatives:** totals per category (owner chose entry only for now; the stock lists have no weights to compare against); a multipack as one thing of 9 l (taking out one bottle would mean changing the size); number and unit only (odd sizes could not be entered, and old text sizes would be lost).
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

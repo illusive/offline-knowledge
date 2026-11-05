@@ -82,26 +82,31 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   await expect(page.getByText('Medicin og hygiejne · Tæller som: Førstehjælpskasse')).toBeVisible();
   await page.getByRole('button', { name: 'Gem og tilføj en til' }).click();
 
-  // An unknown name goes to Mad; the category can be changed. A size is optional, under Mere.
+  // An unknown name goes to Mad; the category can be changed. A size is optional, under Mere: a
+  // number and a unit, or a text under "Andet" (D-050).
   await name.fill('Paraply');
   await expect(page.getByText('Mad', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Skift kategori (nu mad)' }).click();
   await page.locator('label', { hasText: 'Lys, varme og andet' }).click();
   await page.getByRole('combobox', { name: 'Måned' }).selectOption('');
   await page.getByRole('button', { name: 'Mere' }).click();
-  await page.getByLabel('Størrelse').fill('Stor');
+  await page.getByLabel('Enhed').selectOption('other');
+  await page.getByLabel('Beskriv størrelsen').fill('Stor');
   await page.getByRole('button', { name: 'Gem og tilføj en til' }).click();
 
   // Something already past its month.
   await name.fill('Kiks');
   await pickMonth(page, -1);
+  await page.getByRole('button', { name: 'Mere' }).click();
+  await page.getByLabel('Mængde').fill('0,5');
+  await page.getByLabel('Enhed').selectOption('kg');
   await page.getByRole('button', { name: 'Gem', exact: true }).click();
 
   await expect(page.getByRole('heading', { level: 1, name: 'Forråd' })).toBeVisible();
   const food = page.getByRole('region', { name: 'Mad' });
   await expect(row(food, 'Makrel i tomat')).toContainText(`2 stk. · Bedst før ${monthIn(1).name}`);
   await expect(food.getByRole('link', { name: /^Dåser med fisk eller kød/ })).toBeHidden();
-  await expect(row(food, 'Kiks')).toContainText(`Udløbet ${monthIn(-1).name}`);
+  await expect(row(food, 'Kiks')).toContainText(`1 stk. · 0,5 kg · Udløbet ${monthIn(-1).name}`);
   await expect(row(page.getByRole('region', { name: 'Medicin og hygiejne' }), 'Plaster')).toContainText(`Bedst før ${monthIn(1).name}`);
   const other = page.getByRole('region', { name: 'Lys, varme og andet' });
   await expect(row(other, 'Paraply')).toContainText('1 stk. · Stor');

@@ -49,6 +49,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
   - Barcode scanning with the bundled reader, plus an optional Open Food Facts lookup; the barcode is remembered offline.
   - Litres or US gallons, and a backup file.
   - A sheet on each thing (D-049, 2026-11-05): take some out (with the next best-before month), add more (the earlier month is kept), edit, delete all. The last one asks, then deletes.
+  - Sizes as a number and a unit (D-050, 2026-11-05): read from a scan, including multipacks ("6 x 1,5 l" is 6 of 1,5 l); anything else as text under "Andet".
 
   Tested by offline e2e tests, including a real EAN-13 decoded from a canvas "camera". **Still to check on the iPhone:** scanning with the real camera (permission prompt, focus, speed), saving the copy to Filer and restoring it, and the month/year wheels.
 - [x] Whole-app review and clean-up (2026-11-05, D-048):

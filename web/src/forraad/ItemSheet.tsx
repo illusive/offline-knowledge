@@ -10,6 +10,7 @@ import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
 import { monthsUntil } from './calc';
 import { MonthYear } from './MonthYear';
+import { formatSize } from './size';
 import { forraad, type StoreItem } from './store';
 
 export const SHEET_TITLE_ID = 'forraad-sheet-title';
@@ -18,7 +19,7 @@ export const SHEET_TITLE_ID = 'forraad-sheet-title';
 export function itemSummary(item: StoreItem, lang: Lang, t: Strings['forraad']): string {
   return [
     t.countLabel(item.count),
-    item.size ?? null,
+    item.amount && item.unit ? formatSize({ amount: item.amount, unit: item.unit }, lang, (u) => t.units[u]) : (item.size ?? null),
     item.expires ? (monthsUntil(item.expires, thisMonth()) < 0 ? t.expired : t.expires)(formatMonth(item.expires, lang)) : null,
   ]
     .filter(Boolean)

@@ -1,10 +1,12 @@
 // Forråd (D-046): the household's own stores, kept on the device only (localStorage), in one
 // versioned object. parse() accepts anything and returns valid data, so damaged or older data never
 // breaks the screen; unknown fields are dropped. Version 2 (owner, 2026-11-05): water is one figure
-// with the month it was last checked; things have an optional size and a month/year date.
+// with the month it was last checked; things have an optional size and a month/year date. A size
+// is a number and a unit when it can be read as one (D-050), otherwise free text.
 
 import { thisMonth, today } from '../i18n/format';
 import { createLocalStore } from '../lib/localStore';
+import { parseSize, SIZE_UNITS, type SizeUnit } from './size';
 
 export const CATEGORIES = ['food', 'medicine', 'other'] as const;
 export type Category = (typeof CATEGORIES)[number];
@@ -17,7 +19,9 @@ export interface StoreItem {
   name: string;
   category: Category;
   count: number;
-  size?: string; // free text, e.g. "400 g"
+  amount?: number; // the size as a number and a unit (D-050), e.g. 400 g; both or neither
+  unit?: SizeUnit;
+  size?: string; // a size that is not a number and a unit, e.g. "familiepakke"
   expires?: string; // best before, month precision: yyyy-mm
   recommendationId?: string; // the stock-list item it covers (D-040 checklist id)
   viaChecklist?: true; // added by ticking the stock list (D-048); unticking removes only these
@@ -75,8 +79,18 @@ function parseItem(x: unknown): StoreItem | null {
   const category = CATEGORIES.find((c) => c === x.category);
   if (!id || !name || !category) return null;
   const item: StoreItem = { id, name, category, count: Math.round(num(x.count, 1, MAX_COUNT) ?? 1), added: isDay(x.added) ? x.added : today() };
+  const amount = num(x.amount, 0, 100_000);
+  const unit = SIZE_UNITS.find((u) => u === x.unit);
   const size = str(x.size, 40);
-  if (size) item.size = size;
+  // A size saved as text that reads as one number and a unit becomes one (sizes before D-050).
+  const read = !unit && size ? parseSize(size) : null;
+  if (amount && unit) {
+    item.amount = amount;
+    item.unit = unit;
+  } else if (read && !read.count) {
+    item.amount = read.amount;
+    item.unit = read.unit;
+  } else if (size) item.size = size;
   const expires = toMonth(x.expires);
   if (expires) item.expires = expires;
   const rec = str(x.recommendationId, 64);
