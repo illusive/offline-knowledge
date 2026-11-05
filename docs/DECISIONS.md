@@ -345,6 +345,16 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Alternatives:** an own text size control, or both (rejected: the user would set it twice); follow the phone only for language and appearance (rejected: no way to read in English on a Danish phone or keep dark mode at night); licence status shown now (deferred).
 - **Closes:** OPEN_QUESTIONS 8 (UI language: follow the device, with a manual override).
 
+## D-045 — Compass in Tools, with "hold a course"
+
+- **Date:** 2026-11-05
+- **Decision (owner):** Tools gets a compass: a turning dial with a fixed mark, the direction as text ("NØ 42°"), and **Hold kursen**: lock the current direction and see how far you are off it ("Drej 15° til højre"). No GPS, no network.
+- **Sensor:** iOS `DeviceOrientationEvent` with `webkitCompassHeading` (magnetic north) and `webkitCompassAccuracy`; permission is asked when the user taps "Start kompas". Other browsers: `deviceorientationabsolute`. The sensor runs only while the compass is open.
+- **States:** not started, waiting, active, uncertain (accuracy worse than ±20°, or iOS reports none), permission refused (how to allow it again), no compass on this device (no reading within 3 seconds).
+- **Choices made in the slice:** magnetic north, labelled as such (true north needs a field model and the position; the difference in Denmark is a few degrees). The course is kept on the device until cleared, so it survives the app closing on the way. The screen is not kept awake (battery).
+- **Alternatives:** a plain compass (owner chose the course too); pointing toward the home point (needs GPS; later); a heading cone on the map instead (left for the map).
+- **Supersedes:** the supply checklist in Tools (PROJECT.md, D-025), covered by the "Hjemmeberedskab" stock lists (D-040, D-043).
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

@@ -46,7 +46,7 @@ High-risk areas (first aid, water treatment, food safety, electricity) follow a 
 - Full-text local search across all guides.
 - Food storage lookup: search a food and see how long it keeps in the pantry, fridge and freezer, in Danish and English, with its source (D-014, D-015).
 - Emergency card that calls 112, reachable from Home and every high-risk guide.
-- Tools: supply checklist (from the cleared UK Be Ready checklist, progress kept on the device) and compass (D-025).
+- Tools: compass with "hold a course" (D-045). The supply checklist became the "Hjemmeberedskab" stock lists (D-040, D-043).
 - Bookmarks ("Saved") for guides and foods, kept on the device only (D-026).
 - Settings: offline library (pack size, version, date), language, appearance, text size, about and sources.
 - Works entirely in airplane mode.

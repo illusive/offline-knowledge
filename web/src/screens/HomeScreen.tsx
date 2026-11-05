@@ -43,7 +43,7 @@ export function HomeScreen(props: {
         <p className="flex items-center gap-1 text-[min(1.875rem,9vw)] font-normal tracking-tight">
           {s.appTitle}
           {/* Green when the app works offline (owner 2026-10-27); the state is spoken, not shown as text. */}
-          <Asterisk aria-hidden="true" className={`size-6 transition-colors ${offlineReady ? 'text-ok' : ''}`} strokeWidth={offlineReady ? 2.75 : 2} />
+          <Asterisk aria-hidden="true" className={`size-6 transition-colors ${offlineReady ? 'text-ready-mark' : ''}`} strokeWidth={offlineReady ? 2.75 : 2} />
           <span className="sr-only" role="status">
             {OFFLINE_DISABLED ? '' : offlineReady ? s.offlineReadyStatus : s.preparingOffline}
           </span>

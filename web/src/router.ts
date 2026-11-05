@@ -12,6 +12,7 @@ export type Route =
   | { name: 'saved'; section: SavedSection | null }
   | { name: 'map' }
   | { name: 'tools' }
+  | { name: 'compass' }
   | { name: 'settings' };
 
 export type Tab = 'home' | 'map' | 'tools' | 'settings';
@@ -41,6 +42,7 @@ export function parseRoute(hash: string): Route {
   if (hash === '#/storage') return { name: 'storage' };
   if (hash === '#/map') return { name: 'map' };
   if (hash === '#/tools') return { name: 'tools' };
+  if (hash === '#/tools/compass') return { name: 'compass' };
   if (hash === '#/settings') return { name: 'settings' };
   return { name: 'home' };
 }
@@ -55,6 +57,7 @@ export const hrefs = {
   saved: (section?: SavedSection) => (section ? `#/saved/${section}` : '#/saved'),
   map:'#/map',
   tools: '#/tools',
+  compass: '#/tools/compass',
   settings: '#/settings',
   food: (id: string, tab: FoodTab = DEFAULT_FOOD_TAB) =>
     `#/food/${encodeURIComponent(id)}${tab === DEFAULT_FOOD_TAB ? '' : `/${tab}`}`,
@@ -62,6 +65,7 @@ export const hrefs = {
 
 // Which tab a route belongs to (content pages sit under Home).
 export function tabOf(route: Route): Tab {
+  if (route.name === 'compass') return 'tools';
   return route.name === 'map' || route.name === 'tools' || route.name === 'settings' ? route.name : 'home';
 }
 

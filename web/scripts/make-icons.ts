@@ -64,8 +64,32 @@ function png(size: number): Buffer {
   ]);
 }
 
+// favicon.ico for browsers that do not use the SVG (Safari) or look for it by name: PNG images
+// inside an ICO container (supported by every current browser).
+function ico(sizes: number[]): Buffer {
+  const images = sizes.map((size) => png(size));
+  const header = Buffer.alloc(6);
+  header.writeUInt16LE(0, 0); // reserved
+  header.writeUInt16LE(1, 2); // type: icon
+  header.writeUInt16LE(sizes.length, 4);
+  let offset = 6 + 16 * sizes.length;
+  const entries = sizes.map((size, i) => {
+    const entry = Buffer.alloc(16);
+    entry.writeUInt8(size % 256, 0); // width (0 means 256)
+    entry.writeUInt8(size % 256, 1); // height
+    entry.writeUInt16LE(1, 4); // colour planes
+    entry.writeUInt16LE(24, 6); // bits per pixel
+    entry.writeUInt32LE(images[i]!.length, 8);
+    entry.writeUInt32LE(offset, 12);
+    offset += images[i]!.length;
+    return entry;
+  });
+  return Buffer.concat([header, ...entries, ...images]);
+}
+
 const out = new URL('../public/', import.meta.url);
-for (const [name, size] of [['icon-192.png', 192], ['icon-512.png', 512], ['apple-touch-icon.png', 180]] as const) {
+for (const [name, size] of [['icon-192.png', 192], ['icon-512.png', 512], ['apple-touch-icon.png', 180], ['favicon-32.png', 32]] as const) {
   writeFileSync(new URL(name, out), png(size));
 }
+writeFileSync(new URL('favicon.ico', out), ico([16, 32, 48]));
 console.log('Wrote icons to public/');

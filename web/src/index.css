@@ -18,6 +18,9 @@
   --c-note-bg: #fbf0da;
   --c-note-text: #6b3f00;
   --c-ok: #1f7a3d;
+  /* The logo's asterisk when the app works offline: lime in dark mode; on the light background
+     lime is too faint, so it stays the dark green there (owner 2026-11-05). */
+  --c-ready-mark: #1f7a3d;
 }
 
 /* Dark: chosen in Settings, or the phone's setting (D-044). data-theme is set before the first paint
@@ -37,6 +40,7 @@
   --c-note-bg: #3a2c12;
   --c-note-text: #f4cc94;
   --c-ok: #5ccf86;
+  --c-ready-mark: #d4f04a;
 }
 
 @theme inline {
@@ -53,6 +57,7 @@
   --color-note-bg: var(--c-note-bg);
   --color-note-text: var(--c-note-text);
   --color-ok: var(--c-ok);
+  --color-ready-mark: var(--c-ready-mark);
   --radius-card: 20px;
   --radius-hero: 28px;
 }

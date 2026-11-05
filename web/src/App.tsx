@@ -21,7 +21,8 @@ import { HomeScreen } from './screens/HomeScreen';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { MapScreen } from './screens/MapScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
-import { PlaceholderScreen } from './screens/PlaceholderScreen';
+import { CompassScreen } from './screens/CompassScreen';
+import { ToolsScreen } from './screens/ToolsScreen';
 import { StorageScreen } from './screens/StorageScreen';
 import { useAllFoods } from './storage/useFoodSearch';
 
@@ -102,7 +103,8 @@ export function App() {
   else if (route.name === 'growing') content = <GrowingScreen db={db} guides={crops} s={s} query={growingQuery} onQueryChange={setGrowingQuery} />;
   else if (route.name === 'guide') content = <GuideScreen db={db} id={route.id} s={s} />;
   else if (route.name === 'storage') content = <StorageScreen db={db} foods={foods} lang={lang} s={s} query={storageQuery} onQueryChange={setStorageQuery} />;
-  else if (route.name === 'tools') content = <PlaceholderScreen title={s.toolsTitle} s={s} />;
+  else if (route.name === 'tools') content = <ToolsScreen s={s} />;
+  else if (route.name === 'compass') content = <CompassScreen lang={lang} s={s} />;
   else if (route.name === 'settings') content = <SettingsScreen db={db} pack={pack} lang={lang} s={s} offlineReady={offlineReady} />;
   else content = <HomeScreen db={db} foods={foods} lang={lang} s={s} offlineReady={offlineReady} precache={precache} guides={guides} crops={crops} prepare={prepare} query={homeQuery} onQueryChange={setHomeQuery} />;
 

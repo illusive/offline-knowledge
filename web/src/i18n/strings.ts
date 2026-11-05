@@ -113,6 +113,24 @@ export interface Strings {
     positionRefused: string;
   };
   toolsTitle: string;
+  compass: {
+    title: string;
+    subtitle: string;
+    start: string;
+    starting: string;
+    magnetic: string;
+    uncertain: string;
+    denied: string;
+    tryAgain: string;
+    unsupported: string;
+    holdCourse: string;
+    clearCourse: string;
+    course: (deg: number) => string;
+    onCourse: string;
+    turnRight: (deg: number) => string;
+    turnLeft: (deg: number) => string;
+    howTo: string;
+  };
   settingsTitle: string;
   settings: {
     library: string;
@@ -137,7 +155,6 @@ export interface Strings {
     about: string;
     aboutBody: string[];
   };
-  comingLater: string;
   showOriginal: string;
   showTranslation: string;
   partlyTranslated: string;
@@ -357,6 +374,24 @@ export const strings: Record<Lang, Strings> = {
       positionRefused: 'Appen har ikke tilladelse til at bruge din position. Du kan ændre det i telefonens indstillinger.',
     },
     toolsTitle: 'Værktøjer',
+    compass: {
+      title: 'Kompas',
+      subtitle: 'Find retningen, og hold en kurs – uden internet og GPS.',
+      start: 'Start kompas',
+      starting: 'Starter kompasset …',
+      magnetic: 'Retning fra magnetisk nord',
+      uncertain: 'Kompasset er usikkert lige nu. Gå lidt væk fra metal, magneter og elektronik.',
+      denied: 'Appen fik ikke lov til at bruge kompasset. Prøv igen, og vælg Tillad.',
+      tryAgain: 'Prøv igen',
+      unsupported: 'Denne enhed har ikke et kompas, som appen kan bruge.',
+      holdCourse: 'Hold denne kurs',
+      clearCourse: 'Slet kurs',
+      course: (deg) => `Kurs ${deg}°`,
+      onCourse: 'Du holder kursen',
+      turnRight: (deg) => `Drej ${deg}° til højre`,
+      turnLeft: (deg) => `Drej ${deg}° til venstre`,
+      howTo: 'Hold telefonen fladt foran dig, så toppen peger frem. Vend dig, til retningen passer, og tryk på Hold denne kurs. Så viser appen, hvis du kommer ud af kurs.',
+    },
     settingsTitle: 'Indstillinger',
     settings: {
       library: 'På telefonen',
@@ -386,7 +421,6 @@ export const strings: Record<Lang, Strings> = {
         'Alt, hvad du gemmer og vælger, bliver på din telefon. Appen har ingen konto og sender ingen data.',
       ],
     },
-    comingLater: 'Kommer senere.',
     showOriginal: 'Vis original',
     showTranslation: 'Vis på dansk',
     partlyTranslated: 'Dele af guiden er oversat fra engelsk.',
@@ -647,6 +681,24 @@ export const strings: Record<Lang, Strings> = {
       positionRefused: 'The app does not have permission to use your location. You can change this in your phone\'s settings.',
     },
     toolsTitle: 'Tools',
+    compass: {
+      title: 'Compass',
+      subtitle: 'Find the direction and hold a course – without internet or GPS.',
+      start: 'Start compass',
+      starting: 'Starting the compass …',
+      magnetic: 'Direction from magnetic north',
+      uncertain: 'The compass is uncertain right now. Move a little away from metal, magnets and electronics.',
+      denied: 'The app was not allowed to use the compass. Try again and choose Allow.',
+      tryAgain: 'Try again',
+      unsupported: 'This device has no compass the app can use.',
+      holdCourse: 'Hold this course',
+      clearCourse: 'Clear course',
+      course: (deg) => `Course ${deg}°`,
+      onCourse: 'You are on course',
+      turnRight: (deg) => `Turn ${deg}° right`,
+      turnLeft: (deg) => `Turn ${deg}° left`,
+      howTo: 'Hold the phone flat in front of you with the top pointing ahead. Turn until the direction is right and tap Hold this course. The app then shows when you drift off course.',
+    },
     settingsTitle: 'Settings',
     settings: {
       library: 'On this phone',
@@ -676,7 +728,6 @@ export const strings: Record<Lang, Strings> = {
         'Everything you save and choose stays on your phone. The app has no account and sends no data.',
       ],
     },
-    comingLater: 'Coming in a later step.',
     showOriginal: 'Show original',
     showTranslation: 'Show translation',
     partlyTranslated: 'Parts of this guide are translated from English.',
