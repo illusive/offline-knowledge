@@ -42,14 +42,14 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] Settings (D-044, 2026-11-05): "På telefonen" card (content version and date, counts, size, downloaded maps with a link to Kort, space used), Sprog and Udseende (Følg telefonen / fixed; kept on the device; the theme is set before the first paint), text size follows the phone (Dynamic Type, explained), all pack sources by publisher with links, About. Offline e2e test.
 - [x] Tools: compass with "Hold kursen" (D-045, 2026-11-05): turning dial, direction as text (magnetic north), course kept on the device with "Drej N° til højre/venstre"; states for permission (asked after a tap, remembered), refused, uncertain (iOS accuracy) and no compass. Offline e2e tests with a simulated sensor. **Still to check on the iPhone:** real readings, accuracy messages, landscape. The planned supply checklist is covered by the "Hjemmeberedskab" stock lists (D-040, D-043).
 - [x] Forråd (D-046, D-047, 2026-11-05): a tab replacing Settings, which moved to a gear at the top right. It holds:
-  - Water against 3 litres per person per day for 3/7/14 days, with "Tjekket i dag" and check again in six months.
+  - Water as one figure (litres and the month last checked) against 3 litres per person per day for 3/7/14 days, checked again after six months.
   - The household, including water for animals in the user's own figure.
   - Expiry dates, the four categories with "Overvej også" from the stock lists, scaled.
-  - Adding by typing with suggestions and automatic links to the stock-list lines.
+  - Quick adding (simplified the same day): a name, a count and a best-before month; category guessed; "Gem og tilføj en til"; suggestions and automatic links to the stock-list lines.
   - Barcode scanning with the bundled reader, plus an optional Open Food Facts lookup; the barcode is remembered offline.
   - Litres or US gallons, and a backup file.
 
-  Tested by offline e2e tests, including a real EAN-13 decoded from a canvas "camera". **Still to check on the iPhone:** scanning with the real camera (permission prompt, focus, speed), saving the copy to Filer and restoring it, and the date picker.
+  Tested by offline e2e tests, including a real EAN-13 decoded from a canvas "camera". **Still to check on the iPhone:** scanning with the real camera (permission prompt, focus, speed), saving the copy to Filer and restoring it, and the month/year wheels.
 - [x] Guide reader (D-037): `#/first-aid` list and `#/guide/<id>` with steps, step photos, warnings, the 112 card, source with pages and "Sammenholdt med" line.
 
 Acceptance: a fresh install with no network shows the pilot guides, search finds them (in both languages if a Danish guide is cleared), and each guide shows its sources and licenses.

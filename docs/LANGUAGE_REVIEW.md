@@ -73,6 +73,9 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
   - "Overvej også".
   - "Tæller som: …" for an item that covers a stock-list line.
   - "Tjek forrådet hvert halve år" (from the UK checklist's "every six months").
+  - "Bedst før" with only month and year, and its help text ("Har du flere, så vælg den, der udløber først").
+  - "Gem og tilføj en til".
+  - "Mere" for the optional size.
 
 ## 3. Doubts (run again)
 

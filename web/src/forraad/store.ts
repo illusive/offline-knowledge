@@ -1,10 +1,11 @@
 // Forråd (D-046): the household's own stores, kept on the device only (localStorage), in one
 // versioned object. parse() accepts anything and returns valid data, so damaged or older data never
-// breaks the screen; unknown fields are dropped.
+// breaks the screen; unknown fields are dropped. Version 2 (owner, 2026-11-05): water is one figure
+// with the month it was last checked; things have an optional size and a month/year date.
 
 import { useSyncExternalStore } from 'react';
 
-export const CATEGORIES = ['water', 'food', 'medicine', 'other'] as const;
+export const CATEGORIES = ['food', 'medicine', 'other'] as const;
 export type Category = (typeof CATEGORIES)[number];
 export const TARGET_DAYS = [3, 7, 14] as const;
 export type TargetDays = (typeof TARGET_DAYS)[number];
@@ -14,11 +15,11 @@ export interface StoreItem {
   name: string;
   category: Category;
   count: number;
-  litresEach?: number; // water only: litres in one unit
-  expires?: string; // ISO date (yyyy-mm-dd)
+  size?: string; // free text, e.g. "400 g"
+  expires?: string; // best before, month precision: yyyy-mm
   recommendationId?: string; // the stock-list item it covers (D-040 checklist id)
   barcode?: string;
-  added: string; // ISO date
+  added: string; // yyyy-mm-dd
 }
 
 export interface Household {
@@ -33,10 +34,15 @@ export interface Product {
   quantity?: string;
 }
 
+export interface Water {
+  litres: number;
+  lastChecked: string | null; // yyyy-mm
+}
+
 export interface ForraadData {
-  version: 1;
+  version: 2;
   household: Household;
-  water: { lastChecked: string | null };
+  water: Water;
   items: StoreItem[];
   products: Record<string, Product>; // barcode → product, remembered after a lookup or typed once
 }
@@ -45,15 +51,16 @@ export const KEY = 'stead.forraad.v1';
 const CHANGED = 'stead-forraad-changed';
 
 export const EMPTY: ForraadData = {
-  version: 1,
+  version: 2,
   household: { people: 1, petLitresPerDay: 0, targetDays: 3 },
-  water: { lastChecked: null },
+  water: { litres: 0, lastChecked: null },
   items: [],
   products: {},
 };
 
-const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
-const isDate = (x: unknown): x is string => typeof x === 'string' && ISO_DATE.test(x);
+const isDay = (x: unknown): x is string => typeof x === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x);
+// A month (yyyy-mm); version 1 stored full dates, which are cut to their month.
+const toMonth = (x: unknown): string | undefined => (typeof x === 'string' && /^\d{4}-(0[1-9]|1[0-2])(-\d{2})?$/.test(x) ? x.slice(0, 7) : undefined);
 const isObject = (x: unknown): x is Record<string, unknown> => typeof x === 'object' && x !== null && !Array.isArray(x);
 const str = (x: unknown, max = 200): string | undefined => (typeof x === 'string' && x.trim() ? x.trim().slice(0, max) : undefined);
 const num = (x: unknown, min: number, max: number): number | undefined =>
@@ -65,10 +72,11 @@ function parseItem(x: unknown): StoreItem | null {
   const name = str(x.name);
   const category = CATEGORIES.find((c) => c === x.category);
   if (!id || !name || !category) return null;
-  const item: StoreItem = { id, name, category, count: Math.round(num(x.count, 1, 9999) ?? 1), added: isDate(x.added) ? x.added : today() };
-  const litres = num(x.litresEach, 0, 1000);
-  if (category === 'water' && litres) item.litresEach = litres;
-  if (isDate(x.expires)) item.expires = x.expires;
+  const item: StoreItem = { id, name, category, count: Math.round(num(x.count, 1, 9999) ?? 1), added: isDay(x.added) ? x.added : today() };
+  const size = str(x.size, 40);
+  if (size) item.size = size;
+  const expires = toMonth(x.expires);
+  if (expires) item.expires = expires;
   const rec = str(x.recommendationId, 64);
   if (rec) item.recommendationId = rec;
   const barcode = str(x.barcode, 32);
@@ -77,7 +85,7 @@ function parseItem(x: unknown): StoreItem | null {
 }
 
 export function parse(raw: unknown): ForraadData {
-  if (!isObject(raw) || raw.version !== 1) return structuredClone(EMPTY);
+  if (!isObject(raw) || (raw.version !== 1 && raw.version !== 2)) return structuredClone(EMPTY);
   const h = isObject(raw.household) ? raw.household : {};
   const household: Household = {
     people: Math.round(num(h.people, 0, 50) ?? EMPTY.household.people),
@@ -85,7 +93,15 @@ export function parse(raw: unknown): ForraadData {
     targetDays: TARGET_DAYS.find((d) => d === h.targetDays) ?? EMPTY.household.targetDays,
   };
   const w = isObject(raw.water) ? raw.water : {};
-  const items = Array.isArray(raw.items) ? raw.items.map(parseItem).filter((i): i is StoreItem => i !== null) : [];
+  const rawItems = Array.isArray(raw.items) ? raw.items : [];
+  // Version 1 kept water as containers among the things; they become the one water figure.
+  const v1Water = raw.version === 1 ? rawItems.filter((i) => isObject(i) && i.category === 'water') : [];
+  const v1Litres = v1Water.reduce<number>((sum, i) => sum + (num((i as Record<string, unknown>).count, 1, 9999) ?? 1) * (num((i as Record<string, unknown>).litresEach, 0, 1000) ?? 0), 0);
+  const water: Water = {
+    litres: Math.round((raw.version === 1 ? v1Litres : (num(w.litres, 0, 100_000) ?? 0)) * 100) / 100,
+    lastChecked: toMonth(w.lastChecked) ?? null,
+  };
+  const items = rawItems.map(parseItem).filter((i): i is StoreItem => i !== null);
   const products: Record<string, Product> = {};
   if (isObject(raw.products)) {
     for (const [code, p] of Object.entries(raw.products)) {
@@ -95,13 +111,19 @@ export function parse(raw: unknown): ForraadData {
       products[code] = { name, ...(str(p.brand) ? { brand: str(p.brand) } : {}), ...(str(p.quantity, 40) ? { quantity: str(p.quantity, 40) } : {}) };
     }
   }
-  return { version: 1, household, water: { lastChecked: isDate(w.lastChecked) ? w.lastChecked : null }, items, products };
+  return { version: 2, household, water, items, products };
 }
+
+const pad = (n: number) => String(n).padStart(2, '0');
 
 // Today's date on the device, as yyyy-mm-dd (local time, not UTC).
 export function today(now = new Date()): string {
-  const pad = (n: number) => String(n).padStart(2, '0');
   return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+}
+
+// This month on the device, as yyyy-mm.
+export function thisMonth(now = new Date()): string {
+  return today(now).slice(0, 7);
 }
 
 function read(): ForraadData {
@@ -149,7 +171,8 @@ export function useForraad(): ForraadData {
 
 export const forraad = {
   setHousehold: (household: Household) => update((d) => ({ ...d, household })),
-  checkWater: (date = today()) => update((d) => ({ ...d, water: { lastChecked: date } })),
+  setWater: (water: Water) => update((d) => ({ ...d, water })),
+  checkWater: (month = thisMonth()) => update((d) => ({ ...d, water: { ...d.water, lastChecked: month } })),
   saveItem: (item: Omit<StoreItem, 'id' | 'added'> & { id?: string; added?: string }) =>
     update((d) => {
       const saved: StoreItem = { ...item, id: item.id ?? crypto.randomUUID(), added: item.added ?? today() };
@@ -158,5 +181,4 @@ export const forraad = {
     }),
   removeItem: (id: string) => update((d) => ({ ...d, items: d.items.filter((i) => i.id !== id) })),
   rememberProduct: (barcode: string, product: Product) => update((d) => ({ ...d, products: { ...d.products, [barcode]: product } })),
-  replaceAll: (data: ForraadData) => write(parse(data)),
 };

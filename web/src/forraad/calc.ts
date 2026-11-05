@@ -1,7 +1,10 @@
-// Forråd (D-046) arithmetic, kept pure for tests: water totals and targets, expiry, what the stock
-// lists recommend that is not in the stores yet, and the unit shown.
+// Forråd (D-046) arithmetic, kept pure for tests: the water target, months to the next check and
+// to expiry, what the stock lists recommend that is not in the stores yet, and the unit shown.
 
 import type { Category, Household, StoreItem } from './store';
+
+// The stock lists' own grouping: water is its own list, shown only in the water card.
+export type ListCategory = Category | 'water';
 
 // One line of the stock lists in "Når det sker" (D-040), with the structured amount the content
 // gives (pack schema 13).
@@ -14,7 +17,7 @@ export interface Amount {
 export interface Recommendation {
   id: string;
   guideId: string;
-  category: Category;
+  category: ListCategory;
   name: string;
   text: string;
   amount?: Amount;
@@ -22,7 +25,7 @@ export interface Recommendation {
 }
 
 // The stock lists, one per category of the stores.
-export const GUIDE_CATEGORY: Record<string, Category> = {
+export const GUIDE_CATEGORY: Record<string, ListCategory> = {
   'vand-til-tre-doegn': 'water',
   'mad-til-tre-doegn': 'food',
   'medicin-og-hygiejne': 'medicine',
@@ -31,19 +34,14 @@ export const GUIDE_CATEGORY: Record<string, Category> = {
 
 // The water card covers these: they are not listed under "Overvej også".
 export const WATER_PER_PERSON_ID = 'vand-3-liter';
-const COVERED_BY_WATER_CARD = new Set([WATER_PER_PERSON_ID, 'vand-husdyr']);
 
 // "Set a reminder every six months to check expiry dates" (uk-be-ready-checklist).
 export const CHECK_EVERY_MONTHS = 6;
 
-// Items expiring within this many days are shown at the top.
-export const EXPIRING_WITHIN_DAYS = 30;
+// Things with a best-before month this many months ahead (or earlier) are shown at the top.
+export const EXPIRING_WITHIN_MONTHS = 1;
 
 export const LITRES_PER_US_GALLON = 3.785411784;
-
-export function waterTotal(items: StoreItem[]): number {
-  return items.filter((i) => i.category === 'water').reduce((sum, i) => sum + i.count * (i.litresEach ?? 0), 0);
-}
 
 // Litres for the household for the chosen number of days, or null without the stock list's figure.
 export function waterNeeded(household: Household, litresPerPersonDay: number | null): number | null {
@@ -57,49 +55,47 @@ export function scaleAmount(amount: Amount, household: Household): number {
   return perDay * household.people * household.targetDays;
 }
 
-function parseDate(iso: string): Date {
-  const [y, m, d] = iso.split('-').map(Number);
-  return new Date(y!, m! - 1, d!);
+// Months from one yyyy-mm to another (negative when it is earlier).
+export function monthsUntil(month: string, fromMonth: string): number {
+  const [y1, m1] = month.split('-').map(Number);
+  const [y0, m0] = fromMonth.split('-').map(Number);
+  return (y1! - y0!) * 12 + (m1! - m0!);
 }
 
-export function daysUntil(iso: string, todayIso: string): number {
-  return Math.round((parseDate(iso).getTime() - parseDate(todayIso).getTime()) / 86_400_000);
+export function addMonths(month: string, months: number): string {
+  const [y, m] = month.split('-').map(Number);
+  const index = y! * 12 + (m! - 1) + months;
+  return `${Math.floor(index / 12)}-${String((index % 12) + 1).padStart(2, '0')}`;
 }
 
-export function addMonths(iso: string, months: number): string {
-  const date = parseDate(iso);
-  const day = date.getDate();
-  date.setDate(1);
-  date.setMonth(date.getMonth() + months);
-  const last = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-  date.setDate(Math.min(day, last));
-  const pad = (n: number) => String(n).padStart(2, '0');
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-}
-
-// When the water should be checked next, and whether that day has passed.
-export function nextCheck(lastChecked: string | null, todayIso: string): { date: string; due: boolean } | null {
+// The month the water should be checked next, and whether that month has come.
+export function nextCheck(lastChecked: string | null, currentMonth: string): { month: string; due: boolean } | null {
   if (!lastChecked) return null;
-  const date = addMonths(lastChecked, CHECK_EVERY_MONTHS);
-  return { date, due: daysUntil(date, todayIso) <= 0 };
+  const month = addMonths(lastChecked, CHECK_EVERY_MONTHS);
+  return { month, due: monthsUntil(month, currentMonth) <= 0 };
 }
 
-// Expired and soon-expiring items, soonest first.
-export function expiring(items: StoreItem[], todayIso: string, withinDays = EXPIRING_WITHIN_DAYS): { expired: StoreItem[]; soon: StoreItem[] } {
+// Expired (before this month) and soon-expiring things (this month or the next), soonest first.
+export function expiring(items: StoreItem[], currentMonth: string, withinMonths = EXPIRING_WITHIN_MONTHS): { expired: StoreItem[]; soon: StoreItem[] } {
   const dated = items.filter((i): i is StoreItem & { expires: string } => i.expires !== undefined).sort((a, b) => a.expires.localeCompare(b.expires));
   return {
-    expired: dated.filter((i) => daysUntil(i.expires, todayIso) < 0),
+    expired: dated.filter((i) => monthsUntil(i.expires, currentMonth) < 0),
     soon: dated.filter((i) => {
-      const d = daysUntil(i.expires, todayIso);
-      return d >= 0 && d <= withinDays;
+      const m = monthsUntil(i.expires, currentMonth);
+      return m >= 0 && m <= withinMonths;
     }),
   };
 }
 
-// Stock-list lines that no item in the stores covers yet (water is shown in the water card).
+export function formatMonth(month: string, locale: string): string {
+  const [y, m] = month.split('-').map(Number);
+  return new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' }).format(new Date(y!, m! - 1, 1));
+}
+
+// Stock-list lines that no thing in the stores covers yet (water is shown in the water card).
 export function missing(recommendations: Recommendation[], items: StoreItem[]): Recommendation[] {
   const covered = new Set(items.map((i) => i.recommendationId).filter(Boolean));
-  return recommendations.filter((r) => !COVERED_BY_WATER_CARD.has(r.id) && !covered.has(r.id));
+  return recommendations.filter((r) => r.category !== 'water' && !covered.has(r.id));
 }
 
 export type WaterUnit = 'litres' | 'gallons';

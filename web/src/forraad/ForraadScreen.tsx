@@ -10,21 +10,16 @@ import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
 import { usePreferences } from '../settings/preferences';
 import { Backup } from './Backup';
-import { daysUntil, expiring, formatGrams, formatVolume, fromUnit, missing, nextCheck, scaleAmount, toUnit, waterNeeded, waterTotal, type Recommendation } from './calc';
+import { expiring, formatGrams, formatMonth, formatVolume, fromUnit, missing, monthsUntil, nextCheck, scaleAmount, toUnit, waterNeeded, type Recommendation } from './calc';
+import { MonthYear } from './MonthYear';
 import { useStockLists, type StockLists } from './recommendations';
-import { CATEGORIES, forraad, TARGET_DAYS, today, useForraad, type Category, type ForraadData, type StoreItem, type TargetDays } from './store';
+import { CATEGORIES, forraad, TARGET_DAYS, thisMonth, useForraad, type Category, type ForraadData, type StoreItem, type TargetDays, type Water } from './store';
 
 // How many recommendations a category shows before "Vis alle".
 const CONSIDER_SHOWN = 4;
 
 export const locale = (lang: Lang) => (lang === 'da' ? 'da-DK' : 'en-GB');
 
-export function formatDate(iso: string, lang: Lang): string {
-  const [y, m, d] = iso.split('-').map(Number);
-  const date = new Date(y!, m! - 1, d!);
-  const sameYear = date.getFullYear() === new Date().getFullYear();
-  return new Intl.DateTimeFormat(locale(lang), { day: 'numeric', month: 'short', ...(sameYear ? {} : { year: 'numeric' }) }).format(date);
-}
 
 export function ForraadScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: Strings }) {
   const t = s.forraad;
@@ -39,6 +34,10 @@ export function ForraadScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: St
     <Page>
       <TabHeader title={t.title} settingsLabel={s.settingsOpen} />
       <p className="-mt-2 mb-4 px-1 text-muted">{t.subtitle}</p>
+      <a href={hrefs.forraadNew()} className="mb-4 flex min-h-12 items-center justify-center gap-[8px] rounded-full bg-accent px-[24px] font-semibold text-on-accent">
+        <Plus aria-hidden="true" className="size-5" />
+        {t.addTitle}
+      </a>
       <div className="flex flex-col gap-4">
         {data.items.length === 0 ? (
           <Card>
@@ -63,23 +62,19 @@ export function ForraadScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: St
 function WaterCard({ data, lists, lang, s }: { data: ForraadData; lists: StockLists | null; lang: Lang; s: Strings }) {
   const t = s.forraad;
   const unit = usePreferences().waterUnit;
-  const have = waterTotal(data.items);
+  const [editing, setEditing] = useState(false);
+  const have = data.water.litres;
   const need = waterNeeded(data.household, lists?.litresPerPersonDay ?? null);
   const share = need ? Math.min(1, have / need) : 0;
-  const check = nextCheck(data.water.lastChecked, today());
+  const check = nextCheck(data.water.lastChecked, thisMonth());
   const vol = (l: number) => formatVolume(l, unit, locale(lang));
+  const month = (m: string) => formatMonth(m, locale(lang));
 
   return (
     <Card aria-labelledby="forraad-water">
-      <div className="flex items-baseline justify-between gap-[12px]">
-        <h2 id="forraad-water" className="text-xl font-semibold">
-          {t.water}
-        </h2>
-        <a href={hrefs.forraadNew('water')} className="flex min-h-11 items-center gap-[4px] font-medium">
-          <Plus aria-hidden="true" className="size-5" />
-          {t.addWater}
-        </a>
-      </div>
+      <h2 id="forraad-water" className="text-xl font-semibold">
+        {t.water}
+      </h2>
       <p className="mt-2 text-[min(2.25rem,10vw)] leading-tight tracking-tight tabular-nums">{need ? t.waterOf(vol(have), vol(need)) : t.waterHave(vol(have))}</p>
       {need ? (
         <div className="mt-3 h-3 overflow-hidden rounded-full bg-background" aria-hidden="true">
@@ -89,26 +84,80 @@ function WaterCard({ data, lists, lang, s }: { data: ForraadData; lists: StockLi
       {lists?.litresPerPersonDay ? <p className="mt-3 text-sm text-muted">{t.waterTarget(data.household.targetDays, vol(lists.litresPerPersonDay))}</p> : null}
       {data.household.petLitresPerDay === 0 ? <p className="mt-1 text-sm text-muted">{t.waterPetsNote}</p> : null}
 
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-x-[12px] gap-y-2 border-t border-border pt-4">
-        <div>
-          <p className="font-medium">{data.water.lastChecked ? t.lastChecked(formatDate(data.water.lastChecked, lang)) : t.neverChecked}</p>
+      {editing ? (
+        <WaterEditor water={data.water} unit={unit} lang={lang} s={s} onDone={() => setEditing(false)} />
+      ) : (
+        <div className="mt-4 border-t border-border pt-4">
+          <p className="font-medium">{data.water.lastChecked ? t.lastChecked(month(data.water.lastChecked)) : t.neverChecked}</p>
           {check ? (
             <p className={`text-sm ${check.due ? 'font-semibold text-text' : 'text-muted'}`} role={check.due ? 'status' : undefined}>
-              {check.due ? t.checkDue(formatDate(check.date, lang)) : t.checkAgain(formatDate(check.date, lang))}
+              {check.due ? t.checkDue(month(check.month)) : t.checkAgain(month(check.month))}
             </p>
           ) : null}
+          <div className="mt-3 flex flex-wrap gap-[8px]">
+            <button type="button" onClick={() => setEditing(true)} className="min-h-11 rounded-full bg-ink px-[18px] font-medium text-on-ink">
+              {t.waterEdit}
+            </button>
+            <button
+              type="button"
+              onClick={() => forraad.checkWater()}
+              disabled={data.water.lastChecked === thisMonth()}
+              className="min-h-11 rounded-full bg-background px-[18px] font-medium disabled:opacity-50"
+            >
+              {t.checkedToday}
+            </button>
+          </div>
         </div>
-        <button
-          type="button"
-          onClick={() => forraad.checkWater()}
-          disabled={data.water.lastChecked === today()}
-          className="min-h-11 rounded-full bg-ink px-[18px] font-medium text-on-ink disabled:opacity-50"
-        >
-          {t.checkedToday}
+      )}
+      <p className="mt-3 text-sm text-muted">{t.checkSource}</p>
+    </Card>
+  );
+}
+
+// How much water there is and when it was last checked: the only two things to enter for water.
+function WaterEditor({ water, unit, lang, s, onDone }: { water: Water; unit: 'litres' | 'gallons'; lang: Lang; s: Strings; onDone: () => void }) {
+  const t = s.forraad;
+  const [amount, setAmount] = useState(water.litres ? String(Math.round(toUnit(water.litres, unit) * 10) / 10).replace('.', lang === 'da' ? ',' : '.') : '');
+  const [checked, setChecked] = useState(water.lastChecked ?? thisMonth());
+  const unitLabel = unit === 'gallons' ? 'gal' : 'L';
+  const save = () => {
+    const value = Number(amount.replace(',', '.'));
+    forraad.setWater({ litres: Number.isFinite(value) && value > 0 ? Math.round(fromUnit(value, unit) * 100) / 100 : 0, lastChecked: checked || null });
+    onDone();
+  };
+  return (
+    <form
+      className="mt-4 flex flex-col gap-4 border-t border-border pt-4"
+      onSubmit={(e) => {
+        e.preventDefault();
+        save();
+      }}
+    >
+      <label className="flex flex-col gap-1">
+        <span className="font-semibold">{t.waterLitres(unitLabel)}</span>
+        <span className="flex items-center gap-[8px]">
+          <input
+            type="text"
+            inputMode="decimal"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            placeholder="0"
+            autoFocus
+            className="min-h-12 w-32 rounded-xl border border-border bg-background px-[14px] text-lg"
+          />
+          <span>{unitLabel}</span>
+        </span>
+      </label>
+      <MonthYear id="water-checked" label={t.waterCheckedLabel} value={checked} onChange={setChecked} lang={lang} monthLabel={t.month} yearLabel={t.year} firstYear={new Date().getFullYear() - 5} years={6} />
+      <div className="flex flex-wrap gap-[8px]">
+        <button type="submit" className="min-h-12 flex-1 rounded-full bg-accent px-[24px] font-semibold text-on-accent">
+          {t.save}
+        </button>
+        <button type="button" onClick={onDone} className="min-h-12 rounded-full bg-background px-[20px] font-medium">
+          {t.cancel}
         </button>
       </div>
-      <p className="mt-2 text-sm text-muted">{t.checkSource}</p>
-    </Card>
+    </form>
   );
 }
 
@@ -194,7 +243,8 @@ export function Stepper({ label, value, min, max, onChange }: { label: string; v
 
 function Expiring({ items, lang, s }: { items: StoreItem[]; lang: Lang; s: Strings }) {
   const t = s.forraad;
-  const { expired, soon } = expiring(items, today());
+  const { expired, soon } = expiring(items, thisMonth());
+  const month = (m: string) => formatMonth(m, locale(lang));
   if (expired.length + soon.length === 0) return null;
   return (
     <Card aria-labelledby="forraad-expiring" className="bg-note-bg text-note-text">
@@ -207,7 +257,7 @@ function Expiring({ items, lang, s }: { items: StoreItem[]; lang: Lang; s: Strin
             <a href={hrefs.forraadItem(item.id)} className="flex min-h-11 items-center justify-between gap-[12px] py-1">
               <span className="font-medium">{item.name}</span>
               <span className={`shrink-0 text-sm ${expired.includes(item) ? 'font-semibold' : ''}`}>
-                {expired.includes(item) ? t.expired(formatDate(item.expires!, lang)) : t.expires(formatDate(item.expires!, lang))}
+                {expired.includes(item) ? t.expired(month(item.expires!)) : t.expires(month(item.expires!))}
               </span>
             </a>
           </li>
@@ -252,8 +302,9 @@ function CategoryCard({ category, data, lists, lang, s }: { category: Category; 
                   <span className="block font-medium">{item.name}</span>
                   <span className="block text-sm text-muted">
                     {[
-                      item.litresEach ? `${t.countLabel(item.count)} × ${formatVolume(item.litresEach, unit, locale(lang))}` : t.countLabel(item.count),
-                      item.expires ? (daysUntil(item.expires, today()) < 0 ? t.expired : t.expires)(formatDate(item.expires, lang)) : null,
+                      t.countLabel(item.count),
+                      item.size ?? null,
+                      item.expires ? (monthsUntil(item.expires, thisMonth()) < 0 ? t.expired : t.expires)(formatMonth(item.expires, locale(lang))) : null,
                     ]
                       .filter(Boolean)
                       .join(' · ')}

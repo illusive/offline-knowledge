@@ -52,7 +52,7 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
       if (!navigator.onLine) throw new TypeError('offline');
       w.__lookups.push(url);
       sessionStorage.setItem('lookups', JSON.stringify(w.__lookups));
-      const product = { product_name: 'Mackerel in tomato', product_name_da: 'Makrel i tomat', brands: 'Testmærke', quantity: '125 g', categories_tags: ['en:canned-fishes'] };
+      const product = { product_name: 'Mackerel in tomato', product_name_da: 'Makrel i tomat', brands: 'Testmærke', quantity: '125 g' };
       return new Response(JSON.stringify({ status: 1, product }), { headers: { 'content-type': 'application/json' } });
     };
   });
@@ -75,10 +75,11 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
   await page.getByRole('button', { name: 'Scan stregkode' }).click();
   await expect(page.getByLabel('Hvad er det?')).toHaveValue('Makrel i tomat', { timeout: 15_000 });
   await expect(page.getByText('Varens navn er fra Open Food Facts.')).toBeVisible();
-  await expect(page.getByText('Tæller som: Dåser med fisk eller kød')).toBeVisible();
+  await expect(page.getByText('Mad · Tæller som: Dåser med fisk eller kød')).toBeVisible();
+  await expect(page.getByLabel('Størrelse')).toHaveValue('125 g');
   expect(await lookups()).toHaveLength(1);
   expect((await lookups())[0]).toContain(`/product/${CODE}.json`);
-  await page.getByRole('button', { name: 'Gem' }).click();
+  await page.getByRole('button', { name: 'Gem', exact: true }).click();
   await expect(page.getByRole('link', { name: 'Ret Makrel i tomat' })).toBeVisible();
 
   // Offline, a known barcode is filled in from the device, without a lookup.
@@ -100,9 +101,10 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
   await page.getByRole('button', { name: 'Scan stregkode' }).click();
   await expect(page.getByText(/^Varen kan ikke slås op uden internet/)).toBeVisible({ timeout: 15_000 });
   await page.getByLabel('Hvad er det?').fill('Makrel, egen');
-  await page.getByRole('button', { name: 'Gem' }).click();
+  await page.getByRole('button', { name: 'Gem', exact: true }).click();
   const products = await page.evaluate(() => JSON.parse(localStorage.getItem('stead.forraad.v1')!).products);
   expect(products).toEqual({ [CODE]: { name: 'Makrel, egen' } });
+  await expect(page.getByRole('region', { name: 'Mad' }).getByRole('link', { name: 'Ret Makrel, egen' })).toBeVisible();
 
   expect(foreign).toEqual([]);
 });

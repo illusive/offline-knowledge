@@ -1,24 +1,24 @@
-// Add or edit one thing in Forråd (D-046). The name is free text; while typing, the stock lists'
-// lines and names used before are suggested. A thing that counts as a stock-list line says so and
-// can be unlinked. The expiry date is optional. A barcode can be scanned to fill in the name
-// (D-047): from the device if seen before, else looked up online when there is a connection.
+// Add or edit one thing in Forråd (D-046), with as little to do as possible: a name (suggestions
+// while typing, or a scanned barcode, D-047), a count, and an optional best-before month. The
+// category is guessed from the name (unknown names go to Mad) and can be changed; a size can be
+// added under "Mere". "Gem og tilføj en til" keeps the form open for the next thing, same month.
 
 import { ScanBarcode, X } from 'lucide-react';
-import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { BackButton, Choice, MessageState, Page } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { goBack, hrefs, type Route } from '../router';
-import { usePreferences } from '../settings/preferences';
-import { formatVolume, fromUnit, toUnit } from './calc';
-import { locale, Stepper } from './ForraadScreen';
-import { matchRecommendation, suggest, useStockLists, type Suggestion } from './recommendations';
 import { lookUp, OFF_ATTRIBUTION } from './barcode';
+import { Stepper } from './ForraadScreen';
+import { MonthYear } from './MonthYear';
+import { matchRecommendation, suggest, useStockLists, type Suggestion } from './recommendations';
 import { CATEGORIES, forraad, useForraad, type Category, type Product, type StoreItem } from './store';
 
 const BarcodeScanner = lazy(() => import('./BarcodeScanner'));
 
 type EditRoute = Extract<Route, { name: 'forraadEdit' }>;
+type Start = Omit<StoreItem, 'id' | 'added' | 'category'> & { id?: string; added?: string; category: Category | null };
 
 export function ItemEditor({ db, route, lang, s }: { db: DbClient; route: EditRoute; lang: Lang; s: Strings }) {
   const t = s.forraad;
@@ -41,33 +41,28 @@ export function ItemEditor({ db, route, lang, s }: { db: DbClient; route: EditRo
   // Wait for the stock lists when the link names one of their lines, so the form starts filled in.
   if (route.recommendationId && !lists) return <Page><MessageState title={t.loading} /></Page>;
   const rec = route.recommendationId ? lists?.recommendations.find((r) => r.id === route.recommendationId) : undefined;
-  const category = CATEGORIES.find((c) => c === route.category);
-  const start: Omit<StoreItem, 'id' | 'added'> & { id?: string; added?: string } = existing ?? {
+  const routeCategory = CATEGORIES.find((c) => c === route.category) ?? null;
+  const start: Start = existing ?? {
     name: rec?.name ?? '',
-    category: rec?.category ?? category ?? 'food',
+    category: rec && rec.category !== 'water' ? rec.category : routeCategory, // null: guessed from the name
     count: 1,
     ...(rec ? { recommendationId: rec.id } : {}),
   };
   return <Form start={start} isNew={!existing} lists={lists} items={data.items} products={data.products} lang={lang} s={s} />;
 }
 
-function Form(props: {
-  start: Omit<StoreItem, 'id' | 'added'> & { id?: string; added?: string };
-  isNew: boolean;
-  lists: ReturnType<typeof useStockLists>;
-  items: StoreItem[];
-  products: Record<string, Product>;
-  lang: Lang;
-  s: Strings;
-}) {
+function Form(props: { start: Start; isNew: boolean; lists: ReturnType<typeof useStockLists>; items: StoreItem[]; products: Record<string, Product>; lang: Lang; s: Strings }) {
   const { start, isNew, lists, items, products, lang, s } = props;
   const t = s.forraad;
-  const unit = usePreferences().waterUnit;
+  const nameField = useRef<HTMLInputElement>(null);
   const [name, setName] = useState(start.name);
-  const [category, setCategory] = useState<Category>(start.category);
+  // A category the user (or the link they came from) chose; null while it is guessed from the name.
+  const [chosen, setChosen] = useState<Category | null>(start.category);
+  const [showCategories, setShowCategories] = useState(false);
   const [count, setCount] = useState(start.count);
-  const [volume, setVolume] = useState(start.litresEach ? String(Math.round(toUnit(start.litresEach, unit) * 100) / 100).replace('.', lang === 'da' ? ',' : '.') : '');
   const [expires, setExpires] = useState(start.expires ?? '');
+  const [size, setSize] = useState(start.size ?? '');
+  const [showMore, setShowMore] = useState(Boolean(start.size));
   const [recId, setRecId] = useState<string | undefined>(start.recommendationId);
   // A new thing whose name matches a stock-list line counts as it, unless the user says no; an
   // existing thing keeps what it was saved with.
@@ -77,20 +72,23 @@ function Form(props: {
   const [barcode, setBarcode] = useState(start.barcode);
   const [scanning, setScanning] = useState(false);
   const [lookup, setLookup] = useState<'looking' | 'found' | 'notFound' | 'offline' | null>(null);
+  const [savedName, setSavedName] = useState<string | null>(null);
 
-  const recommendations = lists?.recommendations ?? [];
-  const chosen = recommendations.find((r) => r.id === recId);
-  const linked = chosen ?? (unlinked ? undefined : matchRecommendation(name, category, recommendations));
+  const recommendations = useMemo(() => lists?.recommendations ?? [], [lists]);
+  const picked = recommendations.find((r) => r.id === recId);
+  const linked = picked ?? (unlinked ? undefined : matchRecommendation(name, chosen, recommendations));
+  const category: Category = chosen ?? (linked && linked.category !== 'water' ? linked.category : 'food');
+  const counts = linked && linked.category === category ? linked : undefined;
   const suggestions = useMemo(() => (typing ? suggest(name, recommendations, items) : []), [typing, name, recommendations, items]);
 
   const pick = (sug: Suggestion) => {
     setName(sug.name);
-    setCategory(sug.category);
+    setChosen(sug.category);
     setUnlinked(false);
-    if (sug.kind === 'recommendation') setRecId(sug.recommendation.id);
-    else {
-      setRecId(sug.item.recommendationId);
-      if (sug.item.litresEach) setVolume(String(Math.round(toUnit(sug.item.litresEach, unit) * 100) / 100));
+    setRecId(sug.kind === 'recommendation' ? sug.recommendation.id : sug.item.recommendationId);
+    if (sug.kind === 'own' && sug.item.size) {
+      setSize(sug.item.size);
+      setShowMore(true);
     }
     setTyping(false);
   };
@@ -100,9 +98,17 @@ function Form(props: {
       setScanning(false);
       setBarcode(code);
       setTyping(false);
+      setSavedName(null);
+      const fill = (p: Product) => {
+        setName(p.name);
+        if (p.quantity) {
+          setSize(p.quantity);
+          setShowMore(true);
+        }
+      };
       const known = products[code];
       if (known) {
-        setName(known.name);
+        fill(known);
         setLookup(null);
         return;
       }
@@ -112,35 +118,49 @@ function Form(props: {
         setLookup(result.kind);
         return;
       }
-      const p = result.product;
-      setName(p.name);
-      setCategory(p.category);
-      if (p.litresEach) setVolume(String(Math.round(toUnit(p.litresEach, unit) * 100) / 100).replace('.', lang === 'da' ? ',' : '.'));
-      forraad.rememberProduct(code, { name: p.name, ...(p.brand ? { brand: p.brand } : {}), ...(p.quantity ? { quantity: p.quantity } : {}) });
+      fill(result.product);
+      forraad.rememberProduct(code, result.product);
       setLookup('found');
     },
-    [products, unit, lang],
+    [products],
   );
 
-  const save = () => {
+  const save = (another: boolean) => {
     if (!name.trim()) {
       setError(true);
+      nameField.current?.focus();
       return;
     }
-    const litres = Number(volume.replace(',', '.'));
     forraad.saveItem({
       ...(start.id ? { id: start.id, added: start.added } : {}),
       name: name.trim(),
       category,
       count,
-      ...(category === 'water' && Number.isFinite(litres) && litres > 0 ? { litresEach: fromUnit(litres, unit) } : {}),
+      ...(size.trim() ? { size: size.trim() } : {}),
       ...(expires ? { expires } : {}),
-      ...(linked?.category === category ? { recommendationId: linked.id } : {}),
+      ...(counts ? { recommendationId: counts.id } : {}),
       ...(barcode ? { barcode } : {}),
     });
     // A barcode the lookup did not know is remembered with the name the user typed.
-    if (barcode && !products[barcode]) forraad.rememberProduct(barcode, { name: name.trim() });
-    goBack(hrefs.forraad);
+    if (barcode && !products[barcode]) forraad.rememberProduct(barcode, { name: name.trim(), ...(size.trim() ? { quantity: size.trim() } : {}) });
+    if (!another) {
+      goBack(hrefs.forraad);
+      return;
+    }
+    // The next thing: an empty form, with the same month (things bought together often share it).
+    setSavedName(name.trim());
+    setName('');
+    setCount(1);
+    setSize('');
+    setShowMore(false);
+    setRecId(undefined);
+    setUnlinked(false);
+    setChosen(start.category);
+    setShowCategories(false);
+    setBarcode(undefined);
+    setLookup(null);
+    setTyping(false);
+    nameField.current?.focus();
   };
 
   const remove = () => {
@@ -154,14 +174,19 @@ function Form(props: {
     <Page>
       <BackButton label={s.back} onClick={() => goBack(hrefs.forraad)} />
       <h1 className="mt-4 mb-4 px-1 text-3xl font-normal tracking-tight">{isNew ? t.addTitle : t.editTitle}</h1>
+      {savedName ? (
+        <p className="mb-3 rounded-2xl bg-surface px-[16px] py-3 font-medium" role="status">
+          {t.saved(savedName)}
+        </p>
+      ) : null}
       <form
         className="flex flex-col gap-5 rounded-card bg-surface px-[20px] py-5"
         onSubmit={(e) => {
           e.preventDefault();
-          save();
+          save(false);
         }}
       >
-        <div className="relative">
+        <div>
           <div className="mb-1 flex items-end justify-between gap-[12px]">
             <label htmlFor="forraad-name" className="font-semibold">
               {t.name}
@@ -172,12 +197,14 @@ function Form(props: {
             </button>
           </div>
           <input
+            ref={nameField}
             id="forraad-name"
             value={name}
             onChange={(e) => {
               setName(e.target.value);
               setTyping(true);
               setError(false);
+              setSavedName(null);
             }}
             placeholder={t.namePlaceholder}
             autoComplete="off"
@@ -186,14 +213,14 @@ function Form(props: {
             aria-describedby={error ? 'forraad-name-error' : undefined}
             className="min-h-12 w-full rounded-xl border border-border bg-background px-[14px] text-lg"
           />
-          {lookup ? (
-            <p className="mt-2 text-sm" role="status">
-              {lookup === 'looking' ? t.lookingUp : lookup === 'found' ? t.productFrom(OFF_ATTRIBUTION) : lookup === 'notFound' ? t.lookupNotFound : t.lookupOffline}
-            </p>
-          ) : null}
           {error ? (
             <p id="forraad-name-error" className="mt-1 font-medium" role="alert">
               {t.nameMissing}
+            </p>
+          ) : null}
+          {lookup ? (
+            <p className="mt-2 text-sm" role="status">
+              {lookup === 'looking' ? t.lookingUp : lookup === 'found' ? t.productFrom(OFF_ATTRIBUTION) : lookup === 'notFound' ? t.lookupNotFound : t.lookupOffline}
             </p>
           ) : null}
           {suggestions.length > 0 ? (
@@ -208,74 +235,73 @@ function Form(props: {
               ))}
             </ul>
           ) : null}
-          {linked && linked.category === category ? (
-            <p className="mt-2 flex items-center gap-[8px] text-sm">
-              <span className="flex-1 text-muted">{t.countsAs(linked.name)}</span>
+
+          {/* The category, guessed from the name; changing it is one tap away but rarely needed. */}
+          <div className="mt-2 flex flex-wrap items-center gap-x-[8px] text-sm">
+            <span className="text-muted">
+              {t.categories[category]}
+              {counts ? ` · ${t.countsAs(counts.name)}` : ''}
+            </span>
+            {counts ? (
               <button
                 type="button"
                 onClick={() => {
                   setRecId(undefined);
                   setUnlinked(true);
                 }}
-                aria-label={t.unlink} className="grid size-11 shrink-0 place-items-center rounded-full">
+                aria-label={t.unlink}
+                className="grid size-11 place-items-center rounded-full"
+              >
                 <X aria-hidden="true" className="size-4" />
               </button>
-            </p>
+            ) : null}
+            <button type="button" onClick={() => setShowCategories(!showCategories)} aria-expanded={showCategories} aria-label={t.change(t.categories[category])} className="min-h-11 font-medium underline underline-offset-4">
+              {t.changeShort}
+            </button>
+          </div>
+          {showCategories ? (
+            <div className="mt-2">
+              <Choice<Category>
+                name="category"
+                legend={t.category}
+                value={category}
+                onChange={(c) => {
+                  setChosen(c);
+                  setShowCategories(false);
+                }}
+                options={CATEGORIES.map((c) => ({ value: c, label: t.categories[c] }))}
+              />
+            </div>
           ) : null}
         </div>
 
-        <Choice<Category>
-          name="category"
-          legend={t.category}
-          value={category}
-          onChange={setCategory}
-          options={CATEGORIES.map((c) => ({ value: c, label: t.categories[c] }))}
-        />
-
         <Stepper label={t.count} value={count} min={1} max={999} onChange={setCount} />
 
-        {category === 'water' ? (
+        <MonthYear id="forraad-expires" label={t.bestBefore} help={t.bestBeforeHelp} value={expires} onChange={setExpires} lang={lang} noDate={t.noDate} monthLabel={t.month} yearLabel={t.year} />
+
+        {showMore ? (
           <label className="flex flex-col gap-1">
-            <span className="font-semibold">{t.litresEach(unit === 'gallons' ? 'gal' : 'L')}</span>
-            <input
-              type="text"
-              inputMode="decimal"
-              value={volume}
-              onChange={(e) => setVolume(e.target.value)}
-              placeholder={unit === 'gallons' ? '1' : '1,5'}
-              className="min-h-11 w-32 rounded-xl border border-border bg-background px-[12px]"
-            />
-            {Number(volume.replace(',', '.')) > 0 && count > 1 ? (
-              <span className="text-sm text-muted">= {formatVolume(fromUnit(Number(volume.replace(',', '.')), unit) * count, unit, locale(lang))}</span>
-            ) : null}
+            <span className="font-semibold">{t.size}</span>
+            <input value={size} onChange={(e) => setSize(e.target.value)} placeholder={t.sizePlaceholder} autoComplete="off" className="min-h-11 rounded-xl border border-border bg-background px-[12px]" />
           </label>
-        ) : null}
+        ) : (
+          <button type="button" onClick={() => setShowMore(true)} className="min-h-11 self-start font-medium underline underline-offset-4">
+            {t.more}
+          </button>
+        )}
 
-        <div className="flex flex-col gap-1">
-          <label htmlFor="forraad-expires" className="font-semibold">
-            {t.expiry}
-          </label>
-          <span className="text-sm text-muted">{t.expiryHelp}</span>
-          <span className="flex items-center gap-[8px]">
-            <input id="forraad-expires" type="date" value={expires} onChange={(e) => setExpires(e.target.value)} className="min-h-11 rounded-xl border border-border bg-background px-[12px]" />
-            {expires ? (
-              <button type="button" onClick={() => setExpires('')} className="min-h-11 rounded-full px-[12px] text-sm font-medium">
-                {t.clearExpiry}
-              </button>
-            ) : null}
-          </span>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-[8px] pt-1">
-          <button type="submit" className="min-h-12 flex-1 rounded-full bg-accent px-[24px] font-semibold text-on-accent">
+        <div className="flex flex-col gap-[8px] pt-1">
+          <button type="submit" className="min-h-12 rounded-full bg-accent px-[24px] font-semibold text-on-accent">
             {t.save}
           </button>
-          <button type="button" onClick={() => goBack(hrefs.forraad)} className="min-h-12 rounded-full bg-background px-[20px] font-medium">
-            {t.cancel}
-          </button>
+          {isNew ? (
+            <button type="button" onClick={() => save(true)} className="min-h-12 rounded-full bg-ink px-[24px] font-medium text-on-ink">
+              {t.saveAndAddAnother}
+            </button>
+          ) : null}
         </div>
         {!isNew ? (
-          <button type="button" onClick={remove} className="min-h-11 self-start rounded-full px-[4px] font-medium underline underline-offset-4">
+          <button type="button" onClick={remove} className="min-h-11 self-start rounded-full px-[4px] font-medium underline">
             {t.remove}
           </button>
         ) : null}

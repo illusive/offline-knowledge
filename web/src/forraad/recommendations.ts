@@ -64,7 +64,7 @@ export function suggest(query: string, recommendations: Recommendation[], items:
   const startsWord = (text: string) => fold(text).split(/[\s,()–-]+/).some((w) => w.startsWith(q)) || fold(text).startsWith(q);
   const own = new Map<string, StoreItem>();
   for (const item of [...items].reverse()) if (startsWord(item.name) && !own.has(fold(item.name))) own.set(fold(item.name), item);
-  const recs = recommendations.filter((r) => startsWord(r.name) || r.keywords.some(startsWord));
+  const recs = recommendations.filter((r): r is Recommendation & { category: Category } => r.category !== 'water' && (startsWord(r.name) || r.keywords.some(startsWord)));
   return [
     ...[...own.values()].map((item): Suggestion => ({ kind: 'own', name: item.name, category: item.category, item })),
     ...recs.map((r): Suggestion => ({ kind: 'recommendation', name: r.name, category: r.category, recommendation: r })),
@@ -72,8 +72,9 @@ export function suggest(query: string, recommendations: Recommendation[], items:
 }
 
 // The stock-list line a typed name belongs to, if a keyword or the line's name starts one of its
-// words ("Makrel i tomat" → canned fish or meat). Only within the chosen category.
-export function matchRecommendation(name: string, category: Category, recommendations: Recommendation[]): Recommendation | undefined {
+// words ("Makrel i tomat" → canned fish or meat). Within a category when one is given, else in any
+// (which also guesses the category of a new thing). Water lines are left to the water card.
+export function matchRecommendation(name: string, category: Category | null, recommendations: Recommendation[]): (Recommendation & { category: Category }) | undefined {
   const folded = fold(name.trim());
   if (folded.length < 3) return undefined;
   const words = folded.split(/[\s,()–-]+/).filter(Boolean);
@@ -81,5 +82,8 @@ export function matchRecommendation(name: string, category: Category, recommenda
     const k = fold(term);
     return k.includes(' ') ? folded.includes(k) : words.some((w) => w.startsWith(k));
   };
-  return recommendations.find((r) => r.category === category && (hits(r.name) || r.keywords.some((k) => k.length >= 3 && hits(k))));
+  return recommendations.find(
+    (r): r is Recommendation & { category: Category } =>
+      r.category !== 'water' && (category === null || r.category === category) && (hits(r.name) || r.keywords.some((k) => k.length >= 3 && hits(k))),
+  );
 }

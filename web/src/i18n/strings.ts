@@ -150,7 +150,9 @@ export interface Strings {
     checkDue: (date: string) => string;
     checkedToday: string;
     checkSource: string;
-    addWater: string;
+    waterEdit: string;
+    waterLitres: (unit: string) => string;
+    waterCheckedLabel: string;
     household: string;
     householdSummary: (people: number, days: number, petLitres: string | null) => string;
     editHousehold: string;
@@ -164,7 +166,7 @@ export interface Strings {
     expiringTitle: string;
     expired: (date: string) => string;
     expires: (date: string) => string;
-    categories: Record<'water' | 'food' | 'medicine' | 'other', string>;
+    categories: Record<'food' | 'medicine' | 'other', string>;
     categoryEmpty: string;
     consider: string;
     showAll: (n: number) => string;
@@ -182,10 +184,18 @@ export interface Strings {
     usedBefore: string;
     category: string;
     count: string;
-    litresEach: (unit: string) => string;
-    expiry: string;
-    expiryHelp: string;
-    clearExpiry: string;
+    bestBefore: string;
+    bestBeforeHelp: string;
+    noDate: string;
+    month: string;
+    year: string;
+    more: string;
+    size: string;
+    sizePlaceholder: string;
+    change: (category: string) => string;
+    changeShort: string;
+    saveAndAddAnother: string;
+    saved: (name: string) => string;
     save: string;
     cancel: string;
     remove: string;
@@ -494,11 +504,13 @@ export const strings: Record<Lang, Strings> = {
       waterNone: 'Ingen vand på lager endnu.',
       lastChecked: (date) => `Sidst tjekket ${date}`,
       neverChecked: 'Ikke tjekket endnu',
-      checkAgain: (date) => `Tjek igen omkring ${date}`,
+      checkAgain: (date) => `Tjek igen i ${date}`,
       checkDue: (date) => `Tid til at tjekke vandet (siden ${date})`,
       checkedToday: 'Tjekket i dag',
       checkSource: 'Tjek forrådet hvert halve år: se datoerne, og skift det ud, der skal skiftes.',
-      addWater: 'Tilføj vand',
+      waterEdit: 'Ret',
+      waterLitres: (unit) => `${unit === 'gal' ? 'Gallon' : 'Liter'} på lager`,
+      waterCheckedLabel: 'Sidst tjekket',
       household: 'Husstand',
       householdSummary: (people, days, petLitres) => `${people === 1 ? '1 person' : `${people} personer`}${petLitres ? `, dyr ${petLitres} pr. døgn` : ''} · ${days} døgn`,
       editHousehold: 'Ret husstand',
@@ -511,8 +523,8 @@ export const strings: Record<Lang, Strings> = {
       done: 'Færdig',
       expiringTitle: 'Holdbarhed',
       expired: (date) => `Udløbet ${date}`,
-      expires: (date) => `Udløber ${date}`,
-      categories: { water: 'Vand', food: 'Mad', medicine: 'Medicin og hygiejne', other: 'Lys, varme og andet' },
+      expires: (date) => `Bedst før ${date}`,
+      categories: { food: 'Mad', medicine: 'Medicin og hygiejne', other: 'Lys, varme og andet' },
       categoryEmpty: 'Intet her endnu.',
       consider: 'Overvej også',
       showAll: (n) => `Vis alle ${n}`,
@@ -530,10 +542,18 @@ export const strings: Record<Lang, Strings> = {
       usedBefore: 'Brugt før',
       category: 'Kategori',
       count: 'Antal',
-      litresEach: (unit) => `Hver rummer (${unit})`,
-      expiry: 'Holdbar til',
-      expiryHelp: 'Valgfrit. Se datoen på pakken.',
-      clearExpiry: 'Ingen dato',
+      bestBefore: 'Bedst før',
+      bestBeforeHelp: 'Valgfrit. Måned og år er nok. Har du flere, så vælg den, der udløber først.',
+      noDate: 'Ingen dato',
+      month: 'Måned',
+      year: 'År',
+      more: 'Mere',
+      size: 'Størrelse',
+      sizePlaceholder: 'Fx 400 g',
+      change: (category) => `Skift kategori (nu ${category.toLowerCase()})`,
+      changeShort: 'Skift',
+      saveAndAddAnother: 'Gem og tilføj en til',
+      saved: (name) => `${name} er gemt.`,
       save: 'Gem',
       cancel: 'Annuller',
       remove: 'Slet',
@@ -888,11 +908,13 @@ export const strings: Record<Lang, Strings> = {
       waterNone: 'No water stored yet.',
       lastChecked: (date) => `Last checked ${date}`,
       neverChecked: 'Not checked yet',
-      checkAgain: (date) => `Check again around ${date}`,
+      checkAgain: (date) => `Check again in ${date}`,
       checkDue: (date) => `Time to check the water (since ${date})`,
       checkedToday: 'Checked today',
       checkSource: 'Check your supplies every six months: look at the dates and replace what needs replacing.',
-      addWater: 'Add water',
+      waterEdit: 'Edit',
+      waterLitres: (unit) => `${unit === 'gal' ? 'Gallons' : 'Litres'} stored`,
+      waterCheckedLabel: 'Last checked',
       household: 'Household',
       householdSummary: (people, days, petLitres) => `${people === 1 ? '1 person' : `${people} people`}${petLitres ? `, animals ${petLitres} a day` : ''} · ${days} days`,
       editHousehold: 'Edit household',
@@ -905,8 +927,8 @@ export const strings: Record<Lang, Strings> = {
       done: 'Done',
       expiringTitle: 'Dates',
       expired: (date) => `Expired ${date}`,
-      expires: (date) => `Expires ${date}`,
-      categories: { water: 'Water', food: 'Food', medicine: 'Medicine and hygiene', other: 'Light, heat and other' },
+      expires: (date) => `Best before ${date}`,
+      categories: { food: 'Food', medicine: 'Medicine and hygiene', other: 'Light, heat and other' },
       categoryEmpty: 'Nothing here yet.',
       consider: 'Also consider',
       showAll: (n) => `Show all ${n}`,
@@ -924,10 +946,18 @@ export const strings: Record<Lang, Strings> = {
       usedBefore: 'Used before',
       category: 'Category',
       count: 'Number',
-      litresEach: (unit) => `Each holds (${unit})`,
-      expiry: 'Best before',
-      expiryHelp: 'Optional. See the date on the pack.',
-      clearExpiry: 'No date',
+      bestBefore: 'Best before',
+      bestBeforeHelp: 'Optional. Month and year are enough. If you have several, choose the one that expires first.',
+      noDate: 'No date',
+      month: 'Month',
+      year: 'Year',
+      more: 'More',
+      size: 'Size',
+      sizePlaceholder: 'E.g. 400 g',
+      change: (category) => `Change category (now ${category.toLowerCase()})`,
+      changeShort: 'Change',
+      saveAndAddAnother: 'Save and add another',
+      saved: (name) => `${name} saved.`,
       save: 'Save',
       cancel: 'Cancel',
       remove: 'Delete',

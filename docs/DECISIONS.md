@@ -365,6 +365,11 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Data:** on the device only (localStorage `stead.forraad.v1`, one versioned object, validated on every read so damaged data never breaks the screen).
 - **Backup:** "Gem en kopi" writes every `stead.*` key to a JSON file through the share sheet (Filer on iPhone) or a download. "Hent fra kopi" checks the file, says how many items it holds and asks before replacing. This is because deleting the home screen app deletes its data.
 - **Alternatives:** a separate pack table with FTS (unnecessary for ~30 lines); a fixed 3-day target (owner chose adjustable); IndexedDB (localStorage is enough for hundreds of items); sync (D-010).
+- **Changed 2026-11-05 (owner, after trying it): less friction.** Adding to the stores must be quick, or it does not get done.
+  - **Water is one figure:** litres stored plus the month it was last checked, edited in the water card. There are no water containers; data saved earlier is converted.
+  - **Adding:** a name (suggestions or a barcode), a count and an optional best-before month. The category is guessed from the name through the stock-list keywords; unknown names go to Mad, and one tap changes it. An optional free-text size sits under "Mere". There are no other units, and the main button is "Tilføj til forrådet". "Gem og tilføj en til" keeps the form open with the same month.
+  - **Month and year, not dates:** stores are long-life goods, where a few weeks either way do not matter. For several of the same thing, the user picks the one that expires first.
+  - "Holdbarhed" lists what passed its month and what reaches it this month or next.
 
 ## D-047 — Barcode scanning with an optional online lookup
 
