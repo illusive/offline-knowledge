@@ -1,13 +1,14 @@
-// The camera view for scanning a barcode (D-047). Loaded only when the user taps "Scan", so the
-// reader (zxing-wasm, ~1 MB) is not parsed on start; its .wasm file is served by the app itself and
-// precached, never fetched from a CDN, so scanning works offline. The camera is asked for only here,
-// and stops as soon as a code is read or the view closes.
+// The camera for scanning barcodes (D-047), one after another (D-053). Loaded only when the user
+// opens the scanner, so the reader (zxing-wasm, ~1 MB) is not parsed on start; its .wasm file is
+// served by the app itself and precached, never fetched from a CDN, so scanning works offline. The
+// camera is asked for only here. It keeps running while the scanner is open, and stops when it
+// closes or the app goes to the background. While `paused` (a sheet is open), the picture freezes
+// on the scanned pack and nothing is read; afterwards the same code is ignored for a moment.
 
 import { BarcodeDetector, prepareZXingModule } from 'barcode-detector/ponyfill';
 import wasmUrl from 'zxing-wasm/reader/zxing_reader.wasm?url';
-import { X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import type { Strings } from '../i18n/strings';
+import { acceptCode } from './barcode';
 
 prepareZXingModule({
   overrides: {
@@ -17,32 +18,58 @@ prepareZXingModule({
 
 const FORMATS = ['ean_13', 'ean_8', 'upc_a', 'upc_e'] as const;
 
-type State = 'starting' | 'scanning' | 'denied' | 'unavailable';
+export type CameraState = 'starting' | 'scanning' | 'denied' | 'unavailable';
 
-export default function BarcodeScanner({ s, onCode, onClose }: { s: Strings; onCode: (code: string) => void; onClose: () => void }) {
-  const t = s.forraad;
+export default function BarcodeScanner({ paused, onCode, onState }: { paused: boolean; onCode: (code: string) => void; onState: (state: CameraState) => void }) {
   const video = useRef<HTMLVideoElement>(null);
-  const [state, setState] = useState<State>('starting');
-  const report = useRef(onCode); // the camera must not restart when the parent re-renders
+  const [state, setState] = useState<CameraState>('starting');
+  // The camera must not restart when the parent re-renders.
+  const report = useRef(onCode);
   report.current = onCode;
+  const tell = useRef(onState);
+  tell.current = onState;
+  const pausedNow = useRef(paused);
+  const last = useRef<{ code: string; at: number } | null>(null);
+
+  useEffect(() => {
+    pausedNow.current = paused;
+    const v = video.current;
+    if (!v) return;
+    if (paused) v.pause();
+    else {
+      // The pause on the last code counts from now, when the camera looks again.
+      if (last.current) last.current = { code: last.current.code, at: Date.now() };
+      void v.play().catch(() => undefined);
+    }
+  }, [paused]);
 
   useEffect(() => {
     let stream: MediaStream | null = null;
     let timer = 0;
     let live = true;
     const detector = new BarcodeDetector({ formats: [...FORMATS] });
+    const set = (next: CameraState) => {
+      if (!live) return;
+      setState(next);
+      tell.current(next);
+    };
+    const stop = () => {
+      stream?.getTracks().forEach((track) => track.stop());
+      stream = null;
+    };
 
     const scan = async () => {
-      if (!live || !video.current) return;
+      if (!live) return;
+      const v = video.current;
       try {
-        if (video.current.readyState >= 2) {
-          const [code] = await detector.detect(video.current);
-          if (live && code?.rawValue) {
-            live = false;
-            stream?.getTracks().forEach((track) => track.stop());
+        if (v && stream && !pausedNow.current && v.readyState >= 2) {
+          const [code] = await detector.detect(v);
+          const now = Date.now();
+          if (live && !pausedNow.current && code?.rawValue && acceptCode(code.rawValue, last.current, now)) {
+            last.current = { code: code.rawValue, at: now };
+            v.pause(); // the picture stays on the pack until the sheet closes
             navigator.vibrate?.(30);
             report.current(code.rawValue);
-            return;
           }
         }
       } catch {
@@ -51,49 +78,53 @@ export default function BarcodeScanner({ s, onCode, onClose }: { s: Strings; onC
       timer = window.setTimeout(() => void scan(), 200);
     };
 
-    (async () => {
-      if (!navigator.mediaDevices?.getUserMedia) {
-        setState('unavailable');
-        return;
-      }
+    let starting = false;
+    const start = async () => {
+      if (!navigator.mediaDevices?.getUserMedia) return set('unavailable');
+      if (starting) return;
+      starting = true;
+      let got: MediaStream;
       try {
-        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
+        got = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
       } catch (error) {
-        if (live) setState((error as Error).name === 'NotAllowedError' ? 'denied' : 'unavailable');
+        set((error as Error).name === 'NotAllowedError' ? 'denied' : 'unavailable');
+        return;
+      } finally {
+        starting = false;
+      }
+      if (!live || !video.current || document.visibilityState === 'hidden') {
+        got.getTracks().forEach((track) => track.stop());
         return;
       }
-      if (!live || !video.current) {
-        stream.getTracks().forEach((track) => track.stop());
-        return;
-      }
+      stream = got;
       video.current.srcObject = stream;
-      await video.current.play().catch(() => undefined);
-      setState('scanning');
-      void scan();
-    })();
+      if (!pausedNow.current) await video.current.play().catch(() => undefined);
+      set('scanning');
+    };
 
+    // The camera is off while the app is in the background, and comes back with it.
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') stop();
+      else if (!stream) void start();
+    };
+
+    document.addEventListener('visibilitychange', onVisibility);
+    void start();
+    void scan();
     return () => {
       live = false;
       window.clearTimeout(timer);
-      stream?.getTracks().forEach((track) => track.stop());
+      document.removeEventListener('visibilitychange', onVisibility);
+      stop();
     };
   }, []);
 
   return (
-    <div role="dialog" aria-modal="true" aria-label={t.scanTitle} className="fixed inset-0 z-30 flex flex-col bg-black text-white">
-      <div className="flex items-center justify-between px-[16px] pt-[max(1rem,env(safe-area-inset-top))] pb-3">
-        <h2 className="text-lg font-semibold">{t.scanTitle}</h2>
-        <button type="button" onClick={onClose} aria-label={t.cancel} className="grid size-11 place-items-center rounded-full bg-white/15">
-          <X aria-hidden="true" className="size-5" />
-        </button>
-      </div>
-      <div className="relative flex-1 overflow-hidden">
-        <video ref={video} playsInline muted className="absolute inset-0 size-full object-cover" aria-hidden="true" />
-        {state === 'scanning' ? <div aria-hidden="true" className="absolute inset-x-[12%] top-1/2 h-[28%] -translate-y-1/2 rounded-2xl border-2 border-accent" /> : null}
-      </div>
-      <p className="px-[20px] pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center" role="status">
-        {state === 'denied' ? t.scanDenied : state === 'unavailable' ? t.scanUnavailable : state === 'starting' ? t.scanStarting : t.scanHelp}
-      </p>
-    </div>
+    <>
+      <video ref={video} playsInline muted className="absolute inset-0 size-full object-cover" aria-hidden="true" />
+      {state === 'scanning' ? (
+        <div aria-hidden="true" className={`absolute inset-x-[12%] top-1/2 h-[28%] -translate-y-1/2 rounded-2xl border-2 border-accent ${paused ? 'bg-accent/20' : ''}`} />
+      ) : null}
+    </>
   );
 }

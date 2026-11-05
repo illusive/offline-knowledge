@@ -139,9 +139,10 @@ web/
     guides/                       useGuides/useGuideSearch and GuideCategoryScreen, the frame the three guide
                                   categories share (header, search, results)
     food/                         Food keeping times: search ranking, formatting, useFoodSearch (pure parts tested)
-    forraad/                      Forråd (D-046–D-050): store, month and water arithmetic, stock-list
-                                  recommendations, item sheet and editor, sizes (number and unit),
-                                  barcode scanner and lookup, backup file
+    forraad/                      Forråd (D-046–D-053): store, month and water arithmetic, stock-list
+                                  recommendations, item sheet, adding (scan page with a continuous
+                                  camera, typing page) and the edit page on shared fields (useItemDraft,
+                                  ItemFields, NameField), sizes (number and unit), barcode lookup, backup file
     supplies/checklist.ts         Stock-list ticks driven by Forråd (D-048)
     map/                          Offline maps (D-036): map worker, downloads, places, position
     compass/                      Compass sensor and maths (D-045)

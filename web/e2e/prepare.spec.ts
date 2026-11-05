@@ -54,9 +54,10 @@ test('Når det sker: tile, search, tick items in a stock list, bookmark a situat
   const food = page.getByRole('region', { name: 'Mad' });
   await expect(food.getByRole('button', { name: /^Knækbrød/ })).toBeVisible();
   await expect(food.getByRole('button', { name: /^Olie til madlavning/ })).toBeVisible();
-  await page.getByRole('link', { name: 'Tilføj til forrådet' }).click();
-  await page.getByLabel('Hvad er det?').fill('Makrel i tomat');
-  await page.getByRole('button', { name: 'Gem', exact: true }).click();
+  await page.getByRole('link', { name: 'Skriv selv' }).click();
+  await page.getByLabel('Navn').fill('Makrel i tomat');
+  await page.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(page.getByText('Makrel i tomat er tilføjet under Mad')).toBeVisible();
   await page.goto('./#/guide/mad-til-tre-doegn');
   await expect(page.getByRole('checkbox', { name: /^Dåser med fisk eller kød/ })).toBeChecked();
   await expect(page.getByRole('checkbox', { name: /^Dåser med fisk eller kød/ })).toBeDisabled();

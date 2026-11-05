@@ -5,6 +5,7 @@
 // one row.
 
 import { X } from 'lucide-react';
+import type { ReactNode } from 'react';
 import { inputClass } from '../components/ui';
 import { monthName } from '../i18n/format';
 import type { Lang } from '../i18n/strings';
@@ -24,7 +25,7 @@ const field = `${inputClass} min-h-12 text-lg`; // as tall as the name field, fo
 
 type Props = {
   id: string;
-  label: string;
+  label: ReactNode;
   help?: string;
   value: string;
   onChange: (value: string) => void;

@@ -149,6 +149,11 @@ export function stockMore(item: StoreItem, n: number, expires?: string): StoreIt
   return next;
 }
 
+// The thing a scanned barcode already belongs to (D-053): scanning it again adds to it.
+export function findByBarcode(items: StoreItem[], barcode: string): StoreItem | undefined {
+  return items.find((i) => i.barcode === barcode);
+}
+
 const store = createLocalStore<ForraadData>({ key: KEY, parse });
 
 export const useForraad = store.use;

@@ -1,12 +1,15 @@
-// Forråd barcode scan (D-047): the camera is replaced by a canvas showing a real EAN-13 barcode, so
-// the bundled reader decodes it. Online, the name comes from Open Food Facts (stubbed here); offline,
-// the user types it and the app remembers the barcode. Nothing is fetched from a CDN.
+// Forråd barcode scanning (D-047, D-053): the camera is replaced by a canvas showing a real EAN-13
+// barcode, so the bundled reader decodes it. Scanning goes on until "Færdig": each code opens a
+// sheet, "Tilføj" goes back to the camera, the same code is read again only after a pause and then
+// adds to the thing already there. Online, the name comes from Open Food Facts (stubbed here);
+// offline, the user types it and the app remembers the barcode. Nothing is fetched from a CDN.
 
 import { expect, test } from './fixtures.ts';
 
 const CODE = '5701234567899'; // valid EAN-13 check digit
 
-// Draws CODE as an EAN-13 barcode on a canvas and hands its stream out as the camera.
+// Draws CODE as an EAN-13 barcode on a canvas and hands its stream out as the camera. Setting
+// window.__showBarcode to false shows an empty picture (the pack taken away).
 const FAKE_CAMERA = `
 (() => {
   const L = ['0001101','0011001','0010011','0111101','0100011','0110001','0101111','0111011','0110111','0001011'];
@@ -19,11 +22,13 @@ const FAKE_CAMERA = `
   bits += '01010';
   for (let i = 7; i <= 12; i++) bits += R[code[i]];
   bits += '101';
+  window.__showBarcode = true;
   const canvas = document.createElement('canvas');
   canvas.width = 640; canvas.height = 480;
   const draw = () => {
     const ctx = canvas.getContext('2d');
     ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, 640, 480);
+    if (!window.__showBarcode) return;
     ctx.fillStyle = '#000';
     const w = 4, x0 = (640 - bits.length * w) / 2;
     for (let i = 0; i < bits.length; i++) if (bits[i] === '1') ctx.fillRect(x0 + i * w, 140, w, 200);
@@ -34,7 +39,7 @@ const FAKE_CAMERA = `
 })();
 `;
 
-test('Forråd: scan a barcode; online the name is looked up, offline it is typed and remembered', async ({ app: { page, context } }) => {
+test('Forråd: scan one thing after another; online the name is looked up, offline it is typed and remembered', async ({ app: { page, context } }) => {
   const foreign: string[] = [];
   page.on('request', (r) => {
     const host = new URL(r.url()).hostname;
@@ -57,6 +62,7 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
     };
   });
   const lookups = () => page.evaluate(() => (window as unknown as { __lookups: string[] }).__lookups);
+  const showBarcode = (show: boolean) => page.evaluate((v) => ((window as unknown as { __showBarcode: boolean }).__showBarcode = v), show);
   await context.addInitScript(FAKE_CAMERA);
 
   await page.goto('./');
@@ -66,30 +72,54 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
   });
   await page.reload();
 
-  // Online: the scan fills in the name from the lookup; it counts as its stock-list line.
-  const addFood = async () => {
+  const openScanner = async () => {
     await page.goto('./#/forraad');
-    await page.getByRole('link', { name: 'Tilføj til forrådet' }).click();
+    await page.getByRole('link', { name: 'Scan varer' }).click();
+    await expect(page.getByRole('heading', { level: 1, name: 'Scan varer' })).toBeVisible();
   };
-  await addFood();
-  await page.getByRole('button', { name: 'Scan stregkode' }).click();
-  await expect(page.getByLabel('Hvad er det?')).toHaveValue('Makrel i tomat', { timeout: 15_000 });
-  await expect(page.getByText('Varens navn er fra Open Food Facts.')).toBeVisible();
-  await expect(page.getByText('Mad · Tæller som: Dåser med fisk eller kød')).toBeVisible();
-  await expect(page.getByLabel('Mængde')).toHaveValue('125');
-  await expect(page.getByLabel('Enhed')).toHaveValue('g');
+  const food = page.getByRole('region', { name: 'Mad' });
+  const sheet = page.getByRole('dialog', { name: 'Tilføj til forrådet' });
+
+  // Online: the scan opens a sheet with the name and size from the lookup; the category is guessed.
+  await openScanner();
+  await expect(sheet.getByLabel('Navn')).toHaveValue('Makrel i tomat', { timeout: 15_000 });
+  await expect(sheet.getByText('Varens navn er fra Open Food Facts.')).toBeVisible();
+  await expect(sheet.getByText('Mad', { exact: true })).toBeVisible();
+  await expect(sheet.getByLabel('Mængde')).toHaveValue('125');
+  await expect(sheet.getByLabel('Enhed')).toHaveValue('g');
   expect(await lookups()).toHaveLength(1);
   expect((await lookups())[0]).toContain(`/product/${CODE}.json`);
-  await page.getByRole('button', { name: 'Gem', exact: true }).click();
-  await expect(page.getByRole('region', { name: 'Mad' }).getByRole('button', { name: /^Makrel i tomat/ })).toBeVisible();
+  await sheet.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(sheet).toBeHidden();
+  await expect(page.getByText('Makrel i tomat er tilføjet under Mad')).toBeVisible();
+  await expect(page.getByText('1 tilføjet', { exact: true })).toBeVisible();
+
+  // The camera goes on. The same pack, still in front of it, is read again after a pause, and then
+  // adds to the thing already there.
+  const more = page.getByRole('dialog', { name: 'Makrel i tomat' });
+  await expect(more.getByText('Den er allerede i forrådet. De nye lægges til.')).toBeVisible({ timeout: 15_000 });
+  await showBarcode(false);
+  await more.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(page.getByText('Makrel i tomat: 1 stk. lagt til, nu 2 stk.')).toBeVisible();
+  await expect(page.getByText('2 tilføjet', { exact: true })).toBeVisible();
+  expect(await lookups()).toHaveLength(1);
+  await page.getByRole('button', { name: 'Færdig' }).click();
+  await expect(food.getByRole('button', { name: /^Makrel i tomat/ })).toContainText('2 stk. · 125 g');
 
   // Offline, a known barcode is filled in from the device, without a lookup.
   await context.setOffline(true);
+  await page.evaluate(() => {
+    const data = JSON.parse(localStorage.getItem('stead.forraad.v1')!);
+    data.items = [];
+    localStorage.setItem('stead.forraad.v1', JSON.stringify(data));
+  });
   await page.reload();
-  await addFood();
-  await page.getByRole('button', { name: 'Scan stregkode' }).click();
-  await expect(page.getByLabel('Hvad er det?')).toHaveValue('Makrel i tomat', { timeout: 15_000 });
+  await openScanner();
+  await expect(sheet.getByLabel('Navn')).toHaveValue('Makrel i tomat', { timeout: 15_000 });
   expect(await lookups()).toHaveLength(1);
+  await showBarcode(false);
+  await sheet.getByRole('button', { name: 'Annuller' }).click();
+  await expect(sheet).toBeHidden();
 
   // Offline and unknown: the user is asked to type the name, which is remembered with the barcode.
   await page.evaluate(() => {
@@ -98,19 +128,32 @@ test('Forråd: scan a barcode; online the name is looked up, offline it is typed
     localStorage.setItem('stead.forraad.v1', JSON.stringify(data));
   });
   await page.reload();
-  await addFood();
-  await page.getByRole('button', { name: 'Scan stregkode' }).click();
-  await expect(page.getByText(/^Varen kan ikke slås op uden internet/)).toBeVisible({ timeout: 15_000 });
-  await page.getByLabel('Hvad er det?').fill('Makrel, egen');
-  await page.getByRole('button', { name: 'Gem', exact: true }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Scan varer' })).toBeVisible();
+  await expect(sheet.getByText(/^Varen kan ikke slås op uden internet/)).toBeVisible({ timeout: 15_000 });
+  await showBarcode(false);
+  await sheet.getByLabel('Navn').fill('Makrel, egen');
+  await sheet.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(page.getByText('Makrel, egen er tilføjet under Mad')).toBeVisible();
   const products = await page.evaluate(() => JSON.parse(localStorage.getItem('stead.forraad.v1')!).products);
   expect(products).toEqual({ [CODE]: { name: 'Makrel, egen' } });
-  await expect(page.getByRole('region', { name: 'Mad' }).getByRole('button', { name: /^Makrel, egen/ })).toBeVisible();
+
+  // A thing without a barcode is typed in the same sheet, without leaving the scanner.
+  await page.getByRole('button', { name: 'Uden stregkode' }).click();
+  const typed = page.getByRole('dialog', { name: 'Uden stregkode' });
+  await expect(typed.getByLabel('Navn')).toBeFocused();
+  await typed.getByLabel('Navn').fill('Knækbrød');
+  await typed.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(page.getByText('Knækbrød er tilføjet under Mad')).toBeVisible();
+  await expect(page.getByText('2 tilføjet', { exact: true })).toBeVisible();
+
+  await page.getByRole('button', { name: 'Færdig' }).click();
+  await expect(food.getByRole('button', { name: /^Makrel, egen/ })).toBeVisible();
+  await expect(food.getByRole('button', { name: /^Knækbrød/ })).toBeVisible();
 
   expect(foreign).toEqual([]);
 });
 
-test('Forråd: a refused camera says so and the name can still be typed', async ({ app: { page, context } }) => {
+test('Forråd: a refused camera says so and leads to typing the name', async ({ app: { page, context } }) => {
   await context.addInitScript(() => {
     Object.defineProperty(navigator, 'mediaDevices', {
       configurable: true,
@@ -121,10 +164,12 @@ test('Forråd: a refused camera says so and the name can still be typed', async 
       },
     });
   });
-  await page.goto('./#/forraad/new/food');
-  await page.getByRole('button', { name: 'Scan stregkode' }).click();
+  await page.goto('./#/forraad');
+  await page.getByRole('link', { name: 'Scan varer' }).click();
   await expect(page.getByText(/^Appen fik ikke lov til at bruge kameraet/)).toBeVisible();
-  await page.getByRole('dialog').getByRole('button', { name: 'Annuller' }).click();
-  await expect(page.getByRole('dialog')).toBeHidden();
-  await page.getByLabel('Hvad er det?').fill('Knækbrød');
+  await page.getByRole('button', { name: 'Skriv i stedet' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Tilføj til forrådet' })).toBeVisible();
+  await page.getByLabel('Navn').fill('Knækbrød');
+  await page.getByRole('button', { name: 'Færdig' }).click();
+  await expect(page.getByRole('region', { name: 'Mad' }).getByRole('button', { name: /^Knækbrød/ })).toBeVisible();
 });

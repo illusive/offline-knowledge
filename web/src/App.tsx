@@ -12,7 +12,9 @@ import { useApplyTheme } from './settings/preferences';
 import { usePrecacheProgress } from './pwa/usePrecacheProgress';
 import { tabOf, useRoute, type Tab } from './router';
 import { ForraadScreen } from './forraad/ForraadScreen';
+import { AddScreen } from './forraad/AddScreen';
 import { ItemEditor } from './forraad/ItemEditor';
+import { ScanScreen } from './forraad/ScanScreen';
 import { useStockLists } from './forraad/recommendations';
 import { FirstAidScreen } from './screens/FirstAidScreen';
 import { useGuides } from './guides/useGuides';
@@ -136,9 +138,15 @@ export function App() {
       case 'forraad':
         content = <ForraadScreen db={db} lang={lang} s={s} />;
         break;
+      case 'forraadScan':
+        content = <ScanScreen db={db} lang={lang} s={s} />;
+        break;
+      case 'forraadNew':
+        // A fresh form for each new-item link.
+        content = <AddScreen key={`${route.category}/${route.recommendationId}`} db={db} route={route} lang={lang} s={s} />;
+        break;
       case 'forraadEdit':
-        // A fresh form for each item or new-item link.
-        content = <ItemEditor key={`${route.id}/${route.category}/${route.recommendationId}`} db={db} route={route} lang={lang} s={s} />;
+        content = <ItemEditor key={route.id} db={db} route={route} lang={lang} s={s} />;
         break;
       case 'tools':
         content = <ToolsScreen s={s} />;

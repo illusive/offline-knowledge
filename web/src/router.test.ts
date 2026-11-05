@@ -13,9 +13,11 @@ describe('routes', () => {
       [hrefs.saved(), { name: 'saved', section: null }],
       [hrefs.map, { name: 'map' }],
       [hrefs.forraad, { name: 'forraad' }],
-      [hrefs.forraadNew(), { name: 'forraadEdit', id: null, category: null, recommendationId: null }],
-      [hrefs.forraadNew('food', 'knaekbroed'), { name: 'forraadEdit', id: null, category: 'food', recommendationId: 'knaekbroed' }],
-      [hrefs.forraadItem('a b'), { name: 'forraadEdit', id: 'a b', category: null, recommendationId: null }],
+      [hrefs.forraadScan, { name: 'forraadScan' }],
+      [hrefs.forraadNew(), { name: 'forraadNew', category: null, recommendationId: null }],
+      [hrefs.forraadNew('food'), { name: 'forraadNew', category: 'food', recommendationId: null }],
+      [hrefs.forraadNew('food', 'knaekbroed'), { name: 'forraadNew', category: 'food', recommendationId: 'knaekbroed' }],
+      [hrefs.forraadItem('a b'), { name: 'forraadEdit', id: 'a b' }],
       [hrefs.tools, { name: 'tools' }],
       [hrefs.compass, { name: 'compass' }],
       [hrefs.settings, { name: 'settings' }],
@@ -33,7 +35,9 @@ describe('routes', () => {
   it('puts each page under its tab; Settings belongs to none (D-046)', () => {
     expect(tabOf({ name: 'guide', id: 'x' })).toBe('home');
     expect(tabOf({ name: 'compass' })).toBe('tools');
-    expect(tabOf({ name: 'forraadEdit', id: null, category: null, recommendationId: null })).toBe('forraad');
+    expect(tabOf({ name: 'forraadScan' })).toBe('forraad');
+    expect(tabOf({ name: 'forraadNew', category: null, recommendationId: null })).toBe('forraad');
+    expect(tabOf({ name: 'forraadEdit', id: 'x' })).toBe('forraad');
     expect(tabOf({ name: 'map' })).toBe('map');
     expect(tabOf({ name: 'settings' })).toBeNull();
   });

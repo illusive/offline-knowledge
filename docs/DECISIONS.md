@@ -367,7 +367,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Alternatives:** a separate pack table with FTS (unnecessary for ~30 lines); a fixed 3-day target (owner chose adjustable); IndexedDB (localStorage is enough for hundreds of items); sync (D-010).
 - **Changed 2026-11-05 (owner, after trying it): less friction.** Adding to the stores must be quick, or it does not get done.
   - **Water is one figure:** litres stored plus the month it was last checked, edited in the water card. There are no water containers; data saved earlier is converted.
-  - **Adding:** a name (suggestions or a barcode), a count and an optional best-before month. The category is guessed from the name through the stock-list keywords; unknown names go to Mad, and one tap changes it. An optional free-text size sits under "Mere". There are no other units, and the main button is "Tilføj til forrådet". "Gem og tilføj en til" keeps the form open with the same month.
+  - **Adding:** a name (suggestions or a barcode), a count and an optional best-before month. The category is guessed from the name through the stock-list keywords; unknown names go to Mad, and one tap changes it. An optional free-text size sits under "Mere". There are no other units, and the main button is "Tilføj til forrådet". "Gem og tilføj en til" keeps the form open with the same month. *(Replaced by D-053: two ways to add, no "Skift" or "Mere", and "Tilføj" keeps the form open.)*
   - **Month and year, not dates:** stores are long-life goods, where a few weeks either way do not matter. For several of the same thing, the user picks the one that expires first. The two pickers always sit in one row (owner, 2026-11-05), also at large text sizes.
   - "Holdbarhed" lists what passed its month and what reaches it this month or next.
 - **Changed again 2026-11-05 (owner): an overview, not a form.** Forråd shows what the household has and little else:
@@ -384,7 +384,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - The reader is `barcode-detector` 3.2.3 (a ponyfill on `zxing-wasm` 3.1.6, both MIT), because Safari has no native `BarcodeDetector`.
   - Its `.wasm` file is bundled, precached and loaded from the app. Its default CDN location is overridden, so scanning works offline.
   - The scanner code is loaded only when the user taps "Scan".
-  - The camera is asked for only then and stops as soon as a code is read.
+  - The camera is asked for only then and stops as soon as a code is read. *(Changed by D-053: it stays on until "Færdig", for scanning one thing after another.)*
 - **The first optional online request (exception to "no runtime network" in AGENTS.md §4):** when there is a connection, the barcode, and nothing else, is sent to Open Food Facts (`world.openfoodfacts.org/api/v2/product/<code>.json`, no cookies, no referrer, 6-second timeout) to get the product's name, brand and size.
   - Offline, on a timeout, or for an unknown product, the user types the name, and the barcode is remembered on the device with it. A barcode seen once is filled in from the device from then on, without a request.
   - The app works fully without the lookup. Settings > Om stead and the editor say what is sent.
@@ -458,6 +458,43 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **No size:** a product fills in only its name. Sizes vary by brand; a scan or the user gives the size (D-050).
 - **Pack:** the field is optional JSON in the checklist items, which older apps ignore. The pack schema stays at 13, because the app accepts only its own schema version and a bump would make a new app refuse a pack already on the phone. Content version 0.14.0.
 - **Alternatives:** showing the matched keyword as a suggestion (keywords such as "aa" are matching terms, not names); a list in the app code (content belongs in the pack, AGENTS §6); a separate pack table (unnecessary for about 200 names).
+
+## D-053 — Forråd: two ways to add, scanning one thing after another
+
+- **Date:** 2026-11-05
+- **Problem (owner, after using it on the iPhone):** adding still took too much effort.
+  - The suggestions pushed the rest of the form down while typing.
+  - "Skift" (the category) and "Mere" (the size) were vague links, and the "Tæller som … ✕" line was hard to read.
+  - Scanning took one thing at a time: the camera stopped after each code.
+  - The owner expects most people to add by barcode when it works reasonably.
+- **Decision (owner):** the overview has two buttons, **Scan varer** and **Skriv selv**, each opening its own page (`#/forraad/scan`, `#/forraad/new`).
+  - **Scanning goes on until "Færdig".**
+    - Each code opens a sheet over the camera with the name, the size, how many and the best-before month.
+    - "Tilføj" saves, shows a short toast ("Makrel i tomat er tilføjet under Mad") and goes back to the camera. The header counts what was added.
+    - While the sheet is open, the picture freezes on the pack and nothing is read. After it closes, the same code is ignored for 3 seconds, since the pack is usually still in front of the camera.
+    - The camera stops when the app goes to the background and starts again when it comes back.
+  - **A barcode already in Forråd adds to that thing.** The sheet says so, asks how many and for an optional month for the new ones; the earlier month is kept (D-049). This gives one row per product.
+  - **"Uden stregkode"** in the scanner opens the same sheet with an empty name, for things without a barcode. When the camera is refused or missing, "Skriv i stedet" leads to typing.
+  - **Typing works the same way:** "Tilføj" saves, shows the toast and empties the form for the next thing, with the same month. "Færdig" goes back and keeps a thing whose name is already written.
+  - **The category is not a choice when adding.** It is guessed from the name (unknown names go to Mad), shown as a quiet line under the name and named in the toast. It is changed on the edit page, where it is three visible choices.
+  - **Nothing is hidden.** The size (number and unit) and the month are always shown, marked "(valgfri)". "Mere" and "Skift" are gone.
+  - **The stock-list link** is made without asking, as before (D-048). "Tæller som: …" and its ✕ moved to the edit page.
+  - **Suggestions float over the form** as a combobox list instead of pushing it down. Arrow keys and Enter pick; Escape or a tap outside closes it.
+- **Shared code:** `useItemDraft` (the state and saving), `ItemFields` (the fields) and `NameField` (the combobox) are used by the typing page, the scan sheet and the edit page. `Sheet` can keep a tap on the backdrop from closing it and focuses a marked element (`data-autofocus`), so a filled-in sheet does not open the keyboard. `Toast` is a new primitive.
+- **Data:** unchanged. Only the barcode is still sent, and only when a code is unknown on the device (D-047).
+- **Alternatives:**
+  - The category as three visible pills when adding (one tap to fix a wrong guess, but more on screen), or as a small dropdown. The owner chose hidden.
+  - A new row for each scan of the same product.
+  - Typing that returns to the overview after one thing.
+  - Scanning without "Uden stregkode".
+- **Still to check on the iPhone:**
+  - scanning several products in a row
+  - the frozen picture
+  - the sheet over the camera, with and without the keyboard
+  - the month roller in the sheet
+  - where the toast sits when the keyboard is open
+  - the camera coming back after leaving the app
+  - heat and battery over a few minutes
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

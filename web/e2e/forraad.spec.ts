@@ -1,6 +1,7 @@
 // Forråd (D-046): household and water against the stock list, water as one figure with the month
-// it was checked, quick adding (guessed category, linked stock-list line, month dates, "Gem og
-// tilføj en til"), the sheet on each thing (D-049: take out, add more, edit, delete), kept after a
+// it was checked, adding by typing one thing after another (D-053: suggestions that float over the
+// form, guessed category, linked stock-list line, month dates, "Færdig"), the sheet on each thing
+// (D-049: take out, add more, edit, delete), the category changed on the editor, kept after a
 // reload, and a copy saved and restored as a file; offline. Settings opens from the gear.
 
 import type { BrowserContext, Locator, Page } from '@playwright/test';
@@ -62,7 +63,7 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   const water = page.getByRole('region', { name: 'Drikkevand' });
   await expect(water.getByText(/^0\sL af 9\sL$/)).toBeVisible();
 
-  // Nothing yet: a short note, the add button and a link to the recommendations.
+  // Nothing yet: a short note, the two add buttons and a link to the recommendations.
   await expect(page.getByText('Der er intet i forrådet endnu.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Se, hvad myndighederne anbefaler' })).toBeVisible();
 
@@ -83,49 +84,51 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   await expect(water.getByText(`Sidst tjekket ${monthIn(0).name} · Tjek igen i ${monthIn(6).name}`)).toBeVisible();
   await expect(water.getByRole('button', { name: 'Tjekket i dag' })).toBeHidden(); // only when a check is due
 
-  // Adding: a name and a month. The category is guessed; the stock-list line is linked.
-  await page.getByRole('link', { name: 'Tilføj til forrådet' }).click();
-  const name = page.getByLabel('Hvad er det?');
-  // The suggestions are products first, with their line under them, and the line itself last
-  // (D-052); a picked product keeps its own name.
+  // Adding by typing (D-053): a name and a month. The category is guessed and shown; the
+  // stock-list line is linked without asking.
+  await page.getByRole('link', { name: 'Skriv selv' }).click();
+  const name = page.getByLabel('Navn');
+  // The suggestions float over the fields below instead of pushing them down. Products come first,
+  // with their line under them, and the line itself last (D-052); a picked product keeps its name.
+  const count = page.getByRole('group', { name: 'Antal', exact: true });
+  const countTop = async () => (await count.boundingBox())!.y;
+  const before = await countTop();
   await name.fill('makr');
-  const suggestions = page.getByRole('list', { name: 'Forslag' });
-  await expect(suggestions.getByRole('button').first()).toHaveAccessibleName(/^Makrel i tomat/);
-  await expect(suggestions.getByRole('button', { name: /^Dåser med fisk eller kød/ })).toBeVisible();
-  await suggestions.getByRole('button', { name: /^Makrel i tomat/ }).click();
+  const suggestions = page.getByRole('listbox', { name: 'Forslag' });
+  await expect(suggestions.getByRole('option').first()).toHaveAccessibleName(/^Makrel i tomat/);
+  await expect(suggestions.getByRole('option', { name: /^Dåser med fisk eller kød/ })).toBeVisible();
+  expect(await countTop()).toBe(before);
+  await suggestions.getByRole('option', { name: /^Makrel i tomat/ }).click();
+  await expect(suggestions).toBeHidden();
   await expect(name).toHaveValue('Makrel i tomat');
-  await expect(page.getByText('Mad · Tæller som: Dåser med fisk eller kød')).toBeVisible();
+  await expect(page.getByText('Mad', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Antal +1' }).click();
   await pickMonth(page, 1);
-  await page.getByRole('button', { name: 'Gem og tilføj en til' }).click();
+  await page.getByRole('button', { name: 'Tilføj', exact: true }).click();
 
-  // The next one starts empty, with the same month.
-  await expect(page.getByText('Makrel i tomat er gemt.')).toBeVisible();
+  // The next one starts empty, with the same month; a toast says where it went.
+  await expect(page.getByText('Makrel i tomat er tilføjet under Mad')).toBeVisible();
   await expect(name).toHaveValue('');
   await expectMonth(page, 1);
   await name.fill('Plaster');
-  await expect(page.getByText('Medicin og hygiejne · Tæller som: Førstehjælpskasse')).toBeVisible();
-  await page.getByRole('button', { name: 'Gem og tilføj en til' }).click();
+  await expect(page.getByText('Medicin og hygiejne', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Tilføj', exact: true }).click();
 
-  // An unknown name goes to Mad; the category can be changed. A size is optional, under Mere: a
-  // number and a unit, or a text under "Andet" (D-050).
+  // An unknown name goes to Mad. The size is there without a "Mere": a number and a unit, or a
+  // text under "Andet" (D-050).
   await name.fill('Paraply');
   await expect(page.getByText('Mad', { exact: true })).toBeVisible();
-  await page.getByRole('button', { name: 'Skift kategori (nu mad)' }).click();
-  await page.locator('label', { hasText: 'Lys, varme og andet' }).click();
   await clearMonth(page);
-  await page.getByRole('button', { name: 'Mere' }).click();
   await page.getByLabel('Enhed').selectOption('other');
   await page.getByLabel('Beskriv størrelsen').fill('Stor');
-  await page.getByRole('button', { name: 'Gem og tilføj en til' }).click();
+  await page.getByRole('button', { name: 'Tilføj', exact: true }).click();
 
-  // Something already past its month.
+  // Something already past its month. "Færdig" keeps a thing whose name is written.
   await name.fill('Kiks');
   await pickMonth(page, -1);
-  await page.getByRole('button', { name: 'Mere' }).click();
   await page.getByLabel('Mængde').fill('0,5');
   await page.getByLabel('Enhed').selectOption('kg');
-  await page.getByRole('button', { name: 'Gem', exact: true }).click();
+  await page.getByRole('button', { name: 'Færdig' }).click();
 
   await expect(page.getByRole('heading', { level: 1, name: 'Forråd' })).toBeVisible();
   const food = page.getByRole('region', { name: 'Mad' });
@@ -134,7 +137,7 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   await expect(row(food, 'Kiks')).toContainText(`1 stk. · 0,5 kg · Udløbet ${monthIn(-1).name}`);
   await expect(row(page.getByRole('region', { name: 'Medicin og hygiejne' }), 'Plaster')).toContainText(`Bedst før ${monthIn(1).name}`);
   const other = page.getByRole('region', { name: 'Lys, varme og andet' });
-  await expect(row(other, 'Paraply')).toContainText('1 stk. · Stor');
+  await expect(row(food, 'Paraply')).toContainText('1 stk. · Stor');
   await expect(food.getByRole('link', { name: 'Se anbefalingerne: Mad til tre døgn' })).toBeVisible();
   const dates = page.getByRole('region', { name: 'Holdbarhed' });
   await expect(dates.getByText('Kiks')).toBeVisible();
@@ -179,11 +182,16 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   await expect(row(food, 'Makrel i tomat')).toBeHidden();
   await expect(page.getByText('Makrel i tomat er taget ud af forrådet.')).toBeVisible();
 
-  // The editor is one tap away; "Slet alt" asks, then deletes.
-  await row(other, 'Paraply').click();
+  // The editor is one tap away, and changes the category with three choices.
+  await row(food, 'Paraply').click();
   await page.getByRole('dialog', { name: 'Paraply' }).getByRole('link', { name: 'Ret navn, kategori og størrelse' }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Ret' })).toBeVisible();
-  await page.getByRole('button', { name: 'Tilbage' }).click();
+  await page.locator('label', { hasText: 'Lys, varme og andet' }).click();
+  await page.getByRole('button', { name: 'Gem', exact: true }).click();
+  await expect(row(other, 'Paraply')).toContainText('1 stk. · Stor');
+  await expect(row(food, 'Paraply')).toBeHidden();
+
+  // "Slet alt" asks, then deletes.
   await row(food, 'Kiks').click();
   page.once('dialog', (dialog) => void dialog.accept());
   await page.getByRole('dialog', { name: 'Kiks' }).getByRole('button', { name: 'Slet alt' }).click();
@@ -205,9 +213,9 @@ test('Forråd: a copy saved as a file brings the supplies back; offline', async 
   });
   await openOffline(page, context);
 
-  await page.getByRole('link', { name: 'Tilføj til forrådet' }).click();
-  await page.getByLabel('Hvad er det?').fill('Knækbrød');
-  await page.getByRole('button', { name: 'Gem', exact: true }).click();
+  await page.getByRole('link', { name: 'Skriv selv' }).click();
+  await page.getByLabel('Navn').fill('Knækbrød');
+  await page.getByRole('button', { name: 'Færdig' }).click();
 
   // The copy is in Settings.
   await page.getByRole('link', { name: 'Indstillinger' }).click();

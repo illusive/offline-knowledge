@@ -1,9 +1,9 @@
 // Forråd (D-046): an overview of what the household has. Water first (one figure against the stock
-// list's 3 litres per person per day; when it was last checked), then a button to add, what expires
+// list's 3 litres per person per day; when it was last checked), then the two ways to add (D-053), what expires
 // soon and each category with its things and a link to its stock list. Household and the backup
 // are in Settings; the page itself stays short.
 
-import { ChevronRight, Pencil, Plus } from 'lucide-react';
+import { ChevronRight, Pencil, Plus, ScanBarcode } from 'lucide-react';
 import { useState } from 'react';
 import { Button, ButtonLink, Card, IconButton, inputClass, MessageState, Page, Sheet, TabHeader } from '../components/ui';
 import type { DbClient } from '../db/client';
@@ -39,10 +39,17 @@ export function ForraadScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: St
       <TabHeader title={t.title} settingsLabel={s.settingsOpen} />
       <div className="flex flex-col gap-4">
         <WaterCard data={data} lists={lists} lang={lang} s={s} />
-        <ButtonLink variant="primary" href={hrefs.forraadNew()}>
-          <Plus aria-hidden="true" className="size-5" />
-          {t.addTitle}
-        </ButtonLink>
+        {/* Two ways to add (D-053): scanning one thing after another, or typing. They wrap at large text. */}
+        <div className="flex flex-wrap gap-[8px]">
+          <ButtonLink variant="primary" href={hrefs.forraadScan} className="min-w-[10rem] flex-1">
+            <ScanBarcode aria-hidden="true" className="size-5" />
+            {t.scan}
+          </ButtonLink>
+          <ButtonLink variant="ink" href={hrefs.forraadNew()} className="min-w-[10rem] flex-1">
+            <Pencil aria-hidden="true" className="size-5" />
+            {t.typeAdd}
+          </ButtonLink>
+        </div>
         <p role="status" className={status ? 'rounded-2xl bg-surface px-[16px] py-3 font-medium' : 'sr-only'}>
           {status}
         </p>

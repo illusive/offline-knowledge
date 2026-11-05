@@ -14,7 +14,9 @@ export type Route =
   | { name: 'tools' }
   | { name: 'compass' }
   | { name: 'forraad' }
-  | { name: 'forraadEdit'; id: string | null; category: string | null; recommendationId: string | null }
+  | { name: 'forraadScan' }
+  | { name: 'forraadNew'; category: string | null; recommendationId: string | null }
+  | { name: 'forraadEdit'; id: string }
   | { name: 'settings' };
 
 // Settings is not a tab (D-046): it opens from the gear at the top right.
@@ -48,11 +50,13 @@ export function parseRoute(hash: string): Route {
   if (hash === '#/tools') return { name: 'tools' };
   if (hash === '#/tools/compass') return { name: 'compass' };
   if (hash === '#/forraad') return { name: 'forraad' };
-  // Forråd editor (D-046): a new item, optionally in a category or for a stock-list line, or an existing item.
+  // Adding to Forråd (D-053): scanning, or typing (optionally in a category or for a stock-list
+  // line); and editing an existing item (D-046).
+  if (hash === '#/forraad/scan') return { name: 'forraadScan' };
   const forraadNew = /^#\/forraad\/new(?:\/([a-z]+)(?:\/([a-z0-9-]+))?)?$/.exec(hash);
-  if (forraadNew) return { name: 'forraadEdit', id: null, category: forraadNew[1] ?? null, recommendationId: forraadNew[2] ?? null };
+  if (forraadNew) return { name: 'forraadNew', category: forraadNew[1] ?? null, recommendationId: forraadNew[2] ?? null };
   const forraadItem = /^#\/forraad\/item\/([^/]+)$/.exec(hash);
-  if (forraadItem?.[1]) return { name: 'forraadEdit', id: decodeURIComponent(forraadItem[1]), category: null, recommendationId: null };
+  if (forraadItem?.[1]) return { name: 'forraadEdit', id: decodeURIComponent(forraadItem[1]) };
   if (hash === '#/settings') return { name: 'settings' };
   return { name: 'home' };
 }
@@ -67,6 +71,7 @@ export const hrefs = {
   saved: (section?: SavedSection) => (section ? `#/saved/${section}` : '#/saved'),
   map: '#/map',
   forraad: '#/forraad',
+  forraadScan: '#/forraad/scan',
   forraadNew: (category?: string, recommendationId?: string) =>
     `#/forraad/new${category ? `/${category}${recommendationId ? `/${recommendationId}` : ''}` : ''}`,
   forraadItem: (id: string) => `#/forraad/item/${encodeURIComponent(id)}`,
@@ -82,7 +87,7 @@ export const hrefs = {
 export function tabOf(route: Route): Tab | null {
   if (route.name === 'settings') return null;
   if (route.name === 'compass') return 'tools';
-  if (route.name === 'forraadEdit') return 'forraad';
+  if (route.name === 'forraadScan' || route.name === 'forraadNew' || route.name === 'forraadEdit') return 'forraad';
   return route.name === 'map' || route.name === 'tools' || route.name === 'forraad' ? route.name : 'home';
 }
 

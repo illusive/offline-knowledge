@@ -14,6 +14,13 @@ export type FoundProduct = Product;
 
 export const isBarcode = (code: string) => /^\d{8,14}$/.test(code);
 
+// Scanning goes on until the user is done (D-053), so the pack just added is usually still in
+// front of the camera: its code is ignored for a moment after the camera resumes.
+export const SAME_CODE_PAUSE_MS = 3000;
+export function acceptCode(code: string, last: { code: string; at: number } | null, now: number): boolean {
+  return !last || code !== last.code || now - last.at >= SAME_CODE_PAUSE_MS;
+}
+
 // Name, brand and size of a product in an Open Food Facts answer; the category is guessed from the
 // name in the form, like a typed name.
 export function parseProduct(json: unknown): FoundProduct | null {

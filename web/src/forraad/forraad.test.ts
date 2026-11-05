@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { formatMonth, formatVolume } from '../i18n/format';
 import { addMonths, expiring, monthsUntil, nextCheck, waterNeeded, type Recommendation } from './calc';
 import { applyBackup, makeBackup, readBackup } from './backupFile';
-import { parseProduct } from './barcode';
+import { acceptCode, parseProduct, SAME_CODE_PAUSE_MS } from './barcode';
 import { matchRecommendation, suggest } from './recommendations';
-import { EMPTY, parse, stockMore, takeOut, type StoreItem } from './store';
+import { EMPTY, findByBarcode, parse, stockMore, takeOut, type StoreItem } from './store';
 
 const item = (over: Partial<StoreItem>): StoreItem => ({ id: 'x', name: 'Pasta', category: 'food', count: 1, added: '2026-11-01', ...over });
 const rec = (id: string, category: Recommendation['category'], name: string, keywords: string[], products: string[] = []): Recommendation => ({ id, guideId: 'g', category, name, text: name, keywords, products });
@@ -190,6 +190,12 @@ describe('Forråd taking out and stocking more', () => {
     expect(stockMore(item({ count: 1 }), 1, '2028-01').expires).toBe('2028-01');
     expect(stockMore(item({ count: 9998 }), 5).count).toBe(9999);
   });
+
+  it('finds the thing a scanned barcode belongs to (D-053)', () => {
+    const items = [item({ id: 'a', name: 'Kiks' }), item({ id: 'b', name: 'Makrel', barcode: '5701234567899' })];
+    expect(findByBarcode(items, '5701234567899')?.id).toBe('b');
+    expect(findByBarcode(items, '4000000000000')).toBeUndefined();
+  });
 });
 
 describe('Forråd backup file', () => {
@@ -255,5 +261,13 @@ describe('Forråd barcode lookup', () => {
     expect(parseProduct({ status: 1, product: { product_name: 'Ting', quantity: 'stor' } })?.quantity).toBe('stor');
     expect(parseProduct({ status: 0 })).toBeNull();
     expect(parseProduct({ status: 1, product: { product_name: ' ' } })).toBeNull();
+  });
+
+  it('ignores the code just scanned for a moment, but not another code (D-053)', () => {
+    const last = { code: '5701234567899', at: 10_000 };
+    expect(acceptCode('5701234567899', null, 10_000)).toBe(true);
+    expect(acceptCode('5701234567899', last, 10_000 + SAME_CODE_PAUSE_MS - 1)).toBe(false);
+    expect(acceptCode('5701234567899', last, 10_000 + SAME_CODE_PAUSE_MS)).toBe(true);
+    expect(acceptCode('4000000000000', last, 10_001)).toBe(true);
   });
 });

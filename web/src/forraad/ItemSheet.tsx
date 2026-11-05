@@ -9,6 +9,7 @@ import { formatMonth, thisMonth } from '../i18n/format';
 import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
 import { monthsUntil } from './calc';
+import { Optional } from './ItemFields';
 import { MonthYear } from './MonthYear';
 import { formatSize } from './size';
 import { forraad, type StoreItem } from './store';
@@ -124,7 +125,7 @@ export function ItemSheet({ item, lang, s, onClose, onDone }: { item: StoreItem;
             ) : null}
             {view === 'take' && all ? <p className="text-sm text-muted">{t.takeLastNote}</p> : null}
             {view === 'stock' ? (
-              <MonthYear id="forraad-stock-month" label={t.bestBeforeNew} help={t.bestBeforeNewHelp} value={month} onChange={setMonth} lang={lang} noDate={t.noDate} clearLabel={t.clearDate} monthLabel={t.month} yearLabel={t.year} />
+              <MonthYear id="forraad-stock-month" label={<>{t.bestBeforeNew}<Optional s={s} /></>} help={t.bestBeforeNewHelp} value={month} onChange={setMonth} lang={lang} noDate={t.noDate} clearLabel={t.clearDate} monthLabel={t.month} yearLabel={t.year} />
             ) : null}
             <div className="flex flex-wrap gap-[8px]">
               <Button type="submit" variant="primary" className="flex-1">

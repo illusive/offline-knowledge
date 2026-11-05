@@ -2,7 +2,7 @@
 // vertical spacing are rem-based so they follow the system text size on iOS; horizontal padding is
 // in px so large text does not squeeze the content column.
 
-import { ArrowLeft, ChevronRight, Search, Settings, X, type LucideIcon } from 'lucide-react';
+import { ArrowLeft, Check, ChevronRight, Search, Settings, X, type LucideIcon } from 'lucide-react';
 import { goBack, hrefs } from '../router';
 import { useEffect, useRef, type ButtonHTMLAttributes, type ElementType, type HTMLAttributes, type MouseEvent, type ReactNode, type Ref } from 'react';
 
@@ -284,14 +284,19 @@ export function TabHeader({ title, settingsLabel, children }: { title: string; s
 
 // A sheet from the bottom of the screen (D-049): a native modal <dialog>, so focus stays inside,
 // the page behind is inert, Escape closes it and focus goes back to what opened it. A tap on the
-// dimmed page above it closes it too. It sits above the tab bar (the top layer).
-export function Sheet({ open, onClose, labelledBy, children }: { open: boolean; onClose: () => void; labelledBy: string; children: ReactNode }) {
+// dimmed page above it closes it too, unless `dismissOnBackdrop` is false (a sheet with fields, where
+// a stray tap would lose what was entered). It sits above the tab bar (the top layer). On opening,
+// focus goes to the element marked `data-autofocus`, if any, rather than to the first field, whose
+// keyboard would cover a sheet that is already filled in (D-053).
+export function Sheet({ open, onClose, labelledBy, dismissOnBackdrop = true, children }: { open: boolean; onClose: () => void; labelledBy: string; dismissOnBackdrop?: boolean; children: ReactNode }) {
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
-    if (open && !dialog.open) dialog.showModal();
-    else if (!open && dialog.open) dialog.close();
+    if (open && !dialog.open) {
+      dialog.showModal();
+      dialog.querySelector<HTMLElement>('[data-autofocus]')?.focus();
+    } else if (!open && dialog.open) dialog.close();
   }, [open]);
   return (
     <dialog
@@ -299,12 +304,36 @@ export function Sheet({ open, onClose, labelledBy, children }: { open: boolean; 
       aria-labelledby={labelledBy}
       onClose={onClose}
       onClick={(e) => {
-        if (e.target === e.currentTarget) onClose(); // the backdrop, not the content
+        if (dismissOnBackdrop && e.target === e.currentTarget) onClose(); // the backdrop, not the content
       }}
       className="inset-x-0 top-auto bottom-0 m-0 mx-auto max-h-[85dvh] w-full max-w-2xl overflow-y-auto rounded-t-[28px] border-t border-border bg-background p-0 text-text shadow-2xl backdrop:bg-black/50"
     >
       <div className="px-[16px] pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">{open ? children : null}</div>
     </dialog>
+  );
+}
+
+// A short message that floats near the top of the screen and goes away by itself (D-053), e.g.
+// "Makrel i tomat er tilføjet". A new `id` shows the message again, even with the same text. The
+// live region is always there, so screen readers read each message; taps go through it.
+export type ToastMessage = { id: number; text: string };
+export function Toast({ message, onHide }: { message: ToastMessage | null; onHide: () => void }) {
+  const hide = useRef(onHide);
+  hide.current = onHide;
+  useEffect(() => {
+    if (!message) return;
+    const timer = window.setTimeout(() => hide.current(), 2500);
+    return () => window.clearTimeout(timer);
+  }, [message]);
+  return (
+    <div role="status" className="pointer-events-none fixed inset-x-0 top-[calc(max(1rem,env(safe-area-inset-top))+3.75rem)] z-40 flex justify-center px-[16px]">
+      {message ? (
+        <p key={message.id} className="flex max-w-full items-center gap-[8px] rounded-full bg-ink px-[18px] py-3 font-medium text-on-ink shadow-xl">
+          <Check aria-hidden="true" className="size-5 shrink-0" />
+          {message.text}
+        </p>
+      ) : null}
+    </div>
   );
 }
 

@@ -177,7 +177,7 @@ export interface Strings {
     clearDate: string;
     month: string;
     year: string;
-    more: string;
+    optional: string;
     size: string;
     sizePlaceholder: string;
     sizeAmount: string;
@@ -185,10 +185,13 @@ export interface Strings {
     sizeText: string;
     sizeOther: string;
     units: Record<'g' | 'kg' | 'ml' | 'cl' | 'dl' | 'l' | 'stk', string>;
-    change: (category: string) => string;
-    changeShort: string;
-    saveAndAddAnother: string;
-    saved: (name: string) => string;
+    done: string;
+    typeAdd: string;
+    addedTo: (name: string, category: string) => string;
+    addedCount: (n: number) => string;
+    alreadyHave: string;
+    noBarcode: string;
+    typeInstead: string;
     save: string;
     cancel: string;
     remove: string;
@@ -217,7 +220,6 @@ export interface Strings {
     notFound: string;
     nameMissing: string;
     scan: string;
-    scanTitle: string;
     scanHelp: string;
     scanStarting: string;
     scanDenied: string;
@@ -539,7 +541,7 @@ export const strings: Record<Lang, Strings> = {
       addIn: (category) => `Tilføj til ${category.toLowerCase()}`,
       editTitle: 'Ret',
       addTitle: 'Tilføj til forrådet',
-      name: 'Hvad er det?',
+      name: 'Navn',
       namePlaceholder: 'Fx makrel i tomat',
       suggestionsLabel: 'Forslag',
       fromStockList: 'Fra listen',
@@ -548,12 +550,12 @@ export const strings: Record<Lang, Strings> = {
       category: 'Kategori',
       count: 'Antal',
       bestBefore: 'Bedst før',
-      bestBeforeHelp: 'Valgfrit. Måned og år er nok. Har du flere, så vælg den, der udløber først.',
+      bestBeforeHelp: 'Måned og år er nok. Har du flere, så vælg den, der udløber først.',
       noDate: 'Ingen dato',
       clearDate: 'Fjern dato',
       month: 'Måned',
       year: 'År',
-      more: 'Mere',
+      optional: 'valgfri',
       size: 'Størrelse',
       sizePlaceholder: 'Fx familiepakke',
       sizeAmount: 'Mængde',
@@ -561,10 +563,13 @@ export const strings: Record<Lang, Strings> = {
       sizeText: 'Beskriv størrelsen',
       sizeOther: 'Andet',
       units: { g: 'g', kg: 'kg', ml: 'ml', cl: 'cl', dl: 'dl', l: 'l', stk: 'stk.' },
-      change: (category) => `Skift kategori (nu ${category.toLowerCase()})`,
-      changeShort: 'Skift',
-      saveAndAddAnother: 'Gem og tilføj en til',
-      saved: (name) => `${name} er gemt.`,
+      done: 'Færdig',
+      typeAdd: 'Skriv selv',
+      addedTo: (name, category) => `${name} er tilføjet under ${category}`,
+      addedCount: (n) => `${n} tilføjet`,
+      alreadyHave: 'Den er allerede i forrådet. De nye lægges til.',
+      noBarcode: 'Uden stregkode',
+      typeInstead: 'Skriv i stedet',
       save: 'Gem',
       cancel: 'Annuller',
       remove: 'Slet',
@@ -579,7 +584,7 @@ export const strings: Record<Lang, Strings> = {
       bestBeforeNow: 'Bedst før nu',
       bestBeforeNowHelp: 'Tog du den, der udløber først? Så vælg datoen på den næste.',
       bestBeforeNew: 'Bedst før på de nye',
-      bestBeforeNewHelp: 'Valgfrit. Udløber de nye før dem, du har, gemmes deres dato.',
+      bestBeforeNewHelp: 'Udløber de nye før dem, du har, gemmes deres dato.',
       takeLastConfirm: (name) => `Det er de sidste. Vil du slette ${name} fra forrådet?`,
       takeLastNote: 'Det er de sidste, så tingen slettes fra forrådet.',
       tookOut: (name, n, left) => `${name}: ${n} stk. taget ud, ${left} stk. tilbage.`,
@@ -592,8 +597,7 @@ export const strings: Record<Lang, Strings> = {
       unlink: 'Tæller ikke med på listen',
       notFound: 'Den ting findes ikke længere i forrådet.',
       nameMissing: 'Skriv, hvad det er.',
-      scan: 'Scan stregkode',
-      scanTitle: 'Scan stregkoden',
+      scan: 'Scan varer',
       scanHelp: 'Hold stregkoden inden for rammen.',
       scanStarting: 'Starter kameraet …',
       scanDenied: 'Appen fik ikke lov til at bruge kameraet. Du kan give lov i telefonens indstillinger – eller skrive navnet i stedet.',
@@ -961,7 +965,7 @@ export const strings: Record<Lang, Strings> = {
       addIn: (category) => `Add to ${category.toLowerCase()}`,
       editTitle: 'Edit',
       addTitle: 'Add to your supplies',
-      name: 'What is it?',
+      name: 'Name',
       namePlaceholder: 'E.g. canned mackerel',
       suggestionsLabel: 'Suggestions',
       fromStockList: 'From the list',
@@ -970,12 +974,12 @@ export const strings: Record<Lang, Strings> = {
       category: 'Category',
       count: 'Number',
       bestBefore: 'Best before',
-      bestBeforeHelp: 'Optional. Month and year are enough. If you have several, choose the one that expires first.',
+      bestBeforeHelp: 'Month and year are enough. If you have several, choose the one that expires first.',
       noDate: 'No date',
       clearDate: 'Remove date',
       month: 'Month',
       year: 'Year',
-      more: 'More',
+      optional: 'optional',
       size: 'Size',
       sizePlaceholder: 'E.g. family pack',
       sizeAmount: 'Amount',
@@ -983,10 +987,13 @@ export const strings: Record<Lang, Strings> = {
       sizeText: 'Describe the size',
       sizeOther: 'Other',
       units: { g: 'g', kg: 'kg', ml: 'ml', cl: 'cl', dl: 'dl', l: 'l', stk: 'pcs' },
-      change: (category) => `Change category (now ${category.toLowerCase()})`,
-      changeShort: 'Change',
-      saveAndAddAnother: 'Save and add another',
-      saved: (name) => `${name} saved.`,
+      done: 'Done',
+      typeAdd: 'Type it in',
+      addedTo: (name, category) => `${name} added to ${category}`,
+      addedCount: (n) => `${n} added`,
+      alreadyHave: 'It is already in your supplies. The new ones are added to it.',
+      noBarcode: 'No barcode',
+      typeInstead: 'Type it instead',
       save: 'Save',
       cancel: 'Cancel',
       remove: 'Delete',
@@ -1001,7 +1008,7 @@ export const strings: Record<Lang, Strings> = {
       bestBeforeNow: 'Best before now',
       bestBeforeNowHelp: 'Did you take the one that expires first? Then choose the date on the next one.',
       bestBeforeNew: 'Best before on the new ones',
-      bestBeforeNewHelp: 'Optional. If the new ones expire before the ones you have, their date is kept.',
+      bestBeforeNewHelp: 'If the new ones expire before the ones you have, their date is kept.',
       takeLastConfirm: (name) => `Those are the last ones. Delete ${name} from your supplies?`,
       takeLastNote: 'Those are the last ones, so the item is deleted from your supplies.',
       tookOut: (name, n, left) => `${name}: took out ${n}, ${left} left.`,
@@ -1014,8 +1021,7 @@ export const strings: Record<Lang, Strings> = {
       unlink: 'Does not count on the list',
       notFound: 'That item is no longer in your supplies.',
       nameMissing: 'Enter what it is.',
-      scan: 'Scan barcode',
-      scanTitle: 'Scan the barcode',
+      scan: 'Scan items',
       scanHelp: 'Hold the barcode inside the frame.',
       scanStarting: 'Starting the camera …',
       scanDenied: 'The app was not allowed to use the camera. You can allow it in the phone settings – or type the name instead.',
