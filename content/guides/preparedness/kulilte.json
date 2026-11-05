@@ -1,0 +1,243 @@
+{
+  "id": "kulilte",
+  "category": "preparedness",
+  "group": "situation",
+  "order": 7,
+  "name": "Kulilte",
+  "title": "Kulilteforgiftning",
+  "summary": "Det vigtigste er straks at få personen væk fra det, der laver kulilten. Bagefter skal personen have ilt gennem en maske.",
+  "originalSummary": "Det vigtigste ved en forgiftning med kulilte er straks at fjerne den udsatte person fra kilden til dannelsen af kulilten, og starte tilførsel af ilt via ansigtsmaske",
+  "sourceId": "dk-sundhed-kulilteforgiftning",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Kulilte er en gas, som du hverken kan lugte, smage eller se. Den opstår, når noget brænder uden nok ilt – fx ved en brand inde, eller i en grill eller brændeovn, hvor spjældet eller skorstenen er stoppet.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Karbonmonoxid (CO, kulilte) er en gas, som hverken lugter, smager, har farve eller virker irriterende. Den opstår som et resultat af ufuldstændig forbrænding af organiske forbindelser. Dette kan ske under en indendørs brand, hvor iltkoncentrationen langsomt falder som branden forbruger ilt. Det kan også ske ved en glødebrand, som fx i i en grill eller brændeovn med en nedsat ilttilførsel (stoppet spjæld eller skorsten)."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Tegn på kulilteforgiftning",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvad er symptomerne?"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Er du vågen, mærker du først hovedpine, kvalme og svimmelhed. Du kan også få åndenød og ondt i brystet. Bliver det værre, kan du blive forvirret, få svært ved at styre dine bevægelser og miste bevidstheden.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Personer, som udsættes for kulilteforgiftning i vågen tilstand, vil ved mild til moderat forgiftning til en start mærke hovedpine (hyppigst), kvalme og svimmelhed. De kan også få åndenød og smerter i brystet. Ved højere koncentrationer, kan der opstå øget forvirring, koordinationsbesvær og tab af bevidsthed."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Sover du, mærker du ingenting. Du går langsomt fra søvn til bevidstløshed. Bliver det ikke opdaget i tide, kan du dø.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Personer, som udsættes for kulilteforgiftning, mens de sover, vil ikke mærke noget ubehag. De vil gradvist gå over fra en sovende tilstand til en bevidstløs tilstand. Hvis det ikke opdages i tide, kan forgiftningen blive så massiv, at de dør."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Små børn, gravide og ældre tåler mindre kulilte. De kan blive livstruende forgiftet af mindre mængder.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Småbørn, gravide og ældre mennesker har lavere tolerance for karbonmonoxid og kan få livstruende forgiftning ved lavere kuliltekocentrationer."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Gør dette straks",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvordan undgår jeg at få eller forværre kulilteforgiftning?"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Kom ud i frisk luft, og sluk for det udstyr, der er i stykker.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Sørg for at komme ud i frisk luft, sluk for det defekte udstyr."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Hvis en anden er ramt",
+      "page": 94,
+      "sourceId": "dk-fsk-abc-foerstehjaelp",
+      "original": {
+        "lang": "da",
+        "text": "Skab sikkerhed"
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Hent kun personen ud, hvis det er sikkert for dig selv.",
+        "Tag en dyb indånding, før du går ind i rummet.",
+        "Ofte kan du kun ringe 112 og åbne døre og vinduer, så der kommer luft ind – hvis du kan gøre det sikkert."
+      ],
+      "page": 94,
+      "sourceId": "dk-fsk-abc-foerstehjaelp",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Ved personer, hvor du mistænker kulilteforgiftning, skal du kun forsøge at nødflytte personen, hvis det er sikkert for dig selv.",
+          "Tag en dyb indånding, inden du går ind i rummet.",
+          "Ofte er det eneste, du kan gøre, at ringe 1-1-2 og – hvis det kan gøres sikkert – åbne døre og vinduer for at lufte ud."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ring 112, hvis personen får svært ved at trække vejret, får kramper eller bliver bevidstløs.",
+      "page": 95,
+      "sourceId": "dk-fsk-abc-foerstehjaelp",
+      "original": {
+        "lang": "da",
+        "text": "Ring 1-1-2, hvis den tilskadekomne får vejrtrækningsbesvær, kramper eller bliver bevidstløs."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Er personen bevidstløs og trækker ikke vejret normalt, så giv hjerte-lunge-redning. Risikerer du selv at få gift i dig, når du puster, så giv kun hjertemassage.",
+      "page": 94,
+      "sourceId": "dk-fsk-abc-foerstehjaelp",
+      "original": {
+        "lang": "da",
+        "text": "Ved bevidstløse uden normal vejrtrækning, udføres HLR. Hvis der er risiko for, at førstehjælperen udsættes for giftige stoffer under indblæsninger, kan brystkompressioner udføres alene."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Søg hjælp bagefter",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvornår skal jeg søge hjælp?"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Får du hovedpine, bliver du svimmel, eller føler du dig uklar efter at have været udsat for kulilte, så søg læge. Du kan også ringe til Giftlinjen på 8212 1212.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis du efter udsættelse får hovedpine, svimmelhed eller påvirket bevidsthed, skal du søge lægehjælp, eller evt. ringe til Giftlinjen på 8212 1212."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Undgå kulilte",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvad kan jeg selv gøre?"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Indånd ikke røg fra grill, fyr, brand eller motorer.",
+        "Sørg for, at fx dit gasfyr, din grill og din brændeovn er i orden.",
+        "Køb en kuliltealarm. Så kan du nå at reagere, hvis der kommer for meget kulilte."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Sørg for ikke at indånde forbrændingsprodukter fra grill, fyr, brandrøg eller motorer.",
+          "Sørg for at fx dit gasfyr, grilludstyr og brændeovn ikke er defekte.",
+          "Anskaf en kuliltealarm, så du kan reagere på hvis kulilteniveauet bliver for højt."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "De fleste dødsfald fra kulilte skyldes:",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "De fleste dødelige forgiftninger med kulilte skyldes:"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Brand",
+        "Utætte ovne",
+        "Bærbare generatorer, der kører på benzin",
+        "Grill, der bruges indendørs",
+        "Generatorer, der bruges indendørs",
+        "Udstødning fra biler i lang tid"
+      ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Brande",
+          "Ovne, der lækker",
+          "Benzindrevne bærbare strømaggregater",
+          "Grilludstyr (indendørs)",
+          "Brug af generatorer indendørs",
+          "Langvarig udstødning fra biler"
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Brug aldrig grill eller lignende indendørs – heller ikke i rum, der kun er delvist lukkede. Du kan blive forgiftet af røg og kulilte.",
+      "page": 5,
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Brug aldrig grill o.l. indendørs eller i helt eller delvist lukkede rum. Der er risiko for røg- og/eller kulilteforgiftning."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "uk-nhs-carbon-monoxide",
+      "locator": "Carbon monoxide poisoning: Symptoms",
+      "quote": "Carbon monoxide gas is colourless and does not smell, so you cannot tell if it is around you.",
+      "note": "Agrees: the gas cannot be seen or smelt."
+    },
+    {
+      "sourceId": "uk-nhs-carbon-monoxide",
+      "locator": "Carbon monoxide poisoning: What to do if you think you have carbon monoxide poisoning",
+      "quote": "stop using appliances you think might be making carbon monoxide",
+      "note": "Agrees: switch off the appliance and get out into fresh air."
+    },
+    {
+      "sourceId": "uk-nhs-carbon-monoxide",
+      "locator": "Carbon monoxide poisoning: How to prevent carbon monoxide poisoning",
+      "quote": "get a carbon monoxide alarm that makes a loud sound",
+      "note": "Agrees with getting a carbon monoxide alarm."
+    },
+    {
+      "sourceId": "uk-nhs-carbon-monoxide",
+      "locator": "Carbon monoxide poisoning: How to prevent carbon monoxide poisoning",
+      "quote": "do not use a barbecue or camping stove indoors or inside a tent",
+      "note": "Agrees: never use a grill indoors."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "der-er-ingen-varme",
+    "stroemmen-er-gaaet",
+    "hlr-voksne"
+  ]
+}

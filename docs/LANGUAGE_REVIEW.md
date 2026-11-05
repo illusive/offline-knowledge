@@ -109,3 +109,7 @@ Statements where the plain wording may differ from the source's meaning, or wher
 | Medicin, førstehjælp og hygiejne | text 4 | "nukleare ulykker" → "atomulykke", and "opholde sig indendørs" → "blive inde". The source's pointer to Sundhedsstyrelsen is left out. Check the wording. |
 | Telefon og net er nede | text 1 | "Du skal kun ringe 1-1-2 …" → "Ellers kan du optage linjen for andre, der ringer om liv og død." Same meaning? |
 | Lys, varme og andre ting | checklist | "Fysiske betalingskort" → "Betalingskort af plastik". Is "af plastik" right for all cards? |
+| Kulilte | text 0 | Four source sentences (incl. the chemistry wording "ufuldstændig forbrænding") condensed to "når noget brænder uden nok ilt". Check. |
+| Kulilte | text "Gør dette straks" | "sluk for det defekte udstyr" → "sluk for det udstyr, der er i stykker". The reader may not know which appliance it is. Consider "det udstyr, du tror laver kulilten" (NHS wording). |
+| Kulilte | summary | The source's "tilførsel af ilt via ansigtsmaske" is done by the ambulance or hospital; written as "Bagefter skal personen have ilt gennem en maske". Clear enough that the reader is not expected to give it? |
+| Kulilte | list of causes | "Benzindrevne bærbare strømaggregater" and "Brug af generatorer indendørs" are both in the source and kept as two items. Merge? |

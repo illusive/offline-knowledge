@@ -2365,6 +2365,38 @@
       "snapshot": "snapshots/us-cdc-find-clean-water.html",
       "snapshotSha256": "6f181592451658b31ad1cb975fefda30866a05d6340f07bdf199b8f579ff223b",
       "shortName": "CDC"
+    },
+    {
+      "id": "dk-sundhed-kulilteforgiftning",
+      "status": "request-needed",
+      "title": "Kulilteforgiftning",
+      "publisher": "Patienthåndbogen på sundhed.dk",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/akutte-sygdomme/sygdomme/forgiftninger/kulilteforgiftning/",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Written by a specialist at Giftlinjen (updated 2025-07-09). Reuse terms not stated on the page; permission needed before wider distribution, set aside while private (D-028). Main source for 'Kulilte'.",
+      "attribution": "",
+      "retrievedAt": "2026-11-04",
+      "snapshot": "snapshots/dk-sundhed-kulilteforgiftning.html",
+      "snapshotSha256": "10e4fc85e2153cbcbcf73b6e8a7d0be7f8a7959d1160bacf23ab02c07ed584e8",
+      "shortName": "sundhed.dk"
+    },
+    {
+      "id": "uk-nhs-carbon-monoxide",
+      "status": "request-needed",
+      "title": "Carbon monoxide poisoning",
+      "publisher": "NHS (nhs.uk)",
+      "url": "https://www.nhs.uk/conditions/carbon-monoxide-poisoning/",
+      "lang": "en",
+      "region": "UK",
+      "license": "unknown",
+      "licenseNote": "Page footer: '© Crown copyright'. Used for checks only (second authority for 'Kulilte'); no text is shown in the app.",
+      "attribution": "",
+      "retrievedAt": "2026-11-04",
+      "snapshot": "snapshots/uk-nhs-carbon-monoxide.html",
+      "snapshotSha256": "3115296c57ce7e136932356847023f8a0bb5ea460e9325f586a5b8ef82971b43",
+      "shortName": "NHS"
     }
   ]
 }

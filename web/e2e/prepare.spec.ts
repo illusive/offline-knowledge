@@ -27,6 +27,8 @@ test('Når det sker: tile, search, tick items in a stock list, bookmark a situat
   await expect(page.getByRole('link', { name: /^Medicin, førstehjælp og hygiejne/ })).toBeVisible();
   await search.fill('dykpumpe');
   await expect(page.getByRole('link', { name: /^Der er vand i kælderen/ })).toBeVisible();
+  await search.fill('kuliltealarm');
+  await expect(page.getByRole('link', { name: /^Kulilte/ })).toBeVisible();
   await search.fill('trampolin');
   await expect(page.getByRole('link', { name: /^Storm/ })).toBeVisible();
   await search.fill('');
