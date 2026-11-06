@@ -56,7 +56,7 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 
 ## Forråd (D-046, D-047)
 
-31. **Water for animals.** No source gives an amount, so the user enters their own figure per day. Look for an authority figure (e.g. Dyrenes Beskyttelse or a vet source) before suggesting one.
+31. **Water for animals.** Resolved by removal (D-063): the app keeps no animal figure, and the stock-list line is a plain reminder.
 32. **English names of the stock-list lines.** The lines and their short names are Danish only, like the guides. The English interface shows them in Danish.
 33. **A downloadable product list.** Barcodes are looked up online only (D-047). An offline list of Danish products from Open Food Facts is possible later if lookups without a connection matter.
 34. **Reminders.** The app cannot notify (no push without a server). Due checks and expiry show only when Forråd is opened; the Home screen could show a short note later.

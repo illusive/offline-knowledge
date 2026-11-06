@@ -241,8 +241,6 @@ export interface Strings {
     seeRecommendations: (title: string) => string;
     waterLitres: (unit: string) => string;
     people: string;
-    petLitres: string;
-    petLitresHelp: string;
     targetDays: string;
     days: (n: number) => string;
     targetHelp: string;
@@ -715,8 +713,6 @@ export const strings: Record<Lang, Strings> = {
       seeRecommendations: (title) => `Se anbefalingerne: ${title}`,
       waterLitres: (unit) => `${unit === 'gal' ? 'Gallon' : 'Liter'} på lager`,
       people: 'Personer',
-      petLitres: 'Vand til dyr pr. døgn',
-      petLitresHelp: 'Kilderne siger ikke, hvor meget dyr skal have. Skriv det, dine dyr drikker på et døgn.',
       targetDays: 'Forråd til',
       days: (n) => `${n} døgn`,
       targetHelp: 'Myndighederne anbefaler mindst 3 døgn.',
@@ -1235,8 +1231,6 @@ export const strings: Record<Lang, Strings> = {
       seeRecommendations: (title) => `See the recommendations: ${title}`,
       waterLitres: (unit) => `${unit === 'gal' ? 'Gallons' : 'Litres'} stored`,
       people: 'People',
-      petLitres: 'Water for animals per day',
-      petLitresHelp: 'The sources do not say how much animals need. Enter what your animals drink in a day.',
       targetDays: 'Supplies for',
       days: (n) => `${n} days`,
       targetHelp: 'The authorities recommend at least 3 days.',

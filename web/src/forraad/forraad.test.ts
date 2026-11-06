@@ -11,9 +11,9 @@ const rec = (id: string, category: Recommendation['category'], name: string, key
 
 describe('Forråd water', () => {
   it('scales the target by people, animals and days', () => {
-    expect(waterNeeded({ people: 3, petLitresPerDay: 0, targetDays: 3 }, 3)).toBe(27);
-    expect(waterNeeded({ people: 2, petLitresPerDay: 1, targetDays: 7 }, 3)).toBe(49);
-    expect(waterNeeded({ people: 2, petLitresPerDay: 0, targetDays: 3 }, null)).toBeNull();
+    expect(waterNeeded({ people: 3, targetDays: 3 }, 3)).toBe(27);
+    expect(waterNeeded({ people: 2, targetDays: 7 }, 3)).toBe(42);
+    expect(waterNeeded({ people: 2, targetDays: 3 }, null)).toBeNull();
   });
 
   it('checks again six months after the month of the last check', () => {
@@ -120,7 +120,7 @@ describe('Forråd data on the device', () => {
       items: [{ id: '1', name: ' Knækbrød ', category: 'food', count: 2.4, expires: '2027-01', size: ' 250 g ' }, { id: '2', name: '', category: 'food' }, { id: '3', name: 'Ting', category: 'tools' }, 'bad'],
       products: { '5701234567890': { name: 'Vand' }, abc: { name: 'x' } },
     });
-    expect(data.household).toEqual({ people: 3, petLitresPerDay: 0, targetDays: 3 });
+    expect(data.household).toEqual({ people: 3, targetDays: 3 }); // the old animal figure is dropped (D-063)
     expect(data.water).toEqual({ litres: 12.5, lastChecked: null });
     expect(data.items).toHaveLength(1);
     expect(data.items[0]).toMatchObject({ name: 'Knækbrød', count: 2, expires: '2027-01', amount: 250, unit: 'g' });
@@ -131,7 +131,7 @@ describe('Forråd data on the device', () => {
   it('turns version 1 water containers into one figure and dates into months', () => {
     const data = parse({
       version: 1,
-      household: { people: 2, petLitresPerDay: 0, targetDays: 3 },
+      household: { people: 2, targetDays: 3 },
       water: { lastChecked: '2026-05-03' },
       items: [
         { id: 'w1', name: 'Kildevand', category: 'water', count: 6, litresEach: 1.5 },

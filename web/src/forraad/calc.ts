@@ -50,7 +50,7 @@ export const EXPIRING_WITHIN_MONTHS = 1;
 // Litres for the household for the chosen number of days, or null without the stock list's figure.
 export function waterNeeded(household: Household, litresPerPersonDay: number | null): number | null {
   if (litresPerPersonDay === null) return null;
-  return (household.people * litresPerPersonDay + household.petLitresPerDay) * household.targetDays;
+  return household.people * litresPerPersonDay * household.targetDays;
 }
 
 // Months from one yyyy-mm to another (negative when it is earlier).

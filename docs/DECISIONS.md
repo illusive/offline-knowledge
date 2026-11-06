@@ -673,6 +673,15 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-063 — No animal water figure in Settings
+
+- **Date:** 2026-11-06
+- **Decision (owner):** the setting "Vand til dyr pr. døgn" is removed. It was a daily total for all animals, added to the water target, but read as if it needed a number of animals, which the app never asks for.
+- **Water target:** now people × 3 L × the chosen days (the stock list's figure).
+- **Saved data:** old data and old backup files still load; the animal figure in them is ignored.
+- **The stock-list line "vand-husdyr":** shown as a plain reminder with no box (it was ticked when the figure was above 0).
+- **OPEN_QUESTIONS 31** (an authority figure for animals) is closed by this.
+
 ## D-062 — First aid core complete: ten more guides, two sundhed.dk pages as second authority
 
 - **Date:** 2026-11-06

@@ -255,6 +255,14 @@ function Checklist({ guideId, title, items, s }: { guideId: string; title: strin
             </span>
           );
           const text = <span className={line.on ? 'text-muted line-through decoration-1' : ''}>{item.text}</span>;
+          // Water for animals (D-063): a reminder, with nothing to tick.
+          if (line.kind === 'note') {
+            return (
+              <li key={item.id} className="flex min-h-12 items-start rounded-2xl bg-background px-[12px] py-3">
+                {item.text}
+              </li>
+            );
+          }
           if (line.kind === 'water') {
             return (
               <li key={item.id}>

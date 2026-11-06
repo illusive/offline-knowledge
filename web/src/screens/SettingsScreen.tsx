@@ -62,7 +62,7 @@ export function SettingsScreen({ db, pack, lang, s, offlineReady }: { db: DbClie
           </div>
         </Card>
 
-        <HouseholdSettings lang={lang} s={s} />
+        <HouseholdSettings s={s} />
 
         <Sources db={db} s={s} />
 

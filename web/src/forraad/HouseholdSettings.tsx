@@ -1,14 +1,13 @@
 // Forråd in Settings (D-046): the household the water target is worked out for, the water unit, and
 // a copy of the stores as a file. Set once, so it lives here rather than on the Forråd page.
 
-import { Card, Choice, inputClass, Stepper } from '../components/ui';
-import type { Lang, Strings } from '../i18n/strings';
+import { Card, Choice, Stepper } from '../components/ui';
+import type { Strings } from '../i18n/strings';
 import { setPreference, usePreferences, type WaterUnitPref } from '../settings/preferences';
 import { Backup } from './Backup';
-import { decimalForInput, fromUnit, parseDecimal, toUnit, unitLabel } from '../i18n/format';
 import { forraad, TARGET_DAYS, useForraad, type TargetDays } from './store';
 
-export function HouseholdSettings({ lang, s }: { lang: Lang; s: Strings }) {
+export function HouseholdSettings({ s }: { s: Strings }) {
   const t = s.forraad;
   const unit = usePreferences().waterUnit;
   const h = useForraad().household;
@@ -29,25 +28,6 @@ export function HouseholdSettings({ lang, s }: { lang: Lang; s: Strings }) {
           />
           <p className="mt-1 text-sm text-muted">{t.targetHelp}</p>
         </div>
-        <label className="flex flex-col gap-1">
-          <span className="font-semibold">{t.petLitres}</span>
-          <span className="text-sm text-muted">{t.petLitresHelp}</span>
-          <span className="flex items-center gap-[8px]">
-            <input
-              type="text"
-              inputMode="decimal"
-              defaultValue={h.petLitresPerDay ? decimalForInput(toUnit(h.petLitresPerDay, unit), lang) : ''}
-              key={unit}
-              placeholder="0"
-              onChange={(e) => {
-                const v = parseDecimal(e.target.value);
-                forraad.setHousehold({ ...h, petLitresPerDay: v !== null && v > 0 ? fromUnit(v, unit) : 0 });
-              }}
-              className={`${inputClass} w-28`}
-            />
-            <span>{unitLabel(unit)}</span>
-          </span>
-        </label>
         <Choice<WaterUnitPref>
           name="waterUnit"
           legend={s.settings.waterUnit}

@@ -2,7 +2,8 @@
 // household has. A line is ticked when something in Forråd counts as it. Ticking a line adds a
 // plain entry for it to Forråd (marked as added from the list); unticking removes only such entries,
 // so things the user entered themselves are never deleted from here. The water lines follow the
-// water in Forråd and are changed there.
+// water in Forråd and are changed there. The line on water for animals is a reminder only: the app
+// keeps no figure for animals (D-063).
 
 import { useCallback } from 'react';
 import type { ChecklistItem } from '../db/queries';
@@ -14,11 +15,12 @@ const WATER_LINES = new Set([WATER_PER_PERSON_ID, PET_WATER_ID]);
 
 export type LineState =
   | { kind: 'water'; on: boolean } // shown from the water figure; changed in Forråd
-  | { kind: 'item'; on: boolean; own: StoreItem[] }; // own: things the user entered that count as it
+  | { kind: 'item'; on: boolean; own: StoreItem[] } // own: things the user entered that count as it
+  | { kind: 'note'; on: false }; // a reminder with no box (D-063)
 
 export function lineState(item: ChecklistItem, data: ForraadData): LineState {
   if (WATER_LINES.has(item.id)) {
-    if (item.id === PET_WATER_ID) return { kind: 'water', on: data.household.petLitresPerDay > 0 };
+    if (item.id === PET_WATER_ID) return { kind: 'note', on: false };
     const need = item.amount?.unit === 'L' && item.amount.per === 'personDay' ? waterNeeded(data.household, item.amount.value) : null;
     return { kind: 'water', on: need !== null && need > 0 && data.water.litres >= need };
   }

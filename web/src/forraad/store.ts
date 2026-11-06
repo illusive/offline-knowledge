@@ -31,7 +31,6 @@ export interface StoreItem {
 
 export interface Household {
   people: number;
-  petLitresPerDay: number; // the user's own figure: the sources give no amount for animals
   targetDays: TargetDays;
 }
 
@@ -58,7 +57,7 @@ export const KEY = 'stead.forraad.v1';
 
 export const EMPTY: ForraadData = {
   version: 2,
-  household: { people: 1, petLitresPerDay: 0, targetDays: 3 },
+  household: { people: 1, targetDays: 3 },
   water: { litres: 0, lastChecked: null },
   items: [],
   products: {},
@@ -106,7 +105,6 @@ export function parse(raw: unknown): ForraadData {
   const h = isObject(raw.household) ? raw.household : {};
   const household: Household = {
     people: Math.round(num(h.people, 0, 50) ?? EMPTY.household.people),
-    petLitresPerDay: num(h.petLitresPerDay, 0, 100) ?? 0,
     targetDays: TARGET_DAYS.find((d) => d === h.targetDays) ?? EMPTY.household.targetDays,
   };
   const w = isObject(raw.water) ? raw.water : {};
