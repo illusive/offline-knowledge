@@ -17,14 +17,16 @@ async function offline(page: Page, context: BrowserContext) {
   await page.getByRole('link', { name: 'Værktøjer' }).click();
 }
 
-test('Køl og frys: the clock starts, survives a reload, and ends; offline', async ({ app: { page, context } }) => {
+test('Køleskab og fryser: the timer starts, survives a reload, and ends; offline', async ({ app: { page, context } }) => {
   const foreign: string[] = [];
   page.on('request', (r) => {
     if (new URL(r.url()).hostname !== 'localhost') foreign.push(r.url());
   });
   await offline(page, context);
-  await page.getByRole('link', { name: /^Køl og frys/ }).click();
-  await expect(page.getByRole('heading', { level: 1, name: 'Køl og frys' })).toBeVisible();
+  // Tools in sections (D-066): the timers have their own heading.
+  await expect(page.getByRole('region', { name: 'Timere' }).getByRole('link', { name: /^Kog vand/ })).toBeVisible();
+  await page.getByRole('link', { name: /^Køleskab og fryser/ }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Køleskab og fryser' })).toBeVisible();
   await page.getByRole('button', { name: 'Strømmen gik nu' }).click();
   await expect(page.getByText('Strømmen har været væk i')).toBeVisible();
   await expect(page.getByText(/^Kold nok i 3 t 59 min endnu$|^Kold nok i 4 t endnu$/)).toBeVisible();

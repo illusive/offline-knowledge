@@ -673,6 +673,15 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-066 — Tools in headed sections; the timers under "Timere"
+
+- **Date:** 2026-11-06
+- **Decision (owner):** Tools is shown in headed sections, so it is clear what each tool is for:
+  - **Timere:** "Køleskab og fryser" (was "Køl og frys") and "Kog vand"
+  - **Retning og dagslys:** Kompas and Sol op og ned
+  - **Førstehjælp** and **Mad** come with the new tools (D-067, D-068)
+- **Renamed:** "Køl og frys" is "Køleskab og fryser" (en: "Fridge and freezer"), as the tool's title and on its page. The guide "Strømmen er gået" now says "Timeren ”Køleskab og fryser” under Værktøjer". Content 0.18.1.
+
 ## D-065 — "Søg efter ny version" in Settings
 
 - **Date:** 2026-11-06

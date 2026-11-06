@@ -111,6 +111,7 @@ export interface Strings {
     positionRefused: string;
   };
   toolsTitle: string;
+  toolSections: { timers: string; direction: string; firstAid: string; food: string };
   compass: {
     title: string;
     subtitle: string;
@@ -584,6 +585,7 @@ export const strings: Record<Lang, Strings> = {
       positionRefused: 'Appen har ikke tilladelse til at bruge din position. Du kan ændre det i telefonens indstillinger.',
     },
     toolsTitle: 'Værktøjer',
+    toolSections: { timers: 'Timere', direction: 'Retning og dagslys', firstAid: 'Førstehjælp', food: 'Mad' },
     compass: {
       title: 'Kompas',
       subtitle: 'Find retningen, og hold en kurs – uden internet og GPS.',
@@ -666,7 +668,7 @@ export const strings: Record<Lang, Strings> = {
       moonNoSet: 'Månen går ikke ned denne dag.',
     },
     power: {
-      title: 'Køl og frys',
+      title: 'Køleskab og fryser',
       subtitle: 'Hvor længe holder køleskab og fryser maden kold, når strømmen er gået?',
       intro: 'Tryk, når strømmen går. Uret holder øje med tiden – også hvis du lukker appen.',
       startNow: 'Strømmen gik nu',
@@ -1112,6 +1114,7 @@ export const strings: Record<Lang, Strings> = {
       positionRefused: 'The app does not have permission to use your location. You can change this in your phone\'s settings.',
     },
     toolsTitle: 'Tools',
+    toolSections: { timers: 'Timers', direction: 'Direction and daylight', firstAid: 'First aid', food: 'Food' },
     compass: {
       title: 'Compass',
       subtitle: 'Find the direction and hold a course – without internet or GPS.',

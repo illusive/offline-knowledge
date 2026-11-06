@@ -1,4 +1,4 @@
-// "Køl og frys" (D-058): how long the power has been out, and how long the fridge and freezer
+// "Køleskab og fryser" (D-058, named so in D-066): how long the power has been out, and how long the fridge and freezer
 // keep food cold. The start time is kept on the device, so the clock survives closing the app and
 // restarting the phone. The hours and the advice come from the guide "Strømmen er gået".
 
