@@ -1,4 +1,5 @@
-// "Storing food" category (D-014): all foods, searchable; each opens its storage details.
+// "Opbevaring" category (D-014): all foods, searchable, in headed groups (D-057); each opens its
+// storage details.
 
 import { FoodList } from '../components/FoodList';
 import { SavedLink } from '../bookmarks/BookmarkButton';
@@ -29,7 +30,7 @@ export function StorageScreen(props: {
       <div className="mb-3">
         <SearchField id="storage-search" value={query} onChange={onQueryChange} placeholder={s.searchPlaceholder} label={s.searchLabel} clearLabel={s.clearSearch} />
       </div>
-      <FoodList items={results} query={query} lang={lang} s={s} />
+      <FoodList items={results} query={query} lang={lang} s={s} grouped />
     </Page>
   );
 }

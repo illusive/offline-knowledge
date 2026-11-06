@@ -13,6 +13,10 @@ test('Dyrkning: tile on Home, crop page with sections and a link to its food pag
   await page.getByRole('link', { name: /Dyrkning/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Dyrkning' })).toBeVisible();
   await expect(page.getByText(/^\d+ afgrøder$/)).toBeVisible();
+  // Headed groups (D-057): fruit, vegetables, herbs.
+  await expect(page.getByRole('heading', { level: 2 })).toHaveText(['Frugt', 'Grøntsager', 'Krydderurter']);
+  await expect(page.getByRole('region', { name: 'Frugt' }).getByRole('link')).toHaveText([/^Jordbær/, /^Rabarber/]);
+  await expect(page.getByRole('region', { name: 'Krydderurter' }).getByRole('link')).toHaveCount(1);
   await page.getByRole('searchbox', { name: 'Søg i dyrkning' }).fill('kartof');
   await expect(page.getByText('2 afgrøder')).toBeVisible();
   await expect(page.getByRole('link', { name: /^Kartofler Læg sidst i marts/ })).toBeVisible();

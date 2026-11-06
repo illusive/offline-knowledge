@@ -151,7 +151,8 @@ web/
     map/                          Offline maps (D-036): map worker, downloads, places, position
     compass/                      Compass sensor and maths (D-045)
     sun/                          Sunrise, sunset and twilight from a place and a day (NOAA equations),
-                                  the chosen place and the town list (D-056)
+                                  the chosen place, the town list and the graph through the year (D-056)
+    food/groups.ts                The groups that divide Opbevaring and Dyrkning (D-057)
     bookmarks/, settings/, pwa/   Saved items, preferences and theme, offline status and updates
     screens/                      One file per page
   e2e/                            Playwright tests in WebKit, offline

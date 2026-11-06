@@ -14,6 +14,9 @@ export type GrowingSection = (typeof GROWING_SECTIONS)[number] | (typeof SUPPLY_
 // "Når det sker" (D-040, D-043): one card per kind of weather ("Storm"), situations ("Strømmen er
 // gået") and stock lists ("Mad til tre døgn").
 export type PreparednessGroup = 'weather' | 'situation' | 'supplies';
+// Growing (D-057): the kind of crop, for the headed sections in Dyrkning. Shared names with the
+// storage groups in the app (Frugt, Grøntsager, Krydderurter).
+export type CropGroup = 'vegetables' | 'fruit' | 'herbs';
 
 // A line in a stock list that can be ticked off; `id` is stable across pack versions (ticks are
 // stored on the device by id). For Forråd (D-046, pack schema 13): `name` is a short label,
@@ -101,7 +104,7 @@ export interface Guide {
   ownerChecked: boolean;    // the project owner has compared the guide with the source (D-027)
   related?: string[];       // other guide ids
   foodId?: string;          // the storage item this crop becomes (links to its food page)
-  group?: PreparednessGroup; // required for 'preparedness'
+  group?: PreparednessGroup | CropGroup; // required for 'preparedness' and 'growing'
   // Growing (D-038, owner 2026-10-27): a plain name for lists and the page title (our words, e.g.
   // "Radiser"), and the growing period as a subtitle, written by us from quoted passages that
   // the build finds in the source (parts joined with " … ").

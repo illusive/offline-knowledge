@@ -52,3 +52,18 @@ test('prefixFilter handles short queries by word prefix', () => {
   expect(prefixFilter(rows, 'æ').map((r) => r.id)).toEqual(['3']);
   expect(prefixFilter(rows, '').length).toBe(3);
 });
+
+test('food groups (D-057): keep the app order, drop empty groups, and map categories and crops', async () => {
+  {
+    const { byGroup, groupOfCrop, groupOfItem } = await import('./groups');
+    const items = [{ category: 'fresh-vegetables' as const, id: 'v' }, { category: 'fresh-fruits' as const, id: 'f' }, { category: 'fresh-vegetables' as const, id: 'w' }];
+    expect(byGroup(items, groupOfItem)).toEqual([
+      { group: 'fruit', items: [items[1]] },
+      { group: 'vegetables', items: [items[0], items[2]] },
+    ]);
+    expect(groupOfItem({ category: 'fish' })).toBe('fish');
+    expect(groupOfCrop({ grp: 'herbs' })).toBe('herbs');
+    expect(groupOfCrop({ grp: null })).toBe('vegetables');
+    expect(byGroup([], groupOfItem)).toEqual([]);
+  }
+});

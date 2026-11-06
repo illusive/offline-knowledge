@@ -7,6 +7,7 @@
   "sourceId": "dk-bolius-10-nemme",
   "risk": "low",
   "name": "Salat",
+  "group": "vegetables",
   "season": {
     "text": "Så fra april og flere gange hen over sommeren",
     "quote": "Du kan så salat fra april og flere gange i løbet af sommeren"

@@ -2,7 +2,8 @@
 // Indstillinger, which moved to a gear at the top right, D-046; one plain box, D-054), so the icon sits
 // above the label. Like iOS's own tab bars it has a fixed size in
 // pixels and a capped label size, so it stays usable at the largest text sizes (OPEN_QUESTIONS #25);
-// VoiceOver reads the full labels.
+// VoiceOver reads the full labels. So it never blends into what scrolls under it (owner 2026-11-06,
+// D-057), the page colour fades in behind it and the bar has a light outline.
 
 import { Box, House, LayoutGrid, Map as MapIcon, type LucideIcon } from 'lucide-react';
 import type { Strings } from '../i18n/strings';
@@ -18,7 +19,8 @@ const TABS: { tab: Tab; href: string; Icon: LucideIcon }[] = [
 export function TabBar({ active, s }: { active: Tab; s: Strings }) {
   return (
     <nav aria-label={s.navLabel} className="fixed inset-x-0 bottom-0 z-20 px-[16px] pb-[max(12px,env(safe-area-inset-bottom))]">
-      <ul className="mx-auto flex max-w-[448px] gap-[4px] rounded-[30px] bg-ink p-[6px] shadow-lg">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 -top-6 bottom-0 bg-linear-to-t from-background from-40% to-transparent" />
+      <ul className="relative mx-auto flex max-w-[448px] gap-[4px] rounded-[30px] bg-ink p-[6px] shadow-lg ring-1 ring-nav-edge">
         {TABS.map(({ tab, href, Icon }) => {
           const current = tab === active;
           return (

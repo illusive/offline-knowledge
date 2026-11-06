@@ -23,10 +23,11 @@ export function GuideCategoryScreen(props: {
   query: string;
   onQueryChange: (q: string) => void;
   resultCount?: (n: number) => string; // a spoken count above the results (Dyrkning)
+  renderResults?: (guides: GuideRow[]) => ReactNode; // the results' own layout (Dyrkning's groups); a plain list otherwise
   s: Strings;
   children: ReactNode; // the overview when not searching
 }) {
-  const { db, guides, section, title, intro, search, query, onQueryChange, resultCount, s, children } = props;
+  const { db, guides, section, title, intro, search, query, onQueryChange, resultCount, renderResults, s, children } = props;
   const results = useGuideSearch(db, guides, query);
   const searching = query.trim() !== '';
   usePageTitle(title, s.appTitle);
@@ -48,7 +49,7 @@ export function GuideCategoryScreen(props: {
               {resultCount(results.length)}
             </p>
           ) : null}
-          {results.length > 0 ? <GuideList guides={results} numbered={false} /> : <MessageState title={s.noGuideResults(query.trim())} />}
+          {results.length === 0 ? <MessageState title={s.noGuideResults(query.trim())} /> : renderResults ? renderResults(results) : <GuideList guides={results} numbered={false} />}
         </div>
       )}
     </Page>

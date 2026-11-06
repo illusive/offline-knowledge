@@ -134,6 +134,12 @@ export interface Strings {
     subtitle: string;
     place: string;
     changePlace: string;
+    change: string;
+    yearTitle: string;
+    yearChart: (shortest: string, longest: string) => string;
+    shortestDay: (date: string, length: string) => string;
+    longestDay: (date: string, length: string) => string;
+    hoursShort: (h: number) => string;
     choosePlace: string;
     myPosition: string;
     homePoint: string;
@@ -351,6 +357,7 @@ export interface Strings {
   totalTopics: (n: number) => string;
   foodCount: (n: number) => string;
   growing: string;
+  foodGroups: Record<'fruit' | 'vegetables' | 'herbs' | 'meat' | 'fish', string>;
   growingIntro: string;
   growingCount: (n: number) => string;
   growingSections: Record<'sowing' | 'conditions' | 'care' | 'harvest' | 'seeds' | 'neighbours' | 'noPrep' | 'somePrep' | 'needsPrep', string>;
@@ -537,6 +544,12 @@ export const strings: Record<Lang, Strings> = {
       subtitle: 'Hvornår solen står op og går ned – uden internet.',
       place: 'Sted',
       changePlace: 'Skift sted',
+      change: 'Skift',
+      yearTitle: 'Dagens længde gennem året',
+      yearChart: (shortest, longest) => `Dagens længde gennem året. ${shortest}. ${longest}.`,
+      shortestDay: (date, length) => `Korteste dag: ${date}, ${length}`,
+      longestDay: (date, length) => `Længste dag: ${date}, ${length}`,
+      hoursShort: (h) => `${h} t`,
       choosePlace: 'Vælg sted',
       myPosition: 'Din position',
       homePoint: 'Hjemmepunktet på kortet',
@@ -802,6 +815,7 @@ export const strings: Record<Lang, Strings> = {
     totalTopics: (n) => `${n} emner`,
     foodCount: (n) => `${n} fødevarer`,
     growing: 'Dyrkning',
+    foodGroups: { fruit: 'Frugt', vegetables: 'Grøntsager', herbs: 'Krydderurter', meat: 'Kød', fish: 'Fisk' },
     growingIntro: 'Så, pas og høst – og gem frø til næste år. Nemme afgrøder til det danske klima.',
     growingCount: (n) => (n === 1 ? '1 afgrøde' : `${n} afgrøder`),
     growingSections: { sowing: 'Såning', conditions: 'Jord og placering', care: 'Pasning', harvest: 'Høst', seeds: 'Frø til næste år', neighbours: 'Naboplanter og nyt sted næste år', noPrep: 'Kræver ingen tilberedning', somePrep: 'Kræver lidt tilberedning', needsPrep: 'Kræver tilberedning' },
@@ -986,6 +1000,12 @@ export const strings: Record<Lang, Strings> = {
       subtitle: 'When the sun rises and sets – without internet.',
       place: 'Place',
       changePlace: 'Change place',
+      change: 'Change',
+      yearTitle: 'Length of the day through the year',
+      yearChart: (shortest, longest) => `Length of the day through the year. ${shortest}. ${longest}.`,
+      shortestDay: (date, length) => `Shortest day: ${date}, ${length}`,
+      longestDay: (date, length) => `Longest day: ${date}, ${length}`,
+      hoursShort: (h) => `${h} h`,
       choosePlace: 'Choose a place',
       myPosition: 'Your position',
       homePoint: 'The home point on the map',
@@ -1245,6 +1265,7 @@ export const strings: Record<Lang, Strings> = {
     totalTopics: (n) => `${n} topics`,
     foodCount: (n) => `${n} foods`,
     growing: 'Growing food',
+    foodGroups: { fruit: 'Fruit', vegetables: 'Vegetables', herbs: 'Herbs', meat: 'Meat', fish: 'Fish' },
     growingIntro: 'Sow, care for and harvest crops – and save seeds for next year. Easy crops for the Danish climate. (In Danish.)',
     growingCount: (n) => (n === 1 ? '1 crop' : `${n} crops`),
     growingSections: { sowing: 'Sowing', conditions: 'Soil and site', care: 'Care', harvest: 'Harvest', seeds: 'Seed for next year', neighbours: 'Neighbouring plants and a new spot next year', noPrep: 'No preparation needed', somePrep: 'Some preparation', needsPrep: 'Needs preparation' },

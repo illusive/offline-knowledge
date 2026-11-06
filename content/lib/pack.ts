@@ -122,7 +122,7 @@ CREATE TABLE guides (
   food_id TEXT REFERENCES storage_items(id), -- growing: the food page this crop links to
   name TEXT,         -- plain name for lists and titles (growing)
   season TEXT,       -- growing period shown as subtitle
-  grp TEXT           -- preparedness: 'weather', 'situation' or 'supplies' (D-040, D-043)
+  grp TEXT           -- preparedness: 'weather', 'situation' or 'supplies' (D-040, D-043); growing: 'vegetables', 'fruit' or 'herbs' (D-057)
 );
 
 -- Search over guide titles, summaries and shown text (trigram, like storage_search).

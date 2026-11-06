@@ -595,6 +595,30 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - `suncalc` (unmaintained since 2015; the same equations take about 80 lines).
   - The town list only (owner chose GPS and the home point too).
   - A year overview (owner chose a date field).
+- **Changed 2026-11-06 (owner):**
+  - The button shows "Skift"; VoiceOver still hears "Skift sted".
+  - A graph of the day's length through the year at the place sits under the times: a 0–24 hour area, a dot on the chosen day, and the shortest and longest day as text (also the graph's description for VoiceOver). No tooltips: the date field picks the day.
+
+## D-057 — Food and crop groups; a tab bar that stands out; the three first aid steps spelled out
+
+- **Date:** 2026-11-06
+- **Groups (owner):** Opbevaring and Dyrkning are divided into headed sections, with the count next to each heading.
+  - **Order:** Frugt, Grøntsager, Krydderurter, Kød, Fisk (en: Fruit, Vegetables, Herbs, Meat, Fish), in `web/src/food/groups.ts`.
+  - **Empty groups are not shown.** Meat and fish are defined (`StorageItem.category` may be `meat` or `fish`; FoodKeeper's meat and poultry would go to meat, seafood to fish) but no such foods are imported yet, so today Opbevaring shows Frugt (33) and Grøntsager (68).
+  - **Crops:** each growing guide has a `group` (`vegetables`, `fruit` or `herbs`), required by the build and stored in `guides.grp`. Jordbær and rabarber are under Frugt (rabarber is eaten as fruit), krydderurter under Krydderurter, the rest under Grøntsager.
+  - **Search** keeps the grouping on both pages. Home's search and Saved stay as they were.
+  - **Alternatives:** a filter bar (one more tap to see the rest; owner chose sections); importing meat and fish now (owner: define them, show them once they have foods).
+- **Tab bar (owner):** it blended into backgrounds of the same colour: the black 112 card in light mode, and every card in dark mode, where the bar (#262624) is almost the card colour (#1c1c1a).
+  - **Fade:** the page colour now fades in behind the bar, so what scrolls under it softens away.
+  - **Outline:** the bar has a thin light outline (`--c-nav-edge`).
+  - **Alternatives:** an outline only (content still runs right up to the bar); a lighter bar in dark mode (no help over the 112 card).
+- **The three first aid steps (owner):** "Førstehjælpens 3 trin" listed only the step names. It now spells out each step under its own heading, all from the same handbook (ABC Førstehjælpshåndbogen):
+  - **Trin 1, Gør stedet sikkert (s. 9–10):** the same words as "Gør stedet sikkert".
+  - **Trin 2, Giv førstehjælp (s. 16–17):** check whether the person is awake, call 112 at once if not, then M-ABC (the same words as "Er personen vågen?" and "M-ABC").
+  - **Trin 3, Tilkald hjælp (s. 46–47):** new plain-language text: when to call, what the call handler asks, the golden rule (one calls while the others help), and staying on the line until told to hang up.
+  - **Second authority:** ERC 2025 first aid (Tabel 2 and 3): call 1-1-2 straight away, follow the call handler's instructions, try to wake the person.
+  - **Review flag:** `ownerChecked` stays false ("Prøveversion"). The new step 3 text needs the review in `LANGUAGE_REVIEW.md`.
+- **Pack:** content 0.16.0. No schema change: `guides.grp` now also holds the crop group.
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

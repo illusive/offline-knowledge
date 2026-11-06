@@ -100,3 +100,22 @@ describe('place', () => {
     }
   });
 });
+
+describe('yearOfDayLengths', () => {
+  it('has every day of the year, shortest near the winter and longest near the summer solstice', async () => {
+    const { yearOfDayLengths } = await import('./sun');
+    const days = yearOfDayLengths(2026, 55.68, 12.57);
+    expect(days).toHaveLength(365);
+    expect(yearOfDayLengths(2028, 55.68, 12.57)).toHaveLength(366);
+    const byLength = [...days].sort((a, b) => a.minutes - b.minutes);
+    const shortest = byLength[0]!;
+    const longest = byLength[byLength.length - 1]!;
+    expect(shortest.month).toBe(12);
+    expect(shortest.day).toBeGreaterThanOrEqual(20);
+    expect(shortest.day).toBeLessThanOrEqual(22);
+    expect(longest.month).toBe(6);
+    expect(longest.day).toBeGreaterThanOrEqual(20);
+    expect(longest.day).toBeLessThanOrEqual(22);
+    expect(days[354]).toEqual({ month: 12, day: 21, minutes: sunDay(2026, 12, 21, 55.68, 12.57).dayLengthMin });
+  });
+});

@@ -6,6 +6,12 @@
   "summary": "De tre trin hjælper dig med at få overblik.",
   "sourceId": "dk-fsk-abc-foerstehjaelp",
   "risk": "high",
+  "corrections": [
+    {
+      "from": "situtionanen",
+      "to": "situationen"
+    }
+  ],
   "blocks": [
     {
       "kind": "steps",
@@ -50,6 +56,218 @@
         "lang": "da",
         "text": "Under hele forløbet ydes der samtidigt psykisk førstehjælp, som er beregnet til at berolige den tilskadekomne."
       }
+    },
+    {
+      "kind": "heading",
+      "text": "Trin 1: Gør stedet sikkert",
+      "page": 9,
+      "original": {
+        "lang": "da",
+        "text": "Punkt 1: Skab sikkerhed"
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Start med at skaffe dig et overblik:",
+      "items": [
+        "Er der fare for dig eller andre, når du hjælper?",
+        "Hvad er der sket?",
+        "Hvor mange er kommet til skade?"
+      ],
+      "page": 9,
+      "original": {
+        "lang": "da",
+        "title": "Start med at skabe overblik over situationen:",
+        "items": [
+          "Er der fare for dig eller andre, når du hjælper den/de tilskadekomne?",
+          "Hvilken type skade er der tale om?",
+          "Hvor mange er der kommet til skade?"
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Sørg for, at ulykken ikke bliver værre. Flyt personen væk fra faren – eller fjern faren fra personen.",
+      "page": 9,
+      "original": {
+        "lang": "da",
+        "text": "Som førstehjælper skal du sikre, at ulykken ikke udvikler sig. Dette kan du gøre ved: At fjerne personen fra ulykken eller fjerne ulykken fra personen."
+      }
+    },
+    {
+      "kind": "warning",
+      "title": "Husk",
+      "text": "Bring aldrig dig selv eller andre i fare for at redde en person. Kommer du selv til skade, bliver det hele værre, og så kan du ikke hjælpe.",
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "text": "Du må aldrig gå på kompromis med din egen eller andres sikkerhed for at redde en person. Hvis du kommer til skade, har du forværret situationen og du kan ikke hjælpe den tilskadekomne.",
+        "title": "Husk:"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Andre på stedet kan hjælpe med mange ting – også selvom de ikke kan førstehjælp. Du kan derfor få brug for at tage styringen og fordele opgaverne.",
+      "page": 10,
+      "original": {
+        "lang": "da",
+        "text": "Ved en ulykke kan tilskuere, forbipasserende eller pårørende hjælpe med mange opgaver – også uden at have førstehjælpsuddannelse. Det kan derfor være nødvendigt, at du tager styringen og fordeler opgaverne."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Trin 2: Giv førstehjælp",
+      "page": 16,
+      "original": {
+        "lang": "da",
+        "text": "Punkt 2: Giv førstehjælp"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Først skal du finde ud af, om personen er vågen.",
+      "page": 16,
+      "original": {
+        "lang": "da",
+        "text": "Når du yder førstehjælp, skal du først undersøge den tilskadekomnes bevidsthed."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan gør du:",
+      "items": [
+        "Tal højt til personen, og tag fat i skuldrene og ryst forsigtigt."
+      ],
+      "page": 16,
+      "original": {
+        "lang": "da",
+        "title": "Kontroller bevidstheden på følgende måde:",
+        "items": [
+          "Tal højt, og rusk behersket ved at tage fat i den tilskadekomnes skuldre."
+        ]
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Reagerer personen, er personen vågen.",
+        "Reagerer personen ikke, er personen bevidstløs."
+      ],
+      "page": 16,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Hvis personen reagerer, er personen vågen.",
+          "Hvis personen ikke reagerer, er personen bevidstløs."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Er personen bevidstløs, så ring 112 med det samme. Fortsæt derefter førstehjælpen.",
+      "page": 16,
+      "original": {
+        "lang": "da",
+        "text": "Hvis den tilskadekomne er bevidstløs, skal du straks ringe 1-1-2 før du fortsætter din førstehjælp!"
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "M: Massive blødninger – stop blødninger, der er livsfarlige",
+        "A: Airway – sørg for frie luftveje",
+        "B: Breathing – tjek vejrtrækningen",
+        "C: Circulation – tjek blodomløbet"
+      ],
+      "page": 17,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Massive blødninger – livstruende blødninger",
+          "Airway – luftveje",
+          "Breathing – åndedræt",
+          "Circulation – blodcirkulation"
+        ],
+        "title": "For at kunne prioritere den mest nødvendige førstehjælp til én eller flere tilskadekomne, anvender vi M-ABC-princippet:"
+      },
+      "title": "Giv så førstehjælp i denne rækkefølge (M-ABC):"
+    },
+    {
+      "kind": "heading",
+      "text": "Trin 3: Tilkald hjælp",
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "text": "Punkt 3: Tilkald hjælp"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ring 112, hvis nogen pludselig bliver alvorligt syg eller kommer slemt til skade.",
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "text": "Ring 1-1-2 ved akut kritisk sygdom eller alvorlig tilskadekomst."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Du kommer først til politiets alarmcentral. Handler det om sygdom eller en ulykke, bliver du straks sendt videre til en sundhedsperson.",
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "text": "Når du ringer 1-1-2, får du først fat i politiets alarmcentral. Hvis dit opkald drejer sig om sygdom eller ulykke, bliver du straks stillet om til en sundhedsfaglig medarbejder."
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Sundhedspersonen vil fx spørge om:",
+      "items": [
+        "Hvor ulykken er sket. Er du i tvivl om adressen, så beskriv bygninger, vejnavne eller andet, man let kan genkende.",
+        "Hvad der er sket, og hvor slemt det er.",
+        "Hvem der er kommet til skade: én eller flere, børn eller voksne.",
+        "Om personen er vågen, og om du kan få kontakt.",
+        "Om personen trækker vejret, og om det er svært."
+      ],
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "title": "De vil eksempelvis spørge ind til:",
+        "items": [
+          "Hvor ulykken er sket? Er du usikker på adressen, kan du beskrive kendte bygninger, vejnavne eller andre tydelige pejlemærker",
+          "Hvad der er sket? Hvor alvorlig er skaden?",
+          "Hvem der er kommet til skade? En eller flere? Børn eller voksne?",
+          "Om personen er vågen? Kan du komme i kontakt med den tilskadekomne?",
+          "Om der er vejrtrækning? Er vejrtrækningen besværet? Trækker den tilskadekomne vejret?"
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Spørgsmålene kommer ikke i en bestemt rækkefølge. Alarmcentralen spørger om det, de har brug for at vide.",
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "text": "Punkterne er ikke udtryk for en bestemt rækkefølge. Alarmcentralen skal nok spørge ind til de relevante informationer."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Er I flere, så lad én ringe 112 med det samme, mens de andre giver førstehjælp.",
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "text": "Er der flere til stede, så lad én alarmere 1-1-2 straks, mens de andre yder førstehjælp."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Bliv i telefonen, og gør, som sundhedspersonen siger. Læg aldrig på, før du får besked på det.",
+      "page": 47,
+      "original": {
+        "lang": "da",
+        "text": "Det er vigtigt, at du bliver i røret og følger visitatorens anvisninger. Afslut derfor aldrig opkaldet, før du får besked om det."
+      }
     }
   ],
   "checks": [
@@ -58,12 +276,25 @@
       "locator": "Tabel 2, Forventninger til førstehjælperen, s. 6",
       "quote": "følge disse tre nøgleprincipper: … Kontrollér om skadestedet er sikkert. … Ring 1-1-2 med det samme.",
       "note": "Both start with making the scene safe. The ERC principles put calling 1-1-2 straight after; the handbook calls 1-1-2 as soon as the person is found unconscious (p. 16)."
+    },
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Tabel 2, Hjertestop, s. 6",
+      "quote": "skal du ringe 112 og følge den sundhedsfaglige visitators vejledning",
+      "note": "Step 3: call 1-1-2 and follow the call handler's instructions (said for cardiac arrest)."
+    },
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Tabel 3, Bevidsthedsniveau, s. 8",
+      "quote": "Forsøg forsigtigt at vække personen.",
+      "note": "Step 2: the same first check, whether the person can be woken."
     }
   ],
   "ownerChecked": false,
   "related": [
     "skab-sikkerhed",
-    "bevidsthed"
+    "bevidsthed",
+    "mabc"
   ],
   "name": "Førstehjælpens 3 trin",
   "originalSummary": "Værktøjet bruges til at skabe sig et overblik over situationen."

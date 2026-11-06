@@ -46,6 +46,11 @@ test('Sol op og ned: the position on a tap, the times for a day, back to today; 
   await expect(row(page, 'Lyst udenfor')).toContainText('Lyst nok til at være ude uden lygte.');
   await expect(row(page, 'Dagens længde')).toContainText('7 t 1 min');
   await expect(row(page, 'Dagens længde')).toContainText('Næsten som i går');
+  // The day's length through the year (D-056): the shortest and longest day, also told to VoiceOver.
+  const year = page.getByRole('region', { name: 'Dagens længde gennem året' });
+  await expect(year.getByText('Korteste dag: 21. december, 7 t 1 min')).toBeVisible();
+  await expect(year.getByText('Længste dag: 21. juni, 17 t 32 min')).toBeVisible(); // 1052.5 min at 55.68° N rounds down
+  await expect(year.getByRole('img')).toHaveAttribute('aria-label', /Korteste dag: 21\. december/);
 
   // Two months later the days grow by minutes.
   await page.getByLabel('Dato').fill('2027-02-21');
@@ -91,6 +96,8 @@ test('Sol op og ned: a refused position says so, and a town can be picked instea
   await expect(row(page, 'Lyst udenfor')).toContainText('03.03–23.36');
 
   // Changing the place opens a sheet with the same choices.
+  // The button shows "Skift"; VoiceOver hears "Skift sted".
+  await expect(page.getByRole('button', { name: 'Skift sted' })).toHaveText('Skift');
   await page.getByRole('button', { name: 'Skift sted' }).click();
   const sheet = page.getByRole('dialog', { name: 'Vælg sted' });
   await sheet.getByLabel('By').selectOption({ label: 'Rønne' });

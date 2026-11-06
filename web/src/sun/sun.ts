@@ -102,3 +102,15 @@ export function dayBefore(year: number, month: number, day: number): [number, nu
   const d = new Date(Date.UTC(year, month - 1, day) - DAY_MS);
   return [d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate()];
 }
+
+// The day's length (minutes) on every day of a year at a place, for the graph through the year.
+export function yearOfDayLengths(year: number, lat: number, lon: number): { month: number; day: number; minutes: number }[] {
+  const days: { month: number; day: number; minutes: number }[] = [];
+  for (let ms = Date.UTC(year, 0, 1); new Date(ms).getUTCFullYear() === year; ms += DAY_MS) {
+    const d = new Date(ms);
+    const month = d.getUTCMonth() + 1;
+    const day = d.getUTCDate();
+    days.push({ month, day, minutes: sunDay(year, month, day, lat, lon).dayLengthMin });
+  }
+  return days;
+}

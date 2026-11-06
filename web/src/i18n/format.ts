@@ -93,3 +93,14 @@ export function formatDuration(minutes: number, lang: Lang): string {
   const hours = `${h} ${lang === 'da' ? 't' : 'h'}`;
   return h === 0 ? `${m} min` : m === 0 ? hours : `${hours} ${m} min`;
 }
+
+// A day and a month without the year: "21. december" / "21 December" (D-056).
+export function formatDayMonth(month: number, day: number, lang: Lang): string {
+  return new Intl.DateTimeFormat(localeOf(lang), { day: 'numeric', month: 'long' }).format(new Date(2000, month - 1, day));
+}
+
+// The first letter of each month, January first: "J", "F", "M" … (D-056).
+export function monthLetters(lang: Lang): string[] {
+  const narrow = new Intl.DateTimeFormat(localeOf(lang), { month: 'narrow' });
+  return Array.from({ length: 12 }, (_, i) => narrow.format(new Date(2000, i, 15)));
+}

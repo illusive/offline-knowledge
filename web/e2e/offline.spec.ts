@@ -14,10 +14,18 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await page.getByRole('link', { name: /Opbevaring$/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Opbevaring' })).toBeVisible();
   await expect(page.getByText('101 fødevarer')).toBeVisible();
+  // Headed groups (D-057): fruit, then vegetables; meat and fish have no foods yet, so no heading.
+  const fruit = page.getByRole('region', { name: 'Frugt' });
+  const vegetables = page.getByRole('region', { name: 'Grøntsager' });
+  await expect(fruit.getByRole('heading', { level: 2 })).toHaveText('Frugt');
+  await expect(fruit).toContainText('33');
+  await expect(fruit.getByRole('listitem')).toHaveCount(33);
+  await expect(vegetables.getByRole('listitem')).toHaveCount(68);
+  await expect(page.getByRole('heading', { name: /^(Kød|Fisk)$/ })).toHaveCount(0);
   const search = page.getByRole('searchbox', { name: 'Søg efter en fødevare' });
   await search.fill('kal');
   await expect(page.getByText('6 fødevarer')).toBeVisible();
-  await expect(page.getByRole('listitem').first()).toContainText('Kål');
+  await expect(vegetables.getByRole('listitem').first()).toContainText('Kål');
 
   await page.getByRole('link', { name: /^Kål (Køkkenskab|Køleskab|Fryser)/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Kål' })).toBeVisible();

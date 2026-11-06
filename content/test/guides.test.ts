@@ -71,17 +71,21 @@ test('validateGuides refuses a second-authority quote that is not in that source
 
 test('growing guides: low risk needs no second authority; a block may quote another source, checked there', () => {
   const g = guide({
-    id: 'radiser', category: 'growing', risk: 'low', checks: [], name: 'Radiser',
+    id: 'radiser', category: 'growing', risk: 'low', checks: [], name: 'Radiser', group: 'vegetables',
     blocks: [
       { kind: 'section', key: 'sowing', page: 1 },
       { kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1, sourceId: 'second' },
     ],
   });
   assert.deepEqual(validateGuides([g], sources, texts, new Set()), []);
-  const wrong = guide({ id: 'x', category: 'growing', risk: 'low', checks: [], name: 'X', blocks: [{ kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1 }] });
+  const wrong = guide({ id: 'x', category: 'growing', risk: 'low', checks: [], name: 'X', group: 'vegetables', blocks: [{ kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1 }] });
   assert.ok(validateGuides([wrong], sources, texts, new Set()).some((p) => p.includes('not verbatim in main')));
   const firstAidMix = guide({ blocks: [{ kind: 'text', text: 'Sikr dig, at der ikke er fare for dig selv.', page: 1, sourceId: 'second' }] });
   assert.ok(validateGuides([firstAidMix], sources, texts, new Set()).some((p) => p.includes('from one source')));
+  // D-057: every crop has a group (vegetables, fruit or herbs).
+  const { group: _none, ...noGroup } = g;
+  assert.ok(validateGuides([noGroup], sources, texts, new Set()).some((p) => p.includes('growing guides need a group')));
+  assert.ok(validateGuides([{ ...g, group: 'supplies' }], sources, texts, new Set()).some((p) => p.includes('growing guides need a group')));
 });
 
 test('preparedness: a group is required, checklist lines are checked verbatim, checklist ids are unique across guides', () => {

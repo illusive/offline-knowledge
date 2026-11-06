@@ -14,7 +14,7 @@ export interface SqlDb {
 
 export interface ItemRow {
   id: string;
-  category: 'fresh-fruits' | 'fresh-vegetables';
+  category: 'fresh-fruits' | 'fresh-vegetables' | 'meat' | 'fish'; // meat and fish: none yet (D-057)
   name_da: string;
   subtitle_da: string | null;
   name_en: string;
@@ -101,7 +101,7 @@ export interface GuideRow {
   abbreviations: { short: string; long: string }[];
   name: string | null;     // growing: plain name, e.g. 'Radiser'
   season: string | null;   // growing: the growing period
-  grp: 'weather' | 'situation' | 'supplies' | null; // preparedness (D-040, D-043)
+  grp: 'weather' | 'situation' | 'supplies' | 'vegetables' | 'fruit' | 'herbs' | null; // preparedness (D-040, D-043); growing (D-057)
 }
 
 const GUIDE_COLUMNS = 'g.id, g.category, g.title, g.summary, g.summary_original, g.abbreviations, g.name, g.season, g.grp';

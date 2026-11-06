@@ -46,7 +46,9 @@ export interface LocalizedName {
 
 export interface StorageItem {
   id: string;                           // stable, e.g. 'foodkeeper-248'
-  category: 'fresh-fruits' | 'fresh-vegetables';
+  // Meat and fish (D-057) are defined for later imports (FoodKeeper meat and poultry → 'meat',
+  // seafood → 'fish'); none are imported yet.
+  category: 'fresh-fruits' | 'fresh-vegetables' | 'meat' | 'fish';
   names: {
     en: LocalizedName;                  // as in the source
     da?: LocalizedName & { checked: boolean };  // translation; must be checked before publishing

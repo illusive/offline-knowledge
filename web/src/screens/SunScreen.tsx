@@ -15,6 +15,7 @@ import { hrefs } from '../router';
 import { coordsOf, placeStore, roundCoord, type Place } from '../sun/place';
 import { dayBefore, sunDay, type Pass } from '../sun/sun';
 import { TOWNS, townById } from '../sun/towns';
+import { YearChart } from '../sun/YearChart';
 
 type GpsState = 'idle' | 'searching' | 'refused' | 'unavailable';
 
@@ -95,11 +96,14 @@ export function SunScreen({ lang, s }: { lang: Lang; s: Strings }) {
                 <p className="text-sm text-muted">{t.place}</p>
                 <p className="text-lg font-semibold">{placeName(place, t)}</p>
               </div>
-              <Button onClick={() => setChoosing(true)}>{t.changePlace}</Button>
+              <Button onClick={() => setChoosing(true)} aria-label={t.changePlace}>
+                {t.change}
+              </Button>
             </div>
             <DateField date={date} onDate={setDate} t={t} />
           </div>
           <Results place={place} date={date} lang={lang} t={t} />
+          <YearChart {...chartProps(place, date)} lang={lang} t={t} />
           <p className="px-1 text-sm text-muted">{t.note}</p>
         </div>
       )}
@@ -114,6 +118,11 @@ export function SunScreen({ lang, s }: { lang: Lang; s: Strings }) {
       </Sheet>
     </Page>
   );
+}
+
+function chartProps(place: Place, date: string) {
+  const [year, month, day] = date.split('-').map(Number) as [number, number, number];
+  return { year, month, day, ...coordsOf(place) };
 }
 
 function placeName(place: Place, t: Strings['sun']): string {

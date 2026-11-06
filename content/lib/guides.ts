@@ -63,7 +63,8 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
     if (guide.category === 'growing' && guide.risk !== 'low') problems.push(`${at}: growing guides are risk 'low'`);
     if (guide.blocks.some((b) => b.kind === 'section') && guide.category === 'first-aid') problems.push(`${at}: first aid uses the source's own headings`);
     if (guide.category === 'preparedness' && !['weather', 'situation', 'supplies'].includes(guide.group ?? '')) problems.push(`${at}: preparedness guides need a group ('weather', 'situation' or 'supplies')`);
-    if (guide.category !== 'preparedness' && guide.group) problems.push(`${at}: only preparedness guides have a group`);
+    if (guide.category === 'growing' && !['vegetables', 'fruit', 'herbs'].includes(guide.group ?? '')) problems.push(`${at}: growing guides need a group ('vegetables', 'fruit' or 'herbs')`);
+    if (guide.category === 'first-aid' && guide.group) problems.push(`${at}: first aid guides have no group`);
     const source = texts.get(guide.sourceId);
     if (!known.has(guide.sourceId)) problems.push(`${at}: source '${guide.sourceId}' not in registry`);
     else if (!source) problems.push(`${at}: no text for source '${guide.sourceId}'`);

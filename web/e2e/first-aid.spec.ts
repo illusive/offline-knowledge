@@ -11,6 +11,16 @@ test('first aid: list, a guide with steps and photos, related guide; then offlin
   await expect(page.getByRole('heading', { name: 'Alle guides' })).toBeVisible();
   await expect(page.getByText('HLR: hjertelungeredning').first()).toBeVisible();
 
+  // The three steps are spelled out on their own page (owner 2026-11-06, D-057).
+  await page.goto('./#/guide/tre-hovedpunkter');
+  for (const step of ['Trin 1: Gør stedet sikkert', 'Trin 2: Giv førstehjælp', 'Trin 3: Tilkald hjælp']) {
+    await expect(page.getByRole('heading', { name: step })).toBeVisible();
+  }
+  await expect(page.getByText('Er personen bevidstløs, så ring 112 med det samme. Fortsæt derefter førstehjælpen.')).toBeVisible();
+  await expect(page.getByText('Er I flere, så lad én ringe 112 med det samme, mens de andre giver førstehjælp.')).toBeVisible();
+  await page.goBack();
+  await expect(page.getByRole('heading', { level: 1, name: 'Førstehjælp' })).toBeVisible();
+
   // Search inside the guides' text.
   const search = page.getByRole('searchbox', { name: 'Søg i førstehjælp' });
   await search.fill('blodpøl');

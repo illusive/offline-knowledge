@@ -24,6 +24,8 @@
   /* The logo's asterisk when the app works offline: lime in dark mode; on the light background
      lime is too faint, so it stays the dark green there (owner 2026-11-05). */
   --c-ready-mark: #1f7a3d;
+  /* The tab bar's outline (D-057), so it stands apart from dark cards behind it. */
+  --c-nav-edge: rgb(255 255 255 / 0.18);
 }
 
 /* Dark: chosen in Settings, or the phone's setting (D-044). data-theme is set before the first paint
@@ -46,6 +48,7 @@
   --c-danger: #ff8a80;
   --c-on-danger: #1b0000;
   --c-ready-mark: #d4f04a;
+  --c-nav-edge: rgb(255 255 255 / 0.14);
 }
 
 @theme inline {
@@ -65,6 +68,7 @@
   --color-danger: var(--c-danger);
   --color-on-danger: var(--c-on-danger);
   --color-ready-mark: var(--c-ready-mark);
+  --color-nav-edge: var(--c-nav-edge);
   --radius-card: 20px;
   --radius-hero: 28px;
 }

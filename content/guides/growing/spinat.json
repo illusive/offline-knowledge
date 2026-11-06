@@ -7,6 +7,7 @@
   "sourceId": "dk-bolius-10-nemme",
   "risk": "low",
   "name": "Spinat",
+  "group": "vegetables",
   "season": {
     "text": "Så fra starten af april",
     "quote": "Du kan så spinat allerede fra starten af april"

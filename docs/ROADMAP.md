@@ -43,6 +43,13 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] Tools: compass with "Hold kursen" (D-045, 2026-11-05): turning dial, direction as text (magnetic north), course kept on the device with "Drej N° til højre/venstre"; states for permission (asked after a tap, remembered), refused, uncertain (iOS accuracy) and no compass. Offline e2e tests with a simulated sensor. **Still to check on the iPhone:** real readings, accuracy messages, landscape. The planned supply checklist is covered by the "Hjemmeberedskab" stock lists (D-040, D-043).
 - [x] Tools: Sol op og ned (D-056, 2026-11-06): sunrise and sunset with directions, "Lyst udenfor" (civil twilight) and the day's length against yesterday, for a place (position on a tap, the map's home point, or one of 15 towns) and a chosen day. Worked out on the phone (NOAA equations), checked against NOAA and USNO in unit tests; offline e2e tests for the position, a refused position and the town list. **Still to check on the iPhone:** the position prompt in airplane mode, the date roller, the times against DMI for your own place.
 - [x] Small changes (owner, 2026-11-06): the water sheet's main button is "OK", with "Tjekket i dag" below it; Kort is no longer a tile on Home (it has its tab); "Opbevaring af mad" is "Opbevaring"; the water ring on Home fills in lime.
+- [x] Owner feedback, second round (D-057, 2026-11-06):
+  - Opbevaring and Dyrkning in headed groups (Frugt, Grøntsager, Krydderurter; Kød and Fisk defined, shown once they have foods)
+  - "Førstehjælpens 3 trin" spells out each step (content 0.16.0)
+  - a fade and an outline so the tab bar stands apart
+  - in Sol op og ned, "Skift" and a graph of the day's length through the year (D-056)
+
+  **Still to check:** the tab bar on the iPhone, and the new first aid text (review in `LANGUAGE_REVIEW.md`).
 - [x] Forråd (D-046, D-047, 2026-11-05): a tab replacing Settings, which moved to a gear at the top right. It holds:
   - Water as one figure (litres and the month last checked) against 3 litres per person per day for 3/7/14 days, checked again after six months.
   - The household, including water for animals in the user's own figure.
