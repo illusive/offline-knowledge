@@ -673,6 +673,15 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-069 — "Til toppen" on long pages
+
+- **Date:** 2026-11-06
+- **Decision (owner):** guides and food pages get a round "Til toppen" button (an arrow up) at the bottom right, just above the tab bar.
+- **When:** it shows once the page has been scrolled down more than one and a half screens, and fades out again near the top. Hidden, it is also hidden from screen readers and the keyboard.
+- **What it does:** scrolls back to the top, smoothly unless the phone asks for reduced motion, and moves focus to the page title so VoiceOver starts from the top too.
+- **Where:** only on guides (`#/guide/…`) and foods (`#/food/…`), the long pages. Lists and tools are short enough without it.
+- **Still to check on the iPhone:** that it does not cover text you need at the bottom of a guide, and its size next to the tab bar.
+
 ## D-068 — Omregn mål
 
 - **Date:** 2026-11-06

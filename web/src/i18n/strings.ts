@@ -25,6 +25,7 @@ export interface Strings {
   updateReady: string;
   updateAction: string;
   dismiss: string;
+  scrollToTop: string;
   homeTitle: string;
   homeSearchPlaceholder: string;
   homeSearchLabel: string;
@@ -514,6 +515,7 @@ export const strings: Record<Lang, Strings> = {
     updateReady: 'En ny version er klar.',
     updateAction: 'Opdater',
     dismiss: 'Luk',
+    scrollToTop: 'Til toppen',
     homeTitle: 'Hvad har du brug for?',
     homeSearchPlaceholder: 'Søg',
     homeSearchLabel: 'Søg i indholdet',
@@ -1079,6 +1081,7 @@ export const strings: Record<Lang, Strings> = {
     updateReady: 'A new version is ready.',
     updateAction: 'Update',
     dismiss: 'Dismiss',
+    scrollToTop: 'Back to top',
     homeTitle: 'What do you need?',
     homeSearchPlaceholder: 'Search',
     homeSearchLabel: 'Search the content',

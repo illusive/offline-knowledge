@@ -8,6 +8,7 @@ import { createDbClient, openPack } from './db/client';
 import { useStrings } from './i18n/lang';
 import { UpdateBanner } from './pwa/UpdateBanner';
 import { UpdatesProvider } from './pwa/updates';
+import { ScrollToTop } from './components/ScrollToTop';
 import { useOfflineReady } from './pwa/useOfflineReady';
 import { useApplyTheme } from './settings/preferences';
 import { usePrecacheProgress } from './pwa/usePrecacheProgress';
@@ -188,6 +189,8 @@ export function App() {
   return (
     <UpdatesProvider>
       {content}
+      {/* Long pages (D-069): guides and foods. Keyed by address, so it starts hidden on each page. */}
+      {route.name === 'guide' || route.name === 'food' ? <ScrollToTop key={location.hash} label={s.scrollToTop} /> : null}
       <UpdateBanner s={s} />
       <TabBar active={activeTab} s={s} />
     </UpdatesProvider>

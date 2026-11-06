@@ -64,6 +64,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 
   **Still to check on the iPhone:** the keyboard's search key, the × and large text.
 - [x] No sirens row in Tools (D-061, 2026-11-06): it was a guide, not a tool; the guide stays in "Når det sker".
+- [x] "Til toppen" on guides and foods (D-069, 2026-11-06), shown after one and a half screens.
 - [x] Omregn mål (D-068, 2026-11-06): US cups, spoons, ounces, pounds, inches and °F to metric, from NIST Handbook 44 Appendix C.
 - [x] HLR-metronom (D-067, 2026-11-06): 110 a minute, count to 30, then 2 breaths; linked from the CPR guides. **Still to check on the iPhone:** sound, timing, screen kept on.
 - [x] Tools in headed sections, with "Timere" (D-066, 2026-11-06); "Køl og frys" is now "Køleskab og fryser". Content 0.18.1.

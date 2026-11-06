@@ -60,3 +60,16 @@ test('first aid: list, a guide with steps and photos, related guide; then offlin
   await expect(flowchart).toBeVisible();
   expect(await flowchart.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
 });
+
+test('a long guide gets "Til toppen" once scrolled down; it goes back up and to the title (D-069)', async ({ app: { page } }) => {
+  await page.goto('./#/guide/fremmedlegeme-i-luftvejene');
+  await expect(page.getByRole('heading', { level: 1, name: 'Noget galt i halsen' })).toBeVisible();
+  const toTop = page.getByRole('button', { name: 'Til toppen' });
+  await expect(toTop).toBeHidden(); // aria-hidden until scrolled down
+  await page.mouse.wheel(0, 2500);
+  await expect(toTop).toBeVisible();
+  await toTop.click();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+  await expect(page.getByRole('heading', { level: 1, name: 'Noget galt i halsen' })).toBeFocused();
+  await expect(toTop).toBeHidden();
+});
