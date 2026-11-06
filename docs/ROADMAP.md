@@ -120,6 +120,24 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 
 Acceptance: a fresh install with no network shows the pilot guides, search finds them (in both languages if a Danish guide is cleared), and each guide shows its sources and licenses.
 
+### Tool ideas (owner to pick from, 2026-11-06)
+
+Not planned yet; each would get its own decision and sources.
+
+- **Tidslog:** tap to note the time of what happened (symptoms began, medicine given, pressure bandage on), for 112 or the doctor.
+- **Dage med vand:** how many days the water in Forråd lasts for the household, on the water card.
+- **Mål afstand på kortet:** distance and walking time between two points on the offline map.
+- **Powerbank-regner:** how many phone charges a powerbank gives (needs a source for the loss).
+- **Vindafkøling:** how cold it feels from temperature and wind (DMI's formula), with Underafkøling.
+- **Nødkort:** your own medical info and contacts, on the phone only.
+- **Hvor er jeg?:** your position as text to read out to 112.
+- **Lys og SOS:** the screen as a white or red light, and an SOS signal.
+- **Familiens plan:** where to meet and who calls whom (samsik's "Forberedt på kriser").
+- **Lyn: hvor langt væk?:** the distance to a thunderstorm from flash to thunder.
+- **Rens vand med klor:** drops or tablets per litre (high-risk: two sources, verbatim numbers).
+- **A plain countdown timer** under Timere.
+- **A link from the food guides that print cups** to Omregn mål (D-068).
+
 ## M2 — Breadth and design system
 
 - Content across all low and elevated risk categories.
