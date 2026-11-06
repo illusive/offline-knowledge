@@ -343,6 +343,7 @@ export interface Strings {
     litres: string;
     gallons: string;
     sourcesIntro: string;
+    sourcesCount: (n: number) => string;
     about: string;
     aboutBody: string[];
   };
@@ -815,6 +816,7 @@ export const strings: Record<Lang, Strings> = {
       litres: 'Liter',
       gallons: 'Gallon (US)',
       sourcesIntro: 'Alt indhold kommer fra disse kilder. Hver guide viser sine egne kilder nederst.',
+      sourcesCount: (n) => `${n} kilder`,
       about: 'Om stead',
       aboutBody: [
         'stead samler råd fra myndigheder og andre pålidelige kilder, så du har dem – også uden internet. Vi skriver ikke selv rådene.',
@@ -1333,6 +1335,7 @@ export const strings: Record<Lang, Strings> = {
       litres: 'Litres',
       gallons: 'Gallons (US)',
       sourcesIntro: 'All content comes from these sources. Each guide lists its own sources at the bottom.',
+      sourcesCount: (n) => `${n} sources`,
       about: 'About stead',
       aboutBody: [
         'stead collects advice from authorities and other trusted sources, so you have it – even without internet. We do not write the advice ourselves.',

@@ -20,7 +20,8 @@ export type Route =
   | { name: 'forraadScan' }
   | { name: 'forraadNew'; category: string | null; recommendationId: string | null }
   | { name: 'forraadEdit'; id: string }
-  | { name: 'settings' };
+  | { name: 'settings' }
+  | { name: 'settingsSources' };
 
 // Settings is not a tab (D-046): it opens from the gear at the top right.
 export type Tab = 'home' | 'map' | 'forraad' | 'tools';
@@ -64,6 +65,7 @@ export function parseRoute(hash: string): Route {
   const forraadItem = /^#\/forraad\/item\/([^/]+)$/.exec(hash);
   if (forraadItem?.[1]) return { name: 'forraadEdit', id: decodeURIComponent(forraadItem[1]) };
   if (hash === '#/settings') return { name: 'settings' };
+  if (hash === '#/settings/sources') return { name: 'settingsSources' };
   return { name: 'home' };
 }
 
@@ -87,6 +89,7 @@ export const hrefs = {
   powerClock: '#/tools/power',
   boil: '#/tools/boil',
   settings: '#/settings',
+  settingsSources: '#/settings/sources',
   food: (id: string, tab: FoodTab = DEFAULT_FOOD_TAB) =>
     `#/food/${encodeURIComponent(id)}${tab === DEFAULT_FOOD_TAB ? '' : `/${tab}`}`,
 };
@@ -94,7 +97,7 @@ export const hrefs = {
 // Which tab a route belongs to (content pages sit under Home). Settings belongs to none: the tab
 // bar keeps showing the tab it was opened from.
 export function tabOf(route: Route): Tab | null {
-  if (route.name === 'settings') return null;
+  if (route.name === 'settings' || route.name === 'settingsSources') return null;
   if (route.name === 'compass' || route.name === 'sun' || route.name === 'powerClock' || route.name === 'boil') return 'tools';
   if (route.name === 'forraadScan' || route.name === 'forraadNew' || route.name === 'forraadEdit') return 'forraad';
   return route.name === 'map' || route.name === 'tools' || route.name === 'forraad' ? route.name : 'home';

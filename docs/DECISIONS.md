@@ -673,6 +673,13 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-064 — Kilder on its own page under Settings
+
+- **Date:** 2026-11-06
+- **Decision (owner):** the list of all sources moves out of Settings to its own page, `#/settings/sources`. Settings keeps one row, "Kilder", with the number of sources ("89 kilder").
+- **Why:** the list is long (89 sources) and pushed About far down; few people need it.
+- **Unchanged:** the grouping by publisher and the links to each source. Back returns to Settings.
+
 ## D-063 — No animal water figure in Settings
 
 - **Date:** 2026-11-06

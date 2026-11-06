@@ -32,6 +32,7 @@ import { PowerClockScreen } from './screens/PowerClockScreen';
 import { BoilTimerScreen } from './screens/BoilTimerScreen';
 import { ToolsScreen } from './screens/ToolsScreen';
 import { StorageScreen } from './screens/StorageScreen';
+import { SourcesScreen } from './screens/SourcesScreen';
 import { useAllFoods } from './food/useFoodSearch';
 
 type SearchPage = 'home' | 'storage' | 'firstAid' | 'growing' | 'prepare' | 'forraad';
@@ -165,7 +166,10 @@ export function App() {
         content = <BoilTimerScreen s={s} />;
         break;
       case 'settings':
-        content = <SettingsScreen db={db} pack={pack} lang={lang} s={s} offlineReady={offlineReady} />;
+        content = <SettingsScreen pack={pack} lang={lang} s={s} offlineReady={offlineReady} />;
+        break;
+      case 'settingsSources':
+        content = <SourcesScreen db={db} s={s} />;
         break;
       default:
         content = unreachable(route);

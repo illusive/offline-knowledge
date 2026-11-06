@@ -1,12 +1,11 @@
-// Settings (D-044): what is on the phone, language, appearance, text size, the sources and About.
+// Settings (D-044): what is on the phone, language, appearance, text size, a link to the sources
+// (their own page, D-064) and About.
 // Everything here works offline: the counts come from the pack's manifest, the sources from the pack.
 
-import { ArrowUpRight, Check } from 'lucide-react';
+import { BookOpen, Check } from 'lucide-react';
 import { useEffect, useState, type ReactNode } from 'react';
-import { Card, Choice, MessageState, Page, SubPageHeader } from '../components/ui';
-import type { DbClient } from '../db/client';
-import type { PackInfo, Responses } from '../db/protocol';
-import { useDbQuery } from '../db/useDbQuery';
+import { Card, Choice, LinkRow, Page, RowList, SubPageHeader } from '../components/ui';
+import type { PackInfo } from '../db/protocol';
 import type { Lang, Strings } from '../i18n/strings';
 import { mapClient } from '../map/client';
 import { formatBytes, formatDate } from '../i18n/format';
@@ -16,9 +15,7 @@ import { setPreference, usePreferences, type LangPref, type ThemePref } from '..
 import { HouseholdSettings } from '../forraad/HouseholdSettings';
 import { usePageTitle } from '../lib/usePageTitle';
 
-type Source = Responses['sources'][number];
-
-export function SettingsScreen({ db, pack, lang, s, offlineReady }: { db: DbClient; pack: PackInfo | null; lang: Lang; s: Strings; offlineReady: boolean }) {
+export function SettingsScreen({ pack, lang, s, offlineReady }: { pack: PackInfo | null; lang: Lang; s: Strings; offlineReady: boolean }) {
   const prefs = usePreferences();
   const t = s.settings;
 
@@ -64,7 +61,15 @@ export function SettingsScreen({ db, pack, lang, s, offlineReady }: { db: DbClie
 
         <HouseholdSettings s={s} />
 
-        <Sources db={db} s={s} />
+        {/* The sources have their own page (D-064). */}
+        <RowList>
+          <LinkRow
+            href={hrefs.settingsSources}
+            leading={<BookOpen aria-hidden="true" className="size-6 shrink-0" strokeWidth={1.5} />}
+            title={t.sources}
+            subtitle={pack?.counts ? <span className="block text-sm text-muted">{t.sourcesCount(pack.counts.sources)}</span> : undefined}
+          />
+        </RowList>
 
         <Card aria-labelledby="settings-about">
           <h2 id="settings-about" className="text-xl font-semibold">
@@ -154,44 +159,5 @@ function Row({ label, value }: { label: string; value: ReactNode }) {
       <dt className="text-muted">{label}</dt>
       <dd className="text-right font-medium">{value}</dd>
     </div>
-  );
-}
-
-function Sources({ db, s }: { db: DbClient; s: Strings }) {
-  const t = s.settings;
-  const { data, error } = useDbQuery(db, { type: 'sources' });
-  const sources = error ? [] : (data ?? null);
-
-  const byPublisher = new Map<string, Source[]>();
-  for (const src of sources ?? []) byPublisher.set(src.publisher, [...(byPublisher.get(src.publisher) ?? []), src]);
-
-  return (
-    <Card aria-labelledby="settings-sources">
-      <h2 id="settings-sources" className="text-xl font-semibold">
-        {t.sources}
-      </h2>
-      <p className="mt-1 text-muted">{t.sourcesIntro}</p>
-      {sources === null ? (
-        <MessageState title={s.loading} />
-      ) : (
-        <div className="mt-4 flex flex-col gap-4">
-          {[...byPublisher].map(([publisher, list]) => (
-            <section key={publisher}>
-              <h3 className="font-semibold">{publisher}</h3>
-              <ul className="mt-1 flex flex-col gap-1">
-                {list.map((src) => (
-                  <li key={src.id}>
-                    <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-muted underline-offset-4 hover:underline">
-                      {src.title}
-                      <ArrowUpRight aria-hidden="true" className="ml-1 inline size-4 align-[-0.15em]" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </div>
-      )}
-    </Card>
   );
 }

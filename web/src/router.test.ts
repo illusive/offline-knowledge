@@ -24,6 +24,7 @@ describe('routes', () => {
       [hrefs.powerClock, { name: 'powerClock' }],
       [hrefs.boil, { name: 'boil' }],
       [hrefs.settings, { name: 'settings' }],
+      [hrefs.settingsSources, { name: 'settingsSources' }],
     ];
     for (const [href, route] of cases) expect(parseRoute(href), href).toEqual(route);
     for (const section of SAVED_SECTIONS) expect(parseRoute(hrefs.saved(section))).toEqual({ name: 'saved', section });

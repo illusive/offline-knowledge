@@ -21,9 +21,13 @@ test('Settings: library, sources, language and appearance survive a reload; offl
   await expect(library.getByText('Guides', { exact: true })).toBeVisible();
   await expect(library.getByRole('link', { name: 'Ingen kort hentet' })).toBeVisible();
 
-  const sources = page.getByRole('region', { name: 'Kilder' });
-  await expect(sources.getByRole('heading', { name: 'Patienthåndbogen på sundhed.dk' })).toBeVisible();
-  await expect(sources.getByRole('link', { name: 'Kulilteforgiftning' })).toBeVisible();
+  // The sources have their own page (D-064); back returns to Settings.
+  await page.getByRole('link', { name: /^Kilder/ }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Kilder' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Patienthåndbogen på sundhed.dk' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Kulilteforgiftning' })).toBeVisible();
+  await page.getByRole('button', { name: 'Tilbage' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Indstillinger' })).toBeVisible();
 
   const html = page.locator('html');
   await page.getByRole('radio', { name: 'Mørk' }).check({ force: true });
