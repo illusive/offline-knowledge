@@ -1,8 +1,8 @@
 // Tools, in headed sections (D-066): the timers for a power cut (the fridge and freezer clock and the
 // boiling timer, D-058), first aid (the CPR metronome, D-067), and direction and daylight (the compass,
-// D-045, and the sun, D-056).
+// D-045, and the sun, D-056), and food (Omregn mål, D-068).
 
-import { Compass, HeartPulse, Refrigerator, Sunrise, Timer, type LucideIcon } from 'lucide-react';
+import { Compass, HeartPulse, Refrigerator, Scale, Sunrise, Timer, type LucideIcon } from 'lucide-react';
 import { LinkRow, Page, RowList, Section, TabHeader } from '../components/ui';
 import type { Strings } from '../i18n/strings';
 import { usePageTitle } from '../lib/usePageTitle';
@@ -64,6 +64,11 @@ function sections(s: Strings): { id: string; title: string; tools: Tool[] }[] {
         { href: hrefs.compass, Icon: Compass, title: s.compass.title, subtitle: s.compass.subtitle },
         { href: hrefs.sun, Icon: Sunrise, title: s.sun.title, subtitle: s.sun.subtitle },
       ],
+    },
+    {
+      id: 'food',
+      title: t.food,
+      tools: [{ href: hrefs.convert, Icon: Scale, title: s.convert.title, subtitle: s.convert.subtitle }],
     },
   ];
 }

@@ -32,6 +32,7 @@ import { SunScreen } from './screens/SunScreen';
 import { PowerClockScreen } from './screens/PowerClockScreen';
 import { BoilTimerScreen } from './screens/BoilTimerScreen';
 import { CprMetronomeScreen } from './screens/CprMetronomeScreen';
+import { ConvertScreen } from './screens/ConvertScreen';
 import { ToolsScreen } from './screens/ToolsScreen';
 import { StorageScreen } from './screens/StorageScreen';
 import { SourcesScreen } from './screens/SourcesScreen';
@@ -169,6 +170,9 @@ export function App() {
         break;
       case 'cpr':
         content = <CprMetronomeScreen s={s} />;
+        break;
+      case 'convert':
+        content = <ConvertScreen lang={lang} s={s} />;
         break;
       case 'settings':
         content = <SettingsScreen pack={pack} lang={lang} s={s} offlineReady={offlineReady} />;

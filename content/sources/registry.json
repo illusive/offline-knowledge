@@ -2621,6 +2621,22 @@
       "snapshot": "snapshots/us-cdc-hand-sanitizer.html",
       "shortName": "CDC",
       "snapshotSha256": "f51d2e4d564b0d3def7c2b1b534d41e9e8f13b45d78aa72dd02341dae04a6922"
+    },
+    {
+      "id": "us-nist-hb44-appendix-c-2026",
+      "status": "cleared",
+      "title": "NIST Handbook 44 (2026), Appendix C: General Tables of Units of Measurement",
+      "publisher": "National Institute of Standards and Technology (NIST)",
+      "url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+      "lang": "en",
+      "region": "US",
+      "license": "public-domain",
+      "licenseNote": "Work of the U.S. federal government (17 U.S.C. §105). The factors in web/src/convert/units.ts (Omregn mål, D-068) are from its tables; nothing is quoted in a guide.",
+      "attribution": "NIST Handbook 44",
+      "retrievedAt": "2026-11-06",
+      "snapshot": "snapshots/us-nist-hb44-appendix-c-2026.pdf",
+      "shortName": "NIST",
+      "snapshotSha256": "41c43b7827bb02725faebe7257bd4032686013975b520ae6671a2ec3cce375db"
     }
   ]
 }

@@ -208,6 +208,16 @@ export interface Strings {
     source: string;
     guide: string;
   };
+  convert: {
+    title: string;
+    subtitle: string;
+    amount: string;
+    unit: string;
+    units: Record<'cup' | 'tbsp' | 'tsp' | 'floz' | 'pint' | 'quart' | 'gallon' | 'oz' | 'lb' | 'inch' | 'fahrenheit', string>;
+    notANumber: string;
+    note: string;
+    source: string;
+  };
   cpr: {
     title: string;
     subtitle: string;
@@ -704,6 +714,28 @@ export const strings: Record<Lang, Strings> = {
       backDone: 'Godt. Tjek, at køleskabet er højst 5 °C.',
       source: 'Tiderne er fra USDA og CDC (USA), oversat. Fødevarestyrelsen anbefaler højst 5 °C i køleskabet.',
       guide: 'Læs mere i “Strømmen er gået”',
+    },
+    convert: {
+      title: 'Omregn mål',
+      subtitle: 'Kopper, skeer, ounces, pounds og °F til dl, gram og °C.',
+      amount: 'Mængde',
+      unit: 'Fra',
+      units: {
+        cup: 'Kop (cup)',
+        tbsp: 'Spiseskefuld (tablespoon)',
+        tsp: 'Teskefuld (teaspoon)',
+        floz: 'Fluid ounce (fl oz)',
+        pint: 'Pint',
+        quart: 'Quart',
+        gallon: 'Gallon',
+        oz: 'Ounce (oz)',
+        lb: 'Pound (lb)',
+        inch: 'Tomme (inch)',
+        fahrenheit: 'Grader Fahrenheit (°F)',
+      },
+      notANumber: 'Skriv et tal.',
+      note: 'Målene er amerikanske, som i opskrifterne fra USA. En amerikansk kop er knap 2,4 dl.',
+      source: 'Omregningen følger NIST (USA), Handbook 44, 2026.',
     },
     cpr: {
       title: 'HLR-metronom',
@@ -1247,6 +1279,28 @@ export const strings: Record<Lang, Strings> = {
       backDone: 'Good. Check that the fridge is at most 5 °C.',
       source: 'The times are from USDA and CDC (USA). The Danish Veterinary and Food Administration recommends at most 5 °C in the fridge.',
       guide: 'Read more in “Strømmen er gået” (Danish)',
+    },
+    convert: {
+      title: 'Convert measures',
+      subtitle: 'Cups, spoons, ounces, pounds and °F to dl, grams and °C.',
+      amount: 'Amount',
+      unit: 'From',
+      units: {
+        cup: 'Cup',
+        tbsp: 'Tablespoon',
+        tsp: 'Teaspoon',
+        floz: 'Fluid ounce (fl oz)',
+        pint: 'Pint',
+        quart: 'Quart',
+        gallon: 'Gallon',
+        oz: 'Ounce (oz)',
+        lb: 'Pound (lb)',
+        inch: 'Inch',
+        fahrenheit: 'Degrees Fahrenheit (°F)',
+      },
+      notANumber: 'Enter a number.',
+      note: 'The measures are American, as in recipes from the US. A US cup is just under 2.4 dl.',
+      source: 'The conversion follows NIST (USA), Handbook 44, 2026.',
     },
     cpr: {
       title: 'CPR metronome',

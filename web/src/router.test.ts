@@ -24,6 +24,7 @@ describe('routes', () => {
       [hrefs.powerClock, { name: 'powerClock' }],
       [hrefs.boil, { name: 'boil' }],
       [hrefs.cpr, { name: 'cpr' }],
+      [hrefs.convert, { name: 'convert' }],
       [hrefs.settings, { name: 'settings' }],
       [hrefs.settingsSources, { name: 'settingsSources' }],
     ];

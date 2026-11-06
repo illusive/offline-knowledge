@@ -70,6 +70,7 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
     - the knot names (råbåndsknob, flagknob, pælestik, dobbelt halvstik, tømmerstik, ottetalsknob)
   - **Captions:** the knot drawings keep the manual's English captions.
 - **Tools (D-058):**
+  - **Omregn mål (D-068):** "Mængde", "Fra", the unit names ("Kop (cup)", "Spiseskefuld (tablespoon)", "Tomme (inch)" …), "Målene er amerikanske, som i opskrifterne fra USA. En amerikansk kop er knap 2,4 dl."
   - **HLR-metronom (D-067):** "Takten til hjertemassage, med tælling til 30.", "Til en voksen: Tryk 30 gange i takt med lyden. Giv så 2 indblæsninger.", "Giv 2 indblæsninger", "Fortsæt", "Brug HLR-metronomen".
   - **Køleskab og fryser** (was "Køl og frys", D-066): "Strømmen gik nu", "Kold nok i … endnu", "Over tiden", and the advice texts (the same words as the blocks in "Strømmen er gået").
   - **Kog vand:** "Vandet koger nu", "Færdig. Lad vandet køle af."

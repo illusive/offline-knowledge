@@ -91,3 +91,20 @@ test('HLR-metronom: counts to 30 in time, asks for 2 breaths, goes on and stops;
   await page.goto('./#/guide/hlr-voksne');
   await expect(page.getByRole('link', { name: 'Brug HLR-metronomen' })).toHaveAttribute('href', '#/tools/cpr');
 });
+
+test('Omregn mål: cups, °F and pounds to metric, with Danish decimals; offline (D-068)', async ({ app: { page, context } }) => {
+  await offline(page, context);
+  await page.getByRole('region', { name: 'Mad' }).getByRole('link', { name: /^Omregn mål/ }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Omregn mål' })).toBeVisible();
+  const amount = page.getByRole('textbox', { name: 'Mængde' });
+  const from = page.getByRole('combobox', { name: 'Fra' });
+  await expect(page.getByRole('status')).toHaveText('2,4 dl (237 ml)');
+  await amount.fill('350');
+  await from.selectOption('fahrenheit');
+  await expect(page.getByRole('status')).toHaveText('177 °C');
+  await amount.fill('1,5');
+  await from.selectOption('lb');
+  await expect(page.getByRole('status')).toHaveText('680 g');
+  await amount.fill('x');
+  await expect(page.getByRole('status')).toHaveText('Skriv et tal.');
+});

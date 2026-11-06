@@ -673,6 +673,16 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-068 — Omregn mål
+
+- **Date:** 2026-11-06
+- **Decision (owner):** a converter in Tools under "Mad" (`#/tools/convert`): an amount (Danish decimals) and a US unit, with the metric result as you type. For the food guides' US recipes (cups) and other American measures.
+- **Units:** cup, tablespoon, teaspoon, fluid ounce, pint, quart, gallon → ml, dl or L; ounce, pound → g or kg; inch → cm; °F → °C.
+- **Source:** NIST Handbook 44 (2026), Appendix C, "General Tables of Units of Measurement" (US federal work), snapshotted and registered as `us-nist-hb44-appendix-c-2026` (owner OK with the plan, 2026-11-06). The factors in `web/src/convert/units.ts` cite it: 1 fluid ounce = 29.573 53 mL, 1 cup = 8 fluid ounces exactly, 1 tablespoon = ½ fluid ounce exactly, 1 teaspoon = ⅓ tablespoon exactly, pint 473.176 5 mL, quart 946.352 9 mL, gallon 3 785.411 784 mL, ounce 28.349 523 125 g, pound 453.592 37 g, inch 2.54 cm exactly, °C = (°F − 32) / 1.8.
+- **Not the kitchen approximations:** NIST's "Metric Kitchen" page rounds a cup to 240 mL; the app uses the exact tables and rounds the result for reading (a cup shows as "2,4 dl (237 ml)").
+- **Text extraction on Windows:** no PDF tool was installed; the values were read from the PDF's text with a small Node script (zlib only) and checked against the unit tests.
+- **Later:** a link from the food guides that print cups.
+
 ## D-067 — HLR-metronom
 
 - **Date:** 2026-11-06
