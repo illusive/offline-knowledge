@@ -71,3 +71,23 @@ test('Kog vand: one minute, then "Færdig"; the sun right now and the moon; no s
   await expect(page.getByRole('link', { name: /^Kog vand/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /sirene/i })).toHaveCount(0);
 });
+
+test('HLR-metronom: counts to 30 in time, asks for 2 breaths, goes on and stops; linked from the CPR guide; offline (D-067)', async ({ app: { page, context } }) => {
+  await page.clock.install();
+  await offline(page, context);
+  await page.getByRole('region', { name: 'Førstehjælp' }).getByRole('link', { name: /^HLR-metronom/ }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'HLR-metronom' })).toBeVisible();
+  await page.getByRole('button', { name: 'Start' }).click();
+  await expect(page.getByText('Tryk i takt. Tæller til 30.')).toBeVisible();
+
+  // 110 a minute: after 30 beats (about 16.4 s) the round asks for the breaths.
+  await page.clock.runFor(17_000);
+  await expect(page.getByRole('status')).toHaveText('Giv 2 indblæsninger');
+  await page.getByRole('button', { name: 'Fortsæt' }).click();
+  await expect(page.getByText('Tryk i takt. Tæller til 30.')).toBeVisible();
+  await page.getByRole('button', { name: 'Stop' }).click();
+  await expect(page.getByRole('button', { name: 'Start' })).toBeVisible();
+
+  await page.goto('./#/guide/hlr-voksne');
+  await expect(page.getByRole('link', { name: 'Brug HLR-metronomen' })).toHaveAttribute('href', '#/tools/cpr');
+});

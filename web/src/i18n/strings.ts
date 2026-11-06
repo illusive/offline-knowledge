@@ -208,6 +208,20 @@ export interface Strings {
     source: string;
     guide: string;
   };
+  cpr: {
+    title: string;
+    subtitle: string;
+    how: string;
+    sound: string;
+    start: string;
+    counting: (n: number) => string;
+    breaths: string;
+    resume: string;
+    stop: string;
+    source: string;
+    guide: string;
+    useIt: string;
+  };
   boil: {
     title: string;
     subtitle: string;
@@ -690,6 +704,20 @@ export const strings: Record<Lang, Strings> = {
       backDone: 'Godt. Tjek, at køleskabet er højst 5 °C.',
       source: 'Tiderne er fra USDA og CDC (USA), oversat. Fødevarestyrelsen anbefaler højst 5 °C i køleskabet.',
       guide: 'Læs mere i “Strømmen er gået”',
+    },
+    cpr: {
+      title: 'HLR-metronom',
+      subtitle: 'Takten til hjertemassage, med tælling til 30.',
+      how: 'Til en voksen: Tryk 30 gange i takt med lyden. Giv så 2 indblæsninger.',
+      sound: 'Skru op for lyden. Takten og tællingen ses også på skærmen.',
+      start: 'Start',
+      counting: (n) => `Tryk i takt. Tæller til ${n}.`,
+      breaths: 'Giv 2 indblæsninger',
+      resume: 'Fortsæt',
+      stop: 'Stop',
+      source: '110 tryk i minuttet – midt i de 100–120, som Førstehjælpens ABC og ERC 2025 anbefaler.',
+      guide: 'Læs mere i “Hjertemassage og kunstigt åndedræt”',
+      useIt: 'Brug HLR-metronomen',
     },
     boil: {
       title: 'Kog vand',
@@ -1219,6 +1247,20 @@ export const strings: Record<Lang, Strings> = {
       backDone: 'Good. Check that the fridge is at most 5 °C.',
       source: 'The times are from USDA and CDC (USA). The Danish Veterinary and Food Administration recommends at most 5 °C in the fridge.',
       guide: 'Read more in “Strømmen er gået” (Danish)',
+    },
+    cpr: {
+      title: 'CPR metronome',
+      subtitle: 'The beat for chest compressions, counting to 30.',
+      how: 'For an adult: press 30 times with the beat. Then give 2 rescue breaths.',
+      sound: 'Turn the sound up. The beat and the count also show on the screen.',
+      start: 'Start',
+      counting: (n) => `Press with the beat. Counting to ${n}.`,
+      breaths: 'Give 2 rescue breaths',
+      resume: 'Continue',
+      stop: 'Stop',
+      source: '110 presses a minute – the middle of the 100–120 that Førstehjælpens ABC and ERC 2025 recommend.',
+      guide: 'Read more in “Hjertemassage og kunstigt åndedræt”',
+      useIt: 'Use the CPR metronome',
     },
     boil: {
       title: 'Boil water',

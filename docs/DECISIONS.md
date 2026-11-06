@@ -673,6 +673,19 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-067 — HLR-metronom
+
+- **Date:** 2026-11-06
+- **Decision (owner):** a CPR metronome in Tools under "Førstehjælp" (`#/tools/cpr`): a steady beat with a big count from 1 to 30, then "Giv 2 indblæsninger" and a big "Fortsæt" for the next round; Stop at any time.
+- **Rate:** 110 a minute, the middle of the range both sources give:
+  - Førstehjælpens ABC, p. 28: "Trykhastigheden skal være 100-120 tryk pr. minut (30 tryk skal tage mellem 15 og 18 sekunder)". At 110, 30 take 16.4 s.
+  - ERC BLS 2025 (DRG), p. 24: "ERC med at anbefale en trykhastighed i hjertemassagen på 100 til 120 tryk pr. minut".
+- **30:2:** the adult sequence from the handbook ("Til en voksen" on the page). Children: OPEN_QUESTIONS 29 stays open.
+- **How:** the 30 clicks of a round are made with Web Audio (no sound file) and scheduled on the audio clock, so the beat stays even. The count and the pulse follow a 40 ms timer, not animation frames, which stop when the page is hidden. The pulse is a growing circle, or a change of strength with reduced motion. The screen is kept awake while it runs where the browser offers it (Screen Wake Lock), and taken again on return. A short vibration at the breaths where supported (not on iPhone).
+- **Links:** "Brug HLR-metronomen" at the top of "Hjertemassage og kunstigt åndedræt" and "Hjertemassage til børn" (kept in the app, not the pack).
+- **Text:** our own UI words, with a line naming the sources of the rate.
+- **Still to check on the iPhone:** the sound with the ringer on and off, that the beat stays even, and that the screen stays on.
+
 ## D-066 — Tools in headed sections; the timers under "Timere"
 
 - **Date:** 2026-11-06

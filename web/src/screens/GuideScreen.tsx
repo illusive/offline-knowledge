@@ -2,11 +2,11 @@
 // handbook's photos next to the steps they show. Ends with the source (and pages) and the second
 // authority it was compared with.
 
-import { Check, ChevronRight, TriangleAlert } from 'lucide-react';
+import { Check, ChevronRight, HeartPulse, TriangleAlert } from 'lucide-react';
 import { useChecklist } from '../supplies/checklist';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { EmergencyCard } from '../components/EmergencyCard';
-import { BackButton, Card, MessageState, OriginalToggle, Page } from '../components/ui';
+import { BackButton, ButtonLink, Card, MessageState, OriginalToggle, Page } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { ChecklistItem, GuideBlock, GuideImage } from '../db/queries';
 import { useDbQuery } from '../db/useDbQuery';
@@ -15,6 +15,9 @@ import { goBack, hrefs } from '../router';
 import { GuideList } from '../components/GuideList';
 import { SaveButton } from '../bookmarks/BookmarkButton';
 import { usePageTitle } from '../lib/usePageTitle';
+
+// Guides that open with a link to a tool (D-067); kept in the app, not in the pack.
+const TOOL_FOR_GUIDE: Record<string, string> = { 'hlr-voksne': hrefs.cpr, 'hlr-boern': hrefs.cpr };
 
 export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: Strings }) {
   const { data: loaded, error } = useDbQuery(db, { type: 'guide', id });
@@ -65,6 +68,12 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
               </div>
             ))}
           </dl>
+        ) : null}
+        {TOOL_FOR_GUIDE[guide.id] ? (
+          <ButtonLink href={TOOL_FOR_GUIDE[guide.id]!} variant="onPage">
+            <HeartPulse aria-hidden="true" className="size-5" />
+            {s.cpr.useIt}
+          </ButtonLink>
         ) : null}
         {translated || rewritten ? (
           <OriginalToggle

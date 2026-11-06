@@ -23,6 +23,7 @@ describe('routes', () => {
       [hrefs.sun, { name: 'sun' }],
       [hrefs.powerClock, { name: 'powerClock' }],
       [hrefs.boil, { name: 'boil' }],
+      [hrefs.cpr, { name: 'cpr' }],
       [hrefs.settings, { name: 'settings' }],
       [hrefs.settingsSources, { name: 'settingsSources' }],
     ];
