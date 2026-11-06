@@ -673,6 +673,20 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-060 — Forråd: a search on the names
+
+- **Date:** 2026-11-06
+- **Decision (owner):** Forråd gets a search field just under the water card, above the two add buttons. It filters as you type.
+- **Matching:** the text may be anywhere in a thing's name (like SQL `%text%`), not only at the start. Case and accents are ignored with the same `fold()` as the other searches (å → a, é → e; æ and ø kept). Names only, not categories, sizes or products.
+- **While searching:**
+  - Only the categories with a match are shown, each with only its matches.
+  - "Nærmer sig udløb" steps aside, so a thing does not show twice. Its month is still red in its row.
+  - The links to the stock lists and the "Intet her endnu" lines step aside too.
+  - With no match there is one line: "Intet i forrådet matcher …".
+- **Field:** the shared `SearchField`, with the × inside the field that clears it, as on the other pages. It shows only once something is in the store.
+- **Kept text:** the query lives in `App` with the other pages' searches, so it stays while opening a thing's editor, Settings or the scanner and coming back.
+- **Alternatives:** a single flat list of results was rejected, because it would lose the category each thing lives in. A prefix match like the food search's short queries was rejected because the owner asked for a match anywhere in the name.
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

@@ -1,19 +1,19 @@
 // Forråd (D-046): an overview of what the household has. Water first (one figure against the stock
-// list's 3 litres per person per day; when it was last checked; a tap opens its sheet, D-054), then
-// the two ways to add (D-053), what expires soon and each category with its things and a link to
-// its stock list. Household and the backup are in Settings; the page itself stays short.
+// list's 3 litres per person per day; when it was last checked; a tap opens its sheet, D-054), a search
+// on the names (D-060), then the two ways to add (D-053), what expires soon and each category with its
+// things and a link to its stock list. Household and the backup are in Settings; the page itself stays short.
 // The sheets (D-049, D-054): one per thing (its count), the water, and adding by typing, which has
 // its own address (#/forraad/new) so the back button closes it.
 
 import { ChevronRight, Pencil, Plus, ScanBarcode, X } from 'lucide-react';
 import { useState } from 'react';
-import { Button, ButtonLink, Card, IconButton, MessageState, Page, Sheet, Stepper, TabHeader } from '../components/ui';
+import { Button, ButtonLink, Card, IconButton, MessageState, Page, SearchField, Sheet, Stepper, TabHeader } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { goBack, hrefs } from '../router';
 import { usePreferences } from '../settings/preferences';
 import { localeOf, formatMonth, formatVolume, fromUnit, thisMonth, toUnit, unitLabel } from '../i18n/format';
-import { DATES_GUIDE_ID, expiring, nextCheck, waterNeeded } from './calc';
+import { DATES_GUIDE_ID, expiring, matchName, nextCheck, waterNeeded } from './calc';
 import { AddSheet, ADD_TITLE_ID, type AddRoute } from './AddSheet';
 import { ItemSheet, itemSummary, SHEET_TITLE_ID } from './ItemSheet';
 import { useStockLists, type StockLists } from './recommendations';
@@ -22,11 +22,17 @@ import { usePageTitle } from '../lib/usePageTitle';
 
 const WATER_TITLE_ID = 'forraad-water-sheet-title';
 
-export function ForraadScreen({ db, adding, lang, s }: { db: DbClient; adding: AddRoute | null; lang: Lang; s: Strings }) {
+export function ForraadScreen(props: { db: DbClient; adding: AddRoute | null; lang: Lang; s: Strings; query: string; onQueryChange: (q: string) => void }) {
+  const { db, adding, lang, s, query, onQueryChange } = props;
   const t = s.forraad;
   const data = useForraad();
   const lists = useStockLists(db);
   const empty = data.items.length === 0;
+  // Searching (D-060): only the things whose name holds the text, in their categories; the expiry
+  // card and categories without a match step aside.
+  const q = query.trim();
+  const searching = q !== '';
+  const shown = searching ? matchName(data.items, q) : data.items;
   // The thing whose sheet is open (D-049) and what its counter shows: 0 means it is removed when
   // the sheet closes (D-054).
   const [open, setOpen] = useState<{ id: string; count: number } | null>(null);
@@ -61,6 +67,7 @@ export function ForraadScreen({ db, adding, lang, s }: { db: DbClient; adding: A
             setWaterOpen(true);
           }}
         />
+        {empty ? null : <SearchField id="forraad-search" value={query} onChange={onQueryChange} placeholder={t.searchPlaceholder} label={t.searchLabel} clearLabel={s.clearSearch} />}
         {/* Two ways to add (D-053): scanning one thing after another, or typing. They wrap at large text. */}
         <div className="flex flex-wrap gap-[8px]">
           <ButtonLink variant="primary" href={hrefs.forraadScan} className="min-w-[10rem] flex-1">
@@ -82,10 +89,18 @@ export function ForraadScreen({ db, adding, lang, s }: { db: DbClient; adding: A
               {t.seeAllRecommendations}
             </a>
           </>
+        ) : searching && shown.length === 0 ? (
+          <MessageState title={t.noMatches(q)} />
         ) : (
           <>
-            <Expiring items={data.items} lang={lang} s={s} onOpen={onOpen} />
-            {lists ? CATEGORIES.map((c) => <CategoryCard key={c} category={c} items={data.items} lists={lists} lang={lang} s={s} onOpen={onOpen} />) : <MessageState title={t.loading} />}
+            {searching ? null : <Expiring items={data.items} lang={lang} s={s} onOpen={onOpen} />}
+            {lists ? (
+              CATEGORIES.filter((c) => !searching || shown.some((i) => i.category === c)).map((c) => (
+                <CategoryCard key={c} category={c} items={shown} lists={lists} searching={searching} lang={lang} s={s} onOpen={onOpen} />
+              ))
+            ) : (
+              <MessageState title={t.loading} />
+            )}
           </>
         )}
       </div>
@@ -283,7 +298,9 @@ function Expiring({ items, lang, s, onOpen }: { items: StoreItem[]; lang: Lang; 
   );
 }
 
-function CategoryCard({ category, items: all, lists, lang, s, onOpen }: { category: Category; items: StoreItem[]; lists: StockLists; lang: Lang; s: Strings; onOpen: (id: string) => void }) {
+// While searching, the card shows only its matches, without the link to its stock list.
+function CategoryCard(props: { category: Category; items: StoreItem[]; lists: StockLists; searching: boolean; lang: Lang; s: Strings; onOpen: (id: string) => void }) {
+  const { category, items: all, lists, searching, lang, s, onOpen } = props;
   const t = s.forraad;
   const items = all.filter((i) => i.category === category).sort((a, b) => a.name.localeCompare(b.name, localeOf(lang)));
   const guideId = lists.recommendations.find((r) => r.category === category)?.guideId;
@@ -309,7 +326,7 @@ function CategoryCard({ category, items: all, lists, lang, s, onOpen }: { catego
           ))}
         </ul>
       )}
-      {guideId ? (
+      {guideId && !searching ? (
         <a href={hrefs.guide(guideId)} className="mt-1 flex min-h-11 items-center text-sm font-medium underline underline-offset-4">
           {t.seeRecommendations(lists.guideTitles[guideId]!)}
         </a>

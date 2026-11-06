@@ -3,7 +3,8 @@
 // (D-053, D-054: the category bar, suggestions that float over the form, linked stock-list line,
 // month dates, "Færdig"), the sheet on each thing (D-049, D-054: a counter saved at once, 0 removes
 // it on closing, edit, delete), the category changed on the editor, the water on Home, kept after a
-// reload, and a copy saved and restored as a file; offline. Settings opens from the gear.
+// reload, and a copy saved and restored as a file; offline. Settings opens from the gear. Searching
+// the names (D-060).
 
 import type { BrowserContext, Locator, Page } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
@@ -256,4 +257,60 @@ test('Forråd: a copy saved as a file brings the supplies back; offline', async 
 
   await page.locator('input[type="file"]').setInputFiles({ name: 'x.json', mimeType: 'application/json', buffer: Buffer.from('{"nope":1}') });
   await expect(page.getByText('Filen kunne ikke læses. Vælg en kopi, der er gemt fra stead.')).toBeVisible();
+});
+
+test('Forråd: the search under the water shows only the things whose name holds the text; offline', async ({ app: { page, context } }) => {
+  await openOffline(page, context);
+  // No search while the store is empty.
+  const search = page.getByRole('searchbox', { name: 'Søg i forrådet' });
+  await expect(search).toBeHidden();
+
+  await page.getByRole('link', { name: 'Tilføj', exact: true }).click();
+  const add = page.getByRole('dialog', { name: 'Tilføj til forrådet' });
+  const name = add.getByLabel('Navn');
+  await name.fill('Makrel i tomat');
+  await add.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(name).toHaveValue('');
+  await name.fill('Plaster');
+  await add.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(name).toHaveValue('');
+  await name.fill('Kiks');
+  await pickMonth(add, -1);
+  await add.getByRole('button', { name: 'Færdig' }).click();
+  await expect(add).toBeHidden();
+
+  const food = page.getByRole('region', { name: 'Mad' });
+  const care = page.getByRole('region', { name: 'Medicin og hygiejne' });
+  const dates = page.getByRole('region', { name: 'Nærmer sig udløb' });
+  await expect(dates).toBeVisible();
+
+  // Part of a name, in any case: only that thing, in its category; the rest step aside.
+  await search.fill('TOM');
+  await expect(row(food, 'Makrel i tomat')).toBeVisible();
+  await expect(row(food, 'Kiks')).toBeHidden();
+  await expect(care).toBeHidden();
+  await expect(dates).toBeHidden();
+  await expect(page.getByRole('region', { name: 'Lys, varme og andet' })).toBeHidden();
+  await expect(food.getByRole('link', { name: 'Se anbefalingerne: Mad til tre døgn' })).toBeHidden();
+
+  // The text stays while going to Settings and back.
+  await page.getByRole('link', { name: 'Indstillinger' }).click();
+  await page.getByRole('button', { name: 'Tilbage' }).click();
+  await expect(search).toHaveValue('TOM');
+  await expect(care).toBeHidden();
+
+  await search.fill('aste');
+  await expect(row(care, 'Plaster')).toBeVisible();
+  await expect(food).toBeHidden();
+
+  await search.fill('mel');
+  await expect(page.getByText('Intet i forrådet matcher "mel".')).toBeVisible();
+
+  // The × in the field clears it and brings everything back.
+  await page.getByRole('button', { name: 'Ryd søgning' }).click();
+  await expect(search).toHaveValue('');
+  await expect(row(food, 'Makrel i tomat')).toBeVisible();
+  await expect(row(food, 'Kiks')).toBeVisible();
+  await expect(row(care, 'Plaster')).toBeVisible();
+  await expect(dates).toBeVisible();
 });

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { formatMonth, formatVolume } from '../i18n/format';
-import { addMonths, expiring, monthsUntil, nextCheck, waterNeeded, type Recommendation } from './calc';
+import { addMonths, expiring, matchName, monthsUntil, nextCheck, waterNeeded, type Recommendation } from './calc';
 import { applyBackup, makeBackup, readBackup } from './backupFile';
 import { acceptCode, cropFor, parseProduct, SAME_CODE_PAUSE_MS, SCAN_FRAME } from './barcode';
 import { matchRecommendation, suggest } from './recommendations';
@@ -280,5 +280,29 @@ describe('Forråd barcode lookup', () => {
     expect(acceptCode('5701234567899', last, 10_000 + SAME_CODE_PAUSE_MS - 1)).toBe(false);
     expect(acceptCode('5701234567899', last, 10_000 + SAME_CODE_PAUSE_MS)).toBe(true);
     expect(acceptCode('4000000000000', last, 10_001)).toBe(true);
+  });
+});
+
+describe('Forråd search (D-060)', () => {
+  const items = [item({ id: 'a', name: 'Basmatiris' }), item({ id: 'b', name: 'Café-kaffe' }), item({ id: 'c', name: 'Plaster', category: 'medicine' }), item({ id: 'd', name: 'Rødbeder' })];
+  const ids = (q: string) => matchName(items, q).map((i) => i.id);
+
+  it('finds the query anywhere in the name, ignoring case', () => {
+    expect(ids('ris')).toEqual(['a']);
+    expect(ids('MATI')).toEqual(['a']);
+    expect(ids('aste')).toEqual(['c']);
+  });
+
+  it('ignores accents but keeps æ and ø', () => {
+    expect(ids('cafe')).toEqual(['b']);
+    expect(ids('rød')).toEqual(['d']);
+    expect(ids('rod')).toEqual([]);
+  });
+
+  it('keeps everything for an empty query and nothing when no name matches', () => {
+    expect(ids('')).toEqual(['a', 'b', 'c', 'd']);
+    expect(ids('   ')).toEqual(['a', 'b', 'c', 'd']);
+    expect(ids('  ris ')).toEqual(['a']);
+    expect(ids('mel')).toEqual([]);
   });
 });

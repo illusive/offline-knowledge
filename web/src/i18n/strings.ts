@@ -235,6 +235,9 @@ export interface Strings {
     ok: string;
     checkSource: string;
     emptyStore: string;
+    searchPlaceholder: string;
+    searchLabel: string;
+    noMatches: (query: string) => string;
     seeAllRecommendations: string;
     seeRecommendations: (title: string) => string;
     waterLitres: (unit: string) => string;
@@ -707,6 +710,9 @@ export const strings: Record<Lang, Strings> = {
       ok: 'OK',
       checkSource: 'Tjek forrådet hvert halve år: se datoerne, og skift det ud, der skal skiftes.',
       emptyStore: 'Der er intet i forrådet endnu.',
+      searchPlaceholder: 'Søg i forrådet',
+      searchLabel: 'Søg i forrådet',
+      noMatches: (q) => `Intet i forrådet matcher "${q}".`,
       seeAllRecommendations: 'Se, hvad myndighederne anbefaler',
       seeRecommendations: (title) => `Se anbefalingerne: ${title}`,
       waterLitres: (unit) => `${unit === 'gal' ? 'Gallon' : 'Liter'} på lager`,
@@ -1225,6 +1231,9 @@ export const strings: Record<Lang, Strings> = {
       ok: 'OK',
       checkSource: 'Check your supplies every six months: look at the dates and replace what needs replacing.',
       emptyStore: 'There is nothing in your supplies yet.',
+      searchPlaceholder: 'Search your supplies',
+      searchLabel: 'Search your supplies',
+      noMatches: (q) => `Nothing in your supplies matches “${q}”.`,
       seeAllRecommendations: 'See what the authorities recommend',
       seeRecommendations: (title) => `See the recommendations: ${title}`,
       waterLitres: (unit) => `${unit === 'gal' ? 'Gallons' : 'Litres'} stored`,

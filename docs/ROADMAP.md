@@ -58,6 +58,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 
   **Still to check on the iPhone:** the timer's sound and vibration, and the sun and moon outdoors.
 - [x] "Gode at kunne" (D-059, 2026-11-06): seven guides (fire, knots with drawings, washing, catching water, cooking, phone, hygiene), content 0.17.0.
+- [x] Forråd search (D-060, 2026-11-06): a field under the water card that filters the things by any part of their name, with × to clear.
 
   **To review:** all seven against "Vis original" (`LANGUAGE_REVIEW.md`).
 - [x] Forråd (D-046, D-047, 2026-11-05): a tab replacing Settings, which moved to a gear at the top right. It holds:

@@ -1,6 +1,7 @@
 // Forråd (D-046) arithmetic, kept pure for tests: the water target, months to the next check and
 // to expiry, and the unit shown.
 
+import { fold } from '../food/search';
 import type { Category, Household, StoreItem } from './store';
 
 // The stock lists' own grouping: water is its own list, shown only in the water card.
@@ -82,4 +83,12 @@ export function expiring(items: StoreItem[], currentMonth: string, withinMonths 
       return m >= 0 && m <= withinMonths;
     }),
   };
+}
+
+// The things whose name holds the query anywhere (D-060), ignoring case and accents as the other
+// searches do (å -> a, é -> e; æ and ø kept). An empty query keeps everything.
+export function matchName(items: StoreItem[], query: string): StoreItem[] {
+  const q = fold(query.trim());
+  if (q === '') return items;
+  return items.filter((i) => fold(i.name).includes(q));
 }

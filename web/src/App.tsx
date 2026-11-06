@@ -34,7 +34,7 @@ import { ToolsScreen } from './screens/ToolsScreen';
 import { StorageScreen } from './screens/StorageScreen';
 import { useAllFoods } from './food/useFoodSearch';
 
-type SearchPage = 'home' | 'storage' | 'firstAid' | 'growing' | 'prepare';
+type SearchPage = 'home' | 'storage' | 'firstAid' | 'growing' | 'prepare' | 'forraad';
 
 // Every route has a page: the compiler stops a new route that is not handled here.
 function unreachable(route: never): never {
@@ -51,7 +51,7 @@ export function App() {
   const [pack, setPack] = useState<PackInfo | null>(null);
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
   // What was typed in each page's search, kept while moving around the app.
-  const [queries, setQueries] = useState<Record<SearchPage, string>>({ home: '', storage: '', firstAid: '', growing: '', prepare: '' });
+  const [queries, setQueries] = useState<Record<SearchPage, string>>({ home: '', storage: '', firstAid: '', growing: '', prepare: '', forraad: '' });
   const search = (page: SearchPage) => ({ query: queries[page], onQueryChange: (q: string) => setQueries((all) => ({ ...all, [page]: q })) });
   const offlineReady = useOfflineReady(status === 'ready');
   // Settings is not a tab (D-046): the tab bar keeps the tab it was opened from.
@@ -141,7 +141,7 @@ export function App() {
       case 'forraadNew':
         // Adding by typing is a sheet over the Forråd page (D-054); its address keeps the back button
         // and the category's + working.
-        content = <ForraadScreen db={db} adding={route.name === 'forraadNew' ? route : null} lang={lang} s={s} />;
+        content = <ForraadScreen db={db} adding={route.name === 'forraadNew' ? route : null} lang={lang} s={s} {...search('forraad')} />;
         break;
       case 'forraadScan':
         content = <ScanScreen db={db} lang={lang} s={s} />;
