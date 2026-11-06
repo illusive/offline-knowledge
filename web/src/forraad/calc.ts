@@ -39,6 +39,10 @@ export const WATER_PER_PERSON_ID = 'vand-3-liter';
 // "Set a reminder every six months to check expiry dates" (uk-be-ready-checklist).
 export const CHECK_EVERY_MONTHS = 6;
 
+// The guide on dates (D-054): "bedst før" is often fine after the date; look, smell, taste. Linked
+// from the things that expire soon.
+export const DATES_GUIDE_ID = 'naar-datoen-er-overskredet';
+
 // Things with a best-before month this many months ahead (or earlier) are shown at the top.
 export const EXPIRING_WITHIN_MONTHS = 1;
 

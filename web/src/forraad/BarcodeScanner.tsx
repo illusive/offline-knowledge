@@ -4,11 +4,15 @@
 // camera is asked for only here. It keeps running while the scanner is open, and stops when it
 // closes or the app goes to the background. While `paused` (a sheet is open), the picture freezes
 // on the scanned pack and nothing is read; afterwards the same code is ignored for a moment.
+// Reading (D-055): the camera is asked for a sharp picture (1080p) and continuous focus where the
+// browser offers it, and only the part under the frame is read, at full resolution. A line moves
+// in the frame while it looks. When the reader finds a barcode but cannot decode it (a wrong check
+// digit, a blurry or damaged code), the frame turns amber and the screen says so.
 
-import { BarcodeDetector, prepareZXingModule } from 'barcode-detector/ponyfill';
+import { prepareZXingModule, readBarcodes, type ReaderOptions } from 'zxing-wasm/reader';
 import wasmUrl from 'zxing-wasm/reader/zxing_reader.wasm?url';
 import { useEffect, useRef, useState } from 'react';
-import { acceptCode } from './barcode';
+import { acceptCode, cropFor, SCAN_FRAME } from './barcode';
 
 prepareZXingModule({
   overrides: {
@@ -16,9 +20,20 @@ prepareZXingModule({
   },
 });
 
-const FORMATS = ['ean_13', 'ean_8', 'upc_a', 'upc_e'] as const;
+const OPTIONS: ReaderOptions = {
+  formats: ['EAN13', 'EAN8', 'UPCA', 'UPCE'],
+  tryHarder: true,
+  tryRotate: true,
+  maxNumberOfSymbols: 1,
+  returnErrors: true, // a barcode seen but not decoded comes back with isValid: false
+};
+const TICK_MS = 200;
+const STRUGGLE_HOLD_MS = 1500; // "seen but not read" stays this long after the last such frame
 
-export type CameraState = 'starting' | 'scanning' | 'denied' | 'unavailable';
+// 'struggling': scanning, and a barcode is seen in the frame but cannot be read.
+export type CameraState = 'starting' | 'scanning' | 'struggling' | 'denied' | 'unavailable';
+
+const pct = (n: number) => `${n * 100}%`;
 
 export default function BarcodeScanner({ paused, onCode, onState }: { paused: boolean; onCode: (code: string) => void; onState: (state: CameraState) => void }) {
   const video = useRef<HTMLVideoElement>(null);
@@ -47,9 +62,13 @@ export default function BarcodeScanner({ paused, onCode, onState }: { paused: bo
     let stream: MediaStream | null = null;
     let timer = 0;
     let live = true;
-    const detector = new BarcodeDetector({ formats: [...FORMATS] });
+    let current: CameraState = 'starting';
+    let seenAt = 0; // when a barcode was last seen but not read
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
     const set = (next: CameraState) => {
-      if (!live) return;
+      if (!live || next === current) return;
+      current = next;
       setState(next);
       tell.current(next);
     };
@@ -58,24 +77,43 @@ export default function BarcodeScanner({ paused, onCode, onState }: { paused: bo
       stream = null;
     };
 
+    // One frame: the part under the frame, read at the camera's resolution.
+    const readFrame = async (v: HTMLVideoElement) => {
+      if (!ctx || !v.videoWidth || !v.clientWidth) return;
+      const r = cropFor(v.videoWidth, v.videoHeight, v.clientWidth, v.clientHeight);
+      if (r.w < 1 || r.h < 1) return;
+      if (canvas.width !== r.w || canvas.height !== r.h) {
+        canvas.width = r.w;
+        canvas.height = r.h;
+      }
+      ctx.drawImage(v, r.x, r.y, r.w, r.h, 0, 0, r.w, r.h);
+      const results = await readBarcodes(ctx.getImageData(0, 0, r.w, r.h), OPTIONS);
+      const now = Date.now();
+      if (!live || pausedNow.current) return;
+      const code = results.find((x) => x.isValid && x.text)?.text;
+      if (code && acceptCode(code, last.current, now)) {
+        last.current = { code, at: now };
+        seenAt = 0;
+        set('scanning');
+        v.pause(); // the picture stays on the pack until the sheet closes
+        navigator.vibrate?.(30);
+        report.current(code);
+        return;
+      }
+      if (!code && results.some((x) => !x.isValid)) seenAt = now;
+      set(seenAt && now - seenAt < STRUGGLE_HOLD_MS ? 'struggling' : 'scanning');
+    };
+
+    // The next frame is read only after this one is done, so slow phones never queue up reads.
     const scan = async () => {
       if (!live) return;
       const v = video.current;
       try {
-        if (v && stream && !pausedNow.current && v.readyState >= 2) {
-          const [code] = await detector.detect(v);
-          const now = Date.now();
-          if (live && !pausedNow.current && code?.rawValue && acceptCode(code.rawValue, last.current, now)) {
-            last.current = { code: code.rawValue, at: now };
-            v.pause(); // the picture stays on the pack until the sheet closes
-            navigator.vibrate?.(30);
-            report.current(code.rawValue);
-          }
-        }
+        if (v && stream && !pausedNow.current && v.readyState >= 2) await readFrame(v);
       } catch {
         // a frame that could not be read; try the next one
       }
-      timer = window.setTimeout(() => void scan(), 200);
+      if (live) timer = window.setTimeout(() => void scan(), TICK_MS);
     };
 
     let starting = false;
@@ -85,7 +123,7 @@ export default function BarcodeScanner({ paused, onCode, onState }: { paused: bo
       starting = true;
       let got: MediaStream;
       try {
-        got = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' }, audio: false });
+        got = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment', width: { ideal: 1920 }, height: { ideal: 1080 } }, audio: false });
       } catch (error) {
         set((error as Error).name === 'NotAllowedError' ? 'denied' : 'unavailable');
         return;
@@ -97,6 +135,7 @@ export default function BarcodeScanner({ paused, onCode, onState }: { paused: bo
         return;
       }
       stream = got;
+      await keepFocusing(got);
       video.current.srcObject = stream;
       if (!pausedNow.current) await video.current.play().catch(() => undefined);
       set('scanning');
@@ -119,12 +158,32 @@ export default function BarcodeScanner({ paused, onCode, onState }: { paused: bo
     };
   }, []);
 
+  const looking = state === 'scanning' || state === 'struggling';
   return (
     <>
       <video ref={video} playsInline muted className="absolute inset-0 size-full object-cover" aria-hidden="true" />
-      {state === 'scanning' ? (
-        <div aria-hidden="true" className={`absolute inset-x-[12%] top-1/2 h-[28%] -translate-y-1/2 rounded-2xl border-2 border-accent ${paused ? 'bg-accent/20' : ''}`} />
+      {looking ? (
+        <div
+          aria-hidden="true"
+          data-state={paused ? 'paused' : state}
+          className={`scan-frame absolute overflow-hidden rounded-2xl border-2 ${state === 'struggling' && !paused ? 'border-amber-400' : 'border-accent'} ${paused ? 'bg-accent/20' : ''}`}
+          style={{ left: pct(SCAN_FRAME.x), top: pct(SCAN_FRAME.y), width: pct(SCAN_FRAME.w), height: pct(SCAN_FRAME.h) }}
+        >
+          {paused ? null : <div className={`scan-line absolute inset-x-[6%] h-0.5 rounded-full ${state === 'struggling' ? 'bg-amber-400' : 'bg-accent'}`} />}
+        </div>
       ) : null}
     </>
   );
+}
+
+// Continuous focus where the browser lets the page ask for it; ignored elsewhere.
+async function keepFocusing(stream: MediaStream) {
+  const track = stream.getVideoTracks()[0];
+  const modes = (track?.getCapabilities?.() as { focusMode?: string[] } | undefined)?.focusMode;
+  if (!track || !modes?.includes('continuous')) return;
+  try {
+    await track.applyConstraints({ advanced: [{ focusMode: 'continuous' } as MediaTrackConstraintSet] });
+  } catch {
+    // the camera keeps its own focus
+  }
 }

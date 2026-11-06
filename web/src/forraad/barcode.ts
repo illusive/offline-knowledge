@@ -14,6 +14,28 @@ export type FoundProduct = Product;
 
 export const isBarcode = (code: string) => /^\d{8,14}$/.test(code);
 
+// The frame on the camera picture, as shares of the camera view (D-055): only what is inside it
+// (with a margin) is read, at the camera's full resolution.
+export const SCAN_FRAME = { x: 0.12, y: 0.36, w: 0.76, h: 0.28 };
+const FRAME_MARGIN = 0.15; // of the frame's size, on each side
+
+// The part of the video under a box in the view, in video pixels. The video fills the view like
+// CSS object-fit: cover (scaled up until both sides are covered, centred, the rest cut off).
+export function cropFor(videoW: number, videoH: number, viewW: number, viewH: number, box = SCAN_FRAME, margin = FRAME_MARGIN): { x: number; y: number; w: number; h: number } {
+  const scale = Math.max(viewW / videoW, viewH / videoH);
+  const offsetX = (viewW - videoW * scale) / 2;
+  const offsetY = (viewH - videoH * scale) / 2;
+  const left = (box.x - box.w * margin) * viewW;
+  const top = (box.y - box.h * margin) * viewH;
+  const right = (box.x + box.w * (1 + margin)) * viewW;
+  const bottom = (box.y + box.h * (1 + margin)) * viewH;
+  const toX = (px: number) => Math.min(videoW, Math.max(0, (px - offsetX) / scale));
+  const toY = (py: number) => Math.min(videoH, Math.max(0, (py - offsetY) / scale));
+  const x = Math.round(toX(left));
+  const y = Math.round(toY(top));
+  return { x, y, w: Math.round(toX(right)) - x, h: Math.round(toY(bottom)) - y };
+}
+
 // Scanning goes on until the user is done (D-053), so the pack just added is usually still in
 // front of the camera: its code is ignored for a moment after the camera resumes.
 export const SAME_CODE_PAUSE_MS = 3000;

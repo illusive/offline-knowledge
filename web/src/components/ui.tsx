@@ -3,8 +3,10 @@
 // in px so large text does not squeeze the content column.
 
 import { ArrowLeft, Check, ChevronRight, Search, Settings, X, type LucideIcon } from 'lucide-react';
+import { decimalForInput, parseCounter } from '../i18n/format';
+import type { Lang } from '../i18n/strings';
 import { goBack, hrefs } from '../router';
-import { useEffect, useRef, type ButtonHTMLAttributes, type ElementType, type HTMLAttributes, type MouseEvent, type ReactNode, type Ref } from 'react';
+import { useEffect, useId, useReducer, useRef, useState, type ButtonHTMLAttributes, type ElementType, type HTMLAttributes, type MouseEvent, type ReactNode, type Ref } from 'react';
 
 // A rounded surface. A <section> unless `as` says otherwise (a form, a div).
 export function Card({ children, className = '', as: Tag = 'section', ...rest }: { children: ReactNode; className?: string; as?: ElementType } & HTMLAttributes<HTMLElement>) {
@@ -16,14 +18,16 @@ export function Card({ children, className = '', as: Tag = 'section', ...rest }:
 }
 
 // Buttons: one shape, a few looks. `primary` is the page's main action (lime), `ink` a strong
-// second action, `secondary` everything else on a card, `onPage` the same on the page background.
+// second action, `secondary` everything else on a card, `onPage` the same on the page background,
+// `danger` (red) deletes.
 // ButtonLink is a link that looks the same.
-type ButtonVariant = 'primary' | 'ink' | 'secondary' | 'onPage';
+type ButtonVariant = 'primary' | 'ink' | 'secondary' | 'onPage' | 'danger';
 const BUTTON: Record<ButtonVariant, string> = {
   primary: 'min-h-12 bg-accent px-[24px] font-semibold text-on-accent',
   ink: 'min-h-12 bg-ink px-[24px] font-medium text-on-ink',
   secondary: 'min-h-11 bg-background px-[18px] font-medium',
   onPage: 'min-h-11 bg-surface px-[18px] text-sm font-medium',
+  danger: 'min-h-12 bg-danger px-[24px] font-semibold text-on-danger', // deleting (D-054)
 };
 export const buttonClass = (variant: ButtonVariant = 'secondary', className = '') =>
   `flex items-center justify-center gap-[8px] rounded-full text-center disabled:opacity-40 ${BUTTON[variant]} ${className}`;
@@ -237,11 +241,12 @@ export function SubNav<T extends string>(props: {
 }
 
 // A choice between a few options, shown as a segmented pill row (radio buttons underneath).
-export function Choice<T extends string>(props: { name: string; legend: string; value: T; onChange: (value: T) => void; options: { value: T; label: string; lang?: string }[] }) {
-  const { name, legend, value, onChange, options } = props;
+// `legendHidden` keeps the legend for screen readers only, e.g. Forråd's category bar (D-054).
+export function Choice<T extends string>(props: { name: string; legend: string; value: T; onChange: (value: T) => void; options: { value: T; label: string; lang?: string }[]; legendHidden?: boolean }) {
+  const { name, legend, value, onChange, options, legendHidden } = props;
   return (
     <fieldset>
-      <legend className="mb-2 font-semibold">{legend}</legend>
+      <legend className={legendHidden ? 'sr-only' : 'mb-2 font-semibold'}>{legend}</legend>
       <div className="flex flex-wrap gap-[2px] rounded-[24px] bg-background p-[4px]">
         {options.map((o) => (
           <label
@@ -288,27 +293,63 @@ export function TabHeader({ title, settingsLabel, children }: { title: string; s
 // a stray tap would lose what was entered). It sits above the tab bar (the top layer). On opening,
 // focus goes to the element marked `data-autofocus`, if any, rather than to the first field, whose
 // keyboard would cover a sheet that is already filled in (D-053).
+// It slides up when opened and back down when closed (D-054, index.css). While it slides down it
+// keeps showing what it showed, even if the parent has already let go of it (a deleted thing); the
+// content is dropped once it is closed, so the next opening starts afresh.
 export function Sheet({ open, onClose, labelledBy, dismissOnBackdrop = true, children }: { open: boolean; onClose: () => void; labelledBy: string; dismissOnBackdrop?: boolean; children: ReactNode }) {
   const ref = useRef<HTMLDialogElement>(null);
+  const [, rerender] = useReducer((n: number) => n + 1, 0);
+  const last = useRef<ReactNode>(null);
+  if (open) last.current = children;
+
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
-    if (open && !dialog.open) {
-      dialog.showModal();
-      dialog.querySelector<HTMLElement>('[data-autofocus]')?.focus();
-    } else if (!open && dialog.open) dialog.close();
+    if (open) {
+      delete dialog.dataset.closing;
+      if (!dialog.open) {
+        dialog.showModal();
+        dialog.querySelector<HTMLElement>('[data-autofocus]')?.focus();
+      }
+      return;
+    }
+    if (!dialog.open) return;
+    const finish = () => {
+      delete dialog.dataset.closing;
+      dialog.close();
+      last.current = null;
+      rerender();
+    };
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      finish();
+      return;
+    }
+    dialog.dataset.closing = '';
+    const onEnd = (e: AnimationEvent) => {
+      if (e.target === dialog) finish();
+    };
+    dialog.addEventListener('animationend', onEnd);
+    const timer = window.setTimeout(finish, 400); // in case the animation does not run
+    return () => {
+      dialog.removeEventListener('animationend', onEnd);
+      window.clearTimeout(timer);
+    };
   }, [open]);
+
   return (
     <dialog
       ref={ref}
       aria-labelledby={labelledBy}
-      onClose={onClose}
+      onCancel={(e) => {
+        e.preventDefault(); // Escape: slide down like any other closing
+        onClose();
+      }}
       onClick={(e) => {
         if (dismissOnBackdrop && e.target === e.currentTarget) onClose(); // the backdrop, not the content
       }}
-      className="inset-x-0 top-auto bottom-0 m-0 mx-auto max-h-[85dvh] w-full max-w-2xl overflow-y-auto rounded-t-[28px] border-t border-border bg-background p-0 text-text shadow-2xl backdrop:bg-black/50"
+      className="sheet inset-x-0 top-auto bottom-0 m-0 mx-auto max-h-[85dvh] w-full max-w-2xl overflow-y-auto rounded-t-[28px] border-t border-border bg-background p-0 text-text shadow-2xl backdrop:bg-black/50"
     >
-      <div className="px-[16px] pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">{open ? children : null}</div>
+      <div className="px-[16px] pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">{open ? children : last.current}</div>
     </dialog>
   );
 }
@@ -337,21 +378,43 @@ export function Toast({ message, onHide }: { message: ToastMessage | null; onHid
   );
 }
 
-// A whole number with − and + buttons (44 pt each), e.g. how many people or how many of a thing.
-export function Stepper({ label, value, min, max, onChange }: { label: string; value: number; min: number; max: number; onChange: (n: number) => void }) {
+// A number with − and + buttons (44 pt each), e.g. how many people or how many of a thing. The
+// number is a field too (D-054): tap it and type. A typed number is used as soon as it is a valid
+// one within min..max; leaving the field shows the value in use again. `decimal` allows a comma
+// (water), formatted for `lang`.
+export function Stepper({ label, value, min, max, onChange, decimal }: { label: string; value: number; min: number; max: number; onChange: (n: number) => void; decimal?: { lang: Lang } }) {
+  const [text, setText] = useState<string | null>(null); // what is typed, while the field has focus
+  const id = useId();
+  const shown = decimal ? decimalForInput(value, decimal.lang) : String(value);
+  const step = (by: number) => {
+    setText(null);
+    onChange(Math.min(max, Math.max(min, Math.round((value + by) * 100) / 100)));
+  };
   return (
     <div className="flex items-center justify-between gap-[12px]">
-      <span className="font-semibold" id={`stepper-${label}`}>
+      <span className="font-semibold" id={id}>
         {label}
       </span>
-      <span className="flex items-center gap-[4px]" role="group" aria-labelledby={`stepper-${label}`}>
-        <button type="button" onClick={() => onChange(Math.max(min, value - 1))} disabled={value <= min} aria-label={`${label} −1`} className="grid size-11 place-items-center rounded-full bg-background text-xl disabled:opacity-40">
+      <span className="flex items-center gap-[4px]" role="group" aria-labelledby={id}>
+        <button type="button" onClick={() => step(-1)} disabled={value <= min} aria-label={`${label} −1`} className="grid size-11 place-items-center rounded-full bg-background text-xl disabled:opacity-40">
           −
         </button>
-        <output className="min-w-10 text-center text-lg tabular-nums" aria-live="polite">
-          {value}
-        </output>
-        <button type="button" onClick={() => onChange(Math.min(max, value + 1))} disabled={value >= max} aria-label={`${label} +1`} className="grid size-11 place-items-center rounded-full bg-background text-xl disabled:opacity-40">
+        <input
+          value={text ?? shown}
+          onChange={(e) => {
+            setText(e.target.value);
+            const n = parseCounter(e.target.value, min, max, Boolean(decimal));
+            if (n !== null && n !== value) onChange(n);
+          }}
+          onFocus={(e) => e.target.select()}
+          onBlur={() => setText(null)}
+          aria-label={label}
+          inputMode={decimal ? 'decimal' : 'numeric'}
+          autoComplete="off"
+          enterKeyHint="done"
+          className="h-11 w-16 rounded-xl border border-border bg-background text-center text-lg tabular-nums"
+        />
+        <button type="button" onClick={() => step(1)} disabled={value >= max} aria-label={`${label} +1`} className="grid size-11 place-items-center rounded-full bg-background text-xl disabled:opacity-40">
           +
         </button>
       </span>

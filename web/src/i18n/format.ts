@@ -69,3 +69,12 @@ export function parseDecimal(text: string): number | null {
   const value = Number(text.trim().replace(',', '.'));
   return text.trim() !== '' && Number.isFinite(value) ? value : null;
 }
+
+// A number typed into a counter (Stepper, D-054): a whole number, or with `decimal` a comma or point
+// number, within min..max; null while it is not one yet (empty, "1,", too big).
+export function parseCounter(text: string, min: number, max: number, decimal = false): number | null {
+  const t = text.trim();
+  if (!(decimal ? /^\d+([.,]\d*)?$/ : /^\d+$/).test(t)) return null;
+  const value = decimal ? parseDecimal(t) : Number(t);
+  return value !== null && value >= min && value <= max ? value : null;
+}

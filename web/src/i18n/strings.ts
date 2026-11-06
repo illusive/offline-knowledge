@@ -136,18 +136,17 @@ export interface Strings {
     water: string;
     waterOf: (have: string, need: string) => string;
     waterHave: (have: string) => string;
+    waterOfShort: (need: string) => string;
     lastChecked: (date: string) => string;
     neverChecked: string;
     checkAgain: (date: string) => string;
     checkDue: (date: string) => string;
     checkedToday: string;
     checkSource: string;
-    waterEdit: string;
     emptyStore: string;
     seeAllRecommendations: string;
     seeRecommendations: (title: string) => string;
     waterLitres: (unit: string) => string;
-    waterCheckedLabel: string;
     people: string;
     petLitres: string;
     petLitresHelp: string;
@@ -158,7 +157,9 @@ export interface Strings {
     expired: (date: string) => string;
     expires: (date: string) => string;
     categories: Record<'food' | 'medicine' | 'other', string>;
+    categoryShort: Record<'food' | 'medicine' | 'other', string>;
     categoryEmpty: string;
+    datesGuide: string;
     add: string;
     addIn: (category: string) => string;
     editTitle: string;
@@ -196,23 +197,13 @@ export interface Strings {
     cancel: string;
     remove: string;
     removeConfirm: (name: string) => string;
-    takeOut: string;
-    stockMore: string;
     editDetails: string;
-    removeAll: string;
-    takeN: (n: number) => string;
-    takeAll: string;
-    addN: (n: number) => string;
-    bestBeforeNow: string;
-    bestBeforeNowHelp: string;
     bestBeforeNew: string;
     bestBeforeNewHelp: string;
-    takeLastConfirm: (name: string) => string;
-    takeLastNote: string;
-    tookOut: (name: string, n: number, left: number) => string;
-    tookAll: (name: string) => string;
     stocked: (name: string, n: number, total: number) => string;
     deleted: (name: string) => string;
+    removeOnClose: string;
+    waterChecked: string;
     close: string;
     countLabel: (n: number) => string;
     countsAs: (name: string) => string;
@@ -222,6 +213,7 @@ export interface Strings {
     scan: string;
     scanHelp: string;
     scanStarting: string;
+    scanSeenNotRead: string;
     scanDenied: string;
     scanUnavailable: string;
     lookingUp: string;
@@ -514,32 +506,33 @@ export const strings: Record<Lang, Strings> = {
       water: 'Drikkevand',
       waterOf: (have, need) => `${have} af ${need}`,
       waterHave: (have) => `${have} på lager`,
+      waterOfShort: (need) => `af ${need}`,
       lastChecked: (date) => `Sidst tjekket ${date}`,
       neverChecked: 'Ikke tjekket endnu',
       checkAgain: (date) => `Tjek igen i ${date}`,
       checkDue: (date) => `Tid til at tjekke vandet (siden ${date})`,
       checkedToday: 'Tjekket i dag',
       checkSource: 'Tjek forrådet hvert halve år: se datoerne, og skift det ud, der skal skiftes.',
-      waterEdit: 'Ret vand',
       emptyStore: 'Der er intet i forrådet endnu.',
       seeAllRecommendations: 'Se, hvad myndighederne anbefaler',
       seeRecommendations: (title) => `Se anbefalingerne: ${title}`,
       waterLitres: (unit) => `${unit === 'gal' ? 'Gallon' : 'Liter'} på lager`,
-      waterCheckedLabel: 'Sidst tjekket',
       people: 'Personer',
       petLitres: 'Vand til dyr pr. døgn',
       petLitresHelp: 'Kilderne siger ikke, hvor meget dyr skal have. Skriv det, dine dyr drikker på et døgn.',
       targetDays: 'Forråd til',
       days: (n) => `${n} døgn`,
       targetHelp: 'Myndighederne anbefaler mindst 3 døgn.',
-      expiringTitle: 'Holdbarhed',
+      expiringTitle: 'Nærmer sig udløb',
       expired: (date) => `Udløbet ${date}`,
       expires: (date) => `Bedst før ${date}`,
       categories: { food: 'Mad', medicine: 'Medicin og hygiejne', other: 'Lys, varme og andet' },
+      categoryShort: { food: 'Mad', medicine: 'Pleje', other: 'Andet' },
       categoryEmpty: 'Intet her endnu.',
+      datesGuide: 'Når datoen er overskredet',
       add: 'Tilføj',
       addIn: (category) => `Tilføj til ${category.toLowerCase()}`,
-      editTitle: 'Ret',
+      editTitle: 'Redigér',
       addTitle: 'Tilføj til forrådet',
       name: 'Navn',
       namePlaceholder: 'Fx makrel i tomat',
@@ -564,7 +557,7 @@ export const strings: Record<Lang, Strings> = {
       sizeOther: 'Andet',
       units: { g: 'g', kg: 'kg', ml: 'ml', cl: 'cl', dl: 'dl', l: 'l', stk: 'stk.' },
       done: 'Færdig',
-      typeAdd: 'Skriv selv',
+      typeAdd: 'Tilføj',
       addedTo: (name, category) => `${name} er tilføjet under ${category}`,
       addedCount: (n) => `${n} tilføjet`,
       alreadyHave: 'Den er allerede i forrådet. De nye lægges til.',
@@ -574,23 +567,13 @@ export const strings: Record<Lang, Strings> = {
       cancel: 'Annuller',
       remove: 'Slet',
       removeConfirm: (name) => `Vil du slette ${name}?`,
-      takeOut: 'Tag ud',
-      stockMore: 'Læg flere til',
-      editDetails: 'Ret navn, kategori og størrelse',
-      removeAll: 'Slet alt',
-      takeN: (n) => `Tag ${n} ud`,
-      takeAll: 'Tag alle ud',
-      addN: (n) => `Læg ${n} til`,
-      bestBeforeNow: 'Bedst før nu',
-      bestBeforeNowHelp: 'Tog du den, der udløber først? Så vælg datoen på den næste.',
+      editDetails: 'Redigér',
       bestBeforeNew: 'Bedst før på de nye',
       bestBeforeNewHelp: 'Udløber de nye før dem, du har, gemmes deres dato.',
-      takeLastConfirm: (name) => `Det er de sidste. Vil du slette ${name} fra forrådet?`,
-      takeLastNote: 'Det er de sidste, så tingen slettes fra forrådet.',
-      tookOut: (name, n, left) => `${name}: ${n} stk. taget ud, ${left} stk. tilbage.`,
-      tookAll: (name) => `${name} er taget ud af forrådet.`,
       stocked: (name, n, total) => `${name}: ${n} stk. lagt til, nu ${total} stk.`,
       deleted: (name) => `${name} er slettet.`,
+      removeOnClose: 'Den fjernes fra forrådet, når du lukker.',
+      waterChecked: 'Vandet er tjekket.',
       close: 'Luk',
       countLabel: (n) => `${n} stk.`,
       countsAs: (name) => `Tæller som: ${name}`,
@@ -600,6 +583,7 @@ export const strings: Record<Lang, Strings> = {
       scan: 'Scan varer',
       scanHelp: 'Hold stregkoden inden for rammen.',
       scanStarting: 'Starter kameraet …',
+      scanSeenNotRead: 'Stregkoden ses, men kan ikke læses. Hold telefonen stille, lidt længere væk, og sørg for lys.',
       scanDenied: 'Appen fik ikke lov til at bruge kameraet. Du kan give lov i telefonens indstillinger – eller skrive navnet i stedet.',
       scanUnavailable: 'Kameraet kan ikke bruges her. Skriv navnet i stedet.',
       lookingUp: 'Slår varen op …',
@@ -938,28 +922,29 @@ export const strings: Record<Lang, Strings> = {
       water: 'Drinking water',
       waterOf: (have, need) => `${have} of ${need}`,
       waterHave: (have) => `${have} stored`,
+      waterOfShort: (need) => `of ${need}`,
       lastChecked: (date) => `Last checked ${date}`,
       neverChecked: 'Not checked yet',
       checkAgain: (date) => `Check again in ${date}`,
       checkDue: (date) => `Time to check the water (since ${date})`,
       checkedToday: 'Checked today',
       checkSource: 'Check your supplies every six months: look at the dates and replace what needs replacing.',
-      waterEdit: 'Edit water',
       emptyStore: 'There is nothing in your supplies yet.',
       seeAllRecommendations: 'See what the authorities recommend',
       seeRecommendations: (title) => `See the recommendations: ${title}`,
       waterLitres: (unit) => `${unit === 'gal' ? 'Gallons' : 'Litres'} stored`,
-      waterCheckedLabel: 'Last checked',
       people: 'People',
       petLitres: 'Water for animals per day',
       petLitresHelp: 'The sources do not say how much animals need. Enter what your animals drink in a day.',
       targetDays: 'Supplies for',
       days: (n) => `${n} days`,
       targetHelp: 'The authorities recommend at least 3 days.',
-      expiringTitle: 'Dates',
+      expiringTitle: 'Expiring soon',
       expired: (date) => `Expired ${date}`,
       expires: (date) => `Best before ${date}`,
       categories: { food: 'Food', medicine: 'Medicine and hygiene', other: 'Light, heat and other' },
+      categoryShort: { food: 'Food', medicine: 'Care', other: 'Other' },
+      datesGuide: 'When the date has passed',
       categoryEmpty: 'Nothing here yet.',
       add: 'Add',
       addIn: (category) => `Add to ${category.toLowerCase()}`,
@@ -988,7 +973,7 @@ export const strings: Record<Lang, Strings> = {
       sizeOther: 'Other',
       units: { g: 'g', kg: 'kg', ml: 'ml', cl: 'cl', dl: 'dl', l: 'l', stk: 'pcs' },
       done: 'Done',
-      typeAdd: 'Type it in',
+      typeAdd: 'Add',
       addedTo: (name, category) => `${name} added to ${category}`,
       addedCount: (n) => `${n} added`,
       alreadyHave: 'It is already in your supplies. The new ones are added to it.',
@@ -998,23 +983,13 @@ export const strings: Record<Lang, Strings> = {
       cancel: 'Cancel',
       remove: 'Delete',
       removeConfirm: (name) => `Delete ${name}?`,
-      takeOut: 'Take out',
-      stockMore: 'Add more',
-      editDetails: 'Edit name, category and size',
-      removeAll: 'Delete all',
-      takeN: (n) => `Take out ${n}`,
-      takeAll: 'Take out all',
-      addN: (n) => `Add ${n}`,
-      bestBeforeNow: 'Best before now',
-      bestBeforeNowHelp: 'Did you take the one that expires first? Then choose the date on the next one.',
+      editDetails: 'Edit',
       bestBeforeNew: 'Best before on the new ones',
       bestBeforeNewHelp: 'If the new ones expire before the ones you have, their date is kept.',
-      takeLastConfirm: (name) => `Those are the last ones. Delete ${name} from your supplies?`,
-      takeLastNote: 'Those are the last ones, so the item is deleted from your supplies.',
-      tookOut: (name, n, left) => `${name}: took out ${n}, ${left} left.`,
-      tookAll: (name) => `${name} is out of your supplies.`,
       stocked: (name, n, total) => `${name}: added ${n}, now ${total}.`,
       deleted: (name) => `${name} deleted.`,
+      removeOnClose: 'It is removed from your supplies when you close this.',
+      waterChecked: 'The water is checked.',
       close: 'Close',
       countLabel: (n) => `${n}×`,
       countsAs: (name) => `Counts as: ${name}`,
@@ -1024,6 +999,7 @@ export const strings: Record<Lang, Strings> = {
       scan: 'Scan items',
       scanHelp: 'Hold the barcode inside the frame.',
       scanStarting: 'Starting the camera …',
+      scanSeenNotRead: "The barcode is seen but can't be read. Hold the phone still, a bit further away, in good light.",
       scanDenied: 'The app was not allowed to use the camera. You can allow it in the phone settings – or type the name instead.',
       scanUnavailable: 'The camera cannot be used here. Type the name instead.',
       lookingUp: 'Looking up the product …',

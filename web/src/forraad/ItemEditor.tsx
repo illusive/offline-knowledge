@@ -1,18 +1,17 @@
-// Editing one thing in Forråd (D-046), opened from its sheet ("Ret navn, kategori og størrelse",
-// D-049): the same fields as when adding (D-053), plus the category as three choices and the
-// stock-list line it counts as, which can be undone. Adding is on its own pages (AddScreen,
-// ScanScreen).
+// Editing one thing in Forråd (D-046), opened from its sheet ("Redigér", D-049, D-054): the same
+// fields as when adding (D-053, with the category bar), plus the stock-list line it counts as,
+// which can be undone. Adding is in sheets (AddSheet, ScanScreen).
 
-import { X } from 'lucide-react';
+import { Trash2, X } from 'lucide-react';
 import { useRef } from 'react';
-import { BackButton, Button, Card, Choice, MessageState, Page, SubPageHeader } from '../components/ui';
+import { BackButton, Button, Card, MessageState, Page, SubPageHeader } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { usePageTitle } from '../lib/usePageTitle';
 import { goBack, hrefs, type Route } from '../router';
 import { ItemFields } from './ItemFields';
 import { useStockLists, type StockLists } from './recommendations';
-import { CATEGORIES, forraad, useForraad, type Category, type Product, type StoreItem } from './store';
+import { forraad, useForraad, type Product, type StoreItem } from './store';
 import { useItemDraft } from './useItemDraft';
 
 type EditRoute = Extract<Route, { name: 'forraadEdit' }>;
@@ -71,25 +70,23 @@ function Form(props: { item: StoreItem; lists: StockLists | null; items: StoreIt
           s={s}
           nameRef={nameField}
           afterName={
-            <div className="flex flex-col gap-1">
-              <Choice<Category> name="category" legend={t.category} value={draft.category} onChange={draft.chooseCategory} options={CATEGORIES.map((c) => ({ value: c, label: t.categories[c] }))} />
-              {draft.counts ? (
-                <p className="flex items-center gap-x-[4px] text-sm text-muted">
-                  {t.countsAs(draft.counts.name)}
-                  <button type="button" onClick={draft.unlink} aria-label={t.unlink} className="grid size-11 shrink-0 place-items-center rounded-full">
-                    <X aria-hidden="true" className="size-4" />
-                  </button>
-                </p>
-              ) : null}
-            </div>
+            draft.counts ? (
+              <p className="-mt-3 flex items-center gap-x-[4px] text-sm text-muted">
+                {t.countsAs(draft.counts.name)}
+                <button type="button" onClick={draft.unlink} aria-label={t.unlink} className="grid size-11 shrink-0 place-items-center rounded-full">
+                  <X aria-hidden="true" className="size-4" />
+                </button>
+              </p>
+            ) : null
           }
         />
         <Button type="submit" variant="primary">
           {t.save}
         </Button>
-        <button type="button" onClick={remove} className="min-h-11 self-start rounded-full px-[4px] font-medium underline">
+        <Button variant="danger" onClick={remove}>
+          <Trash2 aria-hidden="true" className="size-5" />
           {t.remove}
-        </button>
+        </Button>
       </Card>
     </Page>
   );

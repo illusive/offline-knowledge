@@ -17,6 +17,7 @@ import { hrefs } from '../router';
 import type { PrecacheProgress } from '../pwa/usePrecacheProgress';
 import { useFoodSearch } from '../food/useFoodSearch';
 import { usePageTitle } from '../lib/usePageTitle';
+import { WaterTile } from '../forraad/WaterTile';
 
 export function HomeScreen(props: {
   db: DbClient;
@@ -94,8 +95,10 @@ export function HomeScreen(props: {
             </a>
           ) : null}
           {/* Category tiles in order of how many people need them (D-048): Når det sker, food, the map,
-              growing last. Guide categories without content are left out (D-025). */}
+              growing last. Guide categories without content are left out (D-025). The water in
+              Forråd comes first, once some is entered (D-054); an odd last tile fills its row. */}
           <div className="grid grid-cols-2 gap-3">
+            <WaterTile db={db} lang={lang} s={s} />
             {prepare?.length ? <CategoryTile href={hrefs.prepare} icon={<Zap className="size-7" strokeWidth={1.5} />} title={s.prepare} count={s.prepareCount(prepare.length)} /> : null}
             <CategoryTile href={hrefs.storage} icon={<Package className="size-7" strokeWidth={1.5} />} title={s.storingFood} count={foods ? s.foodCount(foods.length) : null} />
             <CategoryTile href={hrefs.map} icon={<MapIcon className="size-7" strokeWidth={1.5} />} title={s.mapTitle} count={s.mapTileNote} />
@@ -112,7 +115,7 @@ export function HomeScreen(props: {
 
 function CategoryTile({ href, icon, title, count }: { href: string; icon: ReactNode; title: string; count: string | null }) {
   return (
-    <a href={href} className="flex min-h-36 flex-col justify-between gap-6 rounded-card bg-surface px-[20px] py-5 only:col-span-2">
+    <a href={href} className="flex min-h-36 flex-col justify-between gap-6 rounded-card bg-surface px-[20px] py-5 last:odd:col-span-2">
       <span className="flex items-start justify-between gap-[8px]">
         <span aria-hidden="true">{icon}</span>
         {count ? <span className="text-sm text-muted">{count}</span> : null}

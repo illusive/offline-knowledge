@@ -12,7 +12,6 @@ import { useApplyTheme } from './settings/preferences';
 import { usePrecacheProgress } from './pwa/usePrecacheProgress';
 import { tabOf, useRoute, type Tab } from './router';
 import { ForraadScreen } from './forraad/ForraadScreen';
-import { AddScreen } from './forraad/AddScreen';
 import { ItemEditor } from './forraad/ItemEditor';
 import { ScanScreen } from './forraad/ScanScreen';
 import { useStockLists } from './forraad/recommendations';
@@ -136,14 +135,13 @@ export function App() {
         content = <SavedScreen section={route.section} guides={guides} crops={crops} prepare={prepare} foods={foods} lang={lang} s={s} />;
         break;
       case 'forraad':
-        content = <ForraadScreen db={db} lang={lang} s={s} />;
+      case 'forraadNew':
+        // Adding by typing is a sheet over the Forråd page (D-054); its address keeps the back button
+        // and the category's + working.
+        content = <ForraadScreen db={db} adding={route.name === 'forraadNew' ? route : null} lang={lang} s={s} />;
         break;
       case 'forraadScan':
         content = <ScanScreen db={db} lang={lang} s={s} />;
-        break;
-      case 'forraadNew':
-        // A fresh form for each new-item link.
-        content = <AddScreen key={`${route.category}/${route.recommendationId}`} db={db} route={route} lang={lang} s={s} />;
         break;
       case 'forraadEdit':
         content = <ItemEditor key={route.id} db={db} route={route} lang={lang} s={s} />;

@@ -13,7 +13,7 @@ import { goBack, hrefs, replaceRoute } from '../router';
 import { lookUp, OFF_ATTRIBUTION } from './barcode';
 import type { CameraState } from './BarcodeScanner';
 import { ItemFields, Optional } from './ItemFields';
-import { itemSummary } from './ItemSheet';
+import { summaryText } from './ItemSheet';
 import { MonthYear } from './MonthYear';
 import { useStockLists, type StockLists } from './recommendations';
 import { findByBarcode, forraad, useForraad, type Product, type StoreItem } from './store';
@@ -61,7 +61,9 @@ export function ScanScreen({ db, lang, s }: { db: DbClient; lang: Lang; s: Strin
         </Suspense>
       </div>
       <div className="flex flex-col items-center gap-2 px-[20px] pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center">
-        <p role="status">{camera === 'denied' ? t.scanDenied : camera === 'unavailable' ? t.scanUnavailable : camera === 'starting' ? t.scanStarting : t.scanHelp}</p>
+        <p role="status" className={camera === 'struggling' && entry === null ? 'font-semibold text-amber-300' : ''}>
+          {camera === 'denied' ? t.scanDenied : camera === 'unavailable' ? t.scanUnavailable : camera === 'starting' ? t.scanStarting : camera === 'struggling' ? t.scanSeenNotRead : t.scanHelp}
+        </p>
         {blocked ? (
           <Button variant="primary" onClick={() => replaceRoute(hrefs.forraadNew())}>
             {t.typeInstead}
@@ -152,7 +154,6 @@ function NewThingSheet({ code, lists, items, products, lang, s, onAdded, onCance
           s={s}
           nameRef={nameField}
           nameAutofocus={!code}
-          note={t.categories[draft.category]}
           status={status}
         />
         <SheetButtons s={s} onCancel={onCancel} />
@@ -178,7 +179,7 @@ function MoreOfSheet({ item, lang, s, onAdded, onCancel }: SheetProps & { item: 
         <h2 id={SHEET_TITLE_ID} tabIndex={-1} data-autofocus="" className="text-xl font-semibold outline-none">
           {item.name}
         </h2>
-        <p className="text-sm text-muted">{itemSummary(item, lang, t)}</p>
+        <p className="text-sm text-muted">{summaryText(item, lang, t)}</p>
         <p className="mt-2">{t.alreadyHave}</p>
       </div>
       <div className="mt-4 flex flex-col gap-5 rounded-card bg-surface px-[20px] py-5">

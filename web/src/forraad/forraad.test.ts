@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { formatMonth, formatVolume } from '../i18n/format';
 import { addMonths, expiring, monthsUntil, nextCheck, waterNeeded, type Recommendation } from './calc';
 import { applyBackup, makeBackup, readBackup } from './backupFile';
-import { acceptCode, parseProduct, SAME_CODE_PAUSE_MS } from './barcode';
+import { acceptCode, cropFor, parseProduct, SAME_CODE_PAUSE_MS, SCAN_FRAME } from './barcode';
 import { matchRecommendation, suggest } from './recommendations';
-import { EMPTY, findByBarcode, parse, stockMore, takeOut, type StoreItem } from './store';
+import { EMPTY, findByBarcode, parse, stockMore, withCount, type StoreItem } from './store';
 
 const item = (over: Partial<StoreItem>): StoreItem => ({ id: 'x', name: 'Pasta', category: 'food', count: 1, added: '2026-11-01', ...over });
 const rec = (id: string, category: Recommendation['category'], name: string, keywords: string[], products: string[] = []): Recommendation => ({ id, guideId: 'g', category, name, text: name, keywords, products });
@@ -167,19 +167,13 @@ describe('Forråd sizes on the device', () => {
   });
 });
 
-describe('Forråd taking out and stocking more', () => {
-  it('takes some out, and deletes the thing when all are taken', () => {
+describe('Forråd counts and stocking more', () => {
+  it('sets a count from the sheet\'s counter, whole and within 1..9999 (D-054)', () => {
     const tins = item({ count: 3, expires: '2027-05' });
-    expect(takeOut(tins, 1)).toMatchObject({ count: 2, expires: '2027-05' });
-    expect(takeOut(tins, 3)).toBeNull();
-    expect(takeOut(tins, 5)).toBeNull();
-  });
-
-  it('keeps, changes or clears the month when taking out', () => {
-    const tins = item({ count: 3, expires: '2027-05' });
-    expect(takeOut(tins, 1, '2027-09')?.expires).toBe('2027-09');
-    expect(takeOut(tins, 1, null)).not.toHaveProperty('expires');
-    expect(takeOut(tins, 1, undefined)?.expires).toBe('2027-05');
+    expect(withCount(tins, 5)).toMatchObject({ count: 5, expires: '2027-05' });
+    expect(withCount(tins, 0).count).toBe(1);
+    expect(withCount(tins, 2.6).count).toBe(3);
+    expect(withCount(tins, 20_000).count).toBe(9999);
   });
 
   it('stocks more, keeping the earlier month, up to the limit', () => {
@@ -246,6 +240,23 @@ describe('Forråd backup file', () => {
     expect(readBackup('not json')).toBeNull();
     expect(readBackup('{"app":"other","kind":"backup","version":1,"data":{}}')).toBeNull();
     expect(readBackup('{"app":"stead","kind":"backup","version":1,"data":{"evil":"x","stead.a":5}}')).toEqual({ data: {}, itemCount: 0 });
+  });
+});
+
+describe('Forråd scan frame (D-055)', () => {
+  it('maps a box in the view to video pixels, with the video covering the view', () => {
+    // A portrait view on a taller video: the sides are cut off.
+    expect(cropFor(800, 1200, 400, 800, { x: 0.25, y: 0.25, w: 0.5, h: 0.5 }, 0)).toEqual({ x: 250, y: 300, w: 300, h: 600 });
+    // A landscape view on a 16:9 video: the top and bottom are cut off.
+    expect(cropFor(1920, 1080, 800, 400, { x: 0, y: 0, w: 1, h: 1 }, 0)).toEqual({ x: 0, y: 60, w: 1920, h: 960 });
+  });
+
+  it('adds a margin around the frame, but stays inside the video', () => {
+    expect(cropFor(1920, 1080, 800, 400, { x: 0, y: 0, w: 1, h: 1 }, 0.1)).toEqual({ x: 0, y: 0, w: 1920, h: 1080 }); // clamped to the video
+    const r = cropFor(1080, 1920, 390, 600);
+    expect(r.x).toBeGreaterThanOrEqual(0);
+    expect(r.x + r.w).toBeLessThanOrEqual(1080);
+    expect(r.h).toBeLessThan(1920 * SCAN_FRAME.h * 2);
   });
 });
 

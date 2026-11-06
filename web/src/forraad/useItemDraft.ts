@@ -1,6 +1,6 @@
 // One thing being added or edited in Forråd (D-046, D-053): its name, count, size and month, and
 // the stock-list line it counts as. The category is guessed from the name (unknown names go to Mad)
-// unless one was chosen. Shared by the typing page, the scan sheet and the edit page.
+// unless one was chosen. Shared by the typing and scan sheets and the edit page.
 
 import { useState } from 'react';
 import { decimalForInput, parseDecimal } from '../i18n/format';

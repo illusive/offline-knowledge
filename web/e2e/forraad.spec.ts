@@ -1,7 +1,8 @@
-// Forråd (D-046): household and water against the stock list, water as one figure with the month
-// it was checked, adding by typing one thing after another (D-053: suggestions that float over the
-// form, guessed category, linked stock-list line, month dates, "Færdig"), the sheet on each thing
-// (D-049: take out, add more, edit, delete), the category changed on the editor, kept after a
+// Forråd (D-046): household and water against the stock list, water as one figure in its own sheet
+// (D-054: a counter and "Tjekket i dag"), adding by typing one thing after another in a sheet
+// (D-053, D-054: the category bar, suggestions that float over the form, linked stock-list line,
+// month dates, "Færdig"), the sheet on each thing (D-049, D-054: a counter saved at once, 0 removes
+// it on closing, edit, delete), the category changed on the editor, the water on Home, kept after a
 // reload, and a copy saved and restored as a file; offline. Settings opens from the gear.
 
 import type { BrowserContext, Locator, Page } from '@playwright/test';
@@ -75,62 +76,68 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   await page.getByRole('button', { name: 'Tilbage' }).click();
   await expect(water.getByText(/^0\sL af 42\sL$/)).toBeVisible();
 
-  // Water: how much, and when it was last checked (this month unless changed). Nothing else.
+  // Water (D-054): a tap on the card opens its sheet. The amount is a counter, saved at once (typed
+  // or with + and −), and "Tjekket i dag" marks it as checked.
   await expect(water.getByText('Ikke tjekket endnu')).toBeVisible();
-  await water.getByRole('button', { name: 'Ret vand' }).click();
-  await water.getByLabel('Liter på lager').fill('12');
-  await water.getByRole('button', { name: 'Gem', exact: true }).click();
+  await water.getByRole('button').click();
+  const waterSheet = page.getByRole('dialog', { name: 'Drikkevand' });
+  await waterSheet.getByRole('textbox', { name: 'Liter på lager' }).fill('11');
+  await waterSheet.getByRole('button', { name: 'Liter på lager +1' }).click();
+  await expect(waterSheet.getByText(/^12\sL af 42\sL$/)).toBeVisible();
+  await waterSheet.getByRole('button', { name: 'Tjekket i dag' }).click();
+  await expect(waterSheet).toBeHidden();
+  await expect(page.getByText('Vandet er tjekket.')).toBeVisible();
   await expect(water.getByText(/^12\sL af 42\sL$/)).toBeVisible();
   await expect(water.getByText(`Sidst tjekket ${monthIn(0).name} · Tjek igen i ${monthIn(6).name}`)).toBeVisible();
-  await expect(water.getByRole('button', { name: 'Tjekket i dag' })).toBeHidden(); // only when a check is due
 
-  // Adding by typing (D-053): a name and a month. The category is guessed and shown; the
-  // stock-list line is linked without asking.
-  await page.getByRole('link', { name: 'Skriv selv' }).click();
-  const name = page.getByLabel('Navn');
+  // Adding by typing (D-053, D-054): a sheet with the category bar on top (Mad unless a stock-list
+  // line says otherwise), a name and a month. The stock-list line is linked without asking.
+  await page.getByRole('link', { name: 'Tilføj', exact: true }).click();
+  const add = page.getByRole('dialog', { name: 'Tilføj til forrådet' });
+  const name = add.getByLabel('Navn');
   // The suggestions float over the fields below instead of pushing them down. Products come first,
   // with their line under them, and the line itself last (D-052); a picked product keeps its name.
-  const count = page.getByRole('group', { name: 'Antal', exact: true });
+  const count = add.getByRole('group', { name: 'Antal', exact: true });
   const countTop = async () => (await count.boundingBox())!.y;
+  await add.evaluate((d) => Promise.all(d.getAnimations().map((a) => a.finished))); // the sheet has slid up
   const before = await countTop();
   await name.fill('makr');
-  const suggestions = page.getByRole('listbox', { name: 'Forslag' });
+  const suggestions = add.getByRole('listbox', { name: 'Forslag' });
   await expect(suggestions.getByRole('option').first()).toHaveAccessibleName(/^Makrel i tomat/);
   await expect(suggestions.getByRole('option', { name: /^Dåser med fisk eller kød/ })).toBeVisible();
   expect(await countTop()).toBe(before);
   await suggestions.getByRole('option', { name: /^Makrel i tomat/ }).click();
   await expect(suggestions).toBeHidden();
   await expect(name).toHaveValue('Makrel i tomat');
-  await expect(page.getByText('Mad', { exact: true })).toBeVisible();
-  await page.getByRole('button', { name: 'Antal +1' }).click();
-  await pickMonth(page, 1);
-  await page.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(add.getByRole('radio', { name: 'Mad' })).toBeChecked();
+  await add.getByRole('button', { name: 'Antal +1' }).click();
+  await pickMonth(add, 1);
+  await add.getByRole('button', { name: 'Tilføj', exact: true }).click();
 
   // The next one starts empty, with the same month; a toast says where it went.
   await expect(page.getByText('Makrel i tomat er tilføjet under Mad')).toBeVisible();
   await expect(name).toHaveValue('');
-  await expectMonth(page, 1);
+  await expectMonth(add, 1);
   await name.fill('Plaster');
-  await expect(page.getByText('Medicin og hygiejne', { exact: true })).toBeVisible();
-  await page.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(add.getByRole('radio', { name: 'Pleje' })).toBeChecked();
+  await add.getByRole('button', { name: 'Tilføj', exact: true }).click();
 
   // An unknown name goes to Mad. The size is there without a "Mere": a number and a unit, or a
   // text under "Andet" (D-050).
   await name.fill('Paraply');
-  await expect(page.getByText('Mad', { exact: true })).toBeVisible();
-  await clearMonth(page);
-  await page.getByLabel('Enhed').selectOption('other');
-  await page.getByLabel('Beskriv størrelsen').fill('Stor');
-  await page.getByRole('button', { name: 'Tilføj', exact: true }).click();
+  await expect(add.getByRole('radio', { name: 'Mad' })).toBeChecked();
+  await clearMonth(add);
+  await add.getByLabel('Enhed').selectOption('other');
+  await add.getByLabel('Beskriv størrelsen').fill('Stor');
+  await add.getByRole('button', { name: 'Tilføj', exact: true }).click();
 
   // Something already past its month. "Færdig" keeps a thing whose name is written.
   await name.fill('Kiks');
-  await pickMonth(page, -1);
-  await page.getByLabel('Mængde').fill('0,5');
-  await page.getByLabel('Enhed').selectOption('kg');
-  await page.getByRole('button', { name: 'Færdig' }).click();
-
-  await expect(page.getByRole('heading', { level: 1, name: 'Forråd' })).toBeVisible();
+  await pickMonth(add, -1);
+  await add.getByLabel('Mængde').fill('0,5');
+  await add.getByLabel('Enhed').selectOption('kg');
+  await add.getByRole('button', { name: 'Færdig' }).click();
+  await expect(add).toBeHidden();
   const food = page.getByRole('region', { name: 'Mad' });
   await expect(row(food, 'Makrel i tomat')).toContainText(`2 stk. · Bedst før ${monthIn(1).name}`);
   await expect(food.getByRole('link', { name: /^Dåser med fisk eller kød/ })).toBeHidden();
@@ -139,62 +146,58 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   const other = page.getByRole('region', { name: 'Lys, varme og andet' });
   await expect(row(food, 'Paraply')).toContainText('1 stk. · Stor');
   await expect(food.getByRole('link', { name: 'Se anbefalingerne: Mad til tre døgn' })).toBeVisible();
-  const dates = page.getByRole('region', { name: 'Holdbarhed' });
-  await expect(dates.getByText('Kiks')).toBeVisible();
-  await expect(dates.getByText('Makrel i tomat')).toBeVisible();
+  // What expires soon is listed like the rest, and links to the guide on dates.
+  const dates = page.getByRole('region', { name: 'Nærmer sig udløb' });
+  await expect(row(dates, 'Kiks')).toContainText(`Udløbet ${monthIn(-1).name}`);
+  await expect(row(dates, 'Makrel i tomat')).toBeVisible();
+  await expect(dates.getByRole('link', { name: 'Når datoen er overskredet' })).toHaveAttribute('href', '#/guide/naar-datoen-er-overskredet');
 
   await page.reload();
   await expect(water.getByText(/^12\sL af 42\sL$/)).toBeVisible();
   await expect(row(food, 'Makrel i tomat')).toBeVisible();
 
-  // The sheet: take one out and say when the next one expires.
+  // The sheet (D-054): a counter with how many there are, saved at once, with + and − or typed.
   const sheet = page.getByRole('dialog', { name: 'Makrel i tomat' });
   await row(food, 'Makrel i tomat').click();
   await expect(sheet.getByText(`2 stk. · Bedst før ${monthIn(1).name}`)).toBeVisible();
-  await sheet.getByRole('button', { name: 'Tag ud' }).click();
-  await pickMonth(sheet, 4);
-  await sheet.getByRole('button', { name: 'Tag 1 ud' }).click();
-  await expect(sheet).toBeHidden();
-  await expect(page.getByText('Makrel i tomat: 1 stk. taget ud, 1 stk. tilbage.')).toBeVisible();
-  await expect(row(food, 'Makrel i tomat')).toContainText(`1 stk. · Bedst før ${monthIn(4).name}`);
-
-  // Add more: the earlier month is the one kept.
-  await row(food, 'Makrel i tomat').click();
-  await sheet.getByRole('button', { name: 'Læg flere til' }).click();
   await sheet.getByRole('button', { name: 'Antal +1' }).click();
-  await pickMonth(sheet, 2);
-  await sheet.getByRole('button', { name: 'Læg 2 til' }).click();
-  await expect(row(food, 'Makrel i tomat')).toContainText(`3 stk. · Bedst før ${monthIn(2).name}`);
+  await expect(sheet.getByText(`3 stk. · Bedst før ${monthIn(1).name}`)).toBeVisible();
+  await sheet.getByRole('textbox', { name: 'Antal' }).fill('5');
+  await sheet.getByRole('button', { name: 'Luk' }).click();
+  await expect(sheet).toBeHidden();
+  await expect(row(food, 'Makrel i tomat')).toContainText(`5 stk. · Bedst før ${monthIn(1).name}`);
 
   // Escape closes the sheet; nothing changes.
   await row(food, 'Makrel i tomat').click();
   await expect(sheet).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(sheet).toBeHidden();
-  await expect(row(food, 'Makrel i tomat')).toContainText('3 stk.');
+  await expect(row(food, 'Makrel i tomat')).toContainText('5 stk.');
 
-  // Taking out the last ones asks, then deletes.
+  // Counting down to 0 removes the thing when the sheet closes; counting up again keeps it.
   await row(food, 'Makrel i tomat').click();
-  await sheet.getByRole('button', { name: 'Tag ud' }).click();
-  for (let i = 0; i < 2; i++) await sheet.getByRole('button', { name: 'Antal +1' }).click();
-  page.once('dialog', (dialog) => void dialog.accept());
-  await sheet.getByRole('button', { name: 'Tag alle ud' }).click();
+  await sheet.getByRole('textbox', { name: 'Antal' }).fill('0');
+  await expect(sheet.getByText('Den fjernes fra forrådet, når du lukker.')).toBeVisible();
+  await sheet.getByRole('button', { name: 'Antal +1' }).click();
+  await expect(sheet.getByText('Den fjernes fra forrådet, når du lukker.')).toBeHidden();
+  await sheet.getByRole('button', { name: 'Antal −1' }).click();
+  await sheet.getByRole('button', { name: 'Luk' }).click();
   await expect(row(food, 'Makrel i tomat')).toBeHidden();
-  await expect(page.getByText('Makrel i tomat er taget ud af forrådet.')).toBeVisible();
+  await expect(page.getByText('Makrel i tomat er slettet.')).toBeVisible();
 
-  // The editor is one tap away, and changes the category with three choices.
+  // The editor is one tap away, and changes the category with the same bar.
   await row(food, 'Paraply').click();
-  await page.getByRole('dialog', { name: 'Paraply' }).getByRole('link', { name: 'Ret navn, kategori og størrelse' }).click();
-  await expect(page.getByRole('heading', { level: 1, name: 'Ret' })).toBeVisible();
-  await page.locator('label', { hasText: 'Lys, varme og andet' }).click();
+  await page.getByRole('dialog', { name: 'Paraply' }).getByRole('link', { name: 'Redigér' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Redigér' })).toBeVisible();
+  await page.locator('label', { hasText: /^Andet$/ }).click();
   await page.getByRole('button', { name: 'Gem', exact: true }).click();
   await expect(row(other, 'Paraply')).toContainText('1 stk. · Stor');
   await expect(row(food, 'Paraply')).toBeHidden();
 
-  // "Slet alt" asks, then deletes.
+  // "Slet" asks, then deletes.
   await row(food, 'Kiks').click();
   page.once('dialog', (dialog) => void dialog.accept());
-  await page.getByRole('dialog', { name: 'Kiks' }).getByRole('button', { name: 'Slet alt' }).click();
+  await page.getByRole('dialog', { name: 'Kiks' }).getByRole('button', { name: 'Slet', exact: true }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Forråd' })).toBeVisible();
   await expect(row(food, 'Kiks')).toBeHidden();
 
@@ -204,6 +207,10 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   await page.locator('label', { hasText: 'Gallon (US)' }).click(); // not forced: the floating tab bar may cover it until scrolled
   await page.getByRole('button', { name: 'Tilbage' }).click();
   await expect(water.getByText(/^3,2\sgal af 11\sgal$/)).toBeVisible();
+
+  // Home shows the water as a ring once some is entered (D-054).
+  await page.getByRole('navigation', { name: 'Hovedmenu' }).getByRole('link', { name: 'Hjem' }).click();
+  await expect(page.getByRole('link', { name: /^Drikkevand: 3,2\sgal af 11\sgal$/ })).toBeVisible();
 });
 
 test('Forråd: a copy saved as a file brings the supplies back; offline', async ({ app: { page, context } }) => {
@@ -213,8 +220,8 @@ test('Forråd: a copy saved as a file brings the supplies back; offline', async 
   });
   await openOffline(page, context);
 
-  await page.getByRole('link', { name: 'Skriv selv' }).click();
-  await page.getByLabel('Navn').fill('Knækbrød');
+  await page.getByRole('link', { name: 'Tilføj', exact: true }).click();
+  await page.getByRole('dialog', { name: 'Tilføj til forrådet' }).getByLabel('Navn').fill('Knækbrød');
   await page.getByRole('button', { name: 'Færdig' }).click();
 
   // The copy is in Settings.
@@ -227,7 +234,7 @@ test('Forråd: a copy saved as a file brings the supplies back; offline', async 
   await page.getByRole('button', { name: 'Tilbage' }).click();
   await row(page.getByRole('region', { name: 'Mad' }), 'Knækbrød').click();
   page.once('dialog', (dialog) => void dialog.accept());
-  await page.getByRole('button', { name: 'Slet alt' }).click();
+  await page.getByRole('dialog', { name: 'Knækbrød' }).getByRole('button', { name: 'Slet', exact: true }).click();
   await expect(page.getByText('Der er intet i forrådet endnu.')).toBeVisible();
   await page.getByRole('link', { name: 'Indstillinger' }).click();
 

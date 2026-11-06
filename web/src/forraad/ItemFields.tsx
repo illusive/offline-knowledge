@@ -1,15 +1,17 @@
-// The fields for one thing in Forråd (D-053), the same on the typing page, in the scan sheet and on
-// the edit page: the name (with suggestions), its size, how many and the best-before month. Size
-// and month are optional and say so; nothing is hidden behind "Mere".
+// The fields for one thing in Forråd (D-053, D-054), the same in the typing and scan sheets and on
+// the edit page: the category bar (Mad, Pleje, Andet), the name (with suggestions), how many, its
+// size and the best-before month. Size and month are optional and say so; nothing is hidden behind
+// "Mere". The bar shows the category the thing goes under: Mad unless chosen, or unless the name is
+// a stock-list line of another category.
 
 import { useMemo, type ReactNode, type Ref } from 'react';
-import { inputClass, Stepper } from '../components/ui';
+import { Choice, inputClass, Stepper } from '../components/ui';
 import type { Lang, Strings } from '../i18n/strings';
 import { MonthYear } from './MonthYear';
 import { NameField } from './NameField';
 import { suggest, type StockLists, type Suggestion } from './recommendations';
 import { SIZE_UNITS } from './size';
-import type { Product, StoreItem } from './store';
+import { CATEGORIES, type Category, type Product, type StoreItem } from './store';
 import type { ItemDraft, UnitChoice } from './useItemDraft';
 
 type Props = {
@@ -22,9 +24,8 @@ type Props = {
   s: Strings;
   nameRef?: Ref<HTMLInputElement>;
   nameAutofocus?: boolean;
-  note?: ReactNode; // a quiet line under the name, e.g. the guessed category
   status?: string | null; // what the barcode lookup found, read out when it changes
-  afterName?: ReactNode; // the edit page puts the category here
+  afterName?: ReactNode; // the edit page puts the stock-list line it counts as here
 };
 
 // "(valgfri)" after a label.
@@ -32,7 +33,7 @@ export function Optional({ s }: { s: Strings }) {
   return <span className="font-normal text-muted"> ({s.forraad.optional})</span>;
 }
 
-export function ItemFields({ draft, idPrefix, lists, items, products, lang, s, nameRef, nameAutofocus, note, status, afterName }: Props) {
+export function ItemFields({ draft, idPrefix, lists, items, products, lang, s, nameRef, nameAutofocus, status, afterName }: Props) {
   const t = s.forraad;
   const recommendations = lists?.recommendations;
   const suggestions = useMemo(() => suggest(draft.name, recommendations ?? [], items, products), [draft.name, recommendations, items, products]);
@@ -42,6 +43,15 @@ export function ItemFields({ draft, idPrefix, lists, items, products, lang, s, n
 
   return (
     <>
+      <Choice<Category>
+        name={`${idPrefix}-category`}
+        legend={t.category}
+        legendHidden
+        value={draft.category}
+        onChange={draft.chooseCategory}
+        options={CATEGORIES.map((c) => ({ value: c, label: t.categoryShort[c] }))}
+      />
+
       <div>
         <label htmlFor={nameId} className="mb-1 block font-semibold">
           {t.name}
@@ -65,13 +75,14 @@ export function ItemFields({ draft, idPrefix, lists, items, products, lang, s, n
             {t.nameMissing}
           </p>
         ) : null}
-        {note ? <p className="mt-1 text-sm text-muted">{note}</p> : null}
         <p className={status ? 'mt-1 text-sm' : 'sr-only'} role="status">
           {status}
         </p>
       </div>
 
       {afterName}
+
+      <Stepper label={t.count} value={draft.count} min={1} max={999} onChange={draft.setCount} />
 
       <fieldset className="min-w-0">
         <legend className="mb-1 font-semibold">
@@ -95,8 +106,6 @@ export function ItemFields({ draft, idPrefix, lists, items, products, lang, s, n
           </select>
         </div>
       </fieldset>
-
-      <Stepper label={t.count} value={draft.count} min={1} max={999} onChange={draft.setCount} />
 
       <MonthYear
         id={`${idPrefix}-expires`}

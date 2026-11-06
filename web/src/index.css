@@ -18,6 +18,9 @@
   --c-note-bg: #fbf0da;
   --c-note-text: #6b3f00;
   --c-ok: #1f7a3d;
+  /* Expired dates and deleting (D-054): 6.5:1 on white, white text on it 6.5:1. */
+  --c-danger: #b3261e;
+  --c-on-danger: #ffffff;
   /* The logo's asterisk when the app works offline: lime in dark mode; on the light background
      lime is too faint, so it stays the dark green there (owner 2026-11-05). */
   --c-ready-mark: #1f7a3d;
@@ -40,6 +43,8 @@
   --c-note-bg: #3a2c12;
   --c-note-text: #f4cc94;
   --c-ok: #5ccf86;
+  --c-danger: #ff8a80;
+  --c-on-danger: #1b0000;
   --c-ready-mark: #d4f04a;
 }
 
@@ -57,6 +62,8 @@
   --color-note-bg: var(--c-note-bg);
   --color-note-text: var(--c-note-text);
   --color-ok: var(--c-ok);
+  --color-danger: var(--c-danger);
+  --color-on-danger: var(--c-on-danger);
   --color-ready-mark: var(--c-ready-mark);
   --radius-card: 20px;
   --radius-hero: 28px;
@@ -82,6 +89,57 @@ body {
   :focus-visible {
     outline: 2px solid var(--c-text);
     outline-offset: 2px;
+  }
+}
+
+/* Sheets slide up from the bottom and back down (D-054). The closing slide is started by Sheet
+   (data-closing), which closes the dialog when it ends. No movement with reduced motion. */
+@keyframes sheet-in {
+  from { transform: translateY(100%); }
+}
+@keyframes sheet-out {
+  to { transform: translateY(100%); }
+}
+@keyframes backdrop-in {
+  from { opacity: 0; }
+}
+@keyframes backdrop-out {
+  to { opacity: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  dialog.sheet[open] {
+    animation: sheet-in 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  dialog.sheet[open]::backdrop {
+    animation: backdrop-in 280ms ease-out;
+  }
+  dialog.sheet[data-closing] {
+    animation: sheet-out 220ms cubic-bezier(0.4, 0, 1, 1) forwards;
+  }
+  dialog.sheet[data-closing]::backdrop {
+    animation: backdrop-out 220ms ease-in forwards;
+  }
+}
+
+/* The barcode scanner (D-055): a line moves up and down in the frame while the camera looks. With
+   reduced motion the line is hidden and the frame's border slowly brightens and dims instead. */
+@keyframes scan-line {
+  from { top: 10%; }
+  to { top: 90%; }
+}
+@keyframes scan-pulse {
+  from { opacity: 1; }
+  to { opacity: 0.45; }
+}
+.scan-line {
+  animation: scan-line 1.6s ease-in-out infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scan-line {
+    display: none;
+  }
+  .scan-frame:not([data-state="paused"]) {
+    animation: scan-pulse 1.2s ease-in-out infinite alternate;
   }
 }
 

@@ -1,0 +1,225 @@
+{
+  "id": "naar-datoen-er-overskredet",
+  "category": "preparedness",
+  "group": "supplies",
+  "order": 5,
+  "name": "Når datoen er overskredet",
+  "title": "Sådan vurderer du madens holdbarhed",
+  "summary": "Lær forskellen på ”bedst før” og ”sidste anvendelsesdato”.",
+  "originalSummary": "Lær forskellen på bedst før og sidste anvendelsesdato",
+  "sourceId": "dk-fvst-vurder-madens-holdbarhed",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Der er to slags datoer",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Der er to forskellige datomærkninger"
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "”Sidste anvendelsesdato” står på mad, som du kan blive alvorligt syg af, når datoen er overskredet.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "\"Sidste anvendelsesdato\" sættes på fødevarer, som du kan blive alvorligt syg af at spise, hvis datoen er overskredet."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "”Bedst før” står på mad, som kun bliver ringere med tiden. Ser maden fin ud, og dufter og smager den fint, kan du sagtens spise den efter datoen.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "\"Bedst før\" sættes på fødevarer som over tid alene forringes i kvalitet, og hvis varen stadig ser fin ud og dufter og smager fint, så kan fødevaren sagtens spises efter datoen."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Begge datoer gælder kun, så længe maden ikke er åbnet og er opbevaret rigtigt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vær opmærksom på, at datoen for både \"sidste anvendelse\" og for \"bedst før\" er gældende så længe, at fødevaren er uåbnet og er opbevaret korrekt."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Står der på pakken, hvordan maden skal opbevares, og hvor længe den holder, når den er åbnet, så følg det altid.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis producenten har mærket med en anvisning for opbevaring og holdbarhed efter åbning, så skal denne anvisning altid følges."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Kan maden spises efter ”bedst før”?",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Sådan vurderer du, om fødevaren kan spises efter ”Bedst før”"
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Mad med ”sidste anvendelsesdato” skal altid smides ud efter datoen. Mad med ”bedst før” kan du se på, smage og lugte til for at finde ud af, om den stadig kan spises.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Fødevarer mærket med ”Sidste anvendelsesdato” skal altid smides ud efter denne dato. Hvis fødevaren er mærket med \"Bedst før\", kan du se, smage og lugte til den for at bedømme, om den stadig kan spises."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Se på maden",
+      "page": 1
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Mug: Selv en lille mugplet, fx på en peberfrugt, kan betyde, at svampen sidder langt inde. Det er ikke nok at skære pletten væk.",
+        "Råd: Er der gået råd i fx en peberfrugt, kan du skære det væk og spise resten.",
+        "Mad, der er misfarvet, slimet eller harsk, bliver du som regel ikke syg af."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Mug – selvom der kun er en lille mugplet på f.eks. en peberfrugt, kan der godt være spredt skimmelsvampe langt ind i peberfrugten. Derfor er det ikke nok blot at skære det mugne område væk.",
+          "Råd – er der gået råd i f.eks. din peberfrugt kan du godt skære det væk og spise resten.",
+          "Misfarvede, slimede eller harske fødevarer – bliver du som udgangspunkt ikke syg af."
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Lugt til maden",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Er maden blevet for gammel, kan den lugte surt eller harsk. Lugter den ikke rart, så spis den ikke.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis fødevaren er blevet for gammel, kan den få en ubehageligt sur eller harsk lugt. Lugter fødevaren uappetitlig, bør du ikke spise den."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Smag på maden",
+      "page": 1
+    },
+    {
+      "kind": "text",
+      "text": "Ser maden fin ud og lugter den fint, så smag en lille smule. Smager den fint, er der ikke noget i vejen med den.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvis fødevaren lugter og ser fin ud, kan du smage på en lille smule af den. Smager den fint, er der ikke noget i vejen med den."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Smager den dårligt, så smid den ud. Du bliver ikke syg af at have smagt på den.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Smager fødevaren derimod dårligt, skal du smide den ud. Husk at du ikke bliver syg af at have smagt på fødevaren."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Mad med ”bedst før” kan fx være",
+      "page": 1,
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "original": {
+        "lang": "da",
+        "text": "Mad med \"bedst før\" kan fx være:"
+      }
+    },
+    {
+      "kind": "list",
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "items": [
+        "Mælkeprodukter som mælk og yoghurt",
+        "Syltetøj og marmelade",
+        "Juice, saft og sodavand",
+        "Mel, havregryn, pasta og ris",
+        "Dåsemad som hakkede tomater, majs og makrel i tomat"
+      ],
+      "page": 1
+    },
+    {
+      "kind": "heading",
+      "text": "Mad uden dato",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Fødevarer uden datomærkning"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Noget mad har ingen dato, fordi det ikke kan blive for gammelt:",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Nogle fødevarer er ikke datomærket, da det er vurderet at disse fødevarer ikke kan blive for gamle."
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Tyggegummi",
+        "Eddike",
+        "Salt",
+        "Sukker",
+        "Vin",
+        "Drikkevarer med en alkoholprocent på eller over 10"
+      ],
+      "page": 1
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "locator": "Tjek datomærkerne: Hvad betyder \"sidste anvendelsesdato\"?",
+      "quote": "Du skal derfor smide maden ud, hvis datoen for ”sidste anvendelsesdato” er overskredet.",
+      "note": "Agrees: food with a use-by date goes out once the date has passed."
+    },
+    {
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "locator": "Tjek datomærkerne: Hvad betyder \"bedst før\"?",
+      "quote": "Herefter forringes varens kvalitet lidt efter lidt, men den kan stadig spises.",
+      "note": "Agrees: after a best-before date only the quality drops; the food can still be eaten."
+    },
+    {
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "locator": "Tjek datomærkerne: Hvad betyder \"bedst før\"?",
+      "quote": "Lugt til madvaren … Kig på madvaren … Smag evt. på madvaren",
+      "note": "Agrees: smell, look and taste to judge food past its best-before date."
+    },
+    {
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "locator": "Tjek datomærkerne: Begge typer datomærkning gælder",
+      "quote": "Begge typer datomærkning gælder, så længe produktet er uåbnet og opbevaret korrekt.",
+      "note": "Agrees: both dates apply only while the food is unopened and stored correctly."
+    },
+    {
+      "sourceId": "dk-taenk-holdbarhed-og-opbevaring",
+      "locator": "Har maden ingen holdbarhedsmærkning?",
+      "quote": "Tyggegummi … Eddike … Salt … Sukker",
+      "note": "Agrees on the foods that have no date."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "mad-til-tre-doegn",
+    "vand-til-tre-doegn"
+  ]
+}

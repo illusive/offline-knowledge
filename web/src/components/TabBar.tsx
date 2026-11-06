@@ -1,17 +1,17 @@
 // Floating bottom tab bar (design brief, D-025). Four tabs (Kort added, D-036; Forråd replaced
-// Indstillinger, which moved to a gear at the top right, D-046), so the icon sits
+// Indstillinger, which moved to a gear at the top right, D-046; one plain box, D-054), so the icon sits
 // above the label. Like iOS's own tab bars it has a fixed size in
 // pixels and a capped label size, so it stays usable at the largest text sizes (OPEN_QUESTIONS #25);
 // VoiceOver reads the full labels.
 
-import { Boxes, House, LayoutGrid, Map as MapIcon, type LucideIcon } from 'lucide-react';
+import { Box, House, LayoutGrid, Map as MapIcon, type LucideIcon } from 'lucide-react';
 import type { Strings } from '../i18n/strings';
 import { hrefs, type Tab } from '../router';
 
 const TABS: { tab: Tab; href: string; Icon: LucideIcon }[] = [
   { tab: 'home', href: hrefs.home, Icon: House },
   { tab: 'map', href: hrefs.map, Icon: MapIcon },
-  { tab: 'forraad', href: hrefs.forraad, Icon: Boxes },
+  { tab: 'forraad', href: hrefs.forraad, Icon: Box },
   { tab: 'tools', href: hrefs.tools, Icon: LayoutGrid },
 ];
 

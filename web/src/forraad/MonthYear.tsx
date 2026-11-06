@@ -22,6 +22,8 @@ function hasMonthField(): boolean {
 }
 
 const field = `${inputClass} min-h-12 text-lg`; // as tall as the name field, for readability
+// An empty month field in Safari is lower than a filled one (its value box collapses); the month
+// field gets a fixed height and its value box a minimum one (owner 2026-11-06).
 
 type Props = {
   id: string;
@@ -72,7 +74,7 @@ function MonthField({ id, label, help, value, onChange, noDate, clearLabel, firs
             if (e.target.value || optional) onChange(e.target.value);
           }}
           aria-describedby={help ? `${id}-help` : undefined}
-          className={`${field} min-w-0 flex-1 text-left [&::-webkit-date-and-time-value]:text-left`}
+          className={`${field} h-12 min-w-0 flex-1 text-left [&::-webkit-date-and-time-value]:min-h-[1.5em] [&::-webkit-date-and-time-value]:text-left`}
         />
         {optional && value ? (
           <button type="button" onClick={() => onChange('')} aria-label={clearLabel} className="grid size-12 shrink-0 place-items-center rounded-xl bg-background">

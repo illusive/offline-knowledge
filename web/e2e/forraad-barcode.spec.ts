@@ -8,7 +8,8 @@ import { expect, test } from './fixtures.ts';
 
 const CODE = '5701234567899'; // valid EAN-13 check digit
 
-// Draws CODE as an EAN-13 barcode on a canvas and hands its stream out as the camera. Setting
+// Draws an EAN-13 barcode on a canvas and hands its stream out as the camera: CODE, or the digits in
+// window.__code (a wrong check digit gives a code that is seen but cannot be read). Setting
 // window.__showBarcode to false shows an empty picture (the pack taken away).
 const FAKE_CAMERA = `
 (() => {
@@ -16,21 +17,25 @@ const FAKE_CAMERA = `
   const G = ['0100111','0110011','0011011','0100001','0011101','0111001','0000101','0010001','0001001','0010111'];
   const R = ['1110010','1100110','1101100','1000010','1011100','1001110','1010000','1000100','1001000','1110100'];
   const PARITY = ['LLLLLL','LLGLGG','LLGGLG','LLGGGL','LGLLGG','LGGLLG','LGGGLL','LGLGLG','LGLGGL','LGGLGL'];
-  const code = '${CODE}'.split('').map(Number);
-  let bits = '101';
-  for (let i = 1; i <= 6; i++) bits += (PARITY[code[0]][i - 1] === 'L' ? L : G)[code[i]];
-  bits += '01010';
-  for (let i = 7; i <= 12; i++) bits += R[code[i]];
-  bits += '101';
+  const barsOf = (digits) => {
+    const code = digits.split('').map(Number);
+    let bits = '101';
+    for (let i = 1; i <= 6; i++) bits += (PARITY[code[0]][i - 1] === 'L' ? L : G)[code[i]];
+    bits += '01010';
+    for (let i = 7; i <= 12; i++) bits += R[code[i]];
+    return bits + '101';
+  };
   window.__showBarcode = true;
+  window.__code = '${CODE}';
   const canvas = document.createElement('canvas');
   canvas.width = 640; canvas.height = 480;
   const draw = () => {
     const ctx = canvas.getContext('2d');
     ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, 640, 480);
     if (!window.__showBarcode) return;
+    const bits = barsOf(window.__code);
     ctx.fillStyle = '#000';
-    const w = 4, x0 = (640 - bits.length * w) / 2;
+    const w = 2, x0 = (640 - bits.length * w) / 2;
     for (let i = 0; i < bits.length; i++) if (bits[i] === '1') ctx.fillRect(x0 + i * w, 140, w, 200);
   };
   draw();
@@ -63,6 +68,7 @@ test('Forråd: scan one thing after another; online the name is looked up, offli
   });
   const lookups = () => page.evaluate(() => (window as unknown as { __lookups: string[] }).__lookups);
   const showBarcode = (show: boolean) => page.evaluate((v) => ((window as unknown as { __showBarcode: boolean }).__showBarcode = v), show);
+  const showCode = (code: string) => page.evaluate((c) => ((window as unknown as { __code: string }).__code = c), code);
   await context.addInitScript(FAKE_CAMERA);
 
   await page.goto('./');
@@ -80,11 +86,22 @@ test('Forråd: scan one thing after another; online the name is looked up, offli
   const food = page.getByRole('region', { name: 'Mad' });
   const sheet = page.getByRole('dialog', { name: 'Tilføj til forrådet' });
 
-  // Online: the scan opens a sheet with the name and size from the lookup; the category is guessed.
+  // A code with a wrong check digit is seen but not read (D-055): the screen says so, the line
+  // keeps moving and no sheet opens. The right code is then read.
+  await showCode('5701234567898');
   await openScanner();
+  await expect(page.locator('.scan-line')).toBeVisible();
+  await expect(page.getByText('Stregkoden ses, men kan ikke læses. Hold telefonen stille, lidt længere væk, og sørg for lys.')).toBeVisible({ timeout: 15_000 });
+  await expect(sheet).toBeHidden();
+  await showCode(CODE);
+
+  // Online: the scan opens a sheet with the name and size from the lookup; the category is guessed.
+  // The line stops while the sheet is open.
   await expect(sheet.getByLabel('Navn')).toHaveValue('Makrel i tomat', { timeout: 15_000 });
+  await expect(page.locator('.scan-line')).toHaveCount(0);
+  await expect(page.getByText('Hold stregkoden inden for rammen.')).toBeVisible();
   await expect(sheet.getByText('Varens navn er fra Open Food Facts.')).toBeVisible();
-  await expect(sheet.getByText('Mad', { exact: true })).toBeVisible();
+  await expect(sheet.getByRole('radio', { name: 'Mad' })).toBeChecked();
   await expect(sheet.getByLabel('Mængde')).toHaveValue('125');
   await expect(sheet.getByLabel('Enhed')).toHaveValue('g');
   expect(await lookups()).toHaveLength(1);
@@ -141,7 +158,11 @@ test('Forråd: scan one thing after another; online the name is looked up, offli
   await page.getByRole('button', { name: 'Uden stregkode' }).click();
   const typed = page.getByRole('dialog', { name: 'Uden stregkode' });
   await expect(typed.getByLabel('Navn')).toBeFocused();
-  await typed.getByLabel('Navn').fill('Knækbrød');
+  // A suggestion can be picked inside the sheet (owner 2026-11-06: tapping one closed the list instead).
+  await typed.getByLabel('Navn').pressSequentially('knækb');
+  await typed.getByRole('listbox', { name: 'Forslag' }).getByRole('option', { name: 'Knækbrød Fra listen', exact: true }).click();
+  await expect(typed.getByRole('listbox', { name: 'Forslag' })).toBeHidden();
+  await expect(typed.getByLabel('Navn')).toHaveValue('Knækbrød');
   await typed.getByRole('button', { name: 'Tilføj', exact: true }).click();
   await expect(page.getByText('Knækbrød er tilføjet under Mad')).toBeVisible();
   await expect(page.getByText('2 tilføjet', { exact: true })).toBeVisible();
@@ -168,8 +189,8 @@ test('Forråd: a refused camera says so and leads to typing the name', async ({ 
   await page.getByRole('link', { name: 'Scan varer' }).click();
   await expect(page.getByText(/^Appen fik ikke lov til at bruge kameraet/)).toBeVisible();
   await page.getByRole('button', { name: 'Skriv i stedet' }).click();
-  await expect(page.getByRole('heading', { level: 1, name: 'Tilføj til forrådet' })).toBeVisible();
-  await page.getByLabel('Navn').fill('Knækbrød');
-  await page.getByRole('button', { name: 'Færdig' }).click();
+  const add = page.getByRole('dialog', { name: 'Tilføj til forrådet' });
+  await add.getByLabel('Navn').fill('Knækbrød');
+  await add.getByRole('button', { name: 'Færdig' }).click();
   await expect(page.getByRole('region', { name: 'Mad' }).getByRole('button', { name: /^Knækbrød/ })).toBeVisible();
 });

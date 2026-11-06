@@ -131,18 +131,22 @@ web/
       useDbQuery.ts                 one request for a component: answer per request, error instead of
                                     loading forever
     i18n/strings.ts, format.ts    Strings (da, en; a test keeps them in step) and every date, number and unit
-    components/ui.tsx             Primitives: Card, Button/ButtonLink/IconButton, inputClass, RowList/LinkRow,
-                                  Section, SubPageHeader, TabHeader, SettingsButton, OriginalToggle, Choice,
-                                  Stepper, SearchField, MessageState, Page, SubNav, Sheet (a bottom sheet on
-                                  the native modal <dialog>, D-049)
+    components/ui.tsx             Primitives: Card, Button/ButtonLink/IconButton (variant `danger` deletes),
+                                  inputClass, RowList/LinkRow, Section, SubPageHeader, TabHeader,
+                                  SettingsButton, OriginalToggle, Choice (also a bar with a hidden legend),
+                                  Stepper (− field +, the number can be typed, D-054), SearchField,
+                                  MessageState, Page, SubNav, Toast, Sheet (a bottom sheet on the native
+                                  modal <dialog>, D-049; slides in and out, index.css, D-054)
     components/                   TabBar, EmergencyCard (112), FoodList, GuideList, food guide parts
     guides/                       useGuides/useGuideSearch and GuideCategoryScreen, the frame the three guide
                                   categories share (header, search, results)
     food/                         Food keeping times: search ranking, formatting, useFoodSearch (pure parts tested)
-    forraad/                      Forråd (D-046–D-053): store, month and water arithmetic, stock-list
-                                  recommendations, item sheet, adding (scan page with a continuous
-                                  camera, typing page) and the edit page on shared fields (useItemDraft,
-                                  ItemFields, NameField), sizes (number and unit), barcode lookup, backup file
+    forraad/                      Forråd (D-046–D-054): store, month and water arithmetic, stock-list
+                                  recommendations, item sheet (a counter), water sheet, adding (scan page
+                                  with a continuous camera, typing sheet) and the edit page on shared
+                                  fields (useItemDraft, ItemFields, NameField), sizes (number and unit),
+                                  barcode lookup and the scanner (zxing-wasm on the frame region only,
+                                  D-055), backup file, the water tile on Home
     supplies/checklist.ts         Stock-list ticks driven by Forråd (D-048)
     map/                          Offline maps (D-036): map worker, downloads, places, position
     compass/                      Compass sensor and maths (D-045)

@@ -381,7 +381,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
 
 - **Date:** 2026-11-05
 - **Decision (owner):** Forråd can scan a product's barcode (EAN-13/8, UPC-A/E) to fill in the name.
-  - The reader is `barcode-detector` 3.2.3 (a ponyfill on `zxing-wasm` 3.1.6, both MIT), because Safari has no native `BarcodeDetector`.
+  - The reader is `barcode-detector` 3.2.3 (a ponyfill on `zxing-wasm` 3.1.6, both MIT), because Safari has no native `BarcodeDetector`. *(Changed by D-055: `zxing-wasm` is used directly and `barcode-detector` is removed.)*
   - Its `.wasm` file is bundled, precached and loaded from the app. Its default CDN location is overridden, so scanning works offline.
   - The scanner code is loaded only when the user taps "Scan".
   - The camera is asked for only then and stops as soon as a code is read. *(Changed by D-053: it stays on until "Færdig", for scanning one thing after another.)*
@@ -414,6 +414,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Sheet:** a shared `Sheet` primitive (`components/ui.tsx`) on the native modal `<dialog>` (Safari 15.4+): focus stays inside, the page behind is inert, Escape or a tap above it closes it, and it sits above the tab bar.
 - **Rationale:** taking things out was three steps (open, lower the count, save), and D-046 says it must be quick or it does not get done.
 - **Alternatives:** a − button on each row (fastest, but no way to change the month and easy to tap by mistake); a "Brug en" button in the editor (still two taps); keeping used-up things at 0 as a shopping reminder (needs a new state and a rule for the ticks; not now).
+- **Changed 2026-11-06 (D-054):** "Tag ud" and "Læg flere til" are replaced by one counter; "Ret navn, kategori og størrelse" is "Redigér"; "Slet alt" is a red "Slet".
 
 ## D-050 — Sizes as a number and a unit, read from the scan
 
@@ -495,6 +496,71 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - where the toast sits when the keyboard is open
   - the camera coming back after leaving the app
   - heat and battery over a few minutes
+- **Changed 2026-11-06 (D-054):** typing opens a sheet over Forråd instead of its own page; the category is a visible bar on top; "Skriv selv" is "Tilføj".
+
+## D-054 — Forråd after the iPhone test: counters, sheets that slide, a water sheet and dial, a guide on dates
+
+- **Date:** 2026-11-06
+- **Problem (owner, after using D-049–D-053 on the iPhone):**
+  - In the scan sheet, a suggestion could not be picked: the list closed under the finger.
+  - "Tag ud" and "Læg flere til" worked poorly.
+  - "Slet alt" did not say what it does.
+  - The add form's order and the empty month field's lower height felt off.
+  - The sheets appeared without movement.
+  - "Holdbarhed" said little.
+  - Water had its own inline form.
+- **Decisions (owner):**
+  - **The bug:** inside a `<dialog>`, a tap on a suggestion moved focus to the dialog and the list closed before the tap landed. The list now keeps focus in the field (`pointerdown` cancelled), and focus moving to the dialog does not close it.
+  - **A counter on each thing:** the sheet shows − [antal] +, and the number can be typed. Each change is saved at once. Counting down to 0 shows "Den fjernes fra forrådet, når du lukker", and the thing is removed when the sheet closes; counting up again keeps it. Below it are "Redigér" and a red "Slet" with a bin icon, which asks first. The best-before month is no longer changed when taking out or adding (see OPEN_QUESTIONS 35).
+  - **Every counter can be typed into** (`Stepper`), including the household and the add form.
+  - **Sheets slide** up and down, with the backdrop fading. Nothing moves with reduced motion. A sheet keeps its content while it slides down.
+  - **Adding by typing is a sheet** on the Forråd page, adding one thing after another like the scanner. Its address (`#/forraad/new`) is kept, so the back button and a category's + work. The button is "Tilføj".
+  - **The category is a bar** on top of the form: [Mad] [Pleje] [Andet]. It starts at Mad, or at the category whose + opened it. A name that is a stock-list line in another category moves it until the user taps one. The edit page uses the same bar. The cards keep their long names.
+  - **Field order:** category, Navn, Antal, Størrelse (valgfri), Bedst før (valgfri). The empty month field is as tall as the others.
+  - **"Nærmer sig udløb"** replaces "Holdbarhed". Its rows look like the categories' rows, with the date in red. A link leads to the new guide on dates.
+  - **Water:** the whole card opens a sheet with a counter in the chosen unit, saved at once, and "Tjekket i dag". The month field for "last checked" is gone.
+  - **Home:** a water tile with a ring (have/need) comes first among the tiles, once some water is entered. An odd last tile fills its row.
+  - **The Forråd tab** has one plain box (`Box`).
+  - **A guide on dates:** "Når datoen er overskredet" (supplies group, risk `high`). It covers the difference between "bedst før" and "sidste anvendelsesdato", and how to look, smell and taste. It also lists examples of "bedst før" foods and the foods without a date.
+    - **Sources:** Fødevarestyrelsen's "Sådan vurderer du madens holdbarhed" is the primary source. Forbrugerrådet Tænk is the second authority, and gives the list of examples.
+    - **Samvirke left out:** the Samvirke article the owner named is a magazine piece. Its claims about single foods have no authority behind them, so it was not used.
+  - **Barcode backfill stays on the phone:** a name typed for an unknown barcode is remembered on the device (as since D-053). Nothing is sent to Open Food Facts, since adding there needs an account (D-010, D-047).
+- **Danger colour:** a new `danger` token (red; light #b3261e, dark #ff8a80) for deleting and for dates that have passed or soon will.
+- **Alternatives:**
+  - A "Gem" button for the counter.
+  - A counter that stops at 1.
+  - "Medicin" or "Apotek" as the bar name.
+  - A link that opens Open Food Facts to add a product.
+  - Keeping the typing page.
+- **Still to check on the iPhone:**
+  - picking a suggestion in the scan sheet
+  - the empty month field's height
+  - how the sliding feels
+  - typing in the counters with the number keyboard
+
+## D-055 — The scanner shows that it is looking, says when a code is seen but not read, and reads better
+
+- **Date:** 2026-11-06
+- **Problem (owner, on the iPhone):** the scanner often had trouble reading a code, and the screen gave no sign whether it was looking or whether it saw the code and failed.
+- **Cause, as far as the code shows:** the camera ran at its default resolution (often 640×480 on iOS), and the whole picture was read, so a barcode was only a few hundred pixels wide. The only sign was a still frame.
+- **Decision (owner):**
+  - **Read better:**
+    - The camera is asked for 1080p, and for continuous focus where the browser offers it.
+    - Only the part under the frame is read (with a 15 % margin), at full resolution. The frame's position is one constant (`SCAN_FRAME`) shared by the drawing and the crop (`cropFor`, tested).
+    - The next frame is read only after the last one is done, every 200 ms.
+  - **A line moves** up and down in the frame while the camera looks. It stops while a sheet is open. With reduced motion, the frame's border slowly brightens and dims instead.
+  - **"Seen but not read":** the reader is asked to return codes it found but could not decode (`returnErrors`). When it does, the frame and line turn amber, and the text under the camera says "Stregkoden ses, men kan ikke læses. Hold telefonen stille, lidt længere væk, og sørg for lys." It holds for 1.5 seconds after the last such frame.
+    - **Not caught:** a very blurry code, which the reader does not see at all.
+- **Dependency:** `zxing-wasm` 3.1.6 (MIT, already a direct dependency for its `.wasm` file) is used directly through `readBarcodes`. `barcode-detector` is removed, since Safari never had the native detector it wraps.
+- **Alternatives:**
+  - Tips after a few seconds without a read.
+  - A torch button (iPhone Safari may not allow the torch).
+  - Feedback only, without changing the reading.
+- **Still to check on the iPhone:**
+  - reading real packs at different distances
+  - focus
+  - the amber state on a worn or curved code
+  - heat and battery over a few minutes, since 1080p frames cost more
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

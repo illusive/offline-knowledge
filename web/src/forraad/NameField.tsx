@@ -75,8 +75,11 @@ export function NameField({ id, value, onChange, suggestions, onPick, hint, list
           }
         }}
         onBlur={(e) => {
-          // A tap on a suggestion moves focus nowhere (null); another field closes the list.
-          if (e.relatedTarget && !box.current?.contains(e.relatedTarget)) setOpen(false);
+          // Another field closes the list. A tap on a suggestion keeps focus in the field (the
+          // list's pointerdown is cancelled); in a sheet a tap may still move focus to the dialog
+          // itself, which is not leaving the field for another one.
+          const to = e.relatedTarget;
+          if (to && !box.current?.contains(to) && to.tagName !== 'DIALOG') setOpen(false);
         }}
         placeholder={placeholder}
         autoComplete="off"
@@ -91,6 +94,10 @@ export function NameField({ id, value, onChange, suggestions, onPick, hint, list
           id={listId}
           role="listbox"
           aria-label={listLabel}
+          // Keep focus in the field while a suggestion is tapped (owner 2026-11-06: in the scan
+          // sheet focus went to the dialog and the list closed before the tap landed).
+          onPointerDown={(e) => e.preventDefault()}
+          onMouseDown={(e) => e.preventDefault()}
           className="absolute inset-x-0 top-full z-20 mt-1 flex max-h-[min(50dvh,22rem)] flex-col divide-y divide-border overflow-y-auto rounded-xl border border-border bg-background shadow-xl"
         >
           {suggestions.map((sug, i) => (

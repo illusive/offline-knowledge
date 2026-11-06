@@ -53,6 +53,25 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
   - Products under the stock-list lines (D-052, 2026-11-05): 220 common goods offered while typing, after names used before and scanned products, with the lines last. **Awaiting the owner's review of the list.**
   - Months on the phone's own roller, with "Fjern dato" for optional dates; taller fields (D-051, 2026-11-05). **Still to check on the iPhone:** the roller.
   - Two ways to add (D-053, 2026-11-05): **Scan varer** scans one thing after another until "Færdig" (a sheet per code, a toast, the same barcode adds to the thing already there, "Uden stregkode"), and **Skriv selv** works the same way. The category is guessed and changed on the edit page; size and month are always shown as optional; suggestions float over the form. **Still to check on the iPhone:** the list under D-053.
+  - After the owner's iPhone test (D-054, 2026-11-06):
+    - the suggestion bug in the scan sheet is fixed
+    - a counter on each thing (saved at once; 0 removes it on closing)
+    - "Redigér" and a red "Slet"
+    - sheets that slide
+    - typing in a sheet with the category bar (Mad / Pleje / Andet) and the order Navn, Antal, Størrelse, Bedst før
+    - "Nærmer sig udløb" with red dates and a link to the new guide "Når datoen er overskredet" (Fødevarestyrelsen, Tænk; content 0.15.0)
+    - a water sheet with a counter and "Tjekket i dag"
+    - a water ring on Home
+    - one box as the tab icon
+
+    **Still to check on the iPhone:** the list under D-054.
+  - The scanner (D-055, 2026-11-06):
+    - a moving line while it looks
+    - an amber frame and "Stregkoden ses, men kan ikke læses …" when a code is found but not decoded
+    - 1080p with continuous focus where offered, and reading only the frame region
+    - `barcode-detector` removed in favour of `zxing-wasm` directly
+
+    **Still to check on the iPhone:** the list under D-055.
 
   Tested by offline e2e tests, including a real EAN-13 decoded from a canvas "camera". **Still to check on the iPhone:** scanning with the real camera (permission prompt, focus, speed), saving the copy to Filer and restoring it, and the month/year wheels.
 - [x] Whole-app review and clean-up (2026-11-05, D-048):

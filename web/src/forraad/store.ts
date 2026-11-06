@@ -12,7 +12,7 @@ export const CATEGORIES = ['food', 'medicine', 'other'] as const;
 export type Category = (typeof CATEGORIES)[number];
 export const TARGET_DAYS = [3, 7, 14] as const;
 export type TargetDays = (typeof TARGET_DAYS)[number];
-const MAX_COUNT = 9999;
+export const MAX_COUNT = 9999;
 
 export interface StoreItem {
   id: string;
@@ -131,14 +131,10 @@ export function parse(raw: unknown): ForraadData {
   return { version: 2, household, water, items, products };
 }
 
-// Taking some out (D-049). Taking all of them out deletes the thing (null). `expires`: undefined
-// keeps the month, null clears it, a month sets it (the next one may expire later).
-export function takeOut(item: StoreItem, n: number, expires?: string | null): StoreItem | null {
-  if (n >= item.count) return null;
-  const next: StoreItem = { ...item, count: item.count - Math.max(1, Math.round(n)) };
-  if (expires === null) delete next.expires;
-  else if (expires !== undefined) next.expires = expires;
-  return next;
+// A new count from the counter in the thing's sheet (D-054): a whole number from 1 to MAX_COUNT.
+// Going down to 0 is not a count: the sheet removes the thing when it closes.
+export function withCount(item: StoreItem, n: number): StoreItem {
+  return { ...item, count: Math.min(MAX_COUNT, Math.max(1, Math.round(n))) };
 }
 
 // Stocking more of a thing (D-049). The month kept is the earlier one: the user tracks the one
@@ -172,8 +168,7 @@ export const forraad = {
       return { ...d, items: exists ? d.items.map((i) => (i.id === saved.id ? saved : i)) : [...d.items, saved] };
     }),
   removeItem: (id: string) => update((d) => ({ ...d, items: d.items.filter((i) => i.id !== id) })),
-  take: (id: string, n: number, expires?: string | null) =>
-    update((d) => ({ ...d, items: d.items.flatMap((i) => (i.id === id ? (takeOut(i, n, expires) ?? []) : [i])) })),
+  setCount: (id: string, n: number) => update((d) => ({ ...d, items: d.items.map((i) => (i.id === id ? withCount(i, n) : i)) })),
   stock: (id: string, n: number, expires?: string) => update((d) => ({ ...d, items: d.items.map((i) => (i.id === id ? stockMore(i, n, expires) : i)) })),
   rememberProduct: (barcode: string, product: Product) => update((d) => ({ ...d, products: { ...d.products, [barcode]: product } })),
 };

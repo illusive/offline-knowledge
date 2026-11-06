@@ -349,6 +349,22 @@
       "shortName": "Fødevarestyrelsen"
     },
     {
+      "id": "dk-fvst-vurder-madens-holdbarhed",
+      "status": "request-needed",
+      "title": "Sådan vurderer du madens holdbarhed - og undgår madspild",
+      "publisher": "Fødevarestyrelsen",
+      "url": "https://www.foedevarestyrelsen.dk/kost-og-foedevarer/alt-om-mad/madspild-i-hjemmet/vurder-madens-holdbarhed",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Danish authority; no published reuse terms. Reuse request route (D-012); set aside while private (D-028). The guide on dates in Forråd (D-054).",
+      "attribution": "Fødevarestyrelsen: Sådan vurderer du madens holdbarhed.",
+      "retrievedAt": "2026-11-06",
+      "snapshot": "snapshots/dk-fvst-vurder-madens-holdbarhed.html",
+      "snapshotSha256": "16af647276fd014d2cdfbd83c034ee70e37c6c4d2a3cf148138aae3bb997ee5f",
+      "shortName": "Fødevarestyrelsen"
+    },
+    {
       "id": "dk-bolius-udendoers-opbevaring",
       "status": "request-needed",
       "title": "Udendørs opbevaring af madvarer om vinteren",
