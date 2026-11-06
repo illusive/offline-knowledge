@@ -119,7 +119,7 @@ web/
     main.tsx, App.tsx             Opens the pack, routes (one switch, every route handled), tab bar,
                                   each page's search text, per-page scroll positions
     router.ts                     Hash routes (D-023): Home, first aid, Når det sker, food storage, growing,
-                                  guides, foods, saved, map, Forråd and its editor, tools, compass, settings;
+                                  guides, foods, saved, map, Forråd and its editor, tools, compass, sun, settings;
                                   SAVED_SECTIONS holds the category order (D-048)
     sw.ts                         Service worker: caches every built file; updates wait for "Update"
     lib/                          Shared helpers, used everywhere instead of hand-written copies:
@@ -150,6 +150,8 @@ web/
     supplies/checklist.ts         Stock-list ticks driven by Forråd (D-048)
     map/                          Offline maps (D-036): map worker, downloads, places, position
     compass/                      Compass sensor and maths (D-045)
+    sun/                          Sunrise, sunset and twilight from a place and a day (NOAA equations),
+                                  the chosen place and the town list (D-056)
     bookmarks/, settings/, pwa/   Saved items, preferences and theme, offline status and updates
     screens/                      One file per page
   e2e/                            Playwright tests in WebKit, offline

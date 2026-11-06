@@ -19,7 +19,7 @@ test('save, list by category, open at the current category, remove; offline', as
   await page.goto('./');
   await page.getByRole('link', { name: 'Gemte (3)' }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Gemte' })).toBeVisible();
-  for (const [section, item] of [['Førstehjælp', 'Stabilt sideleje'], ['Dyrkning', 'Radiser'], ['Opbevaring af mad', 'Kartofler']]) {
+  for (const [section, item] of [['Førstehjælp', 'Stabilt sideleje'], ['Dyrkning', 'Radiser'], ['Opbevaring', 'Kartofler']]) {
     await expect(page.getByRole('region', { name: new RegExp(`^${section}`) }).getByRole('link', { name: new RegExp(`^${item}`) })).toBeVisible();
   }
 

@@ -40,7 +40,6 @@ export interface Strings {
   tabs: Record<'home' | 'map' | 'forraad' | 'tools', string>;
   settingsOpen: string;
   mapTitle: string;
-  mapTileNote: string;
   mapLabel: string;
   mapLoading: string;
   mapErrorTitle: string;
@@ -130,6 +129,39 @@ export interface Strings {
     turnLeft: (deg: number) => string;
     howTo: string;
   };
+  sun: {
+    title: string;
+    subtitle: string;
+    place: string;
+    changePlace: string;
+    choosePlace: string;
+    myPosition: string;
+    homePoint: string;
+    useMyPosition: string;
+    useHomePoint: string;
+    town: string;
+    chooseTown: string;
+    searching: string;
+    refused: string;
+    unavailable: string;
+    date: string;
+    today: string;
+    sunrise: string;
+    sunset: string;
+    risesIn: (dir: string, deg: number) => string;
+    setsIn: (dir: string, deg: number) => string;
+    neverSets: string;
+    neverRises: string;
+    light: string;
+    lightHelp: string;
+    lightAllNight: string;
+    darkAllDay: string;
+    dayLength: string;
+    longer: (min: number) => string;
+    shorter: (min: number) => string;
+    sameAsYesterday: string;
+    note: string;
+  };
   forraad: {
     title: string;
     loading: string;
@@ -142,6 +174,7 @@ export interface Strings {
     checkAgain: (date: string) => string;
     checkDue: (date: string) => string;
     checkedToday: string;
+    ok: string;
     checkSource: string;
     emptyStore: string;
     seeAllRecommendations: string;
@@ -390,7 +423,7 @@ export const strings: Record<Lang, Strings> = {
     homeSearchPlaceholder: 'Søg',
     homeSearchLabel: 'Søg i indholdet',
     startHere: 'Start her',
-    storingFood: 'Opbevaring af mad',
+    storingFood: 'Opbevaring',
     storageIntro: 'Hvor længe holder maden i køkkenskab, køleskab og fryser?',
     emergencyTitle: 'Livstruende nødsituation?',
     emergencySubtitle: 'Ring til alarmcentralen',
@@ -400,7 +433,6 @@ export const strings: Record<Lang, Strings> = {
     navLabel: 'Hovedmenu',
     tabs: { home: 'Hjem', map: 'Kort', forraad: 'Forråd', tools: 'Værktøjer' },
     settingsOpen: 'Indstillinger',
-    mapTileNote: 'Uden internet',
     mapTitle: 'Kort',
     mapLabel: 'Kort over Danmark',
     mapLoading: 'Åbner kortet …',
@@ -500,6 +532,39 @@ export const strings: Record<Lang, Strings> = {
       turnLeft: (deg) => `Drej ${deg}° til venstre`,
       howTo: 'Hold telefonen fladt foran dig, så toppen peger frem. Vend dig, til retningen passer, og tryk på Hold denne kurs. Så viser appen, hvis du kommer ud af kurs.',
     },
+    sun: {
+      title: 'Sol op og ned',
+      subtitle: 'Hvornår solen står op og går ned – uden internet.',
+      place: 'Sted',
+      changePlace: 'Skift sted',
+      choosePlace: 'Vælg sted',
+      myPosition: 'Din position',
+      homePoint: 'Hjemmepunktet på kortet',
+      useMyPosition: 'Brug min position',
+      useHomePoint: 'Brug hjemmepunktet på kortet',
+      town: 'By',
+      chooseTown: 'Vælg en by',
+      searching: 'Finder din position …',
+      refused: 'Appen har ikke tilladelse til at bruge din position. Du kan ændre det i telefonens indstillinger, eller vælge en by.',
+      unavailable: 'Din position kan ikke findes lige nu. Prøv udendørs, eller vælg en by.',
+      date: 'Dato',
+      today: 'I dag',
+      sunrise: 'Solopgang',
+      sunset: 'Solnedgang',
+      risesIn: (dir, deg) => `Står op i ${dir} (${deg}°)`,
+      setsIn: (dir, deg) => `Går ned i ${dir} (${deg}°)`,
+      neverSets: 'Solen går ikke ned denne dag.',
+      neverRises: 'Solen står ikke op denne dag.',
+      light: 'Lyst udenfor',
+      lightHelp: 'Lyst nok til at være ude uden lygte.',
+      lightAllNight: 'Det bliver ikke mørkt denne nat.',
+      darkAllDay: 'Det bliver ikke rigtig lyst denne dag.',
+      dayLength: 'Dagens længde',
+      longer: (min) => `${min} min længere end i går`,
+      shorter: (min) => `${min} min kortere end i går`,
+      sameAsYesterday: 'Næsten som i går',
+      note: 'Regnet ud fra stedet og datoen, i telefonens tid. Bakker, huse og skyer kan gøre det mørkt tidligere. Retningen er fra geografisk nord.',
+    },
     forraad: {
       title: 'Forråd',
       loading: 'Henter forrådet …',
@@ -512,6 +577,7 @@ export const strings: Record<Lang, Strings> = {
       checkAgain: (date) => `Tjek igen i ${date}`,
       checkDue: (date) => `Tid til at tjekke vandet (siden ${date})`,
       checkedToday: 'Tjekket i dag',
+      ok: 'OK',
       checkSource: 'Tjek forrådet hvert halve år: se datoerne, og skift det ud, der skal skiftes.',
       emptyStore: 'Der er intet i forrådet endnu.',
       seeAllRecommendations: 'Se, hvad myndighederne anbefaler',
@@ -806,7 +872,7 @@ export const strings: Record<Lang, Strings> = {
     homeSearchPlaceholder: 'Search',
     homeSearchLabel: 'Search the content',
     startHere: 'Start here',
-    storingFood: 'Storing food',
+    storingFood: 'Storage',
     storageIntro: 'How long does food keep in the cupboard, refrigerator and freezer?',
     emergencyTitle: 'Life-threatening emergency?',
     emergencySubtitle: 'Call the emergency number (Denmark)',
@@ -816,7 +882,6 @@ export const strings: Record<Lang, Strings> = {
     navLabel: 'Main menu',
     tabs: { home: 'Home', map: 'Map', forraad: 'Supplies', tools: 'Tools' },
     settingsOpen: 'Settings',
-    mapTileNote: 'Works offline',
     mapTitle: 'Map',
     mapLabel: 'Map of Denmark',
     mapLoading: 'Opening the map …',
@@ -916,6 +981,39 @@ export const strings: Record<Lang, Strings> = {
       turnLeft: (deg) => `Turn ${deg}° left`,
       howTo: 'Hold the phone flat in front of you with the top pointing ahead. Turn until the direction is right and tap Hold this course. The app then shows when you drift off course.',
     },
+    sun: {
+      title: 'Sunrise and sunset',
+      subtitle: 'When the sun rises and sets – without internet.',
+      place: 'Place',
+      changePlace: 'Change place',
+      choosePlace: 'Choose a place',
+      myPosition: 'Your position',
+      homePoint: 'The home point on the map',
+      useMyPosition: 'Use my position',
+      useHomePoint: 'Use the home point on the map',
+      town: 'Town',
+      chooseTown: 'Choose a town',
+      searching: 'Finding your position …',
+      refused: 'The app does not have permission to use your location. You can change this in your phone\'s settings, or choose a town.',
+      unavailable: 'Your location cannot be found right now. Try outdoors, or choose a town.',
+      date: 'Date',
+      today: 'Today',
+      sunrise: 'Sunrise',
+      sunset: 'Sunset',
+      risesIn: (dir, deg) => `Rises in the ${dir} (${deg}°)`,
+      setsIn: (dir, deg) => `Sets in the ${dir} (${deg}°)`,
+      neverSets: 'The sun does not set on this day.',
+      neverRises: 'The sun does not rise on this day.',
+      light: 'Light outside',
+      lightHelp: 'Light enough to be outside without a torch.',
+      lightAllNight: 'It does not get dark this night.',
+      darkAllDay: 'It does not really get light on this day.',
+      dayLength: 'Length of the day',
+      longer: (min) => `${min} min longer than yesterday`,
+      shorter: (min) => `${min} min shorter than yesterday`,
+      sameAsYesterday: 'About the same as yesterday',
+      note: 'Worked out from the place and the date, in the phone\'s time. Hills, buildings and clouds can make it dark sooner. Directions are from true north.',
+    },
     forraad: {
       title: 'Supplies',
       loading: 'Loading your supplies …',
@@ -928,6 +1026,7 @@ export const strings: Record<Lang, Strings> = {
       checkAgain: (date) => `Check again in ${date}`,
       checkDue: (date) => `Time to check the water (since ${date})`,
       checkedToday: 'Checked today',
+      ok: 'OK',
       checkSource: 'Check your supplies every six months: look at the dates and replace what needs replacing.',
       emptyStore: 'There is nothing in your supplies yet.',
       seeAllRecommendations: 'See what the authorities recommend',

@@ -218,9 +218,13 @@ function WaterSheet({ data, lists, lang, s, onClose, onChecked }: { data: Forraa
         {w.need ? <WaterBar share={w.share} /> : null}
         <p className={`text-sm ${w.needsCheck ? 'font-semibold' : 'text-muted'}`}>{checkLine(data, w, t)}</p>
       </div>
+      {/* OK closes (the amount is already saved); checking is the second step (owner 2026-11-06). */}
+      <Button variant="primary" className="mt-4 w-full" onClick={onClose}>
+        {t.ok}
+      </Button>
       <Button
-        variant="primary"
-        className="mt-4 w-full"
+        variant="onPage"
+        className="mt-3 w-full"
         onClick={() => {
           forraad.checkWater();
           onChecked();

@@ -20,6 +20,7 @@ describe('routes', () => {
       [hrefs.forraadItem('a b'), { name: 'forraadEdit', id: 'a b' }],
       [hrefs.tools, { name: 'tools' }],
       [hrefs.compass, { name: 'compass' }],
+      [hrefs.sun, { name: 'sun' }],
       [hrefs.settings, { name: 'settings' }],
     ];
     for (const [href, route] of cases) expect(parseRoute(href), href).toEqual(route);
@@ -35,6 +36,7 @@ describe('routes', () => {
   it('puts each page under its tab; Settings belongs to none (D-046)', () => {
     expect(tabOf({ name: 'guide', id: 'x' })).toBe('home');
     expect(tabOf({ name: 'compass' })).toBe('tools');
+    expect(tabOf({ name: 'sun' })).toBe('tools');
     expect(tabOf({ name: 'forraadScan' })).toBe('forraad');
     expect(tabOf({ name: 'forraadNew', category: null, recommendationId: null })).toBe('forraad');
     expect(tabOf({ name: 'forraadEdit', id: 'x' })).toBe('forraad');

@@ -1,7 +1,7 @@
 // Home (design brief, D-025): search everything offline, then the categories in order of how many
 // people need them (D-048) and the emergency card.
 
-import { Asterisk, ArrowUpRight, Cross, Map as MapIcon, Package, Sprout, Zap } from 'lucide-react';
+import { Asterisk, ArrowUpRight, Cross, Package, Sprout, Zap } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { EmergencyCard } from '../components/EmergencyCard';
 import { DownloadCard, OFFLINE_DISABLED } from '../components/OfflineStatus';
@@ -94,14 +94,13 @@ export function HomeScreen(props: {
               <ArrowUpRight aria-hidden="true" className="size-6 shrink-0" />
             </a>
           ) : null}
-          {/* Category tiles in order of how many people need them (D-048): Når det sker, food, the map,
-              growing last. Guide categories without content are left out (D-025). The water in
+          {/* Category tiles in order of how many people need them (D-048): Når det sker, food, growing
+              last. The map is not a tile: it has its own tab (owner, 2026-11-06). Guide categories without content are left out (D-025). The water in
               Forråd comes first, once some is entered (D-054); an odd last tile fills its row. */}
           <div className="grid grid-cols-2 gap-3">
             <WaterTile db={db} lang={lang} s={s} />
             {prepare?.length ? <CategoryTile href={hrefs.prepare} icon={<Zap className="size-7" strokeWidth={1.5} />} title={s.prepare} count={s.prepareCount(prepare.length)} /> : null}
             <CategoryTile href={hrefs.storage} icon={<Package className="size-7" strokeWidth={1.5} />} title={s.storingFood} count={foods ? s.foodCount(foods.length) : null} />
-            <CategoryTile href={hrefs.map} icon={<MapIcon className="size-7" strokeWidth={1.5} />} title={s.mapTitle} count={s.mapTileNote} />
             {crops?.length ? <CategoryTile href={hrefs.growing} icon={<Sprout className="size-7" strokeWidth={1.5} />} title={s.growing} count={s.growingCount(crops.length)} /> : null}
           </div>
           <div className="mt-3">

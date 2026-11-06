@@ -77,13 +77,19 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   await expect(water.getByText(/^0\sL af 42\sL$/)).toBeVisible();
 
   // Water (D-054): a tap on the card opens its sheet. The amount is a counter, saved at once (typed
-  // or with + and −), and "Tjekket i dag" marks it as checked.
+  // or with + and −). "OK" closes it; "Tjekket i dag" below marks it as checked.
   await expect(water.getByText('Ikke tjekket endnu')).toBeVisible();
   await water.getByRole('button').click();
   const waterSheet = page.getByRole('dialog', { name: 'Drikkevand' });
   await waterSheet.getByRole('textbox', { name: 'Liter på lager' }).fill('11');
   await waterSheet.getByRole('button', { name: 'Liter på lager +1' }).click();
   await expect(waterSheet.getByText(/^12\sL af 42\sL$/)).toBeVisible();
+  // "OK" closes the sheet and keeps the amount, without marking it as checked.
+  await waterSheet.getByRole('button', { name: 'OK', exact: true }).click();
+  await expect(waterSheet).toBeHidden();
+  await expect(water.getByText(/^12\sL af 42\sL$/)).toBeVisible();
+  await expect(water.getByText('Ikke tjekket endnu')).toBeVisible();
+  await water.getByRole('button').click();
   await waterSheet.getByRole('button', { name: 'Tjekket i dag' }).click();
   await expect(waterSheet).toBeHidden();
   await expect(page.getByText('Vandet er tjekket.')).toBeVisible();

@@ -41,13 +41,13 @@ High-risk areas (first aid, water treatment, food safety, electricity) follow a 
 ### v1 requirements
 
 - A bundled, versioned core knowledge pack is available on first launch without any network access (D-007).
-- Browse by category, in order of how many people need them (D-048): Førstehjælp, Når det sker, Opbevaring af mad, Kort, Dyrkning.
+- Browse by category, in order of how many people need them (D-048): Førstehjælp, Når det sker, Opbevaring, Dyrkning. Kort is a tab, not a category on Home (owner, 2026-11-06).
 - Read a guide: summary, steps, warnings, checklists, source attribution and license.
 - Full-text local search across all guides.
 - Food storage lookup: search a food and see how long it keeps in the pantry, fridge and freezer, in Danish and English, with its source (D-014, D-015).
 - Emergency card that calls 112, reachable from Home and every high-risk guide.
 - Kort tab: offline maps of chosen areas, places and your position (D-036).
-- Tools: compass with "hold a course" (D-045). The supply checklist became the "Hjemmeberedskab" stock lists (D-040, D-043), whose ticks are what Forråd holds (D-048).
+- Tools: compass with "hold a course" (D-045); sunrise and sunset for a place and a day (D-056). The supply checklist became the "Hjemmeberedskab" stock lists (D-040, D-043), whose ticks are what Forråd holds (D-048).
 - Bookmarks ("Saved") for guides and foods, kept on the device only (D-026).
 - Forråd tab: the household's own stores. Water against the stock list for the household, when it was last checked, expiry dates, each category with a link to its stock list, and barcode scanning. The household and a backup file are in Settings. Kept on the device (D-046, D-047).
 - Settings (the gear at the top right): offline library (pack size, version, date), language, appearance, water unit, text size, about and sources.

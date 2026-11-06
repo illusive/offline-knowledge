@@ -31,7 +31,7 @@ export function WaterTile({ db, lang, s }: { db: DbClient; lang: Lang; s: String
         {need ? (
           <svg viewBox="0 0 100 100" className="size-16 shrink-0 -rotate-90">
             <circle cx="50" cy="50" r={R} fill="none" strokeWidth="12" className="stroke-border" />
-            <circle cx="50" cy="50" r={R} fill="none" strokeWidth="12" strokeLinecap="round" className="stroke-text" strokeDasharray={`${share * CIRCUMFERENCE} ${CIRCUMFERENCE}`} />
+            <circle cx="50" cy="50" r={R} fill="none" strokeWidth="12" strokeLinecap="round" className="stroke-accent" strokeDasharray={`${share * CIRCUMFERENCE} ${CIRCUMFERENCE}`} />
           </svg>
         ) : null}
         {need ? <span className="text-sm text-muted">{t.waterOfShort(vol(need))}</span> : null}

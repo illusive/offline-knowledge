@@ -10,9 +10,9 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await expect(page.getByText('6 fødevarer')).toBeVisible();
   await page.getByRole('searchbox', { name: 'Søg i indholdet' }).fill('');
 
-  // The "Storing food" category.
-  await page.getByRole('link', { name: /Opbevaring af mad/ }).click();
-  await expect(page.getByRole('heading', { level: 1, name: 'Opbevaring af mad' })).toBeVisible();
+  // The "Opbevaring" (storage) category.
+  await page.getByRole('link', { name: /Opbevaring$/ }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Opbevaring' })).toBeVisible();
   await expect(page.getByText('101 fødevarer')).toBeVisible();
   const search = page.getByRole('searchbox', { name: 'Søg efter en fødevare' });
   await search.fill('kal');
@@ -25,7 +25,7 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
 
   // Back returns to the list with the query kept.
   await page.getByRole('button', { name: 'Tilbage' }).click();
-  await expect(page.getByRole('heading', { level: 1, name: 'Opbevaring af mad' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Opbevaring' })).toBeVisible();
   await expect(search).toHaveValue('kal');
 
   // Tab bar.
@@ -75,7 +75,7 @@ test('opened directly on a food, back goes to the food list, then Home', async (
   await page.getByRole('navigation', { name: 'Om fødevaren' }).getByRole('link', { name: 'Om' }).click();
   await expect(page).toHaveURL(/#\/food\/foodkeeper-297\/about$/);
   await page.getByRole('button', { name: 'Tilbage' }).click();
-  await expect(page.getByRole('heading', { level: 1, name: 'Opbevaring af mad' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: 'Opbevaring' })).toBeVisible();
   await page.getByRole('button', { name: 'Tilbage' }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Hvad har du brug for?' })).toBeVisible();
 });
@@ -93,13 +93,14 @@ test('English interface for an English-language browser', async () => {
   }
 });
 
-test('Home lists the categories by how many people need them, growing last, with the map (D-048)', async ({ app: { page } }) => {
+test('Home lists the categories by how many people need them, growing last; the map is a tab, not a tile (D-048)', async ({ app: { page } }) => {
   await page.goto('./');
   await expect(page.getByRole('link', { name: /Dyrkning$/ })).toBeVisible({ timeout: 60_000 });
   const names = await page.locator('main a').evaluateAll((links) => links.map((a) => a.textContent ?? ''));
-  const order = ['Førstehjælp', 'Når det sker', 'Opbevaring af mad', 'Kort', 'Dyrkning'].map((name) => names.findIndex((t) => t.includes(name)));
+  const order = ['Førstehjælp', 'Når det sker', 'Opbevaring', 'Dyrkning'].map((name) => names.findIndex((t) => t.includes(name)));
   expect(order.every((i) => i >= 0)).toBe(true);
   expect([...order].sort((a, b) => a - b)).toEqual(order);
-  await page.getByRole('main').getByRole('link', { name: /Kort$/ }).click();
+  await expect(page.getByRole('main').getByRole('link', { name: /Kort$/ })).toHaveCount(0);
+  await page.getByRole('navigation', { name: 'Hovedmenu' }).getByRole('link', { name: 'Kort' }).click();
   await expect(page).toHaveURL(/#\/map$/);
 });

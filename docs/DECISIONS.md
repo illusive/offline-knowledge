@@ -400,6 +400,7 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - **Værktøjer stays a tab** with room for more tools.
 - **Rationale:** growing applies to the fewest people. Two records of "I have this" that did not know about each other would disagree.
 - **Alternatives:** removing the ticks from the stock lists (owner chose to keep them, driven by Forråd); moving the compass into Kort and dropping the tab.
+- **Changed 2026-11-06 (owner):** Kort is no longer a tile on Home, since it has its own tab. "Opbevaring af mad" is called "Opbevaring" ("Storage").
 
 ## D-049 — Forråd: a sheet on each thing (take out, add more)
 
@@ -519,7 +520,9 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - **Field order:** category, Navn, Antal, Størrelse (valgfri), Bedst før (valgfri). The empty month field is as tall as the others.
   - **"Nærmer sig udløb"** replaces "Holdbarhed". Its rows look like the categories' rows, with the date in red. A link leads to the new guide on dates.
   - **Water:** the whole card opens a sheet with a counter in the chosen unit, saved at once, and "Tjekket i dag". The month field for "last checked" is gone.
+    - **Changed 2026-11-06 (owner):** the sheet's main button is "OK", which closes it; "Tjekket i dag" is a second button below.
   - **Home:** a water tile with a ring (have/need) comes first among the tiles, once some water is entered. An odd last tile fills its row.
+    - **Changed 2026-11-06 (owner):** the filled part of the ring is the app's lime (accent).
   - **The Forråd tab** has one plain box (`Box`).
   - **A guide on dates:** "Når datoen er overskredet" (supplies group, risk `high`). It covers the difference between "bedst før" and "sidste anvendelsesdato", and how to look, smell and taste. It also lists examples of "bedst før" foods and the foods without a date.
     - **Sources:** Fødevarestyrelsen's "Sådan vurderer du madens holdbarhed" is the primary source. Forbrugerrådet Tænk is the second authority, and gives the list of examples.
@@ -561,6 +564,37 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - focus
   - the amber state on a worn or curved code
   - heat and battery over a few minutes, since 1080p frames cost more
+
+## D-056 — Sunrise and sunset in Tools
+
+- **Date:** 2026-11-06
+- **Problem (owner):** with no internet there is no way to look up when the sun rises or sets, which matters in a power cut.
+- **Decision (owner):** Tools gets **Sol op og ned**. For a place and a day it shows:
+  - sunrise and sunset, with the direction ("Står op i SØ (133°)", from true north)
+  - **Lyst udenfor**: civil twilight, when the sun is 6° below the horizon
+  - the day's length, and how much longer or shorter it is than yesterday
+  - It opens on today, with a date field (the phone's own roller) and "I dag".
+- **Place:**
+  - **Brug min position:** the phone's position, asked for only on a tap, read once and never watched. It works offline, since GPS needs no network.
+  - **The map's home point,** used at first if one is set. A moved home point is followed.
+  - **A town:** 15 towns spread over Denmark, with centre points from OpenStreetMap (Nominatim, 2026-11-06).
+  - **Storage:** the choice is kept on the device (`stead.sun.place.v1`), rounded to 0.01° (about 1 km).
+  - **Refused permission:** the screen says so and the town list remains.
+- **Method:** NOAA's solar position equations (after Meeus; NOAA Global Monitoring Laboratory, public domain), in `web/src/sun/sun.ts`, with no dependency.
+  - Sunrise and sunset are at a zenith of 90.833° (the upper edge, with average refraction); civil twilight at 96°.
+  - Each event is refined from the sun's position at the time first found.
+  - Times are in the phone's time zone, so summer time follows the phone.
+  - Days without a sunrise or sunset (far north) are handled.
+- **Checked against:**
+  - the NOAA Solar Calculator, for sunrise, sunset and direction: København at both solstices and the equinox, Skagen and Rønne. Within a minute and half a degree.
+  - the U.S. Naval Observatory's data service, for civil twilight: within its rounding to the minute.
+  - The values are in `sun.test.ts`.
+- **Wording:** "Lyst nok til at være ude uden lygte" follows the USNO definition: before morning civil twilight and after evening civil twilight, artificial light is normally needed for ordinary outdoor activities. The note says hills, buildings and clouds can make it dark sooner, which USNO also says.
+- **Not content:** this is a calculation, not a guide, so it has no source block. It is accurate to about a minute for a level horizon.
+- **Alternatives:**
+  - `suncalc` (unmaintained since 2015; the same equations take about 80 lines).
+  - The town list only (owner chose GPS and the home point too).
+  - A year overview (owner chose a date field).
 
 ## D-010 — No runtime AI, accounts, sync or telemetry
 

@@ -12,7 +12,8 @@ export const BASE_URL = 'http://localhost:4173/';
 export async function launchApp(locale: string): Promise<{ context: BrowserContext; page: Page; close: () => Promise<void> }> {
   const dir = mkdtempSync(join(tmpdir(), 'ok-webkit-'));
   const { defaultBrowserType: _ignored, ...iphone } = devices['iPhone 15'];
-  const context = await webkit.launchPersistentContext(dir, { ...iphone, locale, baseURL: BASE_URL });
+  // Danish time, so times of day (the sun tool, D-056) do not depend on the machine running the tests.
+  const context = await webkit.launchPersistentContext(dir, { ...iphone, locale, timezoneId: 'Europe/Copenhagen', baseURL: BASE_URL });
   const page = context.pages()[0] ?? (await context.newPage());
   // WebKit keeps OPFS per origin outside the profile folder, so data from earlier runs survives.
   // Clear it from a plain file on the same origin, where no app code (workers, pools) is running.

@@ -78,3 +78,18 @@ export function parseCounter(text: string, min: number, max: number, decimal = f
   const value = decimal ? parseDecimal(t) : Number(t);
   return value !== null && value >= min && value <= max ? value : null;
 }
+
+// A time of day on the phone's clock, rounded to the nearest minute: "08.37" / "08:37" (D-056).
+export function formatClock(date: Date, lang: Lang): string {
+  const rounded = new Date(Math.round(date.getTime() / 60_000) * 60_000);
+  return new Intl.DateTimeFormat(localeOf(lang), { hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(rounded);
+}
+
+// A length of time in whole minutes: "7 t 1 min" / "7 h 1 min"; under an hour "45 min".
+export function formatDuration(minutes: number, lang: Lang): string {
+  const total = Math.round(minutes);
+  const h = Math.floor(total / 60);
+  const m = total % 60;
+  const hours = `${h} ${lang === 'da' ? 't' : 'h'}`;
+  return h === 0 ? `${m} min` : m === 0 ? hours : `${hours} ${m} min`;
+}

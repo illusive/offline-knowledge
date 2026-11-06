@@ -13,6 +13,7 @@ export type Route =
   | { name: 'map' }
   | { name: 'tools' }
   | { name: 'compass' }
+  | { name: 'sun' }
   | { name: 'forraad' }
   | { name: 'forraadScan' }
   | { name: 'forraadNew'; category: string | null; recommendationId: string | null }
@@ -49,6 +50,7 @@ export function parseRoute(hash: string): Route {
   if (hash === '#/map') return { name: 'map' };
   if (hash === '#/tools') return { name: 'tools' };
   if (hash === '#/tools/compass') return { name: 'compass' };
+  if (hash === '#/tools/sun') return { name: 'sun' };
   if (hash === '#/forraad') return { name: 'forraad' };
   // Adding to Forråd (D-053): scanning, or typing (optionally in a category or for a stock-list
   // line); and editing an existing item (D-046).
@@ -77,6 +79,7 @@ export const hrefs = {
   forraadItem: (id: string) => `#/forraad/item/${encodeURIComponent(id)}`,
   tools: '#/tools',
   compass: '#/tools/compass',
+  sun: '#/tools/sun',
   settings: '#/settings',
   food: (id: string, tab: FoodTab = DEFAULT_FOOD_TAB) =>
     `#/food/${encodeURIComponent(id)}${tab === DEFAULT_FOOD_TAB ? '' : `/${tab}`}`,
@@ -86,7 +89,7 @@ export const hrefs = {
 // bar keeps showing the tab it was opened from.
 export function tabOf(route: Route): Tab | null {
   if (route.name === 'settings') return null;
-  if (route.name === 'compass') return 'tools';
+  if (route.name === 'compass' || route.name === 'sun') return 'tools';
   if (route.name === 'forraadScan' || route.name === 'forraadNew' || route.name === 'forraadEdit') return 'forraad';
   return route.name === 'map' || route.name === 'tools' || route.name === 'forraad' ? route.name : 'home';
 }

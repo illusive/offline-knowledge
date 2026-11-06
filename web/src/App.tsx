@@ -27,6 +27,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { MapScreen } from './screens/MapScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { CompassScreen } from './screens/CompassScreen';
+import { SunScreen } from './screens/SunScreen';
 import { ToolsScreen } from './screens/ToolsScreen';
 import { StorageScreen } from './screens/StorageScreen';
 import { useAllFoods } from './food/useFoodSearch';
@@ -151,6 +152,9 @@ export function App() {
         break;
       case 'compass':
         content = <CompassScreen lang={lang} s={s} />;
+        break;
+      case 'sun':
+        content = <SunScreen lang={lang} s={s} />;
         break;
       case 'settings':
         content = <SettingsScreen db={db} pack={pack} lang={lang} s={s} offlineReady={offlineReady} />;
