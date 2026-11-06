@@ -1,0 +1,101 @@
+{
+  "id": "allergiske-reaktioner",
+  "category": "first-aid",
+  "order": 19,
+  "title": "Alvorlige allergiske reaktioner",
+  "summary": "En alvorlig allergisk reaktion kan udvikle sig hurtigt og være livsfarlig.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Det ses oftest hos personer, der ved, at de er allergiske over for fx mad, medicin eller insektstik.",
+      "page": 129,
+      "original": {
+        "lang": "da",
+        "text": "Alvorlige allergiske reaktioner (anafylaksi) ses hyppigst hos personer med kendte allergier over for fx fødevarer, lægemidler eller insektstik."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Mange, der ved, at de kan få en reaktion, har en adrenalinpen med.",
+      "page": 129,
+      "original": {
+        "lang": "da",
+        "text": "Mange personer med kendt risiko medbringer en adrenalinpen til behandling."
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Tegn – de kommer tit hurtigt:",
+      "items": [
+        "Svært ved at trække vejret, eller vejrtrækningen hvæser",
+        "Hævelse af læber, tunge, hals eller omkring øjnene",
+        "Kløe i munden, i halsen, i håndfladerne, under fødderne eller på huden",
+        "Nældefeber (kløende, hævede pletter på huden) og rødme",
+        "Kvalme, opkast, diarré eller ondt i maven",
+        "Svimmelhed, slaphed, eller personen er ikke helt vågen",
+        "Angst og uro"
+      ],
+      "page": 129,
+      "original": {
+        "lang": "da",
+        "title": "Symptomerne udvikler sig ofte hurtigt og kan omfatte:",
+        "items": [
+          "vejrtrækningsbesvær eller hvæsende vejrtrækning",
+          "hævelse af læber, tunge, svælg eller omkring øjnene",
+          "kløe i mund, svælg, håndflader, fodsåler eller på huden",
+          "nældefeber og rødme",
+          "kvalme, opkast, diarré eller mavesmerter",
+          "svimmelhed, slaphed eller bevidsthedspåvirkning",
+          "angst og uro."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ring 112 med det samme, hvis du tror, det er en alvorlig allergisk reaktion. Også selvom personen har brugt sin adrenalinpen. Adrenalin virker kun i kort tid, og en læge på hospitalet skal altid se personen.",
+      "page": 129,
+      "original": {
+        "lang": "da",
+        "text": "Ring straks 1-1-2 ved mistanke om en alvorlig allergisk reaktion – også selv om personen har anvendt sin adrenalinpen. Adrenalin virker kun i en begrænset periode, og personen skal altid vurderes på hospital."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan hjælper du:",
+      "items": [
+        "Hold personen i ro. Personen skal ikke bevæge sig mere end nødvendigt, for det kan gøre reaktionen værre.",
+        "Fjern det, der udløste reaktionen, hvis du kan.",
+        "Læg personen ned, og pak personen ind, så kredsløbet ikke svigter.",
+        "Hjælp personen med at finde sin medicin."
+      ],
+      "page": 129,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Hold personen i ro, og undgå unødig fysisk aktivitet, da dette kan forværre reaktionen.",
+          "Fjern om muligt det stof, der udløste den allergiske reaktion.",
+          "Forebyg kredsløbssvigt ved at lejre personen liggende og indpakke personen.",
+          "Hjælp den syge med at finde sin medicin."
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Anafylaksi, s. 9–10",
+      "quote": "vejrtrækningsbesvær. … Rødmen (flushing), udslæt (nældefeber) … Ring 1-1-2. … Sørg for, at personen forbliver i en siddende eller liggende position. … Giv intramuskulær adrenalin så hurtigt som muligt via autoinjektor i ydersiden af låret i den anbefalede dosis (selvadministreret eller givet af personer, som er trænet i det)",
+      "note": "Both: breathing trouble and hives are signs, call 112, keep the person still lying (ERC: sitting or lying), and the adrenaline pen is the person's own medicine."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "kredsloebssvigt",
+    "ring-112"
+  ],
+  "name": "Alvorlig allergisk reaktion",
+  "originalSummary": "Reaktionen kan udvikle sig hurtigt og være livstruende."
+}

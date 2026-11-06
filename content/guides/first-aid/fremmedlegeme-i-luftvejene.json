@@ -1,0 +1,273 @@
+{
+  "id": "fremmedlegeme-i-luftvejene",
+  "category": "first-aid",
+  "order": 13,
+  "title": "Fremmedlegeme i luftvejene",
+  "summary": "Får nogen noget galt i halsen, kan de som regel selv hoste det op. Børn og ældre får oftere noget galt i halsen.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Personen kan hoste",
+      "page": 60,
+      "original": {
+        "lang": "da",
+        "text": "Mild blokering"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Luftvejene er kun delvist blokeret. Personen kan stadig trække vejret og hoste.",
+      "page": 60,
+      "original": {
+        "lang": "da",
+        "text": "Ved en mild blokering er luftvejene kun delvist blokerede, så personen kan stadig trække vejret og hoste."
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Spørg personen:",
+      "items": [
+        "Er du ved at blive kvalt?",
+        "Har du fået noget galt i halsen?"
+      ],
+      "page": 62
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan hjælper du:",
+      "items": [
+        "Bed personen om at hoste kraftigt.",
+        "Vær rolig, og vis, at du er der for personen.",
+        "Bliv hos personen, indtil det er hostet op, eller det ændrer sig."
+      ],
+      "page": 60,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Det vigtigste er at opfordre den tilskadekomne til at hoste kraftigt.",
+          "Giv psykisk førstehjælp – skab ro og fremtræd rolig, og vis omsorg.",
+          "Bliv hos personen, indtil fremmedlegemet er hostet op, eller situationen ændrer sig."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Har personen hostet det op og har det godt bagefter, skal der normalt ikke mere til. Bliver hosten ved, gør det ondt, eller tror du, noget stadig sidder fast, så skal en læge se på personen.",
+      "page": 61,
+      "original": {
+        "lang": "da",
+        "text": "Hvis personen har hostet fremmedlegemet op og har det godt bagefter, er yderligere behandling normalt ikke nødvendig. Ved vedvarende hoste, smerter eller mistanke om, at noget stadig sidder fast, bør personen vurderes af en læge"
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Personen kan ikke hoste eller tale",
+      "page": 61,
+      "original": {
+        "lang": "da",
+        "text": "Alvorlig blokering"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Noget sidder helt fast og blokerer luftvejene. Personen kan ikke tale, hoste ordentligt eller trække vejret normalt.",
+      "page": 61,
+      "original": {
+        "lang": "da",
+        "text": "Ved en alvorlig blokering har fremmedlegemet sat sig fast i luftvejene og har blokeret luftvejene helt. Personen kan ikke tale, hoste effektivt eller trække vejret normalt"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Personen tager sig i panik til halsen. Læber, ører og næsefløje kan blive blå. Personen kan også blive bevidstløs.",
+      "page": 61,
+      "original": {
+        "lang": "da",
+        "text": "Personen vil vise tegn på kvælning (tager sig panisk til halsen), have blåfarvning (cyanose) af læber, ører og næsefløje eller blive bevidstløs."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan hjælper du en voksen:",
+      "items": [
+        "Bøj personen godt forover. Giv op til 5 slag mellem skulderbladene med håndroden (den nederste del af håndfladen). Tilpas slagene til personens størrelse.",
+        "Knyt hænderne, og læg dem mellem den nederste spids af brystbenet og navlen. Giv op til 5 hurtige stød ind og op mod mellemgulvet. Vent 2–3 sekunder mellem hvert stød. Det kaldes Heimlich-metoden.",
+        "Bliv ved med at skifte mellem 5 slag på ryggen og 5 stød i maven.",
+        "Tjek efter hver runde, om det er kommet op."
+      ],
+      "page": 62,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Bøj personen godt fremover og giv op til 5 slag (tilpasset den tilskadekomnes størrelse) med håndroden mellem skulderbladene.",
+          "Knyt dine hænder, og placer disse mellem nederste spids på brystbenet og navlen. Giv op til 5 hurtige bugstød indad og opad (op mod mellemgulvet) med 2-3 sekunders mellemrum.",
+          "Giv skiftevis 5 slag mellem skulderbladene og 5 ”Heimlichslag”.",
+          "Kontrollér, om fremmedlegemet er kommet fri efter hver serie."
+        ]
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Ring 112, hvis:",
+      "items": [
+        "Det ikke kommer op efter den første runde (5 slag på ryggen og 5 stød i maven)",
+        "Personen bliver bevidstløs"
+      ],
+      "page": 62,
+      "original": {
+        "lang": "da",
+        "title": "Alarmer 1-1-2, hvis:",
+        "items": [
+          "Du ikke får fremmedlegemet ud efter første serie (5 slag mellem skulderbladene og 5 Heimlich-slag)",
+          "Personen bliver bevidstløs"
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Bliver personen bevidstløs, så start hjertemassage og kunstigt åndedræt.",
+      "page": 62,
+      "original": {
+        "lang": "da",
+        "text": "Personen bliver bevidstløs, og du skal påbegynde HLR."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Når du åbner luftvejene for at puste ind, så kig kort efter det, der sidder fast. Fjern det kun, hvis du tydeligt kan se det.",
+      "page": 62,
+      "original": {
+        "lang": "da",
+        "text": "Når du åbner luftvejen for at give indblæsninger, skal du kort se efter, om fremmedlegemet er synligt. Fjern det kun, hvis du tydeligt kan se det"
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Har du givet stød i maven, skal en læge altid undersøge personen bagefter. Stødene kan skade de indre organer.",
+      "page": 62,
+      "original": {
+        "lang": "da",
+        "text": "En person, der har været udsat for Heimlich-metoden skal ALTID undersøges af en læge for at sikre, at der ikke er sket skader på indre organer."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Hvis det er et barn",
+      "page": 64,
+      "original": {
+        "lang": "da",
+        "text": "Hvis børn får fremmedelegemer i luftvejene"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Børn, og især spædbørn, putter tit ting i munden. Det kan blokere luftvejene.",
+      "page": 64,
+      "original": {
+        "lang": "da",
+        "text": "Børn og især spædbørn putter ofte ting i munden, der kan føre til, at deres luftveje blokeres."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Er barnet over 1 år, så gør som ved en voksen. Tilpas slag og stød til barnets størrelse.",
+      "page": 64,
+      "original": {
+        "lang": "da",
+        "text": "Ved børn over 1 år anvendes samme teknik som hos voksne – tilpas slag og tryk efter barnets størrelse."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Et spædbarn får ikke stød i maven. Tryk i stedet med 2 fingre på brystet, som ved hjertemassage.",
+      "page": 64,
+      "original": {
+        "lang": "da",
+        "text": "Hvis barnet er et spædbarn, skal du i stedet for Heimlichmetoden komprimere med 2 fingre på barnets brystkasse (som ved HLR)."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ring 112 med det samme, hvis barnets luftveje er alvorligt blokeret.",
+      "page": 65,
+      "original": {
+        "lang": "da",
+        "text": "Ring straks 1-1-2 ved en alvorlig blokering af barnets luftveje."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan hjælper du et spædbarn:",
+      "items": [
+        "Læg barnet med maven ned over din underarm og hovedet nedad. Støt hovedet med fingrene, men hold ikke for mund og næse. Giv op til 5 slag med flad hånd mellem skulderbladene. Tilpas slagene til barnets størrelse.",
+        "Hjælper det ikke, så læg barnet på ryggen langs din underarm eller på noget fast. Giv op til 5 tryk på brystet, samme sted som ved hjertemassage.",
+        "Bliv ved med at skifte mellem 5 slag og 5 tryk, indtil det kommer ud, eller barnet bliver bevidstløst.",
+        "Er barnet bevidstløst og trækker ikke vejret, så start hjertemassage og kunstigt åndedræt."
+      ],
+      "page": 64,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Læg barnet med maven ned over din underarm med hovedet nedad. Støt barnets hoved med dine fingre uden at holde for mund og næse. Giv op til 5 slag (tilpasset barnets størrelse) med flad hånd mellem skulderbladene",
+          "Hvis det ikke hjælper, læg barnet på ryggen ned ad underarmen eller på fast underlag, og giv op til 5 tryk på trykstedet (som ved hjertemassage)",
+          "Fortsæt med skiftevis 5 slag og 5 bryststød, indtil fremmedlegemet kommer ud, eller barnet bliver bevidstløst",
+          "Ved bevidstløshed uden vejrtrækning påbegyndes HLR."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ryst aldrig barnet for at få det ud. Det kan give alvorlige skader på hjernen.",
+      "page": 64,
+      "original": {
+        "lang": "da",
+        "text": "Ryst aldrig barnet for at få fremmedlegemet ud. Voldsom rystelse kan medføre alvorlige skader på hjernen."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Har barnet fået tryk på brystet, skal en læge altid undersøge det bagefter. Trykkene kan skade de indre organer.",
+      "page": 65,
+      "original": {
+        "lang": "da",
+        "text": "Et barn, der har været udsat for brystkompressioner, skal ALTID undersøges af en læge for at sikre, at der ikke er sket skader på indre organer."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Forældrene er tit i krise og kan have brug for ekstra omsorg. Det er vigtigt, at du selv bevarer roen.",
+      "page": 64,
+      "original": {
+        "lang": "da",
+        "text": "Forældrene vil ofte være i krise i sådanne situationer, og kan have behov for en særlig omsorg. De kan reagere med panik mens det står på, og her er det vigtigt at bevare roen."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Luftvejsobstruktion hos en voksen person, s. 10–11",
+      "quote": "Opfordr personen til at hoste. … Hvis personen ikke er i stand til at hoste, eller hvis hosten bliver ineffektiv, giv op til 5 dunk i ryggen … Hvis dunk i ryggen er ineffektive, giv op til 5 tryk i maven … fortsæt da med skiftevis at give 5 dunk i ryggen efterfulgt af 5 tryk i maven, indtil fremmedlegemet er frigjort, eller personen bliver bevidstløs. … Start HLR, hvis personen bliver bevidstløs. … Enhver person, der med succes er blevet behandlet for kvælning med tryk i maven eller hjertemassage, bør vurderes af en sundhedsperson",
+      "note": "Adults: both say cough first, then alternate 5 back blows and 5 abdominal thrusts, start CPR if the person becomes unconscious, and have a doctor check the person afterwards. ERC adds: no finger sweeps; the handbook removes an object only when it is clearly visible."
+    },
+    {
+      "sourceId": "dk-sundhed-fremmedlegeme-i-luftvejene",
+      "locator": "Barn under 1 år – vågen, men svært ved at få luft",
+      "quote": "Læg barnet på maven over din arm og med hovedet nedad Giv 5 hårde slag med håndfladen mellem skulderbladene Vend barnet om og giv 5 hurtige tryk med to fingre midt på brystkassen … Skift mellem 5 slag på ryggen og 5 tryk mod brystet",
+      "note": "Babies: both use up to 5 back blows with the baby face down along the forearm, then up to 5 chest thrusts with two fingers, alternating. ERC 2025 First Aid covers adults only."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "hlr-voksne",
+    "hlr-boern",
+    "ring-112"
+  ],
+  "name": "Noget galt i halsen",
+  "originalSummary": "I de fleste tilfælde kan personen selv hoste fremmedlegemet op. Børn og ældre er mere udsatte for at få fremmedlegemer i luftvejene."
+}

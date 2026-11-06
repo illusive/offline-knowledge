@@ -44,6 +44,14 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
 - **Duplicated text:** the summary repeats a block word for word in Gør stedet sikkert, Førstehjælpens 3 trin, Salat and Spinat. Drop one of the two.
 - **Names:** "Gør stedet sikkert" is now used both as the guide name and as Trin 1 in "Førstehjælpens 3 trin". Keep them identical if either changes.
 - **Children's CPR:** the open question in OPEN_QUESTIONS (rate and depth) is still open.
+- **The ten D-062 guides: to review.** Ring 112, Noget galt i halsen, Kredsløbssvigt, Mindre blødninger, Drukning, Forbrændinger, Underafkøling, Alvorlig allergisk reaktion, Stroke and Brystsmerter. Check each block against "Vis original". Words to look at:
+  - "stød i maven" for "bugstød" and "Heimlich-slag", with "Heimlich-metoden" kept once as the name
+  - "håndroden (den nederste del af håndfladen)" and "idealbind (et elastisk bind)", explanations of ours
+  - "lig på ryggen med overkroppen løftet" for "aflastende rygleje"
+  - "madfilm (plastfilm til mad)" for "madfilm (eksempelvis Vita Vrap)", the brand left out
+  - "slå armene hårdt om kroppen" for "kuske-slag"
+  - "kantpælen (den lille pæl i vejkanten)"
+  - "Hold øje med vinden og vandet" for TrygFonden's "Læs vindretning og vandet"
 
 ### Når det sker
 - **Repeated warnings:** "Strømmen er gået" repeats the heat and toilet advice that now has its own guides. Shorten it to one line each, with a link ("Se Der er ingen varme").
@@ -65,7 +73,7 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
   - **Køl og frys:** "Strømmen gik nu", "Kold nok i … endnu", "Over tiden", and the advice texts (the same words as the blocks in "Strømmen er gået").
   - **Kog vand:** "Vandet koger nu", "Færdig. Lad vandet køle af."
   - **Sun and moon:** "Solen lige nu", "Stil dig med ansigtet mod solen. Så er nord … til venstre for dig.", the moon phases ("Tiltagende måne", "Halvmåne, tiltagende" …).
-  - **Sirens:** the guide "Når sirenen lyder".
+  - **Sirens:** the guide "Når sirenen lyder" (no longer in Tools, D-061; it is in "Når det sker").
 - **Groups (D-057):** "Frugt", "Grøntsager", "Krydderurter", "Kød", "Fisk" as headings. Rabarber is under "Frugt", since it is eaten as fruit; check that this reads naturally.
 - **Førstehjælpens 3 trin (D-057): to review.** Steps 1 and 2 reuse the words of "Gør stedet sikkert", "Er personen vågen?" and "M-ABC", which are still to review too. Step 3 is new, from the handbook p. 46–47: "Ring 112, hvis nogen pludselig bliver alvorligt syg eller kommer slemt til skade.", "sundhedsperson" for the handbook's "sundhedsfaglig medarbejder" and "visitator", and "Er I flere, så lad én ringe 112 med det samme, mens de andre giver førstehjælp." Check each against "Vis original".
 - **Sol op og ned, the graph (D-056):** "Dagens længde gennem året", "Korteste dag: 21. december, 7 t 1 min", the axis labels "6 t", "12 t", "18 t", and the button "Skift".

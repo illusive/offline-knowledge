@@ -1,0 +1,111 @@
+{
+  "id": "mindre-bloedninger",
+  "category": "first-aid",
+  "order": 15,
+  "title": "Ikke livstruende blødninger",
+  "summary": "En mindre blødning er som regel ikke livsfarlig. Men stopper den ikke, kan personen få det værre.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "$comment": "Pictures to add (text first, owner 2026-11-06): the six photos on p. 43, one after each step of the pressure bandage.",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "En blødning er mindre, når den ikke gennemvæder tøjet, ikke sprøjter eller løber hurtigt og ikke laver en pøl af blod på jorden.",
+      "page": 41,
+      "original": {
+        "lang": "da",
+        "text": "En mindre blødning, der hverken gennemvæder tøjet, sprøjter/ strømmer hurtigt eller danner en blodpøl på jorden."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan hjælper du:",
+      "items": [
+        "Stop blødningen ved at trykke direkte på den.",
+        "Læg en forbinding på såret.",
+        "Berolig personen hele vejen igennem."
+      ],
+      "page": 41,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Stands blødningen ved direkte tryk",
+          "Forbind såret med en forbinding",
+          "Yd psykisk førstehjælp gennem hele forløbet."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Det er trykket, der stopper blødningen. Som regel er det nok at holde fingrene trykket mod såret, indtil det holder op med at bløde.",
+      "page": 42,
+      "original": {
+        "lang": "da",
+        "text": "Et modtryk mod en blødning er det, der standser en blødning. Oftest er det nok, at holde et tryk med dine fingre indtil blødningen standser af sig selv."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Trykforbinding",
+      "page": 43
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan lægger du en trykforbinding:",
+      "items": [
+        "Brug et stykke gaze, der passer til såret.",
+        "Hold trykket på såret, mens du lægger forbindingen om. Den skal sidde så stramt, at du lige akkurat kan få en lillefinger ind under den.",
+        "Slut med at slå knuden oven på såret.",
+        "Bløder det igennem, så tryk ekstra med fingrene oven på forbindingen.",
+        "Du kan også lægge noget hårdt oven på for at trykke mere. Det kaldes en pelotte.",
+        "Bind en ekstra forbinding, fx et idealbind (et elastisk bind), om pelotten, så den trykker ned mod såret. Slut med en knude oven på såret."
+      ],
+      "page": 43,
+      "original": {
+        "lang": "da",
+        "title": "Afslut trykforbindingen",
+        "items": [
+          "Tilpas gazen størrelse til såret",
+          "Hold tryk på såret under hele anlæggelsen. Forbindingen skal være så stram, så der kun akkurat kan komme en lillefinger under",
+          "Afslut med knuden ovenpå såret",
+          "Hvis det bløder igennem, kan du lægge et yderligere tryk med dine fingre ovenpå forbindingen",
+          "Brug evt. en hård genstand (pelotte) til at lægge yderligere trykm",
+          "Brug en ekstra forbinding, eksempelvis et idealbind, til at lægge tryk på ”pelotten” ned mod såret. Afslut trykforbindingen med en knude ovenpå såret."
+        ]
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Få hjælp:",
+      "items": [
+        "Ring 112, hvis personen ikke er helt vågen og klar.",
+        "Ellers skal personen på skadestuen."
+      ],
+      "page": 41,
+      "original": {
+        "lang": "da",
+        "title": "Tilkald hjælp",
+        "items": [
+          "Ring 1-1-2, hvis den tilskadekomne er bevidsthedspåvirket",
+          "Henvis den tilskadekomne til skadestuen."
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Kontrol af livstruende blødning, s. 13",
+      "quote": "Giv et fast, direkte manuelt tryk på den blødende skade … Læg en standard- eller hæmostatisk forbinding direkte på blødningen, og tryk derefter fast ovenpå forbindingen. … Når blødningen er under kontrol, anlægges en trykforbinding.",
+      "note": "Both stop bleeding with direct pressure, then a dressing pressed on and a pressure bandage. ERC states it for life-threatening bleeding; the same steps apply to smaller bleeding in the handbook."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "massive-bloedninger",
+    "kredsloebssvigt"
+  ],
+  "name": "Mindre blødninger",
+  "originalSummary": "Som udgangspunkt mindre blødninger ikke livstruende, men hvis blødningen ikke standses, kan personens tilstand forværres."
+}

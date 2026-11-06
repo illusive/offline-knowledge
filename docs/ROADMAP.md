@@ -53,7 +53,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] Power-cut tools (D-058, 2026-11-06):
   - **Køl og frys:** the clock with sourced hours.
   - **Kog vand:** a one-minute timer.
-  - **Radio og sirener:** opens the new guide "Når sirenen lyder".
+  - **Radio og sirener:** opened the new guide "Når sirenen lyder"; removed from Tools again (D-061), the guide stays in "Når det sker".
   - **In Sol op og ned:** the sun right now (find north) and the moon.
 
   **Still to check on the iPhone:** the timer's sound and vibration, and the sun and moon outdoors.
@@ -63,6 +63,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 - [x] Forråd search (D-060, 2026-11-06): a field under the water card that filters the things by any part of their name, with × to clear.
 
   **Still to check on the iPhone:** the keyboard's search key, the × and large text.
+- [x] No sirens row in Tools (D-061, 2026-11-06): it was a guide, not a tool; the guide stays in "Når det sker".
 - [x] Forråd (D-046, D-047, 2026-11-05): a tab replacing Settings, which moved to a gear at the top right. It holds:
   - Water as one figure (litres and the month last checked) against 3 litres per person per day for 3/7/14 days, checked again after six months.
   - The household, including water for animals in the user's own figure.
@@ -124,10 +125,11 @@ Acceptance: a fresh install with no network shows the pilot guides, search finds
 
 - First aid, water treatment, food safety, electricity under the `high` process (`CONTENT_POLICY.md` §6).
 - [x] Second-source cross-check in place for guides: quotes from the second authority are checked by the build (`content/lib/guides.ts`).
-- [ ] First aid from Førstehjælpens ABC (D-037), about 20 guides. **Status 2026-10-27: 11 written, verbatim-checked by the build, not yet owner-checked.** Done: tre-hovedpunkter, skab-sikkerhed, bevidsthed, mabc, massive-bloedninger (tourniquet left out, D-037), frie-luftveje, vejrtraekning, stabilt-sideleje, hlr-voksne, hjertestarter, hlr-boern (OPEN_QUESTIONS 29).
+- [x] First aid from Førstehjælpens ABC (D-037), the life-saving core. **Status 2026-11-06: 21 written, verbatim-checked, not yet owner-checked.** First eleven (2026-10-27): tre-hovedpunkter, skab-sikkerhed, bevidsthed, mabc, massive-bloedninger (tourniquet left out, D-037), frie-luftveje, vejrtraekning, stabilt-sideleje, hlr-voksne, hjertestarter, hlr-boern (OPEN_QUESTIONS 29). Ten more (D-062, 2026-11-06): ring-112, fremmedlegeme-i-luftvejene, kredsloebssvigt, mindre-bloedninger, drukneulykker, forbraendinger, underafkoeling, allergiske-reaktioner, stroke, brystsmerter. Aspirin and aftersun held back; pictures still to cut (OPEN_QUESTIONS 39–42).
   - Done 2026-10-27: search, main points section, abbreviations explained, "<M>" removed.
   - **Next:** the "Når der ikke kommer hjælp" section (D-037): register and snapshot the US field manuals (download needs the owner's OK), pick the problem list, then write handbook + field-manual pages per problem.
-  - **Then:** kredsløbssvigt (p. 38–40), ikke livstruende blødninger and trykforbinding (p. 41–43, photos p. 43), ring 1-1-2 (p. 46–49), fremmedlegeme i luftvejene (p. 60–65), drukneulykker (p. 68), forbrændinger (p. 100), underafkøling (p. 102), alvorlige allergiske reaktioner (p. 129), stroke (p. 122), brystsmerter (p. 124). Second authority for these: `dk-drg-erc-first-aid-2025` (choking p. 10, anaphylaxis p. 9–10, stroke p. 13, chest pain p. 11, burns and hypothermia further on).
+  - **Still to do for the core:** the photos (p. 43, 101, 103, 123), the owner check, and a pack build once it runs on Windows.
+  - **Later, if wanted:** the handbook's other sections (fractures, head and back injuries, poisoning, heat, frostbite, small injuries, illnesses), about 45 more.
   - How to work: write `content/guides/first-aid/<id>.json` from `content/sources/text/dk-fsk-abc-foerstehjaelp.txt` (page markers `--- pNN`); crop photos with `content/scripts/render-pdf-region.swift`, save as JPEG in `content/guides/images/`; `npm run build:pack` lists any text that is not verbatim.
 
 ## M4 — Downloadable packs

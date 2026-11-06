@@ -1,0 +1,73 @@
+{
+  "id": "stroke",
+  "category": "first-aid",
+  "order": 20,
+  "title": "Stroke",
+  "summary": "En blodprop eller blødning i hjernen kaldes et stroke, eller i daglig tale et slagtilfælde.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "$comment": "Page 122 is set in two columns that the PDF text layer mixes line by line, so its running text cannot be checked word for word and is left out. Picture to add: the \"Stræk, snak, smil\" drawing on p. 123 (lent by Dansk Råd for Genoplivning).",
+  "blocks": [
+    {
+      "kind": "list",
+      "title": "Tjek med Stræk, Snak, Smil:",
+      "items": [
+        "Stræk: Kan personen løfte begge arme? Eller hænger den ene arm ned?",
+        "Snak: Bed personen sige en enkel sætning, fx \"Det er et dejligt vejr i dag.\" Lyt efter, om talen er utydelig, eller personen har svært ved at finde ordene.",
+        "Smil: Bed personen smile. Hænger den ene mundvig?"
+      ],
+      "page": 123,
+      "original": {
+        "lang": "da",
+        "title": "For finde ud af, om der er tale om et stroke, anvendes remsen:",
+        "items": [
+          "Stræk – kan personen løfte begge arme, eller hænger den ene arm ned?",
+          "Snak – bed personen sige en enkel sætning, f.eks. ”Det er et dejligt vejr i dag.” Lyt efter utydelig tale eller problemer med at finde ordene.",
+          "Smil – bed personen om at smile – hænger den ene mundvig."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ring 112 med det samme, hvis personen har ét eller flere af tegnene.",
+      "page": 123,
+      "original": {
+        "lang": "da",
+        "text": "Ring straks 1-1-2, hvis personen har ét eller flere symptomer på stroke."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan hjælper du:",
+      "items": [
+        "Hold personen i ro.",
+        "Hjælp personen til at sidde eller ligge, så det føles bedst for personen. Tit er det at sidde."
+      ],
+      "page": 123,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Hold den syge i ro.",
+          "Hjælp personen til en behagelig stilling – ofte siddende – afhængigt af hvad personen selv finder mest behageligt."
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Stroke, s. 13",
+      "quote": "Brug en stroke-vurderingsskala for at reducere tiden til erkendelse og tilkald hjælp. I Danmark anvendes huskereglen: Stræk. Snak. Smil. Ring 1-1-2.",
+      "note": "Both use Stræk, Snak, Smil and call 112 straight away."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "vejrtraekning",
+    "hlr-voksne",
+    "ring-112"
+  ],
+  "name": "Stroke",
+  "originalSummary": "En blødning eller blodprop i hjernen (i folkemunde ”et slagtilfælde”) medfører,"
+}

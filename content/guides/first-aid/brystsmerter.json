@@ -1,0 +1,124 @@
+{
+  "id": "brystsmerter",
+  "category": "first-aid",
+  "order": 21,
+  "title": "Brystsmerter/Hjertekramper",
+  "summary": "Får hjertet for lidt blod, mangler det ilt og kan tage skade. Det er livsfarligt.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "$comment": "Held back (D-062): the acetylsalicylsyre passage on p. 125 (\"Ved mistanke om blodprop i hjertet kan alarmcentralen anbefale, at personen tygger 150–300 mg acetylsalicylsyre …\"). ERC 2025 in Danish: \"Dette anbefales dog ikke i Danmark … Afvent i stedet ambulancen.\"",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Smerterne kan komme, både når personen bevæger sig, og når personen hviler.",
+      "page": 124,
+      "original": {
+        "lang": "da",
+        "text": "Brystsmerter kan opstå både under fysisk aktivitet og i hvile."
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Smerterne vil som regel:",
+      "items": [
+        "Stråle ud i hals, kæbe, skuldre eller arme – oftest venstre arm",
+        "Føles som et bånd, der strammer om kroppen",
+        "Føles, som om der står en elefant på brystet",
+        "Nogle får dog ondt i ryggen, maven eller højre arm"
+      ],
+      "page": 124,
+      "original": {
+        "lang": "da",
+        "title": "Smerterne vil som oftest:",
+        "items": [
+          "Stråle til hals, kæbe, skuldre eller arme – oftest venstre arm",
+          "Føles som ”tøndebåndssmerter”, som strammer omkring kroppen",
+          "Føles som om, ”der står en elefant på brystet”",
+          "Nogle oplever smerter i ryg, mave eller højre arm."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Kvinder kan have mere uklare tegn end den typiske trykkende smerte i brystet.",
+      "page": 124,
+      "original": {
+        "lang": "da",
+        "text": "Kvinder kan have mere diffuse symptomer end den klassiske trykkende brystsmerte."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Er det en blodprop, gør det meget ondt, og smerterne går ikke væk ved hvile eller medicin. Er hjertets egne blodkar blevet for snævre, kan smerterne gå væk, hvis personen holder sig i ro.",
+      "page": 124,
+      "original": {
+        "lang": "da",
+        "text": "Hvis der er tale om en blodprop, er smerterne stærke og lindres ikke af hvile eller medicin. Er der tale om en forsnævring i hjertets egne blodkar, kan smerterne forsvinde, hvis personen holder sig i ro."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Personen kan også blive svimmel, få svært ved at trække vejret, få kvalme eller blive bange og nervøs. Der kan også komme tegn på kredsløbssvigt.",
+      "page": 124,
+      "original": {
+        "lang": "da",
+        "text": "Herudover vil personen kunne opleve: svimmelhed, vejrtrækningsbesvær, kvalme, angst og nervøsitet. Herudover symptomer på kredsløbssvigt."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ring 112 med det samme, hvis du tror, det er en blodprop i hjertet, eller smerterne bliver ved. Fortæl, hvornår det begyndte, og om personen har en kendt hjertesygdom eller har taget hjertemedicin.",
+      "page": 125,
+      "original": {
+        "lang": "da",
+        "text": "Ring straks 1-1-2 ved mistanke om blodprop i hjertet eller ved vedvarende brystsmerter. Fortæl alarmcentralen, hvornår symptomerne begyndte, og om personen har kendt hjertesygdom eller har taget hjertemedicin."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan hjælper du:",
+      "items": [
+        "Hold personen i ro, og hjælp personen til den stilling, der føles bedst. Tit er det at sidde.",
+        "Løsn tøj, der strammer, og sørg for frisk luft.",
+        "Berolig personen.",
+        "Har personen fået hjertemedicin af lægen, så hjælp med at finde den. Støt personen i selv at tage den."
+      ],
+      "page": 125,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Hold personen i ro, og hjælp vedkommende til den stilling, der føles mest behagelig – ofte siddende.",
+          "Løsn stramtsiddende tøj, og sørg for frisk luft.",
+          "Yd psykisk førstehjælp.",
+          "Hvis personen har ordineret hjertemedicin, kan du hjælpe med at finde den frem og støtte personen i selv at tage den."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Giv ikke selv personen medicin, uden at alarmcentralen har sagt det.",
+      "page": 125,
+      "original": {
+        "lang": "da",
+        "text": "Som førstehjælper må du ikke give medicin uden aftale med alarmcentralen."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Brystsmerter, s. 11",
+      "quote": "Berolig personen og få dem til at sidde eller ligge i en komfortabel stilling. … Hjælp en person med kendt angina med selv at anvende deres nitroglycerinspray eller -tabletter. … Bliv hos personen til professionel hjælp ankommer.",
+      "note": "Both: calm the person, a comfortable position (often sitting), help with their own heart medicine. Aspirin is held back: the handbook says 112 may advise chewing 150–300 mg; ERC's Danish translation says this is not recommended in Denmark (D-062)."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "kredsloebssvigt",
+    "hlr-voksne",
+    "ring-112"
+  ],
+  "name": "Brystsmerter",
+  "originalSummary": "Hvis blodforsyningen til hjertemusklen bliver kraftigt nedsat eller helt afbrudt, opstår der iltmangel, som kan skade hjertet. Dette er en livstruende tilstand."
+}

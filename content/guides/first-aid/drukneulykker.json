@@ -1,0 +1,124 @@
+{
+  "id": "drukneulykker",
+  "category": "first-aid",
+  "order": 16,
+  "title": "Drukneulykker",
+  "summary": "Mange drukner, fordi de tror, de kan mere, end de kan, tager fejl af vandet eller bliver syge i vandet.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "En person, der er ved at drukne, gisper efter luft, kæmper for at holde sig oven vande og vinker efter hjælp med armene. Til sidst flyder personen med ansigtet nedad i mere end bare få sekunder.",
+      "page": 68,
+      "original": {
+        "lang": "da",
+        "text": "En person, der er ved at drukne vil typisk gispe efter luft, kæmpe for at holde sig oven vande og signalere nød med armene. Til sidst flyder personen rundt med ansigtet nedad i mere end blot få sekunder."
+      }
+    },
+    {
+      "kind": "warning",
+      "title": "Pas på dig selv",
+      "text": "Tænk på din egen sikkerhed: Hvor godt svømmer du? Hvordan er vandet, og hvor koldt er det? Hvor langt ude er personen? Prøv kun at få personen op, hvis du kan gøre det uden selv at komme i fare.",
+      "page": 68,
+      "original": {
+        "lang": "da",
+        "title": "Skab sikkerhed",
+        "text": "Husk på egen sikkerhed (vurdér egne svømmefærdigheder, vandforholdene, vandets temperatur samt afstanden til den druknede person). Forsøg kun at bjærge personen, hvis det kan ske uden at bringe dig selv i fare."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ring 112, eller få en anden til at gøre det, før du prøver at redde personen. Det kan være farligt at redde nogen i vandet, og professionel hjælp skal hurtigst muligt være på vej.",
+      "page": 11,
+      "original": {
+        "lang": "da",
+        "text": "Ring 1-1-2 eller få en anden til at gøre det, før du forsøger en redning. Redning i vand kan være farlig, og professionel hjælp skal være på vej hurtigst muligt."
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Når du ringer 112:",
+      "items": [
+        "Ring 112 med det samme, hvis du ikke kan få personen op uden selv at komme i fare. Sig, at det er en drukneulykke.",
+        "Er du på en strand, så sig nummeret på det grønne strandskilt. Så ved de præcis, hvor du er.",
+        "Skal du gå for at hente hjælp, så sæt et mærke ved stedet. Så er personen lettere at finde igen."
+      ],
+      "page": 68,
+      "original": {
+        "lang": "da",
+        "title": "Tilkald hjælp",
+        "items": [
+          "Ring straks 1-1-2, hvis personen ikke kan bjærges uden risiko for din egen sikkerhed. Oplys, at der er tale om en drukneulykke.",
+          "Er du ved en strand, kan du bruge de grønne strandskilte til at angive din præcise position.",
+          "Hvis du er nødt til at forlade stedet for at hente hjælp, skal du markere stedet, så personen lettere kan findes igen."
+        ]
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Når personen er oppe af vandet:",
+      "items": [
+        "Trækker personen ikke vejret normalt, så pust først 5 gange ind i personen.",
+        "Trækker personen stadig ikke vejret, så start hjertemassage og kunstigt åndedræt som normalt: 30 tryk og 2 indblæsninger."
+      ],
+      "page": 68,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Hvis personen ikke trækker vejret normalt efter at være blevet bjærget, gives først 5 indblæsninger.",
+          "Er der herefter forsat ingen vejrtrækning, påbegyndes HLR ud fra den normale algoritme 30:2."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Personen er tit også meget kold.",
+      "page": 68,
+      "original": {
+        "lang": "da",
+        "text": "Personen vil ofte være underafkølet."
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Fem gode råd, når du bader:",
+      "items": [
+        "Lær at svømme",
+        "Gå aldrig alene i vandet",
+        "Hold øje med vinden og vandet",
+        "Lær stranden at kende",
+        "Hav altid øje på børnene"
+      ],
+      "page": 69,
+      "original": {
+        "lang": "da",
+        "title": "De fem baderåd fra TrygFonden:",
+        "items": [
+          "Lær at svømme",
+          "Gå aldrig alene i vandet",
+          "Læs vindretning og vandet",
+          "Lær stranden at kende",
+          "Slip ikke børn af syne."
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Drukning, s. 14–15",
+      "quote": "Gå ikke i vandet for at redde personer, der er ved at drukne, medmindre du er trænet i vandredning, da du ellers selv kan komme til at drukne. … Når personen er ude af vandet, giv 5 indblæsninger, såfremt personen ikke trækker vejret. Hvis det er nødvendigt, start standard HLR.",
+      "note": "Both: do not put yourself in danger in the water; once out, 5 rescue breaths first, then standard CPR. ERC is stricter: an untrained rescuer should not go into the water at all."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "hlr-voksne",
+    "underafkoeling",
+    "ring-112"
+  ],
+  "name": "Drukning",
+  "originalSummary": "Drukneulykker skyldes ofte, at personen overvurderer sine evner, fejlbedømmer vandforholdene eller bliver akut syg i vandet."
+}

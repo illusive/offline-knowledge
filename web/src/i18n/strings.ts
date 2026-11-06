@@ -219,7 +219,6 @@ export interface Strings {
     stop: string;
     guide: string;
   };
-  radioTool: { title: string; subtitle: string };
   forraad: {
     title: string;
     loading: string;
@@ -694,7 +693,6 @@ export const strings: Record<Lang, Strings> = {
       stop: 'Stop',
       guide: 'Læs mere i “Der er intet vand”',
     },
-    radioTool: { title: 'Radio og sirener', subtitle: 'Hvad sirenerne betyder, og hvor du får besked.' },
     forraad: {
       title: 'Forråd',
       loading: 'Henter forrådet …',
@@ -1215,7 +1213,6 @@ export const strings: Record<Lang, Strings> = {
       stop: 'Stop',
       guide: 'Read more in “Der er intet vand” (Danish)',
     },
-    radioTool: { title: 'Radio and sirens', subtitle: 'What the sirens mean, and where you get news.' },
     forraad: {
       title: 'Supplies',
       loading: 'Loading your supplies …',

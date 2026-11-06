@@ -1,0 +1,114 @@
+{
+  "id": "underafkoeling",
+  "category": "first-aid",
+  "order": 18,
+  "title": "Temperaturpåvirkninger - underafkøling",
+  "summary": "Vand, vind og kulde kan gøre en person farligt kold. Især hvis personen ikke bevæger sig.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "$comment": "Picture to add: the \"mumieindpakning\" photo on p. 103.",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Børn, ældre og bevidstløse bliver lettest for kolde. Et typisk eksempel er en fuld person, der falder i søvn på en bænk.",
+      "page": 102,
+      "original": {
+        "lang": "da",
+        "text": "Børn, ældre og bevidstløse personer er særligt udsatte for underafkøling. Et klassisk eksempel er en alkoholpåvirket person, der falder i søvn på en bænk."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "I vand bliver man endnu hurtigere kold. Vand fører varmen væk fra kroppen ca. 25 gange hurtigere end luft.",
+      "page": 102,
+      "original": {
+        "lang": "da",
+        "text": "Hvis en person opholder sig i vand, vil underafkøling kunne opstå endnu hurtigere, da vand leder varme væk fra kroppen ca. 25 gange hurtigere end luft."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Tegn på underafkøling",
+      "page": 102,
+      "original": {
+        "lang": "da",
+        "text": "Symptomer"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Let underafkøling: Personen er kold, ryster og er bleg. Huden kan være blåplettet, også på arme og ben. Personen har svært ved at bevæge arme og ben.",
+      "page": 102,
+      "original": {
+        "lang": "da",
+        "text": "Kold, rystende, bleg og eventuelt blåmarmoreret hud og ekstremiteter, nedsat bevægelighed i arme og ben."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Svær underafkøling: Personen kan være omtåget og forvirret, sløv eller bevidstløs. Til sidst kan kulderystelserne stoppe, og personen kan få hjertestop.",
+      "page": 102,
+      "original": {
+        "lang": "da",
+        "text": "Personen kan være omtåget, konfus, have nedsat bevidsthed eller være bevidstløs. I yderste konsekvens kan kulderystelserne ophøre, og personen kan risikere at få et hjertestop."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ring 112 ved svær underafkøling.",
+      "page": 103,
+      "original": {
+        "lang": "da",
+        "text": "Ring 1-1-2 ved svære kuldepåvirkninger."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Flyt personen væk fra vand, vind og kulde, hen et sted med læ.",
+      "page": 102,
+      "original": {
+        "lang": "da",
+        "text": "Flyt/hjælp den tilskadekomne væk fra vand, vind og lav temperatur ved at flytte personen til et sted med læ."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan hjælper du:",
+      "items": [
+        "Tag vådt tøj af.",
+        "Pak personen ind i et redningstæppe og/eller tæpper. Læg også noget under personen, så kulden fra jorden ikke trænger ind. Pak kroppen og hovedet ind først.",
+        "Brug det, du har, fx tæpper, tøj eller pap.",
+        "Er personen vågen, så giv noget varmt og sødt at drikke. Ikke alkohol.",
+        "Ved let underafkøling kan personen bevæge sig lidt, fx slå armene hårdt om kroppen. I kan også ligge tæt sammen i en sovepose og varme hinanden."
+      ],
+      "page": 102,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Aftag vådt tøj",
+          "Indpak den tilskadekomne i redningstæppe og/eller i tæpper. Isoler personen fra underlaget, og prioriter kropskerne og hoved.",
+          "Brug, hvad du har, f.eks. tæpper, tøj eller pap",
+          "Hvis personen er vågen, kan du give noget varmt og sødt at drikke (ikke alkohol)",
+          "Ved let underafkøling kan personen aktiveres med let fysisk aktivitet, f.eks. med kuske-slag, eller lig tæt sammen i en sovepose og opvarm hinanden."
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Forebyggelse af hypotermi (nedkøling), s. 16",
+      "quote": "Isolering: Dæk personen med tørre tæpper eller tøj for at minimere varmetab. … Vindbeskyttelse: Skærm personen mod vind ved hjælp af vindbarrierer (læ) eller ved at flytte i læ. … Fjernelse af vådt tøj: Fjern forsigtigt vådt tøj og erstat det med tørt tøj for at forhindre yderligere nedkøling. … Jordisolering: Læg isolerende materialer, f.eks. tæpper eller underlag, mellem personen og den kolde jord.",
+      "note": "Both: shelter from the wind, take off wet clothes, wrap in blankets or clothes and insulate from the ground."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "drukneulykker",
+    "kredsloebssvigt",
+    "ring-112"
+  ],
+  "name": "Underafkøling",
+  "originalSummary": "En kombination af vand, vind og lav temperatur samt mangel på bevægelse kan forårsage underafkøling."
+}

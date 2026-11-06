@@ -41,7 +41,11 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 ## First aid (D-037)
 
 29. **Children: 5 rescue breaths first?** The handbook adapts the adult 30:2 sequence to the child (no separate algorithm). The ERC BLS algorithm gives children 5 rescue breaths first (then 15:2 if trained in paediatric BLS). "Basal HLR til børn" is published because the handbook text shown does not contradict ERC, but the guide does not mention the 5 breaths. Decide whether to add the ERC point (from DRG, verbatim) to the guide.
-30. **Handbook line breaks that are real hyphens.** The verbatim check joins "pege-" + "og" into "pegeog"; such cases are recorded as corrections in the guide (`hlr-voksne`). Fine while rare.
+30. **Handbook line breaks that are real hyphens.** The verbatim check joins "pege-" + "og" into "pegeog"; such cases are recorded as corrections in the guide (`hlr-voksne`). Fine while rare. The same happens to "Heimlich-slag" and "Heimlich-metoden" on p. 62 and 64; the originals in `fremmedlegeme-i-luftvejene` carry the joined form.
+39. **Aspirin for chest pain (D-062).** Held back: the handbook (p. 125) lets 112 advise 150–300 mg acetylsalicylsyre to chew; ERC 2025 in Danish says it is not recommended in Denmark. Revisit if DRG or the Danish emergency services change their advice.
+40. **Aftersun on 1st degree burns (D-062).** Held back from "Forbrændinger" (p. 101). sundhed.dk says not to put cream on burns a doctor will see; for a 1st degree burn it says nothing either way. Add it back if a second source agrees.
+41. **Stroke p. 122 (D-062).** The page's two columns are mixed in the PDF text layer, so the guide cannot quote it. Re-extract the page column by column (on the Mac), then add the ABC and position advice.
+42. **Pictures for the D-062 guides.** The photos named in each guide's `$comment` are still to be cut from the handbook.
 
 ## Product
 

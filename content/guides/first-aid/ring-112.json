@@ -1,0 +1,173 @@
+{
+  "id": "ring-112",
+  "category": "first-aid",
+  "order": 12,
+  "title": "Ring 1-1-2",
+  "summary": "Ring 112, hvis nogen pludselig bliver alvorligt syg eller kommer slemt til skade.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Når du ringer 112, kommer du først til politiets alarmcentral. Handler det om sygdom eller en ulykke, bliver du straks sendt videre til en sundhedsperson.",
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "text": "Når du ringer 1-1-2, får du først fat i politiets alarmcentral. Hvis dit opkald drejer sig om sygdom eller ulykke, bliver du straks stillet om til en sundhedsfaglig medarbejder."
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Sundhedspersonen vil fx spørge om:",
+      "items": [
+        "Hvor ulykken er sket. Er du i tvivl om adressen, så beskriv bygninger, vejnavne eller andet, man let kan genkende.",
+        "Hvad der er sket, og hvor slemt det er.",
+        "Hvem der er kommet til skade: én eller flere, børn eller voksne.",
+        "Om personen er vågen, og om du kan få kontakt.",
+        "Om personen trækker vejret, og om det er svært."
+      ],
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "title": "De vil eksempelvis spørge ind til:",
+        "items": [
+          "Hvor ulykken er sket? Er du usikker på adressen, kan du beskrive kendte bygninger, vejnavne eller andre tydelige pejlemærker",
+          "Hvad der er sket? Hvor alvorlig er skaden?",
+          "Hvem der er kommet til skade? En eller flere? Børn eller voksne?",
+          "Om personen er vågen? Kan du komme i kontakt med den tilskadekomne?",
+          "Om der er vejrtrækning? Er vejrtrækningen besværet? Trækker den tilskadekomne vejret?"
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Spørgsmålene kommer ikke i en bestemt rækkefølge. Alarmcentralen spørger om det, de har brug for at vide.",
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "text": "Punkterne er ikke udtryk for en bestemt rækkefølge. Alarmcentralen skal nok spørge ind til de relevante informationer."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Er I flere, så lad én ringe 112 med det samme, mens de andre giver førstehjælp.",
+      "page": 46,
+      "original": {
+        "lang": "da",
+        "text": "Er der flere til stede, så lad én alarmere 1-1-2 straks, mens de andre yder førstehjælp."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "I hjælper sammen",
+      "page": 47,
+      "original": {
+        "lang": "da",
+        "text": "At redde liv er en fælles indsats"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Du er den første og vigtigste person på stedet. Sundhedspersonen i alarmcentralen guider dig og sender den hjælp, der er brug for. Ved hjertestop kan de også sende en hjerteløber med en hjertestarter.",
+      "page": 47,
+      "original": {
+        "lang": "da",
+        "text": "Som førstehjælper er du den første og vigtigste person på skadestedet. Alarmcentralens sundhedsfaglige visitator guider dig gennem situationen, sender den nødvendige hjælp og kan ved hjertestop også aktivere en hjerteløber med en hjertestarter."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Du er alarmcentralens øjne, ører og hænder på stedet. Det, du beslutter, og den hjælp, du giver, kan være afgørende, indtil hjælpen kommer.",
+      "page": 47,
+      "original": {
+        "lang": "da",
+        "text": "Du bliver derfor alarmcentralens ”øjne, ører og hænder” på skadestedet. De beslutninger, du træffer, og den førstehjælp, du yder, kan være afgørende, indtil hjælpen når frem."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Bliv i telefonen, og gør, som sundhedspersonen siger. Læg aldrig på, før du får besked på det.",
+      "page": 47,
+      "original": {
+        "lang": "da",
+        "text": "Det er vigtigt, at du bliver i røret og følger visitatorens anvisninger. Afslut derfor aldrig opkaldet, før du får besked om det."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Ring fra en mobil",
+      "page": 48,
+      "original": {
+        "lang": "da",
+        "text": "Mobiltelefon"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Ringer du 112 fra en smartphone, sender den selv din position til alarmcentralen. Den er tit præcis ned til 10 meter.",
+        "Du kan ringe 112 uden pinkode. Det virker også, når telefonen er låst, eller der ikke er taletid på.",
+        "Alarmcentralen kan sende dig et link, så du kan filme direkte fra din telefon. Billeder fra stedet hjælper dem med at give dig de bedste råd.",
+        "Det virker på de fleste nye smartphones. Du skal ikke have en app, og videoen bliver ikke gemt på telefonen."
+      ],
+      "page": 48,
+      "original": {
+        "lang": "da",
+        "items": [
+          "AML aktiveres automatisk, når du ringer 1-1-2 fra en smartphone. Det hjælper alarmcentralen med at finde din præcise position – ofte med en nøjagtighed på ned til 10 meter.",
+          "På mobiltelefoner kan du ringe 1-1-2 uden at indtaste en pinkode, selvom telefonen er låst, eller der ikke er taletid på.",
+          "Alarmcentralen kan også bede dig om at livestreame direkte fra din telefon via et link, som de sender til dig. Billeder fra skadestedet kan hjælpe alarmcentralen med at vurdere situationen og give dig den bedst mulige vejledning.",
+          "Funktionen virker på de fleste moderne smartphones, gemmer ikke videoen på selve telefonen og kræver ikke nogen præinstalleret app."
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "På stranden",
+      "page": 49,
+      "original": {
+        "lang": "da",
+        "text": "Alarmering fra strande i Danmark"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "På de fleste danske strande står et grønt skilt med et nummer. Sig nummeret, når du ringer 112. Så er det lettere at sende hjælpen det rigtige sted hen.",
+      "page": 49,
+      "original": {
+        "lang": "da",
+        "text": "På de fleste danske strande findes et grønt skilt med et unikt nummer, du skal oplyse, når du ringer 1-1-2. Det gør det lettere for alarmcentralen at sende hjælpen til det rigtige sted"
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Nødtelefon og kantpæl",
+      "page": 49
+    },
+    {
+      "kind": "text",
+      "text": "Nogle få tunneler og broer har stadig nødtelefoner. Ring fra den side af vejen, hvor ulykken er sket. Sig alt, hvad der står på kantpælen (den lille pæl i vejkanten), så alarmcentralen kan finde stedet.",
+      "page": 49,
+      "original": {
+        "lang": "da",
+        "text": "På nogle få udvalgte tunneler og broer findes der stadig nødtelefoner. Hvis du foretager et opkald fra en nødtelefon, så gør det i samme side af vejen, som ulykken er sket. Oplys alle oplysningerne på kantpælen, så alarmcentralen kan finde din præcise placering."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Tabel 2, s. 6",
+      "quote": "Ring 1-1-2 med det samme. … Hvis du mistænker et hjertestop, skal du ringe 112 og følge den sundhedsfaglige visitators vejledning i, hvordan du udfører hjertelungeredning (HLR).",
+      "note": "Both: call 112 at once, and follow what the dispatcher says."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "tre-hovedpunkter",
+    "hlr-voksne",
+    "hjertestarter"
+  ],
+  "name": "Ring 112",
+  "originalSummary": "Ring 1-1-2 ved akut kritisk sygdom eller alvorlig tilskadekomst."
+}

@@ -1,7 +1,7 @@
 // Tools: a list of the tools: the compass (D-045), the sun (D-056), and for a power cut the fridge
-// and freezer clock, the boiling timer and the sirens guide (D-058).
+// and freezer clock and the boiling timer (D-058). The sirens guide lives in "Når det sker" (D-061).
 
-import { Compass, Radio, Refrigerator, Sunrise, Timer, type LucideIcon } from 'lucide-react';
+import { Compass, Refrigerator, Sunrise, Timer, type LucideIcon } from 'lucide-react';
 import { LinkRow, Page, RowList, TabHeader } from '../components/ui';
 import type { Strings } from '../i18n/strings';
 import { usePageTitle } from '../lib/usePageTitle';
@@ -27,14 +27,11 @@ export function ToolsScreen({ s }: { s: Strings }) {
   );
 }
 
-const SIRENS_GUIDE_ID = 'naar-sirenen-lyder';
-
 function tools(s: Strings): { href: string; Icon: LucideIcon; title: string; subtitle: string }[] {
   return [
     { href: hrefs.compass, Icon: Compass, title: s.compass.title, subtitle: s.compass.subtitle },
     { href: hrefs.sun, Icon: Sunrise, title: s.sun.title, subtitle: s.sun.subtitle },
     { href: hrefs.powerClock, Icon: Refrigerator, title: s.power.title, subtitle: s.power.subtitle },
     { href: hrefs.boil, Icon: Timer, title: s.boil.title, subtitle: s.boil.subtitle },
-    { href: hrefs.guide(SIRENS_GUIDE_ID), Icon: Radio, title: s.radioTool.title, subtitle: s.radioTool.subtitle },
   ];
 }

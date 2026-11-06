@@ -1,0 +1,135 @@
+{
+  "id": "forbraendinger",
+  "category": "first-aid",
+  "order": 17,
+  "title": "Temperaturpåvirkninger - forbrændinger",
+  "summary": "En forbrænding kan være livsfarlig. Det afhænger af, hvor stor og hvor dyb den er.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "$comment": "Held back: \"Aftersun kan anvendes efter nedkøling for at lindre huden …\" (p. 101). sundhed.dk advises against creams on burns that a doctor will see, so it is left out (D-062). Picture to add: the drawing of the 3 degrees on p. 101.",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Hvor slem er forbrændingen?",
+      "page": 100,
+      "original": {
+        "lang": "da",
+        "text": "Forbrændinger opdeles i 3 grader:"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "1. grad: Huden er rød, som ved en solskoldning. Det er ikke farligt, men det svier, og huden kan skalle lidt af efter et par dage.",
+        "2. grad: Det gør meget ondt. Huden er rød med lysegule vabler fyldt med væske. Det er som regel ikke farligt, men nogle gange skal en læge se på det.",
+        "3. grad: Huden er forkullet efter ild, eller den ser \"kogt\" ud efter en skoldning. Det er livsfarligt og skal behandles med det samme. Personen kan få kredsløbssvigt."
+      ],
+      "page": 100,
+      "original": {
+        "lang": "da",
+        "items": [
+          "1. grads forbrænding: Medfører rødme af huden. Den ses typisk ved solskoldning. Den er ufarlig, men kan give sviende smerte og let hudafskalning efter et par dage.",
+          "2. grads forbrænding: Medfører stærke smerter. Der vil være rødme med lysegule og væskefyldte vabler. En 2. gradsforbrænding er som udgangspunkt ufarlig, men kan i visse tilfælde kræve lægelig behandling.",
+          "3. grads forbrænding: Ved åben ild som årsag ses forkulning og ved en skoldning vil huden være ”kogt”. Tilstanden er kritisk og kræver øjeblikkelig behandling, og der kan være risiko for kredsløbssvigt."
+        ]
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Hvis tøjet brænder:",
+      "items": [
+        "Læg personen ned på jorden. Sluk eller kvæl ilden med vand, et tæppe, tøj eller andet.",
+        "Sluk fra hovedet og nedad, så luftvejene ikke bliver forbrændt. Stå altid med vinden i ryggen."
+      ],
+      "page": 100,
+      "original": {
+        "lang": "da",
+        "title": "Skab sikkerhed",
+        "items": [
+          "Ved ild i den tilskadekomnes tøj lægges personen ned på jorden og sluk eller kvæl ilden med vand, tæppe, beklædning eller andet.",
+          "Sluk flammerne fra hovedet og nedad for at undgå forbrænding af luftveje (sluk altid ild med vinden i ryggen)."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Skyldes forbrændingen varm væske eller noget varmt, så få personen væk fra det. Tag forsigtigt tøjet af det forbrændte sted, hvis det ikke sidder fast i huden.",
+      "page": 100,
+      "original": {
+        "lang": "da",
+        "text": "Hvis forbrændingen skyldes varm væske eller en varmekilde, fjern den tilskadekomne fra kilden. Fjern forsigtigt tøj fra det forbrændte område, hvis det ikke sidder fast i huden."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Køl forbrændingen:",
+      "items": [
+        "Køl med vand i mindst 20 minutter, eller til det ikke gør ondt mere. Lad personen selv bestemme, hvor koldt vandet er, så det føles rart og lindrer.",
+        "Har du ikke rindende vand, så læg en våd klud på. Vend den tit, og gør den våd igen.",
+        "Når forbrændingen er kølet, så vikl madfilm (plastfilm til mad) om den. Har du ikke det, så brug en steril forbinding.",
+        "Giv personen noget at drikke."
+      ],
+      "page": 100,
+      "original": {
+        "lang": "da",
+        "title": "Giv førstehjælp",
+        "items": [
+          "Nedkøl med vand (lad den tilskadekomne selv regulere vandtemperaturen, så vandet føles behageligt og smertelindrende. i minimum 20 minutter eller indtil smerten forsvinder.",
+          "Hvis rindende vand ikke er muligt, kan en vådv klud lægges på, der vendes hyppigt og gøres våd igen.",
+          "Efter nedkøling vikles madfilm (eksempelvis Vita Vrap) omkring forbrændingen/skoldningen. Hvis dette ikke er til rådighed, kan en steril forbinding bruges.",
+          "Giv væske til den tilskadekomne."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ring altid 112 ved en 3. grads forbrænding.",
+      "page": 101,
+      "original": {
+        "lang": "da",
+        "text": "Ved 3. gradsforbrændinger alarmeres altid 1-1-2!"
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Tag på skadestuen med en 2. grads forbrænding, når:",
+      "items": [
+        "Forbrændingen er mere end 5–7 cm på tværs",
+        "Den sidder på hænder eller fødder, i lysken, på numsen, over et led eller omkring kroppens åbninger"
+      ],
+      "page": 101,
+      "original": {
+        "lang": "da",
+        "title": "Ved 2. gradsforbrændinger søges der skadestue, når:",
+        "items": [
+          "Forbrændingen er mere end 5-7 cm. i diameter",
+          "Forbrændingen er på hænder, fødder, i lysken, sædet eller over led og omkring legemsåbninger."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ved en 1. grads forbrænding er der normalt ikke brug for en læge.",
+      "page": 101,
+      "original": {
+        "lang": "da",
+        "text": "Ved 1.-gradsforbrændinger er lægehjælp normalt ikke nødvendig."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-sundhed-forbraendinger-foerstehjaelp",
+      "locator": "Straksbehandling; Afkøl det forbrændte område",
+      "quote": "Flammer bør slukkes med vand, et tæppe eller ved at rulle den skadede rundt på jorden. … Stof, som har brændt sig fast, lader du være. … Man bør skylle med rindende, lunkent vand (12-18°C) i 20-60 minutter, f.eks. i brusebad. Hvis dette ikke kan lade sig gøre, brug da kølige omslag, så smerten aftager. … Alvorligere forbrændinger skal altid behandles af sundhedsfaglige.",
+      "note": "Both: put out flames with water or a blanket, leave cloth that is stuck, cool with running, not ice-cold water for at least 20 minutes (sundhed.dk: 20–60 minutes at 12–18 °C), cool wet cloths if there is no running water, and serious burns need a doctor."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "kredsloebssvigt",
+    "ring-112"
+  ],
+  "name": "Forbrændinger",
+  "originalSummary": "Forbrændinger kan være livstruende alt efter omfanget og graden."
+}

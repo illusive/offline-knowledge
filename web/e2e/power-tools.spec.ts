@@ -1,6 +1,6 @@
 // Power-cut tools (D-058), offline: the fridge and freezer clock keeps its start through a reload;
 // the boiling timer shows "Færdig" after its minute; the sun tool shows the sun right now and the
-// moon; the sirens row opens the guide. Nothing is fetched beyond the app itself.
+// moon; Tools has no sirens row (D-061). Nothing is fetched beyond the app itself.
 
 import type { BrowserContext, Page } from '@playwright/test';
 import { expect, test } from './fixtures.ts';
@@ -43,7 +43,7 @@ test('Køl og frys: the clock starts, survives a reload, and ends; offline', asy
   expect(foreign).toEqual([]);
 });
 
-test('Kog vand: one minute, then "Færdig"; the sun right now and the moon; the sirens guide; offline', async ({ app: { page, context } }) => {
+test('Kog vand: one minute, then "Færdig"; the sun right now and the moon; no sirens row in Tools; offline', async ({ app: { page, context } }) => {
   await offline(page, context);
   await page.getByRole('link', { name: /^Kog vand/ }).click();
   await expect(page.getByText('Kog det klare vand kraftigt i 1 minut.')).toBeVisible();
@@ -64,10 +64,8 @@ test('Kog vand: one minute, then "Færdig"; the sun right now and the moon; the 
   await expect(moon.getByText(/% af månen er lyst op$/)).toBeVisible();
   await expect(moon.getByText(/^Månen (står op|går ned)$|^Månen (står ikke op|går ikke ned) denne dag\.$/).first()).toBeVisible();
 
-  // The sirens row is a guide, checked against Beredskabsstyrelsen's fact sheet.
+  // The sirens guide is not a tool (D-061): it is only in "Når det sker".
   await page.goto('./#/tools');
-  await page.getByRole('link', { name: /^Radio og sirener/ }).click();
-  await expect(page.getByRole('heading', { level: 1, name: 'Når sirenen lyder' })).toBeVisible();
-  await expect(page.getByText('Gå indenfor, og lyt til DR eller TV 2.')).toBeVisible();
-  await expect(page.getByText('Fare: én tone, der stiger hurtigt og falder langsomt. Den kommer 4 gange, i alt 45 sekunder.')).toBeVisible();
+  await expect(page.getByRole('link', { name: /^Kog vand/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /sirene/i })).toHaveCount(0);
 });

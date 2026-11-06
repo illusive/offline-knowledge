@@ -1,0 +1,156 @@
+{
+  "id": "kredsloebssvigt",
+  "category": "first-aid",
+  "order": 14,
+  "title": "Kredsløbssvigt",
+  "summary": "Ved kredsløbssvigt kan blodet ikke længere komme godt nok rundt i kroppen. Det er livsfarligt.",
+  "sourceId": "dk-fsk-abc-foerstehjaelp",
+  "risk": "high",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Det kan skyldes et stort blodtab, forbrændinger, at blodkarrene udvider sig, eller at hjertet ikke pumper godt nok.",
+      "page": 38,
+      "original": {
+        "lang": "da",
+        "text": "Årsagerne kan være stort blodtab, forbrændinger, udvidelse af blodkarrene eller nedsat hjertefunktion."
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Tegn på kredsløbssvigt:",
+      "items": [
+        "Hurtig vejrtrækning",
+        "Bleg hud",
+        "Kold og klam af sved",
+        "Svimmel og omtåget – personen kan blive bevidstløs"
+      ],
+      "page": 39,
+      "original": {
+        "lang": "da",
+        "title": "Symptomerne på kredsløbssvigt er:",
+        "items": [
+          "Hurtig vejrtrækning",
+          "Bleghed",
+          "Kold og klamtsvedende",
+          "Svimmel og omtåget til bevidstløshed."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Du kan ikke forhindre kredsløbssvigt. Men du kan udsætte det med den rigtige førstehjælp, indtil hjælpen kommer. Gør du ingenting, kan personen få hjertestop.",
+      "page": 39,
+      "original": {
+        "lang": "da",
+        "text": "Du kan som førstehjælper ikke forhindre et kredsløbssvigt, men du kan forsinke det ved at yde den korrekte førstehjælp, indtil hjælpen kommer frem. Hvis der ikke handles, kan personen udvikle et hjertestop."
+      }
+    },
+    {
+      "kind": "steps",
+      "title": "Sådan hjælper du:",
+      "items": [
+        "Læg personen ned.",
+        "Stop de blødninger, du kan se.",
+        "Hold personen varm.",
+        "Se efter andre skader, der kan tyde på blødninger inde i kroppen.",
+        "Berolig personen hele vejen igennem."
+      ],
+      "page": 40,
+      "original": {
+        "lang": "da",
+        "title": "For at forsinke kredsløbssvigt, skal førstehjælperen:",
+        "items": [
+          "Lægge den tilskadekomne ned",
+          "Standse udvendige blødninger",
+          "Sikre at der kan opretholdes en normal legemstemperatur",
+          "Undersøge om der er andre skader, der kan give mistanke om indre blødninger",
+          "Yd psykisk førstehjælp igennem hele forløbet."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "title": "Vigtigt",
+      "text": "Har personen et dårligt hjerte, så læg ikke personen ned. Lad personen sidde, eller lig på ryggen med overkroppen løftet.",
+      "page": 40,
+      "original": {
+        "lang": "da",
+        "title": "VIGTIGT",
+        "text": "En person, som udviser tegn på kredsløbssvigt og har nedsat hjertefunktion, må ikke lægges ned. Personen skal sidde eller lejres i aflastende rygleje."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Blødninger inde i kroppen",
+      "page": 44,
+      "original": {
+        "lang": "da",
+        "text": "Indre blødninger"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Du kan ikke se en blødning inde i kroppen. Den kan komme efter trafikulykker, fald, vold eller cykelstyrt. Den kan også komme ved pludselig sygdom.",
+      "page": 44,
+      "original": {
+        "lang": "da",
+        "text": "Man kan ikke umiddelbart se en indre blødning. Indre blødninger kan opstå efter trafikulykker, fald, vold eller cykelstyrt. De kan også skyldes akut opståede sygdomme."
+      }
+    },
+    {
+      "kind": "list",
+      "title": "Tegn på en blødning inde i kroppen:",
+      "items": [
+        "Måske et blåt mærke, hvis personen har fået et slag",
+        "Svimmel og omtåget – personen kan blive bevidstløs",
+        "Hurtig vejrtrækning og bleg, kold hud (tegn på kredsløbssvigt)",
+        "Smerter, uro eller angst",
+        "Opkast med blod eller blod i afføringen kan også være et tegn"
+      ],
+      "page": 44,
+      "original": {
+        "lang": "da",
+        "title": "Symptomer",
+        "items": [
+          "Evt. et blåt mærke, hvis blødningen skyldes et slag",
+          "Svimmel og omtåget til bevidstløs",
+          "Hurtig vejrtrækning samt bleg og kold hud (tegn på kredsløbssvigt)",
+          "Smerter og uro eller angst",
+          "Blodigt opkast eller blod i afføringen kan også være tegn på en indre blødning."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ring 112 med det samme, hvis du tror, personen bløder inde i kroppen.",
+      "page": 44,
+      "original": {
+        "lang": "da",
+        "text": "Ring 1-1-2 med det samme, hvis du har mistanke om en indre blødning."
+      }
+    }
+  ],
+  "checks": [
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Struktureret vurdering (ABCDE), C – Circulation, s. 8",
+      "quote": "Er der nogen tegn på lavt blodtryk … Hud bleg, kold eller klam? … Svimmelhed eller forvirring? … Overvej brugen af passiv benløftning som en midlertidig foranstaltning, mens du venter på avanceret akutmedicinsk behandling.",
+      "note": "Both: pale, cold, clammy skin and dizziness are signs of shock (kredsløbssvigt); the person lies down while waiting for help (ERC: on the back, legs raised for a while)."
+    },
+    {
+      "sourceId": "dk-drg-erc-first-aid-2025",
+      "locator": "Forebyggelse af hypotermi, s. 16",
+      "quote": "Isolering: Dæk personen med tørre tæpper eller tøj for at minimere varmetab.",
+      "note": "Both keep the person warm."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "massive-bloedninger",
+    "mindre-bloedninger",
+    "ring-112"
+  ],
+  "name": "Kredsløbssvigt",
+  "originalSummary": "Kredsløbssvigt er en kritisk tilstand, hvor den nødvendige blodcirkulation ikke længere kan opretholdes."
+}

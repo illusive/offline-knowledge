@@ -673,6 +673,40 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-062 — First aid core complete: ten more guides, two sundhed.dk pages as second authority
+
+- **Date:** 2026-11-06
+- **Decision (owner):** the life-saving core planned in D-037 is finished with ten guides from *Førstehjælpens ABC*, written like the first eleven (plain language with the handbook's words kept, D-042; `ownerChecked` false, "Prøveversion"):
+  - Ring 112 (p. 46–49)
+  - Noget galt i halsen (fremmedlegeme i luftvejene, p. 60–65)
+  - Kredsløbssvigt, with bleeding inside the body (p. 38–40, 44)
+  - Mindre blødninger and the pressure bandage (p. 41–43)
+  - Drukning (p. 11, 68–69)
+  - Forbrændinger (p. 100–101)
+  - Underafkøling (p. 102–103)
+  - Alvorlig allergisk reaktion (p. 129)
+  - Stroke (p. 123)
+  - Brystsmerter (p. 124–125)
+- **Second authorities:** ERC 2025 First Aid in Danish (DRG) for eight of them. ERC 2025 no longer covers burns, and its choking advice covers adults only. Two pages from Patienthåndbogen on sundhed.dk were snapshotted and registered (owner OK, 2026-11-06):
+  - `dk-sundhed-forbraendinger-foerstehjaelp` for burns
+  - `dk-sundhed-fremmedlegeme-i-luftvejene` for choking in babies
+- **Held back (D-037's rule: a point the second authority disagrees with):**
+  - **Aspirin for chest pain (p. 125):** the handbook says 112 may advise chewing 150–300 mg acetylsalicylsyre. ERC's Danish translation says this is not recommended in Denmark and to wait for the ambulance (owner decision). The guide keeps "Giv ikke selv personen medicin, uden at alarmcentralen har sagt det."
+  - **Aftersun on 1st degree burns (p. 101):** sundhed.dk advises against creams on burns a doctor will see.
+- **Left out for now:**
+  - **Stroke p. 122:** the page is set in two columns that the PDF text layer mixes line by line, so its running text cannot be checked word for word. The guide uses p. 123 (Stræk, Snak, Smil) and one line from p. 122.
+  - **Pictures:** text first (owner). Each guide's `$comment` names the photos to add: the pressure bandage p. 43, the burn degrees p. 101, the "mummy" wrap p. 103 and Stræk, snak, smil p. 123. The crop script runs only on a Mac.
+- **Reuse:** "Ring 112" shows the same 112 blocks as "Førstehjælpens 3 trin", word for word, so the two cannot drift apart.
+- **Check on Windows:** the pack build cannot run on Windows yet (paths and line endings). The guides were checked with the build's own `validateGuides` from a script that works around both: 62 guides, no problems. A deliberately broken quote was caught.
+- **Content:** 0.18.0.
+
+## D-061 — No sirens row in Tools
+
+- **Date:** 2026-11-06
+- **Decision (owner):** the "Radio og sirener" row is removed from Tools. It was a guide, not a tool, and did not belong there.
+- **What stays:** the guide "Når sirenen lyder" (D-058) is unchanged. It is still in "Når det sker" under "Hvis det sker", and it is linked from "Hold telefonen opladet".
+- **Tools now holds:** Kompas, Sol op og ned, Køl og frys and Kog vand.
+
 ## D-060 — Forråd: a search on the names
 
 - **Date:** 2026-11-06

@@ -47,7 +47,7 @@ High-risk areas (first aid, water treatment, food safety, electricity) follow a 
 - Food storage lookup: search a food and see how long it keeps in the pantry, fridge and freezer, in Danish and English, with its source (D-014, D-015).
 - Emergency card that calls 112, reachable from Home and every high-risk guide.
 - Kort tab: offline maps of chosen areas, places and your position (D-036).
-- Tools: compass with "hold a course" (D-045); sunrise and sunset for a place and a day, with the sun and moon right now (D-056, D-058); for a power cut, a fridge and freezer clock, a boiling timer and the sirens guide (D-058). The supply checklist became the "Hjemmeberedskab" stock lists (D-040, D-043), whose ticks are what Forråd holds (D-048).
+- Tools: compass with "hold a course" (D-045); sunrise and sunset for a place and a day, with the sun and moon right now (D-056, D-058); for a power cut, a fridge and freezer clock and a boiling timer (D-058; the sirens guide is in "Når det sker", D-061). The supply checklist became the "Hjemmeberedskab" stock lists (D-040, D-043), whose ticks are what Forråd holds (D-048).
 - Bookmarks ("Saved") for guides and foods, kept on the device only (D-026).
 - Forråd tab: the household's own stores. Water against the stock list for the household, when it was last checked, expiry dates, each category with a link to its stock list, and barcode scanning. The household and a backup file are in Settings. Kept on the device (D-046, D-047).
 - Settings (the gear at the top right): offline library (pack size, version, date), language, appearance, water unit, text size, about and sources.

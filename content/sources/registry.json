@@ -2399,6 +2399,38 @@
       "shortName": "sundhed.dk"
     },
     {
+      "id": "dk-sundhed-forbraendinger-foerstehjaelp",
+      "status": "request-needed",
+      "title": "Forbrændinger, førstehjælp",
+      "publisher": "Patienthåndbogen på sundhed.dk",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/akutte-sygdomme/sygdomme/brandskader/forbraendinger-foerstehjaelp/",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Written by a specialist in plastic surgery, Aarhus Sygehus (updated 2022-06-03). Reuse terms not stated on the page; permission needed before wider distribution, set aside while private (D-028). Second authority for the first aid guide on burns (D-062): ERC 2025 no longer covers burns.",
+      "attribution": "",
+      "retrievedAt": "2026-11-06",
+      "snapshot": "snapshots/dk-sundhed-forbraendinger-foerstehjaelp.html",
+      "snapshotSha256": "b0dac891953a39b00d946a9bb144e0f1521849965b198e1bb444b3dc62d7eee7",
+      "shortName": "sundhed.dk"
+    },
+    {
+      "id": "dk-sundhed-fremmedlegeme-i-luftvejene",
+      "status": "request-needed",
+      "title": "Fremmedlegeme i luftvejene",
+      "publisher": "Patienthåndbogen på sundhed.dk",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/akutte-sygdomme/foerstehjaelp/fremmedlegemer/fremmedlegeme-i-luftvejene/",
+      "lang": "da",
+      "region": "DK",
+      "license": "unknown",
+      "licenseNote": "Written by an ear, nose and throat specialist (updated 2025-04-28). Reuse terms not stated on the page; permission needed before wider distribution, set aside while private (D-028). Second authority for choking in babies and children (D-062): ERC 2025 First Aid covers adults only.",
+      "attribution": "",
+      "retrievedAt": "2026-11-06",
+      "snapshot": "snapshots/dk-sundhed-fremmedlegeme-i-luftvejene.html",
+      "snapshotSha256": "8855520fe9870b2a19593e032bd4fc00e16e6daa22a3eb69803d44621276c2a7",
+      "shortName": "sundhed.dk"
+    },
+    {
       "id": "uk-nhs-carbon-monoxide",
       "status": "request-needed",
       "title": "Carbon monoxide poisoning",
