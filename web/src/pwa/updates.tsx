@@ -18,6 +18,13 @@ interface Updates {
 
 const UpdatesContext = createContext<Updates | null>(null);
 
+let reloading = false;
+function reloadOnce() {
+  if (reloading) return;
+  reloading = true;
+  window.location.reload();
+}
+
 export function UpdatesProvider({ children }: { children: ReactNode }) {
   const registration = useRef<ServiceWorkerRegistration | null>(null);
   const {
@@ -50,7 +57,13 @@ export function UpdatesProvider({ children }: { children: ReactNode }) {
         setOfflineReady(false);
         setNeedRefresh(false);
       },
-      applyUpdate: () => void updateServiceWorker(true),
+      // The plugin reloads only for updates its own Workbox saw. One found by "Søg efter ny version"
+      // or by the browser while the app was open counts as external, so reload here when the new
+      // version takes over (once).
+      applyUpdate: () => {
+        navigator.serviceWorker?.addEventListener('controllerchange', reloadOnce, { once: true });
+        void updateServiceWorker(true);
+      },
       check,
     }),
     [offlineReady, needRefresh, setOfflineReady, setNeedRefresh, updateServiceWorker, check],
