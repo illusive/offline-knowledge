@@ -7,6 +7,7 @@ import type { Strings } from './i18n/strings';
 import { createDbClient, openPack } from './db/client';
 import { useStrings } from './i18n/lang';
 import { UpdateBanner } from './pwa/UpdateBanner';
+import { UpdatesProvider } from './pwa/updates';
 import { useOfflineReady } from './pwa/useOfflineReady';
 import { useApplyTheme } from './settings/preferences';
 import { usePrecacheProgress } from './pwa/usePrecacheProgress';
@@ -177,11 +178,11 @@ export function App() {
   }
 
   return (
-    <>
+    <UpdatesProvider>
       {content}
       <UpdateBanner s={s} />
       <TabBar active={activeTab} s={s} />
-    </>
+    </UpdatesProvider>
   );
 }
 

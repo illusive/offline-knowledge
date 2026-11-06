@@ -1,23 +1,19 @@
-// Registers the service worker and shows its state: "works offline now" once, and
-// "new version ready" when an update has fully downloaded (it never takes over by itself).
+// Shows the service worker's state: "works offline now" once, and "new version ready" when an
+// update has fully downloaded (it never takes over by itself). The state is shared (updates.tsx).
 
 import { useEffect } from 'react';
-import { useRegisterSW } from 'virtual:pwa-register/react';
 import type { Strings } from '../i18n/strings';
+import { useUpdates } from './updates';
 
 export function UpdateBanner({ s }: { s: Strings }) {
-  const {
-    offlineReady: [offlineReady, setOfflineReady],
-    needRefresh: [needRefresh, setNeedRefresh],
-    updateServiceWorker,
-  } = useRegisterSW();
+  const { offlineReady, needRefresh, dismiss, applyUpdate } = useUpdates();
 
   // "Works offline now" is informational: hide it after a few seconds. "Update" stays until acted on.
   useEffect(() => {
     if (!offlineReady || needRefresh) return;
-    const timer = setTimeout(() => setOfflineReady(false), 6000);
+    const timer = setTimeout(dismiss, 6000);
     return () => clearTimeout(timer);
-  }, [offlineReady, needRefresh, setOfflineReady]);
+  }, [offlineReady, needRefresh, dismiss]);
 
   if (!offlineReady && !needRefresh) return null;
 
@@ -29,18 +25,11 @@ export function UpdateBanner({ s }: { s: Strings }) {
         <div className="mx-auto flex max-w-md items-center gap-3 rounded-card bg-surface p-3 shadow-lg">
           <p className="flex-1">{needRefresh ? s.updateReady : s.offlineReady}</p>
           {needRefresh ? (
-            <button type="button" onClick={() => void updateServiceWorker(true)} className="min-h-11 rounded-full bg-accent px-4 font-semibold text-on-accent">
+            <button type="button" onClick={applyUpdate} className="min-h-11 rounded-full bg-accent px-4 font-semibold text-on-accent">
               {s.updateAction}
             </button>
           ) : null}
-          <button
-            type="button"
-            onClick={() => {
-              setOfflineReady(false);
-              setNeedRefresh(false);
-            }}
-            className="min-h-11 px-2 font-medium"
-          >
+          <button type="button" onClick={dismiss} className="min-h-11 px-2 font-medium">
             {s.dismiss}
           </button>
         </div>

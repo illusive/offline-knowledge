@@ -2,9 +2,9 @@
 // (their own page, D-064) and About.
 // Everything here works offline: the counts come from the pack's manifest, the sources from the pack.
 
-import { BookOpen, Check } from 'lucide-react';
+import { BookOpen, Check, RefreshCw } from 'lucide-react';
 import { useEffect, useState, type ReactNode } from 'react';
-import { Card, Choice, LinkRow, Page, RowList, SubPageHeader } from '../components/ui';
+import { Button, Card, Choice, LinkRow, Page, RowList, SubPageHeader } from '../components/ui';
 import type { PackInfo } from '../db/protocol';
 import type { Lang, Strings } from '../i18n/strings';
 import { mapClient } from '../map/client';
@@ -14,6 +14,8 @@ import { hrefs } from '../router';
 import { setPreference, usePreferences, type LangPref, type ThemePref } from '../settings/preferences';
 import { HouseholdSettings } from '../forraad/HouseholdSettings';
 import { usePageTitle } from '../lib/usePageTitle';
+import { useUpdates, type CheckResult } from '../pwa/updates';
+import { usePrecacheProgress } from '../pwa/usePrecacheProgress';
 
 export function SettingsScreen({ pack, lang, s, offlineReady }: { pack: PackInfo | null; lang: Lang; s: Strings; offlineReady: boolean }) {
   const prefs = usePreferences();
@@ -26,6 +28,8 @@ export function SettingsScreen({ pack, lang, s, offlineReady }: { pack: PackInfo
       <SubPageHeader backLabel={s.back} backTo={hrefs.home} title={s.settingsTitle} />
       <div className="flex flex-col gap-4">
         <Library pack={pack} lang={lang} s={s} offlineReady={offlineReady} />
+
+        <AppVersion lang={lang} s={s} />
 
         <Card aria-labelledby="settings-display" className="flex flex-col gap-5">
           <h2 id="settings-display" className="sr-only">
@@ -159,5 +163,52 @@ function Row({ label, value }: { label: string; value: ReactNode }) {
       <dt className="text-muted">{label}</dt>
       <dd className="text-right font-medium">{value}</dd>
     </div>
+  );
+}
+
+// The app's build and "Søg efter ny version" (D-065). A found version downloads in full first; then
+// "Opdater" switches to it, as the banner does.
+function AppVersion({ lang, s }: { lang: Lang; s: Strings }) {
+  const t = s.settings;
+  const { needRefresh, applyUpdate, check } = useUpdates();
+  const progress = usePrecacheProgress();
+  const [state, setState] = useState<'idle' | 'checking' | CheckResult>('idle');
+  const build = __APP_BUILD__;
+
+  let status: string | null = null;
+  if (needRefresh) status = s.updateReady;
+  else if (state === 'checking') status = t.checking;
+  else if (state === 'found') status = progress && progress.done < progress.total ? t.updateProgress(progress.done, progress.total) : t.updateFound;
+  else if (state === 'latest') status = t.upToDate;
+  else if (state === 'offline') status = t.updateOffline;
+  else if (state === 'failed') status = t.updateFailed;
+
+  return (
+    <Card aria-labelledby="settings-app" className="flex flex-col gap-3">
+      <h2 id="settings-app" className="text-xl font-semibold">
+        {t.appVersion}
+      </h2>
+      <p className="text-muted">{t.appBuild(formatDate(new Date(build.date), lang), build.commit)}</p>
+      <p role="status" className={status ? 'font-medium' : 'sr-only'}>
+        {status}
+      </p>
+      {needRefresh ? (
+        <Button variant="primary" onClick={applyUpdate}>
+          {s.updateAction}
+        </Button>
+      ) : (
+        <Button
+          variant="onPage"
+          disabled={state === 'checking'}
+          onClick={async () => {
+            setState('checking');
+            setState(await check());
+          }}
+        >
+          <RefreshCw aria-hidden="true" className="size-5" />
+          {t.checkUpdate}
+        </Button>
+      )}
+    </Card>
   );
 }

@@ -673,6 +673,16 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-065 — "Søg efter ny version" in Settings
+
+- **Date:** 2026-11-06
+- **Decision (owner):** Settings gets a card "App og version" with the app's build (date and short Git commit, set at build time) and a button "Søg efter ny version".
+- **How it works:** the button asks the browser to fetch the app's own `sw.js` again (`registration.update()`), which the browser already does by itself at every launch. A new version downloads in full before it can be used (D-022); then "Opdater" switches to it, as the banner does. Offline, the button says so without trying.
+- **States:** Søger …, Du har den nyeste version, Der er en ny version (with the download progress), En ny version er klar + Opdater, Du er ikke på nettet, Kunne ikke søge.
+- **Network (AGENTS §4):** a request to the app's own host only, the same one the browser makes at launch. No new host, no data about the user.
+- **Code:** the service worker is registered once in `web/src/pwa/updates.tsx` and shared with the banner and Settings.
+- **Dev setup:** `.claude/launch.json` gets "stead (built, no sh)", which serves a finished build without `sh` (Windows).
+
 ## D-064 — Kilder on its own page under Settings
 
 - **Date:** 2026-11-06

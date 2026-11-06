@@ -112,3 +112,21 @@ test('Home lists the categories by how many people need them, growing last; the 
   await page.getByRole('navigation', { name: 'Hovedmenu' }).getByRole('link', { name: 'Kort' }).click();
   await expect(page).toHaveURL(/#\/map$/);
 });
+
+test('Settings: "Søg efter ny version" finds the latest version online and says so offline (D-065)', async ({ app: { page, context } }) => {
+  await page.goto('./');
+  await expect(page.getByText('Klar uden internet')).toBeAttached({ timeout: 60_000 });
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+  });
+  await page.goto('./#/settings');
+  const app = page.getByRole('region', { name: 'App og version' });
+  await expect(app.getByText(/^Appen er fra .+ \(.+\)$/)).toBeVisible();
+
+  await app.getByRole('button', { name: 'Søg efter ny version' }).click();
+  await expect(app.getByRole('status')).toHaveText('Du har den nyeste version.');
+
+  await context.setOffline(true);
+  await app.getByRole('button', { name: 'Søg efter ny version' }).click();
+  await expect(app.getByRole('status')).toHaveText('Du er ikke på nettet. Prøv igen, når du har forbindelse.');
+});

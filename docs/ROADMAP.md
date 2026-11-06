@@ -64,6 +64,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 
   **Still to check on the iPhone:** the keyboard's search key, the × and large text.
 - [x] No sirens row in Tools (D-061, 2026-11-06): it was a guide, not a tool; the guide stays in "Når det sker".
+- [x] "Søg efter ny version" in Settings (D-065, 2026-11-06), with the app's build date and commit. **Still to check on the iPhone:** online and in airplane mode.
 - [x] Kilder on its own page under Settings (D-064, 2026-11-06).
 - [x] No animal water figure in Settings (D-063, 2026-11-06): the water target is people × 3 L × days; the stock-list line for animals is a plain reminder.
 - [x] Forråd (D-046, D-047, 2026-11-05): a tab replacing Settings, which moved to a gear at the top right. It holds:

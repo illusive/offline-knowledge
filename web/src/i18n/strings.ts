@@ -344,6 +344,15 @@ export interface Strings {
     gallons: string;
     sourcesIntro: string;
     sourcesCount: (n: number) => string;
+    appVersion: string;
+    appBuild: (date: string, commit: string) => string;
+    checkUpdate: string;
+    checking: string;
+    upToDate: string;
+    updateFound: string;
+    updateProgress: (done: number, total: number) => string;
+    updateOffline: string;
+    updateFailed: string;
     about: string;
     aboutBody: string[];
   };
@@ -817,6 +826,15 @@ export const strings: Record<Lang, Strings> = {
       gallons: 'Gallon (US)',
       sourcesIntro: 'Alt indhold kommer fra disse kilder. Hver guide viser sine egne kilder nederst.',
       sourcesCount: (n) => `${n} kilder`,
+      appVersion: 'App og version',
+      appBuild: (date, commit) => `Appen er fra ${date} (${commit})`,
+      checkUpdate: 'Søg efter ny version',
+      checking: 'Søger …',
+      upToDate: 'Du har den nyeste version.',
+      updateFound: 'Der er en ny version. Den hentes nu …',
+      updateProgress: (done, total) => `Henter ${done} af ${total} filer …`,
+      updateOffline: 'Du er ikke på nettet. Prøv igen, når du har forbindelse.',
+      updateFailed: 'Kunne ikke søge. Prøv igen senere.',
       about: 'Om stead',
       aboutBody: [
         'stead samler råd fra myndigheder og andre pålidelige kilder, så du har dem – også uden internet. Vi skriver ikke selv rådene.',
@@ -1336,6 +1354,15 @@ export const strings: Record<Lang, Strings> = {
       gallons: 'Gallons (US)',
       sourcesIntro: 'All content comes from these sources. Each guide lists its own sources at the bottom.',
       sourcesCount: (n) => `${n} sources`,
+      appVersion: 'App and version',
+      appBuild: (date, commit) => `The app is from ${date} (${commit})`,
+      checkUpdate: 'Check for a new version',
+      checking: 'Checking …',
+      upToDate: 'You have the latest version.',
+      updateFound: 'There is a new version. Downloading it now …',
+      updateProgress: (done, total) => `Downloading ${done} of ${total} files …`,
+      updateOffline: 'You are not online. Try again when you have a connection.',
+      updateFailed: 'Could not check. Try again later.',
       about: 'About stead',
       aboutBody: [
         'stead collects advice from authorities and other trusted sources, so you have it – even without internet. We do not write the advice ourselves.',

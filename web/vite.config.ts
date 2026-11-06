@@ -6,6 +6,7 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import { join, normalize } from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import { execSync } from 'node:child_process';
 
 // Answers /stead-maps/… locally, with HTTP range support, as GitHub Pages does for the published
 // map (D-036): the dev server from a local full build (dist-map/, see scripts/map/build-map.ts),
@@ -76,7 +77,19 @@ function localMaps(): Plugin {
   };
 }
 
+// The app's build, shown in Settings (D-065): the date and the short Git commit ("dev" without Git).
+function appBuild(): { date: string; commit: string } {
+  let commit = 'dev';
+  try {
+    commit = execSync('git rev-parse --short HEAD', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() || 'dev';
+  } catch {
+    // Not a Git checkout.
+  }
+  return { date: new Date().toISOString().slice(0, 10), commit };
+}
+
 export default defineConfig({
+  define: { __APP_BUILD__: JSON.stringify(appBuild()) },
   // Relative paths: the app works from any sub-path (GitHub Pages) and any static host (D-023).
   base: './',
   plugins: [
