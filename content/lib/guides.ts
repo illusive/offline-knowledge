@@ -3,11 +3,12 @@
 
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import type { Guide, GuideBlock } from '../schema/guide.ts';
 import { missingQuoteParts, normalize } from './text.ts';
 import type { RegistrySource } from './registry.ts';
 
-export const GUIDES_DIR = new URL('../guides/', import.meta.url).pathname;
+export const GUIDES_DIR = fileURLToPath(new URL('../guides/', import.meta.url));
 
 export async function loadGuides(dir = GUIDES_DIR): Promise<Guide[]> {
   const guides: Guide[] = [];

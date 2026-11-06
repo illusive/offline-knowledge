@@ -3,6 +3,7 @@
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 export interface RegistrySource {
   id: string;
@@ -21,7 +22,7 @@ export interface RegistrySource {
   dataVersion?: string;
 }
 
-export const SOURCES_DIR = new URL('../sources/', import.meta.url).pathname;
+export const SOURCES_DIR = fileURLToPath(new URL('../sources/', import.meta.url));
 
 export async function loadRegistry(): Promise<RegistrySource[]> {
   const registry = JSON.parse(await readFile(join(SOURCES_DIR, 'registry.json'), 'utf8')) as { sources: RegistrySource[] };

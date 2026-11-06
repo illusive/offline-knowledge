@@ -2,6 +2,8 @@
 // Pack version = content/package.json "version".
 
 import { readdir, readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { GUIDES_DIR, loadGuides as loadReadingGuides, validateGuides as validateReadingGuides } from '../lib/guides.ts';
 import { pdfText, snapshotBody, verbatimText } from '../lib/text.ts';
 import { buildPack } from '../lib/pack.ts';
@@ -38,8 +40,8 @@ if (guideProblems.length > 0) throw new Error(`Food guide validation failed:\n- 
 const byEye = guides.flatMap((g) => g.sections.flatMap((s) => s.blocks.filter((b) => b.sourceRef.visualOnly).map(() => g.id)));
 if (byEye.length > 0) console.log(`${byEye.length} quote(s) transcribed from images, not checked automatically: ${[...new Set(byEye)].join(', ')}`);
 
-const compat = JSON.parse(await readFile(new URL('hb66-compatibility.json', `file://${PRODUCE_DIR}`), 'utf8')) as { entries: CompatibilityEntry[] };
-const mapping = JSON.parse(await readFile(new URL('foodkeeper-to-hb66.json', `file://${PRODUCE_DIR}`), 'utf8')) as { map: Record<string, string[]> };
+const compat = JSON.parse(await readFile(join(PRODUCE_DIR, 'hb66-compatibility.json'), 'utf8')) as { entries: CompatibilityEntry[] };
+const mapping = JSON.parse(await readFile(join(PRODUCE_DIR, 'foodkeeper-to-hb66.json'), 'utf8')) as { map: Record<string, string[]> };
 const ethylene = ethyleneProfiles(compat.entries, mapping.map);
 
 // Guides (D-037): every shown text verbatim in the joined-up source text; second-authority quotes too.
@@ -66,7 +68,7 @@ for (const f of imageFiles) {
   images.set(f, { mime, data: await readFile(imageDir + f) });
 }
 
-const outDir = new URL('dist/core/', root).pathname;
+const outDir = fileURLToPath(new URL('dist/core/', root));
 const manifest = await buildPack(
   {
     packId: 'core',

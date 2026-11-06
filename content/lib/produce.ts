@@ -3,11 +3,12 @@
 
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { RECIPE_FACTS, SECTION_ORDER, VERDICTS, type ProduceGuide } from '../schema/produce.ts';
 import type { RegistrySource } from './registry.ts';
 import { missingQuoteParts, normalize } from './text.ts';
 
-export const PRODUCE_DIR = new URL('../produce/', import.meta.url).pathname;
+export const PRODUCE_DIR = fileURLToPath(new URL('../produce/', import.meta.url));
 
 export async function loadProduceGuides(dir = join(PRODUCE_DIR, 'guides')): Promise<ProduceGuide[]> {
   const files = (await readdir(dir)).filter((f) => f.endsWith('.json')).sort();

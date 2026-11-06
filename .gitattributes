@@ -1,0 +1,3 @@
+# Source snapshots and their extracted text are checked byte for byte (sha256 and a header line),
+# so Git must never convert their line endings (core.autocrlf on Windows).
+content/sources/** -text
