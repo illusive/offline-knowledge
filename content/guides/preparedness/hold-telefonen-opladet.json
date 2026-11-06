@@ -1,0 +1,86 @@
+{
+  "id": "hold-telefonen-opladet",
+  "category": "preparedness",
+  "group": "skills",
+  "order": 6,
+  "name": "Hold telefonen opladet",
+  "title": "FCC/FEMA Emergency Communications Tips",
+  "summary": "Spar på batteriet, og hav en anden måde at lade op på, når strømmen er gået.",
+  "sourceId": "us-fcc-emergency-communications",
+  "risk": "low",
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "telefon-og-net-er-nede",
+    "naar-sirenen-lyder",
+    "kulilte"
+  ],
+  "originalSummary": "Limiting calls also conserves cell phone battery power.",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Med en opladet powerbank kan du holde strøm på mobilen, hvis strømmen går.",
+      "page": 6,
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Med en powerbank/batteripakke kan du holde strøm på bl.a. mobilen i tilfælde af lokale strømafbrydelser."
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Skru ned for lysstyrken på skærmen, og luk apps, du ikke bruger.",
+        "Er der ingen dækning, så sluk telefonen. Ellers bruger den strøm på at lede efter signal.",
+        "Hold opkaldene korte. Det sparer batteri og giver plads på nettet til nødopkald.",
+        "Skriv en sms i stedet for at ringe, når det ikke haster. En sms kan komme igennem, når et opkald ikke kan."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "items": [
+          "Check your wireless device or owner's manual for ways to conserve battery power, such as dimming the brightness of your display screen and disabling certain applications.",
+          "If the wireless network in your area is damaged and you do not see any signal bars on your phone, turning your phone off helps prevent the battery from draining as your phone seeks a usable wireless signal.",
+          "If you do need to make a call, try to keep it brief and only convey vital information to emergency personnel and family. Limiting calls also conserves cell phone battery power.",
+          "For non-emergencies, try text messaging from your cell phone. Text messages to other wireless devices may go through when your call may not, though there may be a delivery delay during times of network congestion."
+        ]
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "En solcelleoplader eller en oplader til bilen.",
+        "En opladet bærbar computer eller tablet, med USB-kablet. Det tømmer computerens batteri.",
+        "Nogle radioer med håndsving eller solceller kan også lade en mobil op. Læs vejledningen først."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "items": [
+          "Consider keeping extra batteries, a solar charger, or a car charger on hand.",
+          "You may also be able to use your charged laptop or tablet to recharge your cell phone by connecting the devices with a USB cable, though doing so may drain your computer's battery power.",
+          "You can also purchase a solar-powered or hand-cranked radio, which may also be used to charge cell phones, though you should first check the instruction manual."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Lader du op i bilen, så pas på kulilte fra motoren – især hvis bilen står i en garage eller et andet lukket rum.",
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "text": "If you do not have electric power in your home and are using your car to charge wireless phones or listen to news on the car radio, be careful. Do not try to reach your car if it is not safe to do so, and remain vigilant about carbon monoxide emissions from your car, especially if it is in a closed space."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Ved store eller lange strømafbrydelser kan telefonnet og internet gå ned.",
+      "page": 6,
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Ved større eller længerevarende strømafbrydelser kan telefonnetværk og internet blive påvirket eller gå ned."
+      }
+    }
+  ]
+}

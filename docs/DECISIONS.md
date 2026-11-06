@@ -620,6 +620,59 @@ Each entry records the decision, its rationale and the alternatives considered. 
   - **Review flag:** `ownerChecked` stays false ("Prøveversion"). The new step 3 text needs the review in `LANGUAGE_REVIEW.md`.
 - **Pack:** content 0.16.0. No schema change: `guides.grp` now also holds the crop group.
 
+## D-058 — Tools for a power cut: fridge and freezer clock, boiling timer, sirens, the sun and moon right now
+
+- **Date:** 2026-11-06
+- **Decision (owner):** Tools gets four more things, all usable without internet or GPS:
+  - **Køl og frys:** "Strømmen gik nu" (or an earlier time) starts a clock kept on the device (`stead.powerclock.v1`), so it survives closing the app and restarting the phone.
+    - **What it shows:** how long the power has been out, and for the fridge (4 h), a full freezer (48 h) and a half-full freezer (24 h) whether they are still within their time. The status has an icon, not colour alone.
+    - **Advice:** past the fridge's time, what to throw out; when the power is back, check the fridge is at most 5 °C.
+  - **Kog vand:** a one-minute timer from a stored start (so a locked screen does not lose it), ending with a vibration where supported and a short tone made with Web Audio (no sound file).
+  - **Radio og sirener:** a row that opens a new situation guide, "Når sirenen lyder", from Beredskabsstyrelsen's siren fact sheet (signals, what to do, text-tv 150, the May test, SMS for the deaf) and the crisis leaflet (DR on FM radio when everything else is down; 112 only for emergencies).
+  - **Solen lige nu and Månen** in Sol op og ned:
+    - **Sun:** the sun's direction and height this minute, with a small dial and "Stil dig med ansigtet mod solen. Så er nord …" to find north without a compass.
+    - **Moon:** the moon's phase, how much is lit, and its rise and set on the chosen day.
+- **Sources for the numbers:** Fødevarestyrelsen gives no hours.
+  - **Hours:** USDA FSIS "Keeping Food Safe During an Emergency": fridge about 4 h unopened, full freezer about 48 h, half-full 24 h. Checked against CDC "Keep Food Safe After a Disaster or Emergency", which gives the same.
+  - **Where they live:** both are snapshotted and registered. The hours, CDC's throw-out list and FSIS's refreeze rule are translated blocks in "Strømmen er gået", and `web/src/power/limits.ts` cites them.
+  - **Boiling:** one minute, from CDC, as in "Der er intet vand".
+- **Maths:**
+  - **Sun position:** NOAA's equations, with NOAA's refraction. Tested against NOAA's calculator within 0.3°.
+  - **Moon:** Meeus' main lunar terms, rise and set when the centre reaches 0.7275 × parallax − 34′. Tested against USNO on four days: within half a minute and 0.2 percentage points lit.
+- **Left out:**
+  - **DR's FM frequencies:** no official list was found as a stable page. The guide says DR on FM radio, without numbers.
+  - **A siren sound:** the signals are described in words.
+- **Alternatives:**
+  - A screen of its own for sirens (a guide gets the source checks and "Vis original" for free).
+  - Hours from memory (refused: high-risk numbers need a source).
+
+## D-059 — "Gode at kunne": seven guides for doing without power and water
+
+- **Date:** 2026-11-06
+- **Decision (owner):** Når det sker gets a fourth group, **Gode at kunne** (`group: 'skills'`), with:
+  - **Tænd et bål:** wood and kindling in sizes, building and lighting, lens, flint and steel, battery, bow drill, distances, wind and bans.
+  - **Knob:** seven knots with drawings.
+  - **Vask tøj uden strøm og vand.**
+  - **Saml vand:** rain first; a plastic bag over leaves as a last resort.
+  - **Lav mad uden strøm:** grill outdoors only, fuel, food hot through, cooling.
+  - **Hold telefonen opladet.**
+  - **Hygiejne med lidt vand.**
+- **Sources:**
+  - **Danish first:** Det Danske Spejderkorps (fire, knots), Bolius (fire and grill rules from Beredskabsstyrelsen; water), Fødevarestyrelsen, the crisis leaflet, sundhed.dk.
+  - **US federal works, public domain, translated (D-041):** Army FM 3-05.70 (fire and water chapters; the LSU copy is gone, fetched from the Internet Archive), FM 5-125 (knots), CDC (hand sanitizer), FCC (phones).
+  - **Page extracts:** only the chapters used are kept as snapshots, with the original PDF's sha256 in the registry.
+  - **Second authorities for the high-risk guides:** fire (Bolius, the Army manual), water (CDC, Fødevarestyrelsen), cooking (NHS on grills and camping stoves indoors).
+- **Washing (owner):** no authority describes hand-washing clothes. Which water to use comes from Bolius; the method comes from a Sierra magazine how-to, registered as `needs-review` and marked as a how-to.
+  - **No laundry claim:** no source says rainwater is fine for laundry, so the guide says only what Bolius says (rainwater for the toilet and for washing yourself; save on laundry; no water down the drain during a power cut).
+- **Knot drawings (owner: public domain only):** cropped from FM 5-125's figures (US federal work). The figures keep their English captions. Our own alt text.
+- **Conflicts settled toward the Danish source:** the Army manual calls rainwater "usually safe for drinking"; Bolius says to boil it before cooking, and the guide follows Bolius.
+- **Left out:**
+  - **Retained-heat cooking (høkasse):** no source found.
+  - **The belowground still:** complex; the bag still and the leafy-branch bag are kept.
+  - **Gunpowder as tinder.**
+- **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
+- **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
+
 ## D-010 — No runtime AI, accounts, sync or telemetry
 
 - **Date:** 2026-10-24

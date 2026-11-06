@@ -1,0 +1,132 @@
+{
+  "id": "lav-mad-uden-stroem",
+  "category": "preparedness",
+  "group": "skills",
+  "order": 5,
+  "name": "Lav mad uden strøm",
+  "title": "Må man lave bål i haven? Tjek regler for bålsted og grill i haven",
+  "summary": "Spis mad, der ikke skal laves, eller lav den på en grill udenfor. Brug aldrig grillen indenfor.",
+  "sourceId": "dk-bolius-baal-i-haven",
+  "risk": "high",
+  "checks": [
+    {
+      "sourceId": "uk-nhs-carbon-monoxide",
+      "locator": "How to prevent carbon monoxide poisoning",
+      "quote": "do not use a barbecue or camping stove indoors or inside a tent",
+      "note": "Agrees: never use a grill or camping stove indoors or in a tent."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "kulilte",
+    "taend-et-baal",
+    "stroemmen-er-gaaet"
+  ],
+  "originalSummary": "Griller må kun anvendes udenfor – brug aldrig en grill indenfor.",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Hav mad, der kan spises kold eller varmes på en grill udenfor, fx dåsemad og holdbar mælk.",
+      "page": 1,
+      "sourceId": "us-fsis-keeping-food-safe-emergency",
+      "original": {
+        "lang": "en",
+        "text": "by having items on hand that don't require refrigeration and can be eaten cold or heated on the outdoor grill. Shelf-stable food, boxed or canned milk, water, and canned goods should be part of a planned emergency food supply."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Brug kun grillen udenfor – aldrig indenfor, heller ikke i et telt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Griller må kun anvendes udenfor – brug aldrig en grill indenfor."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Undgå at ånde røgen fra grillen ind. Den kan indeholde kulilte.",
+      "page": 1,
+      "sourceId": "dk-sundhed-kulilteforgiftning",
+      "original": {
+        "lang": "da",
+        "text": "Sørg for ikke at indånde forbrændingsprodukter fra grill, fyr, brandrøg eller motorer."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Brug kun trækul, træbriketter eller lignende i en lille grill.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Ved brug af mindre griller, der fungerer ved forbrænding af fast brændstof, må du kun anvende trækul, træbriketter og lign."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Tænd op med papir, optændingsblokke eller lignende.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Du må kun anvende elektrisk grilltænder, papir, optændingsblokke eller lign. til optænding."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Tændvæske må kun bruges i en kold grill, der står langt fra noget, der kan brænde.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Optændingsvæske må kun benyttes i kolde griller og ildsteder og så længe, de ikke er placeret i farlig nærhed af brandbare overflader, brandbare genstande og brandbare oplag."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "En større grill skal stå mindst 5 meter fra huset og 15 meter fra stråtag og ting, der let brænder.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Større griller og ildsteder bør placeres mindst 5 meter fra bygninger og 15 meter fra bygninger med letantændeligt tag samt brandfarlige, brandnærende, eksplosive eller letantændelige stoffer."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Gå ikke fra grillen, før den er slukket.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Her skal du være opmærksom på, at du ikke må forlade grillen eller ildstedet, før den er slukket."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Maden",
+      "page": 1,
+      "sourceId": "dk-fvst-stroemafbrydelse",
+      "original": {
+        "lang": "da",
+        "text": "Genopvarm maden"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Varm maden, til den er rygende varm, før du spiser den.",
+      "page": 1,
+      "sourceId": "dk-fvst-stroemafbrydelse",
+      "original": {
+        "lang": "da",
+        "text": "Genopvarm maden til den er rygende varm inden servering"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Vil du køle mad ned udenfor, skal det være så koldt, at maden kommer ned på 10 °C på højst 4 timer.",
+      "page": 1,
+      "sourceId": "dk-fvst-stroemafbrydelse",
+      "original": {
+        "lang": "da",
+        "text": "Hvis du køler madvarer ned udendørs, skal temperaturen udenfor være så lav, at man kan nedkøle til 10 °C inden for højst fire timer."
+      }
+    }
+  ]
+}

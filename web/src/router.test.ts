@@ -21,6 +21,8 @@ describe('routes', () => {
       [hrefs.tools, { name: 'tools' }],
       [hrefs.compass, { name: 'compass' }],
       [hrefs.sun, { name: 'sun' }],
+      [hrefs.powerClock, { name: 'powerClock' }],
+      [hrefs.boil, { name: 'boil' }],
       [hrefs.settings, { name: 'settings' }],
     ];
     for (const [href, route] of cases) expect(parseRoute(href), href).toEqual(route);
@@ -37,6 +39,8 @@ describe('routes', () => {
     expect(tabOf({ name: 'guide', id: 'x' })).toBe('home');
     expect(tabOf({ name: 'compass' })).toBe('tools');
     expect(tabOf({ name: 'sun' })).toBe('tools');
+    expect(tabOf({ name: 'powerClock' })).toBe('tools');
+    expect(tabOf({ name: 'boil' })).toBe('tools');
     expect(tabOf({ name: 'forraadScan' })).toBe('forraad');
     expect(tabOf({ name: 'forraadNew', category: null, recommendationId: null })).toBe('forraad');
     expect(tabOf({ name: 'forraadEdit', id: 'x' })).toBe('forraad');

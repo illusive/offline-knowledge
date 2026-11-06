@@ -9,12 +9,12 @@ import type { GuideRow } from '../db/queries';
 import { GuideCategoryScreen } from '../guides/GuideCategoryScreen';
 import type { Strings } from '../i18n/strings';
 
-const PREPARE_GROUPS = ['weather', 'situation', 'supplies'] as const;
+const PREPARE_GROUPS = ['weather', 'situation', 'supplies', 'skills'] as const; // skills: "Gode at kunne" (D-059)
 type PrepareGroup = (typeof PREPARE_GROUPS)[number];
 
 export function PrepareScreen({ db, guides, s, query, onQueryChange }: { db: DbClient; guides: GuideRow[] | null; s: Strings; query: string; onQueryChange: (q: string) => void }) {
   const group = (grp: PrepareGroup) => (guides ?? []).filter((g) => g.grp === grp);
-  const heading: Record<PrepareGroup, string> = { weather: s.prepareWeather, situation: s.prepareSituations, supplies: s.prepareSupplies };
+  const heading: Record<PrepareGroup, string> = { weather: s.prepareWeather, situation: s.prepareSituations, supplies: s.prepareSupplies, skills: s.prepareSkills };
   return (
     <GuideCategoryScreen
       db={db}

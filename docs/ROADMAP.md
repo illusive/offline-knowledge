@@ -50,6 +50,16 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
   - in Sol op og ned, "Skift" and a graph of the day's length through the year (D-056)
 
   **Still to check:** the tab bar on the iPhone, and the new first aid text (review in `LANGUAGE_REVIEW.md`).
+- [x] Power-cut tools (D-058, 2026-11-06):
+  - **Køl og frys:** the clock with sourced hours.
+  - **Kog vand:** a one-minute timer.
+  - **Radio og sirener:** opens the new guide "Når sirenen lyder".
+  - **In Sol op og ned:** the sun right now (find north) and the moon.
+
+  **Still to check on the iPhone:** the timer's sound and vibration, and the sun and moon outdoors.
+- [x] "Gode at kunne" (D-059, 2026-11-06): seven guides (fire, knots with drawings, washing, catching water, cooking, phone, hygiene), content 0.17.0.
+
+  **To review:** all seven against "Vis original" (`LANGUAGE_REVIEW.md`).
 - [x] Forråd (D-046, D-047, 2026-11-05): a tab replacing Settings, which moved to a gear at the top right. It holds:
   - Water as one figure (litres and the month last checked) against 3 litres per person per day for 3/7/14 days, checked again after six months.
   - The household, including water for animals in the user's own figure.

@@ -1,0 +1,113 @@
+{
+  "id": "hygiejne-med-lidt-vand",
+  "category": "preparedness",
+  "group": "skills",
+  "order": 7,
+  "name": "Hygiejne med lidt vand",
+  "title": "Hand Sanitizer Guidelines and Recommendations",
+  "summary": "Hold hænder og krop rene med lidt vand – og brug håndsprit, når der ikke er sæbe og vand.",
+  "sourceId": "us-cdc-hand-sanitizer",
+  "risk": "low",
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "vask-toej-uden-stroem",
+    "der-er-intet-vand",
+    "medicin-og-hygiejne"
+  ],
+  "originalSummary": "Washing hands with soap and water is the best way to get rid of germs in most situations.",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Vask hænder med sæbe og vand, når du kan. Det fjerner flest bakterier.",
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "text": "Washing hands with soap and water is the best way to get rid of germs in most situations."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Vask dig med en klud ved håndvasken i stedet for at gå i bad. Så sparer du meget vand.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Så skær ned for brusebadene – du kan komme langt med en etagevask ved håndvasken."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Bor du i hus, er der meget vand i varmtvandsbeholderen. Det kan bruges til at vaske dig og til toilettet – men det er ikke drikkevand.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Hvis du bor i hus, er der sandsynligvis også en masse vand i varmtvandsbeholderen, som du kan tappe ud. Det kan ikke bruges til drikkevand, men du kan bruge det til etagevask og toiletskyl."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Regnvand kan bruges til toilettet og til at vaske dig i.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Regnvandet kan bruges til toiletskyl eller til at bade i"
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Håndsprit",
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "text": "Hand sanitizer"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Har du ikke sæbe og vand, så brug håndsprit med mindst 60 % alkohol. Det står på etiketten.",
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "text": "If soap and water are unavailable, use a hand sanitizer with at least 60% alcohol to clean your hands."
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Kom håndsprit i den ene håndflade. Mængden står på etiketten.",
+        "Fordel det over hele hænderne.",
+        "Gnid hænder og fingre mod hinanden, til de er tørre. Det tager omkring 20 sekunder."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "items": [
+          "Apply the gel product to the palm of one hand (read the label to learn the correct amount).",
+          "Cover all surfaces of hands.",
+          "Rub your hands and fingers together until they are dry. This should take around 20 seconds."
+        ]
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Håndsprit virker dårligt, når hænderne er synligt beskidte eller fedtede. Så vask dem med sæbe og vand.",
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "text": "Hand sanitizers may not be as effective when hands are visibly dirty or greasy."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Hold øje med små børn, når de bruger håndsprit, så de ikke sluger det.",
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "text": "Supervise young children when they use hand sanitizer to prevent swallowing alcohol, especially in schools and childcare facilities."
+      }
+    }
+  ]
+}

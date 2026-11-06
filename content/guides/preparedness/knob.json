@@ -1,0 +1,194 @@
+{
+  "id": "knob",
+  "category": "preparedness",
+  "group": "skills",
+  "order": 2,
+  "name": "Knob",
+  "title": "10 knob, der er gode at kende",
+  "summary": "Syv knob, der er gode at kunne – hvad de er gode til, og tegninger af, hvordan du binder dem.",
+  "sourceId": "dk-dds-10-knob",
+  "risk": "low",
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "taend-et-baal"
+  ],
+  "originalSummary": "Her finder du 10 af de mest almindelige knob og en beskrivelse af, hvad de er gode til.",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Råbåndsknob",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Råbåndsknob"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Binder to reb sammen hurtigt. Det holder kun godt, hvis rebene er lige tykke.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Råbåndsknobet er dog kun effektivt, hvis man binder lige tykke reb sammen."
+      }
+    },
+    {
+      "kind": "image",
+      "file": "knob-raabaandsknob.jpg",
+      "alt": "Tegning i tre trin: to rebender krydses og bindes to gange, så de ligger fladt sammen.",
+      "page": 24,
+      "sourceId": "us-army-fm5-125-ch2"
+    },
+    {
+      "kind": "heading",
+      "text": "Flagknob",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Flagknob"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Binder to reb sammen – også når de er forskellig tykke. Kan også binde et reb fast til en løkke.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Et flagknob bruges til at knytte to liner sammen, eller – hvis man som i et flag – har et øje og skal fæstne en line til det. I forhold til råbåndsknobet, kan det også bedre bruges til liner af forskelig tykkelse."
+      }
+    },
+    {
+      "kind": "image",
+      "file": "knob-flagknob.jpg",
+      "alt": "Tegning i tre trin: den ene rebende føres op gennem en bugt på det andet reb, rundt om det og ind under sig selv.",
+      "page": 24,
+      "sourceId": "us-army-fm5-125-ch2"
+    },
+    {
+      "kind": "heading",
+      "text": "Pælestik",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Pælestik"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Laver en løkke for enden af et reb, der ikke strammer sig og ikke glider – heller ikke når der trækkes fra flere sider.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Pælestikket kan hjælpe med at lave en pålidelig løkke på enden af et reb. Det er super godt, fordi det er ”stabilt” og låser sig selv, også selvom der rykkes rundt i rebet og trækkes fra forskellige retninger."
+      }
+    },
+    {
+      "kind": "image",
+      "file": "knob-paelestik.jpg",
+      "alt": "Tegning i tre trin: en lille løkke på rebet, enden føres op gennem den, rundt om rebet og ned igen.",
+      "page": 24,
+      "sourceId": "us-army-fm5-125-ch2"
+    },
+    {
+      "kind": "heading",
+      "text": "Dobbelt halvstik",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Dobbelt halvstik"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Binder et reb fast om en pæl, en gren eller et rør og holder ting sammen.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Dobbelt halvstikket er et stik, der slutter ring om et emne, og som bruges til at holde ting sammen."
+      }
+    },
+    {
+      "kind": "image",
+      "file": "knob-dobbelt-halvstik.jpg",
+      "alt": "Tegning i seks trin: to løkker lagt oven på hinanden og trukket over en pæl, og det samme bundet med rebenden om pælen.",
+      "page": 24,
+      "sourceId": "us-army-fm5-125-ch2"
+    },
+    {
+      "kind": "heading",
+      "text": "Rundtørn og dobbelt halvstik om egen part",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Dobbelt halvstik om egen part"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Vikl rebet om en pæl en eller to gange, og slå et dobbelt halvstik om rebet selv. Så sidder enden godt fast.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Vikler man rebet om en pæl en eller to gange og sikrer det med et dob­belt halvstik om egen part, har man sikret, at rebenden sidder pålideligt fast."
+      }
+    },
+    {
+      "kind": "image",
+      "file": "knob-rundtoern-halvstik.jpg",
+      "alt": "Tegning i to trin: rebet viklet om en pæl, og enden bundet med to halvstik om rebet selv.",
+      "page": 24,
+      "sourceId": "us-army-fm5-125-ch2"
+    },
+    {
+      "kind": "heading",
+      "text": "Tømmerstik",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Tømmerstik"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Let at binde. Godt til at snøre ting sammen, fx et bundt grene. Det holder kun, når der er træk på.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Tømmerstikket er let at binde og kan bruges til en række forskellige opgaver. Man bruger det ofte, når der er brug for at snøre ting sammen."
+      }
+    },
+    {
+      "kind": "image",
+      "file": "knob-toemmerstik.jpg",
+      "alt": "Tegning i to trin: rebet lagt om en stamme, enden snoet flere gange om rebet selv.",
+      "page": 24,
+      "sourceId": "us-army-fm5-125-ch2"
+    },
+    {
+      "kind": "heading",
+      "text": "Ottetalsknob",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "ottetallet"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Et knob for enden af rebet, så det ikke glider ud gennem en løkke eller et hul.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Brugt alene er det, hvad man kalder et stopperknob (som kan forhindre, at rebet løber igennem et øje el. lign.)."
+      }
+    },
+    {
+      "kind": "image",
+      "file": "knob-ottetalsknob.jpg",
+      "alt": "Tegning i to trin: rebenden lagt i et ottetal og strammet til et knob.",
+      "page": 24,
+      "sourceId": "us-army-fm5-125-ch2"
+    }
+  ]
+}

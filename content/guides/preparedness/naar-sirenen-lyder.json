@@ -1,0 +1,165 @@
+{
+  "id": "naar-sirenen-lyder",
+  "category": "preparedness",
+  "group": "situation",
+  "order": 8,
+  "name": "Når sirenen lyder",
+  "title": "Sirenevarsling",
+  "summary": "Ved store ulykker kan politiet advare dig med sirenerne. Her er, hvad signalerne betyder, og hvad du skal gøre.",
+  "sourceId": "dk-brs-faktaark-sirenevarsling",
+  "risk": "low",
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "telefon-og-net-er-nede",
+    "stroemmen-er-gaaet"
+  ],
+  "originalSummary": "Når der ved større ulykker og katastrofer er en akut fare for skader på mennesker eller ejendom, kan befolkningen blive varslet om faren ved hjælp af det landsdækkende elektroniske sirenevarslingssystem.",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "Når sirenen lyder",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Hvordan skal man handle?"
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Gå indenfor, og lyt til DR eller TV 2.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Når sirenen lyder, skal man gå inden døre og lytte til DR eller TV2."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Sørg for, at alle omkring dig har forstået signalet.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det er en god ide at sikre sig, at alle omkringstående har forstået varslingssignalet."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "DR og TV 2 fortæller, hvad der sker, og hvad du skal gøre. Beskederne kommer fra politiet eller andre myndigheder.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "DR og TV2 vil i varslingssituationen bringe meddelelser om, hvad der sker, og hvad man skal gøre. Meddelelserne vil komme fra politiet eller andre myndigheder."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Du kan også læse om det på tekst-tv side 150.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "DR og TV2 vil også bringe informationer om varslingssituationen på tekst-tv side 150."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Signalerne",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Signaler"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Fare: én tone, der stiger hurtigt og falder langsomt. Den kommer 4 gange, i alt 45 sekunder.",
+        "Faren er forbi: én lang, ens tone i 45 sekunder."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Signalet om fare består af én lyd, som stiger hurtigt og derefter falder langsomt. Lyden kommer fire gange, og signalet varer i alt 45 sekunder.",
+          "Lydsignalet er én lang ensartet tone, som varer 45 sekunder."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Når faren er forbi, kan du gå udenfor igen.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Når signalet om ”faren er forbi” har lydt, kan man igen gå udendørs."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Sirenerne har deres egen strøm. De virker også, når strømmen er gået.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Sirenerne har egen nødstrømsforsyning, så de også kan virke under strømafbrydelser."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Sirenerne bliver prøvet hvert år den første onsdag i maj kl. 12.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Siden 1994 har demonstration af sirenevarslingssystemet fundet sted én gang om året – altid den første onsdag i maj klokken 12."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Er du døv eller hørehæmmet, kan du blive varslet på sms. Du tilmelder dig hos Beredskabsstyrelsen.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Døve og hørehæmmede kan tilmelde sig varsling hos Beredskabsstyrelsen og dermed blive varslet via sms."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Radio uden strøm",
+      "page": 8,
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Varsling og alarmering"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Er alt andet nede, sender DR beskeder fra myndighederne i radioen.",
+      "page": 8,
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Skulle andre systemer være nede, bringer DR beredskabsmeddelelser fra myndighederne i radioen."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "En FM-radio på batterier, håndsving eller solceller holder dig opdateret, hvis alt andet svigter. Mange har også en FM-radio i bilen.",
+      "page": 8,
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Med en FM-radio, der kører på batterier/håndsving/solceller, kan du holde dig opdateret, hvis andre informationskanaler svigter. Mange har en FM-radio i deres bil."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Ring kun 112, hvis det er en akut nødsituation. Ellers kan du blokere linjen for andre, der skal have hjælp.",
+      "page": 8,
+      "sourceId": "dk-samsik-forberedt-paa-kriser",
+      "original": {
+        "lang": "da",
+        "text": "Du skal kun ringe 1-1-2, hvis det er en akut nødsituation. Ellers kan du blokere telefonlinjen for livsvigtige opkald."
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "vask-toej-uden-stroem",
+  "category": "preparedness",
+  "group": "skills",
+  "order": 3,
+  "name": "Vask tøj uden strøm og vand",
+  "title": "A Step-by-Step Guide to Washing Your Clothes by Hand",
+  "summary": "Vask tøjet i hånden med lidt vand, og spar på drikkevandet.",
+  "sourceId": "us-sierra-hand-wash-clothes",
+  "risk": "low",
+  "checks": [],
+  "ownerChecked": false,
+  "related": [
+    "saml-vand",
+    "hygiejne-med-lidt-vand",
+    "der-er-intet-vand"
+  ],
+  "originalSummary": "For starters, you’ll need a basin.",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Spar på tøjvasken. Tøjet skal ikke vaskes så tit.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Spar på tøjvasken. Tøjet behøver ikke at vaskes så hyppigt"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Hold tre slags vand adskilt: drikkevand, vand du kan lave mad med (fx kogt regnvand) og vand, der kun er til fx toilettet og vask af kroppen.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Tænk i tre forskellige former for vand, som du skal sørge for at holde adskilt. Drikkevand er rent postevand fra hanen eller kildevand fra flaske. Så er der vand, du kan bruge til madlavning, fordi det bliver kogt. Det er fx regnvand, hvor eventuelle bakterier bliver kogt væk under madlavning. Endelig er der vand, som kun kan anvendes til fx toiletskyl og etagevask."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Saml regnvand i en tønde eller i baljer, når det skal regne. Regnvand kan bruges til toilettet og til at vaske sig i.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Køb en decideret regnvandstønde eller -beholder, eller sæt baljer ud i haven, når du ved, at der kommer regn. Regnvandet kan bruges til toiletskyl eller til at bade i"
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Sådan vasker du i hånden",
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "text": "4. Ready, set, wash."
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Brug en håndvask, en balje eller en spand – til store ting badekarret. Den skal være helt ren.",
+        "Sortér tøjet: lyst for sig og mørkt for sig, og det meget beskidte for sig.",
+        "Kom koldt vand og lidt vaskemiddel i. Få dråber er nok til ét stykke tøj. For meget sæbe er svært at skylle ud.",
+        "Læg meget beskidt tøj i blød i en halv til en hel time.",
+        "Bevæg tøjet rundt med hænderne. Gnid beskidte steder mod hinanden.",
+        "Hæld sæbevandet ud, og skyl i rent vand, til der ikke er mere skum.",
+        "Pres vandet ud mod siden af baljen – vrid ikke, så mister tøjet faconen. Jo mere vand du presser ud, jo hurtigere tørrer tøjet, og jo mindre risiko er der for mug."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "items": [
+          "The bathroom sink or a plastic tub is ideal (a bucket works too). For larger loads, full-length pieces, or towels and linens, the bathtub or a large kitchen sink are best. Ensure that the basin is spotlessly clean, as any residue will easily transfer to light-colored clothing.",
+          "Divide your everyday clothes into lights and darks and by level of soiling.",
+          "Fill your basin with cool water and a small amount of detergent (a few drops is appropriate for one garment; follow the measurements on your detergent bottle for heavily soiled loads or larger items like towels and sheets). Keep in mind that water is a solvent and will do much of the lifting of cleaning your clothes—too much soap will be hard to remove and can leave a crunchy residue.",
+          "For heavily soiled clothes or linens, let them soak for at least a half hour to an hour.",
+          "Now, with your hands, gently swish your clothes around. For soiled garments like socks or dish towels, you’ll need to do a bit of scrubbing. If you don’t have a washboard or scrub brush, rub the garment or linen against itself.",
+          "Pour out the soapy water and run cool, clean water over your clothes until the water runs clear and there are no suds.",
+          "Next, press down on your laundry, pushing it against the side of the basin, and pushing the water out. Don’t wring the garments or pull them up and out of the basin while sopping wet, as this will cause them to warp and lose their shape. Keep pushing until most of the extra water is removed. The more water you can push out of your clothes, the faster they’ll dry and the less likely they are to mildew."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Hæng tøjet til tørre. Kunststof og uld tørrer hurtigt. Bomuld tager længst tid.",
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "text": "Textiles dry at different rates. Synthetics like polyester or your nylon yoga pants dry very fast. Wool dries relatively quickly too. Cotton garments, and especially cotton towels and sheets, are likely to take the longest, so keep this in mind as you find areas to dry your items."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Tørrer tøjet i solen, hjælper det også med at slå bakterier ihjel.",
+      "page": 1,
+      "original": {
+        "lang": "en",
+        "text": "A more eco-friendly option is hanging laundry to dry in the sunlight, which is effective at killing bacteria and germs as well."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Er strømmen også gået, så hæld ikke vand i kloakken. Det belaster spildevandet.",
+      "page": 1,
+      "sourceId": "dk-bolius-vandsvigt",
+      "original": {
+        "lang": "da",
+        "text": "Husk, hvis der ikke er strøm, påvirker det også spildevandsanlæggene, så undlad at hælde vand i kloakken, hvis der også er strømsvigt."
+      }
+    }
+  ]
+}

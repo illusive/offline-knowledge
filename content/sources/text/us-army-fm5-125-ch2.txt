@@ -1,0 +1,498 @@
+# us-army-fm5-125-ch2 sha256 9d99293732160344fdf3f3a9def4d5a279e8b3316106a41cab1c4da985a7bf70
+--- p1
+FM 5-125
+CH A P T E R 2
+K n o t s , Sp l i c e s , A t t a c h m e n t s , a n d
+L a d d e r s
+Section I. Knots, Hitches, and Lashings
+A study of the terminology pictured in Figure will aid in understanding the methods of
+2-1 and the definitions in Table 2-1, page 2-2, knotting presented in this section.
+Knots, Splices, Attachments, and Ladders 2-1
+--- p2
+FM 5-125
+The raw, cut end of a rope has a tendency to the size of the rope. The whipped end of a
+untwist and should always be knotted or fas- rope will still thread through blocks or
+tened in some manner to prevent this other openings. Before cutting a rope, place
+untwisting. Whipping is one method of fas- two whippings on the rope 1 or 2 inches
+tening the end of the rope to prevent apart and make the cut between the whip-
+untwisting (see Figure 2-2). A rope is pings (see Figure 2-2). This will prevent the
+whipped by wrapping the end tightly with a cut ends from untwisting immediately
+small cord. This method is particularly satis- after they are cut.
+factory because there is very little increase in
+KNOTS
+A knot is an interlacement of the parts of one or more flexible bodies, such as cord- age rope, forming a lump. It is also any tie or fastening formed with a rope, including bends, hitches, and splices. A knot is often used as a stopper to prevent a rope from
+passing through an opening.
+A good knot must be easy to tie, must hold
+without slipping, and must be easy to
+untie. The choice of the best knot, bend, or
+2-2 Knots, Splices, Attachments, and Ladders
+--- p3
+FM 5-125
+Knots, Splices, Attachments, and Ladders 2-3
+--- p4
+FM 5-125
+hitch to use depends largely on the job it
+has to do. In general, knots can be classi-
+fied into three groups. They are—
+Knots at the end of a rope.
+Knots for joining two ropes.
+Knots for making loops.
+KNOTS AT THE END OF ROPE
+Knots at the end of a rope fall into the fol-
+lowing categories:
+Overhand knot.
+Figure-eight knot.
+Wall knot.
+Overhand Knot
+The overhand knot is the most commonly
+used and the simplest of all knots (see Fig-
+ure 2-3). Use an overhand knot to prevent
+the end of a rope from untwisting, to form a
+knob at the end of a rope, or to serve as a
+part of another knot. When tied at the end
+or standing part of a rope, this knot prevents
+it from sliding through a block, hole, or
+another knot. Use it also to increase a per-
+son’s grip on a rope. This knot reduces the
+strength of a straight rope by 55 percent.
+Figure-Eight Knot
+Use the figure-eight knot to form a larger
+knot at the end of a rope than would be
+formed by an overhand knot (see Figure
+2-4). The knot prevents the end of the rope
+from slipping through a fastening or loop in
+another rope or from unreeving when reeved
+through blocks. It is easy to untie.
+Wall Knot
+Use the wall knot with crown to prevent
+the end of a rope from untwisting when an
+2-4 Knots, Splices, Attachments, and Ladders
+--- p5
+FM 5-125
+enlarged end is not objectionable (see Figure 2-5). The wall knot also makes a desirable
+knot to prevent the end of the rope from slip-
+ping through small openings, as when using
+rope handles on boxes. Use either the crown
+or the wall knot separately to form semiper-
+manent "stopper knots" tied with the end
+strands of a rope. The wall knot will prevent
+the rope from untwisting, but to make a
+neat round knob, crown it (see Figure 2-6,
+page 2-6). Notice that in the wall knot, the
+ends come up through the bights, causing
+the strands to lead forward. In a crown
+knot, the ends go down through the bights
+and point backward.
+KNOTS FOR JOINING TWO ROPES
+Knots for joining two ropes fall into the fol-
+lowing categories:
+Square knot.
+Single sheet bend.
+Double sheet bend.
+Carrick bend.
+Square Knot
+Use the square knot to tie two ropes of
+equal size together so they will not slip (see
+Knots, Splices, Attachments, and Ladders 2-5
+--- p6
+FM 5-125
+Figure 2-7). Note that in the square knot,
+the end and standing part of one rope come
+out on the same side of the bight formed by
+the other rope. The square knot will not
+hold if the ropes are wet or if they are of dif-
+ferent sizes. It tightens under strain but
+can be untied by grasping the ends of the
+two bights and pulling the knot apart.
+NOTE. It makes no difference
+whether the first crossing is tied
+left-over-right or right-over-left as
+long as the second crossing is tied
+opposite to the first crossing.
+Single Sheet Bend
+A single sheet bend, sometimes called a
+weaver’s knot, has two major uses (see Fig-
+ure 2-8). They are—
+Tying together two ropes of unequal
+size.
+Tying a rope to an eye.
+This knot will draw tight but will loosen or
+slip when the lines are slackened. The sin-
+gle sheet bend is stronger and unties easier
+than the square knot.
+Double Sheet Bend
+The double sheet bend has greater holding
+power than the single sheet bend for joining
+ropes of equal or unequal diameter, joining
+wet ropes, or tying a rope to an eye (see Fig-
+ure 2-9, page 2-8,). It will not slip or draw
+tight under heavy loads. This knot is more
+secure than the single sheet bend when used
+in a spliced eye.
+Carrick Bend
+Use the carrick bend for heavy loads and for
+joining large hawsers or heavy rope (see Fig-
+ure 2-10, page 2-8). It will not draw tight
+under a heavy load and can be untied easily
+if the ends are seized to their own standing
+part.
+KNOTS FOR MAKING LOOPS
+Knots for making loops fall into the follow-
+ing categories:
+Bowline.
+Double bowline.
+Running bowline.
+2-6 Knots, Splices, Attachments, and Ladders
+--- p7
+FM 5-125
+Knots, Splices, Attachments, and Ladders 2-7
+--- p8
+FM 5-125
+2-8 Knots, Splices, Attachments, and Ladders
+--- p9
+FM 5-125
+Bowline on a bight.
+Spanish bowline.
+French bowline.
+Speir knot.
+Cat’s-paw.
+Figure eight with an extra turn.
+Bowline
+The
+bowline is one of the most common
+knots and has a variety of uses, one of which
+is the lowering of men and material (see Fig-
+ure 2-11). It is the best knot for forming a
+single loop that will not tighten or slip under
+strain and can be untied easily if each run-
+ning end is seized to its own standing part.
+The bowline forms a loop that may be of any
+length.
+ing two loops support his legs. A notched
+board that passes through the two loops
+makes a comfortable seat known as a boat-
+swain’s chair. This chair is discussed in the
+scaffolding section of this manual (see Chap-
+ter 6).
+Running Bowline
+The running bowline forms a strong running
+loop (see Figure 2-13, page 2-10). It is a con-
+venient form of running an eye. The run-
+ning bowline provides a sling of the choker
+type at the end of a single line. Use it when
+tying a handline around an object at a point
+that you cannot safely reach, such as the end
+of a limb.
+Double Bowline
+The double bowline forms three nonslipping
+loops (see Figure 2-12, page 2-10). Use this
+knot to sling a man. As he sits in the slings,
+one loop supports his back and the remain-
+Bowline on a Bight
+This knot forms two nonslipping loops (see
+Figure 2-14, page 2-11). You can use the
+bowline on a bight for the same purpose as a
+boatswain’s chair. It does not leave both
+hands free, but its twin nonslipping loops
+form a comfortable seat. Use it when—
+You need more strength than a single
+bowline will give.
+Knots, Splices, Attachments, and Ladders 2-9
+--- p10
+FM 5-125
+2-10 Knots, Splices, Attachments, and Ladders
+--- p11
+FM 5-125
+You need to form a loop at some point
+in a rope other than at the end.
+You do not have access to the end of a
+rope.
+You can easily untie the bowline on a bight
+and tie it at the end of a rope by doubling
+the rope for a short section.
+Spanish Bowline
+You can tie a Spanish bowline at any point
+in a rope, either at a place where the line is
+double or at an end that has been doubled
+back (see Figure 2-15, page 2-12). Use the
+Spanish bowline in rescue work or to give a
+twofold grip for lifting a pipe or other round
+objects in a sling.
+French Bowline
+You can use the French bowline as a sling to
+lift injured men (see Figure 2-16, page 2-12).
+When used for this purpose, one loop is a
+seat and the other loop is put around the
+body under the arms. The injured man’s
+weight keeps the two loops tight so that he
+cannot fall out. It is particularly useful as a
+sling for an unconscious man. Also, use the
+French bowline when working alone and you
+Knots, Splices, Attachments, and Ladders 2-11
+--- p12
+FM 5-125
+need your hands free. The two loops of this knot can be adjusted to the size required. Speir Knot Use a speir knot when you need a fixed loop, a nonslip knot, and a quick release (see Fig- ure 2-17). You can tie this knot quickly and release it by pulling on the running end.
+Cat’s-paw
+Use a cat’s-paw to fasten an endless sling to
+a hook, or make it at the end of a rope to fas-
+ten the rope to a hook (see Figure 2-18). You
+can tie or untie it easily. This knot, which is
+really a form of a hitch, is a more satisfactory
+way of attaching a rope to a hook than the
+blackwall hitch. It will not slip off and need
+not be kept taut to make it hold.
+Figure Eight With an Extra Turn
+Use a figure eight with an extra turn to tighten a rope (see Figure 2-19, page 2-14). This knot is especially suitable for tightening a one-rope bridge across a small stream.
+You can tie and untie it easily.
+KNOTS FOR TIGHTENING A ROPE
+The types of knots used for tightening a rope
+are the butterfly knot and the baker bow-
+line.
+Butterfly Knot
+Use the butterfly knot is to pull taut a high
+line, handline, tread rope for foot bridges, or
+similar installations (see Figure 2-20, page
+2-14). Using this knot provides the capabil-
+ity to tighten a fixed rope when mechanical
+means are not available. (You can also use
+the harness hitch for this purpose [see Fig-
+ure 2-32, page 2-22]). The butterfly knot will
+not jam if a stick is placed between the two
+upper loops.
+Baker Bowline
+You can use the baker bowline for the same
+purpose as the butterfly knot and for lashing
+cargo (see Figure 2-21, pages 2-15 and 2-16).
+2-12 Knots, Splices, Attachments, and Ladders
+--- p13
+FM 5-125
+When used to lash cargo, secure one end
+with two half hitches, pass the rope over the
+cargo and tie a baker bowline, then secure
+the lashing with a slippery half hitch. To
+release the rope, simply pull on the running
+end. Advantages of the baker bowline are
+that it can be—
+Tied easily.
+Adjusted without losing control.
+Released quickly.
+KNOTS FOR WIRE ROPE
+Under special circumstances, when wire-
+rope fittings are not available and it is nec-
+essary to fasten wire rope by some other
+manner, you can use certain knots. In all
+knots made with wire rope, fasten the
+running end of the rope to the standing
+part after tying the knot. When wire-rope
+clips are available, use them to fasten the
+running end. If clips are not available, use
+Knots, Splices, Attachments, and Ladders 2-13
+--- p14
+FM 5-125
+2-14 Knots, Splices, Attachments, and Ladders
+--- p15
+FM 5-125
+Knots, Splices, Attachments, and Ladders 2-15
+--- p16
+FM 5-125
+2-16 Knots, Splices, Attachments, and Ladders
+--- p17
+FM 5-125
+wire or strands of cordage. Check all knots in wire rope periodically for wear or signs of breakage. If there is any reason to believe that the knot has been subjected to exces- HITCHES
+A hitch is any of various knots used to form
+a temporary noose in a rope or to secure a
+rope around a timber, pipe, or post so that
+it will hold temporarily but can be readily
+undone. The types of hitches are as follows:
+Half hitch.
+Two half hitches.
+Round turn and two half hitches.
+Timber hitch.
+Timber hitch and half hitch.
+Clove hitch.
+Rolling hitch.
+Telegraph hitch.
+Mooring hitch.
+Scaffold hitch.
+Blackwall hitch.
+Harness hitch.
+Girth hitch.
+sive wear, cut off a short length of the end
+of the rope, including the knot, and tie a
+new knot. Use the fisherman’s bend, clove
+hitch, and carrick bend to fasten wire rope.
+Sheepshank.
+Fisherman’s bend.
+HALF HITCH
+Use the half hitch to tie a rope to a timber
+or to a larger rope (see Figure 2-22, A). It
+will hold against a steady pull on the
+standing part of the rope; however, it is not
+a secure hitch. You can use the half hitch
+to secure the free end of a rope and as an
+aid to and the foundation of many knots.
+For example, it is the start of a timber
+hitch and a part of the fisherman’s knot. It
+also makes the rolling hitch more secure.
+TWO HALF HITCHES
+Two half hitches are especially useful for
+securing the running end of a rope to the
+standing part (see Figure 2-22, B). If the
+two hitches are slid together along the
+standing part to form a single knot, the
+knot becomes a clove hitch.
+Knots, Splices, Attachments, and Ladders 2-17
+--- p18
+FM 5-125
+ROUND TURN AND TWO HALF HITCHES
+Another hitch used to fasten a rope to a
+pole, timber, or spar is the round turn and
+two half hitches (see Figure 2-23). For
+greater security, seize the running end of
+the rope to the standing part. This hitch
+does not jam.
+TIMBER HITCH
+Use the timber hitch to move heavy timber
+or poles (see Figure 2-24). It is excellent for
+securing a piece of lumber or similar
+objects. The pressure of the coils, one over
+the other, holds the timber securely; the
+more tension applied, the tighter the hitch
+becomes about the timber. It will not slip
+but will readily loosen when the strain is
+relieved.
+TIMBER HITCH AND HALF HITCH
+A timber hitch and half hitch are combined
+to hold heavy timber or poles when they are
+being lifted or dragged (see Figure 2-25). A
+timber hitch used alone may become untied
+when the rope is slack or when a sudden
+strain is put on it.
+CLOVE HITCH
+The clove hitch is one of the most widely
+used knots (see Figure 2-26, page 2-19). You
+can use it to fasten a rope to a timber, pipe,
+or post. You can also use it to make other
+knots. This knot puts very little strain on
+the fibers when the rope is put around an
+object in one continuous direction. You can
+tie a clove hitch at any point in a rope. If
+there is not constant tension on the rope,
+another loop (round of the rope around the
+object and under the center of the clove
+hitch) will permit a tightening and slacken-
+ing motion of the rope.
+ROLLING HITCH
+Use the rolling hitch to secure a rope to
+another rope or to fasten it to a pole or pipe
+2-18 Knots, Splices, Attachments, and Ladders
+--- p19
+FM 5-125
+so that the rope will not slip (see Figure This hitch grips tightly and is easily
+2-27, page 2-20). This knot grips tightly but
+removed.
+is easily moved along a rope or pole when
+the strain is relieved.
+TELEGRAPH HITCH
+The telegraph hitch is a very useful and
+secure hitch that you can use to hoist or haul
+posts and poles (see Figure 2-28, page 2-20).
+It is easy to tie and untie and will not slip.
+MOORING HITCH
+Use the mooring hitch, also called rolling or
+magnus hitch, to fasten a rope around a
+mooring post or to attach a rope at a right
+angle to a post (see Figure 2-29, page 2-21).
+SCAFFOLD HITCH
+Use the scaffold hitch to support the end of a
+scaffold plank with a single rope (see Figure
+2-30, page 2-21). It prevents the plank from
+tilting.
+BLACKWALL HITCH
+Use the blackwall hitch to fasten a rope to a
+hook (see Figure 2-31, page 2-22). Gener-
+ally, use it to attach a rope, temporarily, to a
+hook or similar object in derrick work. The
+hitch holds only when subjected to a con-
+stant strain or when used in the middle of a
+Knots, Splices, Attachments, and Ladders 2-19
+--- p20
+FM 5-125
+2-20 Knots, Splices, Attachments, and Ladders
+--- p21
+FM 5-125
+Knots, Splices, Attachments, and Ladders 2-21
+--- p22
+FM 5-125
+rope with both ends secured. Human life
+and breakable equipment should never be
+entrusted to the blackwall hitch.
+HARNESS HITCH
+The harness hitch forms a nonslipping loop
+in a rope (see Figure 2-32). It is often
+employed by putting an arm through the
+loop, then placing the loop on the shoulder
+and pulling the object attached to the rope. The hitch is tied only in the middle of a rope.
+It will slip if only one end of the rope is
+pulled.
+GIRTH HITCH
+Use the girth hitch to tie suspender ropes to
+hand ropes when constructing expedient foot
+bridges (see Figure 2-33). It is a simple and
+convenient hitch for many other uses of
+ropes and cords.
+2-22 Knots, Splices, Attachments, and Ladders
+--- p23
+FM 5-125
+SHEEPSHANK
+A sheepshank is a method of shortening a
+rope, but you can use it to take the load off a
+weak spot in the rope (see Figure 2-34). It is
+only a temporary knot unless the eyes are
+fastened to the standing part on each end.
+FISHERMAN’S BEND
+The fisherman’s bend is an excellent knot for
+attaching a rope to a light anchor, a ring,
+or a rectangular piece of stone (see Figure 2-
+35, page 2-24). You can use it to fasten a
+rope or cable to a ring or post. Also use it
+where there will be a slackening and tight-
+ening motion in the rope.
+Knots, Splices, Attachments, and Ladders 2-23
+--- p24
+FM 5-125
+LASHINGS
+A lashing is as rope, wire, or chain used for
+binding, wrapping, or fastening. The types
+of lashings include square, shears, and
+block.
+SQUARE LASHING
+Use the square lashing to lash two spars
+together at right angles to each other (see
+Figure 2-36). To tie a square lashing, begin
+with a clove hitch on one spar and make a
+minimum of four complete turns around
+both members. Continue with two frapping
+turns between the vertical and the horizon-
+tal spar to tighten the lashing. Tie off the
+running end to the opposite spar from
+which you started with another clove hitch
+to finish the square lashing.
+SHEARS LASHING
+Use the shears lashing to lash two spars
+together at one end to form an expedient
+device called a shears (see Figure 2-37). Do
+this by laying two spars side by side,
+spaced about one-third of the diameter of a
+spar apart, with the butt ends together.
+Start the shears lashing a short distance in
+from the top of one of the spars by tying the
+end of the rope to it with a clove hitch.
+Then make eight tight turns around both
+spars above the clove hitch. Tighten the
+lashing with a minimum of two frapping
+turns around the eight turns. Finish the
+shears lashing by tying the end of the rope
+to the opposite spar from which you started
+with another clove hitch.
+2-24 Knots, Splices, Attachments, and Ladders

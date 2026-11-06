@@ -3,7 +3,7 @@
 // on the phone (sun/sun.ts); nothing is fetched. The place is the phone's position (asked for on
 // a tap, once), the map's home point, or a town; it is kept on the device until changed.
 
-import { useEffect, useId, useState, type ReactNode } from 'react';
+import { useEffect, useId, useState } from 'react';
 import { Button, inputClass, Page, Sheet, SubPageHeader } from '../components/ui';
 import { cardinal } from '../compass/heading';
 import { formatClock, formatDuration, today } from '../i18n/format';
@@ -16,6 +16,8 @@ import { coordsOf, placeStore, roundCoord, type Place } from '../sun/place';
 import { dayBefore, sunDay, type Pass } from '../sun/sun';
 import { TOWNS, townById } from '../sun/towns';
 import { YearChart } from '../sun/YearChart';
+import { Row } from '../sun/SunRows';
+import { MoonCard, SunNow } from '../sun/SunNow';
 
 type GpsState = 'idle' | 'searching' | 'refused' | 'unavailable';
 
@@ -103,6 +105,8 @@ export function SunScreen({ lang, s }: { lang: Lang; s: Strings }) {
             <DateField date={date} onDate={setDate} t={t} />
           </div>
           <Results place={place} date={date} lang={lang} t={t} />
+          <SunNow place={place} lang={lang} t={t} />
+          <MoonCard place={place} date={date} lang={lang} t={t} />
           <YearChart {...chartProps(place, date)} lang={lang} t={t} />
           <p className="px-1 text-sm text-muted">{t.note}</p>
         </div>
@@ -217,14 +221,4 @@ function Results({ place, date, lang, t }: { place: Place; date: string; lang: L
 function lightRow(light: Pass, clock: (at: Date) => string, t: Strings['sun']): { value?: string; detail: string } {
   if (light.kind === 'riseSet') return { value: `${clock(light.rise)}–${clock(light.set)}`, detail: t.lightHelp };
   return { detail: light.kind === 'up' ? t.lightAllNight : t.darkAllDay };
-}
-
-function Row({ label, value, detail }: { label: string; value?: ReactNode; detail: string }) {
-  return (
-    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-[12px] py-4">
-      <dt className="font-semibold">{label}</dt>
-      {value ? <dd className="text-2xl tabular-nums">{value}</dd> : null}
-      <dd className="col-span-2 text-sm text-muted">{detail}</dd>
-    </div>
-  );
 }

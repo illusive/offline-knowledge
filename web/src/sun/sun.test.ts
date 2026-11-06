@@ -119,3 +119,45 @@ describe('yearOfDayLengths', () => {
     expect(days[354]).toEqual({ month: 12, day: 21, minutes: sunDay(2026, 12, 21, 55.68, 12.57).dayLengthMin });
   });
 });
+
+// Reference values fetched 2026-11-06 (D-058): the sun's position from NOAA's Solar Calculator
+// (its own calcAzEl, with refraction); the moon from USNO's "Complete Sun and Moon Data for One
+// Day" (aa.usno.navy.mil/api/rstt/oneday), to the minute, with its illuminated fraction for the day.
+describe('sunPosition against NOAA', () => {
+  const cases = [
+    { at: Date.UTC(2026, 10, 6, 9, 0), lat: 55.68, lon: 12.57, az: 151.91, el: 14.48 },
+    { at: Date.UTC(2026, 5, 21, 13, 30), lat: 55.68, lon: 12.57, az: 232.53, el: 48.97 },
+    { at: Date.UTC(2026, 2, 20, 6, 0), lat: 57.72, lon: 10.59, az: 97.46, el: 4.69 },
+  ];
+  for (const c of cases) {
+    it(new Date(c.at).toISOString(), async () => {
+      const { sunPosition } = await import('./sun');
+      const p = sunPosition(new Date(c.at), c.lat, c.lon);
+      expect(Math.abs(p.azimuth - c.az)).toBeLessThan(0.3);
+      expect(Math.abs(p.elevation - c.el)).toBeLessThan(0.3);
+    });
+  }
+});
+
+describe('moonDay against USNO', () => {
+  // [local date, lat, lon, UTC offset, rise, set (local h, min), illuminated %]
+  const cases = [
+    { date: [2026, 12, 21], lat: 55.68, lon: 12.57, tz: 1, rise: [12, 51], set: [5, 38], pct: 90 },
+    { date: [2026, 6, 21], lat: 55.68, lon: 12.57, tz: 2, rise: [12, 47], set: [0, 46], pct: 45 },
+    { date: [2026, 11, 6], lat: 55.68, lon: 12.57, tz: 1, rise: [4, 2], set: [14, 57], pct: 8 },
+    { date: [2026, 3, 3], lat: 57.72, lon: 10.59, tz: 1, rise: [18, 8], set: [7, 8], pct: 100 },
+  ] as const;
+  for (const c of cases) {
+    it(`${c.date.join('-')} at ${c.lat}`, async () => {
+      const { moonDay } = await import('./moon');
+      const [y, m, d] = c.date;
+      // The test machine may be in any time zone: the day is given as the place's local midnight.
+      const midnight = new Date(Date.UTC(y, m - 1, d) - c.tz * 3_600_000);
+      const local = (dt: Date | null) => (dt ? (dt.getTime() - midnight.getTime()) / 60_000 : NaN);
+      const day = moonDay(midnight, new Date(midnight.getTime() + 86_400_000), c.lat, c.lon);
+      expect(Math.abs(local(day.rise) - (c.rise[0] * 60 + c.rise[1]))).toBeLessThan(2);
+      expect(Math.abs(local(day.set) - (c.set[0] * 60 + c.set[1]))).toBeLessThan(2);
+      expect(Math.abs(day.illuminated * 100 - c.pct)).toBeLessThan(1.5);
+    });
+  }
+});

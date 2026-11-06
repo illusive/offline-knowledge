@@ -119,7 +119,7 @@ web/
     main.tsx, App.tsx             Opens the pack, routes (one switch, every route handled), tab bar,
                                   each page's search text, per-page scroll positions
     router.ts                     Hash routes (D-023): Home, first aid, Når det sker, food storage, growing,
-                                  guides, foods, saved, map, Forråd and its editor, tools, compass, sun, settings;
+                                  guides, foods, saved, map, Forråd and its editor, tools, compass, sun, power clock, boiling timer, settings;
                                   SAVED_SECTIONS holds the category order (D-048)
     sw.ts                         Service worker: caches every built file; updates wait for "Update"
     lib/                          Shared helpers, used everywhere instead of hand-written copies:
@@ -153,6 +153,9 @@ web/
     sun/                          Sunrise, sunset and twilight from a place and a day (NOAA equations),
                                   the chosen place, the town list and the graph through the year (D-056)
     food/groups.ts                The groups that divide Opbevaring and Dyrkning (D-057)
+    power/limits.ts               The fridge and freezer hours behind Køl og frys, with their sources (D-058)
+    sun/moon.ts, sun/SunNow.tsx   The moon (Meeus) and the sun right now, in Sol op og ned (D-058)
+    lib/useNow.ts                 The current time for clocks and timers, worked out from a stored start
     bookmarks/, settings/, pwa/   Saved items, preferences and theme, offline status and updates
     screens/                      One file per page
   e2e/                            Playwright tests in WebKit, offline

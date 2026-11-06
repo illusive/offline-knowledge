@@ -53,6 +53,19 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
 - **Short names of the stock-list lines (Forråd, D-046):** our own labels, e.g. "Dåser med tomater eller grøntsager", "Bleer, bind og tamponer", "Betalingskort og kontanter". Check that they read naturally in the suggestions and in "Tæller som: …". The keywords that match typed names, e.g. "makrel" for canned fish, are also ours; check for wrong matches.
 - **The sheet on each thing (Forråd, D-049, D-054):** the counter "Antal", "Den fjernes fra forrådet, når du lukker.", "Redigér", "Slet", and "Vandet er tjekket.". In the scan sheet still "Bedst før på de nye" and "Makrel i tomat: 1 stk. lagt til, nu 2 stk.". Check that they read naturally.
 - **Sol op og ned (D-056):** the name "Sol op og ned"; "Lyst udenfor" with "Lyst nok til at være ude uden lygte."; "Står op i SØ (133°)"; "Næsten som i går"; and the note "Regnet ud fra stedet og datoen, i telefonens tid. Bakker, huse og skyer kan gøre det mørkt tidligere. Retningen er fra geografisk nord." Check that "geografisk nord" is clear next to the compass's "magnetisk nord".
+- **"Gode at kunne" (D-059): to review.**
+  - **The seven guides:** Tænd et bål, Knob, Vask tøj uden strøm og vand, Saml vand, Lav mad uden strøm, Hold telefonen opladet, Hygiejne med lidt vand. Most blocks are translated from English (Army manuals, CDC, FCC, Sierra); check each against "Vis original".
+  - **Words to check:**
+    - "det fineste materiale" for the manual's "tinder"
+    - "pinde, så tykke som en finger" (the scouts' "pindebrænde i fingertykkelse")
+    - "kulstofstål"
+    - the knot names (råbåndsknob, flagknob, pælestik, dobbelt halvstik, tømmerstik, ottetalsknob)
+  - **Captions:** the knot drawings keep the manual's English captions.
+- **Tools (D-058):**
+  - **Køl og frys:** "Strømmen gik nu", "Kold nok i … endnu", "Over tiden", and the advice texts (the same words as the blocks in "Strømmen er gået").
+  - **Kog vand:** "Vandet koger nu", "Færdig. Lad vandet køle af."
+  - **Sun and moon:** "Solen lige nu", "Stil dig med ansigtet mod solen. Så er nord … til venstre for dig.", the moon phases ("Tiltagende måne", "Halvmåne, tiltagende" …).
+  - **Sirens:** the guide "Når sirenen lyder".
 - **Groups (D-057):** "Frugt", "Grøntsager", "Krydderurter", "Kød", "Fisk" as headings. Rabarber is under "Frugt", since it is eaten as fruit; check that this reads naturally.
 - **Førstehjælpens 3 trin (D-057): to review.** Steps 1 and 2 reuse the words of "Gør stedet sikkert", "Er personen vågen?" and "M-ABC", which are still to review too. Step 3 is new, from the handbook p. 46–47: "Ring 112, hvis nogen pludselig bliver alvorligt syg eller kommer slemt til skade.", "sundhedsperson" for the handbook's "sundhedsfaglig medarbejder" and "visitator", and "Er I flere, så lad én ringe 112 med det samme, mens de andre giver førstehjælp." Check each against "Vis original".
 - **Sol op og ned, the graph (D-056):** "Dagens længde gennem året", "Korteste dag: 21. december, 7 t 1 min", the axis labels "6 t", "12 t", "18 t", and the button "Skift".

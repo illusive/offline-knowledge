@@ -1,0 +1,157 @@
+{
+  "id": "saml-vand",
+  "category": "preparedness",
+  "group": "skills",
+  "order": 4,
+  "name": "Saml vand",
+  "title": "Sådan klarer du dig, hvis vandforsyningen svigter",
+  "summary": "Saml regnvand først. Har du intet andet, kan en plastikpose over grønne blade give lidt vand.",
+  "sourceId": "dk-bolius-vandsvigt",
+  "risk": "high",
+  "checks": [
+    {
+      "sourceId": "us-cdc-make-water-safe",
+      "locator": "Key points",
+      "quote": "Boiling is the best way to kill germs in water.",
+      "note": "Agrees: boil water from uncertain sources before drinking it."
+    },
+    {
+      "sourceId": "dk-fvst-drikkevand",
+      "locator": "Kog vandet",
+      "quote": "Kog vandet",
+      "note": "Agrees: boil water that may be contaminated."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "der-er-intet-vand",
+    "vand-til-tre-doegn"
+  ],
+  "originalSummary": "Sørg for løbende at opsamle regnvand – det kan give meget vand over tid.",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Saml regnvand hele tiden – det giver meget vand over tid. Brug en regnvandstønde, eller sæt baljer ud, når det skal regne.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Sørg for løbende at opsamle regnvand – det kan give meget vand over tid. Køb en decideret regnvandstønde eller -beholder, eller sæt baljer ud i haven, når du ved, at der kommer regn."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Regnvand er ikke drikkevand. Du kan bruge det til toilettet og til at vaske dig – og til mad, hvis du koger det.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Regnvandet kan bruges til toiletskyl eller til at bade i – det kan også anvendes til madlavning, hvis det bliver kogt."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Hvis du intet andet har",
+      "page": 8,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "STILL CONSTRUCTION"
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Med en klar plastikpose kan du få lidt vand ud af grønne blade. Det tager omkring et døgn at få ½–1 liter.",
+      "page": 8,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "It takes about 24 hours to get 0.5 to 1 liter of water."
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Fyld en klar plastikpose med luft.",
+        "Fyld den halvt til trekvart med grønne blade. Fjern pinde og torne, der kan stikke hul.",
+        "Læg en lille sten i posen.",
+        "Bind posen godt til helt ude ved åbningen, så der er mest muligt luft i den.",
+        "Læg posen på en skråning i fuld sol, med åbningen nedad – men lidt højere end posens laveste punkt.",
+        "Sørg for, at stenen ligger i posens laveste punkt. Der samler vandet sig."
+      ],
+      "page": 9,
+      "title": "Sådan laver du en pose med blade:",
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "items": [
+          "Fill the bag with air by turning the opening into the breeze or by “scooping” air into the bag.",
+          "Fill the plastic bag one-half to three-fourths full of green leafy vegetation. Be sure to remove all hard sticks or sharp spines that might puncture the bag.",
+          "Place a small rock or similar item in the bag.",
+          "Close the bag and tie the mouth securely as close to the end of the bag as possible to keep the maximum amount of air space.",
+          "Place the bag, mouth downhill, on a slope in full sunlight. Position the mouth of the bag slightly higher than the low point in the bag.",
+          "Settle the bag in place so that the rock works itself into the low point in the bag."
+        ],
+        "title": "To make the still, you should—"
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Brug ikke giftige planter. Så bliver vandet også giftigt.",
+      "page": 9,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "Do not use poisonous vegetation. It will provide poisonous liquid."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Løsn posen, og hæld vandet ud, der har samlet sig ved stenen. Bind posen godt igen.",
+      "page": 10,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "To get the condensed water from the still, loosen the tie around the bag’s mouth and tip the bag so that the water collected around the rock will drain out."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Skift bladene, når der ikke kommer mere vand ud af dem.",
+      "page": 10,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "Change the vegetation in the bag after extracting most of the water from it."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Det er nemmere at binde posen tæt om en gren med mange blade. Bind grenen, så den hænger lavere end posens åbning. Så samles vandet dér.",
+      "page": 10,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "Simply tie the plastic bag over a leafy tree limb with a tube inserted, and tie the mouth of the bag off tightly around the branch to form an airtight seal. Tie the end of the limb so that it hangs below the level of the mouth of the bag."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Én pose giver ikke meget. Du skal bruge mindst tre for at få vand nok til én person om dagen.",
+      "page": 12,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "You will need at least three stills to meet your individual daily water intake needs."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Kog alt vand fra planter og jord, før du drikker det.",
+      "page": 13,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "When possible, purify all water you get from vegetation or from the ground by boiling or using iodine or chlorine."
+      }
+    }
+  ]
+}

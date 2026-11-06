@@ -153,3 +153,10 @@ test('plain-language rewrites (D-042): allowed in every category; the Danish sou
   const bad = guide({ originalSummary: 'Ikke i kilden.', summary: 'Ny tekst.' });
   assert.ok(validateGuides([bad], sources, texts, new Set()).some((p) => p.includes('summary original') && p.includes('not verbatim')));
 });
+
+test('preparedness: "Gode at kunne" guides use the group \'skills\' (D-059); other names are refused', () => {
+  const skill = guide({ id: 's', category: 'preparedness', risk: 'low', checks: [], group: 'skills' });
+  assert.deepEqual(validateGuides([skill], sources, texts, new Set()), []);
+  const wrong = guide({ id: 't', category: 'preparedness', risk: 'low', checks: [], group: 'skill' as never });
+  assert.ok(validateGuides([wrong], sources, texts, new Set()).some((p) => p.includes('need a group')));
+});

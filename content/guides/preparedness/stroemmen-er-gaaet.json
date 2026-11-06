@@ -38,6 +38,36 @@
     },
     {
       "kind": "text",
+      "text": "Holder du døren lukket, holder køleskabet maden kold i omkring 4 timer. En fuld fryser holder kulden i omkring 48 timer, en halvfuld i omkring 24 timer. Værktøjet ”Køl og frys” holder øje med tiden for dig.",
+      "page": 1,
+      "sourceId": "us-fsis-keeping-food-safe-emergency",
+      "original": {
+        "lang": "en",
+        "text": "The refrigerator will keep food safely cold for about 4 hours if it is unopened. A full freezer will hold the temperature for approximately 48 hours (24 hours if it is half full) if the door remains closed."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Har strømmen været væk i mere end 4 timer, så smid let fordærvelig mad fra køleskabet ud: kød, fisk, skåret frugt og grønt, æg, mælk og rester. Smid også mad ud, der lugter, ser ud eller føles anderledes end normalt.",
+      "page": 1,
+      "sourceId": "us-cdc-food-after-emergency",
+      "original": {
+        "lang": "en",
+        "text": "Throw out perishable food in your refrigerator (meat, fish, cut fruits and vegetables, eggs, milk, and leftovers) after 4 hours without power or without a cold source like ice. Throw out any food with an unusual smell, color, or texture."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Har frossen mad stadig iskrystaller, eller er den højst 4 °C, kan du fryse den igen.",
+      "page": 1,
+      "sourceId": "us-fsis-keeping-food-safe-emergency",
+      "original": {
+        "lang": "en",
+        "text": "If the food still contains ice crystals or is 40 °F or below, it is safe to refreeze."
+      }
+    },
+    {
+      "kind": "text",
       "text": "Spis maden fra køleskabet først.",
       "page": 1,
       "sourceId": "dk-fvst-forberedt",
@@ -204,6 +234,24 @@
       "locator": "Be ready for emergencies, checklist: Light and warmth",
       "quote": "Homes can become cold very quickly when the heating goes off.",
       "note": "Agrees: blankets and warm clothing when the heating goes."
+    },
+    {
+      "sourceId": "us-cdc-food-after-emergency",
+      "locator": "Steps to take during a power outage",
+      "quote": "If the doors stay closed, food will stay safe up to: 4 hours in a refrigerator, 48 hours in a full freezer, 24 hours in a half-full freezer.",
+      "note": "Same hours as USDA FSIS (D-058)."
+    },
+    {
+      "sourceId": "us-fsis-keeping-food-safe-emergency",
+      "locator": "Frequently Asked Questions",
+      "quote": "Refrigerated food should be safe as long as power is out no more than 4 hours.",
+      "note": "Agrees with CDC: refrigerated food is safe for up to 4 hours without power (D-058)."
+    },
+    {
+      "sourceId": "us-cdc-food-after-emergency",
+      "locator": "Steps to take after a power outage",
+      "quote": "Throw out food that has thawed or is above 40°.",
+      "note": "Agrees with USDA FSIS: food above 40 °F (about 4 °C) is not refrozen (D-058)."
     }
   ],
   "ownerChecked": false,

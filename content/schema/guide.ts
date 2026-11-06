@@ -13,7 +13,7 @@ export type GrowingSection = (typeof GROWING_SECTIONS)[number] | (typeof SUPPLY_
 
 // "Når det sker" (D-040, D-043): one card per kind of weather ("Storm"), situations ("Strømmen er
 // gået") and stock lists ("Mad til tre døgn").
-export type PreparednessGroup = 'weather' | 'situation' | 'supplies';
+export type PreparednessGroup = 'weather' | 'situation' | 'supplies' | 'skills'; // skills: "Gode at kunne" (D-059)
 // Growing (D-057): the kind of crop, for the headed sections in Dyrkning. Shared names with the
 // storage groups in the app (Frugt, Grøntsager, Krydderurter).
 export type CropGroup = 'vegetables' | 'fruit' | 'herbs';

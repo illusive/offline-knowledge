@@ -114,3 +114,26 @@ export function yearOfDayLengths(year: number, lat: number, lon: number): { mont
   }
   return days;
 }
+
+// Where the sun is at a moment (D-058): direction (true degrees from north, clockwise) and height
+// above the horizon in degrees, with NOAA's correction for the bending of light near the horizon.
+export function sunPosition(at: Date, lat: number, lon: number): { azimuth: number; elevation: number } {
+  const ms = at.getTime();
+  const { decl, eqTime } = position(centuries(ms));
+  const utcMinutes = (((ms % DAY_MS) + DAY_MS) % DAY_MS) / 60_000;
+  const hourAngle = (utcMinutes + eqTime + 4 * lon) / 4 - 180;
+  const geometric = Math.asin(sin(lat) * sin(decl) + cos(lat) * cos(decl) * cos(hourAngle)) / RAD;
+  const azimuth = (Math.atan2(sin(hourAngle), cos(hourAngle) * sin(lat) - tan(decl) * cos(lat)) / RAD + 540) % 360;
+  return { azimuth, elevation: geometric + refraction(geometric) };
+}
+
+// NOAA's atmospheric refraction (degrees) for a geometric elevation.
+function refraction(elevation: number): number {
+  if (elevation > 85) return 0;
+  const te = tan(elevation);
+  const arcsec =
+    elevation > 5 ? 58.1 / te - 0.07 / te ** 3 + 0.000086 / te ** 5
+    : elevation > -0.575 ? 1735 + elevation * (-518.2 + elevation * (103.4 + elevation * (-12.79 + elevation * 0.711)))
+    : -20.774 / te;
+  return arcsec / 3600;
+}

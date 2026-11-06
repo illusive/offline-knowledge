@@ -57,6 +57,9 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 33. **A downloadable product list.** Barcodes are looked up online only (D-047). An offline list of Danish products from Open Food Facts is possible later if lookups without a connection matter.
 34. **Reminders.** The app cannot notify (no push without a server). Due checks and expiry show only when Forråd is opened; the Home screen could show a short note later.
 35. **The month when the count changes.** Since D-054 the counter changes only the count. When the one that expired first is taken out, the next one's month may be later; when new ones are added, theirs may be earlier. The owner wants to look at this later (2026-11-06).
+36. **Retained-heat cooking (høkasse).** Left out of "Lav mad uden strøm" (D-059): no source found. Add it if a Danish or official source turns up.
+37. **DR's FM frequencies.** No official, stable list was found (D-058); "Når sirenen lyder" says to listen to DR on FM radio without numbers. Add the regional frequencies if DR or the Agency for Data Supply publishes a list.
+38. **Rainwater for laundry.** No source says it outright (D-059); the washing guide repeats only what Bolius says. Confirm with an authority, or leave as is.
 
 ## Design (D-025)
 

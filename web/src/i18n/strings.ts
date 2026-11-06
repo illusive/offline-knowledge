@@ -167,7 +167,59 @@ export interface Strings {
     shorter: (min: number) => string;
     sameAsYesterday: string;
     note: string;
+    nowTitle: string;
+    nowDirection: (dir: string, deg: number, height: number) => string;
+    nowDown: string;
+    faceSun: string;
+    northLeft: (deg: number) => string;
+    northRight: (deg: number) => string;
+    northAhead: string;
+    northBehind: string;
+    moonTitle: string;
+    moonPhases: Record<'new' | 'waxingCrescent' | 'firstQuarter' | 'waxingGibbous' | 'full' | 'waningGibbous' | 'lastQuarter' | 'waningCrescent', string>;
+    moonLit: (pct: number) => string;
+    moonrise: string;
+    moonset: string;
+    moonNoRise: string;
+    moonNoSet: string;
   };
+  power: {
+    title: string;
+    subtitle: string;
+    intro: string;
+    startNow: string;
+    startEarlier: string;
+    earlierLabel: string;
+    start: string;
+    outFor: string;
+    since: (time: string) => string;
+    fridge: string;
+    freezerFull: string;
+    freezerHalf: string;
+    holds: (hours: number) => string;
+    coldFor: (left: string) => string;
+    over: string;
+    keepClosed: string;
+    fridgeOver: string;
+    refreeze: string;
+    back: string;
+    backDone: string;
+    source: string;
+    guide: string;
+  };
+  boil: {
+    title: string;
+    subtitle: string;
+    cloudy: string;
+    how: string;
+    start: string;
+    left: (seconds: number) => string;
+    done: string;
+    again: string;
+    stop: string;
+    guide: string;
+  };
+  radioTool: { title: string; subtitle: string };
   forraad: {
     title: string;
     loading: string;
@@ -367,6 +419,7 @@ export interface Strings {
   prepareWeather: string;
   prepareSituations: string;
   prepareSupplies: string;
+  prepareSkills: string;
   prepareSearchPlaceholder: string;
   prepareSearchLabel: string;
   checklistProgress: (done: number, total: number) => string;
@@ -577,7 +630,68 @@ export const strings: Record<Lang, Strings> = {
       shorter: (min) => `${min} min kortere end i går`,
       sameAsYesterday: 'Næsten som i går',
       note: 'Regnet ud fra stedet og datoen, i telefonens tid. Bakker, huse og skyer kan gøre det mørkt tidligere. Retningen er fra geografisk nord.',
+      nowTitle: 'Solen lige nu',
+      nowDirection: (dir, deg, height) => `Står i ${dir} (${deg}°), ${height}° over horisonten.`,
+      nowDown: 'Solen er under horisonten lige nu.',
+      faceSun: 'Stil dig med ansigtet mod solen.',
+      northLeft: (deg) => `Så er nord ${deg}° til venstre for dig.`,
+      northRight: (deg) => `Så er nord ${deg}° til højre for dig.`,
+      northAhead: 'Så er nord lige foran dig.',
+      northBehind: 'Så er nord lige bag dig.',
+      moonTitle: 'Månen',
+      moonPhases: {
+        new: 'Nymåne',
+        waxingCrescent: 'Tiltagende måne',
+        firstQuarter: 'Halvmåne, tiltagende',
+        waxingGibbous: 'Tiltagende måne',
+        full: 'Fuldmåne',
+        waningGibbous: 'Aftagende måne',
+        lastQuarter: 'Halvmåne, aftagende',
+        waningCrescent: 'Aftagende måne',
+      },
+      moonLit: (pct) => `${pct} % af månen er lyst op`,
+      moonrise: 'Månen står op',
+      moonset: 'Månen går ned',
+      moonNoRise: 'Månen står ikke op denne dag.',
+      moonNoSet: 'Månen går ikke ned denne dag.',
     },
+    power: {
+      title: 'Køl og frys',
+      subtitle: 'Hvor længe holder køleskab og fryser maden kold, når strømmen er gået?',
+      intro: 'Tryk, når strømmen går. Uret holder øje med tiden – også hvis du lukker appen.',
+      startNow: 'Strømmen gik nu',
+      startEarlier: 'Strømmen gik tidligere',
+      earlierLabel: 'Hvornår gik strømmen?',
+      start: 'Start uret',
+      outFor: 'Strømmen har været væk i',
+      since: (time) => `Siden ${time}`,
+      fridge: 'Køleskab',
+      freezerFull: 'Fuld fryser',
+      freezerHalf: 'Halvfuld fryser',
+      holds: (hours) => `Holder kulden i omkring ${hours} timer med lukket dør`,
+      coldFor: (left) => `Kold nok i ${left} endnu`,
+      over: 'Over tiden',
+      keepClosed: 'Åbn kun køleskab og fryser, når du skal. Så holder maden sig kold længere.',
+      fridgeOver: 'Har strømmen været væk i mere end 4 timer, så smid let fordærvelig mad fra køleskabet ud: kød, fisk, skåret frugt og grønt, æg, mælk og rester. Smid også mad ud, der lugter, ser ud eller føles anderledes end normalt.',
+      refreeze: 'Har frossen mad stadig iskrystaller, eller er den højst 4 °C, kan du fryse den igen.',
+      back: 'Strømmen er tilbage',
+      backDone: 'Godt. Tjek, at køleskabet er højst 5 °C.',
+      source: 'Tiderne er fra USDA og CDC (USA), oversat. Fødevarestyrelsen anbefaler højst 5 °C i køleskabet.',
+      guide: 'Læs mere i “Strømmen er gået”',
+    },
+    boil: {
+      title: 'Kog vand',
+      subtitle: 'Et ur til at koge vand, du ikke ved er rent.',
+      cloudy: 'Er vandet grumset, så si det først gennem et rent klæde, køkkenrulle eller et kaffefilter.',
+      how: 'Kog det klare vand kraftigt i 1 minut.',
+      start: 'Vandet koger nu',
+      left: (seconds) => `${seconds} sekunder tilbage`,
+      done: 'Færdig. Lad vandet køle af.',
+      again: 'Start igen',
+      stop: 'Stop',
+      guide: 'Læs mere i “Der er intet vand”',
+    },
+    radioTool: { title: 'Radio og sirener', subtitle: 'Hvad sirenerne betyder, og hvor du får besked.' },
     forraad: {
       title: 'Forråd',
       loading: 'Henter forrådet …',
@@ -825,6 +939,7 @@ export const strings: Record<Lang, Strings> = {
     prepareWeather: 'Før det sker',
     prepareSituations: 'Hvis det sker',
     prepareSupplies: 'Hjemmeberedskab',
+    prepareSkills: 'Gode at kunne',
     prepareSearchPlaceholder: 'Søg, fx strøm eller vand',
     prepareSearchLabel: 'Søg i Når det sker',
     checklistProgress: (done, total) => `Du har ${done} af ${total}`,
@@ -1033,7 +1148,68 @@ export const strings: Record<Lang, Strings> = {
       shorter: (min) => `${min} min shorter than yesterday`,
       sameAsYesterday: 'About the same as yesterday',
       note: 'Worked out from the place and the date, in the phone\'s time. Hills, buildings and clouds can make it dark sooner. Directions are from true north.',
+      nowTitle: 'The sun right now',
+      nowDirection: (dir, deg, height) => `In the ${dir} (${deg}°), ${height}° above the horizon.`,
+      nowDown: 'The sun is below the horizon right now.',
+      faceSun: 'Stand facing the sun.',
+      northLeft: (deg) => `North is then ${deg}° to your left.`,
+      northRight: (deg) => `North is then ${deg}° to your right.`,
+      northAhead: 'North is then straight ahead.',
+      northBehind: 'North is then straight behind you.',
+      moonTitle: 'The moon',
+      moonPhases: {
+        new: 'New moon',
+        waxingCrescent: 'Waxing moon',
+        firstQuarter: 'First quarter',
+        waxingGibbous: 'Waxing moon',
+        full: 'Full moon',
+        waningGibbous: 'Waning moon',
+        lastQuarter: 'Last quarter',
+        waningCrescent: 'Waning moon',
+      },
+      moonLit: (pct) => `${pct} % of the moon is lit`,
+      moonrise: 'Moonrise',
+      moonset: 'Moonset',
+      moonNoRise: 'The moon does not rise on this day.',
+      moonNoSet: 'The moon does not set on this day.',
     },
+    power: {
+      title: 'Fridge and freezer',
+      subtitle: 'How long do the fridge and freezer keep food cold when the power is out?',
+      intro: 'Tap when the power goes. The clock keeps track of the time – also if you close the app.',
+      startNow: 'The power went now',
+      startEarlier: 'The power went earlier',
+      earlierLabel: 'When did the power go?',
+      start: 'Start the clock',
+      outFor: 'The power has been out for',
+      since: (time) => `Since ${time}`,
+      fridge: 'Fridge',
+      freezerFull: 'Full freezer',
+      freezerHalf: 'Half-full freezer',
+      holds: (hours) => `Keeps cold for about ${hours} hours with the door shut`,
+      coldFor: (left) => `Cold enough for another ${left}`,
+      over: 'Past the time',
+      keepClosed: 'Only open the fridge and freezer when you need to. Then the food stays cold for longer.',
+      fridgeOver: 'If the power has been out for more than 4 hours, throw out perishable food from the fridge: meat, fish, cut fruit and vegetables, eggs, milk and leftovers. Also throw out food with an unusual smell, colour or texture.',
+      refreeze: 'If frozen food still has ice crystals or is at most 4 °C, you can freeze it again.',
+      back: 'The power is back',
+      backDone: 'Good. Check that the fridge is at most 5 °C.',
+      source: 'The times are from USDA and CDC (USA). The Danish Veterinary and Food Administration recommends at most 5 °C in the fridge.',
+      guide: 'Read more in “Strømmen er gået” (Danish)',
+    },
+    boil: {
+      title: 'Boil water',
+      subtitle: 'A timer for boiling water you are not sure is clean.',
+      cloudy: 'If the water is cloudy, first filter it through a clean cloth, paper towel or coffee filter.',
+      how: 'Bring the clear water to a rolling boil for 1 minute.',
+      start: 'The water is boiling now',
+      left: (seconds) => `${seconds} seconds left`,
+      done: 'Done. Let the water cool.',
+      again: 'Start again',
+      stop: 'Stop',
+      guide: 'Read more in “Der er intet vand” (Danish)',
+    },
+    radioTool: { title: 'Radio and sirens', subtitle: 'What the sirens mean, and where you get news.' },
     forraad: {
       title: 'Supplies',
       loading: 'Loading your supplies …',
@@ -1275,6 +1451,7 @@ export const strings: Record<Lang, Strings> = {
     prepareWeather: 'Before it happens',
     prepareSituations: 'If it happens',
     prepareSupplies: 'Home emergency supplies',
+    prepareSkills: 'Good to know',
     prepareSearchPlaceholder: 'Search in Danish, e.g. strøm or vand',
     prepareSearchLabel: 'Search emergency guides',
     checklistProgress: (done, total) => `You have ${done} of ${total}`,

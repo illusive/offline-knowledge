@@ -1,0 +1,264 @@
+{
+  "id": "taend-et-baal",
+  "category": "preparedness",
+  "group": "skills",
+  "order": 1,
+  "name": "Tænd et bål",
+  "title": "Tænd bål som en champ",
+  "summary": "Det vigtigste er tørt optænding i forskellige størrelser. Her er, hvordan du bygger og tænder bålet – også uden tændstikker.",
+  "sourceId": "dk-dds-taend-baal",
+  "risk": "high",
+  "checks": [
+    {
+      "sourceId": "dk-bolius-baal-i-haven",
+      "locator": "Hvilke regler gælder for bålpladser",
+      "quote": "anvende tørt træ, da det ryger mindre end fugtigt træ og haveaffald",
+      "note": "Agrees: dry wood gives less smoke."
+    },
+    {
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "locator": "FM 3-05.70, 7-14 Tepee",
+      "quote": "arrange the tinder and a few sticks of kindling in the shape of a tepee or cone",
+      "note": "Agrees with the scouts' pyramid: kindling stood up around the tinder."
+    }
+  ],
+  "ownerChecked": false,
+  "related": [
+    "kulilte",
+    "lav-mad-uden-stroem",
+    "der-er-ingen-varme"
+  ],
+  "originalSummary": "Det vigtigste, når du tænder et bål, er at du har lavet nok tørt optændingsmateriale i for- skellige størrelser.",
+  "blocks": [
+    {
+      "kind": "text",
+      "text": "Det vigtigste er, at du har nok tørt optænding i forskellige størrelser. Hellere for meget end for lidt.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det vigtigste, når du tænder et bål, er at du har lavet nok tørt optændingsmateriale i for- skellige størrelser. Det skader ikke at have for meget – så er du klar til næste gang, der skal tændes bål."
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "2 store håndfulde spåner, tør birkebark eller granris.",
+        "2 store håndfulde pinde, så tykke som en finger – gerne gran eller fyr.",
+        "2 store håndfulde brænde, så tykt som 3 fingre – gerne gran eller fyr."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "2 store håndfulde af enten spåner, tørtbirkebark eller granris",
+          "2 store håndfulde pinde- brænde ifingertykkelse – gerne gran eller fyr",
+          "2 store håndfulde brænde på tykkelse med 3fingre – gerne gran eller fyr"
+        ]
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Godt at tænde med",
+      "page": 5,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "FIRE MATERIAL SELECTION"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Birkebark",
+        "Fine træspåner",
+        "Visnet græs, bregner, mos og svamp",
+        "Halm",
+        "Visne nåle fra nåletræer",
+        "Fnug fra lommer og sømme",
+        "Bomuld",
+        "Vokspapir"
+      ],
+      "page": 5,
+      "title": "Det fineste skal være helt tørt, så en gnist kan tænde det. Fx:",
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "items": [
+          "Birch bark.",
+          "Fine wood shavings.",
+          "Dead grass, ferns, moss, fungi.",
+          "Straw.",
+          "Dead evergreen needles.",
+          "Lint from pockets and seams.",
+          "Cotton.",
+          "Waxed paper."
+        ],
+        "title": "Tinder is dry material that ignites with little heat—a spark starts a fire. The tinder must be absolutely dry to be sure just a spark will ignite it."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Små pinde og kviste tænder let og gør ilden varm nok til, at det større brænde kan fange.",
+      "page": 5,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "Kindling is readily combustible material that you add to the burning tinder. Again, this material should be absolutely dry to ensure rapid burning. Kindling increases the fire’s temperature so that it will ignite less combustible material."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Byg bålet",
+      "page": 6,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "HOW TO BUILD A FIRE"
+      }
+    },
+    {
+      "kind": "steps",
+      "items": [
+        "Tænd først det fineste – det, der kun skal en gnist eller en glød for at brænde.",
+        "Læg så kviste, birkebark eller granris på.",
+        "Når det brænder, så stil små pinde op i en rundkreds, som en pyramide. Så slår ilden op om dem og får masser af luft.",
+        "Læg ikke for store stykker brænde på for tidligt – så går bålet ud. Læg brændet tæt nok på flammen til, at det kan fange."
+      ],
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "items": [
+          "Først antændes tønderet – altså det materiale, der kun skal en gnist eller glød til at antænde.",
+          "Dernæst lægges kviste, birke- bark eller granris på.",
+          "Når det er tændt, placeres små pinde op- rejst i en cirkelform. Det er en pyramideform, hvor ilden kan slå op om materialet og tilføres godt med ilt.",
+          "Hvis du kaster for stort brænde på for tidligt, dør dit bål. Sørg for, at dit materiale lægges tæt nok på flammen, så det kan få fat."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Brændet skal stå op, når du tænder, fx som et pyramidebål. Så får ilden nok luft og brænder bedre.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Det er vigtigt i optændingsfa- sen, at brændet står op, fx som det klassiske pyramidebål, da dette sikrer en god tilførsel af ilt til ilden."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Tænd altid bålet fra den side, vinden kommer fra.",
+      "page": 7,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "Always light your fire from the upwind side."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Blæser det, så lav læ, fx med nogle store stykker brænde.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Blæser det, så skab læ der, hvor du vil tænde bålet, fx ved at lægge nogle store stykker bræn- de, der tager vinden."
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Brug tørt brænde, og sørg for, at bålet er varmt inderst. Så ryger det meget mindre.",
+      "page": 1,
+      "original": {
+        "lang": "da",
+        "text": "Sørg for, at dit bål har høj kernetempe- ratur, og at du fyrer med tørt brænde – så undgår du store mængder af røg."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Uden lighter og tændstikker",
+      "page": 9,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "PRIMITIVE METHODS"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Med en lup eller en linse fra en kikkert eller et kamera – kun i klart solskin: Saml solens stråler i ét punkt på det fineste materiale, til det gløder. Pust forsigtigt, til det bliver til en flamme.",
+        "Med flint og stål: Slå en flint eller en anden hård sten med en skarp kant mod et stykke kulstofstål. Rustfrit stål giver ikke gode gnister. Når gnisten fanger, så pust på den, til den bliver til flammer.",
+        "Med et batteri: Sæt en ledning på hver pol, og rør de bare ender mod hinanden lige ved det fineste materiale, så gnisterne tænder det. Det kommer an på, hvilket batteri du har.",
+        "Med bue og bor: Det er enkelt, men det kræver mange kræfter og tålmodighed at få ild."
+      ],
+      "page": 8,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "items": [
+          "Use this method (Figure 7-6) only on bright, sunny days. The lens can come from binoculars, a camera, telescopic sights, or magnifying glasses. Angle the lens to concentrate the sun’s rays on the tinder. Hold the lens over the same spot until the tinder begins to smolder. Gently blow or fan the tinder into a flame and apply it to the fire lay.",
+          "Strike a flint or other hard, sharpedged rock with a piece of carbon steel (stainless steel will not produce a good spark). This method requires a loose-jointed wrist and practice. When the tinder catches a spark, blow on it. The spark will spread and burst into flames.",
+          "Use a battery to generate a spark. Use of this method depends on the type of battery available. Attach a wire to each terminal. Touch the ends of the bare wires together next to the tinder so the sparks will ignite it.",
+          "The technique of starting a fire with a bow and drill (Figure 7-8, page 7-11) is simple, but you must exert much effort and be persistent to produce a fire."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Det er hårdt og kræver øvelse at få ild uden tændstikker. Øv dig, før du får brug for det.",
+      "page": 12,
+      "sourceId": "us-army-fm3-05-70-ch6-7",
+      "original": {
+        "lang": "en",
+        "text": "Primitive fire-building methods are exhausting and require practice to ensure success."
+      }
+    },
+    {
+      "kind": "heading",
+      "text": "Sikkerhed",
+      "page": 1,
+      "sourceId": "dk-bolius-baal-i-haven",
+      "original": {
+        "lang": "da",
+        "text": "Kan din kommune lave lokale regler for brugen af åben ild og bål?"
+      }
+    },
+    {
+      "kind": "list",
+      "items": [
+        "Et lille bål skal være mindst 10 meter fra huse – mindst 15 meter fra stråtag.",
+        "Og mindst 15 meter fra nåletræer, lyng og marker.",
+        "Blæser det mere end 10,7 m/s, må du ikke tænde bål. Brænder det, så sluk det."
+      ],
+      "page": 1,
+      "sourceId": "dk-bolius-baal-i-haven",
+      "original": {
+        "lang": "da",
+        "items": [
+          "Bålet bør placeres mindst 10 meter fra bygninger. Hvis der er stråtækte huse, bør bålet placeres mindst 15 meter fra det stråtækte tag.",
+          "Bålet bør placeres mindst 15 meter fra nåletræsbevoksning, lyngklædte arealer og letantændelig vegetation som fx marker.",
+          "Ved vindhastigheder på over 10,7 m/s er det ikke tilladt at lave bål. Har du tændt et bål, skal det slukkes."
+        ]
+      }
+    },
+    {
+      "kind": "text",
+      "text": "Kommunen kan forbyde åben ild, når det er tørt. Tjek kommunens regler.",
+      "page": 1,
+      "sourceId": "dk-bolius-baal-i-haven",
+      "original": {
+        "lang": "da",
+        "text": "Den enkelte kommune kan have forbud mod åben ild i tørre perioder eller generelt i beboelsesområder."
+      }
+    },
+    {
+      "kind": "warning",
+      "text": "Brug aldrig en grill eller et bål indenfor.",
+      "page": 1,
+      "sourceId": "dk-bolius-baal-i-haven",
+      "original": {
+        "lang": "da",
+        "text": "Griller må kun anvendes udenfor – brug aldrig en grill indenfor."
+      }
+    }
+  ]
+}
