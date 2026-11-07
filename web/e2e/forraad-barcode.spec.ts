@@ -135,7 +135,7 @@ test('Forråd: scan one thing after another; online the name is looked up, offli
   await expect(sheet.getByLabel('Navn')).toHaveValue('Makrel i tomat', { timeout: 15_000 });
   expect(await lookups()).toHaveLength(1);
   await showBarcode(false);
-  await sheet.getByRole('button', { name: 'Annuller' }).click();
+  await sheet.getByRole('button', { name: 'Luk' }).click(); // the X (D-070)
   await expect(sheet).toBeHidden();
 
   // Offline and unknown: the user is asked to type the name, which is remembered with the barcode.
@@ -191,6 +191,6 @@ test('Forråd: a refused camera says so and leads to typing the name', async ({ 
   await page.getByRole('button', { name: 'Skriv i stedet' }).click();
   const add = page.getByRole('dialog', { name: 'Tilføj til forrådet' });
   await add.getByLabel('Navn').fill('Knækbrød');
-  await add.getByRole('button', { name: 'Færdig' }).click();
+  await add.getByRole('button', { name: 'Luk' }).click(); // every sheet closes with the X (D-070)
   await expect(page.getByRole('region', { name: 'Mad' }).getByRole('button', { name: /^Knækbrød/ })).toBeVisible();
 });

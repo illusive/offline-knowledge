@@ -139,7 +139,7 @@ CREATE TABLE guide_blocks (
   kind TEXT NOT NULL CHECK (kind IN ('heading', 'section', 'text', 'steps', 'list', 'checklist', 'warning', 'image')),
   title TEXT,
   text TEXT,
-  items TEXT,        -- JSON array: strings for steps, lists and warnings; {id, text} for checklists
+  items TEXT,        -- JSON array: strings for steps, lists and warnings; stock-list lines (id, text, name, amount, keywords, products) for checklists
   step_images TEXT,  -- JSON [{after, imageId, alt, page}] for steps with photos
   image_id TEXT REFERENCES guide_images(id),
   alt TEXT,

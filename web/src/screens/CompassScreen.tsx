@@ -1,8 +1,10 @@
 // Compass (D-045): a turning dial with a fixed mark at the top, the direction as text, and
-// "hold a course": the locked direction is kept on the device until cleared.
+// "hold a course": the locked direction is kept on the device until stopped. While a course is held,
+// the line under the direction says how to turn, and the same button stops it (D-070), so the page
+// does not grow.
 
 import { createLocalStore } from '../lib/localStore';
-import { Button, MessageState, Page, SubPageHeader } from '../components/ui';
+import { Button, Card, MessageState, Page, SubPageHeader } from '../components/ui';
 import { cardinal, cardinalLetters, isUncertain, ON_COURSE_WITHIN, signedDelta } from '../compass/heading';
 import { useCompass } from '../compass/useCompass';
 import type { Lang, Strings } from '../i18n/strings';
@@ -49,30 +51,30 @@ export function CompassScreen({ lang, s }: { lang: Lang; s: Strings }) {
             <p className="text-[min(3rem,13vw)] leading-none font-normal tracking-tight tabular-nums" aria-live="off">
               {cardinal(state.heading, lang)} {heading}°
             </p>
-            <p className="mt-1 text-sm text-muted">{t.magnetic}</p>
+            {course !== null && delta !== null ? (
+              <p className="mt-2 text-lg font-semibold" role="status">
+                {t.course(Math.round(course))} · {Math.abs(delta) <= ON_COURSE_WITHIN ? t.onCourse : delta > 0 ? t.turnRight(delta) : t.turnLeft(-delta)}
+              </p>
+            ) : (
+              <p className="mt-1 text-sm text-muted">{t.magnetic}</p>
+            )}
           </div>
           {uncertain ? (
             <p className="w-full rounded-2xl bg-note-bg px-[16px] py-3 text-note-text" role="status">
               {t.uncertain}
             </p>
           ) : null}
-          <div className="flex w-full flex-col items-center gap-3 rounded-card bg-surface px-[20px] py-5 text-center">
-            {course !== null && delta !== null ? (
-              <>
-                <p className="text-sm text-muted">{t.course(Math.round(course))}</p>
-                <p className="text-xl font-semibold" role="status">
-                  {Math.abs(delta) <= ON_COURSE_WITHIN ? t.onCourse : delta > 0 ? t.turnRight(delta) : t.turnLeft(-delta)}
-                </p>
-                <Button onClick={() => setCourse(null)} variant="secondary">
-                  {t.clearCourse}
-                </Button>
-              </>
+          <Card as="div" className="flex w-full flex-col items-center gap-3 text-center">
+            {course !== null ? (
+              <Button onClick={() => setCourse(null)} variant="secondary">
+                {t.clearCourse}
+              </Button>
             ) : (
               <Button onClick={() => setCourse(heading)} variant="primary">
                 {t.holdCourse}
               </Button>
             )}
-          </div>
+          </Card>
           {course === null ? <p className="px-1 text-sm text-muted">{t.howTo}</p> : null}
         </div>
       )}

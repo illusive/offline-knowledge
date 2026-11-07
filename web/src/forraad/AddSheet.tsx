@@ -4,7 +4,7 @@
 // at Mad, or at the category whose + opened the sheet.
 
 import { useRef, useState } from 'react';
-import { Button, MessageState, Toast, type ToastMessage } from '../components/ui';
+import { Button, MessageState, SheetHeader, Toast, type ToastMessage } from '../components/ui';
 import type { Lang, Strings } from '../i18n/strings';
 import type { Route } from '../router';
 import { ItemFields } from './ItemFields';
@@ -60,14 +60,7 @@ function AddForm({ start, lists, items, products, lang, s, onDone }: Props & { s
         add();
       }}
     >
-      <div className="flex items-center justify-between gap-[12px] px-1">
-        <h2 id={ADD_TITLE_ID} className="text-xl font-semibold">
-          {t.addTitle}
-        </h2>
-        <Button variant="onPage" onClick={done}>
-          {t.done}
-        </Button>
-      </div>
+      <SheetHeader id={ADD_TITLE_ID} title={t.addTitle} closeLabel={s.close} onClose={done} />
       <div className="mt-4 flex flex-col gap-5 rounded-card bg-surface px-[20px] py-5">
         <ItemFields draft={draft} idPrefix="forraad-add" lists={lists} items={items} products={products} lang={lang} s={s} nameRef={nameField} nameAutofocus={!start.name} />
         <Button type="submit" variant="primary">

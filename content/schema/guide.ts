@@ -18,8 +18,9 @@ export type PreparednessGroup = 'weather' | 'situation' | 'supplies' | 'skills';
 // storage groups in the app (Frugt, Grøntsager, Krydderurter).
 export type CropGroup = 'vegetables' | 'fruit' | 'herbs';
 
-// A line in a stock list that can be ticked off; `id` is stable across pack versions (ticks are
-// stored on the device by id). For Forråd (D-046, pack schema 13): `name` is a short label,
+// A line in a stock list, only in Hjemmeberedskab guides (group 'supplies'); the app shows it as a
+// bullet, with nothing to tick (D-070). `id` is stable across pack versions: things in Forråd link
+// to their line by id. For Forråd (D-046, pack schema 13): `name` is a short label,
 // `amount` the quantity the line gives for one person (the build checks that the number is in the
 // line's own text), and `keywords` the everyday words that should find it (e.g. "makrel").
 // `products` (D-052): common goods that count as the line ("Makrel i tomat"), offered as names

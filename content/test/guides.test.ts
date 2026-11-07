@@ -101,6 +101,14 @@ test('preparedness: a group is required, checklist lines are checked verbatim, c
   assert.ok(problems.some((p) => p.includes('need a group')));
 });
 
+test('a checklist belongs only in a Hjemmeberedskab guide; elsewhere it is a list (D-070)', () => {
+  const text = 'Du må aldrig gå på kompromis med din egen sikkerhed.';
+  const weather = guide({ id: 'w', category: 'preparedness', risk: 'low', checks: [], group: 'weather', blocks: [{ kind: 'checklist', items: [{ id: 'bil-x', text }], page: 1 }] });
+  assert.ok(validateGuides([weather], sources, texts, new Set()).some((p) => p.includes('checklists belong only in Hjemmeberedskab')));
+  const asList = guide({ id: 'w', category: 'preparedness', risk: 'low', checks: [], group: 'weather', blocks: [{ kind: 'list', items: [text], page: 1 }] });
+  assert.deepEqual(validateGuides([asList], sources, texts, new Set()), []);
+});
+
 test('Forråd (D-046): a stock-list amount must be the one in the line\'s own text', () => {
   assert.ok(amountInText({ value: 500, unit: 'g' }, 'Knækbrød (ca. 500 g – omkring 2 pakker)'));
   assert.ok(amountInText({ value: 1500, unit: 'g' }, 'Dåser med tomater (ca. 1,5 kg – 3-4 dåser)'));

@@ -6,9 +6,17 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await expect(page.getByRole('link', { name: 'Ring 112', exact: true })).toHaveAttribute('href', 'tel:112');
 
   // Search from Home.
-  await page.getByRole('searchbox', { name: 'Søg i indholdet' }).fill('kal');
-  await expect(page.getByText('6 fødevarer')).toBeVisible();
-  await page.getByRole('searchbox', { name: 'Søg i indholdet' }).fill('');
+  // Each part shows only when something in it matches; nothing anywhere gives one line (D-070).
+  const homeSearch = page.getByRole('searchbox', { name: 'Søg i indholdet' });
+  await homeSearch.fill('kal');
+  await expect(page.getByRole('region', { name: 'Opbevaring' }).getByRole('listitem')).toHaveCount(6);
+  await homeSearch.fill('blødning');
+  await expect(page.getByRole('region', { name: 'Førstehjælp' })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Opbevaring' })).toHaveCount(0);
+  await expect(page.getByText(/fødevarer matcher/)).toHaveCount(0);
+  await homeSearch.fill('xyzzy');
+  await expect(page.getByText('Ingen resultater for ”xyzzy”')).toBeVisible();
+  await homeSearch.fill('');
 
   // The "Opbevaring" (storage) category.
   await page.getByRole('link', { name: /Opbevaring$/ }).click();
@@ -105,7 +113,7 @@ test('Home lists the categories by how many people need them, growing last; the 
   await page.goto('./');
   await expect(page.getByRole('link', { name: /Dyrkning$/ })).toBeVisible({ timeout: 60_000 });
   const names = await page.locator('main a').evaluateAll((links) => links.map((a) => a.textContent ?? ''));
-  const order = ['Førstehjælp', 'Når det sker', 'Opbevaring', 'Dyrkning'].map((name) => names.findIndex((t) => t.includes(name)));
+  const order = ['Førstehjælp', 'Guides', 'Opbevaring', 'Dyrkning'].map((name) => names.findIndex((t) => t.includes(name)));
   expect(order.every((i) => i >= 0)).toBe(true);
   expect([...order].sort((a, b) => a - b)).toEqual(order);
   await expect(page.getByRole('main').getByRole('link', { name: /Kort$/ })).toHaveCount(0);
@@ -128,5 +136,5 @@ test('Settings: "Søg efter ny version" finds the latest version online and says
 
   await context.setOffline(true);
   await app.getByRole('button', { name: 'Søg efter ny version' }).click();
-  await expect(app.getByRole('status')).toHaveText('Du er ikke på nettet. Prøv igen, når du har forbindelse.');
+  await expect(app.getByRole('status')).toHaveText('Du har ikke internet lige nu. Prøv igen, når du har forbindelse.');
 });

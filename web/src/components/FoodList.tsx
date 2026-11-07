@@ -11,7 +11,9 @@ import { byGroup, groupOfItem } from '../food/groups';
 import { GroupSections } from './GroupSections';
 import { LinkRow, MessageState, RowList } from './ui';
 
-export function FoodList({ items, query, lang, s, grouped = false }: { items: ItemRow[] | null; query: string; lang: Lang; s: Strings; grouped?: boolean }) {
+// `count`: the "N fødevarer" line and the no-match message, for the Opbevaring page; Home's search
+// has its own heading and one message for all parts (D-070).
+export function FoodList({ items, query, lang, s, grouped = false, count = true }: { items: ItemRow[] | null; query: string; lang: Lang; s: Strings; grouped?: boolean; count?: boolean }) {
   const trimmed = query.trim();
   const rows = (list: ItemRow[]) => (
     <RowList>
@@ -22,10 +24,10 @@ export function FoodList({ items, query, lang, s, grouped = false }: { items: It
   );
   return (
     <div>
-      <p className="px-1 pb-2 text-sm text-muted" aria-live="polite">
+      <p className={count ? 'px-1 pb-2 text-sm text-muted' : 'sr-only'} aria-live="polite">
         {items ? s.itemCount(items.length) : ' '}
       </p>
-      {items && items.length === 0 && trimmed !== '' ? <MessageState title={s.noResults(trimmed)} /> : null}
+      {count && items && items.length === 0 && trimmed !== '' ? <MessageState title={s.noResults(trimmed)} /> : null}
       {items && items.length > 0 ? (
         grouped ? <GroupSections idPrefix="storage" groups={byGroup(items, groupOfItem)} s={s} render={rows} /> : rows(items)
       ) : null}

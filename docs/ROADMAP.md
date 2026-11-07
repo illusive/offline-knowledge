@@ -64,6 +64,7 @@ Goal: one end-to-end path from source to an offline guide on an iPhone.
 
   **Still to check on the iPhone:** the keyboard's search key, the × and large text.
 - [x] No sirens row in Tools (D-061, 2026-11-06): it was a guide, not a tool; the guide stays in "Når det sker".
+- [x] Cohesion pass (D-070, 2026-11-07): "Guides" with "N emner"; no tick boxes in guides (Hjemmeberedskab as bullets with "Se dit forråd", the car list in Snestorm as a list); compass "Stop med at holde kurs" in place; Home search without "0 fødevarer"; a wording pass; one X to close every sheet and one confirm sheet for deleting and restoring; shared page header and cards. Content 0.19.0. **Still to check on the iPhone:** the confirm sheet, the compass with real readings, the map's places as a sheet.
 - [x] "Til toppen" on guides and foods (D-069, 2026-11-06), shown after one and a half screens.
 - [x] Omregn mål (D-068, 2026-11-06): US cups, spoons, ounces, pounds, inches and °F to metric, from NIST Handbook 44 Appendix C.
 - [x] HLR-metronom (D-067, 2026-11-06): 110 a minute, count to 30, then 2 breaths; linked from the CPR guides. **Still to check on the iPhone:** sound, timing, screen kept on.

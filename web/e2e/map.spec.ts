@@ -84,7 +84,7 @@ test('Steder på kortet: emergency places on by default; choices are remembered'
   await page.goto('./#/map');
   await page.getByRole('button', { name: 'Ikke nu – vis kortet' }).click();
   await page.getByRole('button', { name: 'Vælg steder på kortet' }).click();
-  const panel = page.getByRole('region', { name: 'Steder på kortet' });
+  const panel = page.getByRole('dialog', { name: 'Steder på kortet' }); // a sheet like the others (D-070)
   await expect(panel.getByRole('switch', { name: /Nødhjælp og sundhed/ })).toBeChecked();
   await expect(panel.getByRole('switch', { name: /Mad og drikke/ })).not.toBeChecked();
   await panel.getByRole('switch', { name: /Mad og drikke/ }).check();
@@ -92,5 +92,5 @@ test('Steder på kortet: emergency places on by default; choices are remembered'
   // After a reload the first-time step comes back (once per app session); dismiss it again.
   await page.getByRole('button', { name: 'Ikke nu – vis kortet' }).click();
   await page.getByRole('button', { name: 'Vælg steder på kortet' }).click();
-  await expect(page.getByRole('region', { name: 'Steder på kortet' }).getByRole('switch', { name: /Mad og drikke/ })).toBeChecked();
+  await expect(page.getByRole('dialog', { name: 'Steder på kortet' }).getByRole('switch', { name: /Mad og drikke/ })).toBeChecked();
 });

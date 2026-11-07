@@ -5,6 +5,7 @@
 
 import { formatDayMonth, formatDuration, monthLetters } from '../i18n/format';
 import type { Lang, Strings } from '../i18n/strings';
+import { Card } from '../components/ui';
 import { yearOfDayLengths } from './sun';
 
 const W = 320;
@@ -45,7 +46,7 @@ export function YearChart({ year, month, day, lat, lon, lang, t }: { year: numbe
   });
 
   return (
-    <section aria-labelledby="sun-year-title" className="flex flex-col gap-3 rounded-card bg-surface px-[20px] py-5">
+    <Card aria-labelledby="sun-year-title" className="flex flex-col gap-3">
       <h2 id="sun-year-title" className="text-lg font-semibold">
         {t.yearTitle}
       </h2>
@@ -77,6 +78,6 @@ export function YearChart({ year, month, day, lat, lon, lang, t }: { year: numbe
         <p>{shortestText}</p>
         <p>{longestText}</p>
       </div>
-    </section>
+    </Card>
   );
 }

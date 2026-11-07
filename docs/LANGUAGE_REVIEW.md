@@ -20,7 +20,10 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
   - "hjertemassage", not "brystkompressioner"
   - "kog", not "bring i kog"
   - "køkkenskab", not "spisekammer"
-  - "uden net", not "offline"
+  - "uden internet", not "offline" or "uden net" (as in "Klar uden internet"; D-070)
+  - "på telefonen", not "på enheden", for what is kept on the phone
+  - "Slet" for deleting for good (a thing in Forråd, a map area); "Fjern" for taking something off a list (a bookmark, a date)
+  - Quotes as ”…”, as in the content; no full stop after a message title
   - "guide" (pl. "guides"), not "vejledning", for the app's own guides. "Vejledning" is kept only where it means instructions in general.
 - **Explaining necessary terms:** give the explanation in brackets the first time the word appears, e.g. "ethylen (en gas, som frugt og grønt selv afgiver …)", "pacemaker (en lille dims under huden)", "fiberdug (en tynd, hvid dug …)".
 - **Numbers and units:**
@@ -85,6 +88,7 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
 - **Når datoen er overskredet (D-054): to review.** A new `high` guide, rewritten from Fødevarestyrelsen with Tænk's list of examples. Check each block against "Vis original", especially the mould line and "Du bliver ikke syg af at have smagt på den" (the source adds why: the bacteria that spoil food do not make you ill straight away).
 - **Sizes (Forråd, D-050):** "Størrelse" with "Mængde", "Enhed" and "Andet" (with "Beskriv størrelsen", "Fx familiepakke"), and the unit "stk.".
 - **Products under the stock-list lines (Forråd, D-052): to review.** 220 of our own product names in the three Hjemmeberedskab guides (`products` next to each line's keywords), e.g. "Makrel i tomat", "Kikærter på dåse", "Fast medicin", "Hue og vanter". Check the names, which line each is on (it decides the tick), and what is missing. Also "Scannet før".
+- **Cohesion pass (D-070):** "Guides" for the category (was "Når det sker") and "N emner" on its tile; "Se dit forråd"; "Stop med at holde kurs"; "Ingen resultater for ”…”"; "Sikkerhedskopi" and its body; "Vil du slette …?" with "Det kan ikke fortrydes."; "Vil du slette kortet over …?" with "Du kan hente det igen, når du har internet."; "Erstat".
 - **Months (Forråd, D-051):** the button "Fjern dato" next to an optional month.
 
 ### Growing
@@ -109,8 +113,6 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
   - "Tæller som: …" for an item that covers a stock-list line.
   - "Tjek forrådet hvert halve år" (from the UK checklist's "every six months").
   - "Bedst før" with only month and year, and its help text ("Har du flere, så vælg den, der udløber først").
-  - "Gem og tilføj en til".
-  - "Mere" for the optional size.
 
 ## 3. Doubts (run again)
 

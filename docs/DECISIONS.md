@@ -673,6 +673,33 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-070 — Cohesion pass: Guides, no tick boxes, one way to close and confirm
+
+- **Date:** 2026-11-07
+- **Decision (owner):** the app had grown piece by piece. This pass makes names, structure and behaviour consistent; text rewrites stay with the owner's review (`docs/LANGUAGE_REVIEW.md`).
+- **"Guides":** "Når det sker" is called "Guides" everywhere: the Home tile, the page title, its search ("Søg i guides"), the Home search heading and the saved list. The tile counts "N emner". The groups inside (Før det sker, Hvis det sker, Hjemmeberedskab, Gode at kunne) are unchanged.
+- **Guides are for reading; no tick boxes:**
+  - The four Hjemmeberedskab guides show their lines as bullets. The ticks (D-040, D-048) and "Du har X af Y" are gone.
+  - Each of the four ends with "Se dit forråd". Forråd keeps "Se anbefalingerne: …" per category.
+  - The lines stay `checklist` blocks in the content, because they carry Forråd's data (D-046, D-052): name, amount, keywords, products. The build now allows a checklist only in a Hjemmeberedskab guide.
+  - The car list in Snestorm is a plain list. Its tick boxes never worked, because the guide was not one of Forråd's lists.
+  - Things added by ticking stay in Forråd as ordinary things. Old ticks from before D-048 are still moved into Forråd once.
+  - Content 0.19.0; the pack schema is unchanged (13).
+- **Compass:** while a course is held, the same button reads "Stop med at holde kurs". How to turn is the line under the direction ("Kurs 42° · Drej 30° til venstre"), so the page does not grow.
+- **Home search:** each part (first aid, guides, foods, crops) shows only when something in it matches. When nothing matches anywhere, one line says "Ingen resultater for ”…”". Before, a search that found only guides also said "Ingen fødevarer matcher".
+- **Words** (style rules in `docs/LANGUAGE_REVIEW.md`):
+  - "uden internet" everywhere; "wi-fi"; "på telefonen".
+  - "Slet" deletes for good; "Fjern" takes something off a list.
+  - Quotes as ”…”; no full stop after a message title; a space before "…"; "Rediger".
+  - Counts with a singular.
+  - "Sikkerhedskopi" for the backup, which holds Forråd, the saved list and the settings.
+- **One way to close and to confirm:**
+  - Every sheet closes with an X at the top right (`SheetHeader`): the add sheet ("Færdig" before), the scan sheets ("Annuller"), the sun place sheet ("Luk"), and the map's places, now a sheet with a dimmed backdrop and focus kept inside. The map download flow keeps its X and back arrow and loses the extra "Luk" at the bottom.
+  - Deleting a thing, deleting a map area and restoring a backup ask in one sheet (`useConfirm`), with the red button (D-054) and "Annuller", instead of the browser's confirm box or tapping twice.
+  - Removing a bookmark and the Forråd counter at 0 (undo by design, D-054) do not ask.
+- **Shared parts:** guide and food pages use the shared page header (`SubPageHeader`, now with `lang` for a Danish title in the English app). The tool cards with the standard padding use `Card`; cards with other padding are left as they are.
+- **Alternatives:** keeping "Når det sker" as the page name with "Guides" only on the tile (one place, one name was preferred); per-line "I forrådet" hints in the guides (the guides are for reading; Forråd is the record); renaming the content's `checklist` kind (churn in the pack and the app for no change on screen).
+
 ## D-069 — "Til toppen" on long pages
 
 - **Date:** 2026-11-06

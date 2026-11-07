@@ -2,7 +2,7 @@
 // as the food guides' US recipes need. The factors are NIST's (convert/units.ts); all on the phone.
 
 import { useState } from 'react';
-import { inputClass, Page, SubPageHeader } from '../components/ui';
+import { Card, inputClass, Page, SubPageHeader } from '../components/ui';
 import { convert, UNITS, type Converted, type Unit } from '../convert/units';
 import { localeOf, parseDecimal } from '../i18n/format';
 import type { Lang, Strings } from '../i18n/strings';
@@ -21,7 +21,7 @@ export function ConvertScreen({ lang, s }: { lang: Lang; s: Strings }) {
     <Page>
       <SubPageHeader backLabel={s.back} backTo={hrefs.tools} title={t.title} subtitle={t.subtitle} />
       <div className="flex flex-col gap-3">
-        <div className="flex flex-col gap-4 rounded-card bg-surface px-[20px] py-5">
+        <Card as="div" className="flex flex-col gap-4">
           <div className="flex flex-wrap gap-[12px]">
             <label className="flex min-w-[7rem] flex-1 flex-col gap-1">
               <span className="font-semibold">{t.amount}</span>
@@ -41,7 +41,7 @@ export function ConvertScreen({ lang, s }: { lang: Lang; s: Strings }) {
           <p role="status" className="text-[min(2.25rem,10vw)] leading-tight tracking-tight tabular-nums">
             {result ? formatResult(result, lang) : amount.trim() === '' ? '' : t.notANumber}
           </p>
-        </div>
+        </Card>
         <p className="px-1 text-sm text-muted">{t.note}</p>
         <p className="px-1 text-sm text-muted">{t.source}</p>
       </div>

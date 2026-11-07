@@ -5,7 +5,7 @@
 import { Download, LocateFixed, LocateOff, MapPin, X } from 'lucide-react';
 import type { Map as MapLibreMap, MapMouseEvent } from 'maplibre-gl';
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
-import { MessageState, Page } from '../components/ui';
+import { MessageState, Page, Sheet, SheetHeader } from '../components/ui';
 import type { Lang, Strings } from '../i18n/strings';
 import { mapClient } from '../map/client';
 import { DownloadFlow, type FlowStep } from '../map/DownloadFlow';
@@ -251,7 +251,9 @@ export function MapScreen({ lang, s }: { lang: Lang; s: Strings }) {
           <MapPin aria-hidden="true" className="size-5" />
         </button>
       ) : null}
-      {placesOpen ? <PlacesPanel groups={poiGroups} onChange={setPoiGroups} onClose={() => setPlacesOpen(false)} s={s} /> : null}
+      <Sheet open={placesOpen} onClose={() => setPlacesOpen(false)} labelledBy="places-title">
+        <PlacesPanel groups={poiGroups} onChange={setPoiGroups} onClose={() => setPlacesOpen(false)} s={s} />
+      </Sheet>
       {place && !placesOpen ? (
         <div role="status" className="fixed inset-x-[12px] bottom-[calc(96px+env(safe-area-inset-bottom))] z-10 mx-auto flex max-w-[420px] items-center gap-[12px] rounded-2xl bg-surface px-[16px] py-3 shadow-lg">
           <span aria-hidden="true" className="size-3 shrink-0 rounded-full" style={{ background: POI_GROUPS.find((g) => g.key === place.group)?.color }} />
@@ -310,21 +312,15 @@ function Notice({ text }: { text: string }) {
   );
 }
 
-// Which places the map shows, by group (pois.ts). Choices are remembered on the device.
+// Which places the map shows, by group (pois.ts), in a sheet like the others (D-070). Choices are
+// remembered on the device.
 function PlacesPanel({ groups, onChange, onClose, s }: { groups: PoiGroup[]; onChange: (g: PoiGroup[]) => void; onClose: () => void; s: Strings }) {
   const t = s.places;
   const toggle = (key: PoiGroup) => onChange(groups.includes(key) ? groups.filter((g) => g !== key) : [...groups, key]);
   return (
-    <section aria-labelledby="places-title" className="fixed inset-x-0 bottom-0 z-20 mx-auto max-h-[75vh] max-w-2xl overflow-y-auto rounded-t-[28px] bg-background px-[16px] pt-4 pb-[calc(96px+env(safe-area-inset-bottom))] shadow-2xl">
-      <div className="mb-2 flex items-center justify-between gap-[12px] px-1">
-        <h2 id="places-title" className="text-xl font-semibold">
-          {t.title}
-        </h2>
-        <button type="button" onClick={onClose} aria-label={s.mapArea.close} className="grid size-11 place-items-center rounded-full bg-surface">
-          <X aria-hidden="true" className="size-5" />
-        </button>
-      </div>
-      <p className="mb-3 px-1 text-sm text-muted">{t.intro}</p>
+    <>
+      <SheetHeader id="places-title" title={t.title} closeLabel={s.close} onClose={onClose} />
+      <p className="mt-2 mb-3 px-1 text-sm text-muted">{t.intro}</p>
       <ul className="flex flex-col divide-y divide-border overflow-hidden rounded-card bg-surface">
         {POI_GROUPS.map((g) => {
           const on = groups.includes(g.key);
@@ -343,6 +339,6 @@ function PlacesPanel({ groups, onChange, onClose, s }: { groups: PoiGroup[]; onC
         })}
       </ul>
       <p className="mt-3 px-1 text-sm text-muted">{t.note}</p>
-    </section>
+    </>
   );
 }

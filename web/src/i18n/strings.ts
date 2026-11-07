@@ -8,6 +8,7 @@ export interface Strings {
   searchLabel: string;
   clearSearch: string;
   noResults: (query: string) => string;
+  noSearchResults: (query: string) => string;
   itemCount: (n: number) => string;
   locations: Record<'pantry' | 'fridge' | 'freezer', string>;
   basis: Record<'fromPurchase' | 'afterOpening' | 'afterThawing' | 'unspecified', string | null>;
@@ -71,7 +72,8 @@ export interface Strings {
     pause: string;
     resume: string;
     remove: string;
-    confirmRemove: string;
+    removeConfirm: (label: string) => string;
+    removeBody: string;
     downloadFailed: string;
     areaErrors: Record<'changed' | 'network' | 'incomplete' | 'unknown', string>;
     back: string;
@@ -458,11 +460,7 @@ export interface Strings {
   prepareSkills: string;
   prepareSearchPlaceholder: string;
   prepareSearchLabel: string;
-  checklistProgress: (done: number, total: number) => string;
-  checklistInForraad: (names: string) => string;
-  checklistWaterInForraad: string;
-  checklistHave: string;
-  checklistMissing: string;
+  seeYourStores: string;
   storeThisCrop: string;
   growingSearchPlaceholder: string;
   growingSearchLabel: string;
@@ -478,6 +476,10 @@ export interface Strings {
   savedCount: (n: number) => string;
   savedUnavailable: string;
   remove: string;
+  close: string;
+  cancel: string;
+  cannotUndo: string;
+  replace: string;
 }
 
 export const strings: Record<Lang, Strings> = {
@@ -486,8 +488,9 @@ export const strings: Record<Lang, Strings> = {
     searchPlaceholder: 'Søg efter en fødevare',
     searchLabel: 'Søg efter en fødevare',
     clearSearch: 'Ryd søgning',
-    noResults: (q) => `Ingen fødevarer matcher "${q}".`,
-    itemCount: (n) => `${n} fødevarer`,
+    noResults: (q) => `Ingen fødevarer matcher ”${q}”`,
+    noSearchResults: (q) => `Ingen resultater for ”${q}”`,
+    itemCount: (n) => (n === 1 ? '1 fødevare' : `${n} fødevarer`),
     locations: { pantry: 'Køkkenskab', fridge: 'Køleskab', freezer: 'Fryser' },
     basis: { fromPurchase: 'fra købsdato', afterOpening: 'efter åbning', afterThawing: 'efter optøning', unspecified: null },
     units: {
@@ -510,7 +513,7 @@ export const strings: Record<Lang, Strings> = {
     packErrorBody: 'Appens indhold kunne ikke åbnes. Luk appen helt, og åbn den igen.',
     notFound: 'Fødevaren blev ikke fundet.',
     back: 'Tilbage',
-    loading: 'Indlæser…',
+    loading: 'Indlæser …',
     offlineReady: 'Appen er nu klar til brug uden internet.',
     updateReady: 'En ny version er klar.',
     updateAction: 'Opdater',
@@ -526,7 +529,7 @@ export const strings: Record<Lang, Strings> = {
     emergencySubtitle: 'Ring til alarmcentralen',
     emergencyCallLabel: 'Ring 112',
     offlineReadyStatus: 'Klar uden internet',
-    preparingOffline: 'Gør klar til brug uden net …',
+    preparingOffline: 'Gør klar til brug uden internet …',
     navLabel: 'Hovedmenu',
     tabs: { home: 'Hjem', map: 'Kort', forraad: 'Forråd', tools: 'Værktøjer' },
     settingsOpen: 'Indstillinger',
@@ -539,7 +542,7 @@ export const strings: Record<Lang, Strings> = {
     mapArea: {
       open: 'Hent kort',
       close: 'Luk',
-      title: 'Kort uden net',
+      title: 'Kort uden internet',
       yourAreas: 'Dine områder',
       choices: { home: 'Omkring mit hjem', region: 'Region', country: 'Hele landet' },
       noHome: 'Vælg først, hvor du bor.',
@@ -552,8 +555,8 @@ export const strings: Record<Lang, Strings> = {
       radius: (km) => `${km} km`,
       aroundHome: (km) => `${km} km omkring hjemmet`,
       calculating: 'Beregner størrelse …',
-      freeSpace: (size) => `Ledig plads på enheden: ${size}`,
-      notEnoughSpace: 'Der er ikke plads nok på enheden.',
+      freeSpace: (size) => `Ledig plads på telefonen: ${size}`,
+      notEnoughSpace: 'Der er ikke plads nok på telefonen.',
       download: (size) => `Hent ${size}`,
       needsNetwork: 'Du skal have internet for at hente kort. Det, du allerede har hentet, virker også uden.',
       states: { ready: 'Klar uden internet', downloading: 'Henter', paused: 'Sat på pause' },
@@ -561,7 +564,8 @@ export const strings: Record<Lang, Strings> = {
       pause: 'Pause',
       resume: 'Fortsæt',
       remove: 'Slet',
-      confirmRemove: 'Tryk igen for at slette',
+      removeConfirm: (label) => `Vil du slette kortet over ${label}?`,
+      removeBody: 'Du kan hente det igen, når du har internet.',
       downloadFailed: 'Kortet kunne ikke hentes. Prøv igen, når du har internet.',
       areaErrors: {
         changed: 'Kortet er blevet opdateret, siden hentningen startede. Slet området, og hent det igen.',
@@ -577,7 +581,7 @@ export const strings: Record<Lang, Strings> = {
       kindSize: { home: '10 km: ca. 7–20 MB · 25 km: ca. 25–45 MB', region: 'Ca. 80–175 MB', country: 'Ca. 600 MB' },
       chooseArea: 'Vælg område',
       skipForNow: 'Ikke nu – vis kortet',
-      offlineNow: 'Du har ikke internet lige nu. Hent kortet, næste gang du har forbindelse – gerne på wifi.',
+      offlineNow: 'Du har ikke internet lige nu. Hent kortet, næste gang du har forbindelse – gerne på wi-fi.',
       kindTitle: 'Hvilket område vil du hente?',
       kindHelp: {
         home: 'En cirkel omkring dit hjem på 10, 25 eller 50 km.',
@@ -623,7 +627,7 @@ export const strings: Record<Lang, Strings> = {
       tryAgain: 'Prøv igen',
       unsupported: 'Denne enhed har ikke et kompas, som appen kan bruge.',
       holdCourse: 'Hold denne kurs',
-      clearCourse: 'Slet kurs',
+      clearCourse: 'Stop med at holde kurs',
       course: (deg) => `Kurs ${deg}°`,
       onCourse: 'Du holder kursen',
       turnRight: (deg) => `Drej ${deg}° til højre`,
@@ -715,7 +719,7 @@ export const strings: Record<Lang, Strings> = {
       back: 'Strømmen er tilbage',
       backDone: 'Godt. Tjek, at køleskabet er højst 5 °C.',
       source: 'Tiderne er fra USDA og CDC (USA), oversat. Fødevarestyrelsen anbefaler højst 5 °C i køleskabet.',
-      guide: 'Læs mere i “Strømmen er gået”',
+      guide: 'Læs mere i ”Strømmen er gået”',
     },
     convert: {
       title: 'Omregn mål',
@@ -750,7 +754,7 @@ export const strings: Record<Lang, Strings> = {
       resume: 'Fortsæt',
       stop: 'Stop',
       source: '110 tryk i minuttet – midt i de 100–120, som Førstehjælpens ABC og ERC 2025 anbefaler.',
-      guide: 'Læs mere i “Hjertemassage og kunstigt åndedræt”',
+      guide: 'Læs mere i ”Hjertemassage og kunstigt åndedræt”',
       useIt: 'Brug HLR-metronomen',
     },
     boil: {
@@ -763,7 +767,7 @@ export const strings: Record<Lang, Strings> = {
       done: 'Færdig. Lad vandet køle af.',
       again: 'Start igen',
       stop: 'Stop',
-      guide: 'Læs mere i “Der er intet vand”',
+      guide: 'Læs mere i ”Der er intet vand”',
     },
     forraad: {
       title: 'Forråd',
@@ -782,7 +786,7 @@ export const strings: Record<Lang, Strings> = {
       emptyStore: 'Der er intet i forrådet endnu.',
       searchPlaceholder: 'Søg i forrådet',
       searchLabel: 'Søg i forrådet',
-      noMatches: (q) => `Intet i forrådet matcher "${q}".`,
+      noMatches: (q) => `Intet i forrådet matcher ”${q}”`,
       seeAllRecommendations: 'Se, hvad myndighederne anbefaler',
       seeRecommendations: (title) => `Se anbefalingerne: ${title}`,
       waterLitres: (unit) => `${unit === 'gal' ? 'Gallon' : 'Liter'} på lager`,
@@ -799,7 +803,7 @@ export const strings: Record<Lang, Strings> = {
       datesGuide: 'Når datoen er overskredet',
       add: 'Tilføj',
       addIn: (category) => `Tilføj til ${category.toLowerCase()}`,
-      editTitle: 'Redigér',
+      editTitle: 'Rediger',
       addTitle: 'Tilføj til forrådet',
       name: 'Navn',
       namePlaceholder: 'Fx makrel i tomat',
@@ -834,12 +838,12 @@ export const strings: Record<Lang, Strings> = {
       cancel: 'Annuller',
       remove: 'Slet',
       removeConfirm: (name) => `Vil du slette ${name}?`,
-      editDetails: 'Redigér',
+      editDetails: 'Rediger',
       bestBeforeNew: 'Bedst før på de nye',
       bestBeforeNewHelp: 'Udløber de nye før dem, du har, gemmes deres dato.',
       stocked: (name, n, total) => `${name}: ${n} stk. lagt til, nu ${total} stk.`,
       deleted: (name) => `${name} er slettet.`,
-      removeOnClose: 'Den fjernes fra forrådet, når du lukker.',
+      removeOnClose: 'Den slettes fra forrådet, når du lukker.',
       waterChecked: 'Vandet er tjekket.',
       close: 'Luk',
       countLabel: (n) => `${n} stk.`,
@@ -858,8 +862,8 @@ export const strings: Record<Lang, Strings> = {
       lookupOffline: 'Varen kan ikke slås op uden internet. Skriv navnet – så husker appen stregkoden næste gang.',
       productFrom: (source) => `Varens navn er fra ${source}.`,
       scanPrivacy: 'Med internet sender appen kun stregkoden til Open Food Facts for at finde varens navn.',
-      backup: 'Kopi af forrådet',
-      backupBody: 'Det, du gemmer i appen, ligger kun på telefonen. Sletter du appen, forsvinder det. Gem en kopi i Filer, så du kan hente det igen.',
+      backup: 'Sikkerhedskopi',
+      backupBody: 'Dit forråd, det, du har gemt, og dine indstillinger ligger kun på telefonen. Sletter du appen, forsvinder det. Gem en kopi i Filer, så du kan hente det igen.',
       saveCopy: 'Gem en kopi',
       restoreCopy: 'Hent fra kopi',
       restoreConfirm: (items) => `Kopien har ${items === 1 ? '1 ting' : `${items} ting`} i forrådet. Vil du erstatte det, der er i appen nu?`,
@@ -889,7 +893,7 @@ export const strings: Record<Lang, Strings> = {
       litres: 'Liter',
       gallons: 'Gallon (US)',
       sourcesIntro: 'Alt indhold kommer fra disse kilder. Hver guide viser sine egne kilder nederst.',
-      sourcesCount: (n) => `${n} kilder`,
+      sourcesCount: (n) => (n === 1 ? '1 kilde' : `${n} kilder`),
       appVersion: 'App og version',
       appBuild: (date, commit) => `Appen er fra ${date} (${commit})`,
       checkUpdate: 'Søg efter ny version',
@@ -897,13 +901,13 @@ export const strings: Record<Lang, Strings> = {
       upToDate: 'Du har den nyeste version.',
       updateFound: 'Der er en ny version. Den hentes nu …',
       updateProgress: (done, total) => `Henter ${done} af ${total} filer …`,
-      updateOffline: 'Du er ikke på nettet. Prøv igen, når du har forbindelse.',
+      updateOffline: 'Du har ikke internet lige nu. Prøv igen, når du har forbindelse.',
       updateFailed: 'Kunne ikke søge. Prøv igen senere.',
       about: 'Om stead',
       aboutBody: [
         'stead samler råd fra myndigheder og andre pålidelige kilder, så du har dem – også uden internet. Vi skriver ikke selv rådene.',
-        'Teksterne er skrevet om til et enkelt sprog. Med "Vis original" kan du altid se kildens egne ord.',
-        'Står der "Prøveversion" på en guide, er den endnu ikke gennemlæst mod kilden.',
+        'Teksterne er skrevet om til et enkelt sprog. Med ”Vis original” kan du altid se kildens egne ord.',
+        'Står der ”Prøveversion” på en guide, er den endnu ikke gennemlæst mod kilden.',
         'Alt, hvad du gemmer og vælger, bliver på din telefon. Appen har ingen konto og sender ingen data – bortset fra stregkoden, når du scanner en vare med internet. Den går til Open Food Facts, så appen kan finde varens navn.',
       ],
     },
@@ -968,7 +972,7 @@ export const strings: Record<Lang, Strings> = {
     sourcesHeading: 'Kilder',
     basedOn: (names) => `Kilde: ${names}`,
     firstAid: 'Førstehjælp',
-    firstAidSubtitle: (n) => `${n} livreddende guides`,
+    firstAidSubtitle: (n) => (n === 1 ? '1 livreddende guide' : `${n} livreddende guides`),
     firstAidIntro: 'Skrevet i et enkelt sprog med udgangspunkt i Forsvarets håndbog Førstehjælpens ABC. Under hver guide kan du også se kildens egne ord.',
     guideNotFound: 'Guiden blev ikke fundet.',
     guideSource: (name, from, to) => `Kilde: ${name}, s. ${from === to ? from : `${from}–${to}`}`,
@@ -977,7 +981,7 @@ export const strings: Record<Lang, Strings> = {
     relatedGuides: 'Se også',
     firstAidSearchPlaceholder: 'Søg i førstehjælp, fx blødning',
     firstAidSearchLabel: 'Søg i førstehjælp',
-    noGuideResults: (q) => `Ingen guides matcher "${q}".`,
+    noGuideResults: (q) => `Ingen guides matcher ”${q}”`,
     allGuides: 'Alle guides',
     readMore: 'Læs mere',
     abbreviationsLabel: 'Forkortelser',
@@ -1011,26 +1015,22 @@ export const strings: Record<Lang, Strings> = {
       },
     },
     totalTopics: (n) => `${n} emner`,
-    foodCount: (n) => `${n} fødevarer`,
+    foodCount: (n) => (n === 1 ? '1 fødevare' : `${n} fødevarer`),
     growing: 'Dyrkning',
     foodGroups: { fruit: 'Frugt', vegetables: 'Grøntsager', herbs: 'Krydderurter', meat: 'Kød', fish: 'Fisk' },
     growingIntro: 'Så, pas og høst – og gem frø til næste år. Nemme afgrøder til det danske klima.',
     growingCount: (n) => (n === 1 ? '1 afgrøde' : `${n} afgrøder`),
     growingSections: { sowing: 'Såning', conditions: 'Jord og placering', care: 'Pasning', harvest: 'Høst', seeds: 'Frø til næste år', neighbours: 'Naboplanter og nyt sted næste år', noPrep: 'Kræver ingen tilberedning', somePrep: 'Kræver lidt tilberedning', needsPrep: 'Kræver tilberedning' },
-    prepare: 'Når det sker',
+    prepare: 'Guides',
     prepareIntro: 'Sådan forbereder du dig på storm, stormflod og sne, hvad du gør, hvis strøm, vand eller varme forsvinder – og hvad du bør have derhjemme. Myndighederne anbefaler, at du kan klare dig selv i tre døgn.',
-    prepareCount: (n) => (n === 1 ? '1 guide' : `${n} guides`),
+    prepareCount: (n) => (n === 1 ? '1 emne' : `${n} emner`),
     prepareWeather: 'Før det sker',
     prepareSituations: 'Hvis det sker',
     prepareSupplies: 'Hjemmeberedskab',
     prepareSkills: 'Gode at kunne',
     prepareSearchPlaceholder: 'Søg, fx strøm eller vand',
-    prepareSearchLabel: 'Søg i Når det sker',
-    checklistProgress: (done, total) => `Du har ${done} af ${total}`,
-    checklistInForraad: (names) => `I forrådet: ${names}`,
-    checklistWaterInForraad: 'Ret vandet i Forråd',
-    checklistHave: 'Du har det',
-    checklistMissing: 'Mangler',
+    prepareSearchLabel: 'Søg i guides',
+    seeYourStores: 'Se dit forråd',
     storeThisCrop: 'Holdbarhed og konservering',
     growingSearchPlaceholder: 'Søg efter en afgrøde',
     growingSearchLabel: 'Søg i dyrkning',
@@ -1039,21 +1039,26 @@ export const strings: Record<Lang, Strings> = {
     saveLabel: 'Gem til senere',
     savedOpenLabel: (n) => (n === 0 ? 'Gemte' : `Gemte (${n})`),
     savedTitle: 'Gemte',
-    savedIntro: 'Det, du har gemt, ligger kun på denne enhed.',
+    savedIntro: 'Det, du har gemt, ligger kun på telefonen.',
     savedEmptyTitle: 'Du har ikke gemt noget endnu',
-    savedEmptyBody: 'Tryk på "Gem" ved en guide, en afgrøde eller en fødevare. Så finder du den her.',
+    savedEmptyBody: 'Tryk på ”Gem” ved en guide, en afgrøde eller en fødevare. Så finder du den her.',
     savedNoneHere: 'Intet gemt her endnu.',
     savedCount: (n) => (n === 1 ? '1 gemt' : `${n} gemt`),
     savedUnavailable: 'Findes ikke længere i appen',
     remove: 'Fjern',
+    close: 'Luk',
+    cancel: 'Annuller',
+    cannotUndo: 'Det kan ikke fortrydes.',
+    replace: 'Erstat',
   },
   en: {
     appTitle: 'stead',
     searchPlaceholder: 'Search for a food',
     searchLabel: 'Search for a food',
     clearSearch: 'Clear search',
-    noResults: (q) => `No foods match “${q}”.`,
-    itemCount: (n) => `${n} foods`,
+    noResults: (q) => `No foods match “${q}”`,
+    noSearchResults: (q) => `No results for “${q}”`,
+    itemCount: (n) => (n === 1 ? '1 food' : `${n} foods`),
     locations: { pantry: 'Cupboard', fridge: 'Fridge', freezer: 'Freezer' },
     basis: { fromPurchase: 'from purchase', afterOpening: 'after opening', afterThawing: 'after thawing', unspecified: null },
     units: {
@@ -1118,8 +1123,8 @@ export const strings: Record<Lang, Strings> = {
       radius: (km) => `${km} km`,
       aroundHome: (km) => `${km} km around home`,
       calculating: 'Calculating size …',
-      freeSpace: (size) => `Free space on this device: ${size}`,
-      notEnoughSpace: 'There is not enough space on this device.',
+      freeSpace: (size) => `Free space on this phone: ${size}`,
+      notEnoughSpace: 'There is not enough space on this phone.',
       download: (size) => `Download ${size}`,
       needsNetwork: 'You need an internet connection to download maps. Maps you have already downloaded also work offline.',
       states: { ready: 'Ready without internet', downloading: 'Downloading', paused: 'Paused' },
@@ -1127,7 +1132,8 @@ export const strings: Record<Lang, Strings> = {
       pause: 'Pause',
       resume: 'Resume',
       remove: 'Delete',
-      confirmRemove: 'Tap again to delete',
+      removeConfirm: (label) => `Delete the map of ${label}?`,
+      removeBody: 'You can download it again when you have internet.',
       downloadFailed: 'The map could not be downloaded. Try again when you have internet.',
       areaErrors: {
         changed: 'The map was updated after the download started. Delete the area and download it again.',
@@ -1189,7 +1195,7 @@ export const strings: Record<Lang, Strings> = {
       tryAgain: 'Try again',
       unsupported: 'This device has no compass the app can use.',
       holdCourse: 'Hold this course',
-      clearCourse: 'Clear course',
+      clearCourse: 'Stop holding course',
       course: (deg) => `Course ${deg}°`,
       onCourse: 'You are on course',
       turnRight: (deg) => `Turn ${deg}° right`,
@@ -1424,8 +1430,8 @@ export const strings: Record<Lang, Strings> = {
       lookupOffline: 'The product cannot be looked up without internet. Type the name – the app remembers the barcode next time.',
       productFrom: (source) => `Product name from ${source}.`,
       scanPrivacy: 'With internet, the app sends only the barcode to Open Food Facts to find the product name.',
-      backup: 'Copy of your supplies',
-      backupBody: 'What you save in the app is only on this phone. If you delete the app, it is gone. Save a copy in Files so you can get it back.',
+      backup: 'Backup',
+      backupBody: 'Your supplies, what you have saved and your settings are only on this phone. If you delete the app, they are gone. Save a copy in Files so you can get them back.',
       saveCopy: 'Save a copy',
       restoreCopy: 'Restore from a copy',
       restoreConfirm: (items) => `The copy has ${items === 1 ? '1 item' : `${items} items`} in your supplies. Replace what is in the app now?`,
@@ -1455,7 +1461,7 @@ export const strings: Record<Lang, Strings> = {
       litres: 'Litres',
       gallons: 'Gallons (US)',
       sourcesIntro: 'All content comes from these sources. Each guide lists its own sources at the bottom.',
-      sourcesCount: (n) => `${n} sources`,
+      sourcesCount: (n) => (n === 1 ? '1 source' : `${n} sources`),
       appVersion: 'App and version',
       appBuild: (date, commit) => `The app is from ${date} (${commit})`,
       checkUpdate: 'Check for a new version',
@@ -1534,7 +1540,7 @@ export const strings: Record<Lang, Strings> = {
     sourcesHeading: 'Sources',
     basedOn: (names) => `Source: ${names}`,
     firstAid: 'First aid',
-    firstAidSubtitle: (n) => `${n} life-saving guides (in Danish)`,
+    firstAidSubtitle: (n) => (n === 1 ? '1 life-saving guide (in Danish)' : `${n} life-saving guides (in Danish)`),
     firstAidIntro: 'Written in plain Danish from the Danish Defence handbook Førstehjælpens ABC. Each guide can also show the source\'s own words.',
     guideNotFound: 'Guide not found.',
     guideSource: (name, from, to) => `Source: ${name}, ${from === to ? `p. ${from}` : `pp. ${from}–${to}`}`,
@@ -1571,26 +1577,22 @@ export const strings: Record<Lang, Strings> = {
       },
     },
     totalTopics: (n) => `${n} topics`,
-    foodCount: (n) => `${n} foods`,
+    foodCount: (n) => (n === 1 ? '1 food' : `${n} foods`),
     growing: 'Growing food',
     foodGroups: { fruit: 'Fruit', vegetables: 'Vegetables', herbs: 'Herbs', meat: 'Meat', fish: 'Fish' },
     growingIntro: 'Sow, care for and harvest crops – and save seeds for next year. Easy crops for the Danish climate. (In Danish.)',
     growingCount: (n) => (n === 1 ? '1 crop' : `${n} crops`),
     growingSections: { sowing: 'Sowing', conditions: 'Soil and site', care: 'Care', harvest: 'Harvest', seeds: 'Seed for next year', neighbours: 'Neighbouring plants and a new spot next year', noPrep: 'No preparation needed', somePrep: 'Some preparation', needsPrep: 'Needs preparation' },
-    prepare: 'When it happens',
+    prepare: 'Guides',
     prepareIntro: 'How to prepare for storms, storm surges and snow, what to do if you lose power, water or heat, and what to keep at home. The authorities recommend preparing to manage on your own for three days. (In Danish.)',
-    prepareCount: (n) => (n === 1 ? '1 guide' : `${n} guides`),
+    prepareCount: (n) => (n === 1 ? '1 topic' : `${n} topics`),
     prepareWeather: 'Before it happens',
     prepareSituations: 'If it happens',
     prepareSupplies: 'Home emergency supplies',
     prepareSkills: 'Good to know',
     prepareSearchPlaceholder: 'Search in Danish, e.g. strøm or vand',
-    prepareSearchLabel: 'Search emergency guides',
-    checklistProgress: (done, total) => `You have ${done} of ${total}`,
-    checklistInForraad: (names) => `In your supplies: ${names}`,
-    checklistWaterInForraad: 'Change the water in Supplies',
-    checklistHave: 'You have it',
-    checklistMissing: 'Missing',
+    prepareSearchLabel: 'Search guides',
+    seeYourStores: 'See your supplies',
     storeThisCrop: 'Storing and preserving',
     growingSearchPlaceholder: 'Search for a crop',
     growingSearchLabel: 'Search growing guides',
@@ -1599,12 +1601,16 @@ export const strings: Record<Lang, Strings> = {
     saveLabel: 'Save for later',
     savedOpenLabel: (n) => (n === 0 ? 'Saved' : `Saved (${n})`),
     savedTitle: 'Saved',
-    savedIntro: 'What you save stays on this device only.',
+    savedIntro: 'What you save stays on this phone only.',
     savedEmptyTitle: 'Nothing saved yet',
     savedEmptyBody: 'Tap "Save" on a guide, a crop or a food. Then you will find it here.',
     savedNoneHere: 'Nothing saved here yet.',
     savedCount: (n) => `${n} saved`,
     savedUnavailable: 'No longer in the app',
     remove: 'Remove',
+    close: 'Close',
+    cancel: 'Cancel',
+    cannotUndo: 'This cannot be undone.',
+    replace: 'Replace',
   },
 };

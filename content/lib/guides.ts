@@ -118,6 +118,8 @@ export function validateGuides(guides: Guide[], sources: RegistrySource[], texts
       }
       if ((block.kind === 'steps' || block.kind === 'list' || block.kind === 'checklist') && block.items.length === 0) problems.push(`${where}: no items`);
       if (block.kind === 'checklist') {
+        // Stock-list lines feed Forråd; elsewhere a list of things to have is a plain list (D-070).
+        if (guide.group !== 'supplies') problems.push(`${where}: checklists belong only in Hjemmeberedskab guides (group 'supplies'); use a list`);
         for (const item of block.items) {
           if (!/^[a-z0-9-]+$/.test(item.id)) problems.push(`${where}: checklist id '${item.id}' must be lower-case letters, digits and dashes`);
           if (checklistIds.has(item.id)) problems.push(`${where}: checklist id '${item.id}' is used twice (ticks are stored by id)`);

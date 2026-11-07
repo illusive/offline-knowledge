@@ -4,7 +4,7 @@
 // finger can still be undone by counting up again.
 
 import { Pencil, Trash2, X } from 'lucide-react';
-import { Button, ButtonLink, IconButton, Stepper } from '../components/ui';
+import { Button, ButtonLink, IconButton, Stepper, useConfirm } from '../components/ui';
 import { formatMonth, thisMonth } from '../i18n/format';
 import type { Lang, Strings } from '../i18n/strings';
 import { hrefs } from '../router';
@@ -32,8 +32,9 @@ export function ItemSheet(props: { item: StoreItem; count: number; onCount: (n: 
   const { item, count, onCount, lang, s, onClose, onDeleted } = props;
   const t = s.forraad;
 
-  const remove = () => {
-    if (!window.confirm(t.removeConfirm(item.name))) return;
+  const { confirm, sheet } = useConfirm();
+  const remove = async () => {
+    if (!(await confirm({ title: t.removeConfirm(item.name), body: s.cannotUndo, confirmLabel: t.remove, cancelLabel: s.cancel, danger: true }))) return;
     forraad.removeItem(item.id);
     onDeleted(t.deleted(item.name));
   };
@@ -78,6 +79,7 @@ export function ItemSheet(props: { item: StoreItem; count: number; onCount: (n: 
           {t.remove}
         </Button>
       </div>
+      {sheet}
     </>
   );
 }

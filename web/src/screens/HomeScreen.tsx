@@ -7,7 +7,7 @@ import { EmergencyCard } from '../components/EmergencyCard';
 import { DownloadCard, OFFLINE_DISABLED } from '../components/OfflineStatus';
 import { SavedLink } from '../bookmarks/BookmarkButton';
 import { FoodList } from '../components/FoodList';
-import { Page, SearchField, SettingsButton } from '../components/ui';
+import { MessageState, Page, SearchField, SettingsButton } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { GuideRow, ItemRow } from '../db/queries';
 import { GuideList } from '../components/GuideList';
@@ -70,11 +70,20 @@ export function HomeScreen(props: {
 
       {searching ? (
         <div className="mt-6 flex flex-col gap-3">
-          {/* Same order as the tiles (D-048): first aid, Når det sker, food, growing last. */}
+          {/* Same order as the tiles (D-048): first aid, guides, food, growing last. Each part shows only
+              when something in it matches; when nothing matches anywhere, one line says so (D-070). */}
           <GuideResults id="guide-results" title={s.firstAid} guides={guideResults} />
           <GuideResults id="prepare-results" title={s.prepare} guides={prepareResults} />
-          <FoodList items={results} query={query} lang={lang} s={s} />
+          {results && results.length > 0 ? (
+            <section aria-labelledby="food-results" className="flex flex-col gap-2">
+              <h2 id="food-results" className="px-1 text-lg font-semibold">
+                {s.storingFood}
+              </h2>
+              <FoodList items={results} query={query} lang={lang} s={s} count={false} />
+            </section>
+          ) : null}
           <GuideResults id="crop-results" title={s.growing} guides={cropResults} />
+          {[guideResults, prepareResults, results, cropResults].every((list) => list !== null && list.length === 0) ? <MessageState title={s.noSearchResults(query.trim())} /> : null}
         </div>
       ) : (
         <div className="mt-8 flex flex-col gap-3">

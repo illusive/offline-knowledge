@@ -6,7 +6,7 @@ import { useRef, useState, type ReactNode } from 'react';
 import { EthyleneLists, GuideCard } from '../components/FoodGuide';
 import { SensesPill } from '../components/SensesPill';
 import { SaveButton } from '../bookmarks/BookmarkButton';
-import { BackButton, Card, MessageState, OriginalToggle, Page, SourceNote, SubNav } from '../components/ui';
+import { BackButton, Card, MessageState, OriginalToggle, Page, SourceNote, SubNav, SubPageHeader } from '../components/ui';
 import type { DbClient } from '../db/client';
 import { useDbQuery } from '../db/useDbQuery';
 import type { GuideSectionKey } from '../db/queries';
@@ -147,17 +147,8 @@ export function FoodScreen({ db, id, tab, lang, s }: { db: DbClient; id: string;
 
   return (
     <Page>
-      <div className="flex items-center justify-between gap-[12px]">
-        {back}
-        <SaveButton kind="food" id={item.id} section="storage" s={s} />
-      </div>
-      <div className="mt-4 flex flex-col gap-3">
-        <header className="mb-1 px-1">
-          <h1 ref={heading} tabIndex={-1} className="text-3xl font-normal tracking-tight outline-none">
-            {name}
-          </h1>
-          {subtitle ? <p className="text-muted">{subtitle}</p> : null}
-        </header>
+      <SubPageHeader backLabel={s.back} backTo={hrefs.storage} title={name} subtitle={subtitle} headingRef={heading} action={<SaveButton kind="food" id={item.id} section="storage" s={s} />} />
+      <div className="flex flex-col gap-3">
 
         <SubNav
           label={s.foodTabsLabel}

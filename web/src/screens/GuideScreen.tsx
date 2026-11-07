@@ -1,14 +1,15 @@
 // One guide (D-037): the source's own words, laid out as steps, lists and warnings, with the
 // handbook's photos next to the steps they show. Ends with the source (and pages) and the second
-// authority it was compared with.
+// authority it was compared with. Guides are for reading: a stock list's lines are bullets like any
+// list, and the Hjemmeberedskab guides end with a link to Forråd, where the household keeps track
+// of what it has (D-070).
 
-import { Check, ChevronRight, HeartPulse, TriangleAlert } from 'lucide-react';
-import { useChecklist } from '../supplies/checklist';
+import { Box, ChevronRight, HeartPulse, TriangleAlert } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { EmergencyCard } from '../components/EmergencyCard';
-import { BackButton, ButtonLink, Card, MessageState, OriginalToggle, Page } from '../components/ui';
+import { BackButton, ButtonLink, Card, MessageState, OriginalToggle, Page, SubPageHeader } from '../components/ui';
 import type { DbClient } from '../db/client';
-import type { ChecklistItem, GuideBlock, GuideImage } from '../db/queries';
+import type { GuideBlock, GuideImage } from '../db/queries';
 import { useDbQuery } from '../db/useDbQuery';
 import type { Strings } from '../i18n/strings';
 import { goBack, hrefs } from '../router';
@@ -41,24 +42,22 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
   const firstAid = guide.category === 'first-aid';
   // The 112 card on first aid and on situations (not on stock lists or crops).
   const showEmergency = firstAid || guide.grp === 'situation' || guide.grp === 'weather';
-  const checklistItems = blocks.flatMap((b) => (b.kind === 'checklist' ? b.items : []));
   const translated = blocks.some((b) => b.original?.lang === 'en');
   const rewritten = !!guide.summary_original || blocks.some((b) => b.original?.lang === 'da');
   return (
     <Page>
-      <div className="flex items-center justify-between gap-[12px]">
-        {back}
-        <SaveButton kind="guide" id={guide.id} section={guide.category === 'growing' ? 'growing' : guide.category === 'preparedness' ? 'prepare' : 'first-aid'} s={s} />
-      </div>
-      <article className="mt-4 flex flex-col gap-3" lang="da">
-        <header className="mb-1 px-1">
-          <h1 ref={heading} tabIndex={-1} className="text-3xl font-normal tracking-tight outline-none">
-            {guide.name ?? guide.title}
-          </h1>
-          {guide.season ? <p className="mt-1 font-medium">{guide.season}</p> : null}
-          {guide.summary ? <p className="mt-1 text-muted">{showOriginal && guide.summary_original ? guide.summary_original : guide.summary}</p> : null}
-          {checklistItems.length > 0 ? <ChecklistProgress guideId={guide.id} items={checklistItems} s={s} /> : null}
-        </header>
+      <SubPageHeader
+        backLabel={s.back}
+        backTo={parent}
+        title={guide.name ?? guide.title}
+        headingRef={heading}
+        lang="da"
+        action={<SaveButton kind="guide" id={guide.id} section={guide.category === 'growing' ? 'growing' : guide.category === 'preparedness' ? 'prepare' : 'first-aid'} s={s} />}
+      >
+        {guide.season ? <p className="mt-1 font-medium">{guide.season}</p> : null}
+        {guide.summary ? <p className="mt-1 text-muted">{showOriginal && guide.summary_original ? guide.summary_original : guide.summary}</p> : null}
+      </SubPageHeader>
+      <article className="flex flex-col gap-3" lang="da">
         {guide.abbreviations.length > 0 ? (
           <dl aria-label={s.abbreviationsLabel} className="flex flex-col gap-1 rounded-2xl bg-surface px-[16px] py-3 text-sm">
             {guide.abbreviations.map((a) => (
@@ -89,11 +88,18 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
             // A run of translated blocks (D-041) starts with a label; "Vis original" shows the source's words.
             <div key={i} className="contents" lang={block.original?.lang === 'en' && showOriginal ? 'en' : undefined}>
               {block.original?.lang === 'en' && blocks[i - 1]?.original?.lang !== 'en' ? <p className="-mb-2 text-xs font-semibold uppercase tracking-wide text-muted">{showOriginal ? s.originalEnglish : s.translatedFromEnglish}</p> : null}
-              <Block block={showOriginal ? withOriginal(block) : block} guideId={guide.id} imageUrls={imageUrls} s={s} />
+              <Block block={showOriginal ? withOriginal(block) : block} imageUrls={imageUrls} s={s} />
             </div>
           ))}
         </Card>
       </article>
+
+      {guide.grp === 'supplies' ? (
+        <ButtonLink href={hrefs.forraad} variant="onPage" className="mt-3">
+          <Box aria-hidden="true" className="size-5" />
+          {s.seeYourStores}
+        </ButtonLink>
+      ) : null}
 
       {showEmergency ? (
         <div className="mt-3">
@@ -132,7 +138,7 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
   );
 }
 
-function Block({ block, guideId, imageUrls, s }: { block: GuideBlock; guideId: string; imageUrls: Map<string, string>; s: Strings }) {
+function Block({ block, imageUrls, s }: { block: GuideBlock; imageUrls: Map<string, string>; s: Strings }) {
   switch (block.kind) {
     case 'heading':
       return <h2 className="text-lg font-semibold">{block.text}</h2>;
@@ -145,16 +151,7 @@ function Block({ block, guideId, imageUrls, s }: { block: GuideBlock; guideId: s
     case 'text':
       return <p>{block.text}</p>;
     case 'list':
-      return (
-        <div className="flex flex-col gap-2">
-          {block.title ? <h2 className="font-semibold">{block.title}</h2> : null}
-          <ul className="flex list-disc flex-col gap-1 pl-[20px]">
-            {block.items.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      );
+      return <BulletList title={block.title} items={block.items} />;
     case 'steps':
       return (
         <div className="flex flex-col gap-2">
@@ -182,7 +179,8 @@ function Block({ block, guideId, imageUrls, s }: { block: GuideBlock; guideId: s
         </div>
       );
     case 'checklist':
-      return <Checklist guideId={guideId} title={block.title} items={block.items} s={s} />;
+      // A stock list (D-040): its lines also feed Forråd's suggestions, but here they are read, not ticked.
+      return <BulletList title={block.title} items={block.items.map((item) => item.text)} />;
     case 'warning':
       return (
         <div role="note" className="flex gap-[12px] rounded-2xl bg-note-bg px-[16px] py-3 text-note-text">
@@ -208,6 +206,19 @@ function Block({ block, guideId, imageUrls, s }: { block: GuideBlock; guideId: s
         </figure>
       );
   }
+}
+
+function BulletList({ title, items }: { title: string | null; items: string[] }) {
+  return (
+    <div className="flex flex-col gap-2">
+      {title ? <h2 className="font-semibold">{title}</h2> : null}
+      <ul className="flex list-disc flex-col gap-1 pl-[20px]">
+        {items.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 // The block with the source's own words in place of the translation.
@@ -246,71 +257,4 @@ function useImageUrls(images: GuideImage[] | undefined) {
 function pageRange(blocks: GuideBlock[]): [number, number] {
   const pages = blocks.flatMap((b) => [b.page, ...(b.kind === 'steps' ? b.images.map((i) => i.page) : [])]);
   return [Math.min(...pages), Math.max(...pages)];
-}
-
-// A stock list (D-040). Ticks are what Forråd holds (D-048): ticking adds the line to Forråd, and
-// things entered in Forråd tick their line. The water lines follow the water figure in Forråd.
-function Checklist({ guideId, title, items, s }: { guideId: string; title: string | null; items: ChecklistItem[]; s: Strings }) {
-  const { state, toggle } = useChecklist(guideId);
-  return (
-    <div className="flex flex-col gap-2">
-      {title ? <h2 className="font-semibold">{title}</h2> : null}
-      <ul className="flex flex-col gap-2">
-        {items.map((item) => {
-          const line = state(item);
-          const box = (
-            <span aria-hidden="true" className={`mt-0.5 grid size-6 shrink-0 place-items-center rounded-md border-2 peer-focus-visible:outline-2 peer-focus-visible:outline-text ${line.on ? 'border-transparent bg-accent text-on-accent' : 'border-muted'}`}>
-              {line.on ? <Check className="size-4" strokeWidth={3} /> : null}
-            </span>
-          );
-          const text = <span className={line.on ? 'text-muted line-through decoration-1' : ''}>{item.text}</span>;
-          // Water for animals (D-063): a reminder, with nothing to tick.
-          if (line.kind === 'note') {
-            return (
-              <li key={item.id} className="flex min-h-12 items-start rounded-2xl bg-background px-[12px] py-3">
-                {item.text}
-              </li>
-            );
-          }
-          if (line.kind === 'water') {
-            return (
-              <li key={item.id}>
-                <a href={hrefs.forraad} className="flex min-h-12 items-start gap-[12px] rounded-2xl bg-background px-[12px] py-3" aria-label={`${item.text}. ${line.on ? s.checklistHave : s.checklistMissing}. ${s.checklistWaterInForraad}`}>
-                  {box}
-                  <span className="flex-1">
-                    {text}
-                    <span className="block text-sm font-medium underline underline-offset-4">{s.checklistWaterInForraad}</span>
-                  </span>
-                </a>
-              </li>
-            );
-          }
-          // Things the user entered themselves keep the line ticked; the box cannot take them away.
-          const locked = line.own.length > 0;
-          return (
-            <li key={item.id}>
-              <label className={`flex min-h-12 items-start gap-[12px] rounded-2xl bg-background px-[12px] py-3 ${locked ? '' : 'cursor-pointer'}`}>
-                <input type="checkbox" checked={line.on} disabled={locked} onChange={() => toggle(item)} className="peer sr-only" />
-                {box}
-                <span className="flex-1">
-                  {text}
-                  {locked ? <span className="block text-sm text-muted">{s.checklistInForraad(line.own.map((i) => i.name).join(', '))}</span> : null}
-                </span>
-              </label>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-}
-
-function ChecklistProgress({ guideId, items, s }: { guideId: string; items: ChecklistItem[]; s: Strings }) {
-  const { state } = useChecklist(guideId);
-  const done = items.filter((item) => state(item).on).length;
-  return (
-    <p className="mt-2 text-sm font-semibold" aria-live="polite">
-      {s.checklistProgress(done, items.length)}
-    </p>
-  );
 }

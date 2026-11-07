@@ -6,7 +6,7 @@ import { ArrowLeft, Check, ChevronRight, Search, Settings, X, type LucideIcon } 
 import { decimalForInput, parseCounter } from '../i18n/format';
 import type { Lang } from '../i18n/strings';
 import { goBack, hrefs } from '../router';
-import { useEffect, useId, useReducer, useRef, useState, type ButtonHTMLAttributes, type ElementType, type HTMLAttributes, type MouseEvent, type ReactNode, type Ref } from 'react';
+import { useCallback, useEffect, useId, useReducer, useRef, useState, type ButtonHTMLAttributes, type ElementType, type HTMLAttributes, type MouseEvent, type ReactNode, type Ref } from 'react';
 
 // A rounded surface. A <section> unless `as` says otherwise (a form, a div).
 export function Card({ children, className = '', as: Tag = 'section', ...rest }: { children: ReactNode; className?: string; as?: ElementType } & HTMLAttributes<HTMLElement>) {
@@ -98,15 +98,17 @@ export function Section({ id, title, aside, children, className = '' }: { id: st
 
 // The top of a page below a tab: back, an optional action on the right, the title and a line
 // under it. `headingRef` lets a page move focus to its title once it has loaded.
-export function SubPageHeader(props: { backLabel: string; backTo: string; title: ReactNode; subtitle?: ReactNode; action?: ReactNode; headingRef?: Ref<HTMLHeadingElement>; children?: ReactNode }) {
-  const { backLabel, backTo, title, subtitle, action, headingRef, children } = props;
+// `lang`: the language of the title and lines, when it is not the app's (a Danish guide in the
+// English app).
+export function SubPageHeader(props: { backLabel: string; backTo: string; title: ReactNode; subtitle?: ReactNode; action?: ReactNode; headingRef?: Ref<HTMLHeadingElement>; lang?: string; children?: ReactNode }) {
+  const { backLabel, backTo, title, subtitle, action, headingRef, lang, children } = props;
   return (
     <>
       <div className="flex items-center justify-between gap-[12px]">
         <BackButton label={backLabel} onClick={() => goBack(backTo)} />
         {action}
       </div>
-      <header className="mt-4 mb-4 px-1">
+      <header className="mt-4 mb-4 px-1" lang={lang}>
         <h1 ref={headingRef} tabIndex={headingRef ? -1 : undefined} className="text-3xl font-normal tracking-tight outline-none">
           {title}
         </h1>
@@ -352,6 +354,67 @@ export function Sheet({ open, onClose, labelledBy, dismissOnBackdrop = true, chi
       <div className="px-[16px] pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">{open ? children : last.current}</div>
     </dialog>
   );
+}
+
+// The top of a sheet (D-070): its title, and the one way to close it, an X at the top right. Lines
+// under the title go in `children`. `autofocus`: focus starts on the title (a sheet that is already
+// filled in, D-053), not on a field whose keyboard would cover it.
+export function SheetHeader({ id, title, closeLabel, onClose, autofocus = false, children }: { id: string; title: ReactNode; closeLabel: string; onClose: () => void; autofocus?: boolean; children?: ReactNode }) {
+  return (
+    <div className="flex items-start justify-between gap-[12px] px-1">
+      <div className="min-w-0 pt-1">
+        <h2 id={id} tabIndex={-1} data-autofocus={autofocus ? '' : undefined} className="text-xl font-semibold outline-none">
+          {title}
+        </h2>
+        {children}
+      </div>
+      <IconButton label={closeLabel} Icon={X} onClick={onClose} className="-mr-1 bg-surface" />
+    </div>
+  );
+}
+
+// Asking before something that cannot be undone (D-070): one sheet everywhere, instead of the
+// browser's confirm box. `confirm(...)` resolves true when the user agrees; render `sheet` once in
+// the component. Deleting has the red button (D-054); focus starts on the way out ("Annuller").
+export interface ConfirmOptions {
+  title: string;
+  body?: string;
+  confirmLabel: string;
+  cancelLabel: string;
+  danger?: boolean;
+}
+
+export function useConfirm(): { confirm: (options: ConfirmOptions) => Promise<boolean>; sheet: ReactNode } {
+  const [pending, setPending] = useState<(ConfirmOptions & { resolve: (ok: boolean) => void }) | null>(null);
+  const id = useId();
+  const confirm = useCallback((options: ConfirmOptions) => new Promise<boolean>((resolve) => setPending({ ...options, resolve })), []);
+  const answer = (ok: boolean) => {
+    pending?.resolve(ok);
+    setPending(null);
+  };
+  const sheet = (
+    <Sheet open={pending !== null} onClose={() => answer(false)} labelledBy={id}>
+      {pending ? (
+        <div className="flex flex-col gap-4 px-1">
+          <div>
+            <h2 id={id} className="text-xl font-semibold">
+              {pending.title}
+            </h2>
+            {pending.body ? <p className="mt-1 text-muted">{pending.body}</p> : null}
+          </div>
+          <div className="flex flex-col gap-[8px]">
+            <Button variant={pending.danger ? 'danger' : 'primary'} onClick={() => answer(true)}>
+              {pending.confirmLabel}
+            </Button>
+            <Button variant="onPage" onClick={() => answer(false)} data-autofocus="">
+              {pending.cancelLabel}
+            </Button>
+          </div>
+        </div>
+      ) : null}
+    </Sheet>
+  );
+  return { confirm, sheet };
 }
 
 // A short message that floats near the top of the screen and goes away by itself (D-053), e.g.

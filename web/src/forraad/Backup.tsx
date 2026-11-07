@@ -4,7 +4,7 @@
 // it holds and asks before replacing anything. Nothing leaves the device unless the user sends it.
 
 import { useRef, useState } from 'react';
-import { Button, Card } from '../components/ui';
+import { Button, Card, useConfirm } from '../components/ui';
 import type { Strings } from '../i18n/strings';
 import { today } from '../i18n/format';
 import { applyBackup, makeBackup, readBackup } from './backupFile';
@@ -13,6 +13,7 @@ export function Backup({ s }: { s: Strings }) {
   const t = s.forraad;
   const input = useRef<HTMLInputElement>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const { confirm, sheet } = useConfirm();
 
   const save = async () => {
     setMessage(null);
@@ -41,7 +42,7 @@ export function Backup({ s }: { s: Strings }) {
       setMessage(t.restoreFailed);
       return;
     }
-    if (!window.confirm(t.restoreConfirm(backup.itemCount))) return;
+    if (!(await confirm({ title: t.restoreConfirm(backup.itemCount), confirmLabel: s.replace, cancelLabel: s.cancel, danger: true }))) return;
     if (!applyBackup(localStorage, backup.data)) {
       setMessage(t.restoreFailed);
       return;
@@ -92,6 +93,7 @@ export function Backup({ s }: { s: Strings }) {
           {message ?? t.restoreDone}
         </p>
       ) : null}
+      {sheet}
     </Card>
   );
 }

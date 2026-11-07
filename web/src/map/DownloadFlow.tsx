@@ -6,7 +6,7 @@ import { ArrowLeft, Download, House, Map as MapIcon, MapPinned, Pause, Play, Tra
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { Lang, Strings } from '../i18n/strings';
 import { formatBytes, formatMapDate } from '../i18n/format';
-import { Button, IconButton } from '../components/ui';
+import { Button, IconButton, useConfirm } from '../components/ui';
 import { mapClient } from './client.ts';
 import type { AreaInfo, AreaShape, Home, MapSummary } from './protocol.ts';
 
@@ -48,7 +48,7 @@ export function DownloadFlow(props: {
   const [sizes, setSizes] = useState<Record<string, number>>({});
   const [free, setFree] = useState<number | null>(null);
   const [positionError, setPositionError] = useState(false);
-  const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
+  const { confirm, sheet } = useConfirm();
   const [startedId, setStartedId] = useState<string | null>(null);
   const [error, setError] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -156,7 +156,7 @@ export function DownloadFlow(props: {
         <Button variant="primary" disabled={offline || !summary} onClick={() => go('kind')}>
           {t.chooseArea}
         </Button>
-        <Button variant="onPage" onClick={onClose}>{firstTime ? t.skipForNow : t.close}</Button>
+        {firstTime ? <Button variant="onPage" onClick={onClose}>{t.skipForNow}</Button> : null}
       </>
     );
   } else if (step === 'areas') {
@@ -182,19 +182,17 @@ export function DownloadFlow(props: {
                 {a.state === 'paused' && !offline ? (
                   <IconButton label={`${t.resume}: ${a.label}`} Icon={Play} onClick={() => void client.call({ type: 'resume', id: a.id })} />
                 ) : null}
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (confirmDelete !== a.id) return setConfirmDelete(a.id);
-                    setConfirmDelete(null);
-                    void client.call({ type: 'delete', id: a.id });
-                  }}
-                  className={`flex h-11 min-w-11 items-center justify-center gap-[6px] rounded-full px-[10px] ${confirmDelete === a.id ? 'bg-accent text-on-accent' : 'bg-background'}`}
-                  aria-label={confirmDelete === a.id ? t.confirmRemove : `${t.remove}: ${a.label}`}
-                >
-                  <Trash2 aria-hidden="true" className="size-5" />
-                  {confirmDelete === a.id ? <span className="text-sm">{t.confirmRemove}</span> : null}
-                </button>
+                {/* Deleting asks in the same sheet as everywhere else (D-070). */}
+                <IconButton
+                  label={`${t.remove}: ${a.label}`}
+                  Icon={Trash2}
+                  className="bg-background"
+                  onClick={() =>
+                    void confirm({ title: t.removeConfirm(a.label), body: t.removeBody, confirmLabel: t.remove, cancelLabel: s.cancel, danger: true }).then((ok) => {
+                      if (ok) void client.call({ type: 'delete', id: a.id });
+                    })
+                  }
+                />
               </div>
             </div>
             {a.state !== 'ready' ? <Progress percent={percentOf(a)} label={a.label} /> : null}
@@ -323,12 +321,10 @@ export function DownloadFlow(props: {
     actions = done ? (
       <>
         <Button variant="primary" onClick={() => onShowArea(started)}>{t.showOnMap}</Button>
-        <Button variant="onPage" onClick={onClose}>{t.close}</Button>
       </>
     ) : (
       <>
         {started.state === 'paused' ? <Button variant="primary" onClick={() => void client.call({ type: 'resume', id: started.id })}>{t.tryAgain}</Button> : null}
-        <Button variant="onPage" onClick={onClose}>{t.close}</Button>
       </>
     );
   }
@@ -354,6 +350,7 @@ export function DownloadFlow(props: {
         <div className="flex flex-col gap-3 px-1">{body}</div>
         {actions ? <div className="flex flex-col gap-2">{actions}</div> : null}
       </div>
+      {sheet}
     </section>
   );
 }

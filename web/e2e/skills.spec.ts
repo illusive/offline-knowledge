@@ -18,7 +18,7 @@ test('Gode at kunne: seven guides, knot drawings and the fire guide; offline', a
   await context.setOffline(true);
   await page.reload();
 
-  await page.getByRole('link', { name: /Når det sker$/ }).click();
+  await page.getByRole('link', { name: /emner Guides$/ }).click();
   const skills = page.getByRole('region', { name: 'Gode at kunne' });
   await expect(skills.getByRole('link')).toHaveText([/^Tænd et bål/, /^Knob/, /^Vask tøj uden strøm og vand/, /^Saml vand/, /^Lav mad uden strøm/, /^Hold telefonen opladet/, /^Hygiejne med lidt vand/]);
 

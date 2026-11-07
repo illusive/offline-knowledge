@@ -26,7 +26,7 @@ test('first aid: list, a guide with steps and photos, related guide; then offlin
   await search.fill('blodpøl');
   await expect(page.getByRole('link', { name: /^Livsfarlige blødninger/ })).toBeVisible();
   await search.fill('zzzz');
-  await expect(page.getByText('Ingen guides matcher "zzzz".')).toBeVisible();
+  await expect(page.getByText('Ingen guides matcher ”zzzz”')).toBeVisible();
   await search.fill('');
 
   await page.getByRole('link', { name: /^Stabilt sideleje/ }).click();

@@ -4,7 +4,7 @@
 
 import { Trash2, X } from 'lucide-react';
 import { useRef } from 'react';
-import { BackButton, Button, Card, MessageState, Page, SubPageHeader } from '../components/ui';
+import { BackButton, Button, Card, MessageState, Page, SubPageHeader, useConfirm } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { usePageTitle } from '../lib/usePageTitle';
@@ -41,11 +41,11 @@ function Form(props: { item: StoreItem; lists: StockLists | null; items: StoreIt
   const nameField = useRef<HTMLInputElement>(null);
   const draft = useItemDraft(item, lists?.recommendations ?? [], lang, false);
 
-  const remove = () => {
-    if (window.confirm(t.removeConfirm(item.name))) {
-      forraad.removeItem(item.id);
-      goBack(hrefs.forraad);
-    }
+  const { confirm, sheet } = useConfirm();
+  const remove = async () => {
+    if (!(await confirm({ title: t.removeConfirm(item.name), body: s.cannotUndo, confirmLabel: t.remove, cancelLabel: s.cancel, danger: true }))) return;
+    forraad.removeItem(item.id);
+    goBack(hrefs.forraad);
   };
 
   return (
@@ -88,6 +88,7 @@ function Form(props: { item: StoreItem; lists: StockLists | null; items: StoreIt
           {t.remove}
         </Button>
       </Card>
+      {sheet}
     </Page>
   );
 }

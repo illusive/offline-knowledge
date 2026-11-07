@@ -9,6 +9,7 @@ import { useNow } from '../lib/useNow';
 import { moonDay } from './moon';
 import { coordsOf, type Place } from './place';
 import { sunPosition } from './sun';
+import { Card } from '../components/ui';
 import { Row } from './SunRows';
 
 const UP = -0.833; // the sun's upper edge on the horizon
@@ -27,7 +28,7 @@ export function SunNow({ place, lang, t }: { place: Place; lang: Lang; t: String
   const { azimuth, elevation } = sunPosition(new Date(now), lat, lon);
   const up = elevation > UP;
   return (
-    <section aria-labelledby="sun-now-title" className="flex flex-col gap-3 rounded-card bg-surface px-[20px] py-5">
+    <Card aria-labelledby="sun-now-title" className="flex flex-col gap-3">
       <h2 id="sun-now-title" className="text-lg font-semibold">
         {t.nowTitle}
       </h2>
@@ -44,7 +45,7 @@ export function SunNow({ place, lang, t }: { place: Place; lang: Lang; t: String
       ) : (
         <p>{t.nowDown}</p>
       )}
-    </section>
+    </Card>
   );
 }
 

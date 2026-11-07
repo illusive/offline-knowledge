@@ -1,8 +1,8 @@
-// "Når det sker" (D-040): situations and stock lists; ticks stay on the device; works offline.
+// Guides (D-040, named so since D-070): situations and stock lists, read as plain lists; works offline.
 
 import { expect, test } from './fixtures.ts';
 
-test('Når det sker: tile, search, tick items in a stock list, bookmark a situation; offline', async ({ app: { page, context } }) => {
+test('Guides: tile, search, stock lists as plain lists with a link to Forråd, bookmark a situation; offline', async ({ app: { page, context } }) => {
   await page.goto('./');
   await expect(page.getByText('Klar uden internet')).toBeAttached({ timeout: 60_000 });
   await page.evaluate(async () => {
@@ -12,13 +12,13 @@ test('Når det sker: tile, search, tick items in a stock list, bookmark a situat
   await context.setOffline(true);
   await page.reload();
 
-  await page.getByRole('link', { name: /Når det sker/ }).click();
-  await expect(page.getByRole('heading', { level: 1, name: 'Når det sker' })).toBeVisible();
+  await page.getByRole('link', { name: /emner Guides$/ }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Guides' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Hvis det sker' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Før det sker' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Hjemmeberedskab' })).toBeVisible();
 
-  const search = page.getByRole('searchbox', { name: 'Søg i Når det sker' });
+  const search = page.getByRole('searchbox', { name: 'Søg i guides' });
   await search.fill('knækbrød');
   await expect(page.getByRole('link', { name: /^Mad til tre døgn/ })).toBeVisible();
   await search.fill('powerbank');
@@ -33,48 +33,34 @@ test('Når det sker: tile, search, tick items in a stock list, bookmark a situat
   await expect(page.getByRole('link', { name: /^Storm/ })).toBeVisible();
   await search.fill('');
 
-  // The water lines follow the water in Forråd (D-048); they link there instead of ticking.
+  // Guides are for reading (D-070): a stock list's lines are bullets with nothing to tick, and the
+  // Hjemmeberedskab guides end with a link to Forråd, where the household keeps track.
   await page.getByRole('link', { name: /^Vand til tre døgn/ }).click();
-  await expect(page.getByText('Du har 0 af 2')).toBeVisible();
-  await expect(page.getByRole('link', { name: /^3 liter vand pr\. person pr\. døgn\. Mangler/ })).toBeVisible();
+  await expect(page.getByRole('listitem').filter({ hasText: /^3 liter vand pr\. person pr\. døgn/ })).toBeVisible();
+  await expect(page.getByRole('checkbox')).toHaveCount(0);
+  await expect(page.getByText(/^Du har \d+ af \d+$/)).toHaveCount(0);
   await page.goBack();
 
-  // Ticking a line puts it in Forråd; a thing entered in Forråd ticks its line (D-048).
   await page.getByRole('link', { name: /^Mad til tre døgn/ }).click();
   await expect(page.getByRole('heading', { level: 2, name: 'Kræver ingen tilberedning' })).toBeVisible();
-  await expect(page.getByText(/^Du har 0 af \d+$/)).toBeVisible();
-  await page.getByRole('checkbox', { name: /^Knækbrød/ }).check({ force: true });
-  await page.getByRole('checkbox', { name: /^Olie til madlavning/ }).check({ force: true });
-  await expect(page.getByText(/^Du har 2 af \d+$/)).toBeVisible();
-  await page.reload();
-  await expect(page.getByText(/^Du har 2 af \d+$/)).toBeVisible();
-  await expect(page.getByRole('checkbox', { name: /^Knækbrød/ })).toBeChecked();
+  await expect(page.getByRole('listitem').filter({ hasText: /^Knækbrød/ })).toBeVisible();
+  await expect(page.getByRole('checkbox')).toHaveCount(0);
+  await page.getByRole('link', { name: 'Se dit forråd' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: 'Forråd' })).toBeVisible();
 
-  await page.getByRole('navigation', { name: 'Hovedmenu' }).getByRole('link', { name: 'Forråd' }).click();
-  const food = page.getByRole('region', { name: 'Mad' });
-  await expect(food.getByRole('button', { name: /^Knækbrød/ })).toBeVisible();
-  await expect(food.getByRole('button', { name: /^Olie til madlavning/ })).toBeVisible();
-  await page.getByRole('link', { name: 'Tilføj', exact: true }).click();
-  const add = page.getByRole('dialog', { name: 'Tilføj til forrådet' });
-  await add.getByLabel('Navn').fill('Makrel i tomat');
-  await add.getByRole('button', { name: 'Tilføj', exact: true }).click();
-  await expect(page.getByText('Makrel i tomat er tilføjet under Mad')).toBeVisible();
-  await page.goto('./#/guide/mad-til-tre-doegn');
-  await expect(page.getByRole('checkbox', { name: /^Dåser med fisk eller kød/ })).toBeChecked();
-  await expect(page.getByRole('checkbox', { name: /^Dåser med fisk eller kød/ })).toBeDisabled();
-  await expect(page.getByText('I forrådet: Makrel i tomat')).toBeVisible();
-  await expect(page.getByText(/^Du har 3 af \d+$/)).toBeVisible();
-
-  // Unticking removes what the tick added.
-  await page.getByRole('checkbox', { name: /^Knækbrød/ }).uncheck({ force: true });
-  await expect(page.getByText(/^Du har 2 af \d+$/)).toBeVisible();
+  // A list of things to have outside Hjemmeberedskab is a plain list too: the car in snow.
+  await page.goto('./#/guide/snestorm');
+  await expect(page.getByRole('heading', { level: 2, name: 'Hav det i bilen' })).toBeVisible();
+  await expect(page.getByRole('listitem').filter({ hasText: /^Sneskovl$/ })).toBeVisible();
+  await expect(page.getByRole('checkbox')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Se dit forråd' })).toHaveCount(0);
 
   await page.goto('./#/guide/stroemmen-er-gaaet');
   await expect(page.getByRole('heading', { level: 1, name: 'Strømmen er gået' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Ring 112', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Gem til senere' }).click();
   await page.goto('./#/saved/prepare');
-  await expect(page.getByRole('region', { name: /^Når det sker/ }).getByRole('link', { name: /^Strømmen er gået/ })).toBeVisible();
+  await expect(page.getByRole('region', { name: /^Guides/ }).getByRole('link', { name: /^Strømmen er gået/ })).toBeVisible();
 });
 
 test('Ticks kept before Forråd drove the stock lists become Forråd entries once; offline', async ({ app: { page, context } }) => {

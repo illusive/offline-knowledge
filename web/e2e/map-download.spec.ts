@@ -57,7 +57,7 @@ test('the flow explains, downloads, and the area works offline; delete it again'
   await page.getByRole('button', { name: 'Hent kort' }).click();
   await expect(page.getByText('Du skal have internet for at hente kort.', { exact: false })).toBeVisible({ timeout: 30_000 });
   await page.getByRole('button', { name: 'Slet: Danmark' }).click();
-  await page.getByRole('button', { name: 'Tryk igen for at slette' }).click();
+  await page.getByRole('dialog', { name: 'Vil du slette kortet over Danmark?' }).getByRole('button', { name: 'Slet', exact: true }).click();
   await expect(page.getByRole('button', { name: /^Danmark/ })).toHaveCount(0);
 
   expect(foreign).toEqual([]);

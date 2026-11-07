@@ -75,40 +75,16 @@
       }
     },
     {
-      "kind": "checklist",
+      "kind": "list",
       "items": [
-        {
-          "id": "bil-lommelygte",
-          "text": "Lommelygte"
-        },
-        {
-          "id": "bil-oplader",
-          "text": "Oplader til telefonen, der virker i bilen"
-        },
-        {
-          "id": "bil-varmt-toej",
-          "text": "Varmt tøj og tæpper"
-        },
-        {
-          "id": "bil-refleksvest",
-          "text": "Refleksvest"
-        },
-        {
-          "id": "bil-startkabler",
-          "text": "Startkabler"
-        },
-        {
-          "id": "bil-mad-drikke",
-          "text": "Mad og drikke"
-        },
-        {
-          "id": "bil-sneskovl",
-          "text": "Sneskovl"
-        },
-        {
-          "id": "bil-foerstehjaelp",
-          "text": "Førstehjælpskasse"
-        }
+        "Lommelygte",
+        "Oplader til telefonen, der virker i bilen",
+        "Varmt tøj og tæpper",
+        "Refleksvest",
+        "Startkabler",
+        "Mad og drikke",
+        "Sneskovl",
+        "Førstehjælpskasse"
       ],
       "page": 1,
       "sourceId": "uk-be-ready-emergencies",

@@ -136,7 +136,8 @@ web/
                                   SettingsButton, OriginalToggle, Choice (also a bar with a hidden legend),
                                   Stepper (− field +, the number can be typed, D-054), SearchField,
                                   MessageState, Page, SubNav, Toast, Sheet (a bottom sheet on the native
-                                  modal <dialog>, D-049; slides in and out, index.css, D-054)
+                                  modal <dialog>, D-049; slides in and out, index.css, D-054), SheetHeader
+                                  (title and the one X, D-070), useConfirm (the one confirm sheet, D-070)
     components/                   TabBar, EmergencyCard (112), FoodList, GuideList, food guide parts
     guides/                       useGuides/useGuideSearch and GuideCategoryScreen, the frame the three guide
                                   categories share (header, search, results)
@@ -147,13 +148,13 @@ web/
                                   fields (useItemDraft, ItemFields, NameField), sizes (number and unit),
                                   barcode lookup and the scanner (zxing-wasm on the frame region only,
                                   D-055), backup file, the water tile on Home
-    supplies/checklist.ts         Stock-list ticks driven by Forråd (D-048)
+    supplies/checklist.ts         Moves ticks kept before D-048 into Forråd once; guides have no ticks (D-070)
     map/                          Offline maps (D-036): map worker, downloads, places, position
     compass/                      Compass sensor and maths (D-045)
     sun/                          Sunrise, sunset and twilight from a place and a day (NOAA equations),
                                   the chosen place, the town list and the graph through the year (D-056)
     food/groups.ts                The groups that divide Opbevaring and Dyrkning (D-057)
-    power/limits.ts               The fridge and freezer hours behind Køl og frys, with their sources (D-058)
+    power/limits.ts               The fridge and freezer hours behind Køleskab og fryser, with their sources (D-058)
     sun/moon.ts, sun/SunNow.tsx   The moon (Meeus) and the sun right now, in Sol op og ned (D-058)
     lib/useNow.ts                 The current time for clocks and timers, worked out from a stored start
     bookmarks/, settings/, pwa/   Saved items, preferences and theme, offline status and updates

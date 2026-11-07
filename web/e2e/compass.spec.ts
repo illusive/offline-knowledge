@@ -46,9 +46,10 @@ test('Kompas: start after a tap, hold a course, uncertain, course kept after rel
   await expect(page.getByText('NØ 42°')).toBeVisible();
   await expect(page.getByText('Retning fra magnetisk nord')).toBeVisible();
 
+  // While a course is held, the line under the direction says how to turn; the same button stops it.
   await page.getByRole('button', { name: 'Hold denne kurs' }).click();
-  await expect(page.getByText('Kurs 42°')).toBeVisible();
-  await expect(page.getByText('Du holder kursen')).toBeVisible();
+  await expect(page.getByText('Kurs 42° · Du holder kursen')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Hold denne kurs' })).toBeHidden();
 
   await point(page, 72, 10, 40); // smoothed: settles on 72
   await expect(page.getByText('Drej 30° til venstre')).toBeVisible();
@@ -67,7 +68,8 @@ test('Kompas: start after a tap, hold a course, uncertain, course kept after rel
     await point(page, 42); // until the compass, starting by itself, listens
     await expect(page.getByText('Kurs 42°')).toBeVisible({ timeout: 500 });
   }).toPass();
-  await page.getByRole('button', { name: 'Slet kurs' }).click();
+  await page.getByRole('button', { name: 'Stop med at holde kurs' }).click();
+  await expect(page.getByText('Retning fra magnetisk nord')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Hold denne kurs' })).toBeVisible();
 });
 

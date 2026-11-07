@@ -5,7 +5,7 @@
 // "Uden stregkode" opens the same sheet with an empty name.
 
 import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
-import { Button, Sheet, Stepper, Toast, type ToastMessage } from '../components/ui';
+import { Button, Sheet, SheetHeader, Stepper, Toast, type ToastMessage } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { Lang, Strings } from '../i18n/strings';
 import { usePageTitle } from '../lib/usePageTitle';
@@ -140,9 +140,7 @@ function NewThingSheet({ code, lists, items, products, lang, s, onAdded, onCance
         else nameField.current?.focus();
       }}
     >
-      <h2 id={SHEET_TITLE_ID} tabIndex={-1} data-autofocus={code ? '' : undefined} className="px-1 pt-1 text-xl font-semibold outline-none">
-        {code ? t.addTitle : t.noBarcode}
-      </h2>
+      <SheetHeader id={SHEET_TITLE_ID} title={code ? t.addTitle : t.noBarcode} closeLabel={s.close} onClose={onCancel} autofocus={!!code} />
       <div className="mt-4 flex flex-col gap-5 rounded-card bg-surface px-[20px] py-5">
         <ItemFields
           draft={draft}
@@ -156,7 +154,7 @@ function NewThingSheet({ code, lists, items, products, lang, s, onAdded, onCance
           nameAutofocus={!code}
           status={status}
         />
-        <SheetButtons s={s} onCancel={onCancel} />
+        <AddButton s={s} />
       </div>
     </form>
   );
@@ -175,13 +173,10 @@ function MoreOfSheet({ item, lang, s, onAdded, onCancel }: SheetProps & { item: 
         onAdded(t.stocked(item.name, n, Math.min(9999, item.count + n)));
       }}
     >
-      <div className="px-1 pt-1">
-        <h2 id={SHEET_TITLE_ID} tabIndex={-1} data-autofocus="" className="text-xl font-semibold outline-none">
-          {item.name}
-        </h2>
+      <SheetHeader id={SHEET_TITLE_ID} title={item.name} closeLabel={s.close} onClose={onCancel} autofocus>
         <p className="text-sm text-muted">{summaryText(item, lang, t)}</p>
         <p className="mt-2">{t.alreadyHave}</p>
-      </div>
+      </SheetHeader>
       <div className="mt-4 flex flex-col gap-5 rounded-card bg-surface px-[20px] py-5">
         <Stepper label={t.count} value={n} min={1} max={999} onChange={setN} />
         <MonthYear
@@ -201,21 +196,16 @@ function MoreOfSheet({ item, lang, s, onAdded, onCancel }: SheetProps & { item: 
           monthLabel={t.month}
           yearLabel={t.year}
         />
-        <SheetButtons s={s} onCancel={onCancel} />
+        <AddButton s={s} />
       </div>
     </form>
   );
 }
 
-function SheetButtons({ s, onCancel }: { s: Strings; onCancel: () => void }) {
+function AddButton({ s }: { s: Strings }) {
   return (
-    <div className="flex flex-wrap gap-[8px]">
-      <Button type="submit" variant="primary" className="flex-1">
-        {s.forraad.add}
-      </Button>
-      <Button onClick={onCancel} variant="secondary">
-        {s.forraad.cancel}
-      </Button>
-    </div>
+    <Button type="submit" variant="primary">
+      {s.forraad.add}
+    </Button>
   );
 }

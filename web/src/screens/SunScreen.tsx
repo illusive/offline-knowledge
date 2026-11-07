@@ -4,7 +4,7 @@
 // a tap, once), the map's home point, or a town; it is kept on the device until changed.
 
 import { useEffect, useId, useState } from 'react';
-import { Button, inputClass, Page, Sheet, SubPageHeader } from '../components/ui';
+import { Button, Card, inputClass, Page, Sheet, SheetHeader, SubPageHeader } from '../components/ui';
 import { cardinal } from '../compass/heading';
 import { formatClock, formatDuration, today } from '../i18n/format';
 import type { Lang, Strings } from '../i18n/strings';
@@ -83,16 +83,16 @@ export function SunScreen({ lang, s }: { lang: Lang; s: Strings }) {
       <SubPageHeader backLabel={s.back} backTo={hrefs.tools} title={t.title} subtitle={t.subtitle} />
       {!place ? (
         home === undefined ? null : (
-          <section aria-labelledby={CHOOSER_TITLE_ID} className="flex flex-col gap-4 rounded-card bg-surface px-[20px] py-5">
+          <Card aria-labelledby={CHOOSER_TITLE_ID} className="flex flex-col gap-4">
             <h2 id={CHOOSER_TITLE_ID} className="text-xl font-semibold">
               {t.choosePlace}
             </h2>
             {chooser}
-          </section>
+          </Card>
         )
       ) : (
         <div className="flex flex-col gap-3">
-          <div className="flex flex-col gap-4 rounded-card bg-surface px-[20px] py-5">
+          <Card as="div" className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center justify-between gap-[12px]">
               <div className="min-w-0">
                 <p className="text-sm text-muted">{t.place}</p>
@@ -103,7 +103,7 @@ export function SunScreen({ lang, s }: { lang: Lang; s: Strings }) {
               </Button>
             </div>
             <DateField date={date} onDate={setDate} t={t} />
-          </div>
+          </Card>
           <Results place={place} date={date} lang={lang} t={t} />
           <SunNow place={place} lang={lang} t={t} />
           <MoonCard place={place} date={date} lang={lang} t={t} />
@@ -112,13 +112,8 @@ export function SunScreen({ lang, s }: { lang: Lang; s: Strings }) {
         </div>
       )}
       <Sheet open={choosing} onClose={() => setChoosing(false)} labelledBy={`${CHOOSER_TITLE_ID}-sheet`}>
-        <h2 id={`${CHOOSER_TITLE_ID}-sheet`} className="px-1 text-xl font-semibold">
-          {t.choosePlace}
-        </h2>
-        <div className="mt-4 flex flex-col gap-4 rounded-card bg-surface px-[20px] py-5">{chooser}</div>
-        <Button variant="onPage" className="mt-4 w-full" onClick={() => setChoosing(false)}>
-          {s.forraad.close}
-        </Button>
+        <SheetHeader id={`${CHOOSER_TITLE_ID}-sheet`} title={t.choosePlace} closeLabel={s.close} onClose={() => setChoosing(false)} />
+        <Card as="div" className="mt-4 flex flex-col gap-4">{chooser}</Card>
       </Sheet>
     </Page>
   );

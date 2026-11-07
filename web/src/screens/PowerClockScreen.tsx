@@ -4,7 +4,7 @@
 
 import { CircleAlert, CircleCheck } from 'lucide-react';
 import { useState } from 'react';
-import { Button, ButtonLink, inputClass, Page, SubPageHeader } from '../components/ui';
+import { Button, ButtonLink, Card, inputClass, Page, SubPageHeader } from '../components/ui';
 import { formatClock, formatDate, formatDuration } from '../i18n/format';
 import type { Lang, Strings } from '../i18n/strings';
 import { createLocalStore } from '../lib/localStore';
@@ -45,7 +45,7 @@ export function PowerClockScreen({ lang, s }: { lang: Lang; s: Strings }) {
       <SubPageHeader backLabel={s.back} backTo={hrefs.tools} title={t.title} subtitle={t.subtitle} />
       <div className="flex flex-col gap-3">
         {startedAt === null ? (
-          <div className="flex flex-col gap-4 rounded-card bg-surface px-[20px] py-5">
+          <Card as="div" className="flex flex-col gap-4">
             <p>{t.intro}</p>
             <Button variant="primary" onClick={() => start(Date.now())}>
               {t.startNow}
@@ -75,7 +75,7 @@ export function PowerClockScreen({ lang, s }: { lang: Lang; s: Strings }) {
             ) : (
               <p role="status" className="sr-only" />
             )}
-          </div>
+          </Card>
         ) : (
           <Running startedAt={startedAt} now={now} lang={lang} t={t} onBack={() => {
             powerClock.set(null);
@@ -98,11 +98,11 @@ function Running({ startedAt, now, lang, t, onBack }: { startedAt: number; now: 
   const fridgeOver = minutesLeft(LIMITS[0].hours, elapsed) === 0;
   return (
     <>
-      <div className="flex flex-col gap-1 rounded-card bg-surface px-[20px] py-5">
+      <Card as="div" className="flex flex-col gap-1">
         <p className="text-sm text-muted">{t.outFor}</p>
         <p className="text-4xl tabular-nums">{formatDuration(elapsed, lang)}</p>
         <p className="text-sm text-muted">{t.since(sameDay ? formatClock(since, lang) : `${formatDate(since, lang)} ${formatClock(since, lang)}`)}</p>
-      </div>
+      </Card>
       <ul className="flex flex-col divide-y divide-border rounded-card bg-surface px-[20px]">
         {LIMITS.map(({ id, hours }) => {
           const left = minutesLeft(hours, elapsed);
@@ -119,12 +119,12 @@ function Running({ startedAt, now, lang, t, onBack }: { startedAt: number; now: 
           );
         })}
       </ul>
-      <div className="flex flex-col gap-3 rounded-card bg-surface px-[20px] py-5">
+      <Card as="div" className="flex flex-col gap-3">
         <p>{t.keepClosed}</p>
         {fridgeOver ? <p className="rounded-2xl bg-note-bg px-[16px] py-3 text-note-text">{t.fridgeOver}</p> : null}
         <p className="text-sm text-muted">{t.refreeze}</p>
         <Button onClick={onBack}>{t.back}</Button>
-      </div>
+      </Card>
     </>
   );
 }
