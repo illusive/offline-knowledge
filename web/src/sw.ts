@@ -51,6 +51,9 @@ async function precache(): Promise<void> {
     await Promise.all([worker(), worker(), worker(), worker()]);
   } catch (error) {
     await caches.delete(CACHE);
+    // Open pages say so instead of waiting for ever (D-071); the next launch tries again.
+    const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const client of clients) client.postMessage({ type: 'PRECACHE_FAILED' });
     throw error;
   }
 }

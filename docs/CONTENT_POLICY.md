@@ -95,7 +95,7 @@ draft → checked → published
                 ↘ retired
 ```
 
-- **draft** — being assembled. Never included in a pack.
+- **draft** — being assembled. Never included in a pack. **Exception while the app is private (D-028, D-071):** drafts are included and open with a "Prøveversion" notice above their instructions. Before the app is shared beyond the owner, this rule applies again, and the release rule for high-risk guides is decided (OPEN_QUESTIONS 4).
 - **checked** — a human has compared every block to its quoted source passage, confirmed the licenses and attribution, and (for `high`) completed the second-source cross-check. Record who checked and when (`reviewedAt`, `reviewedBy`).
 - **published** — included in the next pack build.
 - **retired** — withdrawn (source changed, error found, superseded). Retired guides are removed from the next pack.

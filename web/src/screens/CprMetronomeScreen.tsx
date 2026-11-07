@@ -160,9 +160,15 @@ export function CprMetronomeScreen({ s }: { s: Strings }) {
             </>
           )}
         </div>
+        {/* What the metronome does not cover stays in view (D-071): adults only; compressions only is allowed. */}
+        <p className="px-1">{t.adultsOnly}</p>
+        <p className="px-1">{t.handsOnly}</p>
         <p className="px-1 text-sm text-muted">{t.source}</p>
         <ButtonLink href={hrefs.guide(CPR_GUIDE_ID)} variant="onPage">
           {t.guide}
+        </ButtonLink>
+        <ButtonLink href={hrefs.guide('hlr-boern')} variant="onPage">
+          {t.childGuide}
         </ButtonLink>
       </div>
     </Page>

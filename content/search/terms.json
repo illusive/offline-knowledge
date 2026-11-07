@@ -1,0 +1,81 @@
+{
+  "$comment": "Everyday Danish phrases that find guides (D-071). Kept by hand. Each entry links phrases to several guides that may help; it never picks one diagnosis or treatment. The phrases are search data only: they are never shown. Lower case; each phrase in one entry only. Checked by the pack build (lib/search-terms.ts).",
+  "entries": [
+    {
+      "phrases": ["kan ikke få luft", "får ikke luft", "åndenød", "svært ved at trække vejret", "trækker ikke vejret", "vejrtrækningsbesvær"],
+      "guides": ["frie-luftveje", "vejrtraekning", "hlr-voksne", "fremmedlegeme-i-luftvejene", "allergiske-reaktioner"]
+    },
+    {
+      "phrases": ["reagerer ikke", "svarer ikke", "vågner ikke", "bevidstløs", "besvimet", "besvimer"],
+      "guides": ["tre-hovedpunkter", "bevidsthed", "vejrtraekning", "stabilt-sideleje", "hlr-voksne"]
+    },
+    {
+      "phrases": ["bløder meget", "bløder", "blødning", "blodpøl", "sprøjter blod"],
+      "guides": ["massive-bloedninger", "mindre-bloedninger", "kredsloebssvigt"]
+    },
+    {
+      "phrases": ["noget i halsen", "fået noget i halsen", "galt i halsen", "sat fast i halsen", "kvæles", "kvælning"],
+      "guides": ["fremmedlegeme-i-luftvejene", "frie-luftveje"]
+    },
+    {
+      "phrases": ["hjertestop", "hjertet stoppet", "hjertet står stille", "genoplivning", "hjertelungeredning"],
+      "guides": ["hlr-voksne", "hjertestarter", "hlr-boern"]
+    },
+    {
+      "phrases": ["ondt i brystet", "smerter i brystet", "hjerteanfald", "blodprop i hjertet"],
+      "guides": ["brystsmerter"]
+    },
+    {
+      "phrases": ["skæv i ansigtet", "taler utydeligt", "lammet i den ene side", "blodprop i hjernen", "hjerneblødning"],
+      "guides": ["stroke"]
+    },
+    {
+      "phrases": ["brændt", "forbrænding", "skoldet", "skoldning"],
+      "guides": ["forbraendinger"]
+    },
+    {
+      "phrases": ["nedkølet", "underkølet", "fryser og ryster"],
+      "guides": ["underafkoeling", "der-er-ingen-varme"]
+    },
+    {
+      "phrases": ["allergisk", "hævet i halsen", "hvepsestik", "bistik"],
+      "guides": ["allergiske-reaktioner"]
+    },
+    {
+      "phrases": ["druknet", "drukning", "faldet i vandet"],
+      "guides": ["drukneulykker", "hlr-voksne"]
+    },
+    {
+      "phrases": ["chok", "bleg og kold", "kold og klam"],
+      "guides": ["kredsloebssvigt"]
+    },
+    {
+      "phrases": ["ingen strøm", "ingen elektricitet", "strømsvigt", "strømafbrydelse", "strømmen er væk", "strømmen er gået"],
+      "guides": ["stroemmen-er-gaaet", "lav-mad-uden-stroem", "hold-telefonen-opladet", "vask-toej-uden-stroem"]
+    },
+    {
+      "phrases": ["intet vand", "ingen vand", "vandsvigt", "vandet er væk"],
+      "guides": ["der-er-intet-vand", "vand-til-tre-doegn", "saml-vand"]
+    },
+    {
+      "phrases": ["ingen varme", "varmen er gået", "koldt i huset"],
+      "guides": ["der-er-ingen-varme"]
+    },
+    {
+      "phrases": ["røg", "kulilteforgiftning", "co-alarm"],
+      "guides": ["kulilte"]
+    },
+    {
+      "phrases": ["oversvømmelse", "vand i kælderen", "højvande"],
+      "guides": ["der-er-vand-i-kaelderen", "stormflod"]
+    },
+    {
+      "phrases": ["intet net", "ingen dækning", "mobilnettet er nede", "internettet er nede"],
+      "guides": ["telefon-og-net-er-nede", "hold-telefonen-opladet"]
+    },
+    {
+      "phrases": ["sirene", "sirenerne", "varsling"],
+      "guides": ["naar-sirenen-lyder"]
+    }
+  ]
+}

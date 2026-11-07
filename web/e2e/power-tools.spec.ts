@@ -29,14 +29,17 @@ test('Køleskab og fryser: the timer starts, survives a reload, and ends; offlin
   await expect(page.getByRole('heading', { level: 1, name: 'Køleskab og fryser' })).toBeVisible();
   await page.getByRole('button', { name: 'Strømmen gik nu' }).click();
   await expect(page.getByText('Strømmen har været væk i')).toBeVisible();
-  await expect(page.getByText(/^Kold nok i 3 t 59 min endnu$|^Kold nok i 4 t endnu$/)).toBeVisible();
-  await expect(page.getByText('Kold nok i 47 t 59 min endnu').or(page.getByText('Kold nok i 48 t endnu'))).toBeVisible();
+  // An estimate with its assumptions, not a promise that the food is safe (D-071).
+  await expect(page.getByText(/^Omkring (3 t 59 min|4 t) tilbage$/)).toBeVisible();
+  await expect(page.getByText(/^Omkring (47 t 59 min|48 t) tilbage$/)).toBeVisible();
+  await expect(page.getByText(/^Tiderne er et skøn, ikke en måling/)).toBeVisible();
+  await expect(page.getByText(/Kold nok/)).toHaveCount(0);
 
   // Five hours ago: the fridge is past its time, and the advice to throw out shows.
   await page.evaluate(() => localStorage.setItem('stead.powerclock.v1', JSON.stringify(Date.now() - 5 * 3_600_000)));
   await page.reload();
   await expect(page.getByText(/^5 t( 1 min)?$/)).toBeVisible();
-  await expect(page.getByText('Over tiden')).toBeVisible();
+  await expect(page.getByText('Over den vejledende tid')).toBeVisible();
   await expect(page.getByText(/^Har strømmen været væk i mere end 4 timer, så smid/)).toBeVisible();
 
   await page.getByRole('button', { name: 'Strømmen er tilbage' }).click();
@@ -45,16 +48,21 @@ test('Køleskab og fryser: the timer starts, survives a reload, and ends; offlin
   expect(foreign).toEqual([]);
 });
 
-test('Kog vand: one minute, then "Færdig"; the sun right now and the moon; no sirens row in Tools; offline', async ({ app: { page, context } }) => {
+test('Kog vand: when to start, one minute, the chemical limit in view; the sun right now and the moon; no sirens row in Tools; offline', async ({ app: { page, context } }) => {
   await offline(page, context);
   await page.getByRole('link', { name: /^Kog vand/ }).click();
   await expect(page.getByText('Kog det klare vand kraftigt i 1 minut.')).toBeVisible();
+  // When to start, and what boiling cannot do, are in the tool itself (D-071).
+  await expect(page.getByText('Tryk først, når vandet koger kraftigt og bobler hele tiden.')).toBeVisible();
+  const chemicals = page.getByRole('note').filter({ hasText: /^Vand med brændstof, gift eller andre kemikalier kan ikke gøres drikkeligt/ });
+  await expect(chemicals).toBeVisible();
   await page.getByRole('button', { name: 'Vandet koger nu' }).click();
   await expect(page.getByRole('button', { name: 'Stop' })).toBeVisible();
   // The time runs from the stored start, so a minute that passed while the phone slept counts.
   await page.evaluate(() => localStorage.setItem('stead.boil.v1', JSON.stringify(Date.now() - 61_000)));
   await page.reload();
-  await expect(page.getByRole('status').filter({ hasText: 'Færdig. Lad vandet køle af.' })).toBeVisible();
+  await expect(page.getByRole('status').filter({ hasText: /^1 minut er gået\. Lad vandet køle af/ })).toBeVisible();
+  await expect(chemicals).toBeVisible();
   await expect(page.getByRole('button', { name: 'Start igen' })).toBeVisible();
 
   // The sun right now and the moon, for København.

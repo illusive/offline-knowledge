@@ -81,6 +81,17 @@ test('guide search finds text inside guides, title matches first; abbreviations 
   expect(listGuides(db, 'first-aid').some((g) => g.title.includes('<M>'))).toBe(false);
 });
 
+test('everyday phrases find several guides from the pack (D-071)', () => {
+  const ids = (q: string) => searchGuides(db, q).map((g) => g.id);
+  expect(ids('kan ikke få luft')).toEqual(expect.arrayContaining(['frie-luftveje', 'vejrtraekning', 'fremmedlegeme-i-luftvejene']));
+  expect(ids('jeg kan ikke få luft')).toContain('frie-luftveje');
+  expect(ids('reagerer ikke')).toEqual(expect.arrayContaining(['bevidsthed', 'stabilt-sideleje']));
+  expect(ids('bløder meget')).toContain('massive-bloedninger');
+  expect(ids('noget i halsen')).toContain('fremmedlegeme-i-luftvejene');
+  expect(ids('ingen elektricitet')).toContain('stroemmen-er-gaaet');
+  expect(ids('røget laks')).not.toContain('kulilte');
+});
+
 test('growing guides: fixed sections, a link to the food page, and the seed page as a second source', () => {
   const crops = listGuides(db, 'growing');
   const names = crops.map((g) => g.name ?? '');

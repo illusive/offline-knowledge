@@ -27,6 +27,7 @@ export function FirstAidScreen({ db, guides, s, query, onQueryChange }: { db: Db
       search={{ placeholder: s.firstAidSearchPlaceholder, label: s.firstAidSearchLabel }}
       query={query}
       onQueryChange={onQueryChange}
+      searchFooter={<EmergencyCard s={s} />}
       s={s}
     >
       <div className="flex flex-col gap-3">

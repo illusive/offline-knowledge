@@ -2,7 +2,7 @@
 // vertical spacing are rem-based so they follow the system text size on iOS; horizontal padding is
 // in px so large text does not squeeze the content column.
 
-import { ArrowLeft, Check, ChevronRight, Search, Settings, X, type LucideIcon } from 'lucide-react';
+import { ArrowLeft, Check, ChevronRight, Search, Settings, TriangleAlert, X, type LucideIcon } from 'lucide-react';
 import { decimalForInput, parseCounter } from '../i18n/format';
 import type { Lang } from '../i18n/strings';
 import { goBack, hrefs } from '../router';
@@ -353,6 +353,19 @@ export function Sheet({ open, onClose, labelledBy, dismissOnBackdrop = true, chi
     >
       <div className="px-[16px] pt-4 pb-[max(1.25rem,env(safe-area-inset-bottom))]">{open ? children : last.current}</div>
     </dialog>
+  );
+}
+
+// A warning that stays in view, in the guides' warning style (D-071): what a tool cannot do.
+export function WarningNote({ title, children }: { title?: ReactNode; children: ReactNode }) {
+  return (
+    <div role="note" className="flex gap-[12px] rounded-2xl bg-note-bg px-[16px] py-3 text-note-text">
+      <TriangleAlert aria-hidden="true" className="mt-0.5 size-5 shrink-0" />
+      <div className="flex flex-col gap-1">
+        {title ? <p className="font-semibold">{title}</p> : null}
+        <p className="font-medium">{children}</p>
+      </div>
+    </div>
   );
 }
 

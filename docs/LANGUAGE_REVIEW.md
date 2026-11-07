@@ -88,6 +88,15 @@ The rewrites are unchecked. Before the app is shared, someone reviews them again
 - **Når datoen er overskredet (D-054): to review.** A new `high` guide, rewritten from Fødevarestyrelsen with Tænk's list of examples. Check each block against "Vis original", especially the mould line and "Du bliver ikke syg af at have smagt på den" (the source adds why: the bacteria that spoil food do not make you ill straight away).
 - **Sizes (Forråd, D-050):** "Størrelse" with "Mængde", "Enhed" and "Andet" (with "Beskriv størrelsen", "Fx familiepakke"), and the unit "stk.".
 - **Products under the stock-list lines (Forråd, D-052): to review.** 220 of our own product names in the three Hjemmeberedskab guides (`products` next to each line's keywords), e.g. "Makrel i tomat", "Kikærter på dåse", "Fast medicin", "Hue og vanter". Check the names, which line each is on (it decides the tick), and what is missing. Also "Scannet før".
+- **Safety and clarity pass (D-071):**
+  - Kog vand: "Tryk først, når vandet koger kraftigt og bobler hele tiden.", "1 minut er gået. Lad vandet køle af, og hæld det på rene beholdere med låg, der slutter tæt."
+  - Køleskab og fryser: "Omkring X tilbage", "Vejledende: omkring N timer med lukket dør", "Over den vejledende tid", "Tiderne er et skøn, ikke en måling …"
+  - HLR-metronom: "Metronomen følger hjertemassage til voksne …" and its compressions-only line
+  - Guides: "Prøveversion: …" with "Ved livsfare: ring 112."
+  - Forråd: "Hører under: …", "Hører ikke under listen", "Kun drikkevand: … i N døgn."
+  - Settings: what "Klar uden internet" covers, and "Telefonen kan rydde appens data …"
+  - Home: "Appen blev ikke helt klar til brug uden internet" with its body
+  - Backup: "Kort kommer ikke med i kopien – dem henter du igen."
 - **Cohesion pass (D-070):** "Guides" for the category (was "Når det sker") and "N emner" on its tile; "Se dit forråd"; "Stop med at holde kurs"; "Ingen resultater for ”…”"; "Sikkerhedskopi" and its body; "Vil du slette …?" with "Det kan ikke fortrydes."; "Vil du slette kortet over …?" with "Du kan hente det igen, når du har internet."; "Erstat".
 - **Months (Forråd, D-051):** the button "Fjern dato" next to an optional month.
 

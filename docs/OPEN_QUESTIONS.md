@@ -22,7 +22,7 @@ Unresolved questions and working assumptions. When one is resolved, move the out
    - Danish, reuse act route: Forsvarets Sanitetskommando (ABC Førstehjælp), Region Syddanmark. Private, permission needed: ØKO-Portalen / L&F (including its vegetable storage section). Excluded: Falck Førstehjælpsbogen.
 2. **"WikiHealth".** Which source was meant: a specific medical wiki, Wikipedia's medical articles, or something else? Its license and editorial process determine its tier.
 3. **International sources.** Verify per document; for example, many WHO publications carry non-commercial licenses, which would trigger the `nonCommercial` flag.
-4. **Expert review for high-risk guides.** Resolved by D-027 (verbatim only; owner check of exact reproduction).
+4. **Expert review for high-risk guides.** Reopened (D-071). D-042 rewrote the texts in plain language, so verbatim reproduction is no longer the only safeguard. All 62 guides are unreviewed and ship with "Prøveversion" above their instructions while the app is private. Before wider release, decide what a high-risk guide needs: clinical review by a qualified person (see `docs/FIRST_AID_REVIEW.md`), a release gate in the build, or both.
 5. **Re-check interval.** How often should published guides be re-checked against their sources?
 6. **Images.** Which illustration sources have suitable licenses, and what is the size budget for images in the core pack?
 
@@ -40,7 +40,7 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 
 ## First aid (D-037)
 
-29. **Children: 5 rescue breaths first?** The handbook adapts the adult 30:2 sequence to the child (no separate algorithm). The ERC BLS algorithm gives children 5 rescue breaths first (then 15:2 if trained in paediatric BLS). "Basal HLR til børn" is published because the handbook text shown does not contradict ERC, but the guide does not mention the 5 breaths. Decide whether to add the ERC point (from DRG, verbatim) to the guide.
+29. **Children: 5 rescue breaths first?** The handbook adapts the adult 30:2 sequence to the child (no separate algorithm). The ERC BLS algorithm gives children 5 rescue breaths first (then 15:2 if trained in paediatric BLS). "Basal HLR til børn" is published because the handbook text shown does not contradict ERC, but the guide does not mention the 5 breaths. Decide whether to add the ERC point (from DRG, verbatim) to the guide. **D-071:** a proposed complete child sequence and conflict B are in `docs/FIRST_AID_REVIEW.md`; the ERC 2025 children's guideline (PBLS) is still to be registered.
 30. **Handbook line breaks that are real hyphens.** The verbatim check joins "pege-" + "og" into "pegeog"; such cases are recorded as corrections in the guide (`hlr-voksne`). Fine while rare. The same happens to "Heimlich-slag" and "Heimlich-metoden" on p. 62 and 64; the originals in `fremmedlegeme-i-luftvejene` carry the joined form.
 39. **Aspirin for chest pain (D-062).** Held back: the handbook (p. 125) lets 112 advise 150–300 mg acetylsalicylsyre to chew; ERC 2025 in Danish says it is not recommended in Denmark. Revisit if DRG or the Danish emergency services change their advice.
 40. **Aftersun on 1st degree burns (D-062).** Held back from "Forbrændinger" (p. 101). sundhed.dk says not to put cream on burns a doctor will see; for a 1st degree burn it says nothing either way. Add it back if a second source agrees.
@@ -60,10 +60,20 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 32. **English names of the stock-list lines.** The lines and their short names are Danish only, like the guides. The English interface shows them in Danish.
 33. **A downloadable product list.** Barcodes are looked up online only (D-047). An offline list of Danish products from Open Food Facts is possible later if lookups without a connection matter.
 34. **Reminders.** The app cannot notify (no push without a server). Due checks and expiry show only when Forråd is opened; the Home screen could show a short note later.
-35. **The month when the count changes.** Since D-054 the counter changes only the count. When the one that expired first is taken out, the next one's month may be later; when new ones are added, theirs may be earlier. The owner wants to look at this later (2026-11-06).
+35. **The month when the count changes.** Since D-054 the counter changes only the count. When the one that expired first is taken out, the next one's month may be later; when new ones are added, theirs may be earlier. The owner wants to look at this later (2026-11-06). **D-071 assessment:** keep month and year and one date per thing (the earliest); several dates means separate things. Exact dates or several dates per thing would add steps to every entry for little gain with long-life goods. A light option, if wanted: after taking one out, ask once whether the next one's month is later.
 36. **Retained-heat cooking (høkasse).** Left out of "Lav mad uden strøm" (D-059): no source found. Add it if a Danish or official source turns up.
 37. **DR's FM frequencies.** No official, stable list was found (D-058); "Når sirenen lyder" says to listen to DR on FM radio without numbers. Add the regional frequencies if DR or the Agency for Data Supply publishes a list.
 38. **Rainwater for laundry.** No source says it outright (D-059); the washing guide repeats only what Bolius says. Confirm with an authority, or leave as is.
+
+43. **Personal emergency tools (proposal, D-071; needs a product decision).** PROJECT.md lists emergency contacts as a non-goal for v1, so this is not approved.
+    - **Shape:** two small tools under Værktøjer, "Min nødplan" and "Særlige behov". Each is a page of optional sections that start collapsed; nothing is required.
+    - **Min nødplan:** your address (as you would say it to 112), people to call, where to meet if you cannot go home, evacuation (where to, and who drives), utilities (fuse box, water stopcock, gas), and neighbour agreements.
+    - **Særlige behov:** medicine that needs the fridge, equipment that needs power, children, mobility or help needed, and pets.
+    - **Fields:** short free text, at most a few per section. No lists to maintain, and no copies of what Forråd holds: a medicine that needs cold is noted here, its stock stays in Forråd.
+    - **Storage:** `createLocalStore`, key `stead.plan.v1`, on the phone only. Because every `stead.*` key is in the backup, it is backed up automatically. "Slet alt" uses the confirm sheet (D-070).
+    - **Not included:** no accounts, sync or sharing, and no network.
+    - **Before building, the owner decides:** whether it belongs in v1, which sections, and whether "Min nødplan" should be reachable from the 112 card.
+44. **Content gaps (D-071).** Listed under M2 in ROADMAP. Each one needs a source and a decision before writing.
 
 ## Design (D-025)
 
@@ -75,7 +85,7 @@ Unresolved questions and working assumptions. When one is resolved, move the out
 
 ## Technical
 
-19. **Old pack copies.** Each new pack version is imported as a new database file in OPFS; old files stay until a cleanup step is added (needed before M4 at the latest).
+19. **Old pack copies.** Resolved: old `/core-*` files are removed once the new pack has opened and passed its checks (`web/src/db/db.worker.ts`). Still open: if the new pack fails, the old file is kept but not used as a fallback.
 21. **Linting.** No linter yet in `web/`; add ESLint (React and TypeScript rules) or decide against it.
 22. **App icon.** Resolved: generated from the Home asterisk (see 26). A designer's version can replace it later.
 23. **Unused SQLite worker files.** The build also emits SQLite's own worker helpers (`sqlite3-worker1`, `sqlite3-opfs-async-proxy`), about 40 KB, which the app does not use but caches. Harmless; remove if a clean way appears.

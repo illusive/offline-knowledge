@@ -7,7 +7,7 @@
 import { Box, ChevronRight, HeartPulse, TriangleAlert } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { EmergencyCard } from '../components/EmergencyCard';
-import { BackButton, ButtonLink, Card, MessageState, OriginalToggle, Page, SubPageHeader } from '../components/ui';
+import { BackButton, ButtonLink, Card, MessageState, OriginalToggle, Page, SubPageHeader, WarningNote } from '../components/ui';
 import type { DbClient } from '../db/client';
 import type { GuideBlock, GuideImage } from '../db/queries';
 import { useDbQuery } from '../db/useDbQuery';
@@ -58,6 +58,8 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
         {guide.summary ? <p className="mt-1 text-muted">{showOriginal && guide.summary_original ? guide.summary_original : guide.summary}</p> : null}
       </SubPageHeader>
       <article className="flex flex-col gap-3" lang="da">
+        {/* A draft says so before its instructions, not after them (D-071). */}
+        {guide.owner_checked ? null : <WarningNote>{firstAid ? `${s.ownerNotChecked} ${s.draftEmergency}` : s.ownerNotChecked}</WarningNote>}
         {guide.abbreviations.length > 0 ? (
           <dl aria-label={s.abbreviationsLabel} className="flex flex-col gap-1 rounded-2xl bg-surface px-[16px] py-3 text-sm">
             {guide.abbreviations.map((a) => (
@@ -132,7 +134,6 @@ export function GuideScreen({ db, id, s }: { db: DbClient; id: string; s: String
             {s.checkedAgainst}: {[...new Set(checks.map((c) => `${c.source.short_name}, ${c.source.title}`))].join('; ')}
           </p>
         ) : null}
-        {guide.owner_checked ? null : <p>{s.ownerNotChecked}</p>}
       </footer>
     </Page>
   );

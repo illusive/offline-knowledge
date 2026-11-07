@@ -25,12 +25,26 @@ test('first aid: list, a guide with steps and photos, related guide; then offlin
   const search = page.getByRole('searchbox', { name: 'Søg i førstehjælp' });
   await search.fill('blodpøl');
   await expect(page.getByRole('link', { name: /^Livsfarlige blødninger/ })).toBeVisible();
+  // Everyday phrases (D-071): "reagerer ikke" finds several guides, not one answer.
+  await search.fill('reagerer ikke');
+  await expect(page.getByRole('link', { name: /^Er personen vågen/ })).toBeVisible();
+  await expect(page.getByRole('link', { name: /^Stabilt sideleje/ })).toBeVisible();
   await search.fill('zzzz');
   await expect(page.getByText('Ingen guides matcher ”zzzz”')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Ring 112', exact: true })).toBeVisible(); // help stays in reach
   await search.fill('');
 
   await page.getByRole('link', { name: /^Stabilt sideleje/ }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Stabilt sideleje' })).toBeVisible();
+  // A draft says so above its instructions (D-071), with 112 for first aid.
+  const draft = page.getByRole('note').filter({ hasText: 'Prøveversion: endnu ikke gennemlæst mod kilden. Ved livsfare: ring 112.' });
+  await expect(draft).toBeVisible();
+  const above = await page.evaluate(() => {
+    const note = [...document.querySelectorAll('[role=note]')].find((n) => n.textContent?.startsWith('Prøveversion'));
+    const step = [...document.querySelectorAll('li')].find((n) => n.textContent?.includes('Bøj personens ben'));
+    return !!note && !!step && !!(note.compareDocumentPosition(step) & Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+  expect(above).toBe(true);
   await expect(page.getByText('Bøj personens ben, der er længst væk fra dig.')).toBeVisible();
   const photo = page.getByRole('img', { name: 'Det fjerneste ben er bøjet i knæet.' });
   await expect(photo).toBeVisible();

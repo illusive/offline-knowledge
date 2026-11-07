@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { GUIDES_DIR, loadGuides as loadReadingGuides, validateGuides as validateReadingGuides } from '../lib/guides.ts';
 import { pdfText, snapshotBody, verbatimText } from '../lib/text.ts';
 import { buildPack } from '../lib/pack.ts';
+import { loadSearchTerms, validateSearchTerms } from '../lib/search-terms.ts';
 import { ethyleneProfiles, htmlToText, loadProduceGuides, PRODUCE_DIR, relations, validateProduceGuides, type CompatibilityEntry } from '../lib/produce.ts';
 import { loadRegistry, readSnapshot, SOURCES_DIR } from '../lib/registry.ts';
 import type { StorageDataset } from '../schema/storage.ts';
@@ -62,6 +63,10 @@ const imageDir = `${GUIDES_DIR}images/`;
 const imageFiles = (await readdir(imageDir).catch(() => [] as string[])).filter((f) => /\.(jpe?g|png|webp)$/.test(f));
 const readingProblems = validateReadingGuides(readingGuides, sources, guideTexts, new Set(imageFiles));
 if (readingProblems.length > 0) throw new Error(`Guide validation failed:\n- ${readingProblems.join('\n- ')}`);
+// Everyday phrases that find guides (D-071).
+const searchTerms = await loadSearchTerms();
+const termProblems = validateSearchTerms(searchTerms, new Set(readingGuides.map((g) => g.id)));
+if (termProblems.length > 0) throw new Error(`Search terms failed:\n- ${termProblems.join('\n- ')}`);
 const images = new Map<string, { mime: string; data: Uint8Array }>();
 for (const f of imageFiles) {
   const mime = f.endsWith('.png') ? 'image/png' : f.endsWith('.webp') ? 'image/webp' : 'image/jpeg';
@@ -80,6 +85,7 @@ const manifest = await buildPack(
     relations: relations(ethylene),
     extraSourceIds: ['us-ars-ah66-2016'],
     guideSet: { guides: readingGuides, images },
+    searchTerms,
   },
   outDir,
 );

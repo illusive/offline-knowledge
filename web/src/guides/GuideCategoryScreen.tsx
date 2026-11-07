@@ -24,10 +24,11 @@ export function GuideCategoryScreen(props: {
   onQueryChange: (q: string) => void;
   resultCount?: (n: number) => string; // a spoken count above the results (Dyrkning)
   renderResults?: (guides: GuideRow[]) => ReactNode; // the results' own layout (Dyrkning's groups); a plain list otherwise
+  searchFooter?: ReactNode; // shown under the results while searching, also when nothing matches (first aid: the 112 card, D-071)
   s: Strings;
   children: ReactNode; // the overview when not searching
 }) {
-  const { db, guides, section, title, intro, search, query, onQueryChange, resultCount, renderResults, s, children } = props;
+  const { db, guides, section, title, intro, search, query, onQueryChange, resultCount, renderResults, searchFooter, s, children } = props;
   const results = useGuideSearch(db, guides, query);
   const searching = query.trim() !== '';
   usePageTitle(title, s.appTitle);
@@ -50,6 +51,7 @@ export function GuideCategoryScreen(props: {
             </p>
           ) : null}
           {results.length === 0 ? <MessageState title={s.noGuideResults(query.trim())} /> : renderResults ? renderResults(results) : <GuideList guides={results} numbered={false} />}
+          {searchFooter ? <div className="mt-3">{searchFooter}</div> : null}
         </div>
       )}
     </Page>

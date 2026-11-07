@@ -14,8 +14,15 @@ test('home, storing food, detail and back; then the same offline', async ({ app:
   await expect(page.getByRole('region', { name: 'Førstehjælp' })).toBeVisible();
   await expect(page.getByRole('region', { name: 'Opbevaring' })).toHaveCount(0);
   await expect(page.getByText(/fødevarer matcher/)).toHaveCount(0);
+  // Everyday phrases find guides (D-071), across first aid and the other guides.
+  await homeSearch.fill('kan ikke få luft');
+  await expect(page.getByRole('region', { name: 'Førstehjælp' }).getByRole('link', { name: /^Frie luftveje/ })).toBeVisible();
+  await expect(page.getByRole('region', { name: 'Førstehjælp' }).getByRole('link', { name: /^Noget galt i halsen/ })).toBeVisible();
+  await homeSearch.fill('ingen elektricitet');
+  await expect(page.getByRole('region', { name: 'Guides' }).getByRole('link', { name: /^Strømmen er gået/ })).toBeVisible();
   await homeSearch.fill('xyzzy');
   await expect(page.getByText('Ingen resultater for ”xyzzy”')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Ring 112', exact: true })).toBeVisible(); // help stays in reach
   await homeSearch.fill('');
 
   // The "Opbevaring" (storage) category.

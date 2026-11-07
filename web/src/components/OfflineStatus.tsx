@@ -17,6 +17,14 @@ export function DownloadCard({ progress, s }: { progress: PrecacheProgress | nul
   }, []);
   if (!visible) return null;
 
+  if (progress?.failed) {
+    return (
+      <section role="status" aria-live="polite" className="mt-4 rounded-card bg-surface px-[20px] py-4">
+        <p className="font-semibold">{s.downloadFailedTitle}</p>
+        <p className="mt-1 text-sm text-muted">{s.downloadFailedBody}</p>
+      </section>
+    );
+  }
   const fraction = progress && progress.total > 0 ? progress.done / progress.total : null;
   return (
     <section role="status" aria-live="polite" className="mt-4 rounded-card bg-surface px-[20px] py-4">

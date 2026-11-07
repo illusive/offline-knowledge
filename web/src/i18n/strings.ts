@@ -201,8 +201,9 @@ export interface Strings {
     freezerFull: string;
     freezerHalf: string;
     holds: (hours: number) => string;
-    coldFor: (left: string) => string;
+    timeLeft: (left: string) => string;
     over: string;
+    estimate: string;
     keepClosed: string;
     fridgeOver: string;
     refreeze: string;
@@ -234,12 +235,17 @@ export interface Strings {
     source: string;
     guide: string;
     useIt: string;
+    adultsOnly: string;
+    handsOnly: string;
+    childGuide: string;
   };
   boil: {
     title: string;
     subtitle: string;
     cloudy: string;
     how: string;
+    when: string;
+    chemicals: string;
     start: string;
     left: (seconds: number) => string;
     done: string;
@@ -252,6 +258,7 @@ export interface Strings {
     loading: string;
     water: string;
     waterOf: (have: string, need: string) => string;
+    waterScope: (perDay: string, days: number) => string;
     waterHave: (have: string) => string;
     waterOfShort: (need: string) => string;
     lastChecked: (date: string) => string;
@@ -358,6 +365,8 @@ export interface Strings {
     sources: string;
     maps: string;
     mapsNone: string;
+    readyScope: string;
+    notPersisted: string;
     mapsSummary: (areas: number, size: string) => string;
     used: string;
     language: string;
@@ -394,6 +403,8 @@ export interface Strings {
   sensesTitle: string;
   sensesBody: string;
   downloadingTitle: string;
+  downloadFailedTitle: string;
+  downloadFailedBody: string;
   downloadingBody: string;
   downloadProgress: (done: number, total: number) => string;
   openingPack: string;
@@ -428,6 +439,7 @@ export interface Strings {
   guideSource: (name: string, from: number, to: number) => string;
   checkedAgainst: string;
   ownerNotChecked: string;
+  draftEmergency: string;
   relatedGuides: string;
   firstAidSearchPlaceholder: string;
   firstAidSearchLabel: string;
@@ -710,9 +722,10 @@ export const strings: Record<Lang, Strings> = {
       fridge: 'Køleskab',
       freezerFull: 'Fuld fryser',
       freezerHalf: 'Halvfuld fryser',
-      holds: (hours) => `Holder kulden i omkring ${hours} timer med lukket dør`,
-      coldFor: (left) => `Kold nok i ${left} endnu`,
-      over: 'Over tiden',
+      holds: (hours) => `Vejledende: omkring ${hours} timer med lukket dør`,
+      timeLeft: (left) => `Omkring ${left} tilbage`,
+      over: 'Over den vejledende tid',
+      estimate: 'Tiderne er et skøn, ikke en måling. De gælder kun, når døren holdes lukket. Har du et termometer, så tjek: højst 5 °C i køleskabet.',
       keepClosed: 'Åbn kun køleskab og fryser, når du skal. Så holder maden sig kold længere.',
       fridgeOver: 'Har strømmen været væk i mere end 4 timer, så smid let fordærvelig mad fra køleskabet ud: kød, fisk, skåret frugt og grønt, æg, mælk og rester. Smid også mad ud, der lugter, ser ud eller føles anderledes end normalt.',
       refreeze: 'Har frossen mad stadig iskrystaller, eller er den højst 4 °C, kan du fryse den igen.',
@@ -756,15 +769,20 @@ export const strings: Record<Lang, Strings> = {
       source: '110 tryk i minuttet – midt i de 100–120, som Førstehjælpens ABC og ERC 2025 anbefaler.',
       guide: 'Læs mere i ”Hjertemassage og kunstigt åndedræt”',
       useIt: 'Brug HLR-metronomen',
+      adultsOnly: 'Metronomen følger hjertemassage til voksne. Er det et barn, så se guiden til børn.',
+      handsOnly: 'Kan du ikke, vil du ikke, eller går det ikke at puste, så giv kun hjertemassage. Det er bedre end ingenting. Tryk så på Fortsæt med det samme.',
+      childGuide: 'Hjertemassage til børn',
     },
     boil: {
       title: 'Kog vand',
       subtitle: 'Et ur til at koge vand, du ikke ved er rent.',
       cloudy: 'Er vandet grumset, så si det først gennem et rent klæde, køkkenrulle eller et kaffefilter.',
       how: 'Kog det klare vand kraftigt i 1 minut.',
+      when: 'Tryk først, når vandet koger kraftigt og bobler hele tiden.',
+      chemicals: 'Vand med brændstof, gift eller andre kemikalier kan ikke gøres drikkeligt – heller ikke ved at koge det.',
       start: 'Vandet koger nu',
       left: (seconds) => `${seconds} sekunder tilbage`,
-      done: 'Færdig. Lad vandet køle af.',
+      done: '1 minut er gået. Lad vandet køle af, og hæld det på rene beholdere med låg, der slutter tæt.',
       again: 'Start igen',
       stop: 'Stop',
       guide: 'Læs mere i ”Der er intet vand”',
@@ -774,6 +792,7 @@ export const strings: Record<Lang, Strings> = {
       loading: 'Henter forrådet …',
       water: 'Drikkevand',
       waterOf: (have, need) => `${have} af ${need}`,
+      waterScope: (perDay, days) => `Kun drikkevand: ${perDay} pr. person pr. døgn i ${days} døgn.`,
       waterHave: (have) => `${have} på lager`,
       waterOfShort: (need) => `af ${need}`,
       lastChecked: (date) => `Sidst tjekket ${date}`,
@@ -847,8 +866,8 @@ export const strings: Record<Lang, Strings> = {
       waterChecked: 'Vandet er tjekket.',
       close: 'Luk',
       countLabel: (n) => `${n} stk.`,
-      countsAs: (name) => `Tæller som: ${name}`,
-      unlink: 'Tæller ikke med på listen',
+      countsAs: (name) => `Hører under: ${name}`,
+      unlink: 'Hører ikke under listen',
       notFound: 'Den ting findes ikke længere i forrådet.',
       nameMissing: 'Skriv, hvad det er.',
       scan: 'Scan varer',
@@ -863,7 +882,7 @@ export const strings: Record<Lang, Strings> = {
       productFrom: (source) => `Varens navn er fra ${source}.`,
       scanPrivacy: 'Med internet sender appen kun stregkoden til Open Food Facts for at finde varens navn.',
       backup: 'Sikkerhedskopi',
-      backupBody: 'Dit forråd, det, du har gemt, og dine indstillinger ligger kun på telefonen. Sletter du appen, forsvinder det. Gem en kopi i Filer, så du kan hente det igen.',
+      backupBody: 'Dit forråd, det, du har gemt, og dine indstillinger ligger kun på telefonen. Sletter du appen, forsvinder det. Gem en kopi i Filer, så du kan hente det igen. Kort kommer ikke med i kopien – dem henter du igen.',
       saveCopy: 'Gem en kopi',
       restoreCopy: 'Hent fra kopi',
       restoreConfirm: (items) => `Kopien har ${items === 1 ? '1 ting' : `${items} ting`} i forrådet. Vil du erstatte det, der er i appen nu?`,
@@ -880,6 +899,8 @@ export const strings: Record<Lang, Strings> = {
       sources: 'Kilder',
       maps: 'Kort',
       mapsNone: 'Ingen kort hentet',
+      readyScope: 'Guides, fødevarer, værktøjer og dit forråd virker uden internet. Kort hentes for sig, område for område.',
+      notPersisted: 'Telefonen kan rydde appens data, hvis der bliver for lidt plads. Gem en sikkerhedskopi under Forråd.',
       mapsSummary: (areas, size) => `${areas === 1 ? '1 område' : `${areas} områder`}, ${size}`,
       used: 'Appen bruger',
       language: 'Sprog',
@@ -921,6 +942,8 @@ export const strings: Record<Lang, Strings> = {
     sensesTitle: 'Brug dine sanser',
     sensesBody: 'Tiderne er vejledende. Ser eller lugter maden forkert, så kassér den – og er du i tvivl, så smid den ud.',
     downloadingTitle: 'Gør appen klar til brug uden internet',
+    downloadFailedTitle: 'Appen blev ikke helt klar til brug uden internet',
+    downloadFailedBody: 'Hentningen stoppede. Åbn appen igen, når du har internet, så prøver den igen. Indtil da kan noget mangle uden internet.',
     downloadingBody: 'Det kan tage lidt tid. Du kan bruge appen imens.',
     downloadProgress: (done, total) => `${done} af ${total} filer`,
     openingPack: 'Henter indholdet …',
@@ -978,6 +1001,7 @@ export const strings: Record<Lang, Strings> = {
     guideSource: (name, from, to) => `Kilde: ${name}, s. ${from === to ? from : `${from}–${to}`}`,
     checkedAgainst: 'Sammenholdt med',
     ownerNotChecked: 'Prøveversion: endnu ikke gennemlæst mod kilden.',
+    draftEmergency: 'Ved livsfare: ring 112.',
     relatedGuides: 'Se også',
     firstAidSearchPlaceholder: 'Søg i førstehjælp, fx blødning',
     firstAidSearchLabel: 'Søg i førstehjælp',
@@ -1278,9 +1302,10 @@ export const strings: Record<Lang, Strings> = {
       fridge: 'Fridge',
       freezerFull: 'Full freezer',
       freezerHalf: 'Half-full freezer',
-      holds: (hours) => `Keeps cold for about ${hours} hours with the door shut`,
-      coldFor: (left) => `Cold enough for another ${left}`,
-      over: 'Past the time',
+      holds: (hours) => `Guide: about ${hours} hours with the door shut`,
+      timeLeft: (left) => `About ${left} left`,
+      over: 'Past the guide time',
+      estimate: 'The times are an estimate, not a measurement. They only hold when the door stays shut. If you have a thermometer, check: at most 5 °C in the fridge.',
       keepClosed: 'Only open the fridge and freezer when you need to. Then the food stays cold for longer.',
       fridgeOver: 'If the power has been out for more than 4 hours, throw out perishable food from the fridge: meat, fish, cut fruit and vegetables, eggs, milk and leftovers. Also throw out food with an unusual smell, colour or texture.',
       refreeze: 'If frozen food still has ice crystals or is at most 4 °C, you can freeze it again.',
@@ -1324,15 +1349,20 @@ export const strings: Record<Lang, Strings> = {
       source: '110 presses a minute – the middle of the 100–120 that Førstehjælpens ABC and ERC 2025 recommend.',
       guide: 'Read more in “Hjertemassage og kunstigt åndedræt”',
       useIt: 'Use the CPR metronome',
+      adultsOnly: 'The metronome follows chest compressions for adults. For a child, see the guide for children.',
+      handsOnly: 'If you cannot, will not or are not able to give breaths, give chest compressions only. It is better than nothing. Then tap Continue straight away.',
+      childGuide: 'Chest compressions for children (Danish)',
     },
     boil: {
       title: 'Boil water',
       subtitle: 'A timer for boiling water you are not sure is clean.',
       cloudy: 'If the water is cloudy, first filter it through a clean cloth, paper towel or coffee filter.',
       how: 'Bring the clear water to a rolling boil for 1 minute.',
+      when: 'Tap only when the water is at a rolling boil, bubbling all the time.',
+      chemicals: 'Water with fuel, poison or other chemicals cannot be made safe to drink – not even by boiling it.',
       start: 'The water is boiling now',
       left: (seconds) => `${seconds} seconds left`,
-      done: 'Done. Let the water cool.',
+      done: '1 minute has passed. Let the water cool, and pour it into clean containers with tight lids.',
       again: 'Start again',
       stop: 'Stop',
       guide: 'Read more in “Der er intet vand” (Danish)',
@@ -1342,6 +1372,7 @@ export const strings: Record<Lang, Strings> = {
       loading: 'Loading your supplies …',
       water: 'Drinking water',
       waterOf: (have, need) => `${have} of ${need}`,
+      waterScope: (perDay, days) => `Drinking water only: ${perDay} per person per day for ${days} days.`,
       waterHave: (have) => `${have} stored`,
       waterOfShort: (need) => `of ${need}`,
       lastChecked: (date) => `Last checked ${date}`,
@@ -1415,8 +1446,8 @@ export const strings: Record<Lang, Strings> = {
       waterChecked: 'The water is checked.',
       close: 'Close',
       countLabel: (n) => `${n}×`,
-      countsAs: (name) => `Counts as: ${name}`,
-      unlink: 'Does not count on the list',
+      countsAs: (name) => `Belongs under: ${name}`,
+      unlink: 'Does not belong under the list',
       notFound: 'That item is no longer in your supplies.',
       nameMissing: 'Enter what it is.',
       scan: 'Scan items',
@@ -1431,7 +1462,7 @@ export const strings: Record<Lang, Strings> = {
       productFrom: (source) => `Product name from ${source}.`,
       scanPrivacy: 'With internet, the app sends only the barcode to Open Food Facts to find the product name.',
       backup: 'Backup',
-      backupBody: 'Your supplies, what you have saved and your settings are only on this phone. If you delete the app, they are gone. Save a copy in Files so you can get them back.',
+      backupBody: 'Your supplies, what you have saved and your settings are only on this phone. If you delete the app, they are gone. Save a copy in Files so you can get them back. Maps are not in the copy – download them again.',
       saveCopy: 'Save a copy',
       restoreCopy: 'Restore from a copy',
       restoreConfirm: (items) => `The copy has ${items === 1 ? '1 item' : `${items} items`} in your supplies. Replace what is in the app now?`,
@@ -1448,6 +1479,8 @@ export const strings: Record<Lang, Strings> = {
       sources: 'Sources',
       maps: 'Maps',
       mapsNone: 'No maps downloaded',
+      readyScope: 'Guides, foods, tools and your supplies work without internet. Maps are downloaded separately, area by area.',
+      notPersisted: 'The phone may clear the data of the app if space runs low. Save a backup under Supplies.',
       mapsSummary: (areas, size) => `${areas === 1 ? '1 area' : `${areas} areas`}, ${size}`,
       used: 'The app uses',
       language: 'Language',
@@ -1489,6 +1522,8 @@ export const strings: Record<Lang, Strings> = {
     sensesTitle: 'Use your senses',
     sensesBody: 'The times are guidelines. If food looks or smells wrong, throw it out – and when in doubt, throw it out.',
     downloadingTitle: 'Getting the app ready for offline use',
+    downloadFailedTitle: 'The app is not fully ready for offline use',
+    downloadFailedBody: 'The download stopped. Open the app again when you have internet, and it will try again. Until then, some things may be missing offline.',
     downloadingBody: 'This may take a little while. You can use the app while it loads.',
     downloadProgress: (done, total) => `${done} of ${total} files`,
     openingPack: 'Loading the content …',
@@ -1546,6 +1581,7 @@ export const strings: Record<Lang, Strings> = {
     guideSource: (name, from, to) => `Source: ${name}, ${from === to ? `p. ${from}` : `pp. ${from}–${to}`}`,
     checkedAgainst: 'Compared with',
     ownerNotChecked: 'Preview version: not yet checked against the source.',
+    draftEmergency: 'If life is in danger: call 112.',
     relatedGuides: 'See also',
     firstAidSearchPlaceholder: 'Search in Danish, e.g. blødning',
     firstAidSearchLabel: 'Search first aid',

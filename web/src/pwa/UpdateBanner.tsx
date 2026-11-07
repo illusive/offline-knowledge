@@ -5,8 +5,10 @@ import { useEffect } from 'react';
 import type { Strings } from '../i18n/strings';
 import { useUpdates } from './updates';
 
-export function UpdateBanner({ s }: { s: Strings }) {
-  const { offlineReady, needRefresh, dismiss, applyUpdate } = useUpdates();
+// `ready`: the pack is open as well as the files stored (useOfflineReady), so "klar uden internet" is true (D-071).
+export function UpdateBanner({ s, ready }: { s: Strings; ready: boolean }) {
+  const { offlineReady: stored, needRefresh, dismiss, applyUpdate } = useUpdates();
+  const offlineReady = stored && ready;
 
   // "Works offline now" is informational: hide it after a few seconds. "Update" stays until acted on.
   useEffect(() => {

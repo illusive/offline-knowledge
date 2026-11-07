@@ -191,7 +191,7 @@ export function App() {
       {content}
       {/* Long pages (D-069): guides and foods. Keyed by address, so it starts hidden on each page. */}
       {route.name === 'guide' || route.name === 'food' ? <ScrollToTop key={location.hash} label={s.scrollToTop} /> : null}
-      <UpdateBanner s={s} />
+      <UpdateBanner s={s} ready={offlineReady} />
       <TabBar active={activeTab} s={s} />
     </UpdatesProvider>
   );

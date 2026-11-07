@@ -3,6 +3,7 @@
 
 import { longestKeeping, type Location, type PeriodRow } from '../food/format';
 import { ftsPhrase, MIN_FTS_QUERY_LENGTH } from '../food/search';
+import { curatedGuides, parseSearchTerms, type SearchTermEntry } from '../guides/searchTerms';
 
 export const SUPPORTED_PACK_SCHEMA_VERSION = 13;
 
@@ -169,11 +170,29 @@ export function listGuides(db: SqlDb, category: GuideRow['category']): GuideRow[
   return category === 'growing' ? list.sort((a, b) => (a.name ?? a.title).localeCompare(b.name ?? b.title, 'da')) : list;
 }
 
-// Full-text search over guide titles and text; title matches first, then emergency order.
+// The everyday phrases that find guides (D-071), read once per pack.
+const termsCache = new WeakMap<SqlDb, SearchTermEntry[]>();
+function searchTerms(db: SqlDb): SearchTermEntry[] {
+  let terms = termsCache.get(db);
+  if (!terms) {
+    const [row] = rows<{ value: string }>(db, "SELECT value FROM meta WHERE key = 'searchTerms'");
+    terms = parseSearchTerms(row?.value);
+    termsCache.set(db, terms);
+  }
+  return terms;
+}
+
+// Full-text search over guide titles and text, plus the guides an everyday phrase in the query
+// leads to (D-071); title matches first, then emergency order.
 // Only for queries of at least MIN_FTS_QUERY_LENGTH characters.
 export function searchGuides(db: SqlDb, query: string): GuideRow[] {
   if (query.trim().length < MIN_FTS_QUERY_LENGTH) throw new Error('Query too short for trigram search');
-  const found = guideRows(db, `SELECT ${GUIDE_COLUMNS} FROM guide_search s JOIN guides g ON g.id = s.guide_id WHERE guide_search MATCH ? ORDER BY g.ord`, [ftsPhrase(query)]);
+  const curated = curatedGuides(query, searchTerms(db));
+  const found = guideRows(
+    db,
+    `SELECT ${GUIDE_COLUMNS} FROM guides g WHERE g.id IN (SELECT guide_id FROM guide_search WHERE guide_search MATCH ?)${curated.length ? ` OR g.id IN (${curated.map(() => '?').join(', ')})` : ''} ORDER BY g.ord`,
+    [ftsPhrase(query), ...curated],
+  );
   const q = query.trim().toLocaleLowerCase('da');
   const inTitle = (g: GuideRow) => (g.title.toLocaleLowerCase('da').includes(q) ? 0 : 1);
   return found.sort((a, b) => inTitle(a) - inTitle(b)); // stable: emergency order within each group

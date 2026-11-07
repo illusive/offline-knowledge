@@ -198,6 +198,8 @@ function WaterCard({ data, lists, lang, s, onOpen }: { data: ForraadData; lists:
       <button type="button" aria-haspopup="dialog" onClick={onOpen} className="block w-full text-left after:absolute after:inset-0 after:rounded-card">
         <span className="mt-1 block text-[min(2.25rem,10vw)] leading-tight tracking-tight tabular-nums">{waterFigure(w, t)}</span>
         {w.need ? <WaterBar share={w.share} /> : null}
+        {/* What the figure covers (D-071): drinking water only, by the stock list's amount. */}
+        {w.need && lists?.litresPerPersonDay ? <span className="mt-2 block text-sm text-muted">{t.waterScope(w.vol(lists.litresPerPersonDay), data.household.targetDays)}</span> : null}
         <span className={`mt-3 block text-sm ${w.needsCheck ? 'font-semibold' : 'text-muted'}`}>{checkLine(data, w, t)}</span>
       </button>
     </Card>

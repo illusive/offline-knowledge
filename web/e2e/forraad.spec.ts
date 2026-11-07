@@ -76,6 +76,7 @@ test('Forråd: water as one figure; quick adding with guessed categories and mon
   await settings.locator('label', { hasText: '7 døgn' }).click();
   await page.getByRole('button', { name: 'Tilbage' }).click();
   await expect(water.getByText(/^0\sL af 42\sL$/)).toBeVisible();
+  await expect(water.getByText(/^Kun drikkevand: 3\sL pr\. person pr\. døgn i 7 døgn\.$/)).toBeVisible(); // what the figure covers (D-071)
 
   // Water (D-054): a tap on the card opens its sheet. The amount is a counter, saved at once (typed
   // or with + and −). "OK" closes it; "Tjekket i dag" below marks it as checked.

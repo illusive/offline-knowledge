@@ -94,6 +94,9 @@ function Library({ pack, lang, s, offlineReady }: { pack: PackInfo | null; lang:
   const t = s.settings;
   const [areas, setAreas] = useState<AreaInfo[] | null>(null);
   const [used, setUsed] = useState<number | null>(null);
+  // Whether the phone has agreed not to clear the app's data when space runs low (D-071). Shown
+  // only when it has not; nothing here promises that data is kept for ever.
+  const [persisted, setPersisted] = useState<boolean | null>(null);
 
   useEffect(() => {
     let live = true;
@@ -103,6 +106,10 @@ function Library({ pack, lang, s, offlineReady }: { pack: PackInfo | null; lang:
     );
     navigator.storage?.estimate?.().then(
       (e) => live && setUsed(e.usage ?? null),
+      () => undefined,
+    );
+    navigator.storage?.persisted?.().then(
+      (p) => live && setPersisted(p),
       () => undefined,
     );
     return () => {
@@ -126,6 +133,8 @@ function Library({ pack, lang, s, offlineReady }: { pack: PackInfo | null; lang:
           {s.offlineReadyStatus}
         </p>
       ) : null}
+      {/* What "klar" covers: maps are fetched apart and do not hold the rest back (D-071). */}
+      {offlineReady ? <p className="mt-1 text-sm text-muted">{t.readyScope}</p> : null}
       {pack ? (
         <p className="mt-1 text-muted">
           {date ? t.content(pack.version, date) : pack.version}
@@ -153,6 +162,7 @@ function Library({ pack, lang, s, offlineReady }: { pack: PackInfo | null; lang:
         />
         {used !== null ? <Row label={t.used} value={formatBytes(used, lang)} /> : null}
       </dl>
+      {persisted === false ? <p className="mt-3 text-sm">{t.notPersisted}</p> : null}
     </Card>
   );
 }

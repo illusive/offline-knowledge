@@ -83,7 +83,13 @@ export function HomeScreen(props: {
             </section>
           ) : null}
           <GuideResults id="crop-results" title={s.growing} guides={cropResults} />
-          {[guideResults, prepareResults, results, cropResults].every((list) => list !== null && list.length === 0) ? <MessageState title={s.noSearchResults(query.trim())} /> : null}
+          {[guideResults, prepareResults, results, cropResults].every((list) => list !== null && list.length === 0) ? (
+            <>
+              <MessageState title={s.noSearchResults(query.trim())} />
+              {/* Help stays in reach when the search finds nothing (D-071). */}
+              <EmergencyCard s={s} />
+            </>
+          ) : null}
         </div>
       ) : (
         <div className="mt-8 flex flex-col gap-3">

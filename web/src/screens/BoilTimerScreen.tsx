@@ -3,7 +3,7 @@
 // vibrates where it can and plays a short tone made on the spot (no sound file).
 
 import { useEffect, useRef } from 'react';
-import { Button, ButtonLink, Page, SubPageHeader } from '../components/ui';
+import { Button, ButtonLink, Page, SubPageHeader, WarningNote } from '../components/ui';
 import type { Strings } from '../i18n/strings';
 import { createLocalStore } from '../lib/localStore';
 import { useNow } from '../lib/useNow';
@@ -67,6 +67,7 @@ export function BoilTimerScreen({ s }: { s: Strings }) {
             <>
               <p className="text-sm text-muted">{t.cloudy}</p>
               <p className="text-lg font-semibold">{t.how}</p>
+              <p>{t.when}</p>
               <Button variant="primary" className="w-full" onClick={start}>
                 {t.start}
               </Button>
@@ -85,6 +86,8 @@ export function BoilTimerScreen({ s }: { s: Strings }) {
             </>
           )}
         </div>
+        {/* What boiling cannot do stays in view before, during and after (D-071). */}
+        <WarningNote>{t.chemicals}</WarningNote>
         <ButtonLink href={hrefs.guide(WATER_GUIDE_ID)} variant="onPage">
           {t.guide}
         </ButtonLink>

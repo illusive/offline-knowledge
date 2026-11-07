@@ -13,6 +13,7 @@ import type { StorageDataset } from '../schema/storage.ts';
 import { shownTexts } from './guides.ts';
 import type { EthyleneProfile } from './produce.ts';
 import type { RegistrySource } from './registry.ts';
+import { phrasesByGuide, type SearchTermEntry } from './search-terms.ts';
 
 export const PACK_DB_FILE = 'pack.sqlite';
 
@@ -189,6 +190,8 @@ export interface PackInput {
   extraSourceIds?: string[];
   // Guides (D-037), validated by lib/guides.ts before the build; images by file name.
   guideSet?: { guides: Guide[]; images: Map<string, { mime: string; data: Uint8Array }> };
+  // Everyday phrases that find guides (D-071), validated by lib/search-terms.ts before the build.
+  searchTerms?: SearchTermEntry[];
 }
 
 // Returns a list of problems; an empty list means the input may be published.
@@ -249,6 +252,9 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
     meta.run('version', input.version);
     meta.run('schemaVersion', String(PACK_SCHEMA_VERSION));
     meta.run('createdAt', now.toISOString());
+    // The app matches a query against these phrases too (D-071); a meta row, so the schema is unchanged.
+    if (input.searchTerms?.length) meta.run('searchTerms', JSON.stringify(input.searchTerms));
+    const termsOf = phrasesByGuide(input.searchTerms ?? []);
 
     const insertSource = db.prepare(
       'INSERT INTO sources (id, title, short_name, publisher, url, lang, license, license_url, attribution, retrieved_at, data_version) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
@@ -317,7 +323,8 @@ export async function buildPack(input: PackInput, outDir: string, now = new Date
         insertGuide.run(g.id, g.category, g.order, g.title, g.summary ?? null, g.originalSummary ?? null, g.sourceId, g.risk, g.ownerChecked ? 1 : 0, JSON.stringify(g.related ?? []), JSON.stringify(g.abbreviations ?? []), g.foodId ?? null, g.name ?? null, g.season?.text ?? null, g.group ?? null);
         // The source's words of rewritten blocks are searchable too (D-042), so a search for the source's term still finds the guide.
         const originals = g.blocks.flatMap((b) => (b.original ? [b.original.title ?? '', b.original.text ?? '', ...(b.original.items ?? [])] : []));
-        const body = [g.summary ?? '', g.originalSummary ?? '', ...g.blocks.flatMap((b) => [...('title' in b && b.title ? [b.title] : []), ...shownTexts(b)]), ...originals, ...(g.abbreviations ?? []).map((a) => a.long)];
+        // The everyday phrases that lead to the guide (D-071) are searchable too, never shown.
+        const body = [g.summary ?? '', g.originalSummary ?? '', ...g.blocks.flatMap((b) => [...('title' in b && b.title ? [b.title] : []), ...shownTexts(b)]), ...originals, ...(g.abbreviations ?? []).map((a) => a.long), ...(termsOf.get(g.id) ?? [])];
         insertGuideSearch.run(g.id, [g.name, g.title].filter(Boolean).join(' '), body.join('\n'));
         g.blocks.forEach((b, ord) => {
           const title = 'title' in b ? (b.title ?? null) : null;

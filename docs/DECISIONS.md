@@ -673,6 +673,55 @@ Each entry records the decision, its rationale and the alternatives considered. 
 - **Phone guide:** "Telefon og net er nede" stays a situation guide. The new guide adds the FCC's battery and charging advice.
 - **Review flag:** `ownerChecked` is false for all seven ("Prøveversion").
 
+## D-071 — Safety and clarity from an external review: search, tool limits, drafts, offline status
+
+- **Date:** 2026-11-07
+- **Context:** an external review of an earlier version gave feedback in seven groups. Each point was checked against the current app; what was already resolved is listed below. The owner decided that the "Prøveversion" notice goes above the instructions (no release gate yet), and that the first-aid revisions are drafted in a review file while the guides stay as they are.
+- **Search:**
+  - A small list kept by hand, `content/search/terms.json`, links everyday Danish phrases to **several** guides each, never to one diagnosis. Examples: "kan ikke få luft", "reagerer ikke", "bløder meget", "noget i halsen", "ingen elektricitet".
+  - The phrases go into each linked guide's search text, and the whole list into the pack's `meta` table (`searchTerms`), so the SQL and the schema (13) are unchanged. Content 0.20.0.
+  - The app (`web/src/guides/searchTerms.ts`) finds a phrase in a longer query as whole words ("jeg kan ikke få luft"), or while it is typed. So "røg" does not match "røget".
+  - The build checks the list (`content/lib/search-terms.ts`): every guide exists; phrases are lower case and in one entry only. The phrases are never shown, so they add no words of our own to a high-risk guide.
+  - The 112 card stays in reach: under "Ingen resultater" on Home, and under the results on the first-aid page.
+  - Global search and category search stay apart.
+- **Tools keep the guide's limits in view:**
+  - **Kog vand** says when to start ("Tryk først, når vandet koger kraftigt og bobler hele tiden"). It always shows the guide's warning, word for word: "Vand med brændstof, gift eller andre kemikalier kan ikke gøres drikkeligt – heller ikke ved at koge det." It ends with "1 minut er gået. Lad vandet køle af, og hæld det på rene beholdere …", not "Færdig".
+  - **Køleskab og fryser** shows "Omkring X tilbage" with a neutral clock, not "Kold nok" with a green tick. It shows "Vejledende: omkring N timer med lukket dør" beside each place, and the note that the times are an estimate, not a measurement, and hold only with the door shut, with a thermometer check (at most 5 °C). It shows "Over den vejledende tid" past the limit, and the refreeze rule as a note when a freezer is past its time. The figures are checked against FSIS ("about 4 hours if it is unopened"; "approximately 48 hours (24 hours if it is half full)") and Fødevarestyrelsen (at most 5 °C; open the doors only when needed).
+  - **HLR-metronom** says it follows compressions for adults, links the children's guide, and repeats the adult guide's "Kan du ikke, vil du ikke … så giv kun hjertemassage".
+  - The shared `WarningNote` (`components/ui.tsx`) is the guides' warning style.
+- **Drafts:** an unreviewed guide opens with "Prøveversion: endnu ikke gennemlæst mod kilden.", above its instructions. First aid adds "Ved livsfare: ring 112." The footer line is gone. All 62 guides are unreviewed. CONTENT_POLICY §7 now says drafts ship with this notice only while the app is private (D-028).
+- **First aid:** `docs/FIRST_AID_REVIEW.md` holds:
+  - proposed complete sequences for "Livsfarlige blødninger" and "Hjertemassage til børn", step by step from the registered sources
+  - the source conflicts: A, when and where to apply a tourniquet; B, 5 first breaths for children
+  - the missing children's guideline (ERC 2025 PBLS)
+  - the three kinds of review (source comparison, language review, clinical review)
+
+  The guides are unchanged until a qualified review decides.
+- **Forråd:**
+  - "Tæller som: …" became "Hører under: …", so one thing does not suggest a line is covered.
+  - The water card says what its figure covers: "Kun drikkevand: 3 L pr. person pr. døgn i N døgn."
+  - No other coverage figures.
+  - **Expiry, assessed and not changed:** month and year, one date per thing (the earliest), several dates means separate things. Exact dates and several dates per thing would add steps to every entry, for little gain with long-life goods (D-046). Revisit with OPEN_QUESTIONS 35.
+- **Offline status:**
+  - The "Appen er nu klar til brug uden internet" banner shows only when the pack is open as well as the files stored.
+  - When the download of the app's files stops, Home says so ("Appen blev ikke helt klar …") instead of waiting for ever.
+  - Settings says what "Klar uden internet" covers (maps are downloaded separately), and, only when the phone has not granted persistent storage, that it may clear the data (`navigator.storage.persisted()`).
+  - The backup text says maps are not in the copy.
+- **Already resolved before this:**
+  - the global no-results line (D-070)
+  - no checklists in guides (D-070)
+  - the barcode lookup's internet note and manual path (D-047, D-053)
+  - map coverage shown per area, apart from "Klar uden internet"
+  - a new pack is checksum-verified before the old is removed
+  - the backup round-trips with rollback
+  - no coverage score in Forråd
+- **Proposals awaiting a product decision** (OPEN_QUESTIONS 43–44): personal emergency tools ("Min nødplan", "Særlige behov"), and the content gaps listed in the roadmap.
+- **Alternatives:**
+  - splitting queries into words and matching all of them (too much noise: "kan ikke luft" finds 24 guides)
+  - synonyms in the app code (content belongs in the pack, AGENTS §6)
+  - hiding unreviewed first aid now (the owner chose the notice)
+  - revising the first-aid guides in the app now (the owner chose a review file)
+
 ## D-070 — Cohesion pass: Guides, no tick boxes, one way to close and confirm
 
 - **Date:** 2026-11-07
